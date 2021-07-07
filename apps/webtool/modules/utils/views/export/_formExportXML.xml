@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <view>
     <mformdialog id="formExportXML" title="Export Corpus - XML"  close=">fnbr/main" >
         <fields>

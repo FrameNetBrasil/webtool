@@ -105,13 +105,35 @@ class ExportController extends MController
         }
     }
 
+    public function formExportCONLLU(){
+        try {
+            $this->data->idCorpus = 1;
+            $corpus = new fnbr\models\Corpus($this->data->idCorpus);
+            $user = fnbr\models\Base::getCurrentUser();
+            $this->data->corpusName = $corpus->getName();
+            $this->data->email = $user->getEmail();
+            $this->data->action='@utils/exportCONLL';
+            $this->render();
+        } catch (EMException $e) {
+            
+        }
+    }
+
     public function exportCONLL(){
         try {
-            $idDocument = $this->data->id;
-            $document = new fnbr\models\Document($idDocument);
+            $documents = \Maestro\Utils\Mutil::parseFiles('documents');
             $service = Manager::getAppService('data');
-            $conll = $service->exportDocumentToCONLL($document);
-            $fileName = $document->getName() . '.conll.txt';
+            if(count($documents))
+            {
+                $conll = $service->exportDocumentToCONLL($documents[0]);
+                $fileName = $documents->getName() . '.conll.txt';
+                $mfile = MFile::file($conll, false, $fileName);
+                $this->renderFile($mfile);
+            }else{
+                $this->renderPrompt('information',OK);
+            }
+
+            $fileName = $documents->getName() . '.conll.txt';
             $mfile = MFile::file($conll, false, $fileName);
             $this->renderFile($mfile);
         } catch (EMException $e) {
@@ -121,24 +143,66 @@ class ExportController extends MController
 
     public function formExportXML(){
         try {
-            $this->data->idCorpus = $this->data->id;
+            $this->data->idCorpus = 1;
             $corpus = new fnbr\models\Corpus($this->data->idCorpus);
             $user = fnbr\models\Base::getCurrentUser();
             $this->data->corpusName = $corpus->getName();
             $this->data->email = $user->getEmail();
-            $this->data->action = '@utils/export/exportXML';
+            $this->data->action = '@utils/export/exportCorpXML';
             $this->render();
         } catch (EMException $e) {
             $this->renderPrompt('error',$e->getMessage());
         }
     }
 
+    public function exportCorpXML(){
+        try {
+            $documents = \Maestro\Utils\Mutil::parseFiles('documents');
+            $corpus = new fnbr\models\Corpus($this->data->idCorpus);
+            $this->data->idLanguage = Manager::getSession()->idLanguage;
+            $user = fnbr\models\Base::getCurrentUser();
+            //$documents = "";
+            mdump("In exportXML");
+            //foreach($this->data->documents as $idDocument) {
+              //  $documents .= ':' . $idDocument;
+            //}
+            mdump(documents);
+            if(count($documents))
+            {
+                $service = Manager::getAppService('data');
+                $docs=$service->exportCorpusToXML($documents);
+                $this->renderFile($docs);
+            }else{
+                $this->renderPrompt('information',OK);
+            }
+//            $timeWrapper = realpath(Manager::getAppPath() . "/offline/timewrapper.php");
+//            $offline = '"' . addslashes(realpath(Manager::getAppPath() . "/offline/exportCorpusXML.php")) . '" ' . "{$corpus->getEntry()} {$documents} {$this->data->idLanguage} {$user->getIdUser()} {$user->getEmail()}";
+//            if (substr(php_uname(), 0, 7) == "Windows") {
+//                try {
+//                    $commandString = "start /b php.exe {$timeWrapper} " . $offline;
+//                    pclose(popen($commandString, "r"));
+//                } catch (Exception $e) {
+//                    throw new Exception($e->getMessage());
+//                }
+//            } else {
+//                mdump("php {$offline} > /dev/null &");
+//                exec("php {$offline} > /dev/null &");
+//            }
+//            $this->renderPrompt('information',"OK. XML file will be generated. A notification will be sent to {$user->getEmail()}.");
+        } catch (Exception $e) {
+            $this->renderPrompt('error',$e->getMessage());
+        }
+    }
+
+
     public function exportXML(){
+        $transaction = $this->beginTransaction();
         try {
             $corpus = new fnbr\models\Corpus($this->data->idCorpus);
             $this->data->idLanguage = Manager::getSession()->idLanguage;
             $user = fnbr\models\Base::getCurrentUser();
             $documents = "";
+            mdump("In exportXML");
             foreach($this->data->documents as $idDocument) {
                 $documents .= ':' . $idDocument;
             }
@@ -156,7 +220,7 @@ class ExportController extends MController
                 exec("php {$offline} > /dev/null &");
             }
             $this->renderPrompt('information',"OK. XML file will be generated. A notification will be sent to {$user->getEmail()}.");
-
+            $transaction->commit();
         } catch (Exception $e) {
             $this->renderPrompt('error',$e->getMessage());
         }

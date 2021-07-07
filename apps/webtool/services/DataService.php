@@ -46,7 +46,7 @@ class DataService extends MService
                 $coreset = $feModel->listCoreSet($fe['idFrameElement'])->asQuery()->getResult();
                 $frames[$i]['fes'][$j]['coreset'] = $coreset;
                 $excludes = $feModel->listExcludes($fe['idFrameElement'])->asQuery()->getResult();
-                $frames[$i]['fes'][$j]['excludes'] = $exclude;
+                $frames[$i]['fes'][$j]['excludes'] = $excludes;
                 $requires = $feModel->listRequires($fe['idFrameElement'])->asQuery()->getResult();
                 $frames[$i]['fes'][$j]['requires'] = $requires;
                 $color = new fnbr\models\Color($fe['idColor']);
@@ -384,7 +384,7 @@ class DataService extends MService
         $idLanguage = \fnbr\models\Base::getIdLanguage($this->data->language);
         //$idLanguage = $this->data->idLanguage;
 
-        print_r("idlanguage = " . $idLanguage . "\n");
+        mdump("idlanguage = " . $idLanguage . "\n");
 
         $xmlStr = <<<HERE
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -406,7 +406,7 @@ HERE;
         $sentences = $document->listSentenceForXML()->getResult();
         $i = 0;
         foreach ($sentences as $sentence) {
-            print_r($sentence['idSentence'] . ' - ' . $sentence['text']. "\n");
+            mdump($sentence['idSentence'] . ' - ' . $sentence['text']. "\n");
             $s = $sxe->addChild('sentence');
             $s->addAttribute('ID', $sentence['idSentence']);
             $t = $s->addChild('text', $sentence['text']);
@@ -441,10 +441,10 @@ HERE;
                 }
             }
             if ((++$i % 5) == 0) {
-                print_r($i . ' sentence(s)' . "\n");
+                mdump($i . ' sentence(s)' . "\n");
             }
         }
-        print_r($this->data->filename . "\n");
+        mdump($this->data->filename . "\n");
         file_put_contents($this->data->filename, $sxe->asXML());
     }
 

@@ -6,6 +6,23 @@ Webtool app is implemented using [Framework Maestro](https://github.com/framewor
 
 This repository contains a customized Maestro copy. Webtool app is localized at folder apps/webtool.
 
+## GSoC 2020 Project Idea 2: New Frame-Based Image and Video Annotation Pipeline for the FNBr Webtool
+This branch contains the code for this project selected under Google Summer of Code 2020.
+
+Contributor- Prishita Ray  
+Mentors- Tiago Timponi Torrent, Ely Matos, Marcelo Viridiano, Fred Belcavello
+
+### Summary of Project
+The main motivation for this project is to create a more automated and simplified video annotation pipeline using both image and textual data for the FrameNet webtool. The existing version relies on manual annotation which is a highly tedious task. In order to annotate multimodal corpora, individual frames or ideas depicted within the video need to be extracted using corresponding audio transcriptions and identified objects. This is important to obtain fine grained semantic representations of events and entities. Moreover, the video may be presented in multiple languages that need to be detected and translated to Portuguese. Also individual objects within a video need to be tracked and identified to generate corresponding textual frame elements that can speed up the annotation process.
+
+The project will be implemented in the following three stages:
+
+1. Pre-Processing Pipeline- This will segment an uploaded video based on timestamps of the spoken sentences, as well as generate and add subtitles that are translated into Portuguese to the video. The outcome of this stage will be the audio transcriptions obtained from the above process, that forms the textual data required for automatic semantic annotation, and the set of segmented video clips.
+
+2. Semi-automatization of the annotation process- Individual objects present in a video segment will be identified and tracked across time, using feature tracking algorithms, to form the image data for automatic semantic annotation. An option for manual object selection will also be provided for better accuracy.
+
+3. Data Compilation and Reporting Module- The textual data (audio transcriptions) and image data (tracked objects) will be mapped with the frame elements they invoke for the automatic semantic annotation. Captions will be generated for the representative images of tracked objects using a pretrained ML model. Using these captions and the audio transcriptions in a video segme, a model based on NLP and ML will be designed to train on a gold standard corpus, that will predict the frame elements for semantic annotation. This will also correlate the captions and words or phrases within the transcriptions that invoke the same frame elements for cross-annotation.
+
 ### Prerequisities
 
 

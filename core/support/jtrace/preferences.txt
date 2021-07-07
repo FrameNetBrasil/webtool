@@ -8,3 +8,4 @@ Handler 1
 Profile 1
 Error 1
 Custom 1
+webtool 0

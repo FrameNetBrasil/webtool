@@ -28,7 +28,7 @@ try {
     $_REQUEST['idLanguage'] = $idLanguage;
     $_REQUEST['dirName'] = $dirName;
 
-// Endereco do servico a ser executado
+// Endereco do servico a ser executado(Address of the service to be performed)
     $_SERVER['REQUEST_URI'] = $_SERVER['SCRIPT_NAME'] . "{$app}/api/data/exportCorpusToXML";
 
     $configFile = Manager::getHome() . "/apps/{$app}/conf/conf.php";

@@ -1,27 +1,28 @@
 
 
 
-<div id="divExportXML" class="easyui-panel" title='Corpus - Export XML' collapsible="false" data-options="fit:true">
+<div id="divExportXML" class="easyui-panel" title='Corpus - Export CONLLU' collapsible="false" data-options="fit:true">
 
-    <form id="formExportXML" action="{{$manager->getURL('utils/export/formExportXML')}}">
+    <form id="formExportXML" action="{{$manager->getURL('utils/export/formExportCONLLU')}}">
         <input type="hidden" id="idCorpus" name="idCorpus" value="{{$data->idCorpus}}"/>
         <input type="hidden" id="documents" name="documents" value=""/>
     </form>
 
-                    <div class="text">Exporting annotation from Corpus [{{$data->corpusName}}] using XML format.</div>
+    <div class="text">Exporting annotation from Corpus [{{$data->corpusName}}] using CONLLU format.</div>
+
 
     <div class="text" style="height:50%"  >
-    <table id="documentGrid" class="easyui-datagrid" style="width:50%; height:100%">
-        <thead>
-        <tr>
-            <th data-options="field:'idDocument',checkbox:true,width:50"></th>
-            <th data-options="field:'document'">Document</th>
-        </tr>
-        </thead>
-    </table>
+        <table id="documentGrid" class="easyui-datagrid" style="width:50%; height:100%">
+            <thead>
+            <tr>
+                <th data-options="field:'idDocument',checkbox:true,width:50"></th>
+                <th data-options="field:'document'">Document</th>
+            </tr>
+            </thead>
+        </table>
     </div>
     <div class="text">
-        <button id="btnExport">Export XML</button>
+        <button id="btnExport">Export CONLLU</button>
     </div>
 </div>
 
@@ -37,12 +38,12 @@
 
     $("#documentGrid").datagrid({
         title: 'Select documents - Corpus: ' + {{$data->corpusName}},
-        checkbox: true,    
+    checkbox: true,
         url: {{$manager->getURL('api/reportcorpus/getDataDocumentCorpus')}}  + '/' + {{$data->idCorpus}},
-  
-        method: 'get'
+
+    method: 'get'
     });
-  
+
 
     $("#btnExport").linkbutton({
         onClick: function() {
@@ -54,7 +55,7 @@
             }
             console.log(documents);
             $("#documents").attr("value",'json:' + JSON.stringify(documents) );
-            manager.doPostBack('formExportXML');
+            manager.doPostBack('formExportCONLLU');
         }
     });
 

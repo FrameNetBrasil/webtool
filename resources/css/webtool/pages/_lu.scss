@@ -1,0 +1,47 @@
+
+.luReport__card {
+    margin: 8px 8px 0 0;
+
+    .card-header {
+        text-align: left;
+    }
+
+    .card-body {
+        background-color: white;
+    }
+}
+
+.luReport__table {
+    border-spacing: 8px;
+}
+
+#gridValence {
+    background-color: red;
+        tr.pattern {
+            border-top: 1px solid $grey-10;
+        }
+        tr.pattern1 {
+        }
+}
+
+
+#divLexicalEntrySentences {
+    font-size:1rem;
+    margin-top: 4px;
+
+    div {
+        box-sizing: border-box;
+        margin-bottom: 4px;
+
+        .delete {
+            cursor: pointer;
+        }
+    }
+    div:nth-child(even) {
+        background-color: $grey-3;
+    }
+
+    div:nth-child(odd) {
+        background-color: white;
+    }
+}

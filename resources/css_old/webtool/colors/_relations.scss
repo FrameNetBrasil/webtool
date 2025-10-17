@@ -1,0 +1,430 @@
+/*
+ Color relations
+ */
+
+.color_rel_causative_of {
+    color: #DAA520 !important;
+    background-color: #FFF !important;
+    stroke: #DAA520;
+}
+
+.color_rel_inchoative_of {
+    color: #897201 !important;
+    background-color: #FFF !important;
+    stroke: #897201;
+}
+
+.color_rel_inheritance {
+    color: #FF0000 !important;
+    background-color: #FFF !important;
+    stroke: #FF0000;
+}
+
+
+.color_rel_perspective_on {
+    color: #ff69B4 !important;
+    background-color: #FFF !important;
+    stroke: #ff69B4;
+}
+
+.color_rel_precedes {
+    color: #000000 !important;
+    background-color: #FFF !important;
+    stroke: #000000;
+}
+
+
+.color_rel_see_also {
+    color: #9e1fee !important;
+    background-color: #FFF !important;
+    stroke: #9e1fee;
+}
+
+.color_rel_subframe {
+    color: #0000FF !important;
+    background-color: #FFF !important;
+    stroke: #0000FF;
+}
+
+
+.color_rel_using {
+    color: #006301 !important;
+    background-color: #FFF !important;
+    stroke: #006301;
+}
+
+
+.color_rel_coreset {
+    color: #0000FF !important;
+    background-color: #FFF !important;
+    stroke: #0000FF;
+}
+
+
+.color_rel_excludes {
+    color: #FF0000 !important;
+    background-color: #FFF !important;
+    stroke: #FF0000;
+}
+
+
+.color_rel_requires {
+    color: #008000 !important;
+    background-color: #FFF !important;
+    stroke: #008000;
+}
+
+
+.color_rel_evokes {
+    color: #0000FF !important;
+    background-color: #FFF !important;
+    stroke: #0000FF;
+}
+
+
+.color_rel_inheritance_cxn {
+    color: #FF0000 !important;
+    background-color: #FFF !important;
+    stroke: #FF0000;
+}
+
+
+.color_rel_elementof {
+    color: #000000 !important;
+    background-color: #FFF !important;
+    stroke: #000000;
+}
+
+
+.color_rel_hassemtype {
+    color: #000000 !important;
+    background-color: #FFF !important;
+    stroke: #000000;
+}
+
+
+.color_rel_formal_qualia {
+    color: #092834 !important;
+    background-color: #FFF !important;
+    stroke: #092834;
+}
+
+
+.color_rel_constitutive_qualia {
+    color: #66B032 !important;
+    background-color: #FFF !important;
+    stroke: #66B032;
+}
+
+
+.color_rel_agentive_qualia {
+    color: #347B98 !important;
+    background-color: #FFF !important;
+    stroke: #347B98;
+}
+
+
+.color_rel_telic_qualia {
+    color: #B2D732 !important;
+    background-color: #FFF !important;
+    stroke: #B2D732;
+}
+
+
+.color_rel_qualia_formal {
+    color: #092834 !important;
+    background-color: #FFF !important;
+    stroke: #092834;
+}
+
+
+.color_rel_qualia_constitutive {
+    color: #66B032 !important;
+    background-color: #FFF !important;
+    stroke: #66B032;
+}
+
+
+.color_rel_qualia_agentive {
+    color: #347B98 !important;
+    background-color: #FFF !important;
+    stroke: #347B98;
+}
+
+
+.color_rel_qualia_telic {
+    color: #B2D732 !important;
+    background-color: #FFF !important;
+    stroke: #B2D732;
+}
+
+
+.color_rel_constraint_frame {
+    color: #F5DEB3 !important;
+    background-color: #FFF !important;
+    stroke: #F5DEB3;
+}
+
+
+.color_rel_standsfor {
+    color: #808000 !important;
+    background-color: #FFF !important;
+    stroke: #808000;
+}
+
+
+.color_rel_inhibits {
+    color: #FFFF00 !important;
+    background-color: #FFF !important;
+    stroke: #FFFF00;
+}
+
+
+.color_con_cxn {
+    color: #000000 !important;
+    background-color: #FFF !important;
+    stroke: #000000;
+}
+
+
+.color_con_element {
+    color: #000000 !important;
+    background-color: #FFF !important;
+    stroke: #000000;
+}
+
+
+.color_con_lu {
+    color: #000000 !important;
+    background-color: #FFF !important;
+    stroke: #000000;
+}
+
+
+.color_con_lexeme {
+    color: #000000 !important;
+    background-color: #FFF !important;
+    stroke: #000000;
+}
+
+
+.color_con_lemma {
+    color: #000000 !important;
+    background-color: #FFF !important;
+    stroke: #000000;
+}
+
+
+.color_con_udrelation {
+    color: #000000 !important;
+    background-color: #FFF !important;
+    stroke: #000000;
+}
+
+
+.color_con_udfeature {
+    color: #000000 !important;
+    background-color: #FFF !important;
+    stroke: #000000;
+}
+
+/*
+ Color graph marker
+ */
+
+
+.color_rel_causative_of--marker {
+    fill: #DAA520 !important;
+    stroke: #DAA520;
+}
+
+
+.color_rel_inchoative_of--marker {
+    fill: #DAA520 !important;
+    stroke: #DAA520;
+}
+
+
+.color_rel_inheritance--marker {
+    fill: #FF0000 !important;
+    stroke: #FF0000;
+}
+
+
+.color_rel_perspective_on--marker {
+    fill: #ff69B4 !important;
+    stroke: #FF0000;
+}
+
+.color_rel_precedes--marker {
+    fill: #000000 !important;
+    stroke: #000000;
+}
+
+
+.color_rel_see_also--marker {
+    fill: #9e1fee !important;
+    stroke: #9e1fee;
+}
+
+.color_rel_subframe--marker {
+    fill: #0000FF !important;
+    stroke: #0000FF;
+}
+
+
+.color_rel_using--marker {
+    fill: #006301 !important;
+    stroke: #006301;
+}
+
+
+.color_rel_coreset--marker {
+    fill: #0000FF !important;
+    stroke: #0000FF;
+}
+
+
+.color_rel_excludes--marker {
+    fill: #FF0000 !important;
+    stroke: #FF0000;
+}
+
+
+.color_rel_requires--marker {
+    fill: #008000 !important;
+    stroke: #008000;
+}
+
+
+.color_rel_evokes--marker {
+    fill: #008000 !important;
+    stroke: #008000;
+}
+
+
+.color_rel_inheritance_cxn--marker {
+    fill: #FF0000 !important;
+    stroke: #FF0000;
+}
+
+
+.color_rel_elementof--marker {
+    fill: #000000 !important;
+    stroke: #000000;
+}
+
+
+.color_rel_hassemtype--marker {
+    fill: #000000 !important;
+    stroke: #000000;
+}
+
+
+.color_rel_formal_qualia--marker {
+    fill: #092834 !important;
+    stroke: #092834;
+}
+
+
+.color_rel_constitutive_qualia--marker {
+    fill: #66B032 !important;
+    stroke: #66B032;
+}
+
+
+.color_rel_agentive_qualia--marker {
+    fill: #347B98 !important;
+    stroke: #347B98;
+}
+
+
+.color_rel_telic_qualia--marker {
+    fill: #B2D732 !important;
+    stroke: #B2D732;
+}
+
+
+.color_rel_qualia_formal--marker {
+    fill: #DAA520 !important;
+    stroke: #DAA520;
+}
+
+
+.color_rel_qualia_constitutive--marker {
+    fill: #66B032 !important;
+    stroke: #66B032;
+}
+
+
+.color_rel_qualia_agentive--marker {
+    fill: #347B98 !important;
+    stroke: #347B98;
+}
+
+
+.color_rel_qualia_telic--marker {
+    fill: #B2D732 !important;
+    stroke: #B2D732;
+}
+
+
+.color_rel_constraint_frame--marker {
+    fill: #F5DEB3 !important;
+    stroke: #F5DEB3;
+}
+
+
+.color_rel_standsfor--marker {
+    fill: #808000 !important;
+    stroke: #808000;
+}
+
+
+.color_rel_inhibits--marker {
+    fill: #FFFF00 !important;
+    stroke: #FFFF00;
+}
+
+
+.color_con_cxn--marker {
+    fill: #000000 !important;
+    stroke: #000000;
+}
+
+
+.color_con_element--marker {
+    fill: #000000 !important;
+    stroke: #000000;
+}
+
+
+.color_con_lu--marker {
+    fill: #000000 !important;
+    stroke: #000000;
+}
+
+
+.color_con_lexeme--marker {
+    fill: #000000 !important;
+    stroke: #000000;
+}
+
+
+.color_con_lemma--marker {
+    fill: #000000 !important;
+    stroke: #000000;
+}
+
+
+.color_con_udrelation--marker {
+    fill: #000000 !important;
+    stroke: #000000;
+}
+
+
+.color_con_udfeature--marker {
+    fill: #000000 !important;
+    stroke: #000000;
+}
+

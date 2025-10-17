@@ -1,0 +1,44 @@
+.wt-icon-fe-core {
+    padding: 2px 2px 0 0;
+    color: $wt-fe-core-color;
+}
+
+.wt-icon-fe-core:after {
+    content: $wt-fe-core-icon;
+}
+
+.wt-icon-fe-core-unexpressed {
+    padding: 2px 2px 0 0;
+    color: $wt-fe-core-unexpressed-color;
+}
+
+.wt-icon-fe-core-unexpressed:after {
+    content: $wt-fe-core-unexpressed-icon;
+}
+
+.wt-icon-fe-peripheral {
+    padding: 2px 2px 0 0;
+    color: $wt-fe-peripheral-color;
+}
+
+.wt-icon-fe-peripheral:after {
+    content: $wt-fe-peripheral-icon;
+}
+
+.wt-icon-fe-extra-thematic {
+    padding: 2px 2px 0 0;
+    color: $wt-fe-extra-thematic-color;
+}
+
+.wt-icon-fe-extra-thematic:after {
+    content: $wt-fe-extra-thematic-icon;
+}
+
+.wt-icon-fe-ni {
+    padding: 2px 2px 0 0;
+    color: $wt-fe-ni-color;
+}
+
+.wt-icon-fe-ni:after {
+    content: $wt-fe-ni-icon;
+}

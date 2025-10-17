@@ -1,0 +1,52 @@
+.wt-treegrid {
+
+    .tree-title {
+        font-size: 1rem !important;
+    }
+
+    .tree-node {
+        height: 1.5rem !important;
+    }
+    .tree-node-selected {
+        background-color: $blue-2 !important;
+    }
+
+
+    .textbox, .textbox-focused {
+        border:0;
+        box-shadow:none;
+        padding:0;
+        max-height:2.8rem;
+
+        .textbox-addon {
+            display:none;
+        }
+
+        .textbox-text {
+            width: 100% !important;
+        }
+    }
+}
+
+.wt-treegrid-panel {
+    padding-top: 0.5rem;
+    border-left:1px solid #85b7d9;
+    border-bottom:1px solid #85b7d9;
+    border-right:1px solid #85b7d9;
+    border-radius: 0.28571429rem;
+    background: #fff;
+    box-shadow: 0 0 0 0 rgba(34, 36, 38, 0.35) inset;
+
+    .tree-title {
+        font-size: 1rem !important;
+    }
+
+    .datagrid-header {
+        border:0;
+    }
+    .datagrid-body td {
+        border-right:1px dotted transparent;
+        border-bottom:1px dotted transparent;
+    }
+}
+

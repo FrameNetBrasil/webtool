@@ -1,0 +1,28 @@
+/* Content-level structure */
+.content-container {
+    max-width: @contentMaxWidth;                                         // 1200px
+    margin: 0 auto;
+    padding: @relativeBig;                                               // 32px (was var(--spacing-8))
+    scroll-behavior: smooth;
+
+    &.wide {
+        max-width: 95%;
+    }
+
+    &.narrow {
+        max-width: 800px;
+    }
+
+    &.reading {
+        max-width: 65ch;
+    }
+
+    &.fluid {
+        max-width: 100%;
+        padding: @relativeLarge;                                         // 24px (was var(--spacing-6))
+    }
+
+    &.compact {
+        padding: @relativeMedium;                                        // 16px (was var(--spacing-4))
+    }
+}

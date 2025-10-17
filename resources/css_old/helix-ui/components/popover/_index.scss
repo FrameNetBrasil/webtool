@@ -1,0 +1,130 @@
+@import "../../_vars";
+@import "../../mixins";
+@import "../config";
+
+hx-popover {
+  @extend %hxComponent;
+  @include is-positionable;
+
+  max-width: 32rem; //~512px
+  min-width: 20rem; //~320px
+  z-index: $popover-z-index;
+
+  > hx-popover-head, // DEPRECATED: remove in v1.0.0
+  > header {
+    order: 1;
+  }
+
+  > hx-popover-body, // DEPRECATED: remove in v1.0.0
+  > hx-div {
+    order: 2;
+  }
+
+  > hx-popover-foot, // DEPRECATED: remove in v1.0.0
+  > footer {
+    order: 3;
+  }
+}
+
+// TODO: is there any way to simplify this?
+#hxPopover.hx-popover, // ShadyDOM selector
+hx-popover {
+  flex-direction: column;
+
+  &[open] {
+    display: flex;
+  }
+
+  > header {
+    color: $gray-950;
+    color: var(--hxPopover-header-color, $gray-900);
+    flex-shrink: 0;
+    line-height: 2rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: map-get($space, md);
+    padding-bottom: 0.5rem;
+    text-transform: none;
+  }
+
+  > hx-div:not([scroll]) {
+    overflow: hidden;
+  }
+
+  > hx-div {
+    --hxPaddingLeft: #{map-get($space, md)};
+    --hxPaddingRight: #{map-get($space, md)};
+
+    flex-grow: 1;
+    max-height: 20rem; //~320px
+
+    @include hxDiv-shadyRoot {
+      padding: 0 map-get($space, md);
+    }
+
+    &:first-child {
+      --hxPaddingTop: #{map-get($space, md)};
+
+      @include hxDiv-shadyRoot {
+        padding-top: map-get($space, md);
+      }
+    }
+
+    &:last-child {
+      --hxPaddingBottom: #{map-get($space, md)};
+
+      @include hxDiv-shadyRoot {
+        padding-bottom: map-get($space, md);
+      }
+    }
+  }
+
+  > footer {
+    flex-shrink: 0;
+    padding: map-get($space, md);
+
+    // TODO: replace with .hxButtonSet
+    .hxBtn + .hxBtn {
+      margin-left: map-get($space, md);
+    }
+  }
+}
+
+// DEPRECATED: remove in v1.0.0
+hx-popover-body {
+  display: block;
+  flex-grow: 1;
+  max-height: 20rem; //~320px
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 1.25rem;
+
+  &:first-child {
+    padding-top: 1.25rem;
+  }
+
+  &:last-child {
+    padding-bottom: 1.25rem;
+  }
+}
+
+hx-popover-foot {
+  display: block;
+  flex-shrink: 0;
+  padding: 1.25rem;
+
+  .hxBtn + .hxBtn {
+    margin-left: 1.25rem;
+  }
+}
+
+hx-popover-head {
+  color: $gray-900;
+  color: var(--hxPopover-head-color, $gray-900);
+  display: block;
+  flex-shrink: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1.25rem;
+  text-transform: none;
+}

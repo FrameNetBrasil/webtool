@@ -1,0 +1,120 @@
+.page {
+
+}
+
+.page-header {
+    flex-shrink: 0;
+    padding: @relativeBig;
+    //border-bottom: 1px solid @borderColor;
+    background: @background;
+
+    .page-header-content {
+        .page-area {
+            font-weight: @headerFontWeight;
+        }
+
+        .page-title {
+            //font-family: @fontFamily;
+            font-size: 2rem;
+            font-weight: @headerFontWeight;
+            line-height: @headerLineHeight;
+            color: @textColor;
+            //padding: 0 0 @relative4px 0;
+            padding:0;
+        }
+
+        .page-subtitle {
+
+        }
+    }
+}
+
+.page-header-object {
+    flex-shrink: 0;
+    padding: @relativeBig;
+    background: @background;
+    display: flex;
+    flex-direction: column;
+
+    .page-object {
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .page-object-name {
+            font-size: 2rem;
+            font-weight: @headerFontWeight;
+            line-height: @headerLineHeight;
+            color: @textColor;
+        }
+
+        .page-object-data {
+            display:flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+
+    .page-subtitle {
+
+    }
+
+
+}
+
+
+.page-actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: @relativeMedium 0 0 @relativeMedium;
+}
+
+.page-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: @relativeMedium;
+    scroll-behavior: smooth;
+    scroll-padding-top: 1rem;
+    height:100%;
+
+    &.slide {
+        .ui.container {
+            height: 100%;
+        }
+    }
+
+}
+
+.page-center {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    width:100%;
+}
+
+.page-breadcrumb {
+    padding: @relativeMedium 0 0 @relativeMedium;
+}
+
+.page-browse {
+    display: flex !important;
+    flex-direction: column;
+    height:100%;
+}
+
+.page-report {
+    display: flex !important;
+    flex-direction: column;
+    height:100%;
+}
+.page-edit {
+    display: flex !important;
+    flex-direction: column;
+    height:100%;
+}
+

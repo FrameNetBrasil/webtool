@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AlpineJS Sorting Implementation</title>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <style>
+        .cursor-pointer { cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<!-- AlpineJS Sorting Implementation -->
+<div x-data="{
+    sortColumn: '',
+    sortOrder: '',
+    
+    // Method to handle column sorting
+    handleSort(column) {
+        if (this.sortColumn === column) {
+            // Cycle through: asc -> desc -> none
+            if (this.sortOrder === 'asc') {
+                this.sortOrder = 'desc';
+            } else if (this.sortOrder === 'desc') {
+                this.sortColumn = '';
+                this.sortOrder = '';
+            }
+        } else {
+            // New column selected, start with asc
+            this.sortColumn = column;
+            this.sortOrder = 'asc';
+        }
+        
+        // Update hidden form fields
+        document.getElementById('sort').value = this.sortColumn;
+        document.getElementById('order').value = this.sortOrder;
+    },
+    
+    // Method to get the appropriate icon class
+    getIconClass(column) {
+        if (this.sortColumn !== column) {
+            return 'sort icon';
+        }
+        
+        if (this.sortOrder === 'asc') {
+            return 'sort up icon';
+        } else if (this.sortOrder === 'desc') {
+            return 'sort down icon';
+        }
+        
+        return 'sort icon';
+    }
+}">
+
+    <!-- Hidden form fields -->
+    <input type="hidden" id="sort" name="sort" value="">
+    <input type="hidden" id="order" name="order" value="">
+    
+    <table class="ui selectable striped compact table">
+        <thead>
+            <tr>
+                <th>LU Candidate
+                    <i 
+                        :class="getIconClass('lucandidate')"
+                        class="cursor-pointer"
+                        @click="handleSort('lucandidate')"
+                    ></i>
+                </th>
+                <th>Suggested frame
+                    <i 
+                        :class="getIconClass('suggestedframe')"
+                        class="cursor-pointer"
+                        @click="handleSort('suggestedframe')"
+                    ></i>
+                </th>
+                <th>Created at
+                    <i 
+                        :class="getIconClass('createdat')"
+                        class="cursor-pointer"
+                        @click="handleSort('createdat')"
+                    ></i>
+                </th>
+                <th>Created by
+                    <i 
+                        :class="getIconClass('createdby')"
+                        class="cursor-pointer"
+                        @click="handleSort('createdby')"
+                    ></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Your table rows would go here -->
+            <tr>
+                <td>Sample LU</td>
+                <td>Sample Frame</td>
+                <td>2025-01-01</td>
+                <td>User Name</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Debug info to see current values -->
+    <div style="margin-top: 20px; padding: 10px; background: #f0f0f0;">
+        <strong>Debug Info:</strong><br>
+        Sort Column: <span x-text="sortColumn || 'none'"></span><br>
+        Sort Order: <span x-text="sortOrder || 'none'"></span><br>
+        Hidden Field Values: 
+        <span x-text="'sort=' + document.getElementById('sort').value + ', order=' + document.getElementById('order').value"></span>
+    </div>
+
+</div>
+
+<!-- Alternative compact version for your project -->
+<hr>
+<h3>Compact Version for Your Project:</h3>
+
+<div x-data="{
+    sort: '',
+    order: '',
+    handleSort(col) {
+        if (this.sort === col) {
+            this.order = this.order === 'asc' ? 'desc' : this.order === 'desc' ? '' : 'asc';
+            if (this.order === '') this.sort = '';
+        } else {
+            this.sort = col;
+            this.order = 'asc';
+        }
+        document.getElementById('sort').value = this.sort;
+        document.getElementById('order').value = this.order;
+    }
+}">
+
+    <input type="hidden" id="sort" name="sort" value="">
+    <input type="hidden" id="order" name="order" value="">
+    
+    <table class="ui selectable striped compact table">
+        <thead>
+            <tr>
+                <th>LU Candidate
+                    <i @click="handleSort('lucandidate')" 
+                       :class="sort === 'lucandidate' ? (order === 'asc' ? 'sort up icon' : 'sort down icon') : 'sort icon'"
+                       class="cursor-pointer"></i>
+                </th>
+                <th>Suggested frame
+                    <i @click="handleSort('suggestedframe')" 
+                       :class="sort === 'suggestedframe' ? (order === 'asc' ? 'sort up icon' : 'sort down icon') : 'sort icon'"
+                       class="cursor-pointer"></i>
+                </th>
+                <th>Created at
+                    <i @click="handleSort('createdat')" 
+                       :class="sort === 'createdat' ? (order === 'asc' ? 'sort up icon' : 'sort down icon') : 'sort icon'"
+                       class="cursor-pointer"></i>
+                </th>
+                <th>Created by
+                    <i @click="handleSort('createdby')" 
+                       :class="sort === 'createdby' ? (order === 'asc' ? 'sort up icon' : 'sort down icon') : 'sort icon'"
+                       class="cursor-pointer"></i>
+                </th>
+            </tr>
+        </thead>
+    </table>
+    
+    <!-- Debug for compact version -->
+    <div style="margin-top: 10px; font-size: 12px;">
+        Compact Debug: sort=<span x-text="sort || 'none'"></span>, order=<span x-text="order || 'none'"></span>
+    </div>
+
+</div>
+
+</body>
+</html>

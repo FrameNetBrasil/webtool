@@ -1,0 +1,47 @@
+/// ========== OVERRIDES ==========
+/// - A.K.A. "Shame" File
+/// - Allow !important
+/// ===============================
+
+.hxFigure {
+  // TODO: update this once spacing system is defined
+  margin: 1em 0;
+}
+
+// FIXME: correct paragraph margins
+p {
+  margin: 0;
+
+  // FIXME: this has the potential to throw off alignment
+  // of fixed position elements like tooltips and popovers
+  & + * {
+    margin-top: 0.5rem;
+  }
+}
+
+// semi-transparent top/bottom borders for shadow/highlight
+// appearance w/o adding a lot of 3D depth
+hr.hxDivider {
+  border-color: rgba(black, 0.1) transparent rgba(white, 0.2);
+  border-style: solid;
+  border-width: 1px 0;
+  margin: 0.75rem 0;
+}
+
+// HACK: do one (or both) of the following:
+//
+//  1) add padding helper classes modeled after .hxBox classes to support
+//     modification of horizontal padding
+//
+//    - consumer would need to manually apply a .hxFlush-horizontal class
+//      to a tertiary <hx-file-input> when it's placed inline with text
+//
+//  2) tweak the design specs to place the <hx-file-input> below text
+//
+// This should only apply to <hx-file-input class="hxBtn hxTertiary"> when
+// it appears inline with text in a drop fence.
+hx-drop-fence p hx-file-control hx-file-input.hxBtn.hxTertiary {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+

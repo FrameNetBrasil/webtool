@@ -1,0 +1,258 @@
+@import "./config";
+
+// ========== BASE ELEMENTS ==========
+hx-checkbox {
+  display: inline-block;
+  height: $rax-spacing-400; //design token values are incorrect
+  width: $rax-spacing-400; //design token values are incorrect
+}
+
+// ========== LAYOUT ==========
+hx-checkbox-control {
+  -ms-grid-column-align: start;
+  -ms-grid-columns: auto 1fr;
+  -ms-grid-rows: auto auto;
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas:
+    "ctrl lbl"
+    ".    help";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  justify-items: start;
+
+  > * {
+    margin: 0;
+  }
+
+  > label {
+    // Checkbox v2.0 specs
+    font-size: $rax-component-checkbox-label-default-font-size;
+    color: $rax-component-label-default-color;
+    color: var(--hxCheckbox-label-color, $rax-component-label-default-color);
+    font-weight: $rax-component-checkbox-label-default-font-weight; // normal
+
+    // grid child
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+    grid-area: lbl;
+
+    // grid parent
+    align-items: center;
+    -ms-grid-columns: auto 1fr;
+    -ms-grid-rows: auto;
+    display: -ms-grid;
+    display: grid;
+    grid-template-areas: "facade .";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    grid-gap: 0.5rem;
+    padding: 0;
+
+    > hx-checkbox {
+      -ms-grid-column: 1;
+      -ms-grid-row: 1;
+      display: none;
+      grid-area: facade;
+    }
+  }
+
+  > p {
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+    grid-area: help;
+  }
+
+  > input[type="checkbox"] {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    display: inline-block;
+    grid-area: ctrl;
+    height: 1rem;
+    margin: 0.25rem 0.5rem 0 0; // FIXME: fix with proper inline styling
+    width: 1rem;
+
+    &::-ms-check {
+      box-sizing: border-box;
+      display: block;
+    }
+  }
+}
+
+// ========== PRISTINE ==========
+hx-checkbox {
+  background-color: $rax-component-checkbox-default-background-color;
+  background-color: var(--hxCheckbox-bgcolor, $rax-component-checkbox-default-background-color);
+  border-color: $rax-component-checkbox-default-border-color;
+  border-color: var(--hxCheckbox-border-color, $rax-component-checkbox-default-border-color);
+  border-style: solid; //there is no token for solid
+  border-width: $rax-component-checkbox-base-border-width;
+}
+
+hx-checkbox-control {
+  > p {
+    @include hxHelpText;
+  }
+
+  > input[type="checkbox"] {
+    @include hxCheckboxControl;
+
+    &:focus {
+      @include hxCheckboxControl($pseudo-state: focus);
+
+      ~ label > hx-checkbox {
+        @include hxCheckboxFacade($pseudo-state: focus);
+      }
+    }
+
+    &:hover {
+      @include hxCheckboxControl($pseudo-state: hover);
+    }
+
+    ~ label > hx-checkbox:hover {
+      @include hxCheckboxFacade($pseudo-state: hover);
+    }
+
+    &:checked {
+      ~ label > hx-checkbox {
+        --hxMinus-display: none;
+        --hxTick-display: block;
+      }
+    }
+
+    &:indeterminate {
+      ~ label > hx-checkbox {
+        --hxMinus-display: block;
+        --hxTick-display: none;
+      }
+    }
+
+    &:checked,
+    &:indeterminate {
+      color: $rax-component-checkbox-checked-background-color; //in token bg color is used
+      color: var(--hxCheckbox-indeterminate-color, $rax-component-checkbox-checked-background-color);
+
+      ~ label > hx-checkbox {
+        background-color: $rax-component-checkbox-checked-background-color;
+        background-color: var(--hxCheckbox-indeter-label-bgcolor, $rax-component-checkbox-checked-background-color);
+        border-color: $rax-component-checkbox-checked-border-color;
+        border-color: var(--hxCheckbox-indeterminate-label-bordercolor, $rax-component-checkbox-checked-border-color);
+        color: $rax-color-gray-0; //there is no token for color
+        color: var(--hxCheckbox-indeterminate-label-color, $rax-color-gray-0);
+      }
+    }
+
+    &:valid {
+      ~ label > hx-checkbox:hover {
+        @include hxCheckboxFacade($pseudo-state: null);  // v2.0 specs
+      }
+    }
+  }
+}
+
+// ========== INVALID ==========
+hx-checkbox-control[hx-dirty] > input[type="checkbox"]:invalid,
+hx-checkbox-control.hxInvalid > input[type="checkbox"]:enabled {
+  @include hxCheckboxControl(invalid);
+
+  &:focus {
+    @include hxCheckboxControl(invalid, focus);
+
+    ~ label > hx-checkbox {
+      @include hxCheckboxFacade(invalid, focus);
+    }
+  }
+
+  &:hover {
+    @include hxCheckboxControl(invalid, hover);
+  }
+
+  ~ label > hx-checkbox {
+    @include hxCheckboxFacade(invalid);
+
+    &:hover {
+      @include hxCheckboxFacade(invalid, hover);
+    }
+  }
+
+  // v2.0 specs
+  &:checked,
+  &:indeterminate {
+    color: $rax-color-status-critical-500;
+    color: var(--hxCheckbox-invalid-checked-color, $rax-color-status-critical-500);
+
+    ~ label > hx-checkbox {
+      background-color: $rax-color-status-critical-100;
+      background-color: var(--hxCheckbox-invalid-checked-bgcolor, $rax-color-status-critical-100);
+      border-color: $rax-component-checkbox-invalid-border-color;
+      border-color: var(--hxCheckbox-invalid-checked-label-bordercolor, $rax-component-checkbox-invalid-border-color);
+    }
+  }
+}
+
+// ========== DISABLED ==========
+hx-checkbox-control > input[type="checkbox"]:disabled {
+  @include hxCheckboxControl(disabled);
+
+  &:focus {
+    @include hxCheckboxControl(disabled, focus);
+
+    ~ label > hx-checkbox {
+      @include hxCheckboxFacade(disabled, focus);
+    }
+  }
+
+  &:hover {
+    @include hxCheckboxControl(disabled, hover);
+  }
+
+  ~ label {
+    color: $rax-component-checkbox-label-disabled-color;
+    color: var(--hxCheckbox-disabled-label-color, $rax-component-checkbox-label-disabled-color);
+
+    > hx-checkbox {
+      @include hxCheckboxFacade(disabled);
+
+      &,
+      &:hover {
+        @include hxCheckboxFacade(disabled, hover);
+      }
+    }
+  }
+}
+
+// v2.0 specs
+hx-checkbox-control > input[type="checkbox"]:indeterminate:disabled,
+hx-checkbox-control > input[type="checkbox"]:checked:disabled {
+  ~ label > hx-checkbox {
+    background-color: $rax-component-checkbox-disabled-background-color;
+    background-color: var(--hxCheckbox-disabled-label-bgcolor, $rax-component-checkbox-disabled-background-color);
+    border-color: $rax-component-checkbox-disabled-border-color;
+    border-color: var(--hxCheckbox-disabled-checked-label-bordercolor, $rax-component-checkbox-disabled-border-color);
+    color: $rax-color-gray-0; //there is no token for color
+    color: var(--hxCheckbox-disabled-checked-label-color, $rax-color-gray-0);
+  }
+}
+
+// ----- Modern Browsers -----
+@supports (--modern: true) {
+  hx-checkbox-control {
+    position: relative;
+
+    > label > hx-checkbox {
+      display: inline-block;
+    }
+
+    > p {
+      margin-left: $rax-spacing-600;
+    }
+
+    > input[type="checkbox"] {
+      @include hxInput(visuallyHidden);
+
+      &::-ms-check {
+        display: none;
+      }
+    }
+  }
+}

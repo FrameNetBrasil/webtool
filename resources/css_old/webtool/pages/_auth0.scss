@@ -1,0 +1,31 @@
+.auth0-login {
+    //margin:160px;
+
+    .btn-login {
+        display: block;
+        font-size: 120%;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: 0;
+        border-radius: 4px;
+        background-color: $red-10;
+        color: white;
+        text-align: center;
+        padding: 4px;
+        cursor: pointer;
+        width: 240px;
+    }
+
+    .btn-login:hover {
+        background-color: $red-6;
+    }
+
+    .btn-login:focus {
+        outline: none !important;
+    }
+
+    .btn-login:disabled {
+        background-color: #333;
+        color: #666;
+    }
+}

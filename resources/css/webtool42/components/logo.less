@@ -1,0 +1,27 @@
+/* Logo */
+.logo {
+    font-weight: @bold;
+    font-size: @huge; // 20px
+    color: @secondaryColor;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: @relativeTiny; // 8px
+
+    &:hover {
+        color: @primaryColor;
+        text-decoration: none;
+    }
+
+    .logo-icon {
+        width: @relativeBig; // 32px
+        height: @relativeBig; // 32px
+        background: linear-gradient(135deg, @primaryColor, @primaryColorHover);
+        border-radius: @defaultBorderRadius; // 6px
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: @invertedTextColor;
+        font-weight: @semibold;
+    }
+}

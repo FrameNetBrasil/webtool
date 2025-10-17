@@ -1,0 +1,31 @@
+.wt-card {
+
+    border: 1px solid var(--gray-400);
+    box-shadow: 1px 1px var(--gray-400);
+    .border-radius();
+    .border-color();
+
+    .card-header {
+        .component-header();
+        background-color:var(--gray-100);
+    }
+
+    .card-body {
+        padding: 0.5rem;
+        background-color:var(--gray-50);
+    }
+
+}
+
+.wt-card-plain {
+    .no-border();
+
+    .card-header {
+        .no-border();
+    }
+
+    .card-body {
+        padding: 0.5rem;
+        .no-border();
+    }
+}

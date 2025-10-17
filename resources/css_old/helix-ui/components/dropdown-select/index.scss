@@ -1,0 +1,137 @@
+@import "./config";
+
+// ----- BASE ELEMENTS ---------------
+hx-select {
+  display: block;
+  pointer-events: none;
+}
+
+// ----- RESETS ---------------
+hx-select-control > select {
+  @include select-reset();
+}
+
+// ----- LAYOUT ---------------
+///
+///    1fr
+///  +------------+
+///  | label      | auto
+///  +------------+
+///  | control    | 2rem
+///  +------------+
+///
+hx-select-control {
+  $ctrl-columns: 1fr;
+  $ctrl-rows: auto 2rem;
+
+  -ms-grid-columns: $ctrl-columns;
+  -ms-grid-rows: $ctrl-rows;
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas:
+    "label"
+    "control";
+  grid-template-columns: $ctrl-columns;
+  grid-template-rows: $ctrl-rows;
+
+  // ----- blacklist -----
+  > * {
+    display: none;
+  }
+
+  // ----- whitelist -----
+  > label {
+    $justify: start; // don't stretch!
+
+    -ms-grid-column-align: $justify;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    display: block;
+    grid-area: label;
+    justify-self: $justify;
+  }
+
+  > select,
+  > hx-select {
+    -ms-grid-column: 1;
+    -ms-grid-row: 2;
+    border-radius: 2px;
+    display: block;
+    grid-area: control;
+    margin: 0;
+  }
+
+  > select {
+    border: none;
+    padding-left: 0.75rem;
+    width: 100%; // prevent overflow for lengthy option text
+    // Adjust native trigger for MS browsers (mainly IE)
+    // Edge will obscure it with <hx-select>.
+    &::-ms-expand {
+      padding: 0 0.75rem;
+    }
+  }
+}
+
+// ----- PRISTINE ---------------
+hx-select-control > select {
+  @include hxSelectControl;
+
+  ~ label {
+    @include hxFieldName;
+  }
+
+  ~ hx-select {
+    @include hxSelectFacade;
+  }
+
+  &:focus {
+    @include hxSelectControl($focused: true);
+
+    ~ hx-select {
+      @include hxSelectFacade($focused: true);
+    }
+  }
+}
+
+// ----- DISABLED ---------------
+hx-select-control > select:disabled {
+  @include hxSelectControl(disabled);
+
+  ~ label {
+    @include hxFieldName(disabled);
+  }
+
+  ~ hx-select {
+    @include hxSelectFacade(disabled);
+  }
+
+  &:focus {
+    @include hxSelectControl(disabled, true);
+
+    ~ hx-select {
+      @include hxSelectFacade(disabled, true);
+    }
+  }
+}
+
+// ----- INVALID ---------------
+///
+///  1. Prevent IE from incorrectly matching select:disabled:invalid
+///
+hx-select-control[hx-dirty] > select:enabled:invalid, /* 1 */
+hx-select-control.hxInvalid > select:enabled {
+  @include hxSelectControl(invalid);
+
+  ~ hx-select {
+    @include hxSelectFacade(invalid);
+  }
+
+  &:focus {
+    @include hxSelectControl(invalid, true);
+
+    ~ hx-select {
+      @include hxSelectFacade(invalid, true);
+    }
+  }
+}

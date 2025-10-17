@@ -1,0 +1,65 @@
+/* Loading states */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-loading-overlay);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    backdrop-filter: blur(2px);
+
+    &.dark {
+        background: var(--color-loading-overlay-dark);
+        color: var(--color-text-white);
+    }
+
+    &.transparent {
+        background: transparent;
+    }
+
+    .loading-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-4); // 16px
+
+        .loading-text {
+            font-size: var(--font-size-sm); // 14px
+            color: var(--color-text-secondary);
+            font-weight: var(--font-weight-medium);
+        }
+    }
+}
+
+.loading-spinner {
+    width: var(--spacing-8); // 32px
+    height: var(--spacing-8); // 32px
+    border: 2px solid var(--color-loading-bg);
+    border-top: 2px solid var(--color-loading-spinner);
+    border-radius: var(--radius-full);
+    animation: spin 1s linear infinite;
+
+    &.small {
+        width: var(--spacing-6); // 24px
+        height: var(--spacing-6); // 24px
+    }
+
+    &.large {
+        width: var(--spacing-12); // 48px
+        height: var(--spacing-12); // 48px
+        border-width: 3px;
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

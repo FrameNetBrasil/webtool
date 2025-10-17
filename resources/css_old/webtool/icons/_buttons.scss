@@ -1,0 +1,29 @@
+.wt-button-icon {
+    margin-right: 4px;
+}
+
+.wt-icon-frame__before:before {
+    color: $wt-frame-color;
+    content: $wt-frame-icon;
+}
+
+.wt-icon-lu__before:before {
+    color: $wt-lu-color;
+    content: $wt-lu-icon;
+}
+
+.wt-icon-fe-core__before:before {
+    content: $wt-fe-core-icon;
+}
+
+.wt-icon-fe-core-unexpressed__before:before {
+    content: $wt-fe-core-unexpressed-icon;
+}
+
+.wt-icon-fe-peripheral__before:before {
+    content: $wt-fe-peripheral-icon;
+}
+
+.wt-icon-fe-extra-thematic__before:before {
+    content: $wt-fe-extra-thematic-icon;
+}

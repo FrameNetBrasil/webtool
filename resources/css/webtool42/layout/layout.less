@@ -1,0 +1,68 @@
+/* Main Application Grid */
+.app-layout {
+    display: grid;
+    height: 100vh;
+
+    /* Default desktop layout */
+    grid-template-areas:
+        "header header"
+        "breadcrumb breadcrumb"
+        "main tools"
+        "footer footer";
+    grid-template-columns: 1fr @toolsPanelWidth;
+    grid-template-rows: @headerHeight @breadcrumbHeight 1fr @footerHeight;
+
+    /* Remove gaps for seamless layout */
+    gap: 0;
+}
+
+/* Alternative Layouts */
+.app-layout.no-tools {
+    grid-template-areas:
+        "header header"
+        "main";
+    grid-template-columns: 1fr;
+}
+
+.app-layout.no-sidebar {
+    grid-template-areas:
+        "header header"
+        "main tools";
+    grid-template-columns: 1fr @toolsPanelWidth;
+}
+
+.app-layout.minimal {
+    grid-template-areas:
+        "header"
+        "breadcrumb"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: @headerHeight @breadcrumbHeight 1fr @footerHeight;
+}
+
+/* Full-screen layout for annotation */
+.app-layout.fullscreen {
+    grid-template-areas:
+        "header"
+        "toolbar"
+        "canvas";
+    grid-template-columns: 1fr;
+    grid-template-rows: 3em @toolbarHeight 1fr;                             // (was var(--toolbar-height))
+}
+
+.app-layout.annotation {
+    grid-template-areas:
+        "header header"
+        "breadcrumb annotation-action"
+        "annotation annotation";
+    grid-template-columns: 1fr 256px;
+    grid-template-rows: @headerHeight @breadcrumbHeight 1fr;
+}
+
+.app-layout.annotation-clean {
+    grid-template-areas:
+        "annotation";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}

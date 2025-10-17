@@ -1,0 +1,6 @@
+@import "../../../_vars";
+
+@mixin hxHelpText { // replaces .HelpText()
+  color: $gray-700;
+  font-size: 0.75rem;
+}

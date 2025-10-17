@@ -1,0 +1,23 @@
+.wt-layout-report {
+
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .actions {
+        text-align: right;
+    }
+
+    .main {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+
+        .workArea {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

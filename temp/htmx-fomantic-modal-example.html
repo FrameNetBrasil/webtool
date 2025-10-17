@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMX + Fomantic-UI Modal Example</title>
+    
+    <!-- Fomantic-UI CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.css">
+    
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    
+    <!-- jQuery (required by Fomantic-UI) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Fomantic-UI JS -->
+    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.9.2/dist/semantic.min.js"></script>
+</head>
+<body>
+
+<div class="ui container" style="margin-top: 2rem;">
+    <h1 class="ui header">HTMX + Fomantic-UI Modal Example</h1>
+    
+    <div class="ui segment">
+        <h3>Different Modal Examples:</h3>
+        
+        <!-- Example 1: Basic Modal with Dynamic Content -->
+        <button 
+            class="ui primary button"
+            hx-get="/api/modal/user-details/123"
+            hx-target="#dynamicModal .content"
+            hx-swap="innerHTML"
+            onclick="$('#dynamicModal').modal('show')"
+        >
+            Open User Details Modal
+        </button>
+        
+        <!-- Example 2: Modal with Loading State -->
+        <button 
+            class="ui green button"
+            hx-get="/api/modal/edit-form/456"
+            hx-target="#editModal .content"
+            hx-swap="innerHTML"
+            hx-indicator="#editModal .ui.loader"
+            onclick="$('#editModal').modal('show')"
+        >
+            Open Edit Form Modal
+        </button>
+        
+        <!-- Example 3: Modal that loads content then shows -->
+        <button 
+            class="ui blue button"
+            hx-get="/api/modal/report-data"
+            hx-target="#reportModal .content"
+            hx-swap="innerHTML"
+            hx-on="htmx:afterSwap: $('#reportModal').modal('show')"
+        >
+            Load & Show Report Modal
+        </button>
+        
+        <!-- Example 4: Confirmation Modal with Actions -->
+        <button 
+            class="ui red button"
+            hx-get="/api/modal/confirm-delete/789"
+            hx-target="#confirmModal .content"
+            hx-swap="innerHTML"
+            onclick="$('#confirmModal').modal('show')"
+        >
+            Delete Item (with confirmation)
+        </button>
+    </div>
+</div>
+
+<!-- Modal 1: Basic Dynamic Modal -->
+<div id="dynamicModal" class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        User Details
+    </div>
+    <div class="content">
+        <!-- Content will be loaded here via HTMX -->
+        <div class="ui active centered inline loader"></div>
+        <p>Loading user details...</p>
+    </div>
+    <div class="actions">
+        <div class="ui cancel button">Close</div>
+    </div>
+</div>
+
+<!-- Modal 2: Edit Form Modal with Loading -->
+<div id="editModal" class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        Edit Item
+    </div>
+    <div class="content">
+        <div class="ui active centered inline loader"></div>
+        <p>Loading form...</p>
+    </div>
+    <div class="actions">
+        <div class="ui cancel button">Cancel</div>
+        <div class="ui positive button">Save</div>
+    </div>
+</div>
+
+<!-- Modal 3: Report Modal -->
+<div id="reportModal" class="ui large modal">
+    <i class="close icon"></i>
+    <div class="header">
+        <i class="chart bar icon"></i>
+        Report Data
+    </div>
+    <div class="content">
+        <!-- Content loaded via HTMX -->
+    </div>
+</div>
+
+<!-- Modal 4: Confirmation Modal -->
+<div id="confirmModal" class="ui small modal">
+    <div class="header">
+        <i class="warning sign icon"></i>
+        Confirm Action
+    </div>
+    <div class="content">
+        <!-- Dynamic confirmation content -->
+    </div>
+    <div class="actions">
+        <div class="ui cancel button">Cancel</div>
+        <div class="ui negative button">Confirm</div>
+    </div>
+</div>
+
+<!-- 
+================================================================================
+MOCK API RESPONSES (For demonstration - replace with actual Laravel routes)
+================================================================================
+-->
+
+<script>
+// Mock server responses for demonstration
+document.addEventListener('htmx:configRequest', function(evt) {
+    // Intercept HTMX requests and provide mock responses
+    const url = evt.detail.path;
+    
+    setTimeout(() => {
+        let mockContent = '';
+        
+        if (url.includes('/api/modal/user-details/')) {
+            mockContent = `
+                <div class="ui form">
+                    <h4>User Information</h4>
+                    <div class="field">
+                        <label>Name</label>
+                        <input type="text" value="John Doe" readonly>
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" value="john.doe@example.com" readonly>
+                    </div>
+                    <div class="field">
+                        <label>Role</label>
+                        <div class="ui label">Administrator</div>
+                    </div>
+                </div>
+            `;
+        } else if (url.includes('/api/modal/edit-form/')) {
+            mockContent = `
+                <form class="ui form" hx-put="/api/items/456" hx-target="#editModal .content">
+                    <div class="field">
+                        <label>Item Name</label>
+                        <input type="text" name="name" value="Sample Item" required>
+                    </div>
+                    <div class="field">
+                        <label>Description</label>
+                        <textarea name="description" rows="3">Sample description</textarea>
+                    </div>
+                    <div class="field">
+                        <label>Category</label>
+                        <select name="category" class="ui dropdown">
+                            <option value="">Select Category</option>
+                            <option value="category1">Category 1</option>
+                            <option value="category2" selected>Category 2</option>
+                        </select>
+                    </div>
+                </form>
+            `;
+        } else if (url.includes('/api/modal/report-data')) {
+            mockContent = `
+                <div class="ui statistics">
+                    <div class="statistic">
+                        <div class="value">2,204</div>
+                        <div class="label">Total Users</div>
+                    </div>
+                    <div class="statistic">
+                        <div class="value">3,322</div>
+                        <div class="label">Annotations</div>
+                    </div>
+                    <div class="statistic">
+                        <div class="value">1,040</div>
+                        <div class="label">Active Sessions</div>
+                    </div>
+                </div>
+                <div class="ui divider"></div>
+                <table class="ui celled table">
+                    <thead>
+                        <tr><th>Metric</th><th>Value</th><th>Change</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Daily Active Users</td><td>1,234</td><td class="positive">+5.2%</td></tr>
+                        <tr><td>Completion Rate</td><td>87.3%</td><td class="positive">+2.1%</td></tr>
+                        <tr><td>Error Rate</td><td>0.8%</td><td class="negative">-0.3%</td></tr>
+                    </tbody>
+                </table>
+            `;
+        } else if (url.includes('/api/modal/confirm-delete/')) {
+            mockContent = `
+                <div class="ui warning message">
+                    <div class="header">Are you sure?</div>
+                    <p>This action will permanently delete <strong>Item #789</strong> and cannot be undone.</p>
+                </div>
+                <div class="ui form">
+                    <div class="field">
+                        <label>Type "DELETE" to confirm:</label>
+                        <input type="text" placeholder="DELETE" id="confirmInput">
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Simulate the HTMX response
+        const targetSelector = evt.detail.target || evt.detail.requestConfig.target;
+        const targetElement = document.querySelector(targetSelector);
+        if (targetElement && mockContent) {
+            targetElement.innerHTML = mockContent;
+            
+            // Trigger the htmx:afterSwap event for modals that use it
+            if (url.includes('/api/modal/report-data')) {
+                evt.detail.elt.dispatchEvent(new CustomEvent('htmx:afterSwap'));
+            }
+        }
+    }, 500); // Simulate network delay
+    
+    // Prevent the actual request
+    evt.preventDefault();
+});
+
+// Initialize Fomantic-UI dropdowns after content loads
+document.addEventListener('htmx:afterSwap', function() {
+    $('.ui.dropdown').dropdown();
+});
+</script>
+
+<!-- 
+================================================================================
+LARAVEL IMPLEMENTATION GUIDE
+================================================================================
+
+To implement this in your Laravel project:
+
+1. CREATE ROUTES (routes/web.php):
+   Route::get('/api/modal/user-details/{id}', [UserController::class, 'modalDetails']);
+   Route::get('/api/modal/edit-form/{id}', [ItemController::class, 'modalEditForm']);
+   Route::get('/api/modal/report-data', [ReportController::class, 'modalReportData']);
+   Route::get('/api/modal/confirm-delete/{id}', [ItemController::class, 'modalConfirmDelete']);
+
+2. CREATE CONTROLLER METHODS:
+   public function modalDetails($id) {
+       $user = User::find($id);
+       return view('modals.user-details', compact('user'));
+   }
+   
+   public function modalEditForm($id) {
+       $item = Item::find($id);
+       return view('modals.edit-form', compact('item'));
+   }
+
+3. CREATE BLADE TEMPLATES (resources/views/modals/):
+   - user-details.blade.php
+   - edit-form.blade.php
+   - report-data.blade.php
+   - confirm-delete.blade.php
+
+4. JAVASCRIPT INTEGRATION in your main layout:
+   <script>
+   // Initialize modals after HTMX content loads
+   document.addEventListener('htmx:afterSwap', function() {
+       $('.ui.dropdown').dropdown();
+       $('.ui.form').form({
+           // Your form validation rules
+       });
+   });
+   </script>
+
+5. CSS CONSIDERATIONS:
+   .cursor-pointer { cursor: pointer; }
+   
+   /* Loading state for modals */
+   .modal .content .loader {
+       margin: 2rem auto;
+   }
+
+================================================================================
+-->
+
+</body>
+</html>

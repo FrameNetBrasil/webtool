@@ -1,0 +1,56 @@
+.wt-layout-annotation {
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-grow:1;
+
+    .actions {
+        text-align: right;
+    }
+
+    #editMain {
+        flex-grow:1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #editDetail {
+        flex-grow:1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigationPane {
+        display: flex;
+        flex-flow: column wrap;
+        margin: 0px;
+        align-content: flex-end;
+        width:100%;
+
+        .material-icons-outlined {
+            margin-top: 2px;
+            font-size: 14px;
+            color: var(--wt-text-color);
+        }
+
+        .navigationPane-previous {
+            width: 80px;
+            margin-right: 2px;
+        }
+
+        .navigationPane-next {
+            width: 60px;
+            margin-left: 2px;
+        }
+
+        a {
+            display: inline;
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--wt-text-color);
+            font-weight: 600;
+        }
+    }
+
+}

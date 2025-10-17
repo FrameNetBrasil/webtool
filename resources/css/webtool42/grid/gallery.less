@@ -1,0 +1,28 @@
+/* Gallery grid for images/videos */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: @relativeMedium;                                                // 16px (was var(--spacing-4))
+
+    &.large {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: @relativeLarge;                                             // 24px (was var(--spacing-6))
+    }
+
+    &.small {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: @relativeSmall;                                             // 12px (was var(--spacing-3))
+    }
+
+    &.square {
+        grid-auto-rows: 1fr;
+
+        .gallery-item {
+            aspect-ratio: 1;
+        }
+    }
+
+    &.masonry {
+        grid-template-rows: masonry;
+    }
+}

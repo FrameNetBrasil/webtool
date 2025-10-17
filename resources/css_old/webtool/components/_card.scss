@@ -1,0 +1,85 @@
+.wt-card {
+
+    //@extend %component-border;
+    border: 1px solid $grey-5;
+    @extend %border-radius;
+
+    .card-header {
+        @extend %component-header;
+        background-color:$grey-1;
+        //@extend %border-full;
+    }
+
+    .card-body {
+        padding: 0.5rem;
+        background-color:$grey-1;
+        //@extend %border-down;
+    }
+
+}
+
+.wt-card-plain {
+    @extend %no-border;
+    .card-header {
+        //@extend %component-header;
+        @extend %no-border;
+    }
+
+    .card-body {
+        padding: 0.5rem;
+        @extend %no-border;
+    }
+}
+
+//%card-error-header {
+//    padding: 1rem;
+//    border: $wt-controls-border;
+//    font-weight: bold;
+//}
+//
+//%card-error-body {
+//    padding: 1rem;
+//    @extend %border-down;
+//
+//    a {
+//        color: white;
+//        text-decoration: none;
+//    }
+//}
+//
+//.wt-card-error {
+//    .card-header {
+//        @extend %card-error-header;
+//        color: $grey-1;
+//        background-color: $wt-status-error-color;
+//    }
+//
+//    .card-body {
+//        @extend %card-error-body;
+//    }
+//}
+//
+//.wt-card-warning {
+//    .card-header {
+//        @extend %card-error-header;
+//        color: $grey-10;
+//        background-color: $wt-status-warning-color;
+//    }
+//
+//    .card-body {
+//        @extend %card-error-body;
+//    }
+//}
+//
+//.wt-card-info {
+//    .card-header {
+//        @extend %card-error-header;
+//        color: $grey-10;
+//        background-color: $wt-status-info-color;
+//    }
+//
+//    .card-body {
+//        @extend %card-error-body;
+//    }
+//}
+//

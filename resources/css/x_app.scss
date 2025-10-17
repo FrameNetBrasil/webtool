@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+
+@import "webtool/_colors.less";
+@import "webtool/_variables.less";
+@import "webtool/_placeholders.less";
+
+@import "webtool/easyui/_textbox.less";
+@import "webtool/easyui/_combo.less";
+@import "webtool/easyui/_datagrid.less";
+@import "webtool/easyui/_tree.less";
+
+@import "webtool/colors/_idcolor.less";
+@import "webtool/colors/_elements.less";
+@import "webtool/colors/_relations.less";
+@import "webtool/colors/_annotation.less";
+
+//@import "webtool/layouts/_reset";
+@import "webtool/layouts/_index.less";
+@import "webtool/layouts/_object";
+@import "webtool/pages/_grapher.less";
+
+@import "webtool/icons/_icons.less";
+
+//@import "webtool/components/_form";
+//@import "webtool/components/_datagrid";
+//@import "webtool/components/_combotreegrid";
+//@import "webtool/components/_treegrid";
+//@import "webtool/components/_notify";
+//@import "webtool/components/_tag";
+//@import "webtool/components/_card";
+
+@import "webtool/pages/_auth0.less";
+@import "webtool/pages/_frame.less";
+@import "webtool/pages/_lu";
+@import "webtool/pages/_corpus";
+@import "webtool/pages/_video";
+@import "webtool/pages/_annotation_event.less";
+@import "webtool/pages/_annotation_fe.less";
+@import "webtool/pages/_annotation_dynamic.less";
+@import "webtool/pages/_annotation_fulltext.less";
+@import "webtool/pages/_lexicon";
+
+/*
+
+@import "webtool/colors/_grapher";
+
+@import "webtool/icons/_controls";
+@import "webtool/icons/_menus";
+@import "webtool/icons/_entity";
+@import "webtool/icons/_fe";
+@import "webtool/icons/_actions";
+@import "webtool/icons/_status";
+@import "webtool/icons/_buttons";
+
+
+@import "webtool/components/_messager";
+@import "webtool/components/_cardgrid";
+@import "webtool/components/_card";
+@import "webtool/components/_button";
+@import "webtool/components/_tabs";
+
+
+
+@import "webtool/layouts/_full";
+@import "webtool/layouts/_grapher";
+@import "webtool/layouts/_report";
+@import "webtool/layouts/_dynamic_annotation";
+
+
+@import "webtool/pages/_annotation_fe";
+@import "webtool/pages/_annotation_corpus";
+@import "webtool/pages/annotation_dynamic";
+@import "webtool/pages/_network";
+@import "webtool/pages/_lu";
+@import "webtool/pages/_lexicon";
+*/

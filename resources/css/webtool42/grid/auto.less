@@ -1,0 +1,31 @@
+/* Auto-fit grids with min/max constraints */
+.auto-grid {
+    display: grid;
+    gap: @relativeMedium;                                                // 16px (was var(--spacing-4))
+
+    &.min-150 {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    &.min-200 {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    &.min-250 {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    &.min-300 {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    &.min-400 {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    &.max-4-cols {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        max-width: 1000px;
+    }
+}
+

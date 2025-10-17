@@ -1,0 +1,85 @@
+#graphPane {
+    height: calc(100% - 16px);
+
+    #paper {
+        border: 1px solid lightgray;
+        position: relative;
+        left: 0;
+        right: 0;
+        margin: 8px;
+        //width: calc(100% - 16px) !important;
+        //height: calc(100% - 140px) !important;
+
+        svg {
+            padding: 8px;
+            width: calc(100% - 16px) !important;
+        }
+    }
+}
+
+#svg-pan-zoom-controls {
+    transform: translate(95%, 89%) scale(0.75, 0.75) !important;
+}
+
+#layout-controls-container {
+    position: absolute;
+    height: 32px;
+    bottom: 0;
+    background-color: var(--wt-bg-panel-header);
+    margin: 0 0 8px 8px;
+}
+
+//.wt-layout-grapher {
+//    padding: 0;
+//
+//    .title {
+//        font-size: 1.5rem;
+//        //height: 32px;
+//        padding: 4px 0 4px 0;
+//    }
+//
+//    .options {
+//        //width:100%;
+//        padding-bottom: 8px;
+//        background-color: var(--wt-bg-panel-header);
+//    }
+//
+//    .pane {
+//        /*padding: 8px 0 8px 0;*/
+//        height: calc(100% - 16px);
+//
+//
+//        .graphPane {
+//            height: calc(100% - 16px);
+//
+//            #paper {
+//                border: 1px solid lightgray;
+//                position: relative;
+//                left: 0;
+//                right: 0;
+//                margin: 8px;
+//                //width: calc(100% - 16px) !important;
+//                //height: calc(100% - 140px) !important;
+//
+//                svg {
+//                    padding: 8px;
+//                    width: calc(100% - 16px) !important;
+//                }
+//            }
+//
+//
+//
+//            #svg-pan-zoom-controls {
+//                transform: translate(95%, 89%) scale(0.75, 0.75) !important;
+//            }
+//
+//            #layout-controls-container {
+//                position: absolute;
+//                height: 32px;
+//                bottom: 0;
+//                background-color: var(--wt-bg-panel-header);
+//                margin: 0 0 8px 8px;
+//            }
+//        }
+//    }
+//}

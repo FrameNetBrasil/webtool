@@ -1,0 +1,29 @@
+.app-tools {
+    grid-area: tools;
+    background: @background;
+    border-left: 1px solid @borderColor;
+    overflow-y: hidden;
+}
+
+.app-tools {
+    padding: @relativeTiny 0 0 @relativeTiny;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .ui.accordion {
+        margin-bottom: @relativeTiny;
+
+        .content {
+            margin: 0 !important;
+            //padding:0 !important;
+            padding-top: 0 !important;
+            padding-left: @relativeHuge !important;
+
+            a {
+                font-size: @relativeSmall;
+                color: @textColor !important;
+            }
+        }
+    }
+}

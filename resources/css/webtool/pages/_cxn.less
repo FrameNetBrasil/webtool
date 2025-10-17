@@ -1,0 +1,49 @@
+#cxnReport {
+    .cxnReport__card {
+        margin: 8px 8px 0 0;
+
+        code {
+            color: @textColor;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .card-header {
+            text-align: left;
+        }
+
+        .card-body {
+            background-color: white;
+        }
+    }
+
+    .cxnReport__card--internal {
+        margin-top: 8px;
+
+        .card-header {
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 500;
+
+            * > h3.ui.header {
+                font-size: 1rem;
+            }
+        }
+
+        .fe-fe {
+            color: @colorTheme3;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
+
+.cxnReport__table {
+    border-spacing: 8px;
+}
+
+
+

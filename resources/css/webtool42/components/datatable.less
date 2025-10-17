@@ -1,0 +1,106 @@
+.datatable {
+    overflow-y: auto;
+    background-color: @neutral300;;
+    border-radius: @defaultBorderRadius;
+    box-shadow: @shadowMD;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid @borderColor;
+
+    .header {
+        padding: @mini @small;
+        border-bottom: 1px solid @borderColor;
+
+        .title {
+            margin: 0;
+            font-size: @large;
+            font-weight: @semibold;
+            color: @primaryColor;
+        }
+    }
+
+    .header-search {
+        padding: @mini @small;
+        border-bottom: 1px solid @borderColor;
+        height:3rem;
+    }
+
+
+    .table {
+        overflow-y:auto;
+        overflow-x:auto;
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed !important;
+
+            tbody{
+                display:block;
+                overflow:auto;
+                width:100%;
+            }
+
+            thead, tbody tr {
+                display: table;
+                width: 100%;
+                table-layout: fixed;/* even columns width , fix width of table too*/
+            }
+            thead {
+                background-color: @neutral200;
+                border-bottom: 1px solid @borderColor;
+            }
+
+            .zebra {
+                table tbody tr:nth-child(odd) {
+                    background-color: white;
+
+                    &.subheader {
+                        background-color: @neutral200;
+                    }
+                }
+
+                table tr tr:nth-child(even) {
+                    background-color: @neutral200;
+
+                    &.subheader {
+                        background-color: @neutral300;
+                    }
+                }
+            }
+
+        }
+
+        td {
+            padding: @mini;
+        }
+
+        tr {
+            background-color: white;
+        }
+
+        tr:last-child {
+            border-bottom: 0;
+        }
+
+
+        tr:hover {
+            background-color: @neutral200;
+        }
+
+        th {
+            top: 0;
+            position: sticky;
+            background-color: @neutral200;
+            text-align: left;
+            height: 2rem;
+            line-height: 2rem;
+            padding: @mini;
+        }
+
+        .datatable-action {
+            cursor: pointer;
+            width: 1.5rem;
+        }
+    }
+}

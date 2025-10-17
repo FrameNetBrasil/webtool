@@ -1,0 +1,31 @@
+//
+// ===== Mixins for top nav states =====
+//
+
+// ========== DISABLED ==========
+@mixin __topNavControl--disabled($pseudo-state: null) {
+  cursor: not-allowed;
+
+  hx-icon,
+  p {
+    color: $gray-600;
+    color: var(--hxTopNav-hxTopNavControl-disabled-para-color, $gray-600);
+  }
+  @if $pseudo-state == hover {
+    background-color: $gray-950;
+    background-color: var(--hxTopNav-hxTopNavControl-disabled-hover-bgcolor, $gray-950);
+
+    &::-ms-check {
+      background-color: $gray-100;
+      background-color: var(--hxTopNav-hxTopNavControl-disabled-hover-ie-bgcolor, $gray-100);
+    }
+  }
+}
+
+@mixin hxTopNavControl($state: null, $pseudo-state: null) {
+  @if $state == disabled {
+    @include __topNavControl--disabled($pseudo-state);
+  } @else {
+    @include __topNavControl($pseudo-state);
+  }
+}

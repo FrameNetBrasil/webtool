@@ -1,0 +1,452 @@
+// LU Report Page Specific Styles
+
+// Page header styling with back button
+.page-header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+
+  .page-title-section {
+    flex: 1;
+  }
+
+  .page-actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+
+    .back-button {
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    .page-actions {
+      align-items: flex-end;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// LU metadata section
+.lu-metadata-section {
+  margin-bottom: 1.5rem;
+
+  .page-metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 4px;
+    border: 1px solid rgba(34, 36, 38, 0.1);
+
+    .metadata-left {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+    }
+
+    .metadata-right {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    // Styling for language and ID tags
+    .wt-tag-en, .wt-tag-id {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-metadata {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+  }
+}
+
+// Section header styling for consistent layout
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .section-title {
+    margin: 0 !important;
+  }
+
+  .section-toggle {
+    transition: all 0.3s ease;
+  }
+}
+
+// Definition card styling
+.definition-card {
+  .definition-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .incorporated-fe-section {
+    margin-top: 0;
+
+    .incorporated-fe-label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .incorporated-fe-element {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid rgba(34, 36, 38, 0.15);
+      margin: 1rem 0;
+    }
+  }
+}
+
+// Annotation types navigation styling using Fomantic UI tabs
+.annotation-types-section {
+  // Tab menu styling
+  .ui.tabs.menu {
+    margin-bottom: 1rem;
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 1.5rem;
+
+      .icon {
+        font-size: 1.1rem;
+        opacity: 0.8;
+      }
+
+      &.active {
+        .icon {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  // Tab content styling
+  .ui.tab {
+    min-height: 400px;
+    padding: 1.5rem 0;
+
+    .tab-loading-indicator {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 10;
+
+      p {
+        margin-top: 1rem;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 0.9rem;
+      }
+    }
+
+    .tab-content {
+      transition: opacity 0.3s ease;
+
+      &.htmx-request {
+        opacity: 0.3;
+      }
+    }
+
+    // Style for empty tab content
+    &:empty {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: rgba(0, 0, 0, 0.4);
+
+      &::before {
+        content: "Content will be loaded here";
+        font-size: 1rem;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+// Sidebar navigation styling
+.tools-sidebar {
+  .tools-header {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(34, 36, 38, 0.1);
+
+    .ui.header {
+      margin: 0;
+      font-size: 1rem;
+
+      .icon {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .tools-content {
+    .ui.vertical.menu {
+      margin: 0;
+      border-radius: 0;
+
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+
+        .icon {
+          margin-right: 0.25rem;
+          opacity: 0.7;
+        }
+
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        &.header {
+          font-size: 0.85rem;
+          font-weight: bold;
+          color: rgba(0, 0, 0, 0.6);
+          padding-top: 1rem;
+          padding-bottom: 0.5rem;
+        }
+      }
+
+      .ui.divider {
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .annotation-types-section {
+    .annotation-types-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .app-tools {
+    order: -1;
+    margin-bottom: 1rem;
+
+    .tools-sidebar {
+      .tools-content {
+        .ui.vertical.menu {
+          .item {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.9rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Static Objects section styling
+.static-objects-section {
+  .static-objects-card {
+    .ui.grid {
+      .column {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .datagrid-wrapper {
+      background-color: #fff;
+      
+      .datagrid-container {
+        .ui.table {
+          margin: 0;
+          border: none;
+          
+          tbody {
+            tr {
+              transition: background-color 0.2s ease;
+              
+              &:hover {
+                background-color: rgba(0, 0, 0, 0.03) !important;
+              }
+              
+              &.selected {
+                background-color: rgba(33, 133, 208, 0.1) !important;
+              }
+              
+              td {
+                padding: 0.75rem 1rem;
+                border-top: 1px solid rgba(34, 36, 38, 0.1);
+                
+                &:first-child {
+                  border-left: none;
+                }
+                
+                &:last-child {
+                  border-right: none;
+                }
+              }
+            }
+            
+            tr:first-child td {
+              border-top: none;
+            }
+          }
+        }
+      }
+    }
+
+    .static-objects-image-container {
+      background-color: #fafafa;
+      border: 1px solid rgba(34, 36, 38, 0.15);
+      border-radius: 4px;
+      
+      .ui.placeholder.segment {
+        background-color: transparent;
+        
+        .ui.icon.header {
+          color: rgba(0, 0, 0, 0.4);
+          
+          .icon {
+            color: rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Dynamic Objects section styling
+.dynamic-objects-section {
+  .dynamic-objects-card {
+    .ui.grid {
+      .column {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    .dynamic-documents-section {
+      .datagrid-wrapper {
+        background-color: #fff;
+        
+        .datagrid-container {
+          .ui.table {
+            margin: 0;
+            border: none;
+            
+            tbody {
+              tr {
+                transition: background-color 0.2s ease;
+                
+                &:hover {
+                  background-color: rgba(0, 0, 0, 0.03) !important;
+                }
+                
+                &.selected {
+                  background-color: rgba(33, 133, 208, 0.1) !important;
+                }
+                
+                td {
+                  padding: 0.5rem 0.75rem;
+                  border-top: 1px solid rgba(34, 36, 38, 0.1);
+                  font-size: 0.9rem;
+                  
+                  &:first-child {
+                    border-left: none;
+                  }
+                  
+                  &:last-child {
+                    border-right: none;
+                  }
+                }
+              }
+              
+              tr:first-child td {
+                border-top: none;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .dynamic-objects-list {
+      background-color: #fff;
+      
+      .ui.placeholder.segment {
+        background-color: transparent;
+        
+        .ui.icon.header {
+          color: rgba(0, 0, 0, 0.4);
+          font-size: 0.9rem;
+          
+          .icon {
+            color: rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+
+    .dynamic-video-container {
+      .video-js {
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      
+      .info {
+        margin-top: 0.5rem;
+        
+        .ui.label {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
+
+// Ensure proper layout flow
+.lu-metadata-section,
+.definition-section,
+.annotation-types-section,
+.static-objects-section,
+.dynamic-objects-section {
+  clear: both;
+
+  .section-content {
+    transition: all 0.3s ease;
+  }
+
+  .section-content.collapsed {
+    display: none;
+  }
+}

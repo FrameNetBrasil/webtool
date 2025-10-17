@@ -1,0 +1,82 @@
+/*
+ Color elements
+ */
+
+.color_target {
+    color: white !important;
+    background-color: black !important;
+}
+
+.color_frame {
+    color: $red-10 !important;
+    fill: $red-10 !important;
+    stroke: $red-10 !important;
+}
+
+.color_frame--text {
+    fill: white !important;
+}
+
+.color_qla_agentive {
+    color: $pink !important;
+}
+
+.color_qla_agentive--text {
+    color: $pink !important;
+}
+
+.color_qla_context {
+    color: $yellow-9 !important;
+}
+.color_qla_context--text {
+    color: $yellow-9 !important;
+}
+
+.color_qla_telic {
+    color: $teal-4 !important;
+}
+.color_qla_telic--text {
+    color: $teal-4 !important;
+}
+
+
+.color_qla_constitutive {
+    color: $green !important;
+}
+.color_qla_constitutive--text {
+    color: $green !important;
+}
+
+.color_qla_formal {
+    color: $deep-purple !important;
+}
+
+.color_qla_formal--text {
+    color: $deep-purple !important;
+}
+
+
+.color_generic {
+    color: $cyan-10 !important;
+}
+
+.color_lexicon {
+    color: $blue-10 !important;
+}
+
+.color_lu {
+    color: $blue-10 !important;
+}
+.color_corpus {
+    color: $blue-grey-5 !important;
+}
+.color_document {
+    color: $blue-grey-5 !important;
+}
+.color_semantictype {
+    color: $orange-10 !important;
+}
+
+.color_constraint {
+    color: $purple-10 !important;
+}

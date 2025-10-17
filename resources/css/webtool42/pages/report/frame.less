@@ -1,0 +1,381 @@
+// Frame Report Page Specific Styles
+
+// Page header styling with back button
+.page-header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+
+  .page-title-section {
+    flex: 1;
+  }
+
+  .page-actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+
+    .back-button {
+      font-size: 0.9rem;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+
+    .page-actions {
+      align-items: flex-end;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// Frame metadata section
+.frame-metadata-section {
+  margin-bottom: 1.5rem;
+
+  .page-metadata {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0.5rem 0;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: 4px;
+    border: 1px solid rgba(34, 36, 38, 0.1);
+
+    .metadata-left {
+      display: flex;
+      gap: 0.25rem;
+      flex-wrap: wrap;
+    }
+
+    .metadata-right {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+
+    // Subtle styling for domain and type tags
+    .wt-tag-domain {
+      background-color: #f8f9fa !important;
+      color: #495057 !important;
+      font-size: 0.85rem;
+      border: 1px solid #dee2e6 !important;
+    }
+
+    .wt-tag-type {
+      background-color: #f8f9fa !important;
+      color: #495057 !important;
+      font-size: 0.85rem;
+      border: 1px solid #dee2e6 !important;
+    }
+
+    // Existing ID and EN tag styling
+    .wt-tag-id, .wt-tag-en {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .page-metadata {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+  }
+}
+
+// Section header styling for consistent layout
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .section-title {
+    margin: 0 !important;
+  }
+
+  .section-toggle {
+    transition: all 0.3s ease;
+  }
+}
+
+.frame-elements-section {
+  .fe-sections {
+    .fe-section {
+      margin-bottom: 1.5rem;
+
+      .section-card {
+        .data-card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .data-card-title h2 {
+            margin: 0;
+          }
+
+          .section-toggle {
+            transition: all 0.3s ease;
+          }
+        }
+
+        .section-content {
+          margin-top: 1rem;
+
+          .fe-cards-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: 1fr;
+          }
+        }
+      }
+    }
+  }
+}
+
+// FE Card specific styles
+.fe-card {
+  .data-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .expand-toggle {
+    transition: all 0.3s ease;
+  }
+}
+
+// Hero card styling
+.hero-card {
+  .data-card-title .header {
+    font-size: 1.5rem;
+  }
+
+  .frame-description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+}
+
+// Stats card styling
+.stats-section {
+    .stats-card {
+        .data-card-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+
+            .stat-item {
+                text-align: center;
+
+                .stat-value {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    color: #333;
+                }
+
+                .stat-label {
+                    font-size: 0.8rem;
+                    color: #666;
+                    margin-top: 0.25rem;
+                }
+            }
+        }
+    }
+}
+
+// Relations card styling
+.relations-card {
+  .relations-container {
+    .relation-type-section {
+      margin-bottom: 1.5rem;
+
+      .relation-type-header h4 {
+        margin-bottom: 0.5rem;
+      }
+
+      .relation-frames {
+        .relation-frame-btn {
+          margin: 0.2rem;
+        }
+      }
+    }
+  }
+}
+
+// Lexical units card styling
+.lexical-units-card {
+  .lexical-units-container {
+    .pos-section {
+      margin-bottom: 1.5rem;
+
+      .pos-header h4 {
+        margin-bottom: 0.5rem;
+      }
+
+      .pos-lexical-units {
+        .lu-btn {
+          margin: 0.2rem;
+        }
+      }
+    }
+  }
+}
+
+// Visual Units section styling
+.visual-units-section {
+  .datagrid-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    .datagrid-container {
+      border: none;
+
+      .ui.table {
+        margin: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-bottom: none;
+        min-width: 100%;
+      }
+
+      .ui.table tbody tr:first-child td {
+        border-top: none;
+      }
+
+      .ui.table tbody tr:last-child td {
+        border-bottom: none;
+      }
+
+      .ui.table tbody tr:hover {
+        background-color: rgba(0, 0, 0, 0.05) !important;
+      }
+
+      .ui.table tbody tr.selected {
+        background-color: rgba(33, 133, 208, 0.1) !important;
+      }
+    }
+  }
+
+  .visual-units-image-container {
+    border: none;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+
+    .ui.placeholder.segment {
+      border: none;
+      border-radius: 0;
+      background-color: transparent;
+
+      .ui.icon.header {
+        color: rgba(0, 0, 0, 0.4);
+
+        .icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    // Style for flexible image container
+    .flexible-image-container {
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 280px;
+
+      .image-wrapper {
+        max-width: 100%;
+        width: auto;
+
+        img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          border-radius: 4px;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          transition: opacity 0.2s ease-in-out;
+        }
+
+        // Ensure bounding boxes scale with image
+        .bbox {
+          box-sizing: border-box;
+          transition: all 0.1s ease;
+        }
+      }
+    }
+
+    // Legacy support for other content
+    > div:not(.ui.placeholder.segment):not(.flexible-image-container) {
+      padding: 1rem;
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  .ui.grid > .column {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  // Ensure the grid adjusts to content height
+  .ui.grid {
+    align-items: flex-start;
+  }
+
+  // Ensure proper flow and no overlap
+  margin-top: 1rem;
+  clear: both;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .frame-elements-section {
+    .fe-sections {
+      .section-card {
+        .data-card-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .stats-card {
+    .data-card-stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .visual-units-section {
+    .grid {
+      .col-4, .col-8 {
+        width: 100% !important;
+      }
+    }
+  }
+}

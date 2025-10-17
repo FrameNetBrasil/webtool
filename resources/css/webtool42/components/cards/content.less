@@ -1,0 +1,20 @@
+.content-card {
+    .content-card-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity @transitionNormal;
+    }
+
+    .image:hover .content-card-overlay {
+        opacity: 1;
+    }
+
+    .content-card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: @relativeMini;
+    }
+}

@@ -1,0 +1,171 @@
+.wt-layout-dynamic-annotation {
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-grow:1;
+
+    .actions {
+        text-align: right;
+    }
+
+    .edit {
+
+        background-color: var(--wt-bg-panel-body);
+
+        .editHeader {
+            padding-top: var(--wt-mini-unit);
+            padding-right: var(--wt-mini-unit);
+        }
+
+        .description {
+            font-size: 0.875rem;
+            height: var(--wt-row-detail-unit);
+            line-height: var(--wt-row-detail-unit);
+            padding-left: var(--wt-mini-unit);
+        }
+    }
+
+    .meta {
+        padding: var(--wt-mini-unit) 0 0 var(--wt-mini-unit);
+        height: var(--wt-row-control-unit);
+        background-color: var(--wt-bg-pane-nav);
+
+        .options {
+            border-bottom: 1px solid var(--wt-border-panel-header);
+        }
+    }
+
+    .main {
+        height: 100%;
+
+        .video {
+            width: 880px;
+            height: 560px;
+            box-sizing: border-box;
+            padding: var(--wt-unit);
+
+            .vjs-control-bar {
+                bottom: -30px;
+                opacity: 1 !important;
+                display: flex !important;
+            }
+
+            .vjs-playback-rate {
+                z-index: 10;
+            }
+
+            .info {
+                height: 32px;
+                line-height: 32px;
+                background-color: var(--wt-bg-pane-nav);
+                width: 852px;
+                margin-top: 30px;
+            }
+        }
+
+        .controls {
+            padding: var(--wt-mini-unit);
+
+            .btn-control {
+                border: 0px;
+                background-color: $wt-primary;
+                color: white;
+                cursor:pointer;
+
+                .label {
+                    color: white;
+                }
+
+            }
+
+
+            .btn-control:disabled {
+                border: 0px;
+                background-color: var(--wt-grey-4);
+                color: var(--wt-grey-8);
+                cursor:default;
+
+                .label {
+                    color: var(--wt-grey-8);
+                }
+            }
+
+            .btn-option {
+                border: 0px;
+                background-color: $wt-secondary;
+                color: white;
+                cursor:pointer;
+
+                .label {
+                    color: white;
+                }
+
+            }
+
+
+            .btn-option:disabled {
+                border: 0px;
+                background-color: var(--wt-grey-4);
+                color: var(--wt-grey-8);
+                cursor:default;
+
+                .label {
+                    color: var(--wt-grey-8);
+                }
+            }
+            .label {
+                line-height:18px;
+            }
+
+        }
+
+        .gridObjectSentence {
+            box-sizing: border-box;
+            height: 464px;
+            width: 100%;
+            padding: var(--wt-unit) var(--wt-unit) 0 0;
+
+            #dynamicModeGrid {
+                height: 100%;
+
+                table {
+                    font-size: 0.875rem;
+                }
+
+                #dynamicModeTabs {
+                    #containerTableObjects {
+                        width: calc(100vw - 920px);
+                        overflow-x: auto;
+                        height: 400px;
+                    }
+                    #containerTableSentences {
+                        width: calc(100vw - 920px);
+                        overflow-x: auto;
+                        height: 400px;
+                    }
+                }
+            }
+
+        }
+
+        .object {
+            width: calc(100vw - 920px);
+        }
+
+        #boxesContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 852px;
+            height: 480px;
+        }
+    }
+
+    .new {
+        height: calc(100% - 0px);
+        padding: var(--wt-unit);
+        background-color: var(--wt-bg-panel-header);
+    }
+
+}

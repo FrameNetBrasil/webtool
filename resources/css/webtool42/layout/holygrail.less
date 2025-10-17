@@ -1,0 +1,32 @@
+/* Holy grail layout (header, footer, sidebar, main) */
+.holy-grail {
+    display: grid;
+    min-height: 100vh;
+    grid-template-areas:
+        "header header header"
+        "sidebar main aside"
+        "footer footer footer";
+    grid-template-columns: @sidebarWidthNarrow 1fr 200px;               // 250px (was var(--sidebar-width-narrow))
+    grid-template-rows: auto 1fr auto;
+
+    .hg-header {
+        grid-area: header;
+    }
+
+    .hg-sidebar {
+        grid-area: sidebar;
+    }
+
+    .hg-main {
+        grid-area: main;
+    }
+
+    .hg-aside {
+        grid-area: aside;
+    }
+
+    .hg-footer {
+        grid-area: footer;
+    }
+}
+

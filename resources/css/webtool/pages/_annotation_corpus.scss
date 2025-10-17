@@ -1,0 +1,175 @@
+.wt-annotation-corpus {
+    .annotationsContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        font-size: 20px;
+        padding: 1rem;
+        flex-wrap: wrap;
+        line-height: 2;
+        font-size: 0.875rem;
+
+        .word {
+            padding: 0 2px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+    }
+/*
+    .line {
+        top: 30px;
+        left: -1px;
+        width: calc(100% + 4px);
+        height: 3px;
+        position: absolute;
+        background: black;
+        z-index: 1;
+    }
+
+    .label {
+        top: 32px;
+        left: -1px;
+        padding: 2px 3px;
+        z-index: 10;
+        position: absolute;
+        font-size: 0.6em;
+        background: black;
+        font-weight: bold;
+        font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+        line-height: 1;
+        border-radius: 1px;
+        //text-transform: uppercase;
+    }
+
+
+    .word::selection {
+        background-color: #ffe184;
+    }
+
+    .target {
+        color: #FFFFFF !important;
+        background-color: #222 !important;
+    }
+
+    .hasFE {
+        font-weight: 600;
+    }
+*/
+    .hasLU {
+        font-weight: normal;
+        cursor: pointer;
+        color: #000 !important;
+        background-color: $grey-3 !important;
+        border-color: $grey-5;
+    }
+
+    .hasAS {
+        font-weight: normal;
+        cursor: default;
+        color: #FFFFFF !important;
+        background-color: #222 !important;
+        border-color: #222;
+    }
+
+    #workArea {
+        height: 100%;
+    }
+
+    #corpusAnnotationPane {
+        font-family:$rax-font-family-mono;
+
+        .panel-body {
+            font-size: 0.875rem;
+        }
+
+        .niDiv {
+            margin-right:1px;
+            padding:0px 2px;
+            cursor:pointer;
+        }
+        .niBtn {
+            display:inline-block;
+            font-size:0.75rem;
+            border: 1px solid $blue-500;
+            margin-left:$wt-unit;
+            height:18px;
+            cursor:pointer;
+            color: $blue-500;
+            padding-left:1px;
+            padding-right:1px;
+        }
+
+        .datagrid-row-selected,
+        .datagrid-row-checked {
+            background-color: transparent;
+        }
+
+        .layerSelected {
+            background-color: transparent;
+        }
+
+        .layerTarget {
+            background-color: #e1e1e8;
+        }
+
+        .layerGFPT {
+            background-color: $grey-2;
+        }
+
+        .cellTarget {
+            background-color: $grey-2;
+        }
+
+        .cellEmpty {
+            cursor:pointer;
+        }
+
+        .cellFilled {
+            cursor:pointer;
+        }
+
+        .cellGFPT {
+            cursor:default;
+        }
+
+        .cellSelected div {
+            background-color: #CCC;
+            cursor:pointer;
+            color: black;
+            opacity: 0.9;
+            background-size: 5px 5px;
+            background-image: repeating-linear-gradient(45deg, #CCC 0, #CCC 1px, white 0, white 50%);
+        }
+
+    }
+}
+
+.popover {
+}
+.popover {
+    max-width: 28rem;
+
+    .container {
+        padding: 1rem;
+        background-color: $grey-2;
+
+        .itemMenu {
+            cursor:pointer;
+            padding-left:4px;
+            padding-right:4px;
+            font-weight:600;
+            font-size: 0.875rem;
+
+        }
+        .clear {
+            cursor:pointer;
+            border: 1px solid $wt-status-danger;
+        }
+
+    }
+
+}
+
+

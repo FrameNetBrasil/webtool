@@ -1,0 +1,314 @@
+.fullTextAnnotationPane {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    gap: 0.5rem;
+
+    .header {
+        display: flex;
+        flex-flow: row;
+
+        .tag {
+            text-align: left;
+            padding-left: 1rem;
+        }
+
+        .navigation {
+            text-align: right;
+            flex-grow: 1;
+
+            .previous {
+                display: inline-block;
+
+            }
+
+            .next {
+                display: inline-block;
+
+            }
+
+            a {
+                display: inline;
+                font-size: 14px;
+                text-decoration: none;
+                color: var(--wt-text-color);
+                font-weight: 600;
+            }
+        }
+    }
+
+    .annotations {
+            flex-grow: 1;
+            display: flex;
+            flex-flow: column;
+            gap: 0.5rem;
+
+            .hasLU {
+                cursor: pointer;
+            }
+
+            .hasAS {
+                cursor: pointer;
+                border: 0;
+                color: white !important;
+                background-color: $grey-10 !important;
+            }
+
+            .workArea {
+                display: flex;
+                flex-flow: column;
+                height: 100%;
+                gap: 0.5rem;
+                flex-grow: 1;
+
+                .annotationSet {
+
+                    .word {
+                        display: inline-block;
+                        position: relative;
+                        z-index: 1;
+                    }
+
+                    .word::selection {
+                        background-color: #ffe184;
+                    }
+
+                    .target {
+                        color: #FFFFFF !important;
+                        background-color: #222 !important
+                    }
+
+                    .hasFE {
+                        font-weight: 600;
+                    }
+
+                    .layers {
+                        width: 64px;
+                        position:relative;
+                        margin-left:8px;
+                        padding-left:8px;
+                        border-left: 2px solid $grey-3;
+
+                        div {
+                            //left: 8px;
+                            //width: calc(100%);
+                            height: 24px;
+                            //position: absolute;
+                            //z-index: 1;
+                        }
+                    }
+
+
+                    .annotationSentence {
+                        flex-grow: 1;
+                        width:100%;
+                        overflow-x:auto;
+
+                        .rowWord {
+                            display: flex;
+                            flex-direction: row;
+                            //flex-wrap: wrap;
+                            justify-content: left;
+                            height: auto;
+                            //margin-bottom: 2rem;
+                            font-family: "Noto Sans Mono", monospace;
+                            font-optical-sizing: auto;
+                            font-style: normal;
+                            font-variation-settings: "wdth" 75;
+
+
+                            .colWord {
+                                font-size: 1.25rem;
+                                padding: 0 0;
+                                background-color:$grey-3;
+                            }
+
+                            .colSpace {
+                                font-size: 1.25rem;
+                                width: 0.75rem;
+
+                                .word {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .rowAnnotation {
+                            display: flex;
+                            flex-direction: row;
+                            //flex-wrap: wrap;
+                            justify-content: left;
+                            height: auto;
+                            //margin-bottom: 2rem;
+                            font-family: "Noto Sans Mono", monospace;
+                            font-optical-sizing: auto;
+                            font-style: normal;
+                            font-variation-settings: "wdth" 75;
+
+                            -webkit-user-select: none; /* Safari */
+                            -ms-user-select: none; /* IE 10 and IE 11 */
+                            user-select: none; /* Standard syntax */
+
+
+                            .colWord {
+                                font-size: 1.25rem;
+                                padding: 0 0;
+                                background-color:$grey-3;
+                                position:relative;
+
+                                .label {
+                                    height:24px;
+                                    position:relative;
+
+                                    .line {
+                                        //top: 30px;
+                                        //left: 0px;
+                                        width: calc(100%);
+                                        height: 3px;
+                                        //position: absolute;
+                                        background: black;
+                                        z-index: 1;
+                                    }
+                                }
+                            }
+
+                            .colSpace {
+                                font-size: 1.25rem;
+                                padding: 0 0;
+                                width: 0.75rem;
+                                position:relative;
+
+                                .label {
+                                    //width: 100%;
+                                    height:24px;
+                                    position:relative;
+
+                                    .line {
+                                        //top: 30px;
+                                        //left: 0px;
+                                        width: calc(100%);
+                                        height: 3px;
+                                        //position: absolute;
+                                        background: black;
+                                        z-index: 1;
+                                    }
+                                }
+                            }
+                        }
+
+
+
+
+                    }
+
+                    .annotationNI {
+                        .rowNI {
+                            display: flex;
+                            flex-direction: column;
+                            //flex-wrap: wrap;
+                            //justify-content: left;
+                            //height: auto;
+                            //margin-bottom: 2rem;
+
+                            .colNI {
+                                cursor: pointer;
+                                width: 8rem;
+                                overflow-x: hidden;
+                                position:relative;
+
+                                .ni {
+                                    height:24px;
+                                    position:relative;
+                                    //font-weight: bold;
+                                    //padding: 0 2px;
+                                    //display: inline-block;
+                                    //position: relative;
+                                    //z-index: 1;
+
+                                }
+                                .label {
+                                    height:24px;
+                                    position:relative;
+
+                                    .line {
+                                        //top: 30px;
+                                        //left: 0px;
+                                        width: calc(100%);
+                                        height: 3px;
+                                        //position: absolute;
+                                        background: black;
+                                        z-index: 1;
+                                    }
+                                }
+
+                                .ni::selection {
+                                    background-color: #ffe184;
+                                }
+                            }
+                        }
+
+                    }
+
+                    .feLabel {
+                        top: 32px;
+                        left: -1px;
+                        padding: 2px 3px;
+                        z-index: 10;
+                        position: absolute;
+                        font-size: 0.75rem;
+                        background: black;
+                        font-weight: bold;
+                        font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+                        line-height: 1;
+                        border-radius: 1px;
+                        //text-transform: uppercase;
+                    }
+                }
+
+                .gridLabels {
+                    flex-grow: 1;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    height: 1px;
+                    overflow: auto;
+                    padding: 8px 8px 8px 1px;
+
+                    .labels {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        height:100%;
+
+                        .ui.card {
+                            margin: 0;
+                            height:100%;
+                        }
+
+                        .rowFE {
+                            display: flex;
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            justify-content: left;
+                            height:100%;
+
+                            .colFE {
+                                position: relative;
+                                margin: 0 0.5rem 0.5rem 0;
+
+                                button {
+                                    border: 0;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                .ui.secondary.menu {
+                    margin: 0;
+                }
+
+            }
+    }
+}
+

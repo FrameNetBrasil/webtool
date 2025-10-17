@@ -1,0 +1,339 @@
+.app-header {
+    grid-area: header;
+    //background: @primaryBackground;                                         // (was var(--color-bg-primary))
+    //border-bottom: 1px solid @borderColor;                             // (was var(--color-border-primary))
+    //display: flex;
+    //align-items: center;
+    //padding: 0 @relativeLarge;                                           // 24px (was var(--spacing-6))
+    //z-index: @zIndexSticky;                                              // (was var(--z-sticky))
+}
+
+/* Header Component */
+.app-header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 0;
+    background: #080E33 !important;
+    height: @headerHeight;
+
+
+    //.ui.menu {
+    //    border-radius: 0;
+    //    background: #080E33 !important;
+    //
+    //
+    //    //a.item {
+    //    //    &:hover {
+    //    //        color: @white;
+    //    //    }
+    //    //}
+    //
+    //    .item {
+    //        color: @white;
+    //        padding: @relativeSmall @relativeLarge;
+    //
+    //        &:hover {
+    //            color: @white;
+    //        }
+    //
+    //        &.brand {
+    //            //padding: @relative8px;
+    //
+    //            .logo {
+    //                width: 32px;
+    //                text-align: center;
+    //            }
+    //
+    //            .title a {
+    //                color: @white;
+    //                font-size: @relativeLarge;
+    //            }
+    //        }
+    //
+    //
+    //    }
+    //}
+
+
+
+    .header-left {
+        display: flex;
+        align-items: center;
+        gap: @relativeSmall; // 16px (was @relative4px)
+        flex-shrink: 0;
+        height: @headerHeight;
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: @relativeSmall;
+            padding-right: @relativeLarge;
+
+            .logo {
+                padding-left: @relativeSmall;
+            }
+
+            .title {
+                font-size: @relativeLarge;
+                font-weight: @semibold;
+
+                a {
+                    color: @white;
+                }
+            }
+        }
+
+        .menu {
+            display: flex;
+            align-items: center;
+            gap: @relativeSmall;
+
+            .item {
+                a {
+                    color: @white;
+                }
+            }
+
+        }
+    }
+
+    .header-center {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        max-width: 600px;
+        margin: 0 @relativeBig; // 32px (was @mini)
+
+        //.search-bar {
+        //    width: 100%;
+        //    max-width: 400px;
+        //
+        //    input {
+        //        //background: @inputBackground; // (was var(--color-input-bg-alt))
+        //        //border: 1px solid @borderColor; // (was var(--color-input-border))
+        //        //border-radius: @defaultBorderRadius;; // 8px (was @defaultBorderRadius)
+        //        //padding: (@inputVerticalPadding - @lineHeightOffset) @inputHorizontalPadding; // 12px 16px (was @relative4px @relative4px)
+        //        //font-size: @fontSize; // 14px (was @small)
+        //        //transition: all @transitionFast; // (was var(--transition-fast))
+        //
+        //        &:focus {
+        //            //background: @primaryBackground; // (was @primaryBackground)
+        //            //border-color: @focusedFormBorderColor; // (was var(--color-input-focus))
+        //            //box-shadow: none; //0 0 0 @focusRingWidth fade(@focusRingColor, @focusRingOpacity); // (was @focusRingColor)
+        //        }
+        //
+        //        &::placeholder {
+        //            //color: @inputPlaceholderColor; // (was var(--color-input-placeholder))
+        //        }
+        //    }
+        //
+        //    .ui.input {
+        //        width: 100%;
+        //
+        //        input {
+        //            //border-radius: @defaultBorderRadius; // 8px
+        //        }
+        //
+        //        &.icon input {
+        //            //padding-left: @relative40px; // 40px (was @relative10px)
+        //        }
+        //
+        //        > i.icon {
+        //            //color: @inputPlaceholderColor; // (was var(--color-input-placeholder))
+        //        }
+        //    }
+        //}
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        //gap: @relativeSmall; // 12px (was @relative4px)
+        flex-shrink: 0;
+
+
+        .ui.item {
+            line-height: @headerHeight;
+            height: @headerHeight;
+            color: @white;
+            padding-right:@relativeSmall;
+        }
+
+        .ui.input {
+
+            input {
+                padding-top: @relative4px;
+                padding-bottom: @relative4px;
+            }
+        }
+
+
+        //.notification-bell {
+        //    position: relative;
+        //
+        //    &.success {
+        //        border-left: 4px solid @positiveColor; // (was var(--color-success))
+        //    }
+        //
+        //    &.error {
+        //        border-left: 4px solid @negativeColor; // (was var(--color-error))
+        //    }
+        //
+        //    &.warning {
+        //        border-left: 4px solid @warningColor; // (was var(--color-warning))
+        //    }
+        //
+        //    &.info {
+        //        border-left: 4px solid @infoColor; // (was var(--color-info))
+        //    }
+        //
+        //    .toast-content {
+        //        display: flex;
+        //        align-items: flex-start;
+        //        gap: @relativeSmall; // 12px (was @relative4px)
+        //    }
+        //
+        //    .toast-icon {
+        //        width: @relative20px; // 20px (was var(--spacing-5))
+        //        height: @relative20px; // 20px (was var(--spacing-5))
+        //        flex-shrink: 0;
+        //        margin-top: @relativeMini; // 4px (was @relative1px)
+        //
+        //        &.success {
+        //            color: @positiveColor; // (was var(--color-success))
+        //        }
+        //
+        //        &.error {
+        //            color: @negativeColor; // (was var(--color-error))
+        //        }
+        //
+        //        &.warning {
+        //            color: @warningColor; // (was var(--color-warning))
+        //        }
+        //
+        //        &.info {
+        //            color: @infoColor; // (was var(--color-info))
+        //        }
+        //    }
+        //
+        //    .toast-message {
+        //        flex: 1;
+        //
+        //        .toast-title {
+        //            font-weight: @semibold; // (was @semibold)
+        //            color: @primaryColor; // (was @primaryColor)
+        //            margin-bottom: @relativeMini; // 4px (was @relative1px)
+        //            font-size: @small; // 14px (was @small)
+        //        }
+        //
+        //        .toast-description {
+        //            font-size: @tiny; // 12px (was @tiny)
+        //            color: @secondaryColor; // (was @secondaryColor)
+        //            line-height: @lineHeight; // (was var(--line-height-normal))
+        //        }
+        //    }
+        //
+        //    .toast-close {
+        //        background: none;
+        //        border: none;
+        //        color: @secondaryColor; // (was @tertiaryColor)
+        //        cursor: pointer;
+        //        padding: @relativeMini; // 4px (was @relative1px)
+        //        margin: -@relativeMini -@relativeMini -@relativeMini @relativeTiny; // -4px -4px -4px 8px
+        //        border-radius: @defaultBorderRadius; // 4px (was @defaultBorderRadius)
+        //        transition: all @transitionFast; // (was var(--transition-fast))
+        //
+        //        &:hover {
+        //            color: @secondaryColor; // (was @secondaryColor)
+        //            background: @secondaryBackground; // (was @primaryBackground)
+        //        }
+        //    }
+        //
+        //    .toast-actions {
+        //        margin-top: @relativeSmall; // 12px (was @relative4px)
+        //        display: flex;
+        //        gap: @relativeTiny; // 8px (was @relative2px)
+        //
+        //        .toast-action {
+        //            padding: @relativeMini @relativeSmall; // 4px 12px (was @relative1px @relative4px)
+        //            font-size: @tiny; // 12px (was @tiny)
+        //            border-radius: @defaultBorderRadius; // 4px (was @defaultBorderRadius)
+        //            border: 1px solid @borderColor; // (was @borderColor)
+        //            background: @primaryBackground; // (was @primaryBackground)
+        //            color: @primaryColor; // (was @primaryColor)
+        //            cursor: pointer;
+        //            transition: all @transitionFast; // (was var(--transition-fast))
+        //
+        //            &:hover {
+        //                background: @primaryBackground; // (was @primaryBackground)
+        //                border-color: @borderColor; // (was var(--color-border-secondary))
+        //            }
+        //
+        //            &.primary {
+        //                background: @primaryColor; // (was @primaryColor)
+        //                border-color: @primaryColor; // (was @primaryColor)
+        //                color: @white; // (was @white)
+        //
+        //                &:hover {
+        //                    background: @primaryColorHover; // (was @primaryColorHover)
+        //                    border-color: @primaryColorHover; // (was @primaryColorHover)
+        //                }
+        //            }
+        //        }
+        //    }
+        //
+        //}
+
+
+        //.notification-badge {
+        //    position: absolute;
+        //    top: -4px;
+        //    right: -4px;
+        //    background: @negativeBackgroundColor; // (was var(--color-error))
+        //    color: @white; // (was @white)
+        //    border-radius: @defaultBorderRadius; // (was @defaultBorderRadius)
+        //    width: 18px;
+        //    height: 18px;
+        //    font-size: 0.6875rem; // 11px - keeping exact value
+        //    font-weight: @semibold; // (was @semibold)
+        //    display: flex;
+        //    align-items: center;
+        //    justify-content: center;
+        //    border: 2px solid @primaryBackground; // (was @primaryBackground)
+        //}
+
+
+    }
+
+    .header-version {
+        font-size: @relativeMini;
+    }
+
+    /* Animations */
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+    }
+
+
+}

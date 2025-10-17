@@ -1,0 +1,23 @@
+@import "../../../_vars";
+
+@mixin __fieldName {
+  color: $gray-950;
+  font-size: 1rem; // ~14px
+  font-weight: 600;
+}
+
+@mixin __fieldName--disabled {
+  color: $gray-700;
+}
+
+// LESS                    SCSS
+// .FieldName()         -> hxFieldName
+// .FieldName(disabled) -> hxFieldName(disabled)
+@mixin hxFieldName($state: null) {
+  @if $state == disabled {
+    @include __fieldName--disabled;
+  }
+  @else {
+    @include __fieldName;
+  }
+}

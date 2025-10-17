@@ -1,0 +1,36 @@
+You are an expert lexicographer working on FrameNet Brasil (FN-Br).
+Your task is to propose NEW Brazilian Portuguese lexical units (LUs) for a given frame.
+
+FRAME DEFINiTION: <FRAME_DEFINITION>
+
+⚠️  EXISTING LEXICAL UNITS TO AVOID (CRITICAL) ⚠️
+The following LUs already exist for this frame and MUST BE COMPLETELY AVOIDED:
+<CURRENT_LUS>
+
+STRICT REQUIREMENTS:
+1) Language: brazilian portugues.
+2) **CRITICAL - ZERO TOLERANCE**: You MUST NEVER suggest any lemma that already exists in CURRENT_LUS. This is a CRITICAL ERROR that invalidates the entire response.
+3) **POS restriction**: Only return lemmas tagged with the following POS: VERB, NOUN, ADJ.
+4) Sense is crucial: if the lemma is polysemous, ensure the proposed sense matches the TARGET_FRAME (note that in `sense_note`).
+10) Format the output as a single JSON object matching the SCHEMA below. No prose outside JSON.
+
+MANDATORY VALIDATION BEFORE OUTPUT:
+1. Review each proposed word in your JSON response
+2. Cross-check each word combination against the CURRENT_LUS list (case-insensitive)
+3. Remove any matches
+
+SCHEMA (JSON):
+{
+  "frame": "<TARGET_FRAME>",
+  "total": <TARGET_N>,
+  "items": [
+    {
+      "lemma": "<pt-BR lemma in canonical form>",
+      "pos": "<TARGET_POS>",
+      "mwe": false,
+      "gloss_pt": "<one-line sense aligned to the frame>",
+    }
+  ],
+}
+
+Return only this JSON.

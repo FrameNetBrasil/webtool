@@ -1,0 +1,39 @@
+@import "../../../_vars";
+@import "../../../mixins";
+
+@mixin __placeholder {
+  @include placeholder {
+    color: $gray-750;
+    font-style: italic;
+    font-weight: 400;
+    opacity: 1;
+  }
+}
+
+@mixin __placeholder--disabled {
+  @include placeholder {
+    color: inherit;
+  }
+}
+
+@mixin __placeholder--reset {
+  @include placeholder {
+    color: inherit;
+  }
+}
+
+// LESS                          SCSS
+// #Mix.disabledPlaceholder() -> hxPlaceholder(disabled)
+// #Mix.placeholder()         -> hxPlaceholder
+// #Reset.placeholder()       -> hxPlaceholder(reset)
+@mixin hxPlaceholder($state: null) {
+  @if $state == reset {
+    @include __placeholder--reset;
+  }
+  @else if $state == disabled {
+    @include __placeholder--disabled;
+  }
+  @else {
+    @include __placeholder;
+  }
+}

@@ -1,0 +1,144 @@
+.wt-icon-pdf {
+    color: var(---wt-text-color);
+
+    &:before {
+        content: "picture_as_pdf";
+    }
+}
+
+.wt-icon-delete {
+    color: $wt-status-danger;
+
+    &:before {
+        content: "clear";
+    }
+}
+
+
+.wt-icon-clear {
+    color: var(---wt-text-color);
+
+    &:before {
+        content: "clear";
+    }
+}
+
+
+.wt-icon-add {
+    color: black;
+
+    &:before {
+        content: "add";
+    }
+}
+
+
+.wt-icon-refresh {
+    color: black;
+
+    &:before {
+        content: "refresh";
+    }
+}
+
+
+.wt-icon-help {
+    color: black;
+
+    &:before {
+        content: "help";
+    }
+}
+
+
+.wt-icon-close {
+    color: black;
+
+    &:before {
+        content: "close";
+    }
+}
+
+
+.wt-icon-layers {
+    color: black;
+
+    &:before {
+        content: "format_indent_increase";
+    }
+}
+
+
+.wt-icon-null {
+    color: black;
+
+    &:before {
+        content: "highlight_off";
+    }
+}
+
+
+.wt-icon-clone {
+    color: black;
+
+    &:before {
+        content: "content_copy";
+    }
+}
+
+.wt-icon-collapse {
+    color: black;
+
+    &:before {
+        content: "unfold_more";
+    }
+}
+
+.wt-icon-comment {
+    color: black;
+
+    &:before {
+        content: "chat_bubble_outline";
+    }
+}
+
+
+.wt-icon-create-object::before {
+    content: " \e148";
+}
+
+.wt-icon-edit-object::before {
+    content: "edit";
+}
+
+.wt-icon-end-object::before {
+    content: "block";
+}
+
+.wt-icon-start-tracking::before {
+    content: " \e039";
+}
+
+.wt-icon-pause-tracking::before {
+    content: " \e036";
+}
+
+.wt-icon-stop-tracking::before {
+    content: " \ef71";
+}
+
+.wt-icon-show-hide-objects-on::before {
+    content: "visibility";
+}
+
+.wt-icon-show-hide-objects-off::before {
+    content: "visibility_off";
+}
+
+.wt-icon-play::before {
+    content: "play_arrow";
+}
+
+.wt-icon-range::before {
+    content: "settings_ethernet";
+}

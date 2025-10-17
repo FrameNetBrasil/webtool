@@ -1,0 +1,185 @@
+/* Full-screen layout for annotation */
+.app-layout.annotation-static-bbox {
+    grid-template-areas:
+        "breadcrumb"
+        "canvas";
+    grid-template-columns: 1fr;
+    grid-template-rows: @breadcrumbHeight 1fr !important;
+
+    .annotation-header {
+        grid-area: header;
+    }
+
+    .annotation-canvas {
+        grid-area: canvas;
+        height: 100%;
+        display: grid;
+        grid-template-areas:
+        "figure data";
+        grid-template-columns: 880px 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .annotation-figure {
+        grid-area: figure;
+        //background: @neutral400;
+        height: 100%;
+        padding: 0 @relativeSmall;
+        display: grid;
+        grid-template-areas:
+        "controls"
+        "image";
+        grid-template-columns: 1fr;
+        grid-template-rows: 40px 1fr;
+    }
+
+    .annotation-controls {
+        grid-area: controls;
+        background-color: #e0e1e2;
+        height: 40px;
+    }
+
+    .annotation-image {
+        grid-area: image;
+        margin-top: 8px;
+        position: relative;
+    }
+
+    .annotation-data {
+        display: grid;
+        grid-area: data;
+        grid-template-areas:
+        "info"
+        "forms"
+        "objects";
+        grid-template-columns: 1fr;
+        grid-template-rows: 48px 316px 1fr;
+    }
+
+    .annotation-info {
+        grid-area: info;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        //background: @neutral200;
+        //height: 100%;
+    }
+
+    .annotation-forms {
+        grid-area: forms;
+        background: @neutral200;
+        height: 100%;
+        padding: @relative8px;
+    }
+
+    .annotation-objects {
+        grid-area: objects;
+        height: 100%;
+        min-width: 0;
+        width: 100%;
+        overflow: hidden;
+        padding: 0 @relativeSmall 0 0;
+        display: flex;
+        flex-direction: column;
+
+        .ui.card {
+            &.none {
+                border: 1px dashed @negativeColor;
+            }
+            &.partial {
+                border: 1px dashed @warningColor;
+            }
+            &.complete {
+                border: 1px solid @positiveColor;
+            }
+        }
+
+        .gridBody {
+            display:flex;
+            flex: 1;
+            padding-bottom: @relativeSmall;
+
+            .sentences {
+                overflow-y: auto;
+                min-height: 0;
+                position: relative;
+                height: 100%;
+                padding-bottom: @relativeSmall;
+                width: 100%;
+
+                .sentences-container {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                }
+
+            }
+
+            //// Annotation-specific search styles
+            //.app-search {
+            //    height: 100%;
+            //    display: flex;
+            //    flex-direction: column;
+            //
+            //    .search-section {
+            //        flex-shrink: 0; // Fixed height for search inputs
+            //    }
+            //
+            //    #gridArea {
+            //
+            //        .results-container {
+            //            height: 100%;
+            //            display: flex;
+            //            flex-direction: column;
+            //
+            //            .results-header {
+            //                flex-shrink: 0;
+            //            }
+            //
+            //            .card-view {
+            //                flex: 1;
+            //                overflow-y: auto;
+            //                min-height: 0;
+            //                position: relative;
+            //                height: 100%;
+            //                padding-bottom: @relativeSmall;
+            //
+            //                .card-container {
+            //                    position: absolute;
+            //                    top: 0;
+            //                    left: 0;
+            //                    bottom: 0;
+            //                    right: 0;
+            //                    padding: @relativeSmall 0;
+            //
+            //                    .search-results-grid {
+            //                        max-height: none; // Remove any height restrictions
+            //
+            //                        .result-card {
+            //                            min-height: auto;
+            //                        }
+            //                    }
+            //                }
+            //            }
+            //
+            //            .empty-state {
+            //                flex: 1;
+            //                display: flex;
+            //                align-items: center;
+            //                justify-content: center;
+            //            }
+            //        }
+            //    }
+            //}
+
+        }
+
+    }
+
+
+
+
+}

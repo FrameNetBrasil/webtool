@@ -1,0 +1,16 @@
+/* Responsive breakpoints using design system values */
+@media (max-width: @mobileBreakpoint) {                                 // 768px
+    .content-container {
+        padding: @relativeMedium;                                        // 16px (was var(--spacing-4))
+    }
+}
+
+@media (max-width: 480px) {
+    .content-container {
+        padding: @relativeSmall;                                         // 12px (was var(--spacing-3))
+    }
+
+    .flex-container {
+        gap: @relativeSmall;                                             // 12px (was var(--spacing-3))
+    }
+}

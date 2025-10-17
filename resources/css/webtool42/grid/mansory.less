@@ -1,0 +1,19 @@
+/* Masonry-style grid for Pinterest-like layouts */
+.masonry-grid {
+    columns: 300px;
+    column-gap: @relativeMedium;                                         // 16px (was var(--spacing-4))
+
+    &.narrow {
+        columns: 250px;
+    }
+
+    &.wide {
+        columns: 400px;
+    }
+
+    .masonry-item {
+        break-inside: avoid;
+        margin-bottom: @relativeMedium;                                  // 16px (was var(--spacing-4))
+        page-break-inside: avoid;
+    }
+}

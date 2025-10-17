@@ -1,0 +1,67 @@
+.annotation-player {
+    grid-area: player;
+    height: 100%;
+
+    .progress-container {
+        position: relative;
+        height: 8px;
+        background: #e9ecef;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 4px 0 8px 0;
+    }
+
+    .progress-bar {
+        top:0;
+        left:0;
+        height: 100%;
+        background: #007bff;
+        border-radius: 4px;
+        transition: width 0.1s;
+    }
+
+    .buffer-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: rgba(0,123,255,0.3);
+        border-radius: 4px;
+    }
+
+    .control-bar {
+        position: relative;
+        background-color: #e0e1e2;
+        width: 853px;
+        margin-top: 24px;
+        height: 2.5rem;
+
+        .ui.label {
+            background-color: #e0e1e2;
+            line-height: 2.5rem;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .playback-tracking-mode {
+            min-width: 100px;
+            text-align: center;
+            min-height: 2.5em;
+        }
+
+        .playback-rate-selector {
+            min-width: 100px;
+            text-align: center;
+
+            .text {
+                font-size: 0.9em;
+                font-weight: 500;
+            }
+
+            &.ui.dropdown {
+                min-height: 2.5em;
+                line-height: 2.5em;
+            }
+        }
+    }
+}

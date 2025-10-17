@@ -1,0 +1,289 @@
+/* Full-screen layout for annotation */
+.app-layout.annotation-dynamicMode {
+    grid-template-areas:
+        "breadcrumb"
+        "canvas";
+    grid-template-columns: 1fr;
+    grid-template-rows: @breadcrumbHeight 1fr !important;
+
+    .annotation-header {
+        grid-area: header;
+    }
+
+    .annotation-canvas {
+        grid-area: canvas;
+        height: 100%;
+        display: grid;
+        grid-template-areas:
+        "video objects";
+        grid-template-columns: 880px 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .annotation-video {
+        grid-area: video;
+        //background: @neutral400;
+        height: 100%;
+        padding: 0 @relativeSmall;
+        display: grid;
+        grid-template-areas:
+        "player"
+        "forms";
+        grid-template-columns: 1fr;
+        grid-template-rows: 560px 1fr;
+    }
+
+    .annotation-forms {
+        grid-area: forms;
+        //background: @neutral200;
+        height: 100%;
+    }
+
+    .annotation-objects {
+        grid-area: objects;
+        height: 100%;
+        min-width: 0;
+        width: 100%;
+        overflow: hidden;
+        padding: 0 @relativeSmall 0 0;
+        display: flex;
+        flex-direction: column;
+
+        .timeline {
+            width: 100%;
+            max-width: 100%;
+            min-width: 400px;
+            overflow: hidden;
+
+            .container {
+                width: 100%;
+                border: 1px solid #ccc;
+                background-color: white;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                .controls {
+                    flex-shrink: 0;
+                    padding: 10px;
+                    background-color: #fff;
+                    border-bottom: 1px solid #ddd;
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                }
+
+                .ruler {
+                    flex-shrink: 0;
+                    height: 30px;
+                    background-color: #f8f9fa;
+                    border-bottom: 1px solid #ddd;
+                    display: flex;
+
+                    .label-area {
+                        width: 150px;
+                        background-color: #e9ecef;
+                        border-right: 1px solid #ddd;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: bold;
+                        font-size: 11px;
+                        color: #666;
+                        flex-shrink: 0;
+                    }
+
+                    .content-area {
+                        flex: 1;
+                        overflow: hidden;
+                        position: relative;
+
+                        .content {
+                            position: relative;
+                            height: 30px;
+                            width: 22500px; /* Timeline width */
+                        }
+
+                    }
+
+                    .tick {
+                        position: absolute;
+                        height: 20px;
+                        border-left: 1px solid #999;
+                        font-size: 10px;
+                        padding-left: 2px;
+                        display: flex;
+                        align-items: center;
+                        top: 5px;
+
+                        .major {
+                            border-left: 2px solid #333;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+
+            .main {
+                flex: 1;
+                display: flex;
+                min-height: 0;
+
+                .labels-column {
+                    width: 150px;
+                    background-color: #e9ecef;
+                    border-right: 1px solid #ddd;
+                    overflow-y: auto;
+                    flex-shrink: 0;
+                    scrollbar-width: none; /* Firefox */
+                    -ms-overflow-style: none; /* IE/Edge */
+
+                    &::-webkit-scrollbar {
+                        display: none; /* Chrome/Safari/WebKit */
+                    }
+
+                    .label-item {
+                        padding: 8px;
+                        border-bottom: 1px solid #ddd;
+                        font-size: 12px;
+                        font-weight: bold;
+                        color: #333;
+                        min-height: 24px;
+                        display: flex;
+                        align-items: center;
+                        box-sizing: border-box;
+                    }
+                }
+
+                .content {
+                    flex: 1;
+                    overflow-x: scroll; /* Horizontal scrollbar appears here */
+                    overflow-y: auto; /* Vertical scrollbar appears here */
+                    position: relative;
+
+                    .inner {
+                        width: 0;
+                        position: relative;
+
+                        .layer-row {
+                            position: relative;
+                            border-bottom: 1px solid #eee;
+                            min-height: 24px; /* Minimum layer height */
+
+                            .object {
+                                position: absolute;
+                                height: 24px;
+                                border: 1px solid rgba(0, 0, 0, 0.2);
+                                border-radius: 2px;
+                                cursor: pointer;
+                                display: flex;
+                                align-items: center;
+                                //padding: 0 4px;
+                                font-size: 11px;
+                                color: white;
+                                //text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                box-sizing: border-box;
+                                min-width: 16px;
+                                transition: opacity 0.2s, transform 0.2s;
+
+                                &:hover {
+                                    opacity: 0.8;
+                                    transform: scale(1.02);
+                                    z-index: 5;
+                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+                                }
+
+                                .internal {
+                                    width: 100%;
+                                    height: 100%;
+                                    padding: 0 4px;
+                                }
+
+                                .highlighted {
+                                    outline: 2px solid #ff0000;
+                                    outline-offset: 1px;
+                                }
+
+                            }
+                        }
+                    }
+
+                }
+
+            }
+
+            .info {
+                flex-shrink: 0;
+                background-color: #f8f9fa;
+                padding: 8px;
+                font-size: 12px;
+                color: #666;
+            }
+        }
+
+        .gridBody {
+            flex: 1;
+        }
+
+        // Annotation-specific search styles
+        .app-search {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+
+            .search-section {
+                flex-shrink: 0; // Fixed height for search inputs
+            }
+
+            #gridArea {
+
+                .results-container {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .results-header {
+                        flex-shrink: 0;
+                    }
+
+                    .card-view {
+                        flex: 1;
+                        overflow-y: auto;
+                        min-height: 0;
+                        position: relative;
+                        height: 100%;
+                        padding-bottom: @relativeSmall;
+
+                        .card-container {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+
+                            .search-results-grid {
+                                max-height: none; // Remove any height restrictions
+
+                                .result-card {
+                                    min-height: auto;
+                                }
+                            }
+                        }
+                    }
+
+                    .empty-state {
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}

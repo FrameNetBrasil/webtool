@@ -1,0 +1,96 @@
+.wt-datagrid {
+    overflow-y: auto;
+    @extend %component-border;
+
+    .datagrid-header {
+        @extend %component-header;
+        @extend %border-bottom;
+    }
+
+    .datagrid-header-search {
+        @extend %component-header;
+        @extend %border-bottom;
+        height:3rem;
+    }
+
+    .table {
+        //font-size: 0.875rem;
+        overflow-y:auto;
+        overflow-x:auto;
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed !important;
+
+            tbody{
+                display:block;
+                overflow:auto;
+                width:100%;
+            }
+
+            thead, tbody tr {
+                display: table;
+                width: 100%;
+                table-layout: fixed;/* even columns width , fix width of table too*/
+            }
+            thead {
+                background-color: $blue-100;
+                @extend %border-bottom;
+            }
+        }
+
+        td {
+            @extend %padding-micro;
+        }
+
+        tr {
+            //@extend %border-top;
+            //@extend %border-bottom;
+
+
+        }
+
+        tr:last-child {
+            border-bottom: 0;
+        }
+
+        tr:nth-child(odd) {
+            background-color: white;
+            &.subheader {
+                background-color: $blue-100;
+            }
+        }
+
+        tr:nth-child(even) {
+            background-color: $grey-2;
+            &.subheader {
+                background-color: $blue-100;
+            }
+        }
+
+        tr:hover {
+            background-color: $grey-3;
+        }
+
+        th {
+            top: 0;
+            position: sticky;
+            background-color: $blue-100;
+            text-align: left;
+            height: 2rem;
+            line-height: 2rem;
+            @extend %padding-micro;
+        }
+
+        .wt-datagrid-action {
+            cursor: pointer;
+            width: 1.5rem;
+        }
+    }
+}
+
+.wt-datagrid-child {
+    max-height: calc(32 * $wt-unit);
+}
+

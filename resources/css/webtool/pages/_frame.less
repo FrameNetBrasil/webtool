@@ -1,0 +1,172 @@
+.btnBack {
+    display: none;
+}
+
+@media only screen and (max-width: 1023px) {
+    .btnBack {
+        display: inline-block;
+    }
+}
+
+#domainTableContainer {
+    margin-bottom: 0;
+
+    table {
+        border-spacing: 0;
+        width: 100%;
+        flex-grow: 0;
+        table-layout: fixed;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    tr {
+        width: 100%;
+    }
+
+    td {
+        padding: 4px;
+        word-wrap: break-word;
+        width: 100%;
+    }
+
+    tr:nth-child(even) {
+        background-color: #EEE;
+    }
+
+    tr:hover {
+        background-color: #dbdbdb;
+    }
+}
+
+#frameTableContainer {
+    margin-bottom: 0;
+
+    table {
+        border-spacing: 0;
+        width: 100%;
+        flex-grow: 0;
+        table-layout: fixed;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    tr {
+        width: 100%;
+    }
+
+    td {
+        padding: 4px;
+        word-wrap: break-word;
+
+        &.name {
+            width: calc(100% - 4rem);
+        }
+
+        &.edit {
+            width: 4rem;
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: #EEE;
+    }
+
+    tr:hover {
+        background-color: #dbdbdb;
+    }
+
+    .definition {
+        color: @textColor;
+        font-size: 0.875rem;
+    }
+}
+
+#feluTableContainer {
+    margin-bottom: 0;
+
+    table {
+        border-spacing: 0;
+        width: 100%;
+        flex-grow: 0;
+        table-layout: fixed;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    tr {
+        width: 100%;
+    }
+
+    td {
+        padding: 4px;
+        word-wrap: break-word;
+        width: 100%;
+
+        .definition {
+            color: @textColor;
+            font-size: 0.875rem;
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: #EEE;
+    }
+
+    tr:hover {
+        background-color: #dbdbdb;
+    }
+}
+
+#frameReport {
+    .frameReport__card {
+        margin: 8px 8px 0 0;
+
+        code {
+            color: @textColor;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .card-header {
+            text-align: left;
+        }
+
+        .card-body {
+            background-color: white;
+        }
+    }
+
+    .frameReport__card--internal {
+        .card-header {
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .fe-fe {
+            color: @colorTheme3;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+}
+
+.frameReport__table {
+    border-spacing: 8px;
+}
+
+
+

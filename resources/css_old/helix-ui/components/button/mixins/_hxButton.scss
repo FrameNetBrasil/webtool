@@ -1,0 +1,284 @@
+@mixin hxButton($weight: secondary, $size: medium) {
+  display: inline-flex;
+  justify-content: center;
+
+  > * + * {
+    // ensure white space between children
+    margin-left: $rax-spacing-200;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  @include hxButton-size($size);
+  @include hxButton-weight($weight);
+}
+
+/// =========================== ///
+/// ========== RESET ========== ///
+/// =========================== ///
+
+@mixin hxButton--reset {
+  background-color: transparent;
+  border: $rax-spacing-0;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  font-size: $rax-component-button-base-font-size;
+  font-weight: $rax-font-weight-bold; // bold (700)
+  line-height: $rax-line-height-none;
+  margin: $rax-spacing-0;
+  padding: $rax-spacing-0;
+}
+
+/// ============================= ///
+/// ========== WEIGHTS ========== ///
+/// ============================= ///
+
+@mixin hxButton-weight($weight) {
+  @if $weight == primary {
+    @include hxButton--primary;
+  } @else if $weight == secondary {
+    @include hxButton--secondary;
+  } @else if $weight == tertiary {
+    @include hxButton--tertiary;
+  } @else if $weight == danger {
+      @include hxButton--danger;
+  } @else {
+    // weightless (no additional styles)
+  }
+}
+
+/// =========================== ///
+/// ========== SIZES ========== ///
+/// =========================== ///
+
+@mixin hxButton-size($size) {
+  @if $size == small {
+    padding: 0.125rem 0.5rem;
+  } @else if $size == medium {
+    font-size: $rax-component-button-base-font-size;
+    padding: $rax-component-button-base-vertical-padding $rax-component-button-base-horizontal-padding;
+  } @else if $size == large {
+    font-size: 1rem;
+    padding: $rax-spacing-400;
+  } @else {
+    // no additional styles
+  }
+}
+
+/// --------------------------------------------- ///
+/// ---------- PRIMARY (FILLED) BUTTON ---------- ///
+/// --------------------------------------------- ///
+
+@mixin hxButton--primary {
+  background-color: $rax-component-button-filled-default-background-color;
+  border: none;
+  color: $rax-component-button-filled-default-color;
+
+  &:hover {
+    @include hxButton-hover--primary;
+  }
+
+  &:active {
+    @include hxButton-active--primary;
+  }
+
+  &:focus {
+    @include hxButton-focus--primary;
+  }
+
+  &[disabled] {
+    @include hxButton-disabled--primary;
+  }
+}
+
+@mixin hxButton-active--primary {
+  background-color: $rax-component-button-filled-active-background-color;
+  color: $rax-component-button-filled-active-color;
+}
+
+@mixin hxButton-disabled--primary {
+  background-color: $rax-component-button-filled-disabled-background-color;
+  color: $rax-component-button-filled-disabled-color;
+}
+
+@mixin hxButton-focus--primary {
+  background-color: $rax-component-button-filled-focus-background-color;
+  color: $rax-component-button-filled-focus-color;
+  outline: none;
+}
+
+@mixin hxButton-hover--primary {
+  background-color: $rax-component-button-filled-hover-background-color;
+  border: none;
+  color: $rax-component-button-filled-hover-color;
+}
+
+/// ------------------------------------------------ ///
+/// ---------- SECONDARY (OUTLINE) BUTTON ---------- ///
+/// ------------------------------------------------ ///
+
+@mixin hxButton--secondary {
+  background-color: $rax-component-button-outline-default-background-color;
+  border: 1px solid $rax-component-button-outline-default-border-color;
+  color: $rax-component-button-outline-default-color;
+
+  &:hover {
+    @include hxButton-hover--secondary;
+  }
+
+  &:active {
+    @include hxButton-active--secondary;
+  }
+
+  &:focus {
+    @include hxButton-focus--secondary;
+  }
+
+  &[disabled] {
+    @include hxButton-disabled--secondary;
+  }
+}
+
+@mixin hxButton-active--secondary {
+  background-color: $rax-component-button-outline-default-background-color;
+  border-color: $rax-component-button-outline-active-border-color;
+  border-style: $rax-component-button-base-border-style;
+  border-width: $rax-component-button-base-border-width;
+  color: $rax-component-button-outline-active-color;
+}
+
+@mixin hxButton-disabled--secondary {
+  background-color: $rax-component-button-outline-disabled-background-color;
+  border: 1px solid $rax-component-button-outline-disabled-border-color;
+  color: $rax-component-button-outline-disabled-color;
+}
+
+@mixin hxButton-focus--secondary {
+  background-color: $rax-component-button-outline-focus-background-color;
+  border: 1px solid $rax-component-button-outline-focus-border-color;
+  color: $rax-component-button-outline-focus-color;
+}
+
+@mixin hxButton-hover--secondary {
+  background-color: $rax-component-button-outline-hover-background-color;
+  border: 1px solid $rax-component-button-outline-focus-border-color;
+  color: $rax-component-button-outline-focus-color;
+}
+
+/// --------------------------------------------- ///
+/// ---------- TERTIARY (PLAIN) BUTTON ---------- ///
+/// --------------------------------------------- ///
+
+@mixin hxButton--tertiary {
+  background-color: $rax-component-button-plain-default-background-color;
+  border: none;
+  color: $rax-component-button-plain-default-color;
+  padding: 0;
+
+  // TODO: deprecated Button and Button Bar styles
+  &.hxDeprecated {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &:hover {
+    @include hxButton-hover--tertiary;
+  }
+
+  &:active {
+    @include hxButton-active--tertiary;
+  }
+
+  &:focus {
+    @include hxButton-focus--tertiary;
+  }
+
+  &[disabled] {
+    @include hxButton-disabled--tertiary;
+  }
+}
+
+@mixin hxButton-active--tertiary {
+  background-color: $rax-component-button-plain-active-background-color;
+  border-color: $rax-component-button-plain-active-border-color;
+  color: $rax-component-button-plain-active-color;
+}
+
+@mixin hxButton-disabled--tertiary {
+  background-color: $rax-component-button-plain-disabled-background-color;
+  border-color: $rax-component-button-plain-disabled-border-color;
+  color: $rax-component-button-plain-disabled-color;
+}
+
+@mixin hxButton-focus--tertiary {
+  background-color: $rax-component-button-plain-focus-background-color;
+  border-color: $rax-component-button-plain-focus-border-color;
+  color: $rax-component-button-plain-focus-color;
+  outline: none;
+}
+
+@mixin hxButton-hover--tertiary {
+  background-color: $rax-component-button-plain-hover-background-color;
+  border-color: $rax-component-button-plain-hover-border-color;
+  color: $rax-component-button-plain-focus-color;
+}
+
+/// --------------------------------------------- ///
+/// ---------- DANGER (FILLED) BUTTON ---------- ///
+/// --------------------------------------------- ///
+
+@mixin hxButton--danger {
+    background-color: $rax-component-button-filled-default-background-color-danger;
+    border: none;
+    color: $rax-component-button-filled-default-color-danger;
+
+    &:hover {
+        @include hxButton-hover--danger;
+    }
+
+    &:active {
+        @include hxButton-active--danger;
+    }
+
+    &:focus {
+        @include hxButton-focus--danger;
+    }
+
+    &[disabled] {
+        @include hxButton-disabled--danger;
+    }
+}
+
+@mixin hxButton-active--danger {
+    background-color: $rax-component-button-filled-active-background-color-danger;
+    color: $rax-component-button-filled-active-color-danger;
+}
+
+@mixin hxButton-disabled--danger {
+    background-color: $rax-component-button-filled-disabled-background-color-danger;
+    color: $rax-component-button-filled-disabled-color-danger;
+}
+
+@mixin hxButton-focus--danger {
+    background-color: $rax-component-button-filled-focus-background-color-danger;
+    color: $rax-component-button-filled-focus-color-danger;
+    outline: none;
+}
+
+@mixin hxButton-hover--danger {
+    background-color: $rax-component-button-filled-hover-background-color-danger;
+    border: none;
+    color: $rax-component-button-filled-hover-color-danger;
+}

@@ -1,0 +1,126 @@
+/* Card grids for data display */
+.card-grid {
+    display: grid;
+    gap: @relativeMedium;                                                // 16px (was var(--spacing-4))
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+    // CRITICAL: Override Fomantic's margin system for grid layouts
+    .ui.card {
+        margin: 0 !important; // Reset all margins
+
+        // Override specific Fomantic rules
+        &:first-child {
+            margin-top: 0 !important;
+        }
+
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        // Ensure cards work properly in grid
+        width: 100%;
+        //height: fit-content;
+        height:auto;
+    }
+
+    // Grid variants
+    &.dense {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: @relativeSmall;
+    }
+
+    &.wide-cards {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+        gap: @relativeLarge;
+    }
+
+    &.small-cards {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: @relativeMedium;
+    }
+
+    &.single-row {
+        grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+        grid-template-rows: 1fr;
+    }
+
+    // Mobile responsiveness
+    @media (max-width: @mobileBreakpoint) {
+        grid-template-columns: 1fr;
+        gap: @relativeMedium;
+
+        &.dense,
+        &.wide-cards,
+        &.small-cards {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+/* Card Grid Layout Integration */
+.card-grid {
+    .option-card,
+    .data-card,
+    .summary-card,
+    .action-card,
+    .content-card,
+    .form-card,
+    .status-card {
+        margin: 0 !important; // Override Fomantic margins
+        height: fit-content;
+    }
+}
+
+/* Mobile responsive adjustments for cards */
+@media (max-width: @mobileBreakpoint) {
+    .data-card {
+        .data-card-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: @relativeSmall;
+
+            .data-card-title {
+                text-align: center;
+                width: 100%;
+            }
+
+            .data-card-status {
+                align-self: center;
+            }
+        }
+
+        .data-card-stats {
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    }
+
+    .summary-card {
+        .summary-card-header {
+            flex-direction: column;
+            align-items: center;
+            gap: @relativeTiny;
+        }
+    }
+
+    .action-card {
+        .action-card-icon {
+            width: @relative48px; // 48px on mobile
+            height: @relative48px; // 48px on mobile
+            font-size: @huge;
+        }
+    }
+
+    .status-card {
+        .status-card-header {
+            flex-wrap: wrap;
+            gap: @relativeTiny;
+
+            .status-card-time {
+                margin-left: 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

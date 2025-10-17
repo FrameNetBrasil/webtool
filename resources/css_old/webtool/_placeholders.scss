@@ -1,0 +1,128 @@
+/*
+placeholders
+ */
+
+/*
+layout
+ */
+
+%padding-micro {
+    padding: 0.25rem;
+}
+
+%padding-mini {
+    padding: 0.5rem;
+}
+
+%padding-medium {
+    padding: 1rem;
+}
+
+%padding-large {
+    padding: 1.5rem;
+}
+
+
+/*
+typography
+ */
+
+%font-normal {
+    font-weight: 400;
+}
+
+%font-bold {
+    font-weight: 500;
+}
+
+%font-bolder {
+    font-weight: 600;
+}
+
+/*
+presentation
+ */
+
+%border-top {
+    border-top: 1px solid $grey-5;
+}
+
+%border-right {
+    border-right: 1px solid $grey-5;
+}
+
+%border-bottom {
+    border-bottom: 1px solid $grey-5;
+}
+
+%border-left {
+    border-left: 1px solid $grey-5;
+}
+
+%border-up {
+    @extend %border-left;
+    @extend %border-top;
+    @extend %border-right;
+}
+
+%border-down {
+    @extend %border-left;
+    @extend %border-bottom;
+    @extend %border-right;
+}
+
+%border-full {
+    @extend %border-left;
+    @extend %border-bottom;
+    @extend %border-right;
+    @extend %border-top;
+}
+
+%no-border {
+    border: 0;
+}
+
+%border-radius {
+    -moz-border-radius: 4px 4px 4px 4px;
+    -webkit-border-radius: 4px 4px 4px 4px;
+    border-radius: 4px;
+}
+
+/*
+component
+ */
+
+%component-header{
+    //background-color: $blue-100;
+    height: 2rem;
+    line-height: 2rem;
+    padding-left: $wt-unit;
+    text-align: center;
+    font-weight:500;
+    //font-size: 1.125rem;
+}
+
+%component-border {
+    @extend %border-full;
+    @extend %border-radius;
+}
+
+%component-button {
+    background-color: transparent;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+}
+
+/*
+menu
+ */
+%menu-background {
+    background-color: $grey-1;
+}

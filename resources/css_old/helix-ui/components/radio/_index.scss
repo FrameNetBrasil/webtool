@@ -1,0 +1,234 @@
+@import "./config";
+
+// BASE STYLES
+hx-radio {
+  border-radius: $rax-spacing-400;
+  display: inline-block;
+  height: $rax-spacing-400;
+  vertical-align: baseline;
+  width: $rax-spacing-400;
+}
+
+hx-radio-set {
+  display: block;
+
+  > * {
+    margin: 0.25rem 0; // FIXME: solve with spacing system
+
+    &:first-child {
+      margin-top: 0; // FIXME: solve with spacing system
+    }
+
+    &:last-child {
+      margin-bottom: 0; // FIXME: solve with spacing system
+    }
+  }
+}
+
+// LAYOUT GEOMETRY
+hx-radio-control {
+  -ms-grid-column-align: start;
+  -ms-grid-columns: auto 1fr;
+  -ms-grid-rows: auto auto;
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas:
+    "ctrl lbl"
+    ".    help";
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  justify-items: start;
+
+  > * {
+    margin: 0;
+  }
+
+  // facade + text
+  > label {
+    // Radio v2.0 specs
+    font-size: $rax-component-radio-label-default-font-size;
+    color: $rax-component-radio-label-default-color; // in tokens it is $gray-900
+    color: var(--hxRadio-radioControl-layout-label-color, $rax-component-radio-label-default-color);
+    font-weight: $rax-component-radio-label-default-font-weight; // normal
+
+    // grid child
+    -ms-grid-column: 2;
+    -ms-grid-row: 1;
+    grid-area: lbl;
+
+    // grid parent
+    align-items: center;
+    -ms-grid-columns: auto 1fr;
+    -ms-grid-rows: auto;
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 0.5rem;
+    grid-template-areas: "facade txt";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto;
+    padding: 0;
+
+    > hx-radio {
+      -ms-grid-column: 1;
+      -ms-grid-row: 1;
+      display: none;
+      grid-area: facade;
+    }
+  }
+
+  > p {
+    -ms-grid-column: 2;
+    -ms-grid-row: 2;
+    grid-area: help;
+  }
+
+  > input[type="radio"] {
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    border-radius: $rax-spacing-400;
+    grid-area: ctrl;
+    height: $rax-spacing-400;
+    margin: 0.25rem 0.5rem 0 0;
+    width: $rax-spacing-400;
+
+    &::-ms-check {
+      box-sizing: border-box;
+    }
+  }
+}
+
+// PRISTINE/VALID STATE
+hx-radio-control {
+  > label > hx-radio {
+    background-color: $rax-component-radio-default-background-color;
+    background-color: var(--hxRadio-pristine-radio-bgcolor, $rax-component-radio-default-background-color);
+    border: $rax-component-radio-base-border-width solid currentColor;
+    color: $rax-component-radio-default-border-color; // in tokens it is border-color
+    color: var(--hxRadio-pristine-radio-color, $rax-component-radio-default-border-color);
+  }
+
+  > p {
+    @include hxHelpText();
+  }
+
+  > input[type="radio"] {
+    @include hxRadioControl;
+
+    &:focus {
+      @include hxRadioControl($pseudo-state: focus);
+
+      ~ label > hx-radio {
+        @include hxRadioFacade($pseudo-state: focus);
+      }
+    }
+
+    &:hover {
+      @include hxRadioControl($pseudo-state: hover);
+    }
+
+    &:checked {
+      color: $rax-component-radio-checked-border-color; // in tokens it is border-color
+      color: var(--hxRadio-pristine-radio-checked-color, $rax-component-radio-checked-border-color);
+
+      ~ label > hx-radio {
+        border: $rax-component-radio-base-border-width solid currentColor;
+        color: $rax-component-radio-checked-border-color; // no specific token for checked label color
+        color: var(--hxRadio-pristine-radio-checked-label-color, $rax-component-radio-checked-border-color);
+        position: relative;
+
+        &::after {
+          background-color: currentColor;
+          border-radius: $rax-spacing-400;
+          content: "";
+          height: $rax-spacing-200;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: $rax-spacing-200;
+        }
+      }
+    }
+
+    &:valid ~ label > hx-radio:hover {
+      @include hxRadioFacade($pseudo-state: hover);
+    }
+  }
+}
+
+// INVALID STATE
+hx-radio-set[hx-dirty] input[type="radio"]:enabled:invalid,
+hx-radio-set.hxInvalid input[type="radio"]:enabled {
+  @include hxRadioControl(invalid);
+
+  ~ label > hx-radio {
+    @include hxRadioFacade(invalid);
+  }
+
+  &:focus {
+    @include hxRadioControl(invalid, focus);
+
+    ~ label > hx-radio {
+      @include hxRadioFacade(invalid, focus);
+    }
+  }
+
+  &:hover {
+    @include hxRadioControl(invalid, hover);
+  }
+
+  // facade styles
+  ~ label > hx-radio:hover {
+    @include hxRadioFacade(invalid, hover);
+  }
+}
+
+// DISABLED STATE
+hx-radio-control > input[type="radio"]:disabled {
+  @include hxRadioControl(disabled);
+
+  &:focus {
+    @include hxRadioControl(disabled, focus);
+  }
+
+  &:hover {
+    @include hxRadioControl(disabled, hover);
+  }
+
+  // facade styles
+  ~ label {
+    color: $rax-component-radio-label-disabled-color;
+    color: var(--hxRadio-disable-radio-label-color, $rax-component-radio-label-disabled-color);
+
+    > hx-radio {
+      @include hxRadioFacade(disabled);
+
+      &,
+      &:hover {
+        @include hxRadioFacade(disabled, hover);
+      }
+    }
+  }
+}
+
+@supports (--modern: true) {
+  hx-radio-control {
+    position: relative;
+
+    > input[type="radio"] {
+      @include hxInput(visuallyHidden);
+
+      &::-ms-check {
+        display: none;
+      }
+    }
+
+    > label > hx-radio {
+      display: inline-block;
+    }
+
+    > p {
+      margin-left: $rax-spacing-600;
+    }
+  }
+}

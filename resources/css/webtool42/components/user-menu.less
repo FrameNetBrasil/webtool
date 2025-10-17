@@ -1,0 +1,44 @@
+/*******************************
+    User Menu Component
+    Updated to use Fomantic-UI variables
+*******************************/
+
+/* User Menu */
+.user-menu {
+    .user-avatar {
+        width: @relativeHuge;
+        height: @relativeHuge;
+        border-radius: @defaultBorderRadius;
+        background: @borderColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: @secondaryColor;
+        font-weight: @semibold;
+        font-size: @small; // 14px
+        cursor: pointer;
+        transition: all @transitionFast;
+
+        &:hover {
+            background: @primaryBackground;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: @defaultBorderRadius;
+            object-fit: cover;
+        }
+    }
+
+    .user-email {
+        padding: 0 0 0 @relativeTiny; // 8px
+        cursor: pointer;
+    }
+
+    .user-level {
+        padding: @relativeTiny 0; // 8px
+        cursor: pointer;
+        font-size: @tiny; // 12px
+    }
+}

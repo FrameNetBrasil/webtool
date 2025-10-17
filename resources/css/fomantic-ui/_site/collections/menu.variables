@@ -1,0 +1,10 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@subMenuTextColor:@textColor;
+@itemTextColor:@textColor;
+@itemFontWeight: 500;
+@secondaryPointingActiveBorderColor: @black;
+@secondaryPointingActiveFontWeight: 500;
+@secondaryPointingActiveTextColor: @blue-10;

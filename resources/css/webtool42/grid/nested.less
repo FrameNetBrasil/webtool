@@ -1,0 +1,22 @@
+/* Nested grids for complex layouts */
+.nested-grid {
+    display: grid;
+    gap: @relativeMedium;                                                // 16px (was var(--spacing-4))
+
+    .grid-section {
+        display: grid;
+        gap: @relativeMedium;                                            // 16px (was var(--spacing-4))
+
+        &.two-cols {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &.three-cols {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        &.auto-cols {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+    }
+}

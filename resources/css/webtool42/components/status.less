@@ -1,0 +1,91 @@
+/* Status indicators */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2); // 8px
+    padding: var(--spacing-1) var(--spacing-3); // 4px 12px
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs); // 12px
+    font-weight: var(--font-weight-medium);
+
+    .status-dot {
+        width: var(--spacing-2); // 8px
+        height: var(--spacing-2); // 8px
+        border-radius: var(--radius-full);
+        flex-shrink: 0;
+    }
+
+    &.success {
+        background: var(--color-status-success-bg);
+        color: var(--color-status-success-text);
+
+        .status-dot {
+            background: var(--color-status-success-dot);
+        }
+    }
+
+    &.warning {
+        background: var(--color-status-warning-bg);
+        color: var(--color-status-warning-text);
+
+        .status-dot {
+            background: var(--color-status-warning-dot);
+        }
+    }
+
+    &.error {
+        background: var(--color-status-error-bg);
+        color: var(--color-status-error-text);
+
+        .status-dot {
+            background: var(--color-status-error-dot);
+        }
+    }
+
+    &.info {
+        background: var(--color-status-info-bg);
+        color: var(--color-status-info-text);
+
+        .status-dot {
+            background: var(--color-status-info-dot);
+        }
+    }
+
+    &.neutral {
+        background: var(--color-status-neutral-bg);
+        color: var(--color-status-neutral-text);
+
+        .status-dot {
+            background: var(--color-status-neutral-dot);
+        }
+    }
+
+    &.primary {
+        background: var(--color-primary-light);
+        color: var(--color-primary-dark);
+
+        .status-dot {
+            background: var(--color-primary);
+        }
+    }
+
+    &.small {
+        padding: var(--spacing-1) var(--spacing-2); // 4px 8px
+        font-size: 0.6875rem;
+
+        .status-dot {
+            width: calc(var(--spacing-1) + 2px); // 6px
+            height: calc(var(--spacing-1) + 2px); // 6px
+        }
+    }
+
+    &.large {
+        padding: calc(var(--spacing-1) + 2px) var(--spacing-4); // 6px 16px
+        font-size: var(--font-size-sm); // 14px
+
+        .status-dot {
+            width: calc(var(--spacing-2) + 2px); // 10px
+            height: calc(var(--spacing-2) + 2px); // 10px
+        }
+    }
+}

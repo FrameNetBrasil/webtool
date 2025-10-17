@@ -1,0 +1,22 @@
+.wt-cardgrid {
+    overflow-y: auto;
+    @extend %component-border;
+
+    .cardgrid-header {
+        @extend %component-header;
+        //@extend %border-bottom;
+    }
+
+    .cardgrid-body {
+        padding: 1rem;
+    }
+
+    .cardgrid-header-search {
+        @extend %component-header;
+        @extend %border-bottom;
+        height:2.5rem;
+    }
+
+}
+
+

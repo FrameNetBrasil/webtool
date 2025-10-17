@@ -1,0 +1,49 @@
+@import "../../../mixins";
+
+// [1] For some browsers, text-like inputs do not inherit the correct font-family.
+//     For example: In Edge/IE, a <textarea> element applies a `monospace`
+//     font, by default.  This property ensures that whatever font is used by
+//     the element's parent is also used by the input.
+@mixin __input--reset {
+  font: inherit; // [1]
+
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+// Useful to visually hide form controls in-place
+// in order to style sibling elements
+// <div>
+//   <input id="foo" /><!-- hide me -->
+//   <label for="foo"><!-- style me --></label>
+// </div>
+@mixin __input--visuallyHidden {
+  @include appearance(none);
+
+  border: 0;
+  box-shadow: none;
+  height: 1px;
+  margin: -1px;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  z-index: -10;
+}
+
+// LESS                  SCSS
+// #Mix.hideInput()   -> hxInput(visuallyHidden)
+// #MS.reset.input()  -> hxInput(reset)
+@mixin hxInput($state: null) {
+  @if $state == reset {
+    @include __input--reset;
+  }
+  @else if $state == visuallyHidden {
+    @include __input--visuallyHidden;
+  }
+  @else {
+    // do nothing
+  }
+}

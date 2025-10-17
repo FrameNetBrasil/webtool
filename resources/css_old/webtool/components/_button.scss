@@ -1,0 +1,59 @@
+.wt-button {
+    @extend %component-button;
+    border: 1px solid $wt-primary;
+    color: $wt-primary;
+}
+
+.wt-button.small {
+    padding: 0.125rem 0.5rem;
+}
+
+.wt-inline-button {
+    color: $wt-primary;
+    cursor: pointer;
+    line-height:1rem;
+    .wt-button-icon {
+        margin: 0;
+        vertical-align: text-bottom;
+    }
+}
+
+.wt-button-danger {
+    @extend %component-button;
+    color: $wt-status-danger;
+    border: 1px solid $wt-status-danger;
+
+    a {
+        color: white;
+    }
+
+    &:hover {
+        background-color: $wt-status-danger;
+        color: white;
+    }
+}
+
+.wt-button-confirm-ok {
+    @extend %component-button;
+    background-color: $grey-6;
+    color: white;
+    margin-right: $wt-unit;
+    border: 1px solid $grey-6;
+}
+
+.wt-button-confirm-cancel {
+    @extend %component-button;
+    color: $grey-6;
+    border: 1px solid $grey-6;
+}
+
+.hxBtn {
+    .wt-button-icon {
+        font-size: 12px;
+    }
+}
+
+.hxPlain {
+    border:0;
+}
+

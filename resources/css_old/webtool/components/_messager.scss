@@ -1,0 +1,236 @@
+.wt-messager {
+    border: 1px solid $wt-controls-border !important;
+    @extend %border-radius;
+    padding: 0;
+    max-width: 400px !important;
+    width: auto !important;
+
+    .panel-tool {
+        display: none;
+    }
+}
+
+.messager-body {
+    display: flex;
+}
+
+.wt-messager-success {
+
+    .messager-body {
+        background-color: $green-1;
+        border-left: 3px solid $green-9;
+        line-height: 3rem;
+        padding-left: $wt-unit;
+        padding-right: $wt-unit;
+
+        .label {
+            display: inline-block;
+            font-weight: bold;
+            margin-right: $wt-unit;
+        }
+
+        .icon {
+            color: $green-9;
+        }
+
+        .icon:before {
+            content: "check_circle";
+        }
+    }
+}
+
+.wt-messager-info {
+    background-color: $blue-1;
+    border-left: 3px solid $blue-9;
+    min-height: 100px;
+    padding: $wt-unit;
+
+    .icon {
+        color: $blue-9;
+    }
+
+    .icon:before {
+        content: "info";
+    }
+
+    .body {
+        padding-top: 0.75rem;
+        flex-grow: 1;
+
+        .label {
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: $wt-unit;
+        }
+    }
+
+    .button {
+
+        .close {
+            cursor: pointer;
+            color: black;
+        }
+
+        .close:before {
+            content: "close";
+        }
+    }
+}
+
+.wt-messager-error {
+    background-color: $red-1;
+    border-left: 3px solid $red-9;
+    min-height: 100px;
+    padding: $wt-unit;
+    width: auto !important;
+
+
+    .icon {
+        color: $red-9;
+    }
+
+    .icon:before {
+        content: "not_interested";
+    }
+
+    .body {
+        padding-top: 0.75rem;
+        flex-grow: 1;
+        width: auto !important;
+
+        .label {
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: $wt-unit;
+        }
+    }
+
+    .button {
+
+        .close {
+            cursor: pointer;
+            color: black;
+        }
+
+        .close:before {
+            content: "close";
+        }
+    }
+
+}
+
+
+.wt-messager-warning {
+    background-color: $yellow-1;
+    border-left: 3px solid $yellow-9;
+    min-height: 100px;
+    padding: $wt-unit;
+
+
+    .icon {
+        color: $yellow-9;
+    }
+
+    .icon:before {
+        content: "error";
+    }
+
+    .body {
+        padding-top: 0.75rem;
+        flex-grow: 1;
+
+        .label {
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: $wt-unit;
+        }
+    }
+
+    .button {
+
+        .close {
+            cursor: pointer;
+            color: black;
+        }
+
+        .close:before {
+            content: "close";
+        }
+    }
+
+}
+
+.wt-messager-confirm {
+    background-color: $yellow-1;
+    border-left: 3px solid $yellow-9;
+    min-height: 128px;
+    padding: $wt-unit;
+
+    .icon {
+        color: $yellow-9;
+    }
+
+    .icon:before {
+        content: "error";
+    }
+
+    .body {
+        padding-top: 0.75rem;
+
+        .label {
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: $wt-unit;
+        }
+    }
+
+    .buttons {
+        padding-top: 1rem;
+    }
+
+}
+
+.wt-messager-exception {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0rem !important;
+    flex-direction: column !important;
+    display: flex !important;
+    flex: 0 0 auto;
+    width: 66.6667%;
+
+    .button {
+        padding-top: 1rem;
+    }
+
+}
+
+.wt-messager-exception-info {
+    background-color: $blue-1;
+    border-left: 3px solid $blue-9;
+    min-height: 100px;
+    padding: $wt-unit;
+
+    .icon {
+        color: $blue-9;
+    }
+
+    .icon:before {
+        content: "info";
+    }
+
+    .body {
+        padding-top: 0.75rem;
+
+        .label {
+            display: inline-block;
+            font-weight: bold;
+            margin-bottom: $wt-unit;
+        }
+    }
+
+    .buttons {
+        padding-top: 1rem;
+    }
+
+}

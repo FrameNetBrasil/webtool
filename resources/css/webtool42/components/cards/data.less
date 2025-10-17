@@ -1,0 +1,81 @@
+/* Data Card Component */
+.data-card {
+    .data-card-header {
+        display: flex;
+        align-items: center;
+        gap: @relativeMedium;
+        margin-bottom: @relativeMedium;
+
+        .data-card-avatar {
+            width: @relative40px;
+            height: @relative40px;
+            border-radius: @defaultBorderRadius;
+            background: @primaryColor;
+            color: @invertedTextColor;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .data-card-title {
+            flex: 1;
+
+            .header {
+                margin-bottom: @relativeMini;
+            }
+
+            .meta {
+                color: @secondaryColor;
+                font-size: @small;
+            }
+        }
+
+        .data-card-status {
+            flex-shrink: 0;
+        }
+    }
+
+    .data-card-stats {
+        display: flex;
+        gap: @relativeMedium;
+        margin-top: @relativeMedium;
+
+        .statistic {
+            text-align: center;
+
+            .value {
+                font-size: @huge;
+                font-weight: @semibold;
+                color: @primaryColor;
+            }
+
+            .label {
+                font-size: @small;
+                color: @secondaryColor;
+                text-transform: uppercase;
+                letter-spacing: @letterSpacingNormal;
+            }
+        }
+    }
+
+    .data-card-actions {
+        display: flex;
+        gap: @relativeTiny;
+        justify-content: flex-end;
+    }
+
+    .data-card-tags {
+        display: flex;
+        gap: @relativeTiny;
+        justify-content: flex-start;
+    }
+
+    .data-card-info {
+        display: flex;
+        gap: @relativeTiny;
+        justify-content: flex-start;
+        color: @textColor
+    }
+
+}

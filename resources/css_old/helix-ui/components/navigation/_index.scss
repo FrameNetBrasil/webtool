@@ -1,0 +1,136 @@
+// LEFT-HAND NAVIGATION
+.hxNav {
+  $vpad: 0.5rem;
+  $rpad: 0.75rem;
+
+  $indent-by: 1.25rem;
+  $l1-indent: 1 * $indent-by;
+  $l2-indent: 2 * $indent-by;
+  $l3-indent: 3 * $indent-by;
+  $l4-indent: 4 * $indent-by;
+
+  background-color: $gray-50;
+  color: $gray-950;
+  font-size: 0.875rem; /* ~14px */
+  font-weight: 400;
+  letter-spacing: 0.75px;
+  padding-top: 2rem;
+
+  hx-disclosure {
+    color: inherit;
+    cursor: pointer;
+    display: block;
+    padding: $vpad $rpad $vpad $l1-indent;
+    position: relative;
+    outline: none;
+
+    &:hover {
+      background-color: $gray-200;
+      color: $purple-500;
+    }
+
+    .toggle-icon {
+      font-size: 0.75rem;
+      pointer-events: none;
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &[aria-expanded="true"] {
+      color: $purple-500;
+      font-weight: 600;
+
+      .toggle-icon {
+        transform: translateY(-50%) scaleY(-1);
+      }
+    }
+  }
+
+  // Level 1 ONLY
+  > hx-disclosure {
+    text-transform: uppercase;
+  }
+
+  a[href] {
+    color: inherit;
+    display: block;
+    font-weight: 400;
+    padding: $vpad $rpad $vpad $l1-indent;
+    text-decoration: none;
+
+    &.current {
+      border-left: 0.125rem solid $purple-500;
+      color: $purple-500;
+      font-weight: 600;
+      margin-left: 1.25rem;
+      padding-left: 1.125rem;
+    }
+
+    &:hover {
+      color: $purple-500;
+    }
+  }
+
+  hx-reveal {
+    a[href],
+    hx-disclosure {
+      padding-left: $l2-indent;
+    }
+
+    // Level 2
+    hx-reveal {
+      a[href],
+      hx-disclosure {
+        padding-left: $l3-indent;
+      }
+
+      hx-disclosure {
+        text-transform: capitalize;
+      }
+
+      // Level 3
+      hx-reveal {
+        a[href],
+        hx-disclosure {
+          padding-left: $l4-indent;
+        }
+      }
+    }
+  }//hx-reveal
+}
+
+// ===== SUB-LEFT NAVIGATION =====
+.hxLeftNavSection, .hxLeftNavSubSection {
+  > a:active, > a:focus {
+    border-left: 0.125rem solid $purple-500;
+    color: $purple-500;
+    font-weight: 600;
+    outline: none;
+  }
+}
+
+.hxLeftNavSection a:active, .hxLeftNavSection a:focus {
+  margin-left: 0.3rem;
+  padding-left: 0.8rem;
+}
+
+nav .hxLeftNavSubSection {
+  > a:active, > a:focus {
+    margin-left: 1.25rem;
+    padding-left: 1.125rem;
+  }
+}
+
+nav hx-reveal.hxLeftNavSubSection {
+  > a.hxDisabled {
+    border: none;
+    color: $gray-600 !important;
+    cursor: not-allowed;
+    font-weight: 400;
+    margin-left: 1.25rem;
+    outline: none;
+    padding-left: 1.25rem;
+  }
+}

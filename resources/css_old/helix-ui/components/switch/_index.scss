@@ -1,0 +1,135 @@
+@import "./config";
+
+hx-switch-control {
+  display: inline-block;
+  height: 2.125rem;
+  margin-top: 0.25rem; // FIXME: fix with proper inline styling
+  position: relative;
+  width: 4.25rem;
+
+  > input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  > label > hx-switch {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 2.125rem;
+  }
+
+  > label > hx-switch::before {
+    position: absolute;
+    content: "";
+    height: 2rem;
+    width: 2rem;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+}
+
+hx-switch-control > input[type="checkbox"] ~ label {
+  > hx-switch {
+    background-color: $gray-0;
+    background-color: var(--hxSwitchControl-switch-bgcolor, $gray-0);
+    border: 0.125rem solid $blue-900;
+    border: 0.125rem solid var(--hxSwitchControl-switch-border-color, $blue-900);
+
+    &:hover {
+      @include hxSwitchControl($pseudo-state: hover, $checkBox-state: unchecked);
+    }
+  }
+
+  > hx-switch[offlabel]::after {
+    content: attr(offlabel);
+    text-transform: uppercase;
+    margin-left: 2rem;
+    color: $blue-900;
+    color: var(--hxSwitchControl-switch-offlabel-color, $blue-900);
+    line-height: 2rem;
+    max-width: 1.813rem;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  > hx-switch::before {
+    background-color: $gray-0;
+    background-color: var(--hxSwitchControl-switch-bgcolor, $gray-0);
+    border: 0.125rem solid $blue-900;
+    border: 0.125rem solid var(--hxSwitchControl-switch-border-color, $blue-900);
+    left: -0.125rem;
+    top: -0.062rem;
+  }
+}
+
+hx-switch-control > input[type="checkbox"]:checked ~ label {
+  > hx-switch {
+    background-color: $blue-900;
+    background-color: var(--hxSwitchControl-switch-checked-bgcolor, $blue-900);
+    @include hxSwitchControl($pseudo-state: focus);
+
+    &:hover {
+      @include hxSwitchControl($pseudo-state: hover);
+    }
+  }
+
+  > hx-switch[onlabel]::after {
+    content: attr(onlabel);
+    text-transform: uppercase;
+    margin-left: 0.5rem;
+    color: $gray-0;
+    color: var(--hxSwitchControl-switch-checked-onlabel-color, $gray-0);
+    max-width: 2.125rem;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  > hx-switch::before {
+    margin-left: 2rem;
+    height: 2rem;
+    left: 0.125rem;
+  }
+}
+
+// ========== DISABLED ==========
+hx-switch-control > input[type="checkbox"]:disabled {
+  &:checked {
+    ~ label > hx-switch {
+      @include hxSwitchControl(disabled);
+      @include hxSwitchControl(disabled, focus);
+    }
+  }
+
+  ~ label > hx-switch {
+    @include hxSwitchControl(disabled, unchecked);
+  }
+}
+
+// ========== INVALID ==========
+hx-switch-control > input[invalid] {
+  &:checked {
+    ~ label > hx-switch {
+      @include hxSwitchControl(error, null, checked);
+      @include hxSwitchControl(error, focus);
+    }
+  }
+
+  ~ label > hx-switch {
+    @include hxSwitchControl(error, null, unchecked);
+    @include hxSwitchControl(error, focus);
+  }
+}

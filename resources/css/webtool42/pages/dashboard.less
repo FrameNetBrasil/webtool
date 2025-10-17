@@ -1,0 +1,402 @@
+/*******************************
+    Dashboard Pages Styling
+    Converted to use Fomantic-UI Variables
+*******************************/
+
+.dashboard-page {
+    /* Dashboard header */
+    .dashboard-header {
+        margin-bottom: @relativeBig;                                // 32px (was 2rem)
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .dashboard-title {
+                font-size: @fontSize4XL;                            // 36px (was 2rem)
+                font-weight: @bold;                       // 700 (was 700)
+                color: @textPrimary;                                // (was var(--color-text-primary))
+                margin: 0 0 @relativeTiny 0;                       // 0 0 8px 0 (was 0 0 0.5rem 0)
+            }
+
+            .dashboard-subtitle {
+                color: @textSecondary;                              // (was var(--color-text-secondary))
+                font-size: @fontSizeBase;                           // 16px (was 1rem)
+            }
+
+            .dashboard-actions {
+                display: flex;
+                gap: @relativeSmall;                                // 12px (was 0.75rem)
+                align-items: center;
+            }
+        }
+
+        .dashboard-nav {
+            margin-top: @relativeLarge;                             // 24px (was 1.5rem)
+
+            .nav-tabs {
+                display: flex;
+                gap: 0;
+                border-bottom: 1px solid @borderSubtle;             // (was var(--color-border-primary))
+
+                .nav-tab {
+                    padding: @relativeSmall @relativeLarge;         // 12px 24px (was 0.75rem 1.5rem)
+                    background: none;
+                    border: none;
+                    color: @textSecondary;                          // (was var(--color-text-secondary))
+                    font-size: @fontSizeSM;                         // 14px (was 0.875rem)
+                    font-weight: @semibold;                 // 500 (was 500)
+                    cursor: pointer;
+                    border-bottom: 2px solid transparent;
+                    transition: all @transitionFast;               // (was all 0.15s ease)
+
+                    &:hover {
+                        color: @textPrimary;                        // (was var(--color-text-primary))
+                        background: @sidebarBackground;             // (was var(--color-sidebar-bg))
+                    }
+
+                    &.active {
+                        color: @primaryColor;                       // (was var(--color-primary))
+                        border-bottom-color: @primaryColor;        // (was var(--color-primary))
+                    }
+                }
+            }
+        }
+    }
+
+    /* Stats overview */
+    .stats-overview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: @relativeLarge;                                        // 24px (was 1.5rem)
+        margin-bottom: @relativeBig;                                // 32px (was 2rem)
+
+        .stat-card {
+            background: @surfacePrimary;                            // (was var(--color-bg-primary))
+            border: 1px solid @borderSubtle;                       // (was var(--color-border-primary))
+            border-radius: @defaultBorderRadius;                        // 8px (was 8px)
+            padding: @relativeLarge;                                // 24px (was 1.5rem)
+            transition: all @transitionFast;                       // (was all 0.15s ease)
+
+            &:hover {
+                border-color: @primary200;                         // (was var(--color-primary-border))
+                box-shadow: @shadowLG;                             // (was 0 4px 6px -1px var(--color-shadow-medium))
+            }
+
+            .stat-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: @relativeMedium;                     // 16px (was 1rem)
+
+                .stat-title {
+                    color: @textSecondary;                          // (was var(--color-text-secondary))
+                    font-size: @fontSizeSM;                         // 14px (was 0.875rem)
+                    font-weight: @semibold;                 // 500 (was 500)
+                    text-transform: uppercase;
+                    letter-spacing: @letterSpacingWide;             // 0.025em (was 0.05em)
+                }
+
+                .stat-icon {
+                    width: @relativeBig;                            // 32px (was 2rem)
+                    height: @relativeBig;                           // 32px (was 2rem)
+                    background: @surfaceTertiary;                   // (was var(--color-bg-tertiary))
+                    border-radius: @defaultBorderRadius;                 // 4px (was 6px)
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: @textSecondary;                          // (was var(--color-text-secondary))
+                }
+            }
+
+            .stat-value {
+                font-size: @fontSize4XL;                           // 36px (was 2rem)
+                font-weight: @bold;                      // 700 (was 700)
+                color: @textPrimary;                               // (was var(--color-text-primary))
+                margin-bottom: @relativeTiny;                      // 8px (was 0.5rem)
+            }
+
+            .stat-change {
+                display: flex;
+                align-items: center;
+                gap: @relativeMini;                                 // 4px (was 0.25rem)
+                font-size: @fontSizeSM;                            // 14px (was 0.875rem)
+
+                &.positive {
+                    color: @success700;                             // (was var(--color-success-dark))
+                }
+
+                &.negative {
+                    color: @error700;                               // (was var(--color-error-dark))
+                }
+
+                &.neutral {
+                    color: @textSecondary;                          // (was var(--color-text-secondary))
+                }
+
+                .change-icon {
+                    width: @relativeMedium;                         // 16px (was 1rem)
+                    height: @relativeMedium;                        // 16px (was 1rem)
+                }
+            }
+
+            /* Colored stat cards */
+            &.primary {
+                background: linear-gradient(135deg, @primaryColor, @primary700); // (was var(--gradient-primary))
+                color: @white;                                      // (was var(--color-text-white))
+                border: none;
+
+                .stat-title,
+                .stat-change {
+                    color: @overlayLight20;                         // (was var(--color-overlay-20))
+                }
+
+                .stat-value {
+                    color: @white;                                  // (was var(--color-text-white))
+                }
+
+                .stat-icon {
+                    background: @overlayLight20;                    // (was var(--color-overlay-20))
+                    color: @white;                                  // (was var(--color-text-white))
+                }
+            }
+        }
+    }
+
+    /* Chart containers */
+    .chart-container {
+        background: @surfacePrimary;                                // (was var(--color-bg-primary))
+        border: 1px solid @borderSubtle;                           // (was var(--color-border-primary))
+        border-radius: @defaultBorderRadius;                            // 8px (was 8px)
+        padding: @relativeLarge;                                    // 24px (was 1.5rem)
+        margin-bottom: @relativeLarge;                              // 24px (was 1.5rem)
+
+        .chart-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: @relativeLarge;                          // 24px (was 1.5rem)
+
+            .chart-title {
+                font-size: @large;                             // 18px (was 1.125rem)
+                font-weight: @semibold;                   // 600 (was 600)
+                color: @textPrimary;                                // (was var(--color-text-primary))
+            }
+
+            .chart-controls {
+                display: flex;
+                gap: @relativeTiny;                                 // 8px (was 0.5rem)
+
+                .time-selector {
+                    display: flex;
+                    border: 1px solid @borderSubtle;               // (was var(--color-border-primary))
+                    border-radius: @defaultBorderRadius;                 // 4px (was 6px)
+                    overflow: hidden;
+
+                    .time-option {
+                        padding: @relativeTiny @relativeSmall;       // 8px 12px (was 0.5rem 0.75rem)
+                        background: @surfacePrimary;                // (was var(--color-bg-primary))
+                        border: none;
+                        color: @textSecondary;                      // (was var(--color-text-secondary))
+                        font-size: @fontSizeSM;                     // 14px (was 0.875rem)
+                        cursor: pointer;
+
+                        &:hover {
+                            background: @sidebarBackground;         // (was var(--color-sidebar-bg))
+                        }
+
+                        &.active {
+                            background: @primaryColor;              // (was var(--color-primary))
+                            color: @white;                          // (was var(--color-text-white))
+                        }
+
+                        &:not(:last-child) {
+                            border-right: 1px solid @borderSubtle; // (was var(--color-border-primary))
+                        }
+                    }
+                }
+            }
+        }
+
+        .chart-content {
+            height: 300px;
+            position: relative;
+
+            /* Placeholder for actual charts */
+            .chart-placeholder {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                color: @textTertiary;                               // (was var(--color-text-tertiary))
+                font-size: @fontSizeSM;                            // 14px (was 0.875rem)
+                border: 2px dashed @borderSubtle;                  // (was var(--color-border-primary))
+                border-radius: @defaultBorderRadius;                    // 4px (was 6px)
+            }
+        }
+    }
+
+    /* Activity feed */
+    .activity-feed {
+        background: @surfacePrimary;                                // (was var(--color-bg-primary))
+        border: 1px solid @borderSubtle;                           // (was var(--color-border-primary))
+        border-radius: @defaultBorderRadius;                            // 8px (was 8px)
+
+        .feed-header {
+            padding: @relativeLarge @relativeLarge 0;              // 24px 24px 0 (was 1.5rem 1.5rem 0)
+
+            .feed-title {
+                font-size: @large;                             // 18px (was 1.125rem)
+                font-weight: @semibold;                   // 600 (was 600)
+                color: @textPrimary;                                // (was var(--color-text-primary))
+                margin-bottom: @relativeMedium;                     // 16px (was 1rem)
+            }
+        }
+
+        .feed-list {
+            max-height: 400px;
+            overflow-y: auto;
+
+            .feed-item {
+                display: flex;
+                gap: @relativeMedium;                               // 16px (was 1rem)
+                padding: @relativeMedium @relativeLarge;            // 16px 24px (was 1rem 1.5rem)
+                border-bottom: 1px solid @borderSubtle;            // (was var(--color-border-light))
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .item-avatar {
+                    width: @relative40px;                           // 40px (was 2.5rem)
+                    height: @relative40px;                          // 40px (was 2.5rem)
+                    border-radius: 50%;
+                    background: @surfaceTertiary;                   // (was var(--color-bg-tertiary))
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+
+                    &.action-create {
+                        background: @success50;                     // (was var(--color-status-success-bg))
+                        color: @success700;                         // (was var(--color-success-dark))
+                    }
+
+                    &.action-update {
+                        background: @info50;                        // (was var(--color-status-info-bg))
+                        color: @info700;                            // (was var(--color-info-dark))
+                    }
+
+                    &.action-delete {
+                        background: @error50;                       // (was var(--color-status-error-bg))
+                        color: @error700;                           // (was var(--color-error-dark))
+                    }
+                }
+
+                .item-content {
+                    flex: 1;
+
+                    .item-description {
+                        color: @textPrimary;                        // (was var(--color-text-primary))
+                        font-size: @fontSizeSM;                     // 14px (was 0.875rem)
+                        margin-bottom: @relativeMini;               // 4px (was 0.25rem)
+                    }
+
+                    .item-meta {
+                        color: @textSecondary;                      // (was var(--color-text-secondary))
+                        font-size: @fontSizeXS;                     // 12px (was 0.75rem)
+
+                        .item-time {
+                            margin-right: @relativeMedium;          // 16px (was 1rem)
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /* Recent items */
+    .recent-items {
+        background: @surfacePrimary;                                // (was var(--color-bg-primary))
+        border: 1px solid @borderSubtle;                           // (was var(--color-border-primary))
+        border-radius: @defaultBorderRadius;                            // 8px (was 8px)
+
+        .items-header {
+            padding: @relativeLarge;                                // 24px (was 1.5rem)
+            border-bottom: 1px solid @borderSubtle;                // (was var(--color-border-light))
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .items-title {
+                font-size: @large;                             // 18px (was 1.125rem)
+                font-weight: @semibold;                   // 600 (was 600)
+                color: @textPrimary;                                // (was var(--color-text-primary))
+            }
+
+            .view-all-link {
+                color: @primaryColor;                               // (was var(--color-primary))
+                font-size: @fontSizeSM;                            // 14px (was 0.875rem)
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .items-list {
+            .recent-item {
+                display: flex;
+                align-items: center;
+                gap: @relativeMedium;                               // 16px (was 1rem)
+                padding: @relativeMedium @relativeLarge;            // 16px 24px (was 1rem 1.5rem)
+                border-bottom: 1px solid @borderSubtle;            // (was var(--color-border-light))
+                transition: background @transitionFast;            // (was background 0.15s ease)
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    background: @sidebarBackground;                 // (was var(--color-sidebar-bg))
+                }
+
+                .item-icon {
+                    width: @relativeBig;                            // 32px (was 2rem)
+                    height: @relativeBig;                           // 32px (was 2rem)
+                    border-radius: @defaultBorderRadius;                 // 6px (was 4px)
+                    background: @surfaceTertiary;                   // (was var(--color-bg-tertiary))
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: @textSecondary;                          // (was var(--color-text-secondary))
+                    flex-shrink: 0;
+                }
+
+                .item-info {
+                    flex: 1;
+
+                    .item-title {
+                        font-weight: @semibold;             // 500 (was 500)
+                        color: @textPrimary;                        // (was var(--color-text-primary))
+                        margin-bottom: @relativeMini;               // 4px (was 0.25rem)
+                    }
+
+                    .item-subtitle {
+                        color: @textSecondary;                      // (was var(--color-text-secondary))
+                        font-size: @fontSizeSM;                     // 14px (was 0.875rem)
+                    }
+                }
+
+                .item-time {
+                    color: @textTertiary;                           // (was var(--color-text-tertiary))
+                    font-size: @fontSizeXS;                        // 12px (was 0.75rem)
+                    flex-shrink: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,97 @@
+.wt-datagrid {
+    overflow-y: auto;
+    .component-border();
+
+    .datagrid-header {
+        .component-header();
+        .border-bottom();
+    }
+
+    .datagrid-header-search {
+        .component-header();
+        .border-bottom();
+        height:3rem;
+    }
+
+    .datagrid-title {
+        text-align: left;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    .table {
+        overflow-y:auto;
+        overflow-x:auto;
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed !important;
+
+            tbody{
+                display:block;
+                overflow:auto;
+                width:100%;
+            }
+
+            thead, tbody tr {
+                display: table;
+                width: 100%;
+                table-layout: fixed;/* even columns width , fix width of table too*/
+            }
+            thead {
+                background-color: var(--bluegray-100);
+                .border-bottom();
+            }
+        }
+
+        td {
+            .padding-micro();
+        }
+
+        tr {
+        }
+
+        tr:last-child {
+            border-bottom: 0;
+        }
+
+        tr:nth-child(odd) {
+            background-color: white;
+            &.subheader {
+                background-color: var(--bluegray-100);
+            }
+        }
+
+        tr:nth-child(even) {
+            background-color: var(--gray-100);
+            &.subheader {
+                background-color: var(--bluegray-100);
+            }
+        }
+
+        tr:hover {
+            background-color: var(--gray-200);
+        }
+
+        th {
+            top: 0;
+            position: sticky;
+            background-color: var(--bluegray-200);
+            text-align: left;
+            height: 2rem;
+            line-height: 2rem;
+            .padding-micro();
+        }
+
+        .wt-datagrid-action {
+            cursor: pointer;
+            width: 1.5rem;
+        }
+    }
+}
+
+.wt-datagrid-child {
+    max-height: calc(32 * @wt-unit);
+}
+

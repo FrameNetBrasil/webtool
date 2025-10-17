@@ -1,0 +1,63 @@
+/* Option Card Component */
+.option-card {
+    transition: all @transitionNormal;
+    cursor: pointer;
+    //min-height: 9rem !important;
+
+    .content {
+        .description {
+            min-height: 3rem !important;
+            line-height: 1.5;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Allow 3 lines instead of 2 */
+            -webkit-box-orient: vertical;
+        }
+    }
+
+    &:hover {
+        text-decoration: none;
+        transform: translateY(-@relative2px);
+        box-shadow: @shadowXL;
+    }
+
+    .option-card-icon {
+        width: @relative48px;
+        height: @relative48px;
+        border-radius: @defaultBorderRadius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: @relativeMedium;
+        font-size: @huge;
+        color: @invertedTextColor;
+        flex-shrink: 0;
+        border: 1px solid;
+    }
+
+    .option-card-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: @relativeMedium;
+        font-size: @tiny;
+        color: @secondaryColor;
+
+        .option-card-count {
+            background: @secondaryBackground;
+            padding: @relativeMini @relativeTiny;
+            border-radius: @defaultBorderRadius;
+            font-weight: @semibold;
+        }
+
+        .option-card-updated {
+            color: @secondaryColor;
+        }
+    }
+
+    .option-card-actions {
+        display: flex;
+        gap: @relativeTiny;
+        justify-content: flex-end;
+    }
+}

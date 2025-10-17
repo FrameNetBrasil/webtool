@@ -1,0 +1,99 @@
+.app-sidebar {
+    grid-area: sidebar;
+    background: @primaryBackground;                                      // (was var(--color-sidebar-bg))
+    border-right: 1px solid @borderColor;                             // (was var(--color-sidebar-border))
+    overflow-y: auto;
+    z-index: @zIndexFixed;
+
+    .ui.vertical.menu {
+        background: @primaryBackground;                                      // (was var(--color-sidebar-bg))
+    }
+}
+/* Sidebar layouts for detail views */
+.sidebar-layout {
+    display: grid;
+    gap: @relativeBig;                                                   // 32px (was var(--spacing-8))
+
+    &.left {
+        grid-template-columns: 300px 1fr;
+    }
+
+    &.right {
+        grid-template-columns: 1fr 300px;
+    }
+
+    &.wide-sidebar {
+        &.left {
+            grid-template-columns: @sidebarWidthWide 1fr;               // 400px (was var(--sidebar-width-wide))
+        }
+
+        &.right {
+            grid-template-columns: 1fr @sidebarWidthWide;               // 400px (was var(--sidebar-width-wide))
+        }
+    }
+
+    &.narrow-sidebar {
+        &.left {
+            grid-template-columns: @sidebarWidthNarrow 1fr;             // 250px (was var(--sidebar-width-narrow))
+        }
+
+        &.right {
+            grid-template-columns: 1fr @sidebarWidthNarrow;             // 250px (was var(--sidebar-width-narrow))
+        }
+    }
+
+    .sidebar-content {
+        background: @primaryBackground;                                  // (was var(--color-sidebar-bg))
+        border: 1px solid @borderColor;                                // (was var(--color-border-primary))
+        border-radius: @defaultBorderRadius;                                 // 8px (was var(--radius-lg))
+        padding: @relativeLarge;                                         // 24px (was var(--spacing-6))
+        height: fit-content;
+        position: sticky;
+        top: @relativeMedium;                                            // 16px (was var(--spacing-4))
+    }
+
+    .main-content {
+        min-width: 0; /* Prevents overflow in grid */
+    }
+
+}
+
+/* Sidebar */
+.app-sidebar {
+    padding: @relativeTiny 0 0 @relativeTiny; // 8px (was @relative2px)
+    display: flex;
+    flex-direction: column;
+    height: 100%;// (100vh - 64px); // Full viewport height
+
+    // Main sidebar content (scrollable)
+    .main {
+        flex-grow: 1;
+        overflow-y: auto;
+
+        .ui.vertical.menu {
+            width: 100%;
+        }
+
+        .ui.accordion {
+            margin-bottom: @relativeTiny; // 8px (was @relative2px)
+            border-bottom: 1px solid @borderColor; // (was @borderColor)
+
+            .content {
+                padding-top: 0;
+                padding-left: @relativeBig; // 32px (was @mini)
+            }
+        }
+    }
+
+}
+
+// Footer that sticks to bottom of viewport
+.app-sidebar-footer {
+    min-height: 3rem; // Temporary - remove after testing
+    line-height: 3rem;
+    padding-left: @relativeBig;
+    border-top: 1px solid @borderColor;
+    border-right: 1px solid @borderColor;
+}
+
+

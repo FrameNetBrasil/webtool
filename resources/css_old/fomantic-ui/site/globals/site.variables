@@ -1,0 +1,11 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+@successColor: #008b38;
+@primaryColor: @blue;
+@secondaryColor: @teal;
+@lightPrimaryColor: @lightBlue;
+@lightSecondaryColor: @lightTeal;
+@inputPlaceholderColor: @grey;
+@fontSize: 16px;

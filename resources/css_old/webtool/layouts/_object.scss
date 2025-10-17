@@ -1,0 +1,46 @@
+.object-header {
+    margin-bottom: 1rem;
+
+    .object-child {
+        font-size:1.25rem;
+    }
+
+}
+.object-navigation {
+    display:block;
+    width:12rem;
+    min-width:12rem;
+    margin-bottom: 1rem;
+
+    .ui.vertical.menu {
+        @extend %menu-background;
+        box-shadow: none;
+        font-size: 1rem;
+    }
+}
+
+.object-description {
+
+}
+
+.object-main {
+    margin-left:1rem;
+
+    h2 {
+        font-size: 1.75rem;
+    }
+}
+
+//.object-show-description {
+//    font-size: 0.875rem;
+//    color: $wt-primary;
+//    font-weight: 600;
+//    padding-left: 0.5rem;
+//    height: 1rem;
+//    border:0;
+//
+//    &:hover, &:focus {
+//        border:0;
+//    }
+//}
+

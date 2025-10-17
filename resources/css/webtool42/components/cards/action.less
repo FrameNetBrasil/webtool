@@ -1,0 +1,39 @@
+/* Action Card Component */
+.action-card {
+    text-align: center;
+    cursor: pointer;
+    transition: all @transitionNormal;
+
+    &:hover {
+        transform: translateY(-@relative2px);
+        box-shadow: @shadowLG;
+    }
+
+    .action-card-icon {
+        width: @relative64px;
+        height: @relative64px;
+        border-radius: @defaultBorderRadius;
+        background: @primaryColor;
+        color: @invertedTextColor;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: @huge;
+        margin: 0 auto @relativeMedium;
+    }
+
+    .action-card-shortcut {
+        margin-top: @relativeTiny;
+        font-size: @mini;
+        color: @secondaryColor;
+
+        kbd {
+            background: @secondaryBackground;
+            border: 1px solid @borderColor;
+            border-radius: @defaultBorderRadius;
+            padding: @relativeMini @relativeMini;
+            //font-family: @codeFont;
+            font-size: 0.7rem;
+        }
+    }
+}

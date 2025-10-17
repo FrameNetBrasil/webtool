@@ -1,0 +1,41 @@
+/* Table container with sticky headers */
+.table-container {
+    position: relative;
+    overflow: auto;
+    max-height: calc(100vh - 200px);
+    border: 1px solid @borderColor;                                     // (was var(--color-border-primary))
+    border-radius: @defaultBorderRadius;                                      // 8px (was var(--radius-lg))
+    background: @primaryBackground;                                         // (was var(--color-bg-primary))
+
+    &.full-height {
+        max-height: calc(100vh - 120px);
+    }
+
+    &.compact {
+        max-height: 400px;
+    }
+
+    &.scrollable-x {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .ui.table {
+        margin: 0;
+        border: none;
+        border-radius: 0;
+
+        thead th {
+            position: sticky;
+            top: 0;
+            background: @primaryBackground;                              // (was var(--color-sidebar-bg))
+            z-index: @zIndexDropdown;                                    // (was var(--z-dropdown))
+            border-bottom: 2px solid @borderColor;                     // (was var(--color-border-primary))
+            box-shadow: @shadowSM;                                      // (was var(--shadow-sm))
+        }
+
+        &.striped tbody tr:nth-child(2n) {
+            background: @primaryBackground;                              // (was var(--color-sidebar-bg))
+        }
+    }
+}

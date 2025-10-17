@@ -1,0 +1,39 @@
+/* Split layouts for comparison views */
+.split-layout {
+    display: grid;
+    height: 100%;
+
+    &.horizontal {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    &.vertical {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    &.thirds {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    &.golden {
+        grid-template-columns: 1.618fr 1fr;
+    }
+
+    .split-panel {
+        overflow: auto;
+        position: relative;
+
+        &:not(:last-child) {
+            border-right: 1px solid @borderColor;                      // (was var(--color-border-primary))
+        }
+    }
+
+    &.vertical .split-panel {
+        &:not(:last-child) {
+            border-right: none;
+            border-bottom: 1px solid @borderColor;                     // (was var(--color-border-primary))
+        }
+    }
+}

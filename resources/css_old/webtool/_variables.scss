@@ -1,0 +1,122 @@
+/*
+Webtool variables
+ */
+
+/*
+Entities
+ */
+
+//$wt-domain-color: $red-10;
+//$wt-domain-icon: "domain";
+//$wt-frame-color: $red-10;
+//$wt-frame-icon: "dashboard";
+//$wt-fe-color: $grey-10;
+//$wt-fe-core-color: $grey-8;
+//$wt-fe-core-icon: " \ef4a";
+//$wt-fe-core-unexpressed-color: $grey-8;
+//$wt-fe-core-unexpressed-icon: " \ef71";
+//$wt-fe-peripheral-color: $grey-8;
+//$wt-fe-peripheral-icon: " \e837";
+//$wt-fe-extra-thematic-color: $grey-8;
+//$wt-fe-extra-thematic-icon: " \e836";
+//$wt-fe-ni-color: $grey-8;
+//$wt-fe-ni-icon: "pending";
+//$wt-cxn-color: $green-10;
+//$wt-cxn-icon: "space_dashboard";
+//$wt-semantictype-color: $orange-10;
+//$wt-semantictype-icon: "category";
+//$wt-lemma-color: $blue-10;
+//$wt-lemma-icon: "abc";
+//$wt-lexeme-color: $blue-10;
+//$wt-lexeme-icon: "abc";
+//$wt-wordform-color: $blue-10;
+//$wt-wordform-icon: "abc";
+//$wt-lu-color: $blue-10;
+//$wt-lu-icon: "abc";
+//$wt-relation-color: $grey-8;
+//$wt-relation-icon: "link";
+//$wt-corpus-color: $blue-grey-5;
+//$wt-corpus-icon: "folder_copy";
+//$wt-document-color: $blue-grey-5;
+//$wt-document-icon: "description";
+//$wt-sentence-color: $blue-grey-5;
+//$wt-sentence-icon: "short_text";
+//$wt-qualia-color: black;
+//$wt-qualia-icon: "device_hub";
+//$wt-qualia-agentive-color: #e33357;
+//$wt-qualia-agentive-icon: "device_hub";
+//$wt-qualia-constitutive-color: #407e42;
+//$wt-qualia-constitutive-icon: "device_hub";
+//$wt-qualia-context-color: #e9a122;
+//$wt-qualia-context-icon: "device_hub";
+//$wt-qualia-formal-color: #5f479e;
+//$wt-qualia-formal-icon: "device_hub";
+//$wt-qualia-telic-color: #54c5af;
+//$wt-qualia-telic-icon: "device_hub";
+//$wt-user-color: black;
+//$wt-user-icon: "person";
+
+/*
+  Modules
+ */
+//$wt-admin-color: black;
+//$wt-admin-icon: "admin_panel_settings";
+//$wt-lexicon-color: $blue-10;
+//$wt-lexicon-icon: "abc";
+//$wt-annotation-color: black;
+//$wt-annotation-icon: "edit_note";
+//$wt-annotation-static-color: black;
+//$wt-annotation-static-icon: "\e3f4";
+//$wt-annotation-static-frame-mode-1-color: black;
+//$wt-annotation-static-frame-mode-1-icon: "image";
+//$wt-annotation-static-frame-mode-2-color: black;
+//$wt-annotation-static-frame-mode-2-icon: "image";
+//$wt-annotation-dynamic-color: black;
+//$wt-annotation-dynamic-icon: "videocam";
+//$wt-utils-color: black;
+//$wt-utils-icon: "construction";
+
+$wt-dashboard-color1: #688bc9;
+$wt-dashboard-color2: #a55394;
+$wt-dashboard-color3: #407e42;
+$wt-dashboard-color4: #e9a122;
+$wt-dashboard-color5: #5f479e;
+$wt-dashboard-color6: #85c04c;
+$wt-dashboard-color7: #54c5af;
+$wt-dashboard-color8: #e33357;
+
+/*
+ status
+ */
+//$wt-primary:$blue-500;
+//$wt-secondary:$teal-500;
+//$wt-master-color: $cyan-10;
+//$wt-master-icon: "table_view";
+//$wt-detail-color: $cyan-10;
+//$wt-detail-icon: "view_list";
+//$wt-status-success-color: $rax-color-status-success-500;
+//$wt-status-warning-color: $rax-color-status-warning-500;
+//$wt-status-error-color: $rax-color-status-critical-500;
+//$wt-status-info-color: $rax-color-status-info-500;
+//$wt-status-info-icon: "check_circle";
+//$wt-status-success-icon: "check_circle";
+//$wt-status-warning-icon: "error_outline";
+//$wt-status-error-icon: "error";
+//$wt-status-danger: $red-10;
+
+/*
+Components
+ */
+
+$wt-text-color: #333;
+$wt-mini-unit: 4px;
+$wt-unit: 8px;
+$wt-2-unit: 16px;
+$wt-row-unit: 32px;
+$wt-row-control-unit: 40px;
+$wt-row-detail-unit: 24px;
+
+$wt-font-size: 14px;
+$wt-controls-border-radius: 2px 2px 2px 2px;
+$wt-controls-border: 1px solid $grey-5;
+

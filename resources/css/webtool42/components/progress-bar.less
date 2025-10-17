@@ -1,0 +1,39 @@
+/* Import design system tokens */
+//@import '../../design-system-original/tokens/_index.less';
+
+/* Progress indicators */
+.progress-bar {
+    width: 100%;
+    height: var(--spacing-2); // 8px
+    background: var(--color-border-primary);
+    border-radius: var(--radius-sm); // 4px
+    overflow: hidden;
+
+    .progress-fill {
+        height: 100%;
+        background: var(--gradient-primary-alt);
+        transition: width var(--transition-normal);
+        border-radius: var(--radius-sm); // 4px
+    }
+
+    &.small {
+        height: var(--spacing-1); // 4px
+    }
+
+    &.large {
+        height: var(--spacing-3); // 12px
+    }
+
+    &.success .progress-fill {
+        background: var(--gradient-success);
+    }
+
+    &.warning .progress-fill {
+        background: var(--gradient-warning);
+    }
+
+    &.error .progress-fill {
+        background: var(--gradient-error);
+    }
+}
+

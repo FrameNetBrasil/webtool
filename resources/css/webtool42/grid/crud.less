@@ -1,0 +1,26 @@
+/* Page-specific grids */
+.crud-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: @relativeLarge;                                                 // 24px (was var(--spacing-6))
+
+    &.with-sidebar {
+        grid-template-columns: 300px 1fr;
+        gap: @relativeBig;                                               // 32px (was var(--spacing-8))
+    }
+
+    &.split-view {
+        grid-template-columns: 1fr 1fr;
+        gap: @relativeBig;                                               // 32px (was var(--spacing-8))
+    }
+
+    &.master-detail {
+        grid-template-columns: 2fr 3fr;
+        gap: @relativeBig;                                               // 32px (was var(--spacing-8))
+    }
+
+    &.three-panel {
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: @relativeLarge;                                             // 24px (was var(--spacing-6))
+    }
+}

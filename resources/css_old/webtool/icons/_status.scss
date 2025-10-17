@@ -1,0 +1,26 @@
+.wt-icon-annotation-success {
+    color: $wt-status-success-color;
+
+    &:after {
+        content: $wt-status-success-icon;
+    }
+}
+
+
+.wt-icon-annotation-warning {
+    color: $wt-status-warning-color;
+
+    &:after {
+        content: $wt-status-warning-icon;
+    }
+}
+
+
+.wt-icon-annotation-error {
+    color: $wt-status-error-color;
+
+    &:after {
+        content: $wt-status-error-icon;
+    }
+}
+

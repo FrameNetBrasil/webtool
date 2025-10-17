@@ -1,0 +1,28 @@
+.hxLeft {
+  text-align: left !important;
+}
+
+.hxCenter {
+  text-align: center !important;
+}
+
+.hxRight {
+  text-align: right !important;
+}
+
+// DEPRECATED: remove in v1.0.0
+.text-left {
+  @extend .hxLeft;
+}
+
+.text-center {
+  @extend .hxCenter;
+}
+
+.text-right {
+  @extend .hxRight;
+}
+
+.text-justify {
+  text-align: justify;
+}

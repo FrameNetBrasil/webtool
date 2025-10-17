@@ -1,0 +1,139 @@
+// Fomantic UI Tree Component
+.tree-container {
+    font-family: @pageFont;
+    font-size: @fontSize;
+    line-height: @lineHeight;
+
+    .tree-header {
+        font-size: @relativeMedium;
+        font-weight: @headerFontWeight;
+        color: @textColor;
+        margin-bottom: @relative8px;
+        padding: @relative8px @relative12px;
+        border-bottom: @relative1px solid @solidBorderColor;
+    }
+
+    .tree-body {
+        .tree-table {
+            width: 100%;
+            //border-collapse: separate;
+            //border-spacing: 0;
+            font-size: @fontSize;
+
+            .hidden {
+                display: none !important;
+            }
+
+            tr {
+                &.row-data {
+                    //border-bottom: @relative1px dashed @borderColor !important;
+                    //transition: background-color @defaultDuration @defaultEasing;
+                    //
+                    &:hover {
+                        background-color: @transparentBlack;
+                        cursor: pointer;
+                    }
+
+                    &:last-child {
+                        border-bottom: none !important;
+                    }
+                }
+
+                td {
+                    vertical-align: middle;
+                    padding: @relative6px @relative8px;
+                    //border: none;
+
+                    &.toggle {
+                        width: @relative32px;
+                        text-align: center;
+                        cursor: pointer;
+                        user-select: none;
+                        //padding: @relative6px @relative4px;
+                        padding: @relative6px 0 !important;
+
+                        .toggle-icon {
+                            display: inline-block;
+                            width: @relative16px;
+                            height: @relative18px;
+                            vertical-align: top;
+                            overflow: hidden;
+                            transition: transform @defaultDuration @defaultEasing;
+
+                            &.collapsed {
+                                background: url('/images/easyui/tree_icons.png') no-repeat 0 0;
+                            }
+
+                            &.expanded {
+                                background: url('/images/easyui/tree_icons.png') no-repeat -18px 0px;
+                            }
+                        }
+                    }
+
+                    &.leaf {
+                        width: 0;
+                    }
+
+                    &.ident {
+                        padding: 0 !important;
+                    }
+
+                    &.content {
+                        padding: 0 !important;
+                    }
+
+                    &.content-cell {
+                        line-height: @lineHeight;
+                        vertical-align: middle;
+                        //padding: @relative4px @relative8px;
+                        padding: @relative4px @relative8px @relative4px 0  !important;
+
+                        .tree-item-text {
+                            cursor: pointer;
+                            padding: @relative4px @relative6px;
+                            //border-radius: @relativeBorderRadius;
+                            //transition: all @defaultDuration @defaultEasing;
+                            color: @textColor;
+                            display: inline-block;
+                        }
+                    }
+
+                    .loading {
+                        height: @relative32px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        padding: @relative8px;
+                    }
+                }
+            }
+
+            .tree-content {
+
+                &.hidden {
+                    display: none !important;
+                }
+
+                table {
+                    width: 100%;
+                    //margin-top: @relative4px;
+                    //border-left: @relative2px solid @solidBorderColor;
+                    //margin-left: @relative16px;
+                }
+
+                .tree-table td {
+                    padding: @relative4px @relative8px;
+
+                    .text-time {
+                        white-space: nowrap;
+                        text-align: right;
+                        display: inline-block;
+                        width: 72px;
+                        font-size: @relativeSmall;
+                        color: @lightTextColor;
+                    }
+                }
+            }
+        }
+    }
+}

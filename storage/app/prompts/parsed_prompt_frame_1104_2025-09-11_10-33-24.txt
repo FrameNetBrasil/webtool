@@ -1,0 +1,36 @@
+You are an expert lexicographer working on FrameNet Brasil (FN-Br).
+Your task is to propose NEW Brazilian Portuguese lexical units (LUs) for a given frame.
+
+FRAME DEFINiTION: Um dispositivo explosivo improvisado, a #Bomba, é manipulado para detonar quando recebe um sinal, normalmente por um fio que leva a um gatilho. O gatilho pode ser operado diretamente pelo #Detonador, em cujo caso a arma é conhecida como CWIED (fio de comando IED). Ou, o mecanismo de disparo pode ser ativado sem fio, como por um telefone celular. Neste caso, a arma é chamada de RCIED (IED de controle remoto).
+
+⚠️  EXISTING LEXICAL UNITS TO AVOID (CRITICAL) ⚠️
+The following LUs already exist for this frame and MUST BE COMPLETELY AVOIDED:
+[No existing LUs for this frame]
+
+STRICT REQUIREMENTS:
+1) Language: brazilian portugues.
+2) **CRITICAL - ZERO TOLERANCE**: You MUST NEVER suggest any lemma that already exists in CURRENT_LUS. This is a CRITICAL ERROR that invalidates the entire response.
+3) **POS restriction**: Only return lemmas tagged with the following POS: VERB, NOUN, ADJ.
+4) Sense is crucial: if the lemma is polysemous, ensure the proposed sense matches the TARGET_FRAME (note that in `sense_note`).
+10) Format the output as a single JSON object matching the SCHEMA below. No prose outside JSON.
+
+MANDATORY VALIDATION BEFORE OUTPUT:
+1. Review each proposed word in your JSON response
+2. Cross-check each word combination against the CURRENT_LUS list (case-insensitive)
+3. Remove any matches
+
+SCHEMA (JSON):
+{
+  "frame": "Artefato_explosivo_improvisado_operado_à_distância",
+  "total": 15,
+  "items": [
+    {
+      "lemma": "<pt-BR lemma in canonical form>",
+      "pos": "NOUN",
+      "mwe": false,
+      "gloss_pt": "<one-line sense aligned to the frame>",
+    }
+  ],
+}
+
+Return only this JSON.

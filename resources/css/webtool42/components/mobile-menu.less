@@ -1,0 +1,24 @@
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: @relativeTiny; // 8px
+    color: @secondaryColor;
+    cursor: pointer;
+    border-radius: @defaultBorderRadius; // 6px
+    transition: all @transitionFast;
+
+    &:hover {
+        color: @primaryColor;
+        background: @primaryBackground;
+    }
+
+    .icon {
+        font-size: @huge; // 20px
+    }
+
+    @media (min-width: @mobileBreakpoint) {
+        display: none;
+    }
+}

@@ -1,0 +1,216 @@
+/* Tab Component Enhancements */
+/* Extends Fomantic-UI tab styling with custom loading states and animations */
+
+@import (reference) '../fomantic-ui/site/globals/site.variables';
+
+/* Variables */
+@tabTransitionDuration: @defaultDuration;
+@tabTransitionEasing: @defaultEasing;
+@tabLoadingBackground: @lightGrey;
+@tabErrorBackground: @negativeBackgroundColor;
+@tabBorderRadius: @relative4px;
+
+/* Tabs Component Container */
+.tabs-component {
+
+    /* Enhanced Tab Menu */
+    .ui.tabs.menu {
+        border-bottom: @relative2px solid @borderColor;
+        margin-bottom: @relative16px;
+
+        .item {
+            transition: all @tabTransitionDuration @tabTransitionEasing;
+            border-bottom: @relative3px solid transparent;
+            cursor: pointer;
+
+            &:hover {
+                background: @transparentBlack;
+                border-bottom-color: @secondaryColor;
+            }
+
+            &.active {
+                border-bottom-color: @primaryColor;
+                background: transparent;
+
+                &:hover {
+                    border-bottom-color: @primaryColor;
+                }
+            }
+
+            /* Icon spacing */
+            .icon {
+                margin-right: @relative8px;
+            }
+        }
+    }
+
+    /* Tab Content Areas */
+    .ui.tab {
+        min-height: 4em;
+        padding: @relative16px 0;
+        overflow:initial;
+
+        /* Loading Indicator */
+        .tab-loading-indicator {
+            text-align: center;
+            padding: @relative32px @relative16px;
+            background: @tabLoadingBackground;
+            border-radius: @tabBorderRadius;
+            margin: @relative16px 0;
+
+            .ui.loader {
+                margin-bottom: @relative16px;
+            }
+
+            p {
+                margin: 0;
+                color: @mutedTextColor;
+                font-size: @relativeMedium;
+            }
+        }
+
+        /* Content Area */
+        .tab-content {
+            padding: 0 @relativeTiny @relativeTiny @relativeTiny;
+            animation: fadeIn @tabTransitionDuration @tabTransitionEasing;
+            overflow:initial;
+
+            /* Empty state styling */
+            &:empty {
+                min-height: 3em;
+            }
+        }
+
+        /* Error State */
+        .tab-error {
+            margin: @relative16px 0;
+
+            .ui.error.message {
+                background: @tabErrorBackground;
+
+                .button {
+                    margin-top: @relative12px;
+
+                    .icon {
+                        margin-right: @relative6px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Loading States */
+    &.loading {
+        .ui.tabs.menu .item {
+            pointer-events: none;
+            opacity: 0.6;
+        }
+    }
+
+    /* Responsive Design */
+    @media only screen and (max-width: @tabletBreakpoint) {
+        .ui.tabs.menu {
+            .item {
+                padding: @relative12px @relative8px;
+                font-size: @relativeTiny;
+
+                .icon {
+                    margin-right: @relative4px;
+                }
+            }
+        }
+
+        .ui.tab {
+            padding: @relative12px 0;
+
+            .tab-loading-indicator {
+                padding: @relative20px @relative12px;
+
+                p {
+                    font-size: @relativeSmall;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: @mobileBreakpoint) {
+        .ui.tabs.menu {
+            overflow-x: auto;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+
+            .item {
+                display: inline-block;
+                min-width: auto;
+                flex: none;
+            }
+        }
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(@relative8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Accessibility Improvements */
+.ui.tabs.menu .item {
+    &:focus {
+        outline: @relative2px solid @focusedFormBorderColor;
+        outline-offset: @relative2px;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .tabs-component {
+        .ui.tabs.menu {
+            border-bottom-width: @relative3px;
+
+            .item {
+                &.active {
+                    border-bottom-width: @relative4px;
+                }
+            }
+        }
+
+        .tab-loading-indicator {
+            border: @relative2px solid @borderColor;
+        }
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .tabs-component {
+        .ui.tabs.menu .item,
+        .ui.tab .tab-content,
+        .section-content {
+            transition: none;
+        }
+
+        .tab-content {
+            animation: none;
+        }
+
+        .ui.tab[data-tab] {
+            &::after {
+                animation: none;
+            }
+        }
+    }
+}

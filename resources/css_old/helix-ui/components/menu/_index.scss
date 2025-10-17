@@ -1,0 +1,106 @@
+@import "../../mixins";
+@import "../config";
+@import "../../components/box/config";
+
+hx-menu {
+  @extend %hxComponent;
+  @include is-positionable;
+
+  background-color: $gray-0;
+  background-color: var(--hxMenu-bgcolor, $gray-0);
+  border: 1px solid $gray-300;
+  border: 1px solid var(--hxMenu-border, $gray-300);
+  box-shadow: $layering-shadow;
+  max-width: 20rem;
+  min-width: 10rem;
+  z-index: $menu-z-index;
+
+  &[open] {
+    @include box-size(sm);
+
+    display: block;
+  }
+
+  > section {
+    display: block;
+
+    header {
+      color: $gray-600;
+      color: var(--hxMenu-section-header-color, $gray-600);
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    + section {
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+// Most of the styles mimic those of .hxBtn.hxLink.
+//
+// However, because the generated CSS would end up being
+// equally specific, extended definitions seem to take
+// priority, so we can't use @extend here.
+hx-menuitem {
+  background-color: transparent;
+  border-radius: 2px;
+  border: none;
+  color: $blue-900;
+  color: var(--hxMenu-hxMenuitem-color, $blue-900);
+  cursor: pointer;
+  display: block;
+  //font-size: 0.875rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  padding: 0.25rem 0;
+
+  &:hover {
+    background-color: transparent;
+    border-color: transparent;
+    color: $blue-500;
+    color: var(--hxMenu-hxMenuitem-hover-color, $blue-500);
+  }
+
+  &:active {
+    background-color: transparent;
+    border-color: transparent;
+    color: $blue-700;
+    color: var(--hxMenu-hxMenuitem-active-color, $blue-700);
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &[disabled] {
+    background-color: transparent;
+    border-color: transparent;
+    color: $gray-400;
+    color: var(--hxMenu-hxMenuitem-disabled-color, $gray-400);
+  }
+
+  &.hxBtn--link { // DEPRECATED: Remove in v1.0.0
+    padding: 0.25rem 0;
+  }
+}
+
+// DEPRECATED: remove in v1.0.0
+hx-menuitem-group {
+  display: block;
+
+  header {
+    color: $gray-600;
+    color: var(--hxMenu-hxMenuitemGroup-header-color, $gray-600);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  & + & {
+    margin-top: 0.5rem;
+  }
+}

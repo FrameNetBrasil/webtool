@@ -1,0 +1,40 @@
+//.wt-tag {
+//    position: relative;
+//    display: inline-block;
+//    margin: $wt-mini-unit;
+//    padding: $wt-mini-unit;
+//    vertical-align: top;
+//    text-decoration: none;
+//    @extend %border-radius;
+//    background-color: $blue-100;
+//    font-size: 0.875rem;
+//    line-height: 0.875rem;
+//}
+
+.wt-tag-id {
+    color: rgba(0, 0, 0, 0.6) !important;
+    background-color: $blue-grey-2 !important;
+}
+
+.wt-tag-rel_framal_type {
+    color: $orange-10 !important;
+    background-color: $orange-11 !important;
+}
+
+.wt-tag-rel_framal_domain {
+    color: $orange-10 !important;
+    background-color: $orange-11 !important;
+}
+
+.wt-tag-en {
+    color: $red !important;
+    background-color: $red-1 !important;
+}
+
+.wt-tag-frame {
+    color: $red !important;
+    background-color: $red-1 !important;
+    span {
+        opacity: 1.0 !important;
+    }
+}

@@ -1,0 +1,93 @@
+/* Summary Card Component */
+.summary-card {
+    .summary-card-header {
+        display: flex;
+        align-items: center;
+        //justify-content: space-between;
+        margin-bottom: @relativeMedium;
+
+        .summary-card-icon {
+            width: @relative40px;
+            height: @relative40px;
+            border-radius: @defaultBorderRadius;
+            background: @primaryBackground;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: @huge;
+        }
+
+        .summary-card-trend {
+            font-size: @medium;
+            font-weight: @semibold;
+
+            &.positive {
+                color: @positiveColor;
+            }
+
+            &.negative {
+                color: @negativeColor;
+            }
+
+            &.neutral {
+                color: @secondaryColor;
+            }
+        }
+    }
+
+    .summary-card-value {
+        margin-bottom: @relativeTiny;
+
+        .statistic {
+            .value {
+                font-size: @massive; // 36px
+                font-weight: @bold;
+                line-height: @lineHeight;
+            }
+
+            .label {
+                font-size: @small;
+                color: @secondaryColor;
+            }
+        }
+    }
+
+    .summary-card-description {
+        font-size: @small;
+        color: @secondaryColor;
+        line-height: 1.5;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+
+    // Themed variants
+    &.primary {
+        .summary-card-icon {
+            background: @primaryBackground;
+            color: @primaryColor;
+        }
+    }
+
+    &.positive {
+        .summary-card-icon {
+            background: @successBackgroundColor;
+            color: @positiveColor;
+        }
+    }
+
+    &.warning {
+        .summary-card-icon {
+            background: @warningBackgroundColor;
+            color: @warningColor;
+        }
+    }
+
+    &.negative {
+        .summary-card-icon {
+            background: @errorBackgroundColor;
+            color: @negativeColor;
+        }
+    }
+}

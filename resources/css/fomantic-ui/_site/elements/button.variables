@@ -1,0 +1,12 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@verticalPadding: 0.285em;
+@lineHeight: 1.57142857143em;
+
+.ui.buttons .button,
+.ui.buttons .or,
+.ui.button {
+    letter-spacing:0.5px;
+}

@@ -1,0 +1,84 @@
+@import "../../mixins";
+@import "../../components/form/config";
+
+/// ----- LAYOUT ----------
+/// (flexbox - column layout)
+///  +-------------+
+///  | label       |
+///  +-------------+
+///  | textarea    |
+///  +-------------+
+///
+
+hx-textarea-control {
+  display: flex;
+  flex-direction: column;
+
+  // blacklist
+  > * {
+    display: none;
+  }
+
+  // whitelist
+  > label,
+  > textarea {
+    display: block;
+  }
+
+  > label {
+    align-self: flex-start;
+    order: 1;
+  }
+
+  > textarea {
+    min-height: 6rem; // ~96px
+    order: 2;
+    overflow-x: hidden;
+    overflow-y: auto; // hide scrollbar by default in IE
+    padding: 0.5rem;
+    resize: vertical;
+  }
+}
+
+// ----- PRISTINE ----------
+hx-textarea-control {
+  > label {
+    @include hxFieldName;
+  }
+
+  > textarea {
+    @include hxTextControl;
+
+    &:focus {
+      @include hxTextControl($focused: true);
+    }
+  }
+}
+
+// ----- INVALID ----------
+//
+// 1. Prevent IE from incorrectly matching textarea:disabled:invalid
+//
+hx-textarea-control[hx-dirty] > textarea:enabled:invalid, /* 1 */
+hx-textarea-control.hxInvalid > textarea:enabled {
+  @include hxTextControl(invalid);
+
+  &:focus {
+    @include hxTextControl(invalid, $focused: true);
+  }
+}
+
+// ----- DISABLED ----------
+hx-textarea-control > textarea:disabled {
+  @include hxTextControl(disabled);
+
+  resize: none;
+
+  ~ label {
+    @include hxFieldName(disabled);
+  }
+
+  &:focus {
+    @include hxTextControl(disabled, $focused: true);
+  }
+}

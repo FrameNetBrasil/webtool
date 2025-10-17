@@ -1,0 +1,41 @@
+/*******************************
+    Button Components
+    Updated to use Fomantic-UI variables
+*******************************/
+
+// Application-specific button variants
+.ui.button {
+    // Login button - error color with specific width
+    &.login {
+        background-color: @negativeColor !important;
+        color: @invertedTextColor !important;
+        width: 240px; // 240px - Specific width
+        font-weight: @semibold;
+
+        &:hover {
+            background-color: @negativeColorHover !important;
+        }
+
+        &:active {
+            background-color: @negativeColorDown !important;
+        }
+    }
+
+    // Danger button variant
+    &.danger {
+        background-color: @negativeColor !important;
+        color: @invertedTextColor !important;
+
+        &:hover {
+            background-color: @negativeColorHover !important;
+        }
+
+        &:active {
+            background-color: @negativeColorDown !important;
+        }
+
+        &:focus {
+            background-color: @negativeColorFocus !important;
+        }
+    }
+}

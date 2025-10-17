@@ -1,0 +1,40 @@
+/* Form layouts */
+.form-grid {
+    display: grid;
+    gap: @relativeLarge;
+
+    &.single-column {
+        grid-template-columns: 1fr;
+    }
+
+    &.two-column {
+        grid-template-columns: 1fr 1fr;
+        gap: @relativeMedium @relativeBig;
+    }
+
+    &.three-column {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: @relativeMedium @relativeLarge;
+    }
+
+    &.four-column {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: @relativeMedium;
+    }
+
+    &.sidebar-form {
+        grid-template-columns: 200px 1fr;
+        gap: @relativeBig;
+        align-items: start;
+    }
+
+    &.wide-sidebar {
+        grid-template-columns: 300px 1fr;
+        gap: @relative40px;
+    }
+
+    &.auto-fit {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: @relativeLarge;
+    }
+}

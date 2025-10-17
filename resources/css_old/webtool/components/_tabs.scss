@@ -1,0 +1,86 @@
+.wt-tabs {
+
+    .wt-tabs-tabs {
+        background-color: var(--wt-bg-panel-header);
+
+
+        .wt-tabs-tabs-title {
+            font-weight: bold;
+            color: var(--wt-color-panel-header);
+            background-color: var(--wt-bg-panel-header);
+            padding: var(--wt-unit);
+        }
+
+        .activeTab {
+            background: var(--wt-border-panel-header);
+        }
+
+        .wt-tabs-tabs-title:hover {
+            //background: var(--wt-border-panel-header);
+            cursor: pointer;
+        }
+    }
+
+    [data-tab-info] {
+        display: none;
+        //visibility: hidden;
+    }
+
+    .active[data-tab-info] {
+        display: block;
+        //visibility: visible;
+    }
+
+    .wt-tabs-content {
+        padding-top: var(--wt-unit);
+        height:100%;
+    }
+
+    //.active {
+    //    background: var(--wt-border-panel-header);
+    //    cursor: pointer;
+    //}
+}
+
+/*
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    background-color: var(--wt-bg-panel-header);
+}
+
+td, th {
+    border-top: 1px solid var(--wt-border-panel-header);
+    border-bottom: 1px solid var(--wt-border-panel-header);
+    padding: var(--wt-mini-unit);
+}
+
+tr:nth-child(even) {
+    //background-color: var(--wt-bg-datagrid-row-1);
+    background-color: white;//var(--wt-bg-datagrid-row-1);
+}
+
+tr:hover {
+    background-color: var(--wt-action-hover);
+}
+
+th {
+    padding-top:  var(--wt-mini-unit);
+    padding-bottom:  var(--wt-mini-unit);
+    text-align: left;
+    background-color: var(--wt-bg-datagrid-header);
+    color: var(--wt-text-color);
+}
+
+.wt-datagrid-action {
+    cursor: pointer;
+    width:  var(--wt-2-unit);
+}
+
+ */
+
+
+

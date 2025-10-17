@@ -1,0 +1,100 @@
+/* Status Card Component */
+.status-card {
+    .status-card-header {
+        display: flex;
+        align-items: center;
+        gap: @relativeSmall;
+        margin-bottom: @relativeMedium;
+
+        .status-card-icon {
+            width: @relativeBig; // 32px
+            height: @relativeBig; // 32px
+            border-radius: @defaultBorderRadius;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: @small;
+        }
+
+        .status-card-level {
+            font-weight: @semibold;
+            text-transform: uppercase;
+            font-size: @mini;
+            letter-spacing: @letterSpacingNormal;
+        }
+
+        .status-card-time {
+            margin-left: auto;
+            font-size: @mini;
+            color: @secondaryColor;
+        }
+    }
+
+    .status-card-details {
+        margin-top: @relativeMedium;
+        padding-top: @relativeMedium;
+        border-top: 1px solid @borderColor;
+
+        .detail-item {
+            margin-bottom: @relativeTiny;
+            font-size: @small;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    // Status level themes
+    &.info {
+        border-left: 4px solid @infoColor;
+
+        .status-card-icon {
+            background: @infoBackgroundColor;
+            color: @infoColor;
+        }
+
+        .status-card-level {
+            color: @infoColor;
+        }
+    }
+
+    &.warning {
+        border-left: 4px solid @warningColor;
+
+        .status-card-icon {
+            background: @warningBackgroundColor;
+            color: @warningColor;
+        }
+
+        .status-card-level {
+            color: @warningColor;
+        }
+    }
+
+    &.negative {
+        border-left: 4px solid @negativeColor;
+
+        .status-card-icon {
+            background: @errorBackgroundColor;
+            color: @negativeColor;
+        }
+
+        .status-card-level {
+            color: @negativeColor;
+        }
+    }
+
+    &.positive {
+        border-left: 4px solid @positiveColor;
+
+        .status-card-icon {
+            background: @successBackgroundColor;
+            color: @positiveColor;
+        }
+
+        .status-card-level {
+            color: @positiveColor;
+        }
+    }
+}

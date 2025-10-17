@@ -1,0 +1,6 @@
+@include("Annotation.Video.Scripts.components.videoComponent")
+@include("Annotation.Video.Scripts.components.navigationComponent")
+@include("Annotation.Video.Scripts.components.formsComponent")
+@include("Annotation.Video.Scripts.components.timelineComponent")
+@include("Annotation.Video.Scripts.components.boxComponent")
+@include("Annotation.Video.Scripts.components.searchObjectComponent")

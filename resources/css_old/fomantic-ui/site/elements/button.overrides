@@ -1,0 +1,24 @@
+/*******************************
+         Site Overrides
+*******************************/
+.ui.button {
+    background-color: transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    border: 0;
+    color: #367ed4;
+    border-radius: 0.28571429rem;;
+}

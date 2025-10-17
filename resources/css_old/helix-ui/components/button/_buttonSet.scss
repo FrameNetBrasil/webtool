@@ -1,0 +1,11 @@
+.hxButtonSet {
+  display: flex; // remove extra inline white space
+
+  > .hxBtn + .hxBtn {
+    margin-left: 1rem;
+
+    + .hxTertiary {
+      padding: 0.56rem 0 0.43rem;
+    }
+  }
+}

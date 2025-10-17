@@ -1,0 +1,453 @@
+
+<!DOCTYPE html data-theme="corporate">
+<head>
+    <meta name="Generator" content="Maestro 3.0; http://maestro.org.br">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Webtool 3.8 - htmx</title>
+    <meta name="description" content="Framenet Brasil Webtool 3.8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+<!--
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet"
+          type="text/css">
+-->
+    <script type="text/javascript" src="/scripts/htmx/htmx.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery-easyui-1.10.17/jquery.min.js"></script>
+
+    <!--
+    <link rel="stylesheet" href="/scripts/jquery-easyui-1.5.2/themes/icon.css">
+    <link rel="stylesheet" href="/scripts/jointJS/joint.min.css">
+    <link rel="stylesheet" href="/scripts/trumbowyg/ui/trumbowyg.css">
+    <link rel="stylesheet" href="/scripts/jsplumb/jsplumbtoolkit-defaults.css">
+    <link rel="stylesheet" href="/scripts/jsplumb/jsplumbtoolkit-demo.css">
+
+    <link rel="stylesheet" href="/scripts/jquery-easyui-1.10.17/themes/default/easyui.css">
+-->
+    <!--
+    <script type="text/javascript" src="/scripts/jquery-manager/jquery.manager.core.js"></script>
+    -->
+    <script type="text/javascript"
+            src="/scripts/fontawesome-free-5.0.9/svg-with-js/js/fontawesome-all.min.js"></script>
+    <script type="text/javascript"
+            src="/scripts/fontawesome-free-5.0.9/svg-with-js/js/fa-v4-shims.min.js"></script>
+
+    <script type="text/javascript" src="/scripts/jquery-easyui-1.10.17/jquery.easyui.min.js"></script>
+
+    <!--
+    <script type="text/javascript" src="/scripts/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+            src="/scripts/bootstrapvalidator-dist-0.5.3/dist/js/bootstrapValidator.js"></script>
+    <script type="text/javascript"
+            src="/scripts/bootstrapvalidator-dist-0.5.3/dist/js/language/pt_BR.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap-switch-master/js/bootstrap-switch.min.js"></script>
+    <script type="text/javascript" src="/scripts/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.hotkeys-master/jquery.hotkeys.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap-wysiwyg-master/bootstrap-wysiwyg.js"></script>
+    -->
+    <script type="text/javascript" src="/scripts/jquery.class.js"></script>
+    <!--
+    <script type="text/javascript" src="/scripts/cola_v3/cola.v3.js"></script>
+    <script type="text/javascript" src="/scripts/d3/d3.graph.js"></script>
+    <script type="text/javascript" src="/scripts/d3/d3.tree.js"></script>
+    <script type="text/javascript" src="/scripts/d3/d3.graphtree.js"></script>
+    <script type="text/javascript" src="/scripts/jointJS/lodash.min.js"></script>
+    <script type="text/javascript" src="/scripts/jointJS/backbone-min.js"></script>
+    <script type="text/javascript" src="/scripts/jointJS/joint.min.js"></script>
+    <script type="text/javascript" src="/scripts/jointJS/joint.shapes.devs.js"></script>
+    <script type="text/javascript" src="/scripts/jointJS/joint.shapes.frame.js"></script>
+    <script type="text/javascript" src="/scripts/jointJS/joint.shapes.entity.js"></script>
+    <script type="text/javascript" src="/scripts/jquery.md5.js"></script>
+    <script type="text/javascript" src="/scripts/trumbowyg/trumbowyg.min.js"></script>
+    <script type="text/javascript" src="/scripts/jsplumb/jsplumb.js"></script>
+    <script type="text/javascript" src="/scripts/bootstrap-3.2.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/scripts/d3-7.0.0/d3.min.js"></script>
+    <script type="text/javascript" src="/scripts/@hpcc-js/wasm/dist/index.min.js"></script>
+    <script type="text/javascript" src="/scripts/d3-graphviz-4.0.0/d3-graphviz.js"></script>
+    -->
+    <!--
+    <script type="text/javascript" src="/scripts/theme/extensions.js"></script>
+    <script type="text/javascript" src="/scripts/theme/controls.js"></script>
+    -->
+</head>
+<body
+        class="prose"
+        hx-headers='{"X-CSRF-TOKEN": "SuIci7S3Pvgms5nfnYL27q6onizPanJyrUE7lyeu"}'
+>
+<div id="appContainer" class="easyui-layout" style="width:100%;height:100%;">
+    <div data-options="region:'north',title:'',split:false,border:false,collapsible:false"
+         style="height:68px;">
+        <div id="headerPane">
+            <div id="titlePane">FrameNet Brasil Webtool 3.8</div>
+            <div id="userPane" class="clearfix">
+                <a id="udDataset" href="#">
+    <span class="material-icons-outlined wt-material-icon">dataset</span>    fnbr
+</a>
+<a id="udLanguage" href="#">
+    <span class="material-icons-outlined wt-material-icon">translate</span>    Portuguese
+</a>
+    <div id="udMenuLanguage">
+            <div data-options="iconCls:'fnbrFlagEn'" id="udMenuLanguageEnglish" hx-get="/changeLanguage/en" hx-trigger="click">
+        English
+    </div>
+            <div data-options="iconCls:'fnbrFlagPt'" id="udMenuLanguagePortuguese" hx-get="/changeLanguage/pt" hx-trigger="click">
+        Portuguese
+    </div>
+            <div data-options="iconCls:'fnbrFlagEs'" id="udMenuLanguageSpanish" hx-get="/changeLanguage/es" hx-trigger="click">
+        Spanish
+    </div>
+            </div>
+    <a id="udLevel" href="#">
+        <span class="material-icons-outlined wt-material-icon">groups</span>        ADMIN
+    </a>
+    <script>
+        $('#udLevel').linkbutton({plain:true});
+    </script>
+    <a id="udProfile" href="#">
+        <span class="material-icons-outlined wt-material-icon">person</span>        ely.matos@gmail.com
+    </a>
+    <div id="udMenuProfile">
+                    <div data-options="iconCls:'fa fa-credit-card fa16px'" id="udMenuProfileMy Profile" hx-get="/index/profile/formMyProfile" hx-trigger="click">
+                My Profile
+            </div>
+                    <div data-options="iconCls:'fa fa-sign-out fa16px'" id="udMenuProfileLogout" hx-get="/index/main/logout" hx-trigger="click">
+                Logout
+            </div>
+            </div>
+    <script>
+        $('#udProfile').menubutton({plain:true, menu:'#udMenuProfile'});
+    </script>
+<script>
+    $('#udDataset').linkbutton({plain:true});
+    $('#udLanguage').menubutton({plain:true, menu:'#udMenuLanguage'});
+</script>            </div>
+        </div>
+        <div id="menuPane">
+            <a id="menuadmin" href="#">
+            <span class="material-icons-outlined wt-material-icon">admin_panel_settings</span>            Admin
+        </a>
+        <div id="menuadminItems">
+                            <div data-options="iconCls:'fa fa-user fa16px',href:'/auth/user/main'" id="menuadminItem">
+                    Users
+                </div>
+                            <div data-options="iconCls:'fa fa-cog fa16px',href:'/admin/annostatus/main'" id="menuadminItem">
+                    Anno Status
+                </div>
+                            <div data-options="iconCls:'fa fa-cog fa16px',href:'/admin/domain/main'" id="menuadminItem">
+                    Domain
+                </div>
+                            <div data-options="iconCls:'fa fa-cog fa16px',href:'/admin/relationgroup/main'" id="menuadminItem">
+                    Relation Group
+                </div>
+                            <div data-options="iconCls:'fa fa-cog fa16px',href:'/admin/type/main'" id="menuadminItem">
+                    Type
+                </div>
+                            <div data-options="iconCls:'fa fa-cog fa16px',href:'/admin/genre/main'" id="menuadminItem">
+                    Genre
+                </div>
+                            <div data-options="iconCls:'fa fa-sitemap fa16px',href:'/admin/relationgroup/main'" id="menuadminItem">
+                    Relation Group
+                </div>
+                            <div data-options="iconCls:'fa fa-crosshairs fa16px',href:'/admin/relationtype/main'" id="menuadminItem">
+                    Relation Type
+                </div>
+                            <div data-options="iconCls:'fa fa-sitemap fa16px',href:'/admin/layergroup/main'" id="menuadminItem">
+                    Layer Group
+                </div>
+                            <div data-options="iconCls:'fa fa-crosshairs fa16px',href:'/admin/layertype/main'" id="menuadminItem">
+                    Layer Type
+                </div>
+                    </div>
+                <a id="menustructure" href="#">
+            <span class="material-icons-outlined wt-material-icon">account_tree</span>            Structure
+        </a>
+        <div id="menustructureItems">
+                            <div data-options="iconCls:'fa fa-list-alt fa16px',href:'/structure/frame'" id="menustructureItem">
+                    Frame
+                </div>
+                            <div data-options="iconCls:'fa fa-th-large fa16px',href:'/structure/corpus'" id="menustructureItem">
+                    Corpus
+                </div>
+                            <div data-options="iconCls:'fa fa-th fa16px',href:'/structure/cxn'" id="menustructureItem">
+                    Construction
+                </div>
+                            <div data-options="iconCls:'fa fa-chess-board fa16px',href:'/structure/lemma'" id="menustructureItem">
+                    Lemmas
+                </div>
+                            <div data-options="iconCls:'fab fa-connectdevelop fa16px',href:'/structure/qualia'" id="menustructureItem">
+                    Qualia
+                </div>
+                            <div data-options="iconCls:'fas fa-box-open fa16px',href:'/structure/constrainttype'" id="menustructureItem">
+                    Constraint Type
+                </div>
+                            <div data-options="iconCls:'fa fa-life-ring fa16px',href:'/structure/concept'" id="menustructureItem">
+                    Concept
+                </div>
+                            <div data-options="iconCls:'fa fa-life-ring fa16px',href:'/structure/semantictype'" id="menustructureItem">
+                    Semantic Type
+                </div>
+                    </div>
+                <a id="menuannotation" href="#">
+            <span class="material-icons-outlined wt-material-icon">edit_note</span>            Annotation
+        </a>
+        <div id="menuannotationItems">
+                            <div data-options="iconCls:'fa fa-file-text-o fa16px',href:'/annotation/main/formLexicalAnnotation'" id="menuannotationItem">
+                    Frame Mode
+                </div>
+                            <div data-options="iconCls:'fa fa-th fa16px',href:'/annotation/main/formConstructionalAnnotation'" id="menuannotationItem">
+                    Construction Mode
+                </div>
+                            <div data-options="iconCls:'fa fa-file-text fa16px',href:'/annotation/main/formCorpusAnnotation'" id="menuannotationItem">
+                    Corpus Mode
+                </div>
+                            <div data-options="iconCls:'fa fa-list fa16px',href:'^annotation/layer/formManager'" id="menuannotationItem">
+                    Manage Layers
+                </div>
+                    </div>
+                <a id="menureports" href="#">
+            <span class="material-icons-outlined wt-material-icon">summarize</span>            Reports
+        </a>
+        <div id="menureportsItems">
+                            <div data-options="iconCls:'fa fa-list-alt fa16px',href:'/report/frame/main'" id="menureportsItem">
+                    Frames
+                </div>
+                            <div data-options="iconCls:'fa fa-list-alt fa16px',href:'/report/lu/main'" id="menureportsItem">
+                    LU
+                </div>
+                            <div data-options="iconCls:'fa fa-th fa16px',href:'/report/cxn/main'" id="menureportsItem">
+                    Constructions
+                </div>
+                            <div data-options="iconCls:'fa fa-file-text fa16px',href:'/report/corpus/main'" id="menureportsItem">
+                    Corpus Annotation
+                </div>
+                    </div>
+                <a id="menugrapher" href="#">
+            <span class="material-icons-outlined wt-material-icon">hub</span>            Grapher
+        </a>
+        <div id="menugrapherItems">
+                            <div data-options="iconCls:'fa fa-link fa16px',href:'/grapher/grapher/main'" id="menugrapherItem">
+                    Frames &amp; CxN
+                </div>
+                            <div data-options="iconCls:'fa fa-link fa16px',href:'/grapher/domain/main'" id="menugrapherItem">
+                    Frames by Domain
+                </div>
+                            <div data-options="iconCls:'fa fa-link fa16px',href:'/grapher/ccn/main'" id="menugrapherItem">
+                    Constructicon
+                </div>
+                    </div>
+                <a id="menueditor" href="#">
+            <span class="material-icons-outlined wt-material-icon">edit</span>            Editor
+        </a>
+        <div id="menueditorItems">
+                            <div data-options="iconCls:'fa fa-list-alt fa16px',href:'/visualeditor/frame/main'" id="menueditorItem">
+                    Frame Relation
+                </div>
+                            <div data-options="iconCls:'fa fa-th-list fa16px',href:'/visualeditor/frame/coreness'" id="menueditorItem">
+                    Coreness
+                </div>
+                            <div data-options="iconCls:'fa fa-list-alt fa16px',href:'/visualeditor/cxn/main'" id="menueditorItem">
+                    CxN Relation
+                </div>
+                            <div data-options="iconCls:'fa fa-list-alt fa16px',href:'/visualeditor/cxnframe/main'" id="menueditorItem">
+                    CxN-Frame Relation
+                </div>
+                    </div>
+                <a id="menuutils" href="#">
+            <span class="material-icons-outlined wt-material-icon">construction</span>            Utils
+        </a>
+        <div id="menuutilsItems">
+                            <div data-options="iconCls:'fa fa-upload fa16px',href:'/utils/import/formImportLexWf'" id="menuutilsItem">
+                    Import Wf-Lexeme
+                </div>
+                            <div data-options="iconCls:'fa fa-cog fa16px',href:'/admin/wflex/main'" id="menuutilsItem">
+                    Search Wf-Lexeme
+                </div>
+                            <div data-options="iconCls:'fa fa-edit fa16px',href:'/utils/register/formRegisterLexWf'" id="menuutilsItem">
+                    Register Wf-Lexeme
+                </div>
+                            <div data-options="iconCls:'fa fa-upload fa16px',href:'/utils/register/formRegisterLemma'" id="menuutilsItem">
+                    Register Lemma
+                </div>
+                            <div data-options="iconCls:'fa fa-upload fa16px',href:'/utils/import/formImportFullText'" id="menuutilsItem">
+                    Import FullText
+                </div>
+                            <div data-options="iconCls:'fa fa-download fa16px',href:'/utils/export/formExportCxnFS'" id="menuutilsItem">
+                    Export Cxn as FS
+                </div>
+                            <div data-options="iconCls:'fa fa-download fa16px',href:'/utils/export/formExportCxn'" id="menuutilsItem">
+                    Export Cxn
+                </div>
+                    </div>
+    <script>
+            $('#menuadmin').menubutton({plain:true, menu:'#menuadminItems'});
+                    $('#menustructure').menubutton({plain:true, menu:'#menustructureItems'});
+                    $('#menuannotation').menubutton({plain:true, menu:'#menuannotationItems'});
+                    $('#menureports').menubutton({plain:true, menu:'#menureportsItems'});
+                    $('#menugrapher').menubutton({plain:true, menu:'#menugrapherItems'});
+                    $('#menueditor').menubutton({plain:true, menu:'#menueditorItems'});
+                    $('#menuutils').menubutton({plain:true, menu:'#menuutilsItems'});
+            </script>
+        </div>
+    </div>
+    <div id="centerPane" data-options="region:'center',split:false,noheader:true,border:false" style="padding:8px;">
+        <table id="tt" title="Folder Browser" style="width:700px;height:500px">
+        </table>
+        <script>
+            $(function () {
+                let data = [{
+                    "id":1,
+                    "text":"C",
+                    "size":"",
+                    "date":"02/19/2010",
+                    "children":[{
+                        "id":2,
+                        "text":"Program Files",
+                        "size":"120 MB",
+                        "date":"03/20/2010",
+                        "children":[{
+                            "id":21,
+                            "text":"Java",
+                            "size":"",
+                            "date":"01/13/2010",
+                            "state":"closed",
+                            "children":[{
+                                "id":211,
+                                "text":"java.exe",
+                                "size":"142 KB",
+                                "date":"01/13/2010"
+                            },{
+                                "id":212,
+                                "name":"jawt.dll",
+                                "size":"5 KB",
+                                "date":"01/13/2010"
+                            }]
+                        },{
+                            "id":22,
+                            "text":"MySQL",
+                            "size":"",
+                            "date":"01/13/2010",
+                            "state":"closed",
+                            "children":[{
+                                "id":221,
+                                "text":"my.ini",
+                                "size":"10 KB",
+                                "date":"02/26/2009"
+                            },{
+                                "id":222,
+                                "text":"my-huge.ini",
+                                "size":"5 KB",
+                                "date":"02/26/2009"
+                            },{
+                                "id":223,
+                                "text":"my-large.ini",
+                                "size":"5 KB",
+                                "date":"02/26/2009"
+                            }]
+                        }]
+                    },{
+                        "id":3,
+                        "text":"eclipse",
+                        "size":"",
+                        "date":"01/20/2010",
+                        "children":[{
+                            "id":31,
+                            "text":"eclipse.exe",
+                            "size":"56 KB",
+                            "date":"05/19/2009"
+                        },{
+                            "id":32,
+                            "text":"eclipse.ini",
+                            "size":"1 KB",
+                            "date":"04/20/2010"
+                        },{
+                            "id":33,
+                            "text":"notice.html",
+                            "size":"7 KB",
+                            "date":"03/17/2005"
+                        }]
+                    }]
+                }]
+                $('#tt').treegrid({
+                    data: data,
+                    rownumbers: true,
+                    idField: 'id',
+                    treeField: 'text',
+                    columns:[[
+                        {title:'Name',field:'text',width:180},
+                        {field:'name',title:'text',width:60}
+                    ]]
+                });
+                console.log($('#tt').treegrid('getData'));
+            });
+        </script>
+        <div class="container mx-auto">
+        <div class="wt-layout-browser">
+    <div class="title">
+        Frames
+    </div>
+    <div class="search">
+        <form class="wt-form-search" id="formSearch" name="formSearch" hx-post="/structure/frame/grid" hx-target="#gridFrame">
+            <input  id="idDomain"  name="idDomain">                    <input type="text"  id="frame" name="frame">
+
+                    <input type="text"  id="fe" name="fe">
+
+                    <input type="text"  id="lu" name="lu">
+
+                    <input  id="listBy"  name="listBy">                    <button type="submit" class="btn btn-primary" >Search</button>
+</form>
+    </div>
+    <div class="grid">
+        <div id="gridFrame">
+
+                </div>
+    </div>
+</div>        <script>
+
+            $('#idDomain').combobox({
+                data: JSON.parse('[{\u0022idDomain\u0022:8,\u0022name\u0022:\u0022babelnet\u0022},{\u0022idDomain\u0022:11,\u0022name\u0022:\u0022CARMA\u0022},{\u0022idDomain\u0022:12,\u0022name\u0022:\u0022CARMA_UD\u0022},{\u0022idDomain\u0022:4,\u0022name\u0022:\u0022domain\u0022},{\u0022idDomain\u0022:13,\u0022name\u0022:\u0022dom_argstr\u0022},{\u0022idDomain\u0022:1,\u0022name\u0022:\u0022FrameNet\u0022},{\u0022idDomain\u0022:6,\u0022name\u0022:\u0022googleplaces\u0022},{\u0022idDomain\u0022:5,\u0022name\u0022:\u0022mknob\u0022},{\u0022idDomain\u0022:7,\u0022name\u0022:\u0022OlympicVenues\u0022},{\u0022idDomain\u0022:2,\u0022name\u0022:\u0022SIMPLE\u0022},{\u0022idDomain\u0022:10,\u0022name\u0022:\u0022sports\u0022},{\u0022idDomain\u0022:9,\u0022name\u0022:\u0022tourism\u0022}]'),
+                prompt: "Select Domain",
+                valueField: 'idDomain',
+                textField: 'name',
+            });
+
+            $('#frame').textbox({
+                prompt: 'Search Frame'
+            });
+
+            $('#fe').textbox({
+                prompt: 'Search FE'
+            });
+
+            $('#lu').textbox({
+                prompt: 'Search LU'
+            });
+
+            $('#listBy').combobox({
+                data: [
+                    {listBy: 'plain list', value:''},
+                    {listBy: 'by Cluster', value:'cluster'},
+                    {listBy: 'by Domain', value:'domain'},
+                    {listBy: 'by Type', value:'type'},
+                ],
+                prompt: 'List by',
+                valueField:'value',
+                textField:'listBy',
+            });
+
+        </script>
+    </div>
+    </div>
+</div>
+
+<script type="module" src="http://localhost:5173/@vite/client"></script><script type="module" src="http://localhost:5173/src/app.js"></script>
+
+<script>
+    document.body.addEventListener("notify", function (evt) {
+        window.notify(evt.detail.type, evt.detail.message)
+    })
+</script>
+
+</body>
+</html>

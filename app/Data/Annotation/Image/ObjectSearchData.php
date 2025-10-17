@@ -1,0 +1,20 @@
+<?php
+
+namespace App\Data\Annotation\Image;
+
+use Spatie\LaravelData\Data;
+
+class ObjectSearchData extends Data
+{
+    public function __construct(
+        public ?int $idObject = 0,
+        public ?int $idDocument = 0,
+        public ?int $searchIdLayerType = 0,
+        public ?string $frame = '',
+        public ?string $lu = '',
+        public ?string $annotationType = '',
+        public string $_token = '',
+    ) {
+        $this->_token = csrf_token();
+    }
+}

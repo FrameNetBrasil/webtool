@@ -1,0 +1,27 @@
+#videoTableContainer {
+    margin-bottom: 0px;
+    height:100%;
+
+    #videoTreeWrapper {
+        height:100%;
+        position:relative;
+        overflow-y:auto;
+        margin: 0.5rem;
+
+        #videoTree {
+            border-spacing: 0px;
+            width: 100%;
+            flex-grow: 0;
+            table-layout: fixed;
+            position: absolute;
+            top: 0px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            .document:hover {
+                background-color: $blue-2;
+            }
+        }
+    }
+}

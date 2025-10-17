@@ -1,0 +1,132 @@
+//* ===== SCROLLING/OVERFLOW =============== */
+.hxPanel {
+  height: 100%;
+  overflow: hidden;
+
+  > * {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  > header,
+  > footer {
+    overflow: visible;
+  }
+}
+
+//* ===== LAYOUT =============== */
+// Legacy Fallback (flexbox)
+.hxPanel {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    flex-shrink: 1;
+    flex-grow: 1;
+    order: 2;
+  }
+
+  > header {
+    flex-grow: 0;
+    flex-shrink: 0;
+    order: 1;
+  }
+
+  > footer {
+    flex-grow: 0;
+    flex-shrink: 0;
+    order: 3;
+  }
+}
+// Modern Grid Support
+@supports (display: grid) {
+  .hxPanel {
+    display: grid;
+    grid-template-areas:
+      "head"
+      "body"
+      "foot";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    > * {
+      grid-area: body;
+    }
+
+    > header {
+      grid-area: head;
+    }
+
+    > footer {
+      grid-area: foot;
+    }
+  }
+}
+
+//* ===== VARIANTS =============== */
+
+// Panel with tabset as its body.
+.hxPanel.hxTabbed {
+  $head-bg: $gray-100;
+  $head-bg: var(--hxPanel-hxTabbed-head-bgcolor, $gray-100);
+  $body-bg: $gray-0;
+  $body-bg: var(--hxPanel-hxTabbed-body-bgcolor, $gray-0);
+  $foot-bg: $gray-0;
+  $foot-bg: var(--hxPanel-hxTabbed-foot-bgcolor, $gray-0);
+
+  background-color: $head-bg;
+
+  > hx-tabset {
+    > hx-tablist {
+      > hx-tab[current] {
+        background-color: $body-bg;
+      }
+    }
+
+    > hx-tabcontent {
+      background-color: $body-bg;
+      min-height: auto;
+    }
+  }
+
+  > footer {
+    background-color: $foot-bg;
+  }
+}
+
+//* ===== DEPRECATIONS =============== */
+// remove in v1.0.0
+hx-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  & > &head {
+    flex-shrink: 0;
+    order: 1;
+  }
+
+  & > &body {
+    flex-grow: 1;
+    order: 2;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  & > &foot {
+    flex-shrink: 0;
+    order: 3;
+  }
+}
+
+// remove in v1.0.0
+hx-panel-body,
+hx-panel-foot,
+hx-panel-head,
+hx-panelbody,
+hx-panelfoot,
+hx-panelhead {
+  display: block;
+}
+

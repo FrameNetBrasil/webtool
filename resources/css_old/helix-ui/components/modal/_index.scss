@@ -1,0 +1,115 @@
+@import "../../_vars";
+@import "../config";
+
+hx-modal {
+  @extend %hxComponent;
+
+  display: none;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: $modal-z-index;
+
+  &[open] {
+    display: block;
+  }
+}
+
+#hxContent.hx-modal,
+hx-modal {
+  > header {
+    flex-shrink: 0;
+    line-height: 1;
+    order: 1;
+    padding: map-get($space, md);
+
+    // TODO: refactor this
+    h1, h2, h3, h4, h5, h6 {
+      &:only-child {
+        line-height: 1;
+      }
+    }
+  }
+
+  > hx-div {
+    --hxPaddingLeft: #{map-get($space, md)};
+    --hxPaddingRight: #{map-get($space, md)};
+
+    flex-grow: 1;
+    order: 2;
+
+    @include hxDiv-shadyRoot {
+      padding: 0 map-get($space, md);
+    }
+
+    &:first-child {
+      margin-top: 4rem;
+    }
+
+    &:last-child {
+      --hxPaddingBottom: #{map-get($space, md)};
+
+      @include hxDiv-shadyRoot {
+        padding-bottom: map-get($space, md);
+      }
+    }
+  }
+
+  > footer {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    order: 3;
+    padding: map-get($space, md);
+
+    .hxBtn + .hxBtn {
+      margin-left: map-get($space, md);
+    }
+  }
+}
+
+// ----- DEPRECATED: remove in v1.0.0 -----
+hx-modalbody {
+  display: block;
+  flex-grow: 1;
+  order: 2;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0 1.25rem;
+
+  &:first-child {
+    padding-top: 4rem;
+  }
+
+  &:last-child {
+    padding-bottom: 1.25rem;
+  }
+}
+
+hx-modalfoot {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  order: 3;
+  padding: 1.25rem;
+
+  .hxBtn + .hxBtn {
+    margin-left: 1.25rem;
+  }
+}
+
+hx-modalhead {
+  display: block;
+  flex-shrink: 0;
+  line-height: 1;
+  order: 1;
+  padding: 1.25rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    &:only-child {
+      line-height: 1;
+    }
+  }
+}

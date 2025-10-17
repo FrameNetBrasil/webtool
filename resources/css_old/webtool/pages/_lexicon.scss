@@ -1,0 +1,145 @@
+#lexiconTableContainer {
+    margin-bottom: 0px;
+    height:100%;
+
+    table {
+        border-spacing: 0px;
+        width: 100%;
+        flex-grow: 0;
+        table-layout: fixed;
+        position: absolute;
+        top: 0px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    tr {
+        width: 100%;
+    }
+
+    td {
+        padding: 4px;
+        word-wrap: break-word;
+
+        &.name {
+            width: calc(100% - 4rem);
+        }
+        &.edit {
+            width: 4rem;
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: #EEE;
+    }
+
+    tr:hover {
+        background-color: #dbdbdb;
+    }
+
+    .definition {
+        color: $wt-text-color;
+        font-size: 0.875rem;
+    }
+
+
+    #lemmaTreeWrapper {
+        height:100%;
+        position:relative;
+        overflow-y:auto;
+        margin: 0.5rem;
+
+        #lemmaTree {
+            border-spacing: 0px;
+            width: 100%;
+            flex-grow: 0;
+            table-layout: fixed;
+            position: absolute;
+            top: 0px;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            .lexeme:hover {
+                background-color: $blue-2;
+            }
+        }
+    }
+}
+
+#lexiconEditContainer {
+    margin-bottom: 0px;
+    height:100%;
+    position:relative;
+    //overflow-y: auto;
+    //#lexiconEditWrapper {
+    //    height: 100%;
+    //    position: relative;
+    //    overflow-y: auto;
+    //}
+
+    //#gridWordforms {
+    //    height: 100%;
+    //    position: relative;
+    //    overflow-y: auto;
+    //}
+
+    #lexiconEditWrapper {
+        top:0;
+        left:0;
+        position:absolute;
+        max-height:100%;
+        overflow-y:auto;
+        width:100%;
+        padding:0.5rem;
+    }
+
+
+    //table {
+    //    border-spacing: 0px;
+    //    width: 100%;
+    //    flex-grow: 0;
+    //    table-layout: fixed;
+    //    position: absolute;
+    //    top: 0px;
+    //    bottom: 0;
+    //    left: 0;
+    //    right: 0;
+    //}
+    //
+    //tr {
+    //    width: 100%;
+    //}
+    //
+    //td {
+    //    padding: 4px;
+    //    word-wrap: break-word;
+    //    width: 100%;
+    //
+    //    &.sentence {
+    //        width: calc(100% - 4rem);
+    //    }
+    //    &.idSentence {
+    //        width: 4rem;
+    //    }
+    //}
+    //
+    //tr:nth-child(even) {
+    //    background-color: #EEE;
+    //}
+    //
+    //tr:hover {
+    //    background-color: #dbdbdb;
+    //}
+    //
+    //.wordform {
+    //    color: $wt-text-color;
+    //    font-size: 0.875rem;
+    //}
+
+}
+
+
+
+

@@ -1,0 +1,86 @@
+.staticEventAnnotationPane {
+    display: flex;
+    flex-flow: row;
+    height:100%;
+
+    .west {
+        display: flex;
+        flex-flow: column;
+
+        .image {
+
+        }
+
+        .sentence {
+            flex-grow: 1;
+        }
+    }
+
+    .center {
+        flex-grow: 1;
+        display: flex;
+        flex-flow: column;
+
+        .header {
+            display: flex;
+            flex-flow: row;
+
+            .tag {
+                text-align: left;
+                padding-left: 1rem;
+            }
+            .navigation {
+                text-align: right;
+                flex-grow: 1;
+
+                .previous{
+                    display: inline-block;
+
+                }
+                .next {
+                    display: inline-block;
+
+                }
+
+                a {
+                    display: inline;
+                    font-size: 14px;
+                    text-decoration: none;
+                    color: var(--wt-text-color);
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .annotation {
+
+        }
+
+    }
+
+    #image {
+        position: relative;
+    }
+
+    .objectId {
+        width: auto;
+        //height: 14px;
+        background-color: white;
+        right: 0;
+        top: 0;
+        position: absolute;
+        color: black;
+        cursor: pointer;
+        padding-left: 2px;
+        padding-right: 2px;
+        font-size: 10px;
+        text-align: right;
+    }
+
+    .annotatedWord {
+        display: inline-block;
+        padding-right: 4px;
+        font-weight: bold;
+    }
+
+}

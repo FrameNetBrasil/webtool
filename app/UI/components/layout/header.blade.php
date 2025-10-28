@@ -94,13 +94,14 @@
         </div>
 
         @if($isLogged)
+            @php($email = $user->email ? $user->email[0] : $user->login)
             <div x-init="$($el).dropdown()"
                  class="ui dropdown item"
             >
-                <div class="ui teal circular label">{!! strtoupper($user->email[0]) !!}</div>
+                <div class="ui teal circular label">{!! strtoupper($email[0]) !!}</div>
                 <div class="menu">
                     <div class="item">
-                        {{$user->email}}
+                        {{$email}}
                     </div>
                     <div class="item">
                         Level: {{$userLevel}}

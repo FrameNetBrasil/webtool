@@ -6,11 +6,11 @@
         <p>
             {{$message}}
         </p>
-        <x-button
+        <x-link-button
             href="{{$goto}}"
-            color="yellow"
+            color="brown"
             label="{{$gotoLabel}}"
         >
-        </x-button>
+        </x-link-button>
     </div>
 </x-layout.index>

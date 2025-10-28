@@ -1,5 +1,5 @@
-<x-tree
-    title=""
+<x-ui::tree
+    :title="$title"
     url="/corpus/browse/search"
     :data="$data"
-></x-tree>
+></x-ui::tree>

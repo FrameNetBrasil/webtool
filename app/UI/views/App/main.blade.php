@@ -1,84 +1,48 @@
 @php
-    use App\Database\Criteria;use App\Repositories\User;use App\Services\AppService; use App\Services\MessageService;
-    $idUser = AppService::getCurrentIdUser();
-    $user = User::byId($idUser);
-    $isManager = User::isManager($user);
-    $messages = MessageService::getMessagesToUser($idUser);
-    $tasks = Criteria::table("view_usertask as ut")
-        ->join("view_task_manager as tm","ut.idTask","=","tm.idTask")
-        ->select("ut.projectName","ut.taskName","ut.taskGroupName")
-        ->selectRaw("GROUP_CONCAT(DISTINCT tm.userName SEPARATOR ',') as manager")
-        ->groupByRaw("ut.projectName,ut.taskName,ut.taskGroupName")
-        ->where("ut.idUser",$idUser)
-        ->where("ut.idProject","<>", 1)
-        ->all();
-    $tasksForManager =  Criteria::table("view_task_manager as tm")
-        ->select("tm.projectName","tm.taskName","tm.taskGroupName")
-        ->where("tm.idUser",$idUser)
-        ->orderBy("tm.projectName")
-        ->orderBy("tm.taskName")
-        ->all();
-
+    $reports = [
+        'reportframe' => ['Frame', '/report/frame', 'List of all frames and its structure.','ui::icon.frame'],
+        'reportlu' => ['LU', '/report/lu', 'List of lexical and visual Lexical Units','ui::icon.lu'],
+    ];
 @endphp
+
 <x-layout::index>
     <div class="app-layout minimal">
         <x-layout::header></x-layout::header>
         <x-layout::breadcrumb
-            :sections="[['','Home']]"
+            :sections="[['/','Home'],['','Report']]"
         ></x-layout::breadcrumb>
         <main class="app-main">
             <div class="ui container">
+                <div class="page-header">
+                    <div class="page-header-content">
+                        <div class="page-title">
+                            Report
+                        </div>
+                    </div>
+                </div>
                 <div class="page-content">
-                    @include("App.messages")
-                    @if(count($tasksForManager) > 0)
-                        <div class="segment">
-                            <h2 class="ui header">Managed project/tasks</h2>
-                            <table class="ui striped compact table">
-                                <thead>
-                                <tr>
-                                    <th>Project</th>
-                                    <th>Task</th>
-                                    <th>Task group</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($tasksForManager as $task)
-                                    <tr>
-                                        <td>{{$task->projectName}}</td>
-                                        <td>{{$task->taskName}}</td>
-                                        <td>{{$task->taskGroupName}}</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                    <div class="ui container">
+                        <div class="card-grid dense">
+                            @foreach($reports as $category => $report)
+                                <a
+                                    class="ui card option-card"
+                                    data-category="{{$category}}"
+                                    href="{{$report[1]}}"
+                                    hx-boost="true"
+                                >
+                                    <div class="content">
+                                        <div class="header">
+                                            <x-dynamic-component :component="$report[3]"/>
+                                            {{$report[0]}}
+                                        </div>
+                                        <div class="description">
+                                            {{$report[2]}}
+                                        </div>
+                                    </div>
+                                </a>
+                            @endforeach
                         </div>
-                    @endif
-
-                    @if(!$isManager)
-                        <div class="segment">
-                            <h2 class="ui header">My tasks</h2>
-                            <table class="ui striped compact table">
-                                <thead>
-                                <tr>
-                                    <th>Project</th>
-                                    <th>Task</th>
-                                    <th>Task group</th>
-                                    <th>Manager(s)</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($tasks as $task)
-                                    <tr>
-                                        <td>{{$task->projectName}}</td>
-                                        <td>{{$task->taskName}}</td>
-                                        <td>{{$task->taskGroupName}}</td>
-                                        <td>{{$task->manager}}</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    @endif
+                    </div>
                 </div>
             </div>
         </main>

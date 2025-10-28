@@ -1,0 +1,12 @@
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/corpus/{{$idCorpus}}/documents/formNew"
+></div>
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/corpus/{{$idCorpus}}/documents/grid"
+></div>

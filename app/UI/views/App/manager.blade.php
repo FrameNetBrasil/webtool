@@ -16,11 +16,11 @@
     ];
 
     $groups = [
-        'manager' => ['title' => "Project/User", "pages" => ['project','task','user']],
-        'document' => ['title' => "Document", "pages" => ['document','video','image']],
-        'table' => ['title' => "Tables", "pages" => ['semantictype','layer','relations']],
+//        'manager' => ['title' => "Project/User", "pages" => ['project','task','user']],
+//        'document' => ['title' => "Document", "pages" => ['document','video','image']],
+        'table' => ['title' => "Tables", "pages" => ['user','document','semantictype','layer','relations']],
         'utils' => ['title' => "Utils", "pages" => ['importfulltext']],
-        'data' => ['title' => "Data", "pages" => ['aisuggestions']],
+//        'data' => ['title' => "Data", "pages" => ['aisuggestions']],
     ];
 
 

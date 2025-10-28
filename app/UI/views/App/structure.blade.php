@@ -1,19 +1,13 @@
 @php
     $options = [
         'frame' => ['Frame', '/frame', '','ui::icon.frame'],
-//        'lexicon' => ['Lexicon', '/lexicon3', '','ui::icon.domain'],
-        'lemma' => ['Lemmas', '/lemma', '','ui::icon.domain'],
-        'form' => ['Forms', '/form', '','ui::icon.domain'],
-        'lucandidate' => ['LU Candidate', '/luCandidate', '','ui::icon.frame'],
-        'constructicon' => ['Constructicon', '/constructicon', '','ui::icon.construction'],
         'reframing' => ['Reframing', '/reframing', '','ui::icon.lu'],
+        'lemma' => ['Lemmas', '/lemma', '','ui::icon.domain'],
     ];
 
     $groups = [
         'frame' => ['title' => "Frame", "pages" => ['frame','reframing']],
-//        'lexicon' => ['title' => "Lexicon", "pages" => ['lemma','form','lucandidate']],
-        'lexicon' => ['title' => "Lexicon", "pages" => ['lucandidate','lemma']],
-//        'construction' => ['title' => "Construction", "pages" => ['constructicon']],
+        'lexicon' => ['title' => "Lexicon", "pages" => ['lemma']],
     ];
 @endphp
 

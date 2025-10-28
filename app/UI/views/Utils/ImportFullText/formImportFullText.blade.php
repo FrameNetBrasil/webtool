@@ -1,6 +1,6 @@
 <x-layout.page>
     <x-slot:head>
-        <x-layout::breadcrumb :sections="[['/','Home'],['/utils/importFullText','Import FullText'],['',$document->name]]"></x-layout::breadcrumb>
+        <x-layout::breadcrumb :sections="[['/','Home'],['/manager','Manager'],['/utils/importFullText','Import FullText'],['',$document->name]]"></x-layout::breadcrumb>
     </x-slot:head>
     <x-slot:main>
         <div class="ui container h-full">

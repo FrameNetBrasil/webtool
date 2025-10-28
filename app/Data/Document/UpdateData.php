@@ -8,8 +8,7 @@ class UpdateData extends Data
 {
     public function __construct(
         public ?int $idDocument,
-        public ?int $idCorpus
-    )
-    {
-    }
+        public ?string $name = null,
+        public ?int $idCorpus = null
+    ) {}
 }

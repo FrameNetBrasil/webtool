@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/usr/bin/php",
+            "args": [
+                "/home/ematos/devel/fnbr/webtool4/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}

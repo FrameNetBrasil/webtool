@@ -1,14 +1,14 @@
 <x-layout.index>
     <div class="ui info message m-2">
         <div class="header">
-            Error
+            Information
         </div>
         <p>
             {{$message}}
         </p>
         <x-link-button
             href="{{$goto}}"
-            color="negative"
+            color="blue"
             label="{{$gotoLabel}}"
         >
         </x-link-button>

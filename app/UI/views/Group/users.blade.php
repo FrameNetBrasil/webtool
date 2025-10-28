@@ -1,0 +1,12 @@
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/group/{{$idGroup}}/users/formNew"
+></div>
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/group/{{$idGroup}}/users/grid"
+></div>

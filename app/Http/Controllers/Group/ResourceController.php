@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Group;
 
 use App\Data\Group\CreateData;
+use App\Data\Group\SearchData;
 use App\Data\Group\UpdateData;
 use App\Database\Criteria;
 use App\Http\Controllers\Controller;
@@ -12,9 +13,50 @@ use Collective\Annotations\Routing\Attributes\Attributes\Get;
 use Collective\Annotations\Routing\Attributes\Attributes\Middleware;
 use Collective\Annotations\Routing\Attributes\Attributes\Post;
 
-#[Middleware("master")]
+#[Middleware('master')]
 class ResourceController extends Controller
 {
+    #[Get(path: '/group')]
+    public function resource(SearchData $search)
+    {
+        $groups = Criteria::table('group')
+            ->where('name', 'startswith', $search->group)
+            ->orderBy('name')
+            ->all();
+
+        return view('Group.browser', [
+            'data' => $groups,
+        ]);
+    }
+
+    #[Post(path: '/group/search')]
+    public function search(SearchData $search)
+    {
+        $groups = Criteria::table('group')
+            ->where('name', 'startswith', $search->group)
+            ->orderBy('name')
+            ->all();
+
+        return view('Group.grid', [
+            'groups' => $groups,
+        ])->fragment('search');
+    }
+
+    #[Get(path: '/group/grid/{fragment?}')]
+    #[Post(path: '/group/grid/{fragment?}')]
+    public function grid(SearchData $search, ?string $fragment = null)
+    {
+        $groups = Criteria::table('group')
+            ->where('name', 'startswith', $search->group)
+            ->orderBy('name')
+            ->all();
+
+        $view = view('Group.grid', [
+            'groups' => $groups,
+        ]);
+
+        return is_null($fragment) ? $view : $view->fragment('search');
+    }
 
     #[Get(path: '/group/listForSelect')]
     public function listForSelect()
@@ -25,23 +67,24 @@ class ResourceController extends Controller
     #[Get(path: '/group/new')]
     public function new()
     {
-        return view("Group.formNew");
+        return view('Group.formNew');
     }
 
     #[Get(path: '/group/{id}/edit')]
     public function edit(string $id)
     {
         debug($id);
-        return view("Group.edit",[
-            'group' => Group::byId($id)
+
+        return view('Group.edit', [
+            'group' => Group::byId($id),
         ]);
     }
 
     #[Get(path: '/group/{id}/formEdit')]
     public function formEdit(string $id)
     {
-        return view("Group.formEdit",[
-            'group' => Group::byId($id)
+        return view('Group.formEdit', [
+            'group' => Group::byId($id),
         ]);
     }
 
@@ -49,13 +92,14 @@ class ResourceController extends Controller
     public function update(UpdateData $data)
     {
         try {
-            Criteria::table("group")
-                ->where("idGroup",$data->idGroup)
+            Criteria::table('group')
+                ->where('idGroup', $data->idGroup)
                 ->update($data->toArray());
-            $this->trigger("reload-gridUser");
-            return $this->renderNotify("success", "Group updated.");
+            $this->trigger('reload-gridUser');
+
+            return $this->renderNotify('success', 'Group updated.');
         } catch (\Exception $e) {
-            return $this->renderNotify("error", $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -63,11 +107,12 @@ class ResourceController extends Controller
     public function create(CreateData $data)
     {
         try {
-            Criteria::create("group", $data->toArray());
-            $this->trigger("reload-gridUser");
-            return $this->renderNotify("success", "Group created.");
+            Criteria::create('group', $data->toArray());
+            $this->trigger('reload-gridUser');
+
+            return $this->renderNotify('success', 'Group created.');
         } catch (\Exception $e) {
-            return $this->renderNotify("error", $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -75,10 +120,11 @@ class ResourceController extends Controller
     public function delete(string $id)
     {
         try {
-            Criteria::deleteById("group", "idGroup", $id);
-            return $this->clientRedirect("/user");
+            Criteria::deleteById('group', 'idGroup', $id);
+
+            return $this->clientRedirect('/user');
         } catch (\Exception $e) {
-            return $this->renderNotify("error", $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 }

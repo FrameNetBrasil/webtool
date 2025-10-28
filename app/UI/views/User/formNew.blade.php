@@ -2,7 +2,7 @@
     <div class="app-layout minimal">
         <x-layout::header></x-layout::header>
         <x-layout::breadcrumb
-            :sections="[['/','Home'],['','New User']]"
+            :sections="[['/','Home'],['/manager','Manager'],['/user','Group/User'],['','New User']]"
         ></x-layout::breadcrumb>
         <main class="app-main">
             <div class="ui container">

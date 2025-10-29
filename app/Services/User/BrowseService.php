@@ -66,16 +66,17 @@ class BrowseService
                         ->orWhere('email', 'startswith', $search->user)
                         ->orWhere('name', 'startswith', $search->user);
                 })
-                ->select('idUser', 'login', 'email', 'name')
+                ->select('idUser', 'login', 'email', 'name', 'status')
                 ->orderBy('login')
                 ->limit(self::$limit)
                 ->all();
 
             foreach ($users as $user) {
+                $statusText = ($user->status != '1') ? ' [Not authorized]' : '';
                 $result[$user->idUser] = [
                     'id' => $user->idUser,
                     'type' => 'user',
-                    'text' => $user->login.' ['.$user->email.']',
+                    'text' => $user->login.' ['.$user->email.']'.$statusText,
                     'leaf' => true,
                     'state' => 'open',
                 ];
@@ -92,16 +93,17 @@ class BrowseService
             $users = Criteria::table('user_group')
                 ->join('user', 'user_group.idUser', '=', 'user.idUser')
                 ->where('user_group.idGroup', $search->id)
-                ->select('user.idUser', 'user.login', 'user.email')
+                ->select('user.idUser', 'user.login', 'user.email', 'user.status')
                 ->orderBy('user.login')
                 ->limit(self::$limit)
                 ->all();
 
             foreach ($users as $user) {
+                $statusText = ($user->status != '1') ? ' [Not authorized]' : '';
                 $result[$user->idUser] = [
                     'id' => $user->idUser,
                     'type' => 'user',
-                    'text' => $user->login.' ['.$user->email.']',
+                    'text' => $user->login.' ['.$user->email.']'.$statusText,
                     'leaf' => true,
                     'state' => 'open',
                 ];

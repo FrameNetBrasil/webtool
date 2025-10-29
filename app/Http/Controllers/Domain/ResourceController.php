@@ -8,25 +8,57 @@ use App\Data\Domain\UpdateData;
 use App\Database\Criteria;
 use App\Http\Controllers\Controller;
 use App\Repositories\Domain;
+use App\Services\Domain\BrowseService;
 use Collective\Annotations\Routing\Attributes\Attributes\Delete;
 use Collective\Annotations\Routing\Attributes\Attributes\Get;
 use Collective\Annotations\Routing\Attributes\Attributes\Middleware;
 use Collective\Annotations\Routing\Attributes\Attributes\Post;
 
-
-#[Middleware("master")]
+#[Middleware('master')]
 class ResourceController extends Controller
 {
     #[Get(path: '/domain')]
-    public function resource()
+    public function resource(SearchData $search)
     {
-        return view("Domain.resource");
+        $data = BrowseService::browseDomainSemanticTypeBySearch($search);
+
+        return view('Domain.browser', [
+            'title' => 'Domain/SemanticType',
+            'data' => $data,
+        ]);
+    }
+
+    #[Post(path: '/domain/search')]
+    public function search(SearchData $search)
+    {
+        $title = '';
+        $data = BrowseService::browseDomainSemanticTypeBySearch($search);
+
+        // Handle tree expansion - when expanding nodes, show children without title
+        if ($search->type === 'domain' && $search->id != 0) {
+            $title = ''; // No title when expanding domain
+        } elseif ($search->type === 'semanticType' && $search->id != 0) {
+            $title = ''; // No title when expanding semantic type
+        }
+        // Handle search filtering
+        elseif (! empty($search->domain)) {
+            $title = 'Domains';
+        } elseif (! empty($search->semanticType)) {
+            $title = 'SemanticTypes';
+        } else {
+            $title = 'Domains';
+        }
+
+        return view('Domain.tree', [
+            'data' => $data,
+            'title' => $title,
+        ]);
     }
 
     #[Get(path: '/domain/new')]
     public function new()
     {
-        return view("Domain.formNew");
+        return view('Domain.formNew');
     }
 
     #[Get(path: '/domain/grid/{fragment?}')]
@@ -35,26 +67,27 @@ class ResourceController extends Controller
     {
         debug($search);
         $domains = Domain::listToGrid($search);
-        //debug($users);
-        $view = view("Domain.grid", [
-            'domains' => $domains
+        // debug($users);
+        $view = view('Domain.grid', [
+            'domains' => $domains,
         ]);
-        return (is_null($fragment) ? $view : $view->fragment('search'));
+
+        return is_null($fragment) ? $view : $view->fragment('search');
     }
 
     #[Get(path: '/domain/{id}/edit')]
     public function edit(string $id)
     {
-        return view("Domain.edit", [
-            'domain' => Domain::byId($id)
+        return view('Domain.edit', [
+            'domain' => Domain::byId($id),
         ]);
     }
 
     #[Get(path: '/domain/{id}/formEdit')]
     public function formEdit(string $id)
     {
-        return view("Domain.formEdit", [
-            'domain' => Domain::getById($id)
+        return view('Domain.formEdit', [
+            'domain' => Domain::byId($id),
         ]);
     }
 
@@ -63,9 +96,10 @@ class ResourceController extends Controller
     {
         try {
             Domain::update($data);
-            return $this->renderNotify("success", "Domain updated.");
+
+            return $this->renderNotify('success', 'Domain updated.');
         } catch (\Exception $e) {
-            return $this->renderNotify("error", $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -74,10 +108,11 @@ class ResourceController extends Controller
     {
         try {
             $idDomain = Criteria::function('domain_create(?)', [$data->toJson()]);
-            $this->trigger("reload-gridSemanticType");
-            return $this->renderNotify("success", "Domain created.");
+            $this->trigger('reload-gridSemanticType');
+
+            return $this->renderNotify('success', 'Domain created.');
         } catch (\Exception $e) {
-            return $this->renderNotify("error", $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -85,10 +120,11 @@ class ResourceController extends Controller
     public function delete(string $id)
     {
         try {
-            Criteria::deleteById("domain","idDomain", $id);
-            return $this->clientRedirect("/semanticType");
+            Criteria::deleteById('domain', 'idDomain', $id);
+
+            return $this->clientRedirect('/domain');
         } catch (\Exception $e) {
-            return $this->renderNotify("error", $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 }

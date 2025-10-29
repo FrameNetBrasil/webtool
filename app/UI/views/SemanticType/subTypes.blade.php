@@ -1,0 +1,12 @@
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/semanticType/{{$idEntity}}/childSubTypeAdd/{{$root}}"
+></div>
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/semanticType/{{$idEntity}}/childSubTypeGrid"
+></div>

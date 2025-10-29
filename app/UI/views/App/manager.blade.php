@@ -8,7 +8,7 @@
         'document' => ['Corpus/Document','/corpus','', 'ADMIN','ui::icon.domain'],
         'video' => ['Video/Document', '/video','', 'ADMIN','ui::icon.frame'],
         'image' => ['Image/Document', '/image','', 'ADMIN','ui::icon.frame'],
-        'semantictype' => ['Domain/SemanticType','/semanticType','', 'ADMIN','ui::icon.frame'],
+        'semantictype' => ['Domain/SemanticType','/domain','', 'ADMIN','ui::icon.frame'],
         'layer' => ['Layer/GenericLabel', '/layers','', 'ADMIN','ui::icon.frame'],
         'relations' => ['Relations', '/relations','', 'ADMIN','ui::icon.frame'],
         'importfulltext' => ['Import FullText', '/utils/importFullText', '','MANAGER','ui::icon.frame'],

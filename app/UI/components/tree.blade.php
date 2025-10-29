@@ -69,7 +69,7 @@
                         @if(isset($item['formatedId']))
                             <td class="content-cell">
                             <span class="ui tree-item-text clickable"
-                                  @click="selectItem({{$item['id']}},'{{$item['type']}}')"
+                                  @click="selectItem({{$item['id']}},'{{$item['type']}}',{{($item['leaf'] ?? false) ? 'true' : 'false'}})"
                             >
                                 {!! $item['formatedId'] !!}
                             </span>
@@ -78,7 +78,7 @@
                         @if(isset($item['extra']))
                             <td class="content-cell">
                             <span class="ui tree-item-text clickable"
-                                  @click="selectItem({{$item['id']}},'{{$item['type']}}')"
+                                  @click="selectItem({{$item['id']}},'{{$item['type']}}',{{($item['leaf'] ?? false) ? 'true' : 'false'}})"
                             >
                                 {!! $item['extra'] !!}
                             </span>
@@ -86,7 +86,7 @@
                         @endif
                         <td class="content-cell">
                         <span class="ui tree-item-text clickable"
-                              @click="selectItem({{$item['id']}},'{{$item['type']}}')"
+                              @click="selectItem({{$item['id']}},'{{$item['type']}}',{{($item['leaf'] ?? false) ? 'true' : 'false'}})"
                         >
                             {!! $item['text'] !!}
                         </span>

@@ -20,8 +20,8 @@ Create a local installation for Webtool:
 * Clone this repository at an accesible folder
 
 ```sh
-$ git clone https://github.com/FrameNetBrasil/webtool38.git
-$ cd webtool38
+$ git clone https://github.com/FrameNetBrasil/webtool.git
+$ cd webtool
 ```
 * Copy file .env.sample to .env
 
@@ -32,7 +32,7 @@ $ cd webtool38
 * Build and start the container
 
 ```sh
-$ docker compose build
+$ docker compose build --build-arg PROD=1
 $ docker compose up
 ```
 

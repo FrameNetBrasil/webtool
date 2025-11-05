@@ -8,12 +8,13 @@ RUN addgroup -g $WWWGROUP www \
     && touch /var/log/laravel/laravel.log \
     && chown -R sail:www /var/log/laravel
 
-#COPY . /www
+COPY . /www
 #RUN chown -R sail:www /www
 
-USER sail
+#USER sail
 WORKDIR /www
 
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-RUN if [[ -n "$PROD" ]] ; then composer install; fi
+#RUN if [[ -n "$PROD" ]] ; then composer install; fi
+RUN composer install

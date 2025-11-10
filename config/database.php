@@ -66,6 +66,76 @@ return [
             //            ],
         ],
 
+        'webtool42' => [
+            'driver' => 'mariadb',
+            // 'platform' => 'pdo_mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST_WT', 'x'),
+            'port' => env('DB_PORT_WT', ''),
+            'database' => env('DB_DATABASE_WT', 'forge'),
+            'username' => env('DB_USERNAME_WT', 'forge'),
+            'password' => env('DB_PASSWORD_WT', ''),
+            'unix_socket' => env('DB_SOCKET_WT', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'formatDate' => '%e/%m/%Y',
+            'formatDateWhere' => '%Y/%m/%e',
+            'formatTime' => '%T',
+            'sequence' => [
+                'table' => 'Sequence',
+                'name' => 'Name',
+                'value' => 'Value',
+            ],
+            'configurationClass' => 'Doctrine\DBAL\Configuration',
+            'options' => [
+                \PDO::ATTR_EMULATE_PREPARES => true,
+            ],
+            //            'options' => extension_loaded('pdo_mysql') ? array_filter([
+            //                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            //            ]) : [
+            //                \PDO::ATTR_EMULATE_PREPARES => true
+            //            ],
+        ],
+
+        'mfn41' => [
+            'driver' => 'mariadb',
+            // 'platform' => 'pdo_mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST_MF', 'x'),
+            'port' => env('DB_PORT_MF', ''),
+            'database' => env('DB_DATABASE_MF', 'forge'),
+            'username' => env('DB_USERNAME_MF', 'forge'),
+            'password' => env('DB_PASSWORD_MF', ''),
+            'unix_socket' => env('DB_SOCKET_MF', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'formatDate' => '%e/%m/%Y',
+            'formatDateWhere' => '%Y/%m/%e',
+            'formatTime' => '%T',
+            'sequence' => [
+                'table' => 'Sequence',
+                'name' => 'Name',
+                'value' => 'Value',
+            ],
+            'configurationClass' => 'Doctrine\DBAL\Configuration',
+            'options' => [
+                \PDO::ATTR_EMULATE_PREPARES => true,
+            ],
+            //            'options' => extension_loaded('pdo_mysql') ? array_filter([
+            //                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            //            ]) : [
+            //                \PDO::ATTR_EMULATE_PREPARES => true
+            //            ],
+        ],
+
         'webtool41' => [
             'driver' => 'mariadb',
             // 'platform' => 'pdo_mysql',

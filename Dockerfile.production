@@ -1,0 +1,143 @@
+# ============================================
+# Production Dockerfile for Webtool 4.2
+# Multi-stage build for optimized image size
+# ============================================
+
+# ============================================
+# Stage 1: Build Frontend Assets
+# ============================================
+FROM node:20-alpine AS frontend-builder
+
+WORKDIR /build
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --only=production=false
+
+# Copy source files needed for build
+COPY resources ./resources
+COPY public ./public
+COPY vite.config.js ./
+COPY postcss.config.js ./
+COPY tailwind.config.js ./
+
+# Build production assets
+RUN npm run build
+
+# ============================================
+# Stage 2: Build PHP Production Image
+# ============================================
+FROM php:8.4-fpm-alpine AS production
+
+# Build arguments
+ARG WWWGROUP=1000
+ARG WWWUSER=1000
+
+# Install system dependencies
+RUN apk add --no-cache \
+    bash \
+    curl \
+    fish \
+    git \
+    icu-dev \
+    libpng-dev \
+    libjpeg-turbo-dev \
+    libwebp-dev \
+    libzip-dev \
+    freetype-dev \
+    oniguruma-dev \
+    postgresql-dev \
+    mysql-client \
+    mariadb-connector-c-dev \
+    supervisor \
+    && docker-php-ext-configure gd \
+        --with-freetype \
+        --with-jpeg \
+        --with-webp \
+    && docker-php-ext-install -j$(nproc) \
+        gd \
+        intl \
+        opcache \
+        pdo \
+        pdo_mysql \
+        pdo_pgsql \
+        pcntl \
+        zip \
+        bcmath \
+        exif \
+        mbstring \
+    && pecl install redis \
+    && docker-php-ext-enable redis \
+    && rm -rf /tmp/pear
+
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+# Create application user
+RUN addgroup -g ${WWWGROUP} www \
+    && adduser -s /usr/bin/fish -D -G www -u ${WWWUSER} sail \
+    && mkdir -p /var/log/laravel /var/www/html/storage /var/www/html/bootstrap/cache \
+    && touch /var/log/laravel/laravel.log \
+    && chown -R sail:www /var/log/laravel
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy composer files
+COPY composer.json composer.lock ./
+
+# Install PHP dependencies (production only)
+RUN composer install \
+    --no-dev \
+    --no-interaction \
+    --no-progress \
+    --no-scripts \
+    --prefer-dist \
+    --optimize-autoloader \
+    && composer clear-cache
+
+# Copy application code
+COPY --chown=sail:www . .
+
+# Copy built frontend assets from Stage 1
+COPY --from=frontend-builder --chown=sail:www /build/public/build ./public/build
+
+# Copy production PHP configuration
+COPY docker/php/php.production.ini /usr/local/etc/php/conf.d/99-production.ini
+
+# Copy OPcache preload script
+COPY docker/php/opcache-preload.php /var/www/html/opcache-preload.php
+
+# Run post-install composer scripts
+RUN composer run-script post-autoload-dump
+
+# Set proper permissions
+RUN chown -R sail:www /var/www/html \
+    && chmod -R 755 /var/www/html/storage \
+    && chmod -R 755 /var/www/html/bootstrap/cache
+
+# Create .env placeholder (will be mounted/injected at runtime)
+RUN touch .env && chown sail:www .env
+
+# Laravel production optimizations (optional - can be done at runtime)
+# Uncomment if you want to bake optimizations into the image
+# Note: This requires a valid .env file with APP_KEY
+# RUN php artisan config:cache \
+#     && php artisan route:cache \
+#     && php artisan view:cache \
+#     && php artisan event:cache
+
+# Switch to non-root user
+USER sail
+
+# Expose PHP-FPM port
+EXPOSE 9000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+    CMD php-fpm -t || exit 1
+
+# Start PHP-FPM
+CMD ["php-fpm"]

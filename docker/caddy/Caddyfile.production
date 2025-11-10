@@ -1,0 +1,108 @@
+# =====================================================
+# Production Caddyfile for Webtool 4.2
+# Optimized for performance and security
+# =====================================================
+
+:80 {
+    # Root directory
+    root * /var/www/html/public
+
+    # Enable gzip compression
+    encode gzip zstd
+
+    # Security headers
+    header {
+        # Prevent clickjacking
+        X-Frame-Options "SAMEORIGIN"
+
+        # XSS protection
+        X-XSS-Protection "1; mode=block"
+
+        # Prevent MIME sniffing
+        X-Content-Type-Options "nosniff"
+
+        # Referrer policy
+        Referrer-Policy "strict-origin-when-cross-origin"
+
+        # Remove server header
+        -Server
+
+        # Remove X-Powered-By
+        -X-Powered-By
+    }
+
+    # Access logging
+    log {
+        output stdout
+        format json
+        level INFO
+    }
+
+    # PHP-FPM configuration
+    php_fastcgi app:9000 {
+        # Environment variables
+        env APP_ENV production
+
+        # Trusted proxies (adjust based on your reverse proxy)
+        trusted_proxies private_ranges
+
+        # Connection pool
+        dial_timeout 3s
+        read_timeout 60s
+        write_timeout 60s
+
+        # Load balancing (if multiple PHP containers)
+        lb_policy least_conn
+    }
+
+    # Static file optimization
+    @static {
+        path *.css *.js *.ico *.gif *.jpg *.jpeg *.png *.svg *.woff *.woff2 *.ttf *.eot *.webp *.avif
+    }
+
+    header @static {
+        # Cache static assets for 1 year
+        Cache-Control "public, max-age=31536000, immutable"
+    }
+
+    # Vite built assets (versioned)
+    @vite {
+        path /build/*
+    }
+
+    header @vite {
+        # Cache Vite assets for 1 year (they are versioned)
+        Cache-Control "public, max-age=31536000, immutable"
+    }
+
+    # Don't cache HTML/dynamic content
+    @dynamic {
+        path *.html /
+    }
+
+    header @dynamic {
+        Cache-Control "no-cache, no-store, must-revalidate"
+    }
+
+    # Security: Block access to sensitive files
+    @blocked {
+        path *.env* *.sql *.sqlite *.git* composer.json composer.lock package.json package-lock.json
+        path /storage/* /bootstrap/cache/* /vendor/*
+    }
+
+    respond @blocked 404
+
+    # Serve files or fallback to index.php
+    file_server {
+        # Disable directory browsing
+        browse off
+
+        # Enable precompressed files
+        precompressed gzip
+    }
+
+    # Health check endpoint
+    handle /health {
+        respond 200
+    }
+}

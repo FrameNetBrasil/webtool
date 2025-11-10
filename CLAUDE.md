@@ -7,26 +7,47 @@ This is **Webtool 4.2** - the new release of the linguistic annotation and Frame
 
 ## Development Commands
 
-### Frontend Development (Current Setup)
-This project currently uses a local development setup with Vite running directly on the host machine.
+### Laravel Sail (Docker Development Environment)
+This project uses **Laravel Sail** for containerized development. All PHP/Laravel commands run inside Docker containers.
 
-**Frontend Development:**
-- `yarn dev` - Start Vite development server with hot reload (current setup)
+**Starting the Development Environment:**
+```bash
+./vendor/bin/sail up -d        # Start all services in background
+./vendor/bin/sail down          # Stop all services
+./vendor/bin/sail restart       # Restart services
+```
+
+**Recommended: Add Shell Alias**
+```bash
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
+```
+
+### Frontend Development (Host Machine)
+Vite runs **outside Docker** on your local machine for optimal performance:
+- `yarn dev` - Start Vite development server with hot reload
 - `npm run dev` - Alternative to yarn dev
-- `yarn install` - Install Node.js dependencies  
+- `yarn install` - Install Node.js dependencies
 - `npm run build` - Build production assets
 
-### PHP & Laravel
-- `php artisan serve` - Start development server
-- `php artisan migrate` - Run database migrations
-- `php artisan tinker` - Open interactive shell
-- `composer install` - Install PHP dependencies
-- `vendor/bin/phpunit` - Run tests
+### PHP & Laravel (via Sail)
+- `sail artisan migrate` - Run database migrations
+- `sail artisan tinker` - Open interactive shell
+- `sail composer install` - Install PHP dependencies
+- `sail test` - Run tests
+- `sail shell` - Access container bash shell
+- `sail redis` - Access Redis CLI
 
 #### Services and Ports (configured in .env)
-- **Laravel App**: http://localhost:8001 (`FORWARD_PHP_PORT=8001`)
-- **Reverb WebSocket**: http://localhost:8080 (`FORWARD_REVERB_PORT=8080`)
+- **Laravel App**: http://localhost:80 (`APP_PORT=80`)
 - **Redis**: localhost:6379 (`FORWARD_REDIS_PORT=6379`)
+- **Reverb WebSocket**: http://localhost:8080 (`REVERB_PORT=8080`)
+- **Vite Dev**: http://localhost:5173 (`VITE_PORT=5173`)
+
+**External Services (not in Docker):**
+- **MariaDB**: Your existing database server (`DB_HOST=host.docker.internal`)
+- **Neo4J**: Graph database if enabled (`NEO4J_HOST=localhost`)
+
+See SAIL_SETUP.md for complete setup details.
 
 ## Architecture Overview
 

@@ -1,0 +1,241 @@
+# =====================================================
+# Production Docker Compose for Webtool 4.2
+# =====================================================
+# This configuration is optimized for production deployment
+# - No volume mounts for code (baked into image)
+# - Proper restart policies
+# - Health checks
+# - Resource limits
+# - Logging configuration
+# =====================================================
+
+services:
+  # ===================================================
+  # Caddy Web Server
+  # ===================================================
+  caddy:
+    image: caddy:latest
+    container_name: webtool-caddy
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-80}:80"
+    volumes:
+      # Production Caddyfile
+      - ./docker/caddy/Caddyfile.production:/etc/caddy/Caddyfile:ro
+      # Share application public directory with app container
+      - app-public:/var/www/html/public:ro
+    networks:
+      - webtool
+    depends_on:
+      app:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    labels:
+      - "com.webtool.service=caddy"
+      - "com.webtool.version=4.2"
+
+  # ===================================================
+  # Laravel Application (PHP-FPM)
+  # ===================================================
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+      args:
+        WWWUSER: ${WWWUSER:-1000}
+        WWWGROUP: ${WWWGROUP:-1000}
+    image: webtool:${APP_VERSION:-latest}
+    container_name: webtool-app
+    restart: unless-stopped
+    environment:
+      # Container environment
+      CONTAINER_ROLE: app
+      # Laravel will read from .env file
+    env_file:
+      - .env
+    extra_hosts:
+      # Allow container to access host machine services (MariaDB, Neo4J)
+      - "host.docker.internal:host-gateway"
+    volumes:
+      # Mount .env file
+      - ./.env:/var/www/html/.env:ro
+      # Persistent storage for uploaded files, logs, cache
+      - app-storage:/var/www/html/storage
+      - app-public:/var/www/html/public
+    networks:
+      - webtool
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "php-fpm -t && php artisan config:show app.name"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    labels:
+      - "com.webtool.service=app"
+      - "com.webtool.version=4.2"
+
+  # ===================================================
+  # Laravel Reverb (WebSockets)
+  # ===================================================
+  reverb:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+      args:
+        WWWUSER: ${WWWUSER:-1000}
+        WWWGROUP: ${WWWGROUP:-1000}
+    image: webtool:${APP_VERSION:-latest}
+    container_name: webtool-reverb
+    restart: unless-stopped
+    command: php artisan reverb:start --host=0.0.0.0 --port=8080
+    ports:
+      - "${REVERB_PORT:-8080}:8080"
+    environment:
+      CONTAINER_ROLE: reverb
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./.env:/var/www/html/.env:ro
+      - app-storage:/var/www/html/storage
+    networks:
+      - webtool
+    depends_on:
+      app:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f 'artisan reverb:start' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    labels:
+      - "com.webtool.service=reverb"
+      - "com.webtool.version=4.2"
+
+  # ===================================================
+  # Queue Worker
+  # ===================================================
+  queue:
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+      args:
+        WWWUSER: ${WWWUSER:-1000}
+        WWWGROUP: ${WWWGROUP:-1000}
+    image: webtool:${APP_VERSION:-latest}
+    container_name: webtool-queue
+    restart: unless-stopped
+    command: php artisan queue:work --verbose --tries=3 --timeout=90 --sleep=3 --max-jobs=1000 --max-time=3600
+    environment:
+      CONTAINER_ROLE: queue
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./.env:/var/www/html/.env:ro
+      - app-storage:/var/www/html/storage
+    networks:
+      - webtool
+    depends_on:
+      app:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f 'artisan queue:work' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "5"
+    labels:
+      - "com.webtool.service=queue"
+      - "com.webtool.version=4.2"
+
+  # ===================================================
+  # Redis
+  # ===================================================
+  redis:
+    image: redis:7.2-alpine
+    container_name: webtool-redis
+    restart: unless-stopped
+    ports:
+      - "${FORWARD_REDIS_PORT:-6379}:6379"
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    volumes:
+      - redis-data:/data
+    networks:
+      - webtool
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "5m"
+        max-file: "3"
+    labels:
+      - "com.webtool.service=redis"
+      - "com.webtool.version=4.2"
+
+# =====================================================
+# Networks
+# =====================================================
+networks:
+  webtool:
+    driver: bridge
+    name: webtool-network
+
+# =====================================================
+# Volumes
+# =====================================================
+volumes:
+  # Laravel storage (uploads, logs, cache, sessions)
+  app-storage:
+    driver: local
+    name: webtool-storage
+
+  # Laravel public directory (shared with Caddy)
+  app-public:
+    driver: local
+    name: webtool-public
+
+  # Redis persistent data
+  redis-data:
+    driver: local
+    name: webtool-redis

@@ -19,11 +19,12 @@ class BrowseService
         $frames = Criteria::table('view_frame as f')
             ->where('f.name', 'startswith', $search->frame)
             ->where('f.idLanguage', AppService::getCurrentIdLanguage())
-            ->joinSub($subQuery, 'domains', function (JoinClause $join) {
-                $join->on('f.idFrame', '=', 'domains.idFrame');
-            })
+//            ->joinSub($subQuery, 'domains', function (JoinClause $join) {
+//                $join->on('f.idFrame', '=', 'domains.idFrame');
+//            })
             ->orderBy('name')->all();
         foreach ($frames as $frame) {
+            $frame->domain = '';
             $result[$frame->idFrame] = [
                 'id' => $frame->idFrame,
                 'type' => 'frame',

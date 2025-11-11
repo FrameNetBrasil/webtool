@@ -20,8 +20,8 @@ RUN npm ci --only=production=false
 COPY resources ./resources
 COPY public ./public
 COPY vite.config.js ./
-COPY postcss.config.js ./
-COPY tailwind.config.js ./
+# COPY postcss.config.js ./
+# COPY tailwind.config.js ./
 
 # Build production assets
 RUN npm run build

@@ -14,7 +14,7 @@ if (php_sapi_name() !== 'cli' || !function_exists('opcache_compile_file')) {
 }
 
 // Define base path
-$baseDir = '/var/www/html';
+$baseDir = '/www';
 
 // Change to application directory
 if (!is_dir($baseDir)) {

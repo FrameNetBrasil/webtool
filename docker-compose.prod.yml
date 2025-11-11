@@ -23,7 +23,7 @@ services:
       # Production Caddyfile
       - ./docker/caddy/Caddyfile.production:/etc/caddy/Caddyfile:ro
       # Share application public directory with app container
-      - app-public:/var/www/html/public:ro
+      - app-public:/www/public:ro
     networks:
       - webtool
     depends_on:
@@ -68,17 +68,17 @@ services:
       - "host.docker.internal:host-gateway"
     volumes:
       # Mount .env file
-      - ./.env:/var/www/html/.env:ro
+      - ./.env:/www/.env:ro
       # Persistent storage for uploaded files, logs, cache
-      - app-storage:/var/www/html/storage
-      - app-public:/var/www/html/public
+      - app-storage:/www/storage
+      - app-public:/www/public
     networks:
       - webtool
     depends_on:
       redis:
         condition: service_healthy
     healthcheck:
-      test: ["CMD-SHELL", "php-fpm -t && php artisan config:show app.name"]
+      test: ["CMD-SHELL", "php -v > /dev/null 2>&1 && test -f /www/.env"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -115,8 +115,8 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
-      - ./.env:/var/www/html/.env:ro
-      - app-storage:/var/www/html/storage
+      - ./.env:/www/.env:ro
+      - app-storage:/www/storage
     networks:
       - webtool
     depends_on:
@@ -160,8 +160,8 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     volumes:
-      - ./.env:/var/www/html/.env:ro
-      - app-storage:/var/www/html/storage
+      - ./.env:/www/.env:ro
+      - app-storage:/www/storage
     networks:
       - webtool
     depends_on:

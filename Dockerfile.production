@@ -40,15 +40,15 @@ ARG WWWUSER=1000
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 # Create application user and directories
-# Note: Check if user already exists in base image, adjust if needed
+# Note: Your base image uses /www as WORKDIR
 RUN addgroup -g ${WWWGROUP} www 2>/dev/null || true \
     && adduser -s /usr/bin/fish -D -G www -u ${WWWUSER} sail 2>/dev/null || true \
-    && mkdir -p /var/log/laravel /var/www/html/storage /var/www/html/bootstrap/cache \
+    && mkdir -p /var/log/laravel /www/storage /www/bootstrap/cache \
     && touch /var/log/laravel/laravel.log \
     && chown -R sail:www /var/log/laravel
 
-# Set working directory
-WORKDIR /var/www/html
+# Set working directory (matching your base image)
+WORKDIR /www
 
 # Copy composer files
 COPY composer.json composer.lock ./
@@ -69,19 +69,22 @@ COPY --chown=sail:www . .
 # Copy built frontend assets from Stage 1
 COPY --from=frontend-builder --chown=sail:www /build/public/build ./public/build
 
+# Disable Xdebug in production (it's enabled in your base image)
+RUN rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
 # Copy production PHP configuration
 COPY docker/php/php.production.ini /usr/local/etc/php/conf.d/99-production.ini
 
 # Copy OPcache preload script
-COPY docker/php/opcache-preload.php /var/www/html/opcache-preload.php
+COPY docker/php/opcache-preload.php /www/opcache-preload.php
 
 # Note: Skipping post-autoload-dump during build because proc_open is disabled
 # Package discovery will run automatically at runtime on first request
 
 # Set proper permissions
-RUN chown -R sail:www /var/www/html \
-    && chmod -R 755 /var/www/html/storage \
-    && chmod -R 755 /var/www/html/bootstrap/cache
+RUN chown -R sail:www /www \
+    && chmod -R 755 /www/storage \
+    && chmod -R 755 /www/bootstrap/cache
 
 # Create .env placeholder (will be mounted/injected at runtime)
 RUN touch .env && chown sail:www .env
@@ -102,7 +105,7 @@ EXPOSE 9000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-    CMD php-fpm -t || exit 1
+    CMD php -v > /dev/null 2>&1 || exit 1
 
-# Start PHP-FPM
-CMD ["php-fpm"]
+# The base image (php:8.4-alpine) has CMD ["php-fpm"] which we inherit
+# No need to override

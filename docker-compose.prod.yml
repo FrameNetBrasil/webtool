@@ -15,7 +15,7 @@ services:
   # ===================================================
   caddy:
     image: caddy:latest
-    contaner_name: webtool-caddy
+    container_name: webtool-caddy
     restart: unless-stopped
     ports:
       - "${APP_PORT:-80}:80"

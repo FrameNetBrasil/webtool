@@ -116,7 +116,6 @@ EXPOSE 9000
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
     CMD php -v > /dev/null 2>&1 || exit 1
 
-# Start PHP CGI in FastCGI mode
-# Note: Your base image is php:8.4-alpine (CLI), not php:8.4-fpm-alpine
-# Using php-cgi as a workaround until base image is fixed
-CMD ["php-cgi", "-b", "0.0.0.0:9000"]
+# Start PHP-FPM
+# Your base image now uses php:8.4-fpm-alpine which has php-fpm
+CMD ["php-fpm", "-F"]

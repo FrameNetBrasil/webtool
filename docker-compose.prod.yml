@@ -191,8 +191,9 @@ services:
     image: redis:7.2-alpine
     container_name: webtool-redis
     restart: unless-stopped
-    ports:
-      - "${FORWARD_REDIS_PORT:-6379}:6379"
+    # ports:
+    #   - "${FORWARD_REDIS_PORT:-6379}:6379"
+    # Note: Redis is only used internally by containers, no need to expose externally
     command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
     volumes:
       - redis-data:/data

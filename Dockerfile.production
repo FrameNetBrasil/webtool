@@ -78,10 +78,14 @@ COPY docker/php/php.production.ini /usr/local/etc/php/conf.d/99-production.ini
 # Copy OPcache preload script
 COPY docker/php/opcache-preload.php /www/opcache-preload.php
 
+# Copy entrypoint script
+COPY docker/scripts/entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 # Note: Skipping post-autoload-dump during build because proc_open is disabled
 # Package discovery will run automatically at runtime on first request
 
-# Create Laravel required directories
+# Create Laravel required directories (will be recreated by entrypoint if volume overrides)
 RUN mkdir -p /www/storage/framework/cache/data \
     && mkdir -p /www/storage/framework/sessions \
     && mkdir -p /www/storage/framework/views \
@@ -115,6 +119,9 @@ EXPOSE 9000
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
     CMD php -v > /dev/null 2>&1 || exit 1
+
+# Set entrypoint to ensure directories exist
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 # Start PHP-FPM
 # Your base image now uses php:8.4-fpm-alpine which has php-fpm

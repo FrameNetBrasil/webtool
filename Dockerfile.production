@@ -75,8 +75,8 @@ COPY docker/php/php.production.ini /usr/local/etc/php/conf.d/99-production.ini
 # Copy OPcache preload script
 COPY docker/php/opcache-preload.php /var/www/html/opcache-preload.php
 
-# Run post-install composer scripts
-RUN composer run-script post-autoload-dump
+# Note: Skipping post-autoload-dump during build because proc_open is disabled
+# Package discovery will run automatically at runtime on first request
 
 # Set proper permissions
 RUN chown -R sail:www /var/www/html \

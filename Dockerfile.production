@@ -36,8 +36,9 @@ FROM php:8.4-fpm-alpine AS production
 ARG WWWGROUP=1000
 ARG WWWUSER=1000
 
-# Install system dependencies
+# Install system dependencies and build tools
 RUN apk add --no-cache \
+    # Runtime dependencies
     bash \
     curl \
     fish \
@@ -53,6 +54,12 @@ RUN apk add --no-cache \
     mysql-client \
     mariadb-connector-c-dev \
     supervisor \
+    # Build dependencies (will be removed later)
+    autoconf \
+    g++ \
+    gcc \
+    make \
+    pkgconfig \
     && docker-php-ext-configure gd \
         --with-freetype \
         --with-jpeg \
@@ -71,7 +78,8 @@ RUN apk add --no-cache \
         mbstring \
     && pecl install redis \
     && docker-php-ext-enable redis \
-    && rm -rf /tmp/pear
+    && apk del autoconf g++ gcc make pkgconfig \
+    && rm -rf /tmp/pear /var/cache/apk/*
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer

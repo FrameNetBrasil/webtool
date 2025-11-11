@@ -81,10 +81,19 @@ COPY docker/php/opcache-preload.php /www/opcache-preload.php
 # Note: Skipping post-autoload-dump during build because proc_open is disabled
 # Package discovery will run automatically at runtime on first request
 
+# Create Laravel required directories
+RUN mkdir -p /www/storage/framework/cache/data \
+    && mkdir -p /www/storage/framework/sessions \
+    && mkdir -p /www/storage/framework/views \
+    && mkdir -p /www/storage/framework/testing \
+    && mkdir -p /www/storage/logs \
+    && mkdir -p /www/storage/app/public \
+    && mkdir -p /www/bootstrap/cache
+
 # Set proper permissions
-RUN chown -R sail:www /www \
-    && chmod -R 755 /www/storage \
-    && chmod -R 755 /www/bootstrap/cache
+RUN chown -R sail:www /www/storage /www/bootstrap/cache \
+    && chmod -R 775 /www/storage \
+    && chmod -R 775 /www/bootstrap/cache
 
 # Create .env placeholder (will be mounted/injected at runtime)
 RUN touch .env && chown sail:www .env
@@ -107,5 +116,7 @@ EXPOSE 9000
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
     CMD php -v > /dev/null 2>&1 || exit 1
 
-# The base image (php:8.4-alpine) has CMD ["php-fpm"] which we inherit
-# No need to override
+# Start PHP CGI in FastCGI mode
+# Note: Your base image is php:8.4-alpine (CLI), not php:8.4-fpm-alpine
+# Using php-cgi as a workaround until base image is fixed
+CMD ["php-cgi", "-b", "0.0.0.0:9000"]

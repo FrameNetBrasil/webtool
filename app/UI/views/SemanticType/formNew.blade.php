@@ -1,11 +1,11 @@
 <x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['','New SemanticType']]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
-            <div class="ui container">
+            <div class="ui container page">
                 <div class="page-content">
                     <form class="ui form">
                         <div class="ui card form-card w-full p-1">
@@ -18,19 +18,25 @@
                                 </div>
                             </div>
                             <div class="content">
-                                <div class="field">
-                                    <label for="semanticTypeName">English name</label>
-                                    <div class="ui small input">
-                                        <input type="text" id="semanticTypeName" name="semanticTypeName" value="">
+                                <div class="fields">
+                                    <div class="field">
+                                        <label for="nameEn">Name</label>
+                                        <div class="ui small input">
+                                            <input type="text" id="nameEn" name="nameEn" value="">
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="field">
+                                        <x-search::semantictype
+                                            id="idSemanticTypeParent"
+                                            label="SemanticType Parent"
+                                            placeholder="Select a SemanticType"
+                                            search-url="/semanticType/list/forSelect"
+                                            value=""
+                                            display-value=""
+                                            modal-title="Search SemanticType"
+                                        ></x-search::semantictype>
+                                    </div>
 
-                                <div class="field">
-                                    <x-combobox.domain
-                                        id="idDomain"
-                                        label="Domain"
-                                    >
-                                    </x-combobox.domain>
                                 </div>
                             </div>
                             <div class="extra content">
@@ -39,7 +45,7 @@
                                     class="ui primary button"
                                     hx-post="/semanticType/new"
                                 >
-                                    Add SemanticType
+                                    Save
                                 </button>
                             </div>
                         </div>

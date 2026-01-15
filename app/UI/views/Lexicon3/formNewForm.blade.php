@@ -1,11 +1,11 @@
-<x-layout.index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+<x-layout::index>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/structure','Structure'],['/lexicon3','Lexicon'],['','New Lemma']]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
-            <div class="ui container h-full">
+            <div class="ui container page">
                 <div class="page-header">
                     <div class="page-header-content">
                         <div class="page-title">
@@ -58,6 +58,6 @@
             </div>
 
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
-</x-layout.index>
+</x-layout::index>

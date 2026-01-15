@@ -31,6 +31,8 @@ class CreateData extends Data
             'timeout' => 300.0,
         ]);
         $url = config('webtool.mediaURL');
+        debug($url);
+        debug($file);
         $response = $client->request('POST', $url, [
             'multipart' => [
                 [

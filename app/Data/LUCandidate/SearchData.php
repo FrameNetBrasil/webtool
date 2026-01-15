@@ -9,6 +9,7 @@ class SearchData extends Data
     public function __construct(
         public ?string $lu = '',
         public ?string $email = '',
+        public ?string $origin = '',
         public ?string $sort = '',
         public ?string $orderby = '',
         public ?string $order = '',

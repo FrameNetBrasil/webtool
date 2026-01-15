@@ -5,6 +5,7 @@ function searchObjectComponent() {
         searchQueryLU: "",
         searchQueryIdDynamicObject: "",
         currentToast: null,
+        frameInput: 0,
 
         onSearchStart(event) {
             // Store the current query for later use
@@ -65,6 +66,10 @@ function searchObjectComponent() {
             } else if (queryDisplay) {
                 queryDisplay.textContent = "";
             }
-        }
+        },
+
+        onSeekObject(e) {
+            this.frameInput = e.detail.frameNumber;
+        },
     };
 }

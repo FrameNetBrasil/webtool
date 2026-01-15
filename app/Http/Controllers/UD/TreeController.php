@@ -51,7 +51,7 @@ class TreeController extends Controller
         // Convert UD structure to hierarchical tree format
         $treeData = $this->convertUDToTree($udNodes);
 
-        return view('UD.main', [
+        return view('UD.index', [
             'idDocumentSentence' => $idDocumentSentence,
             'sentenceText' => $sentenceData->text,
             'treeData' => json_encode($treeData),

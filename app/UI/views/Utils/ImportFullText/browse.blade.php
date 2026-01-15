@@ -1,9 +1,9 @@
 <x-layout.browser>
     <x-slot:head>
-        <x-layout::breadcrumb :sections="[['/','Home'],['/manager','Manager'],['','Import FullText']]"></x-layout::breadcrumb>
+        <x-partial::breadcrumb :sections="[['/','Home'],['','Corpus']]"></x-partial::breadcrumb>
     </x-slot:head>
     <x-slot:main>
-        <div class="ui container h-full">
+        <div class="ui container page">
             <div class="ui card h-full w-full p-2">
                 <div class="flex-grow-0 content h-4rem">
                     <div class="flex align-items-center justify-content-between">

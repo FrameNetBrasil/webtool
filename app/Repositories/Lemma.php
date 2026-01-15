@@ -22,7 +22,7 @@ class Lemma
 
     public static function byName(string $name, int $idLanguage): ?object
     {
-        return Criteria::table('view_lexicon_lemma')
+        return Criteria::table('view_lemma')
             ->whereRaw("name = '{$name}' collate 'utf8mb4_bin'")
             ->where('idLanguage', $idLanguage)
             ->first();

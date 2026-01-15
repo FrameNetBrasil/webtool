@@ -1,5 +1,5 @@
 <div class="dashboard-subtitle">{{__('dashboard.textualAnnotation')}}</div>
-<div class="flex gap-2">
+<div class="d-flex gap-2">
     <div class="dashboard-card dashboard-card1">
         <div class="header">{{__('dashboard.annotatedSentences')}}</div>
         <div class="body">
@@ -32,7 +32,7 @@
     </div>
 </div>
 <div class="dashboard-subtitle">{{__('dashboard.videoAnnotation')}}</div>
-<div class="flex gap-2">
+<div class="d-flex gap-2">
     <div class="dashboard-card dashboard-card2">
         <div class="header">{{__('dashboard.annotatedBBox')}}</div>
         <div class="body">
@@ -59,7 +59,7 @@
     </div>
 </div>
 <div class="dashboard-subtitle">{{__('dashboard.averages')}}</div>
-<div class="flex gap-2">
+<div class="d-flex gap-2">
     <div class="dashboard-card dashboard-card6">
         <div class="header">{{__('dashboard.avgSentence')}}</div>
         <div class="body">
@@ -80,7 +80,7 @@
     </div>
 </div>
 <div class="dashboard-subtitle">{{__('dashboard.origin')}}</div>
-<div class="flex gap-2">
+<div class="d-flex gap-2">
     @foreach($annotation['origin'] as $i => $origin)
         <div class="dashboard-card dashboard-card{!! $i + 1 !!}">
             <div class="header">{!! __("dashboard.origin_$origin->origin") !!}</div>

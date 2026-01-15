@@ -120,7 +120,7 @@
 
                 {{-- Results Container --}}
                 <div x-show="!isLoading && searchResults.length > 0" class="ui relaxed divided list" style="height: 100%;">
-                    <template x-for="result in searchResults" :key="result[valueField]">
+                    <template x-for="(result, index) in searchResults" :key="index">
                         <div class="item" style="cursor: pointer; padding: 10px;"
                              @click="selectResult(result)"
                              @mouseenter="$el.style.backgroundColor = '#f8f9fa'"

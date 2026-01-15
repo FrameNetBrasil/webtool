@@ -1,0 +1,13 @@
+sentences_01:
+select text
+from sentence
+where idsentence in (select idSentence from document_sentence where iddocument=1526);
+
+sentences_02:
+select text
+from sentence
+where idsentence in (select idSentence from document_sentence where iddocument in (select idDocument from document where idCorpus = 204))
+and text not like 'https%'
+and length(text) > 25
+and idlanguage = 1
+limit 100;

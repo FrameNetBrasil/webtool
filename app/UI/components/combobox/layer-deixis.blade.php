@@ -1,4 +1,4 @@
-<div {{$attributes}}>
+<div class="w-20rem">
     <div class="form-field field" style="overflow:initial">
         @if($label != '')
         <label for="{{$id}}">{{$label}}</label>
@@ -24,6 +24,9 @@
         $('#{{$id}}_dropdown').dropdown({
             onChange: function(value) {
                 $('#{{$id}}').val(value);
+                @if($onChange ?? null)
+                    {!! $onChange !!}
+                @endif
             }
         });
     });

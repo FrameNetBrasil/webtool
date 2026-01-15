@@ -59,6 +59,17 @@
             <!-- Timeline content -->
             <div class="content" id="timeline-content" style="">
                 <div class="inner" style="width: {{ $timeline['config']['timelineWidth'] }}px;">
+                    <!-- Video Frame Cursor -->
+                    <div
+                        class="video-frame-cursor"
+                        x-show="videoFrame > 0"
+                        x-bind:style="'left: ' + (videoFrame * {{$timeline['config']['frameToPixel']}}) + 'px;'"
+                        x-cloak
+                    >
+                        <div class="cursor-marker"></div>
+                        <div class="cursor-line"></div>
+                    </div>
+
                     @foreach ($groupedLayers as $visualLayerIndex => $visualLayer)
                         @php
                             $layerHeight = count($visualLayer['lines']) * $timeline['config']['objectHeight'];
@@ -76,7 +87,7 @@
                                 @foreach ($visualLayer['lines'] as $lineIndex => $line)
                                     @foreach ($line['objects'] as $objIndex => $objectData)
                                         @php
-                                            $startPos = ($objectData->startFrame - $timeline['config']['minFrame']) * $timeline['config']['frameToPixel'];
+                                            $startPos = $objectData->startFrame * $timeline['config']['frameToPixel'];
                                             $duration = $objectData->endFrame - $objectData->startFrame;
                                             $width = max($timeline['config']['minObjectWidth'], $duration * $timeline['config']['frameToPixel']);
                                             $top = $lineIndex * $timeline['config']['objectHeight'];

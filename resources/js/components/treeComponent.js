@@ -82,9 +82,9 @@ export default function () {
         },
 
         // Select item
-        selectItem(itemId, type, leaf = false) {
+        selectItem(itemId, type, item) {
             this.selectedItem = itemId;
-            // console.log(`Item selected: ${itemId}  ${type}  leaf: ${leaf}`);
+            // console.log(`Item selected: ${itemId}  ${type}`);
 
             // Call custom callback if provided
             if (this.onItemClick && typeof this.onItemClick === "function") {
@@ -97,7 +97,7 @@ export default function () {
                     tree: this,
                     id: itemId,
                     type: type,
-                    leaf: leaf
+                    item: item
                 },
                 bubbles: true
             }));

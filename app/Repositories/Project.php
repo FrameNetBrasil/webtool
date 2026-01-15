@@ -42,6 +42,7 @@ class Project
         } else {
             $criteria = Criteria::table("view_alloweddocs as ad")
                 ->join("view_project_docs as pd","pd.idCorpus","=","ad.idCorpus")
+                ->join("view_project_tasks as pt", "pt.idProject", "=", "pd.idProject")
                 ->where("ad.idUser", $idUser)
                 ->where("pd.idProject","<>", 1)
                 ->where("ad.idLanguage", AppService::getCurrentIdLanguage())
@@ -52,6 +53,10 @@ class Project
             if (!empty($projects)) {
                 $criteria = $criteria
                     ->whereIn('projectName', $projects);
+            }
+            if ($taskGroup != '') {
+                $criteria = $criteria
+                    ->where('pt.taskGroupName', $taskGroup);
             }
             if ($idCorpus != 0) {
                 $criteria = $criteria

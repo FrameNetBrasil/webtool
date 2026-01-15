@@ -42,6 +42,16 @@ class DynamicModeController extends Controller
     }
 
 
+    #[Get(path: '/annotation/dynamicMode/{idDocument}/videoFrame/{frameNumber}')]
+    public function annotationFrame(int|string $idDocument, int $frameNumber = null)
+    {
+        $data = $this->getData($idDocument, null);
+        $data['frameNumber'] = $frameNumber;
+        return response()
+            ->view('Annotation.Video.annotation', $data)
+            ->header('Cache-Control', 'no-cache, no-store, must-revalidate');
+    }
+
     #[Get(path: '/annotation/dynamicMode/{idDocument}/{idDynamicObject?}/{frameNumber?}')]
     public function annotation(int|string $idDocument, ?int $idDynamicObject = null, ?int $frameNumber = null)
     {

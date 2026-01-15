@@ -1,7 +1,7 @@
 <x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb :sections="[['/','Home'],['/grapher','Grapher'],['','Scenario']]"></x-layout::breadcrumb>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb :sections="[['/','Home'],['/grapher','Grapher'],['','Scenario']]"></x-partial::breadcrumb>
         <main class="app-main">
             <div class="page-content" id="grapherApp">
                 <div class="page-header">
@@ -64,7 +64,7 @@
                 @include('Grapher.contextMenu')
             </div>
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
 </x-layout::index>
 

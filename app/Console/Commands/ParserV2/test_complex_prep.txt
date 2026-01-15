@@ -1,0 +1,10 @@
+# Test complex prepositions (ADV + ADP)
+
+# Test "atrás de" (behind)
+O cachorro correu atrás do gato.
+
+# Test "dentro de" (inside)
+O livro está dentro da caixa.
+
+# Test "perto de" (near)
+A escola fica perto do parque.

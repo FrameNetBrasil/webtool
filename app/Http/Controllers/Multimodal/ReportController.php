@@ -33,7 +33,7 @@ class ReportController extends Controller
     {
         $search = session('searchMM') ?? SearchData::from();
         if ($idDocument == '') {
-            return view("Multimodal.Report.main", [
+            return view("Multimodal.Report.index", [
                 'search' => $search,
                 'idDocument' => null
             ]);
@@ -44,7 +44,7 @@ class ReportController extends Controller
             if ($view != '') {
                 return view("Multimodal.Report.report", $data);
             } else {
-                return view("Multimodal.Report.main", $data);
+                return view("Multimodal.Report.index", $data);
             }
 
         }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Corpus;
 
+use App\Data\Document\CreateData;
 use App\Database\Criteria;
 use App\Http\Controllers\Controller;
 use App\Services\AppService;
@@ -47,25 +48,18 @@ class DocumentController extends Controller
     }
 
     #[Post(path: '/corpus/documents/new')]
-    public function documentsNew(Request $request)
+    public function documentsNew(CreateData $data)
     {
-        $idCorpus = $request->input('idCorpus');
-        $idDocument = $request->input('idDocument');
-        $name = $request->input('name');
-
+        debug($data);
         try {
             // If no existing document selected, create a new one
-            if ($idDocument == 0 && ! empty($name)) {
-                $idDocument = Criteria::create('document', [
-                    'name' => $name,
-                    'idCorpus' => $idCorpus,
-                    'idLanguage' => AppService::getCurrentIdLanguage(),
-                ]);
-            } elseif ($idDocument > 0) {
+            if ($data->name != '') {
+                $idDocument= Criteria::function('document_create(?)', [$data->toJson()]);
+            } elseif ($data->idDocument > 0) {
                 // Update existing document to assign it to this corpus
                 Criteria::table('document')
-                    ->where('idDocument', $idDocument)
-                    ->update(['idCorpus' => $idCorpus]);
+                    ->where('idDocument', $data->idDocument)
+                    ->update(['idCorpus' => $data->idCorpus]);
             }
 
             $this->trigger('reload-gridDocuments');

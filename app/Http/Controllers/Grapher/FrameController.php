@@ -11,6 +11,8 @@ use App\Services\ReportFrameService;
 use Collective\Annotations\Routing\Attributes\Attributes\Get;
 use Collective\Annotations\Routing\Attributes\Attributes\Middleware;
 use Collective\Annotations\Routing\Attributes\Attributes\Post;
+use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Log;
 
 #[Middleware(name: 'web')]
 class FrameController extends Controller
@@ -84,6 +86,28 @@ class FrameController extends Controller
         return view('Grapher.Frame.frameGraph', [
             'graph' => $graph,
         ]);
+    }
+
+    #[Get(path: '/grapher/frame/ferelations/{idEntityRelation}')]
+    public function feRelationsGraph(int $idEntityRelation): View
+    {
+        try {
+            $graph = RelationService::listFrameFERelationsForGraph($idEntityRelation);
+
+            if (empty($graph['nodes'])) {
+                return view('Grapher.Frame.feRelationsGraph', [
+                    'graph' => ['nodes' => [], 'links' => []],
+                ]);
+            }
+
+            return view('Grapher.Frame.feRelationsGraph', compact('graph'));
+        } catch (\Exception $e) {
+            Log::error('FE Relations Graph Error: '.$e->getMessage());
+
+            return view('Grapher.Frame.feRelationsGraph', [
+                'graph' => ['nodes' => [], 'links' => []],
+            ]);
+        }
     }
 
     #[Get(path: '/grapher/frame/report/{idEntityFrame}')]

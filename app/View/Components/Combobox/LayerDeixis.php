@@ -17,7 +17,8 @@ class LayerDeixis extends Component
     public function __construct(
         public string $id,
         public string $label,
-        public int $value
+        public int $value,
+        public ?string $onChange = null
     )
     {
         $list = Criteria::table("view_layertype as lt")

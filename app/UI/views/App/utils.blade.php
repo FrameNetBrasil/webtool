@@ -5,14 +5,14 @@
 @endphp
 
 <x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['','Utils']]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
             <div class="page-content">
-                <div class="ui container">
+                <div class="ui container page">
                     <div class="card-grid dense">
                         @foreach($options as $category => $option)
                             <a

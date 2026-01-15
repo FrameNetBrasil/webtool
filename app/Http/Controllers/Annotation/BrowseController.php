@@ -54,4 +54,18 @@ class BrowseController extends Controller
             'taskGroupName' => $search->taskGroupName,
         ]);
     }
+
+    #[Post(path: '/annotation/browse/searchLU')]
+    public function searchLU(SearchData $search)
+    {
+        if (! is_null($search->idLU)) {
+            $data = BrowseService::browseAnnotationSetByLU($search->idLU);
+        } elseif ($search->lu != '') {
+            $data = BrowseService::browseLUBySearch($search);
+        }
+        return view('Annotation.treeLU', [
+            'data' => $data,
+        ]);
+    }
+
 }

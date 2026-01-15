@@ -9,6 +9,10 @@
      User Global Variables
 *******************************/
 
+@fontName: "Noto Sans";
+@googleFontName: @fontName;
+@importGoogleFonts: true;
+
 @codeFont: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Consolas', monospace;
 @headerFont: @fontName, @fallbackFonts;
 @pageFont: @fontName, @fallbackFonts;
@@ -26,7 +30,7 @@
 @lightPrimaryColor: @blue400;
 @lightSecondaryColor: @lightTeal;
 @inputPlaceholderColor: @grey;
-@fontSize: 14px;
+@fontSize: 16px;
 @relativeSmall: @fontSize;
 @relativeBorderRadius: 2px;
 @absoluteBorderRadius: 2px;

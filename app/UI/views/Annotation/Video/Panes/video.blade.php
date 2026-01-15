@@ -1,4 +1,6 @@
-<div x-data="videoComponent()" class="video-player-container">
+<div x-data="videoComponent({
+    idDocument: {{$idDocument}},
+})" class="video-player-container">
     <div class="video-wrapper"
          style="position:relative; width:852px;height:480px"
     >
@@ -130,6 +132,15 @@
                     </div>
                 </template>
             </div>
+        </div>
+
+        <div class="ui small icon buttons">
+            <button
+                class="ui button nav"
+                :class="(isPlaying || trackingMode) && 'disabled'"
+                @click="showAllBoxes()"
+            ><i class="icon material">visibility</i>
+            </button>
         </div>
 
         <div style="width:128px;text-align:right;">

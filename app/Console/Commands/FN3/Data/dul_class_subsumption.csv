@@ -1,0 +1,78 @@
+subclass,superclass
+Abstract,Entity
+Action,Event
+Agent,Object
+Amount,Region
+"Biological object","Physical body"
+"Chemical object","Physical body"
+Classification,"Time-indexed relation"
+Collection,"Social object"
+Collective,Collection
+"Collective agent","Social agent"
+Community,"Collective agent"
+Concept,"Social object"
+Configuration,Collection
+Contract,Description
+Description,"Social object"
+Design,Description
+"Designed artifact","Physical artifact"
+Diagnosis,Description
+Event,Entity
+"Event type",Concept
+"Formal entity",Abstract
+"Functional substance",Substance
+Goal,Description
+Group,"Collective agent"
+"Information object","Social object"
+"Local concept",Concept
+Method,Description
+Narrative,Description
+"Natural person",Person
+"Natural person","Physical agent"
+Norm,Description
+Object,Entity
+Organism,"Biological object"
+Organism,"Physical agent"
+Organization,"Social agent"
+Parameter,Concept
+parthood,"Time-indexed relation"
+Pattern,Relation
+Person,Agent
+Personification,"Social agent"
+"Physical agent",Agent
+"Physical agent","Physical object"
+"Physical artifact","Physical object"
+"Physical attribute",Region
+"Physical body","Physical object"
+"Physical object",Object
+"Physical place","Physical object"
+Place,"Social object"
+Plan,Description
+"Plan execution",Situation
+Process,Event
+Project,Plan
+Quality,Entity
+Region,Abstract
+Relation,Description
+Right,Description
+Role,Concept
+Set,"Formal entity"
+Situation,Entity
+"Social agent",Agent
+"Social agent","Social object"
+"Social object",Object
+"Social attribute",Region
+"Social person",Person
+"Social person","Social agent"
+"Social relation",Relation
+"Space region",Region
+Substance,"Physical body"
+Task,"Event type"
+Theory,Description
+"Time-indexed relation",Situation
+"Time interval",Region
+Transition,Situation
+"Type collection",Collection
+"Unit of measure",Parameter
+Workflow,Plan
+"Workflow execution",Situation

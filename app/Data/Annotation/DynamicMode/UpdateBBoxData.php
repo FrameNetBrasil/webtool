@@ -12,7 +12,7 @@ class UpdateBBoxData extends Data
         public string $_token = '',
     )
     {
-        unset($this->bbox['isGroundTruth']);
+        // Allow isGroundTruth to be updated (needed when promoting auto-tracked bbox to ground truth)
         unset($this->bbox['visible']);
         $this->_token = csrf_token();
     }

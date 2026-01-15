@@ -2,63 +2,59 @@
     $challenge = uniqid(rand());
     session(['challenge', $challenge]);
 @endphp
-<x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
-            :sections="[['','Home']]"
-        ></x-layout::breadcrumb>
-        <main class="app-main">
-            <div class="ui container h-full">
-                <div class="page-center">
-                    <div id="formLoginDiv">
-                        @fragment('form')
-                            <form>
-                                <div class="ui card form-card w-full p-1">
-                                    <div class="content">
-                                        <div class="header">
-                                            Login
-                                        </div>
-                                        <div class="description">
+<x-layout.page>
+    <x-slot:head>
+        <x-partial::breadcrumb :sections="[['','Home']]"></x-partial::breadcrumb>
+    </x-slot:head>
+    <x-slot:main>
 
-                                        </div>
-                                    </div>
-                                    <div class="content">
-                                        <div class="ui form">
-                                            <div style="text-align: center">
-                                                <img src="/images/fnbr_logo.png" />
-                                            </div>
-                                            <div class="field">
-                                                <label for="login">Login</label>
-                                                <div class="ui small input">
-                                                    <input type="text" id="login" name="login" value="">
-                                                </div>
-                                            </div>
-                                            <div class="field">
-                                                <label for="password">Password</label>
-                                                <div class="ui small input">
-                                                    <input type="password" id="password" name="password" value="">
-                                                </div>
-                                            </div>
-                                            <div class="extra content">
-                                                <div class="ui buttons">
-                                                    <button
-                                                        class="ui button primary"
-                                                        hx-post="/login"
-                                                        hx-target="#formLoginDiv"
-                                                    >Login
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+        <section id="work" class="w-full h-full">
+            <div class="wt-container-center h-full">
+                <div id="formLoginDiv">
+                    @fragment('form')
+                        <x-form
+                            id="formLogin"
+                            title="Login"
+                            center="true"
+                            hx-post="/login"
+                            hx-target="#formLoginDiv"
+                        >
+                            <x-slot:fields>
+                                <div style="text-align: center">
+                                    <img src="/images/fnbr_logo.png" />
                                 </div>
-                            </form>
-                        @endfragment
-                    </div>
+                                <div class="field">
+                                    <x-text-field
+                                        id="login"
+                                        label="Login"
+                                        value=""
+                                    ></x-text-field>
+                                </div>
+                                <div class="field">
+                                    <x-password-field
+                                        id="password"
+                                        label="Password"
+                                    ></x-password-field>
+                                </div>
+                            </x-slot:fields>
+
+                            <x-slot:buttons>
+                                <x-submit
+                                    label="Login"
+                                ></x-submit>
+                            </x-slot:buttons>
+                        </x-form>
+                        <script>
+                            $(function() {
+                                $("#formLogin").on("htmx:beforeRequest", event => {
+                                    let p = event.detail.requestConfig.parameters.password;
+                                    event.detail.requestConfig.parameters.password = md5(p);
+                                });
+                            });
+                        </script>
+                    @endfragment
                 </div>
             </div>
-        </main>
-        <x-layout::footer></x-layout::footer>
-    </div>
-</x-layout::index>
+        </section>
+    </x-slot:main>
+</x-layout.page>

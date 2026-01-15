@@ -24,17 +24,21 @@ use Collective\Annotations\Routing\Attributes\Attributes\Put;
 class LUCandidateController extends Controller
 {
 
-    private function getData(SearchData $search): array
+    private function getData(SearchData $search, ?string $origin = null): array
     {
         $luIcon = view('components.icon.lu')->render();
-        $lus = Criteria::table("view_lucandidate")
+        $query = Criteria::table("view_lucandidate")
             ->where("idLanguage", AppService::getCurrentIdLanguage())
             ->where("name", "startswith", $search->lu)
             ->where("email", "startswith", $search->email)
-            ->where("email", "<>", "lome@frame.net.br")
-            ->select('idLU', 'name', 'createdAt', 'frameName', 'origin', 'email')
-//            ->selectRaw("IFNULL(frameName, frameCandidate) as frameName")
-            ->orderBy($search->sort, $search->order)->all();
+            ->select('idLU', 'name', 'createdAt', 'frameName', 'origin', 'email');
+
+        // Filter by origin if provided
+        if ($origin !== null && $origin !== '') {
+            $query->where("origin", $origin);
+        }
+
+        $lus = $query->orderBy($search->sort, $search->order)->all();
         $data = array_map(fn($item) => [
             'id' => $item->idLU,
             'name' => $luIcon . $item->name,
@@ -51,15 +55,31 @@ class LUCandidateController extends Controller
     #[Get(path: '/luCandidate')]
     public function resource(SearchData $search)
     {
-        $data = $this->getData($search);
+        // Get data for each origin tab
+        $dataWebTool = $this->getData($search, 'USER');
+        $dataLome = $this->getData($search, 'LOME');
+        $dataFnbk = $this->getData($search, 'FNBK');
+
         $creators = Criteria::table("view_lucandidate")
             ->distinct()
             ->select("email")
             ->orderby("email")
             ->all();
+
+        // Determine default tab based on which has data
+        $defaultTab = 'webtool';
+        if (empty($dataWebTool) && !empty($dataLome)) {
+            $defaultTab = 'lome';
+        } elseif (empty($dataWebTool) && empty($dataLome) && !empty($dataFnbk)) {
+            $defaultTab = 'fnbk';
+        }
+
         return view("LUCandidate.browse", [
-            "data" => $data,
+            "dataWebTool" => $dataWebTool,
+            "dataLome" => $dataLome,
+            "dataFnbk" => $dataFnbk,
             "creators" => $creators,
+            "defaultTab" => $defaultTab,
         ]);
     }
 
@@ -67,11 +87,10 @@ class LUCandidateController extends Controller
     public function tree(SearchData $search)
     {
         debug($search);
-        $data = $this->getData($search);
-        return view('LUCandidate.browse', [
+        $data = $this->getData($search, $search->origin);
+        return view('LUCandidate.tableBody', [
             'data' => $data,
-            "creators" => [],
-        ])->fragment('search');
+        ]);
     }
 
 //    #[Get(path: '/luCandidate/data')]
@@ -119,7 +138,7 @@ class LUCandidateController extends Controller
                 throw new \Exception("Lemma is required");
             } else {
                 $lemma = Lemma::byId($data->idLemma);
-                $data->name = strtolower($lemma->shortName);
+                $data->name = strtolower($lemma->name);
                 debug($data);
                 Criteria::function('lu_create(?)', [$data->toJson()]);
 //
@@ -147,11 +166,32 @@ class LUCandidateController extends Controller
                 ->where("idLU", $id)
                 ->all();
         }
+
+        // Calculate Previous ID (alphabetically by name, same origin)
+        $idPrevious = Criteria::table("view_lucandidate")
+            ->where("idLanguage", AppService::getCurrentIdLanguage())
+            ->where("origin", $luCandidate->origin)
+            ->where("name", "<", $luCandidate->name)
+            ->orderBy("name", "desc")
+            ->select("idLU")
+            ->first()?->idLU;
+
+        // Calculate Next ID (alphabetically by name, same origin)
+        $idNext = Criteria::table("view_lucandidate")
+            ->where("idLanguage", AppService::getCurrentIdLanguage())
+            ->where("origin", $luCandidate->origin)
+            ->where("name", ">", $luCandidate->name)
+            ->orderBy("name", "asc")
+            ->select("idLU")
+            ->first()?->idLU;
+
         debug($asLOME);
         return view("LUCandidate.edit", [
             'luCandidate' => $luCandidate,
             'isManager' => $isManager,
             'asLOME' => $asLOME,
+            'idPrevious' => $idPrevious,
+            'idNext' => $idNext,
         ]);
     }
 

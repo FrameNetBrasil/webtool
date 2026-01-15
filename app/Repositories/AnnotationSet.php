@@ -19,19 +19,65 @@ class AnnotationSet
             ->join("view_annotation_text_target as gl", "a.idAnnotationSet", "=", "gl.idAnnotationSet")
             ->join("lu","a.idLU","=", "lu.idLU")
             ->join("view_frame as f","lu.idFrame","=","f.idFrame")
-            ->select('a.idDocumentSentence', 'gl.startChar', 'gl.endChar', 'a.idAnnotationSet','f.name as frameName')
+            ->select('a.idDocumentSentence', 'gl.startChar', 'gl.endChar', 'a.idAnnotationSet','f.name as frameName','a.idLU')
             ->whereIn("a.idDocumentSentence", $idDocumentSentences)
             ->where("f.idLanguage", $idLanguage)
             ->orderby("gl.startChar")
             ->get();
     }
 
+    public static function listTargetsForAnnotationSet(array $idAnnotationSet): Collection
+    {
+        $idLanguage = AppService::getCurrentIdLanguage();
+//        debug("docsen",$idDocumentSentences);
+        return Criteria::table("view_annotationset as a")
+            ->join("view_annotation_text_target as gl", "a.idAnnotationSet", "=", "gl.idAnnotationSet")
+            ->join("lu","a.idLU","=", "lu.idLU")
+            ->join("view_frame as f","lu.idFrame","=","f.idFrame")
+            ->select('a.idDocumentSentence', 'gl.startChar', 'gl.endChar', 'a.idAnnotationSet','f.name as frameName','a.idLU')
+            ->whereIn("a.idAnnotationSet", $idAnnotationSet)
+            ->where("f.idLanguage", $idLanguage)
+            ->orderby("gl.startChar")
+            ->get();
+    }
     public static function getTargets(int $idDocumentSentence): array
     {
         return Criteria::table("view_annotationset as a")
             ->join("view_annotation_text_target as gl", "a.idAnnotationSet", "=", "gl.idAnnotationSet")
             ->select('a.idDocumentSentence', 'gl.startChar', 'gl.endChar', 'a.idAnnotationSet')
             ->where("a.idDocumentSentence", $idDocumentSentence)
+            ->orderby("gl.startChar")
+            ->all();
+    }
+
+    public static function getTargetsByIdSentence(int $idSentence): array
+    {
+        return Criteria::table("view_annotationset as a")
+            ->join("view_annotation_text_target as gl", "a.idAnnotationSet", "=", "gl.idAnnotationSet")
+            ->select('a.idSentence', 'gl.startChar', 'gl.endChar', 'a.idAnnotationSet')
+            ->where("a.idSentence", $idSentence)
+            ->orderby("gl.startChar")
+            ->all();
+    }
+
+    public static function getTargetsByIdLU(int $idLU): array
+    {
+        return Criteria::table("view_annotationset as a")
+            ->join("view_annotation_text_target as gl", "a.idAnnotationSet", "=", "gl.idAnnotationSet")
+            ->join("view_sentence as s", "a.idSentence", "=", "s.idSentence")
+            ->select('a.idSentence', 'gl.startChar', 'gl.endChar', 'a.idAnnotationSet','a.idDocumentSentence')
+            ->where("a.idLU", $idLU)
+            ->orderby("gl.startChar")
+            ->all();
+    }
+
+    public static function getTargetsByIdAnnotationSet(int $idAnnotationSet): array
+    {
+        return Criteria::table("view_annotationset as a")
+            ->join("view_annotation_text_target as gl", "a.idAnnotationSet", "=", "gl.idAnnotationSet")
+            ->join("view_sentence as s", "a.idSentence", "=", "s.idSentence")
+            ->select('a.idSentence', 'gl.startChar', 'gl.endChar', 'a.idAnnotationSet','a.idDocumentSentence')
+            ->where("a.idAnnotationSet", $idAnnotationSet)
             ->orderby("gl.startChar")
             ->all();
     }
@@ -115,6 +161,7 @@ left join view_instantiationtype it ON (ts.idInstantiationType = it.idTypeInstan
           and (lt.idLanguage = {$idLanguage})
           and (a.status <> 'DELETED')
             AND ((fe.idLanguage = {$idLanguage}) or (fe.idLanguage is null))
+            AND ((gl.idLanguage = {$idLanguage}) or (gl.idLanguage is null))
             AND ((ce.idLanguage = {$idLanguage}) or (ce.idLanguage is null))
             AND ((it.idLanguage = {$idLanguage}) or (it.idLanguage is null))
         ORDER BY ts.idAnnotationSet, ts.idLayerType, ts.startChar
@@ -225,6 +272,37 @@ HERE;
 
     }
 
+    public static function createForFlex(int $idDocumentSentence): object
+    {
+        DB::beginTransaction();
+        try {
+            $idUser = AppService::getCurrentIdUser();
+            $ti = Criteria::byId("typeinstance", "entry", AnnotationSetStatus::UNANNOTATED->value);
+            $annotationSet = [
+                'idDocumentSentence' => $idDocumentSentence,
+                'idAnnotationStatus' => $ti->idTypeInstance,
+                'idUser' => $idUser,
+                'status' => Status::CREATED->value
+            ];
+            $idAnnotationSet = Criteria::create("annotationset", $annotationSet);
+            Timeline::addTimeline('annotationset',$idAnnotationSet,'C');
+            $layerTypes = ['lty_phrasal_ce','lty_clausal_ce','lty_sentential_ce'];
+            foreach($layerTypes as $layerType) {
+                $idLayerType = Criteria::byId("layertype", "entry", $layerType)->idLayerType;
+                Criteria::create("layer", [
+                    'rank' => 0,
+                    'idLayerType' => $idLayerType,
+                    'idAnnotationSet' => $idAnnotationSet,
+                ]);
+            }
+            DB::commit();
+            return Criteria::byId("annotationSet","idAnnotationSet", $idAnnotationSet);
+        } catch (\Exception $e) {
+            DB::rollback();
+            throw new \Exception($e->getMessage());
+        }
+
+    }
     public static function delete(int $idAnnotationSet): int
     {
         DB::beginTransaction();

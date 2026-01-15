@@ -36,6 +36,24 @@ class RelationService extends Controller
         return Criteria::function('relation_create(?)', [$data]);
     }
 
+    static public function createMicroframe(string $microframeName, int $idEntityDomain, int $idEntityRange): ?int
+    {
+        $user = AppService::getCurrentUser();
+        $microframe = Criteria::table("view_microframe as mf")
+            ->where("mf.idLanguage", "=", AppService::getCurrentIdLanguage())
+            ->where("mf.name", "=", $microframeName)
+            ->first();
+        $data = json_encode([
+            'relationType' => 'rel_microframe',
+            'idEntity1' => $idEntityDomain,
+            'idEntity2' => $idEntityRange,
+            'idEntityMicroframe' => $microframe->idEntity,
+            'idRelation' => null,
+            'idUser' => $user ? $user->idUser : 0
+        ]);
+        return Criteria::function('relation_create(?)', [$data]);
+    }
+
     public static function listRelationsFrame(int $idFrame)
     {
         $idLanguage = AppService::getCurrentIdLanguage();
@@ -172,6 +190,129 @@ class RelationService extends Controller
         return $relations;
     }
 
+    public static function listFERestrictions(int $idFrame)
+    {
+        $idLanguage = AppService::getCurrentIdLanguage();
+        $relations = Criteria::table("view_relation as r")
+            ->join("view_frameelement as fe", "r.idEntity2", "=", "fe.idEntity")
+            ->join("view_frameelement as fet", "r.idEntity3", "=", "fet.idEntity")
+            ->join("view_class as cl", "fet.idFrame", "=", "cl.idFrame")
+            ->select("fe.idFrameElement", "fe.name", "cl.name")
+            ->where("fe.idFrame", $idFrame)
+            ->where("fe.idLanguage", $idLanguage)
+            ->where("fet.idLanguage", $idLanguage)
+            ->where("cl.idLanguage", $idLanguage)
+            ->orderBy("fe.idFrameElement")
+            ->keyBy("idFrameElement")
+            ->all();
+        return $relations;
+    }
+
+    public static function listRelationsClass(int $idFrame)
+    {
+        $idLanguage = AppService::getCurrentIdLanguage();
+        //$config = config('webtool.relations');
+        $result = [];
+        $relations = Criteria::table("view_class_relation")
+            ->where("c1IdFrame", $idFrame)
+            ->where("idLanguage", $idLanguage)
+            ->orderBy("relationType")
+            ->orderBy("c2Name")
+            ->all();
+        foreach ($relations as $relation) {
+            $result[] = (object)[
+                'idEntityRelation' => $relation->idEntityRelation,
+                'relationType' => $relation->relationType,
+                'name' => $relation->nameDirect,
+                'color' => $relation->color,
+                'idFrameRelated' => $relation->c2IdFrame,
+                'related' => $relation->c2Name,
+                'direction' => 'direct'
+            ];
+        }
+        $inverse = Criteria::table("view_class_relation")
+            ->where("c2IdFrame", $idFrame)
+            ->where("idLanguage", $idLanguage)
+            ->all();
+        foreach ($inverse as $relation) {
+            $result[] = (object)[
+                'idEntityRelation' => $relation->idEntityRelation,
+                'relationType' => $relation->relationType,
+                'name' => $relation->nameDirect,
+                'color' => $relation->color,
+                'idFrameRelated' => $relation->c1IdFrame,
+                'related' => $relation->c1Name,
+                'direction' => 'inverse'
+            ];
+        }
+        return $result;
+    }
+
+    public static function listClassAsRestriction(int $idFrame)
+    {
+        $idLanguage = AppService::getCurrentIdLanguage();
+        //$config = config('webtool.relations');
+        $result = [];
+        $relations = Criteria::table("view_class_fe_relation")
+            ->where("c2IdFrame", $idFrame)
+            ->where("idLanguage", $idLanguage)
+            ->where("fe1Name","<>", "Target") // classes relations
+            ->orderBy("relationType")
+            ->orderBy("c1Name")
+            ->all();
+        foreach ($relations as $relation) {
+            $result[] = (object)[
+                'idEntityRelation' => $relation->idEntityRelation,
+                'relationType' => $relation->relationType,
+                'name' => $relation->nameDirect,
+                'color' => $relation->color,
+                'idFrameRelated' => $relation->c1IdFrame,
+                'related' => $relation->c1Name,
+                'direction' => 'direct'
+            ];
+        }
+        return $result;
+    }
+
+    public static function listRelationsMicroframe(int $idFrame)
+    {
+        $idLanguage = AppService::getCurrentIdLanguage();
+        //$config = config('webtool.relations');
+        $result = [];
+        $relations = Criteria::table("view_microframe_relation")
+            ->where("c1IdFrame", $idFrame)
+            ->where("idLanguage", $idLanguage)
+            ->orderBy("relationType")
+            ->orderBy("c2Name")
+            ->all();
+        foreach ($relations as $relation) {
+            $result[] = (object)[
+                'idEntityRelation' => $relation->idEntityRelation,
+                'relationType' => $relation->relationType,
+                'name' => $relation->nameDirect,
+                'color' => $relation->color,
+                'idFrameRelated' => $relation->c2IdFrame,
+                'related' => $relation->c2Name,
+                'direction' => 'direct'
+            ];
+        }
+        $inverse = Criteria::table("view_microframe_relation")
+            ->where("c2IdFrame", $idFrame)
+            ->where("idLanguage", $idLanguage)
+            ->all();
+        foreach ($inverse as $relation) {
+            $result[] = (object)[
+                'idEntityRelation' => $relation->idEntityRelation,
+                'relationType' => $relation->relationType,
+                'name' => $relation->nameDirect,
+                'color' => $relation->color,
+                'idFrameRelated' => $relation->c1IdFrame,
+                'related' => $relation->c1Name,
+                'direction' => 'inverse'
+            ];
+        }
+        return $result;
+    }
 
     public static function updateFramalDomain(UpdateClassificationData $data)
     {
@@ -203,6 +344,24 @@ class RelationService extends Controller
             foreach ($data->framalType as $idSemanticType) {
                 $st = SemanticType::byId($idSemanticType);
                 self::create("rel_framal_type", $frame->idEntity, $st->idEntity);
+            }
+        } catch (\Exception $e) {
+            throw new \Exception("Error updating relations. " . $e);
+        }
+    }
+
+    public static function updateFramalNamespace(UpdateClassificationData $data)
+    {
+        $frame = Frame::byId($data->idFrame);
+        $relationType = Criteria::byId("relationtype", "entry", "rel_namespace");
+        try {
+            Criteria::table("entityrelation")
+                ->where("idEntity1", $frame->idEntity)
+                ->where("idRelationType", $relationType->idRelationType)
+                ->delete();
+            foreach ($data->namespace as $idSemanticType) {
+                $st = SemanticType::byId($idSemanticType);
+                self::create("rel_namespace", $frame->idEntity, $st->idEntity);
             }
         } catch (\Exception $e) {
             throw new \Exception("Error updating relations. " . $e);
@@ -291,8 +450,10 @@ class RelationService extends Controller
                 ->join("view_frame as f1", "r.idEntity1", "=", "f1.idEntity")
                 ->join("view_frame as f2", "r.idEntity2", "=", "f2.idEntity")
                 ->select('r.idEntityRelation', 'r.idRelationType', 'r.relationType', 'r.entity1Type', 'r.entity2Type', 'r.idEntity1', 'r.idEntity2',
-                    'f1.name as frame1Name',
-                    'f2.name as frame2Name',
+                    'f1.nsName as frame1Name',
+                    'f2.nsName as frame2Name',
+                    'f1.idColor as frame1IdColor',
+                    'f2.idColor as frame2IdColor',
                 )->where('f1.idLanguage', '=', $idLanguage)
                 ->where('f2.idLanguage', '=', $idLanguage)
                 ->whereRaw("((r.idEntity1 = {$idEntity}) or (r.idEntity2 = {$idEntity}))")
@@ -301,11 +462,13 @@ class RelationService extends Controller
                 if (in_array($r->idRelationType, $idRelationType)) {
                     $nodes[$r->idEntity1] = [
                         'type' => 'frame',
-                        'name' => $r->frame1Name
+                        'name' => $r->frame1Name,
+                        'idColor' => $r->frame1IdColor,
                     ];
                     $nodes[$r->idEntity2] = [
                         'type' => 'frame',
-                        'name' => $r->frame2Name
+                        'name' => $r->frame2Name,
+                        'idColor' => $r->frame2IdColor,
                     ];
                     $links[$r->idEntity1][$r->idEntity2] = [
                         'type' => 'ff',

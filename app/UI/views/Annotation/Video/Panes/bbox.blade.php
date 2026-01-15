@@ -5,6 +5,7 @@
     @bbox-create.document="onBBoxCreate"
     @bbox-created.document="onBBoxCreated"
     @bbox-change-blocked.document="onBBoxChangeBlocked"
+    @bbox-display-all.document="onBBoxDisplayAll"
     @video-update-state.document="onVideoUpdateState"
     @auto-tracking-start.document="onStartTracking"
     @auto-tracking-stop.document="onStopTracking"
@@ -17,5 +18,9 @@
         class="bbox" style="display:none"
     >
         <div class="objectId"></div>
+    </div>
+    <div
+        class="allBBoxes" style="display:none"
+    >
     </div>
 </div>

@@ -32,7 +32,7 @@ class ReportController extends Controller
     {
         $data = BrowseService::browseLUBySearch($search);
 
-        return view('LU.Report.main', [
+        return view('LU.Report.index', [
             'data' => $data,
         ])->fragment('search');
 
@@ -51,7 +51,7 @@ class ReportController extends Controller
 //                ->all();
 //        }
 //
-//        return view('LU.Report.main', [
+//        return view('LU.Report.index', [
 //            'search' => $search,
 //            'lus' => $lus,
 //        ])->fragment('search');
@@ -222,7 +222,7 @@ class ReportController extends Controller
     {
         $search = session('searchLU') ?? SearchData::from();
         if (($idLU == 'list') || ($idLU == '')) {
-            return view('LU.Report.main', [
+            return view('LU.Report.index', [
                 'search' => $search,
                 'data' => [],
             ]);
@@ -441,13 +441,13 @@ class ReportController extends Controller
 //    {
 //        $search = session('searchLU') ?? SearchData::from();
 //        if (($idLU == 'list') || ($idLU == '')) {
-//            return view("LU.Report.main", [
+//            return view("LU.Report.index", [
 //                'search' => $search
 //            ]);
 //        } else {
 //            $lu = LU::byId($idLU);
 //            $search->lu = $lu->name;
-//            return view("LU.Report.main", [
+//            return view("LU.Report.index", [
 //                'search' => $search,
 //                'idLU' => $idLU
 //            ]);

@@ -8,16 +8,16 @@
     <div class="flex-grow-1 content bg-white">
         <div
             id="gridSemanticType"
-            class="grid"
+            class="ui grid"
         >
             @foreach($relations as $relation)
-                <div class="col-3">
+                <div class="four wide column">
                     <div class="ui card w-full">
                         <div class="content">
                     <span class="right floated">
                         <x-delete
                             title="delete SemanticType"
-                            onclick="messenger.confirmDelete(`Removing SemanticType '{{$relation->name}}'.`, '/semanticType/{{$relation->idEntityRelation}}')"
+                            onclick="manager.confirmDelete(`Removing SemanticType '{{$relation->name}}'.`, '/semanticType/{{$relation->idEntityRelation}}')"
                         ></x-delete>
                     </span>
                             <div

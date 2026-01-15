@@ -10,7 +10,7 @@ class UpdateLemmaData extends Data
     public function __construct(
         public ?int $idLemma= null,
         public ?string $name,
-        public ?int $idUDPOS,
+//        public ?int $idUDPOS,
         public ?int $idLanguage,
         public ?int $idUser= null,
         public string $_token = '',
@@ -21,7 +21,7 @@ class UpdateLemmaData extends Data
     public static function rules(): array
     {
         return [
-            'idUDPOS' => ['required', 'int'],
+//            'idUDPOS' => ['required', 'int'],
             'name' => ['required', 'string'],
         ];
     }
@@ -29,7 +29,7 @@ class UpdateLemmaData extends Data
     public static function messages(): array
     {
         return [
-            'idUDPOS.required' => 'UD-POS is required.',
+//            'idUDPOS.required' => 'UD-POS is required.',
             'name.required' => 'Lemma name is required.',
         ];
     }

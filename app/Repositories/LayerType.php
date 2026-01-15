@@ -29,5 +29,39 @@ class LayerType
         return $criteria->all();
     }
 
+    public static function listToFlex(): array
+    {
+        return Criteria::table("view_layertype")
+            ->where('layerGroup', 'Flex-syntax')
+            ->where('idLanguage', AppService::getCurrentIdLanguage())
+            ->select('idLayerType', 'entry', 'name', 'layerOrder')
+            ->orderBy('layerOrder')
+            ->all();
+    }
+
+    public static function listByLayerGroup(int $idLayerGroup): array
+    {
+        return Criteria::table("view_layertype")
+            ->where('idLayerGroup', $idLayerGroup)
+            ->where('idLanguage', AppService::getCurrentIdLanguage())
+            ->select('idLayerType', 'entry', 'name', 'layerOrder')
+            ->orderBy('layerOrder')
+            ->all();
+    }
+
+    public static function listForSelect(?string $name = ''): array
+    {
+        $criteria = Criteria::table("view_layertype")
+            ->where('idLanguage', AppService::getCurrentIdLanguage())
+            ->select(['idLayerType as id', 'name'])
+            ->orderBy('name');
+
+        if (! empty($name) && strlen($name) > 1) {
+            $criteria->where('name', 'startswith', $name);
+        }
+
+        return $criteria->all();
+    }
+
 }
 

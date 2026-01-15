@@ -86,10 +86,12 @@ class BrowseService
     public static function browseDocumentsByCorpus(SearchData $search): array
     {
         $result = [];
-        if ($search->id > 0) {
+        $idCorpus = $search->idCorpus ?? (is_numeric($search->id) ? (int) $search->id : 0);
+
+        if ($idCorpus > 0) {
             $documents = Criteria::table('view_document')
                 ->select('idDocument', 'name', 'corpusName')
-                ->where('idCorpus', $search->id)
+                ->where('idCorpus', $idCorpus)
                 ->where('idLanguage', AppService::getCurrentIdLanguage())
                 ->orderBy('name')
                 ->limit(self::$limit)
@@ -113,12 +115,15 @@ class BrowseService
     {
         $result = [];
 
+        // Determine if we have a valid corpus ID
+        $hasCorpusId = $search->idCorpus > 0 || (is_numeric($search->id) && (int) $search->id > 0);
+
         // Handle tree expansion: if type is 'corpus' and id is provided, return documents for that corpus
-        if ($search->type === 'corpus' && $search->id != 0) {
+        if ($search->type === 'corpus' && $hasCorpusId) {
             $result = self::browseDocumentsByCorpus($search);
         }
         // If searching for specific corpus ID (legacy behavior), return its documents
-        elseif ($search->id != 0 && $search->type === '') {
+        elseif ($hasCorpusId && $search->type === '') {
             $result = self::browseDocumentsByCorpus($search);
         } else {
             // If searching by document name, return matching documents

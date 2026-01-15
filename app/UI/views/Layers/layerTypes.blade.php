@@ -1,0 +1,12 @@
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/layers/{{$idLayerGroup}}/layertypes/formNew"
+></div>
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/layers/{{$idLayerGroup}}/layertypes/grid"
+></div>

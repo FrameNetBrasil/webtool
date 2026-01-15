@@ -19,7 +19,7 @@ class ReportController extends Controller
     {
         $search = session('searchQualia') ?? SearchData::from();
         $data = [];
-        return view("Qualia.Report.main", [
+        return view("Qualia.Report.index", [
             'search' => $search,
             'idQualia' => null,
             'data' => $data,

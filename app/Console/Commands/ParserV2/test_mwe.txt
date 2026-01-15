@@ -1,0 +1,5 @@
+# Test sentences for MWE detection with contractions
+# Each line should be a sentence to test
+
+# Example with "pelo menos" MWE
+O carro atropelou pelo menos 5 pessoas.

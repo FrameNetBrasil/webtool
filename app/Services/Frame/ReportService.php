@@ -131,11 +131,12 @@ class ReportService
     public static function getLUs($frame, $idLanguage)
     {
         $lus = Criteria::table("view_lu as lu")
-            ->join("pos","lu.idPOS","=","pos.idPOS")
+//            ->join("pos","lu.idPOS","=","pos.idPOS")
             ->where("idFrame", $frame->idFrame)
             ->where("idLanguage", $idLanguage)
             ->orderBy("name")
-            ->treeResult("POS")->all();
+//            ->treeResult("POS")->all();
+            ->all();
         ksort($lus);
         return $lus;
     }

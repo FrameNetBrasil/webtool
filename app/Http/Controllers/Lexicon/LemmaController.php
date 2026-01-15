@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Lexicon;
 use App\Data\ComboBox\QData;
 use App\Data\Lemma\CreateExpressionData;
 use App\Data\Lemma\CreateLemmaData;
+use App\Data\Lemma\CreatePOSData;
 use App\Data\Lemma\SearchLemmaData;
 use App\Data\Lemma\UpdateLemmaData;
 use App\Data\Lexicon\CreateFeatureData;
@@ -50,9 +51,17 @@ class LemmaController extends Controller
     {
         debug($data);
         $name = (strlen($data->lemmaName) > 0) ? $data->lemmaName : 'none';
+        $idLanguage = AppService::getCurrentIdLanguage();
 
-        return ['results' => Criteria::byFilterLanguage('view_lemma', ['name', 'startswith', trim($name)])
-            ->select('idLemma', 'name', 'fullName')
+        debug([
+            'searching' => $name,
+            'idLanguage from session' => $idLanguage,
+            'session currentLanguage' => session('currentLanguage'),
+            'session idLanguage' => session('idLanguage')
+        ]);
+
+        return ['results' => Criteria::byFilterLanguage('view_lemma', ['name', 'startswith', trim($name)], 'idLanguage', $idLanguage)
+            ->select('idLemma', 'name')
             ->limit(50)
             ->orderby('name')->all()];
     }
@@ -69,7 +78,7 @@ class LemmaController extends Controller
         try {
             $exists = Criteria::table('view_lemma')
                 ->whereRaw("name = '{$data->name}' collate 'utf8mb4_bin'")
-                ->where('idUDPOS', $data->idUDPOS)
+//                ->where('idUDPOS', $data->idUDPOS)
                 ->where('idLanguage', $data->idLanguage)
                 ->first();
             if (! is_null($exists)) {
@@ -78,7 +87,7 @@ class LemmaController extends Controller
             $newLemma = json_encode([
                 'name' => $data->name,
                 'idLanguage' => $data->idLanguage,
-                'idUDPOS' => $data->idUDPOS,
+//                'idUDPOS' => $data->idUDPOS,
                 'idUser' => AppService::getCurrentIdUser(),
             ]);
             $idLemma = Criteria::function('lemma_create(?)', [$newLemma]);
@@ -107,33 +116,87 @@ class LemmaController extends Controller
         }
     }
 
+    #[Get(path: '/lemma/{idLemma}/formEdit')]
+    public function formEdit(int $idLemma) {
+        $lemma = Lemma::byId($idLemma);
+        return view('Lemma.formEdit', [
+            'lemma' => $lemma,
+        ]);
+    }
+
+
     #[Get(path: '/lemma/{idLemma}/expressions')]
     public function expressions(int $idLemma)
     {
+        $lemma = Lemma::byId($idLemma);
+        return view('Lemma.expressions', [
+            'lemma' => $lemma,
+        ]);
+    }
+
+    #[Get(path: '/lemma/{idLemma}/expressionsForm')]
+    public function formExpressions(int $idLemma) {
+        $lemma = Lemma::byId($idLemma);
+        return view('Lemma.expressionsForm', [
+            'lemma' => $lemma,
+        ]);
+    }
+
+    #[Get(path: '/lemma/{idLemma}/expressionsGrid')]
+    public function gridExpressions(int $idLemma) {
         $lemma = Lemma::byId($idLemma);
         $expressions = Criteria::table('view_lexicon_expression as e')
             ->where('e.idLemma', $idLemma)
             ->orderBy('e.position')
             ->all();
-
-        return view('Lemma.expressions', [
+        return view('Lemma.expressionsGrid', [
             'lemma' => $lemma,
             'expressions' => $expressions,
         ]);
     }
 
+    #[Get(path: '/lemma/{idLemma}/pos')]
+    public function pos(int $idLemma)
+    {
+        $lemma = Lemma::byId($idLemma);
+        return view('Lemma.pos', [
+            'lemma' => $lemma,
+        ]);
+    }
+
+    #[Get(path: '/lemma/{idLemma}/posForm')]
+    public function formPos(int $idLemma) {
+        $lemma = Lemma::byId($idLemma);
+        return view('Lemma.posForm', [
+            'lemma' => $lemma,
+        ]);
+    }
+
+    #[Get(path: '/lemma/{idLemma}/posGrid')]
+    public function gridPos(int $idLemma) {
+        $lemma = Lemma::byId($idLemma);
+        $pos = Criteria::table('view_lemma_pos as p')
+            ->where('p.idLemma', $idLemma)
+            ->all();
+        return view('Lemma.posGrid', [
+            'lemma' => $lemma,
+            'pos' => $pos,
+        ]);
+    }
+
+
     #[Get(path: '/lemma/{idLemma}')]
     public function edit(int $idLemma)
     {
         $lemma = Lemma::byId($idLemma);
-        $expressions = Criteria::table('view_lexicon_expression as e')
-            ->where('e.idLemma', $idLemma)
-            ->orderBy('e.position')
-            ->all();
+//        $expressions = Criteria::table('view_lexicon_expression as e')
+//            ->where('e.idLemma', $idLemma)
+//            ->orderBy('e.position')
+//            ->all();
 
         return view('Lemma.edit', [
             'lemma' => $lemma,
-            'expressions' => $expressions,
+//            'expressions' => $expressions,
             'pattern' => null, // Temporarily disabled
         ]);
     }
@@ -222,6 +285,54 @@ class LemmaController extends Controller
             $this->trigger('reload-gridExpressions');
 
             return $this->renderNotify('success', 'Expression removed.');
+        } catch (\Exception $e) {
+            return $this->renderNotify('error', $e->getMessage());
+        }
+    }
+
+    /*------
+      POS
+     ------ */
+
+    #[Post(path: '/lemma/{idLemma}/pos')]
+    public function createPos(int $idLemma, CreatePOSData $data)
+    {
+        $data->idLemma = $idLemma;
+        try {
+            if ($data->idUDPOS) {
+                $pos = Criteria::table('lemma_pos')
+                    ->where("idLemma", $data->idLemma)
+                    ->where("idUDPOS", $data->idUDPOS)
+                    ->first();
+                if (is_null($pos)) {
+                    Criteria::create("lemma_pos",[
+                        'idLemma' => $data->idLemma,
+                        'idUDPOS' => $data->idUDPOS,
+                    ]);
+                }
+                $this->trigger('reload-gridPOS');
+
+                return $this->renderNotify('success', 'POS added.');
+            } else {
+                throw new \Exception('POS not informed.');
+            }
+        } catch (\Exception $e) {
+            return $this->renderNotify('error', $e->getMessage());
+        }
+    }
+
+    #[Delete(path: '/lemma/pos/{$idLemma}/{idUDPOS}')]
+    public function deletePOS(int $idLemma, int $idUDPOS)
+    {
+        try {
+            Criteria::table('lemma_pos')
+                ->where("idLemma", $idLemma)
+                ->where("idUDPOS", $idUDPOS)
+                ->delete();
+
+            $this->trigger('reload-gridPOS');
+
+            return $this->renderNotify('success', 'POS removed.');
         } catch (\Exception $e) {
             return $this->renderNotify('error', $e->getMessage());
         }

@@ -1,11 +1,13 @@
-<x-layout.index>
+<x-layout::index>
     <div class="app-layout annotation">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/annotation','Annotation'],[$url,$page],['','#' . $idDocumentSentence]]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <div class="annotation-action">
-            @include("Annotation.Session.Panes.sessionPane")
+            @if($corpusAnnotationType != 'flex')
+                @include("Annotation.Session.Panes.sessionPane")
+            @endif
         </div>
         <div class="annotation-corpus">
             <script type="text/javascript" src="/annotation/corpus/script/components"></script>
@@ -40,37 +42,56 @@
                 </div>
                 <div class="annotation-workarea">
                     <div class="annotation-sentence">
-                        @foreach($tokens as $i => $token)
-                            @php($hasAS = ($token['idAS'] != -1))
-                            @if(!$token['hasLU'] && !$hasAS)
+                        @if($corpusAnnotationType == 'flex')
+                            @foreach($tokens as $i => $token)
                                 <div
-                                    class="ui medium button mb-2 hasNone"
-                                >{{$token['word']}}</div>
-                            @else
-                                <div
-                                    class="ui medium button mb-2 {!! $hasAS ? 'hasAS' : 'hasLU' !!}"
-                                    hx-get="{!! $hasAS ? '/annotation/corpus/as/'. $corpusAnnotationType. '/'.  $token['idAS'] . '/' . $token['word']  : '/annotation/corpus/lus/'.$corpusAnnotationType.'/'. $idDocumentSentence . '/'. $i !!}"
-                                    hx-target=".annotation-panel"
-                                    hx-swap="innerHTML"
+                                    class="ui medium mb-2 mr-2"
                                 >{{$token['word']}}
                                 </div>
-                            @endif
-                        @endforeach
+                            @endforeach
+                        @else
+                            @foreach($tokens as $i => $token)
+                                @php($hasAS = ($token['idAS'] != -1))
+                                @if(!$token['hasLU'] && !$hasAS)
+                                    <div
+                                        class="ui medium button mb-2 hasNone"
+                                    >{{$token['word']}}</div>
+                                @else
+                                    <div
+                                        class="ui medium button mb-2 {!! $hasAS ? 'hasAS' : 'hasLU' !!}"
+                                        hx-get="{!! $hasAS ? '/annotation/corpus/as/'. $corpusAnnotationType. '/'.  $token['idAS'] . '/' . $token['word']  : '/annotation/corpus/lus/'.$corpusAnnotationType.'/'. $idDocumentSentence . '/'. $i !!}"
+                                        hx-target=".annotation-panel"
+                                        hx-swap="innerHTML"
+                                    >{{$token['word']}}
+                                    </div>
+                                @endif
+                            @endforeach
+                        @endif
                     </div>
                     <div
                         class="annotation-panel"
                     ></div>
-                    @if(!is_null($idAnnotationSet))
+                    @if($corpusAnnotationType == 'flex')
                         <div
                             hx-trigger="load"
-                            hx-get="/annotation/corpus/as/{{$corpusAnnotationType}}/{{$idAnnotationSet}}/{{$word}}"
+                            hx-get="/annotation/flex/annotation/{{$idDocumentSentence}}"
                             hx-target=".annotation-panel"
                             hx-swap="innerHTML"
                         >
                         </div>
+                    @else
+                        @if(!is_null($idAnnotationSet))
+                            <div
+                                hx-trigger="load"
+                                hx-get="/annotation/corpus/as/{{$corpusAnnotationType}}/{{$idAnnotationSet}}/{{$word}}"
+                                hx-target=".annotation-panel"
+                                hx-swap="innerHTML"
+                            >
+                            </div>
+                        @endif
                     @endif
                 </div>
             </div>
         </div>
     </div>
-</x-layout.index>
+</x-layout::index>

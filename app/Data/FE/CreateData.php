@@ -19,6 +19,15 @@ class CreateData extends Data
     {
         $this->idUser = AppService::getCurrentIdUser();
         $this->entry = strtolower('fe_' . $this->nameEn);
+        if ($this->coreType == 'cty_domain') {
+            $this->idColor = 75;
+        }
+        if ($this->coreType == 'cty_range') {
+            $this->idColor = 19;
+        }
+        if ($this->coreType == 'cty_property') {
+            $this->idColor = 1;
+        }
         $this->_token = csrf_token();
     }
 }

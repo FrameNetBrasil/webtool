@@ -51,16 +51,21 @@ class FeFrame extends Component
                     'idColor' => "color_1"
                 ];
             }
-            foreach ($fes as $fe) {
-                if ($this->value == $fe->idFrameElement) {
-                    $this->default = $fe->name;
+            $types = array_keys(config("webtool.fe.coreness"));
+            foreach($types as $type) {
+                foreach ($fes as $fe) {
+                    if ($this->value == $fe->idFrameElement) {
+                        $this->default = $fe->name;
+                    }
+                    if ($fe->coreType == $type) {
+                        $this->options[] = [
+                            'idFrameElement' => $fe->idFrameElement,
+                            'name' => $fe->name,
+                            'coreType' => $fe->coreType,
+                            'idColor' => $fe->idColor
+                        ];
+                    }
                 }
-                $this->options[] = [
-                    'idFrameElement' => $fe->idFrameElement,
-                    'name' => $fe->name,
-                    'coreType' => $fe->coreType,
-                    'idColor' => $fe->idColor
-                ];
             }
 
         }

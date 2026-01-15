@@ -18,7 +18,7 @@ class AppController extends Controller
     public function main()
     {
         if (Auth::check()) {
-            return view('App.main');
+            return view('App.index');
         } else {
             if (config('webtool.login.handler') == 'auth0') {
                 return view('App.auth0Login');

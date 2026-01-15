@@ -17,7 +17,7 @@
     placeholder="{{$placeholder}}"
     search-url="/lemma/listForSearch"
 {{--    display-formatter="displayFormaterLUSearch"--}}
-    display-field="fullName"
+    display-field="name"
     :search-fields="[$searchField]"
     search-field="{{$searchField}}"
     value="{{$value}}"
@@ -27,7 +27,7 @@
     modal-title="{{$modalTitle}}"
 />
 <script>
-    function displayFormaterLUSearch(lu) {
-        return `<div class="result"><span class="color_frame">${lu.frameName}</span>.${lu.name}</span></div>`;
-    };
+    // function displayFormaterLUSearch(lu) {
+    //     return `<div class="result"><span class="color_frame">${lu.frameName}</span>.${lu.name}</span></div>`;
+    // };
 </script>

@@ -8,6 +8,13 @@
 >
     @if ($idObject == 0)
         @include("Annotation.Video.Forms.formNewObject")
+        @if (($frameNumber ?? 0) > 0)
+            <script type="text/javascript">
+                $(function() {
+                    document.dispatchEvent(new CustomEvent("video-seek-frame", { detail: { frameNumber: {{$frameNumber}} }}));
+                });
+            </script>
+        @endif
     @else
         <div
             hx-trigger="load"

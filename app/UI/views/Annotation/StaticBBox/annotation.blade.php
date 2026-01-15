@@ -20,8 +20,8 @@
 @endphp
 <x-layout.annotation>
     <x-slot:head>
-        <x-layout::breadcrumb
-            :sections="[['/','Home'],['/annotation/staticBBox','Static BBox Annotation'],['',$document->name]]"></x-layout::breadcrumb>
+        <x-partial::breadcrumb
+            :sections="[['/','Home'],['/annotation/staticBBox','Static BBox Annotation'],['',$document->name]]"></x-partial::breadcrumb>
     </x-slot:head>
     <x-slot:main>
         <div

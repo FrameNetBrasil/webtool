@@ -58,7 +58,7 @@
                                 <i class="chevron down icon"></i>
                             </button>
                         </div>
-                        <div class="section-content" id="core-unexpressed-fes" style="display: none;">
+                        <div class="section-content" id="core-unexpressed-fes" style="display: block;">
                             <div class="fe-cards-grid">
                                 @foreach($fe['core_unexpressed'] as $feObj)
                                     @include('Frame.Report.partials.fe-card', [

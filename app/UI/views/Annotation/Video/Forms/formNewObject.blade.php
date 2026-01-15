@@ -59,12 +59,36 @@
                     </div>
                 </div>
             @endif
+            @if($annotationType == "canvas")
+                <div class="three fields">
+                    <div class="field">
+                        <x-combobox::layer-canvas
+                            label="Layer type"
+                            id="idLayerType"
+                            :value="0"
+                        ></x-combobox::layer-canvas>
+                    </div>
+                    <div class="field">
+                        <label>Start frame <span class="text-primary cursor-pointer"
+                                                 @click="copyFrameFor('startFrame')">[Copy from video]</span></label>
+                        <div class="ui medium input">
+                            <input type="text" name="startFrame" placeholder="1" value="1">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>End frame <span class="text-primary cursor-pointer" @click="copyFrameFor('endFrame')">[Copy from video]</span></label>
+                        <div class="ui medium input">
+                            <input type="text" name="endFrame" placeholder="1" value="1">
+                        </div>
+                    </div>
+                </div>
+            @endif
             <button
                 type="submit"
                 class="ui primary button"
                 hx-post="/annotation/video/createNewObjectAtLayer"
             >
-                Save
+                Create
             </button>
         </form>
     </div>

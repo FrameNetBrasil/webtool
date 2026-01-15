@@ -1,9 +1,9 @@
 <x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/structure','Structure'],['','LU Candidate - LOME']]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main
             class="app-main"
             x-data="{
@@ -100,6 +100,6 @@
                 </x-slot:table>
             </x-ui::browse-table>
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
 </x-layout::index>

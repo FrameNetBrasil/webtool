@@ -1,7 +1,8 @@
 // Video component with modular architecture
 // Organized into logical sections for better maintainability
-function videoComponent() {
+function videoComponent(config) {
     return {
+        idDocument: 0,
         // =============================================
         // CONFIGURATION & STATE
         // =============================================
@@ -57,6 +58,7 @@ function videoComponent() {
         // =============================================
 
         init() {
+            this.idDocument = config.idDocument;
             // Use $nextTick to ensure DOM is ready
             this.$nextTick(() => {
                 console.log("videoComponent init");
@@ -272,6 +274,11 @@ function videoComponent() {
             const targetTime = this.timeFromFrame(targetFrame);
             this.log(`Seeking to frame ${targetFrame} (${targetTime.toFixed(3)}s)`);
             this.player.currentTime = targetTime;
+            document.dispatchEvent(new CustomEvent("timeline-seek-frame", {
+                detail: {
+                    frameNumber: frame
+                }
+            }));
         },
 
         async preciseSeekToFrame(frame) {
@@ -741,6 +748,22 @@ function videoComponent() {
         clearLogs() {
             this.logs = [];
             this.log('Logs cleared');
+        },
+
+        // =============================================
+        // BOXES
+        // =============================================
+
+        showAllBoxes() {
+            console.log('show all boxes');
+            document.dispatchEvent(new CustomEvent('bbox-display-all', {
+                detail: {
+                    frame: this.frame.current,
+                    idDocument: this.idDocument,
+                    time: this.time,
+                    isPlaying: this.isPlaying
+                }
+            }));
         }
     };
 }

@@ -1,4 +1,4 @@
-<div class="ui container">
+<div class="ui container page">
     <div class="page-header">
         @include('LU.Report.partials.lu-header')
     </div>

@@ -1,6 +1,6 @@
 <x-layout.browser>
     <x-slot:head>
-        <x-layout::breadcrumb :sections="[['','Home']]"></x-layout::breadcrumb>
+        <x-partial::breadcrumb :sections="[['','Home']]"></x-partial::breadcrumb>
     </x-slot:head>
     <x-slot:main>
         <div

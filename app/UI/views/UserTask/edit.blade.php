@@ -1,9 +1,9 @@
-<x-layout.index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+<x-layout::index>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/task','Task/User'],['', 'UserTask #' . $usertask->idUserTask]]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
             <div class="ui container page-edit">
                 <div class="page-header-object">
@@ -39,6 +39,6 @@
                 </div>
             </div>
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
-</x-layout.index>
+</x-layout::index>

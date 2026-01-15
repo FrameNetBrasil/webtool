@@ -1,0 +1,221 @@
+[
+  {
+    "name": "MWE_CAFE_DA_MANHA",
+    "constructionType": "mwe",
+    "priority": 180,
+    "pattern": "\"café\" \"da\" \"manhã\"",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "aggregateAs": "café_da_manhã",
+    "semanticType": "E",
+    "semantics": {"type": "entity", "category": "meal"},
+    "lookaheadEnabled": false,
+    "lookaheadMaxDistance": 2,
+    "invalidationPatterns": [],
+    "confirmationPatterns": [],
+    "description": "Breakfast (café da manhã)",
+    "examples": [
+      {"sentence": "Tomei café da manhã cedo"}
+    ]
+  },
+  {
+    "name": "MWE_GOL_CONTRA",
+    "constructionType": "mwe",
+    "priority": 170,
+    "pattern": "\"gol\" \"contra\"",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "aggregateAs": "gol_contra",
+    "semanticType": "E",
+    "semantics": {"type": "entity", "category": "sports"},
+    "lookaheadEnabled": true,
+    "lookaheadMaxDistance": 3,
+    "invalidationPatterns": [
+      {
+        "pattern": "{DET}",
+        "description": "Determiner after 'contra' invalidates MWE (contra o time)"
+      },
+      {
+        "pattern": "{NOUN}",
+        "description": "Direct noun after 'contra' invalidates MWE"
+      },
+      {
+        "pattern": "{PROPN}",
+        "description": "Proper noun after 'contra' invalidates MWE"
+      }
+    ],
+    "confirmationPatterns": [
+      {
+        "pattern": "{ADP}",
+        "description": "Another preposition confirms MWE"
+      },
+      {
+        "pattern": "{VERB}",
+        "description": "Verb confirms MWE (clause boundary)"
+      }
+    ],
+    "description": "Own goal (gol contra) - ambiguous boundary example",
+    "examples": [
+      {
+        "sentence": "O jogador marcou um gol contra aos 10 minutos",
+        "valid": true
+      },
+      {
+        "sentence": "O jogador marcou um gol contra o time da casa",
+        "valid": false,
+        "note": "Should be parsed as 'gol' + 'contra o time'"
+      }
+    ]
+  },
+  {
+    "name": "MWE_APESAR_DE",
+    "constructionType": "mwe",
+    "priority": 175,
+    "pattern": "\"apesar\" \"de\"",
+    "phrasalCE": "Adp",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "aggregateAs": "apesar_de",
+    "semanticType": "F",
+    "semantics": {"type": "function", "category": "preposition"},
+    "lookaheadEnabled": false,
+    "lookaheadMaxDistance": 2,
+    "invalidationPatterns": [],
+    "confirmationPatterns": [],
+    "description": "Despite (apesar de)",
+    "examples": [
+      {"sentence": "Apesar de estar cansado, continuou"}
+    ]
+  },
+  {
+    "name": "MWE_DE_REPENTE",
+    "constructionType": "mwe",
+    "priority": 175,
+    "pattern": "\"de\" \"repente\"",
+    "phrasalCE": "Idx",
+    "clausalCE": "CPP",
+    "sententialCE": null,
+    "constraints": [],
+    "aggregateAs": "de_repente",
+    "semanticType": "A",
+    "semantics": {"type": "attribute", "category": "temporal"},
+    "lookaheadEnabled": false,
+    "lookaheadMaxDistance": 2,
+    "invalidationPatterns": [],
+    "confirmationPatterns": [],
+    "description": "Suddenly (de repente)"
+  },
+  {
+    "name": "MWE_POR_FAVOR",
+    "constructionType": "mwe",
+    "priority": 178,
+    "pattern": "\"por\" \"favor\"",
+    "phrasalCE": "Idx",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "aggregateAs": "por_favor",
+    "semanticType": "F",
+    "semantics": {"type": "function", "category": "politeness"},
+    "lookaheadEnabled": false,
+    "lookaheadMaxDistance": 2,
+    "invalidationPatterns": [],
+    "confirmationPatterns": [],
+    "description": "Please (por favor)"
+  },
+  {
+    "name": "MWE_AO_MESMO_TEMPO",
+    "constructionType": "mwe",
+    "priority": 176,
+    "pattern": "\"ao\" \"mesmo\" \"tempo\"",
+    "phrasalCE": "Idx",
+    "clausalCE": "CPP",
+    "sententialCE": null,
+    "constraints": [],
+    "aggregateAs": "ao_mesmo_tempo",
+    "semanticType": "A",
+    "semantics": {"type": "attribute", "category": "temporal"},
+    "lookaheadEnabled": false,
+    "lookaheadMaxDistance": 2,
+    "invalidationPatterns": [],
+    "confirmationPatterns": [],
+    "description": "At the same time (ao mesmo tempo)"
+  },
+  {
+    "name": "MWE_POR_CAUSA_DE",
+    "constructionType": "mwe",
+    "priority": 177,
+    "pattern": "\"por\" \"causa\" \"de\"",
+    "phrasalCE": "Adp",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "aggregateAs": "por_causa_de",
+    "semanticType": "F",
+    "semantics": {"type": "function", "category": "causal"},
+    "lookaheadEnabled": false,
+    "lookaheadMaxDistance": 2,
+    "invalidationPatterns": [],
+    "confirmationPatterns": [],
+    "description": "Because of (por causa de)"
+  },
+  {
+    "name": "MWE_EM_VEZ_DE",
+    "constructionType": "mwe",
+    "priority": 177,
+    "pattern": "\"em\" \"vez\" \"de\"",
+    "phrasalCE": "Adp",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "aggregateAs": "em_vez_de",
+    "semanticType": "F",
+    "semantics": {"type": "function", "category": "alternative"},
+    "lookaheadEnabled": false,
+    "lookaheadMaxDistance": 2,
+    "invalidationPatterns": [],
+    "confirmationPatterns": [],
+    "description": "Instead of (em vez de)"
+  },
+  {
+    "name": "MWE_A_PARTIR_DE",
+    "constructionType": "mwe",
+    "priority": 177,
+    "pattern": "\"a\" \"partir\" \"de\"",
+    "phrasalCE": "Adp",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "aggregateAs": "a_partir_de",
+    "semanticType": "F",
+    "semantics": {"type": "function", "category": "temporal"},
+    "lookaheadEnabled": false,
+    "lookaheadMaxDistance": 2,
+    "invalidationPatterns": [],
+    "confirmationPatterns": [],
+    "description": "From/starting from (a partir de)"
+  },
+  {
+    "name": "MWE_ATE_MESMO",
+    "constructionType": "mwe",
+    "priority": 175,
+    "pattern": "\"até\" \"mesmo\"",
+    "phrasalCE": "Idx",
+    "clausalCE": "CPP",
+    "sententialCE": null,
+    "constraints": [],
+    "aggregateAs": "até_mesmo",
+    "semanticType": "A",
+    "semantics": {"type": "attribute", "category": "emphasis"},
+    "lookaheadEnabled": false,
+    "lookaheadMaxDistance": 2,
+    "invalidationPatterns": [],
+    "confirmationPatterns": [],
+    "description": "Even (até mesmo)"
+  }
+]

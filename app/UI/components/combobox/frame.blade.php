@@ -17,7 +17,7 @@
                     url: "/frame/list/forSelect?frame={query}"
                 },
                 fields: {
-                    title: "name",
+                    title: "nsName",
                     description: "{{$description}}"
                 },
                 maxResults: 20,

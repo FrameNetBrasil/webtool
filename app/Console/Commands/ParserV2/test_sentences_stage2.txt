@@ -1,0 +1,20 @@
+# Test sentences for Stage 2 (Translation)
+# From the plan test cases
+
+# Test 1: Simple NP Agreement
+As meninas bonitas
+
+# Test 2: Relative Clause Detection
+O homem que eu vi
+
+# Test 3: Prepositional Phrase
+O livro sobre a mesa
+
+# Test 4: Complex Predicate with CPP
+Ele tinha comprado o livro
+
+# Test 5: Genitive Construction
+nosso livro
+
+# Test 6: Ambiguous "que" Resolution
+Eu sei que ele veio

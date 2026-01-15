@@ -1,28 +1,16 @@
-<form class="ui form">
-    <div class="ui card form-card w-full p-1">
-        <div class="content">
-            <input type="hidden" name="idDomain" value="{{$domain->idDomain}}">
-
-            <div class="field">
-                <label for="name">Name</label>
-                <div class="ui small input">
-                    <input type="text" id="name" name="name" value="{{$domain->name}}">
-                </div>
-            </div>
-
-            <div class="field">
-                <label for="description">Description</label>
-                <textarea id="description" name="description">{{$domain->description}}</textarea>
-            </div>
-        </div>
-        <div class="extra content">
-            <button
-                type="submit"
-                class="ui primary button"
-                hx-post="/domain"
-            >
-                Save
-            </button>
-        </div>
-    </div>
-</form>
+<x-form id="formEdit" title="Domain" :center="false" hx-post="/domain">
+    <x-slot:fields>
+        <x-hidden-field
+            id="idDomain"
+            :value="$domain->idDomain"
+        ></x-hidden-field>
+        <x-text-field
+            label="Name"
+            id="name"
+            :value="$domain->name"
+        ></x-text-field>
+    </x-slot:fields>
+    <x-slot:buttons>
+        <x-submit label="Save" ></x-submit>
+    </x-slot:buttons>
+</x-form>

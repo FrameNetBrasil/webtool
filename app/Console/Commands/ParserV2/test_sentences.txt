@@ -1,0 +1,16 @@
+# Test sentences for Stage 1 (Transcription) debugging
+# Portuguese sentences
+
+#O menino comprou um livro.
+#A menina bonita leu o livro rapidamente.
+#João viu Maria no parque.
+#O cachorro correu atrás do gato.
+#Eu penso que ele virá amanhã.
+#A casa que comprei é grande.
+#Quando chegar, me avise.
+#O menino comprou muitos livros.
+#Ele não vai vir, a não ser que faça sol.
+#O carro atropelou pelo menos 5 pessoas.
+Mais de um milhão e cem mil pessoas já foram afetadas por essa que já é considerada uma das maiores tragédias climáticas do país.
+Como você disse, estou aqui na avenida Ipiranga, e atrás de mim - está um pouco difícil de ver - é o arroio Dilúvio.
+O apelo que eu quero fazer, primeiro, é para que ninguém volta para casa; e, segundo, até um pouquinho mais pode ser atingido com cinco e cinquenta.

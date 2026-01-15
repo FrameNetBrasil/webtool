@@ -1,14 +1,14 @@
 <x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/report','Report'],['/report/lu','LU'],['',$lu->name]]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
             <div class="page-content">
                 @include("LU.Report.reportPartial")
             </div>
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
 </x-layout::index>

@@ -50,15 +50,10 @@ class DocumentController extends Controller
     #[Post(path: '/video/{id}/document/new')]
     public function documentNew(DocumentData $data)
     {
-
-        $video = Video::byId($data->idVideo);
-        $document = Document::byId($data->idDocument);
-        $json = json_encode([
-            'idAnnotationObject1' => $document->idAnnotationObject,
-            'idAnnotationObject2' => $video->idAnnotationObject,
-            'relationType' => 'rel_document_video'
+        Criteria::create("document_video", [
+            "idVideo" => $data->idVideo,
+            "idDocument" => $data->idDocument
         ]);
-        Criteria::function("objectrelation_create(?)",[$json]);
         $this->trigger('reload-gridVideoDocument');
         return $this->renderNotify("success", "Video associated with Document.");
     }
@@ -67,11 +62,9 @@ class DocumentController extends Controller
     public function delete(int $id, int $idDocument)
     {
         try {
-            $video = Video::byId($id);
-            $document = Document::byId($idDocument);
-            Criteria::table("annotationobjectrelation")
-                ->where("idAnnotationObject1", $video->idAnnotationObject)
-                ->where("idAnnotationObject2", $document->idAnnotationObject)
+            Criteria::table("document_video")
+                ->where("idDocument", $idDocument)
+                ->where("idVideo", $id)
                 ->delete();
             $this->trigger('reload-gridVideoDocument');
             return $this->renderNotify("success", "Video removed from Document.");

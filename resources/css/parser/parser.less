@@ -1,0 +1,313 @@
+// ============================================================================
+// Parser Styles
+// ============================================================================
+// Styles for the graph-based predictive parser with MWE processing
+// Uses Fomantic-UI as base framework
+// ============================================================================
+
+// Parser controls section
+.parser-controls {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+
+    .ui.form {
+        margin-bottom: 1rem;
+    }
+
+    .htmx-indicator {
+        margin-left: 1rem;
+        display: none;
+
+        &.htmx-request {
+            display: inline-block;
+        }
+    }
+}
+
+// Parser results section
+.parser-results {
+    min-height: 100px;
+
+    &:empty {
+        min-height: 0;
+    }
+}
+
+.parser-results-container {
+    margin-top: 2rem;
+    animation: fadeIn 0.3s ease-in;
+
+    .ui.message {
+        margin-bottom: 1.5rem;
+    }
+
+    .ui.statistics {
+        margin: 1.5rem 0;
+    }
+}
+
+.parser-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+
+    .ui.button {
+        margin: 0;
+    }
+}
+
+// Graph visualization
+.graph-visualization-container {
+    margin-top: 2rem;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.graph-canvas {
+    min-height: 600px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .links line {
+        stroke-opacity: 0.6;
+        transition: stroke-width 0.2s ease;
+
+        &:hover {
+            stroke-width: 4px !important;
+            stroke-opacity: 1;
+        }
+    }
+
+    .nodes circle {
+        cursor: pointer;
+        transition: r 0.2s ease, stroke-width 0.2s ease;
+
+        &:hover {
+            r: 18 !important;
+            stroke-width: 3;
+        }
+    }
+
+    .labels text {
+        pointer-events: none;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+    }
+}
+
+// Node type styling
+.node-type-label {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: white;
+
+    &.type-E {
+        background-color: @parser-color-entity;
+    }
+
+    &.type-R {
+        background-color: @parser-color-relational;
+    }
+
+    &.type-A {
+        background-color: @parser-color-attribute;
+    }
+
+    &.type-F {
+        background-color: @parser-color-fixed;
+    }
+
+    &.type-MWE {
+        background-color: @parser-color-mwe;
+    }
+}
+
+// MWE highlighting
+.mwe-node {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border: 2px dashed @parser-color-mwe;
+        border-radius: 4px;
+        pointer-events: none;
+    }
+}
+
+// Parse status badges
+.parse-status {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    font-weight: 600;
+
+    &.status-complete {
+        background-color: #21ba45;
+        color: white;
+    }
+
+    &.status-parsing {
+        background-color: #fbbd08;
+        color: #333;
+    }
+
+    &.status-failed {
+        background-color: #db2828;
+        color: white;
+    }
+}
+
+// Activation progress bar
+.activation-progress {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .progress-bar {
+        width: 100px;
+        height: 8px;
+        background: #e0e0e0;
+        border-radius: 4px;
+        overflow: hidden;
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, @parser-color-relational, @parser-color-entity);
+            transition: width 0.3s ease;
+        }
+    }
+
+    .progress-text {
+        font-size: 0.9em;
+        color: #666;
+    }
+}
+
+// Error container
+.parser-error-container {
+    margin-top: 2rem;
+    animation: fadeIn 0.3s ease-in;
+
+    .ui.negative.message {
+        margin-bottom: 1rem;
+    }
+}
+
+// Grammar view
+.grammar-node-list,
+.grammar-mwe-list {
+    margin-top: 2rem;
+
+    .node-item,
+    .mwe-item {
+        padding: 1rem;
+        border-bottom: 1px solid #e0e0e0;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+            background-color: #f5f5f5;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .parser-controls {
+        padding: 1rem;
+
+        .fields {
+            .field {
+                width: 100% !important;
+            }
+        }
+    }
+
+    .graph-canvas {
+        min-height: 400px;
+    }
+
+    .ui.statistics {
+        .statistic {
+            margin: 0.5rem !important;
+        }
+    }
+
+    .parser-actions {
+        .ui.button {
+            flex: 1 1 100%;
+        }
+    }
+}
+
+// Animations
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+// Focus node highlighting
+.focus-node {
+    animation: pulse 2s infinite;
+}
+
+// Loading state
+.parser-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    color: #666;
+
+    .ui.loader {
+        margin-bottom: 1rem;
+    }
+}
+
+// Variables (should be defined in main LESS configuration)
+@parser-color-entity: #4CAF50;
+@parser-color-relational: #2196F3;
+@parser-color-attribute: #FF9800;
+@parser-color-fixed: #9E9E9E;
+@parser-color-mwe: #9C27B0;

@@ -1,4 +1,4 @@
-<x-layout.index>
+<x-layout::index>
     <x-layout.edit>
         <x-slot:title>
             @include('Structure.Frame.title')
@@ -12,4 +12,4 @@
         </x-slot:pane>
         <x-slot:footer></x-slot:footer>
     </x-layout.edit>
-</x-layout.index>
+</x-layout::index>

@@ -17,6 +17,12 @@ class LU
         return $lu;
     }
 
+    public static function getIdUDPOS(int $idLemma): int
+    {
+        $lemma = Criteria::byId("lemma", "idLemma",$idLemma);
+        return $lemma->idUDPOS;
+    }
+
     public static function listForEvent(string $name = ''): array
     {
         $result = [];

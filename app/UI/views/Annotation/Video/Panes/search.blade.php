@@ -4,6 +4,7 @@
          @htmx:before-request="onSearchStart"
          @htmx:after-request="onSearchComplete"
          @htmx:after-swap="onResultsUpdated"
+         @timeline-seek-frame.document="onSeekObject"
     >
         <div class="search-input-group">
             <form class="ui form"
@@ -13,7 +14,9 @@
                 <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
                 <input type="hidden" name="idDocument" value="{{ $idDocument ?? 0 }}"/>
                 <input type="hidden" name="annotationType" value="{{ $annotationType }}"/>
-                <div class="three fields">
+                <input type="hidden" name="frameNumber" x-model="frameInput"/>
+                <input type="hidden" name="useFrameNumber" value="0"/>
+                <div class="four fields">
                     <div class="field">
                         <div class="ui left icon input">
                             <i class="search icon"></i>
@@ -50,10 +53,30 @@
                             >
                         </div>
                     </div>
-                    <div class="field button-field">
-                        <button type="submit" class="ui icon button">
-                            <i class="search icon"></i>
-                        </button>
+                    <div class="field">
+                        <div class="fields">
+                            <div class="field">
+                                <button type="submit" class="ui icon button">
+                                    <i class="search icon"></i>
+                                </button>
+                            </div>
+                            <div class="field">
+                                <button type="submit" class="ui icon button">
+{{--                                    <i class="ui icon material">full_stacked_bar_chart</i>--}}
+                                    All
+                                </button>
+                            </div>
+                            <div class="field">
+                                <button
+                                    type="submit"
+                                    class="ui button"
+                                    name="useFrameNumber"
+                                    value="1"
+                                >
+                                    Current
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </form>

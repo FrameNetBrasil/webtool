@@ -1,0 +1,115 @@
+subproperty,superproperty
+"acts for",associatedWith
+"acts through",associatedWith
+characterizes,associatedWith
+classifies,associatedWith
+conceptualizes,associatedWith
+"concretely expresses",associatedWith
+"co-participates with",associatedWith
+covers,associatedWith
+defines,"uses concept"
+"defines role",defines
+"defines task",defines
+describes,associatedWith
+"directly follows",follows
+"directly precedes",precedes
+"executes task","is classified by"
+expands,"is related to description"
+expresses,associatedWith
+"expresses concept",expresses
+"far from",associatedWith
+follows,associatedWith
+"has common boundary",associatedWith
+"has component","has proper part"
+"has constituent",associatedWith
+"has constraint","is classified by"
+"has event date","has data value"
+"has interval date","has region data value"
+"has location",associatedWith
+"has member",associatedWith
+"has parameter","is related to concept"
+"has parameter data value","has data value"
+"has part",associatedWith
+"has participant",associatedWith
+"has postcondition","directly precedes"
+"has precondition","directly follows"
+"has proper part","has part"
+"has quality",associatedWith
+"has region",associatedWith
+"has region data value","has data value"
+"has role","is classified by"
+"has setting",associatedWith
+"has task","is related to concept"
+"has time interval","has region"
+"includes action","includes event"
+"includes agent","includes object"
+"includes event","is setting for"
+"includes object","is setting for"
+"includes time","is setting for"
+introduces,associatedWith
+"involves agent","has participant"
+"is about",associatedWith
+"is action included in","is event included in"
+"is agent included in","is object included in"
+"is agent involved in","is participant in"
+"is characterized by",associatedWith
+"is classified by",associatedWith
+"is component of","is propert part of"
+"is concept expressed by","is expressed by"
+"is concept used in",associatedWith
+"is conceptualized by",associatedWith
+"is concretely expressed by",associatedWith
+"is constituent of",associatedWith
+"is constraint for",classifies
+"is covered by",associatedWith
+"is defined in","is concept used in"
+"is described by",associatedWith
+"is event included in","has setting"
+"is executed in",classifies
+"is expanded in","is related to description"
+"is expressed by",associatedWith
+"is introduced by",associatedWith
+"is location of",associatedWith
+"is member of",associatedWith
+"is object included in","has setting"
+"is observable at","has region"
+"is parameter for","is related to concept"
+"is parametrized by","is classified by"
+"is part of",associatedWith
+"is participant in",associatedWith
+"is postcondition of","directly follows"
+"is precondition of","directly precedes"
+"is propert part of","is part of"
+"is quality of",associatedWith
+"is realized by",associatedWith
+"is reference of",associatedWith
+"is reference of information realized by",associatedWith
+"is region for",associatedWith
+"is related to concept",associatedWith
+"is related to description",associatedWith
+"is role defined in","is defined in"
+"is role of",classifies
+"is satisfied by",associatedWith
+"is setting for",associatedWith
+"is specialized by",associatedWith
+"is subordinated to","directly follows"
+"is subordinated to","is related to concept"
+"is superordinated to","directly precedes"
+"is superordinated to","is related to concept"
+"is task defined in","is defined in"
+"is task of","is related to concept"
+"is time included in","has setting"
+"is time interval of","is region for"
+"is time of observation of","is region for"
+"is unified by",associatedWith
+"near to",associatedWith
+overlaps,associatedWith
+parametrizes,classifies
+precedes,associatedWith
+realizes,associatedWith
+"realizes information about",associatedWith
+"is in the same setting as",associatedWith
+satisfies,associatedWith
+specializes,associatedWith
+unifies,associatedWith
+"uses concept",associatedWith

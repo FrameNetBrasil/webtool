@@ -23,7 +23,7 @@
                         @click="$dispatch('bbox-toggle-tracking')"
                     >
                         <i :class="autoTracking ? 'stop icon' : 'play icon'"></i>
-                        <span x-text="autoTracking ? 'Stop' : 'Auto Track'"></span>
+                        <span x-text="autoTracking ? 'Stop tracking' : 'Autotracking'"></span>
                     </button>
                 </div>
             </div>
@@ -57,10 +57,13 @@
         <div class="d-flex pt-3">
             <div class="ui label">Current BBox: <span
                     x-text="bboxDrawn ? '#' + bboxDrawn.idBoundingBox : 'none' "></span></div>
+            <div class="ui label" x-show="bboxDrawn" x-text="bboxDrawn && 'frame: ' + bboxDrawn.frameNumber"></div>
             <div class="ui label" x-show="bboxDrawn" x-text="bboxDrawn && 'x: ' + bboxDrawn.x"></div>
             <div class="ui label" x-show="bboxDrawn" x-text="bboxDrawn && 'y: ' + bboxDrawn.y"></div>
             <div class="ui label" x-show="bboxDrawn" x-text="bboxDrawn && 'width: ' + bboxDrawn.width"></div>
             <div class="ui label" x-show="bboxDrawn" x-text="bboxDrawn && 'height: ' + bboxDrawn.height"></div>
+            <div class="ui red basic label" x-show="bboxDrawn && bboxDrawn?.isGroundTruth">isGroundTruth</div>
+            <div class="ui blue basic label" x-show="bboxDrawn && !bboxDrawn?.isGroundTruth">automatic</div>
         </div>
     </div>
 </div>

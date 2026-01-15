@@ -1,0 +1,352 @@
+/* Full-screen layout for annotation */
+.annotation-action {
+    grid-area: annotation-action;
+    height: @relative32px;
+    border-bottom: 1px solid @borderColor;
+    padding-left: @relativeMedium;
+    padding-right: @relativeMedium;
+    line-height: @relative32px;
+
+    .ui.button {
+        padding: 6px 14px 6px 14px;
+    }
+}
+
+.annotation-corpus {
+    grid-area: annotation;
+    display: grid;
+    grid-template-areas:
+        //"breadcrumb"
+        "canvas";
+    grid-template-columns: 1fr;
+    //grid-template-rows: @breadcrumbHeight 1fr !important;
+    grid-template-rows: 1fr !important;
+
+    .annotation-canvas {
+        grid-area: canvas;
+        height: 100%;
+        display: grid;
+        grid-template-areas:
+        "navigation"
+        "workarea";
+        grid-template-columns: 1fr;
+        grid-template-rows: 3em 1fr;
+    }
+
+    .annotation-navigation {
+        grid-area: navigation;
+        padding: @relativeMini;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .annotation-workarea {
+        grid-area: workarea;
+        padding: @relativeSmall;
+
+    }
+    .annotation-sentence {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0;
+        margin-bottom: @relativeMini;
+
+        .hasNone {
+            cursor: default;
+            box-shadow: none !important;
+            color: black !important;
+            background-color: transparent !important;
+            padding: 0;
+            font-weight: normal !important;
+        }
+
+        .hasLU {
+            color: black !important;
+            background-color: @neutral200 !important;
+            padding: 0.125em 0.75em;
+            font-weight: normal !important;
+        }
+
+        .hasAS {
+            color: white !important;
+            background-color: @neutral900 !important;
+            padding: 0.125em 0.75em;
+            font-weight: normal !important;
+        }
+    }
+
+    .annotation-panel {
+        max-width: calc(100vw - 56px);
+
+
+        .annotationSetComponent {
+
+            height: 100%;
+            width: 100%;
+
+            .content {
+                width: 100%;
+
+                .status {
+                    display:inline;
+                    margin-left: 1em;
+                    color: @blue500;
+                    font-size: @relativeSmall;
+                }
+
+                .lome {
+                    margin-left: @relativeSmall
+                }
+
+                .annotationSetColumns {
+
+                    display: flex;
+                    flex-direction: row;
+
+
+                    .columnNI {
+
+                        width: 160px;
+
+                        .rowNI {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0;
+
+                            .colNI {
+                                cursor: pointer;
+                                width: 8rem;
+
+                                .ni {
+                                    font-weight: bold;
+                                    padding: 0 2px;
+                                    display: inline-block;
+                                    position: relative;
+                                    z-index: 1;
+                                }
+
+                                .ni::selection {
+                                    background-color: #ffe184;
+                                }
+                            }
+
+                            .colNILabel {
+                                //font-size: 1.25rem;
+                                padding: 0 0 0 8px;
+                                width: 100%;
+                                //position: relative;
+                                height: auto;
+
+                                .feLabel {
+                                    //top: 32px;
+                                    //left: -1px;
+                                    padding: 2px 3px;
+                                    //z-index: 10;
+                                    //position: absolute;
+                                    font-size: 0.75rem;
+                                    //background: black;
+                                    font-weight: bold;
+                                    font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+                                    line-height: 1;
+                                    //border-radius: 1px;
+                                }
+
+                            }
+
+                        }
+                    }
+
+                    .columnLayers {
+                        width: 64px;
+                        position: relative;
+                        margin-left: 8px;
+                        padding-left: 8px;
+                        border-left: 2px solid @neutral200;
+                        display: flex;
+                        flex-direction: column;
+
+                        div {
+                            height: 24px;
+                        }
+
+                    }
+
+                    .columnLayersFlex {
+                        width: 128px;
+                        position: relative;
+                        margin-left: 8px;
+                        padding-left: 8px;
+                        display: flex;
+                        flex-direction: column;
+
+                        div {
+                            height: 24px;
+                        }
+
+                    }
+
+                    .columnAnnotation {
+
+                        flex-grow: 0;
+                        overflow-x: auto;
+                        width: 100%;
+
+                        .word {
+                            display: inline-block;
+                            position: relative;
+                            z-index: 1;
+                        }
+
+                        .word::selection {
+                            background-color: #ffe184;
+                        }
+
+                        .target {
+                            color: #FFFFFF !important;
+                            background-color: #222 !important
+                        }
+
+                        .hasFE {
+                            font-weight: 600;
+                        }
+
+
+                        .rowWord {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: left;
+                            height: auto;
+                            font-family: Noto Sans Mono, monospace;
+                            font-optical-sizing: auto;
+                            font-style: normal;
+                            font-variation-settings: "wdth" 75;
+
+                            .colWord {
+                                font-size: 1.25rem;
+                                padding: 0 0;
+                                position: relative;
+                                flex-shrink: 0;
+                                background-color: @neutral200;
+                            }
+
+                            .colSpace {
+                                font-size: 1.25rem;
+                                width: 0.75rem;
+                                position: relative;
+                                flex-shrink: 0;
+                                //user-select: none;
+
+                                .word {
+                                    width: 100%;
+                                    //user-select: none;
+                                }
+                            }
+                        }
+
+                        .rowAnnotation {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: left;
+                            height: auto;
+                            font-family: Noto Sans Mono, monospace;
+                            font-optical-sizing: auto;
+                            font-style: normal;
+                            font-variation-settings: "wdth" 75;
+                            user-select: none;
+
+                            .colWord {
+                                font-size: 1.25rem;
+                                padding: 0 0;
+                                position: relative;
+                                flex-shrink: 0;
+                                background-color: @neutral200;
+                                user-select: none;
+                            }
+
+                            .colSpace {
+                                font-size: 1.25rem;
+                                width: 0.75rem;
+                                position: relative;
+                                flex-shrink: 0;
+                                user-select: none;
+
+                                .word {
+                                    width: 100%;
+                                    user-select: none;
+                                }
+                            }
+
+                            .wordHidden {
+                                color: transparent;
+                            }
+                        }
+
+
+                        //.line {
+                        //    top: 30px;
+                        //    left: 0px;
+                        //    width: calc(100%);
+                        //    height: 3px;
+                        //    position: absolute;
+                        //    background: black;
+                        //    z-index: 1;
+                        //}
+                    }
+
+                    .rowObject {
+                        .feLabel {
+                            display: inline-block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 0;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            padding-left: 2px;
+                            //top: 32px;
+                            //left: -1px;
+                            //padding: 2px 3px;
+                            //z-index: 10;
+                            //position: absolute;
+                            font-size: 0.75rem;
+                            //background: black;
+                            font-weight: bold;
+                            font-family: "Roboto Condensed", "Arial Narrow", sans-serif;
+                            //line-height: 1;
+                            //border-radius: 1px;
+                        }
+                    }
+                }
+            }
+
+            .annotationTab {
+
+                .rowFE {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: left;
+                    padding-bottom: 1em;
+
+                    .colFE {
+                        position: relative;
+                        //margin: 0 0.5rem 0.5rem 0;
+
+                        button {
+                            border: 0;
+                        }
+                    }
+                }
+            }
+
+            .alternativeLU {
+                .lus {
+                    max-height: 160px;
+                    overflow-y: auto;
+                }
+            }
+        }
+    }
+}
+

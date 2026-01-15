@@ -7,7 +7,6 @@ use App\Repositories\Frame;
 use App\Repositories\LU;
 use App\Services\AppService;
 use App\Services\ReportLUService;
-use App\Services\XmlExport\XmlUtils;
 use DOMDocument;
 use DOMElement;
 
@@ -20,12 +19,23 @@ use DOMElement;
 class XsdCompliantGenerators
 {
     private array $config;
+
     private int $idLanguage;
+
+    private ?array $layerTypesCache = null;
 
     public function __construct(array $config, int $idLanguage)
     {
         $this->config = $config;
         $this->idLanguage = $idLanguage;
+    }
+
+    /**
+     * Reset caches to free memory between documents
+     */
+    public function resetCaches(): void
+    {
+        $this->layerTypesCache = null;
     }
 
     /**
@@ -39,8 +49,8 @@ class XsdCompliantGenerators
 
         // Get corpus information
         $corpus = Criteria::table($this->config['database_views']['corpora'] ?? 'view_corpus')
-            ->where("idCorpus", $document->idCorpus)
-            ->where("idLanguage", $this->idLanguage)
+            ->where('idCorpus', $document->idCorpus)
+            ->where('idLanguage', $this->idLanguage)
             ->first();
 
         // Create header element (required by XSD)
@@ -61,18 +71,30 @@ class XsdCompliantGenerators
         $documentElement->setAttribute('ID', $document->idDocument);
         $corpusElement->appendChild($documentElement);
 
-        // Get sentences for this document
-        $sentences = Criteria::table("document_sentence as ds")
-            ->join($this->config['database_views']['sentences'] ?? 'sentence as s', "ds.idSentence", "=", "s.idSentence")
-            ->where("ds.idDocument", $document->idDocument)
-            ->select("s.idSentence", "s.text", "s.paragraphOrder")
-            ->orderBy("s.paragraphOrder")
-            ->all();
+        // Process sentences in smaller chunks to avoid memory exhaustion
+        // Reduced from 100 to 10 to handle large documents with many annotations
+        $chunkSize = $this->config['sentence_chunk_size'] ?? 10;
 
-        // Add sentences according to sentence.xsd structure
-        foreach ($sentences as $sentence) {
-            $this->addSentenceElement($dom, $root, $sentence);
-        }
+        Criteria::table('document_sentence as ds')
+            ->join($this->config['database_views']['sentences'] ?? 'sentence as s', 'ds.idSentence', '=', 's.idSentence')
+            ->where('ds.idDocument', $document->idDocument)
+            ->select('s.idSentence', 's.text', 's.paragraphOrder')
+            ->orderBy('s.paragraphOrder')
+            ->chunk($chunkSize, function ($sentences) use ($dom, $root) {
+                // Add sentences according to sentence.xsd structure
+                foreach ($sentences as $sentence) {
+                    $this->addSentenceElement($dom, $root, $sentence);
+
+                    // Free memory after processing each sentence
+                    unset($sentence);
+                }
+
+                // Clear sentences array and force garbage collection after each chunk
+                unset($sentences);
+                if (function_exists('gc_collect_cycles')) {
+                    gc_collect_cycles();
+                }
+            });
 
         return $dom;
     }
@@ -173,9 +195,9 @@ class XsdCompliantGenerators
 
         // Get all frames for the language
         $frames = Criteria::table($this->config['database_views']['frames'] ?? 'view_frame')
-            ->where("idLanguage", $this->idLanguage)
-            ->where("active", 1)
-            ->orderBy("name")
+            ->where('idLanguage', $this->idLanguage)
+            ->where('active', 1)
+            ->orderBy('name')
             ->all();
 
         foreach ($frames as $frame) {
@@ -204,7 +226,7 @@ class XsdCompliantGenerators
         // Get relation types from config
         $allowedRelations = $this->config['filters']['relations']['relation_types'] ?? [
             'rel_inheritance', 'rel_causative_of', 'rel_inchoative_of', 'rel_perspective_on',
-            'rel_precedes', 'rel_see_also', 'rel_subframe', 'rel_structure', 'rel_using'
+            'rel_precedes', 'rel_see_also', 'rel_subframe', 'rel_structure', 'rel_using',
         ];
 
         foreach ($allowedRelations as $relationType) {
@@ -225,9 +247,9 @@ class XsdCompliantGenerators
 
         // Get all corpora for the language
         $corpora = Criteria::table($this->config['database_views']['corpora'] ?? 'view_corpus')
-            ->where("idLanguage", $this->idLanguage)
-            ->where("active", 1)
-            ->orderBy("name")
+            ->where('idLanguage', $this->idLanguage)
+            ->where('active', 1)
+            ->orderBy('name')
             ->all();
 
         foreach ($corpora as $corpus) {
@@ -247,33 +269,33 @@ class XsdCompliantGenerators
         $root = $dom->documentElement;
 
         // Add legend element with status types
-//        $legend = $dom->createElement('legend');
-//        $root->appendChild($legend);
-//
-//        $statusTypes = [
-//            ['name' => 'Created', 'description' => 'Lexical unit has been created but not yet annotated'],
-//            ['name' => 'In_Use', 'description' => 'Lexical unit is actively being annotated'],
-//            ['name' => 'Finished_Initial', 'description' => 'Initial annotation phase completed'],
-//            ['name' => 'Add_Annotation', 'description' => 'Additional annotations are being added'],
-//            ['name' => 'Finished_X-Gov', 'description' => 'Cross-government annotation completed'],
-//            ['name' => 'New', 'description' => 'Newly identified lexical unit']
-//        ];
-//
-//        foreach ($statusTypes as $status) {
-//            $statusElement = $dom->createElement('statusType');
-//            $statusElement->setAttribute('name', $status['name']);
-//            $statusElement->setAttribute('description', $status['description']);
-//            $legend->appendChild($statusElement);
-//        }
+        //        $legend = $dom->createElement('legend');
+        //        $root->appendChild($legend);
+        //
+        //        $statusTypes = [
+        //            ['name' => 'Created', 'description' => 'Lexical unit has been created but not yet annotated'],
+        //            ['name' => 'In_Use', 'description' => 'Lexical unit is actively being annotated'],
+        //            ['name' => 'Finished_Initial', 'description' => 'Initial annotation phase completed'],
+        //            ['name' => 'Add_Annotation', 'description' => 'Additional annotations are being added'],
+        //            ['name' => 'Finished_X-Gov', 'description' => 'Cross-government annotation completed'],
+        //            ['name' => 'New', 'description' => 'Newly identified lexical unit']
+        //        ];
+        //
+        //        foreach ($statusTypes as $status) {
+        //            $statusElement = $dom->createElement('statusType');
+        //            $statusElement->setAttribute('name', $status['name']);
+        //            $statusElement->setAttribute('description', $status['description']);
+        //            $legend->appendChild($statusElement);
+        //        }
 
         // Get all lexical units for the language
         $lexicalUnits = Criteria::table($this->config['database_views']['lexical_units'] ?? 'view_lu')
-            ->join("view_frame as f", "lu.idFrame", "=", "f.idFrame")
-            ->join("language as l", "lu.idLanguage", "=", "l.idLanguage")
-            ->where("f.idLanguage", $this->idLanguage)
-            ->where("lu.active", 1)
-            ->select("lu.idLU", "lu.name", "f.name as frameName", "lu.idFrame", "l.language")
-            ->orderBy("lu.name")
+            ->join('view_frame as f', 'lu.idFrame', '=', 'f.idFrame')
+            ->join('language as l', 'lu.idLanguage', '=', 'l.idLanguage')
+            ->where('f.idLanguage', $this->idLanguage)
+            ->where('lu.active', 1)
+            ->select('lu.idLU', 'lu.name', 'f.name as frameName', 'lu.idFrame', 'l.language')
+            ->orderBy('lu.name')
             ->all();
 
         foreach ($lexicalUnits as $lu) {
@@ -289,10 +311,10 @@ class XsdCompliantGenerators
             $hasAnnotation = $this->lexicalUnitHasAnnotations($lu->idLU);
             $luElement->setAttribute('hasAnnotation', $hasAnnotation ? 'true' : 'false');
 
-            //if ($hasAnnotation) {
+            // if ($hasAnnotation) {
             $numInstances = $this->getLexicalUnitAnnotationCount($lu->idLU);
             $luElement->setAttribute('numAnnotInstances', $numInstances);
-            //}
+            // }
 
             $root->appendChild($luElement);
         }
@@ -314,8 +336,8 @@ class XsdCompliantGenerators
 
         // Get semantic types
         $semanticTypes = Criteria::table($this->config['database_views']['semantic_types'] ?? 'view_semantictype')
-            ->where("idLanguage", $this->idLanguage)
-            ->orderBy("name")
+            ->where('idLanguage', $this->idLanguage)
+            ->orderBy('name')
             ->all();
 
         foreach ($semanticTypes as $semType) {
@@ -354,13 +376,19 @@ class XsdCompliantGenerators
 
         // Get annotation sets for this sentence
         $annotationSets = Criteria::table($this->config['database_views']['annotations'] ?? 'view_annotationset')
-            ->where("idSentence", $sentence->idSentence)
-            ->whereNotNull("idLU")
+            ->where('idSentence', $sentence->idSentence)
+            ->whereNotNull('idLU')
             ->all();
 
         foreach ($annotationSets as $annotationSet) {
             $this->addAnnotationSet($dom, $sentenceElement, $annotationSet);
+
+            // Free memory after each annotation set
+            unset($annotationSet);
         }
+
+        // Free memory after processing sentence
+        unset($annotationSets, $text, $sentenceElement);
     }
 
     /**
@@ -369,14 +397,16 @@ class XsdCompliantGenerators
     private function addAnnotationSet(DOMDocument $dom, DOMElement $sentenceElement, object $annotationSet): void
     {
         // Get LU information
-        $lu = Criteria::table("lu")
-            ->join("view_frame as f", "lu.idFrame", "=", "f.idFrame")
-            ->where("idLU", $annotationSet->idLU)
-            ->where("f.idLanguage", $this->idLanguage)
-            ->select("lu.idLU", "lu.name", "lu.idFrame", "f.name as frameName")
+        $lu = Criteria::table('lu')
+            ->join('view_frame as f', 'lu.idFrame', '=', 'f.idFrame')
+            ->where('idLU', $annotationSet->idLU)
+            ->where('f.idLanguage', $this->idLanguage)
+            ->select('lu.idLU', 'lu.name', 'lu.idFrame', 'f.name as frameName')
             ->first();
 
-        if (!$lu) return;
+        if (! $lu) {
+            return;
+        }
 
         $aset = $dom->createElement('annotationSet');
         $aset->setAttribute('ID', $annotationSet->idAnnotationSet);
@@ -387,8 +417,8 @@ class XsdCompliantGenerators
 
         // Get target information for sentence positioning
         $target = Criteria::table($this->config['database_views']['annotation_text_gl'] ?? 'view_annotation_text_gl')
-            ->where("idAnnotationSet", $annotationSet->idAnnotationSet)
-            ->where("name", "Target")
+            ->where('idAnnotationSet', $annotationSet->idAnnotationSet)
+            ->where('name', 'Target')
             ->first();
 
         if ($target) {
@@ -411,14 +441,14 @@ class XsdCompliantGenerators
     private function addFrameElements(DOMDocument $dom, DOMElement $frameElement, int $frameId): void
     {
         $frameElements = Criteria::table($this->config['database_views']['frame_elements'] ?? 'view_frameelement')
-            ->join("color as c", "c.idColor", "=", "fe.idColor")
-            ->where("fe.idFrame", $frameId)
-            ->where("fe.idLanguage", $this->idLanguage)
-            ->where("fe.active", 1)
-            ->orderBy("fe.name")
+            ->join('color as c', 'c.idColor', '=', 'fe.idColor')
+            ->where('fe.idFrame', $frameId)
+            ->where('fe.idLanguage', $this->idLanguage)
+            ->where('fe.active', 1)
+            ->orderBy('fe.name')
             ->all();
 
-        $coreness = config("webtool.fe.coreness");
+        $coreness = config('webtool.fe.coreness');
         foreach ($frameElements as $fe) {
             $feElement = $dom->createElement('FE');
             $feElement->setAttribute('ID', $fe->idFrameElement);
@@ -452,10 +482,10 @@ class XsdCompliantGenerators
     private function addFrameLexicalUnits(DOMDocument $dom, DOMElement $frameElement, int $frameId): void
     {
         $lexicalUnits = Criteria::table($this->config['database_views']['lexical_units'] ?? 'view_lu')
-            ->where("idFrame", $frameId)
-            ->where("idLanguage", $this->idLanguage)
-            ->where("active", 1)
-            ->orderBy("name")
+            ->where('idFrame', $frameId)
+            ->where('idLanguage', $this->idLanguage)
+            ->where('active', 1)
+            ->orderBy('name')
             ->all();
 
         foreach ($lexicalUnits as $lu) {
@@ -497,14 +527,14 @@ class XsdCompliantGenerators
     private function addFELayerToAnnotationSet(DOMDocument $dom, DOMElement $aset, int $idAnnotationSet): void
     {
         $fes = Criteria::table($this->config['database_views']['annotation_text_fe'] ?? 'view_annotation_text_fe as fe')
-            ->join("view_instantiationtype as it", "it.idInstantiationType", "=", "fe.idInstantiationType")
-            ->where("idAnnotationSet", $idAnnotationSet)
-            ->where("it.idLanguage", $this->idLanguage)
-            ->where("fe.idLanguage", $this->idLanguage)
-            ->select("fe.idFrameElement", "fe.name", "fe.startChar", "fe.endChar", "it.name as itName")
+            ->join('view_instantiationtype as it', 'it.idInstantiationType', '=', 'fe.idInstantiationType')
+            ->where('idAnnotationSet', $idAnnotationSet)
+            ->where('it.idLanguage', $this->idLanguage)
+            ->where('fe.idLanguage', $this->idLanguage)
+            ->select('fe.idFrameElement', 'fe.name', 'fe.startChar', 'fe.endChar', 'it.name as itName')
             ->all();
 
-        if (!empty($fes)) {
+        if (! empty($fes)) {
             $layer = $dom->createElement('layer');
             $layer->setAttribute('name', 'FE');
             $aset->appendChild($layer);
@@ -530,18 +560,21 @@ class XsdCompliantGenerators
      */
     private function addGenericLayersToAnnotationSet(DOMDocument $dom, DOMElement $aset, int $idAnnotationSet): void
     {
-        $layerTypes = Criteria::table($this->config['database_views']['layer_types'] ?? 'view_layertype')
-            ->where("idLanguage", $this->idLanguage)
-            ->all();
+        // Cache layer types to avoid repeated queries
+        if ($this->layerTypesCache === null) {
+            $this->layerTypesCache = Criteria::table($this->config['database_views']['layer_types'] ?? 'view_layertype')
+                ->where('idLanguage', $this->idLanguage)
+                ->all();
+        }
 
-        foreach ($layerTypes as $layerType) {
+        foreach ($this->layerTypesCache as $layerType) {
             $gls = Criteria::table($this->config['database_views']['annotation_text_gl'] ?? 'view_annotation_text_gl')
-                ->where("idAnnotationSet", $idAnnotationSet)
-                ->where("name", "<>", "Target")
-                ->where("layerTypeEntry", "=", $layerType->entry)
+                ->where('idAnnotationSet', $idAnnotationSet)
+                ->where('name', '<>', 'Target')
+                ->where('layerTypeEntry', '=', $layerType->entry)
                 ->all();
 
-            if (!empty($gls)) {
+            if (! empty($gls)) {
                 $layer = $dom->createElement('layer');
                 $layer->setAttribute('name', $layerType->name);
                 $aset->appendChild($layer);
@@ -563,7 +596,7 @@ class XsdCompliantGenerators
     private function getLexicalUnitAnnotationCount(int $idLU): int
     {
         return Criteria::table($this->config['database_views']['annotations'] ?? 'view_annotationset')
-            ->where("idLU", $idLU)
+            ->where('idLU', $idLU)
             ->count();
     }
 
@@ -575,7 +608,7 @@ class XsdCompliantGenerators
     private function getLexicalUnitSentenceCount(int $idLU): int
     {
         return Criteria::table($this->config['database_views']['annotations'] ?? 'view_annotationset')
-            ->where("idLU", $idLU)
+            ->where('idLU', $idLU)
             ->distinct('idSentence')
             ->count();
     }
@@ -590,19 +623,19 @@ class XsdCompliantGenerators
     {
         // Implementation for FE core sets
         // This would require checking frame element relations for core sets
-        $result = Criteria::table("view_fe_internal_relation")
-            ->where("relationType", 'rel_coreset')
-            ->where("fe1IdFrame", $frameId)
-            ->where("idLanguage", $this->idLanguage)
+        $result = Criteria::table('view_fe_internal_relation')
+            ->where('relationType', 'rel_coreset')
+            ->where('fe1IdFrame', $frameId)
+            ->where('idLanguage', $this->idLanguage)
             ->all();
         $index = [];
         $i = 0;
         foreach ($result as $row) {
-            if (!isset($index[$row->fe1Name]) && !isset($index[$row->fe2Name])) {
+            if (! isset($index[$row->fe1Name]) && ! isset($index[$row->fe2Name])) {
                 $i++;
                 $index[$row->fe1Name] = [$i, $row->fe1IdFrameElement];
                 $index[$row->fe2Name] = [$i, $row->fe2IdFrameElement];
-            } elseif (!isset($index[$row->fe1Name])) {
+            } elseif (! isset($index[$row->fe1Name])) {
                 $index[$row->fe1Name] = $index[$row->fe2Name];
             } else {
                 $index[$row->fe2Name] = $index[$row->fe1Name];
@@ -631,7 +664,7 @@ class XsdCompliantGenerators
         // Get relation types from config
         $allowedRelations = $this->config['filters']['relations']['relation_types'] ?? [
             'rel_inheritance', 'rel_causative_of', 'rel_inchoative_of', 'rel_perspective_on',
-            'rel_precedes', 'rel_see_also', 'rel_subframe', 'rel_structure', 'rel_using'
+            'rel_precedes', 'rel_see_also', 'rel_subframe', 'rel_structure', 'rel_using',
         ];
 
         foreach ($allowedRelations as $relationType) {
@@ -642,10 +675,10 @@ class XsdCompliantGenerators
             $frameElement->appendChild($elR);
 
             $relations = Criteria::table($this->config['database_views']['frame_relations'] ?? 'view_frame_relation')
-                ->where("idLanguage", $this->idLanguage)
-                ->where("relationType", $relationType)
-                ->where("f1IdFrame", $frameId)
-                ->orderBy("f1Name")
+                ->where('idLanguage', $this->idLanguage)
+                ->where('relationType', $relationType)
+                ->where('f1IdFrame', $frameId)
+                ->orderBy('f1Name')
                 ->all();
 
             foreach ($relations as $relation) {
@@ -697,7 +730,7 @@ class XsdCompliantGenerators
                 $elRealization->appendChild($elFE);
                 foreach ($gfptas as $gf => $ptas) {
                     foreach ($ptas as $pt => $idRealization) {
-                        print_r($gf . '   ' . $pt . '    ' . count($realizationAS[$idRealization[0]]) . "\n");
+                        // print_r($gf . '   ' . $pt . '    ' . count($realizationAS[$idRealization[0]]) . "\n");
                         $elPattern = $dom->createElement('pattern');
                         $elPattern->setAttribute('total', count($realizationAS[$idRealization[0]]));
                         $elValenceUnit = $dom->createElement('valenceUnit');
@@ -721,7 +754,7 @@ class XsdCompliantGenerators
         $vp = $valences['vp'];
         $patterns = $valences['patterns'];
         $vpfe = $valences['vpfe'];
-        //print_r($vp);
+        // print_r($vp);
         foreach ($vp as $idVPFE => $vp1) {
             $elRealization = $dom->createElement('FEGroupRealization');
             $elRealization->setAttribute('total', $vpfe[$idVPFE]['count']);
@@ -737,7 +770,7 @@ class XsdCompliantGenerators
                                 $elRealization->appendChild($elFE);
                             }
                         }
-                        ++$i;
+                        $i++;
                     }
                 }
             }
@@ -747,23 +780,23 @@ class XsdCompliantGenerators
                     $elPattern = $dom->createElement('pattern');
                     $elPattern->setAttribute('total', 0);
                     $elRealization->appendChild($elPattern);
-//                    if ($feIdEntity) {
-//                        foreach ($gfptas as $gf => $ptas) {
-//                            foreach ($ptas as $pt => $as) {
-//                                $elValenceUnit = $dom->createElement('valenceUnit');
-//                                $elValenceUnit->setAttribute('GF', $gf);
-//                                $elValenceUnit->setAttribute('PT', $pt);
-//                                $elValenceUnit->setAttribute('FE', $fes[$feIdEntity]['name']);
-//                                $elPattern->appendChild($elValenceUnit);
-////                                        foreach ($as as $a) {
-////                                            $elAS = $dom->createElement('annoSet');
-////                                            $elAS->setAttribute('ID', $a);
-////                                            $elPattern->appendChild($elAS);
-////                                        }
-//
-//                            }
-//                        }
-//                    }
+                    //                    if ($feIdEntity) {
+                    //                        foreach ($gfptas as $gf => $ptas) {
+                    //                            foreach ($ptas as $pt => $as) {
+                    //                                $elValenceUnit = $dom->createElement('valenceUnit');
+                    //                                $elValenceUnit->setAttribute('GF', $gf);
+                    //                                $elValenceUnit->setAttribute('PT', $pt);
+                    //                                $elValenceUnit->setAttribute('FE', $fes[$feIdEntity]['name']);
+                    //                                $elPattern->appendChild($elValenceUnit);
+                    // //                                        foreach ($as as $a) {
+                    // //                                            $elAS = $dom->createElement('annoSet');
+                    // //                                            $elAS->setAttribute('ID', $a);
+                    // //                                            $elPattern->appendChild($elAS);
+                    // //                                        }
+                    //
+                    //                            }
+                    //                        }
+                    //                    }
                 }
             }
         }
@@ -789,9 +822,9 @@ class XsdCompliantGenerators
         $root->appendChild($elR);
 
         $relations = Criteria::table($this->config['database_views']['frame_relations'] ?? 'view_frame_relation')
-            ->where("idLanguage", $this->idLanguage)
-            ->where("relationType", $relationType)
-            ->orderBy("f1Name")
+            ->where('idLanguage', $this->idLanguage)
+            ->where('relationType', $relationType)
+            ->orderBy('f1Name')
             ->all();
 
         foreach ($relations as $relation) {
@@ -804,9 +837,9 @@ class XsdCompliantGenerators
             $elR->appendChild($elRelation);
 
             $feRelations = Criteria::table('view_fe_relation')
-                ->where("idLanguage", $this->idLanguage)
-                ->where("idRelation", $relation->idEntityRelation)
-                ->orderBy("fe1Name")
+                ->where('idLanguage', $this->idLanguage)
+                ->where('idRelation', $relation->idEntityRelation)
+                ->orderBy('fe1Name')
                 ->all();
 
             foreach ($feRelations as $feRelation) {
@@ -833,9 +866,9 @@ class XsdCompliantGenerators
         $dom->appendChild($elCorpus);
 
         $documents = Criteria::table($this->config['database_views']['documents'] ?? 'view_document')
-            ->where("idLanguage", $this->idLanguage)
-            ->where("idCorpus", $corpus->idCorpus)
-            ->orderBy("name")
+            ->where('idLanguage', $this->idLanguage)
+            ->where('idCorpus', $corpus->idCorpus)
+            ->orderBy('name')
             ->all();
 
         foreach ($documents as $document) {
@@ -850,11 +883,11 @@ class XsdCompliantGenerators
     private function addSemanticTypeSuperTypes(DOMDocument $dom, DOMElement $semTypeElement, int $idSemanticType): void
     {
         // Implementation for semantic type hierarchies
-        $superTypes = Criteria::table("view_semantictype_relation as str")
-            ->where("idLanguage", $this->idLanguage)
-            ->where("st1IdSemanticType", $idSemanticType)
-            ->select("st2IdSemanticType as idSuperType", "st2Name as name")
-            ->orderBy("st2Name")
+        $superTypes = Criteria::table('view_semantictype_relation as str')
+            ->where('idLanguage', $this->idLanguage)
+            ->where('st1IdSemanticType', $idSemanticType)
+            ->select('st2IdSemanticType as idSuperType', 'st2Name as name')
+            ->orderBy('st2Name')
             ->all();
         foreach ($superTypes as $superType) {
             $elSt = $dom->createElement('superType');

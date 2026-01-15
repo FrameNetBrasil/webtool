@@ -1,10 +1,10 @@
 @use("Carbon\Carbon")
-<x-layout.index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+<x-layout::index>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/structure','Structure'],['/frame','Frame'],['',$frame?->name]]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
             <div class="ui container page-edit">
                 <div class="page-header">
@@ -12,12 +12,28 @@
                         <div class="page-header-main">
                             <div class="page-title-section">
                                 <div class="page-title">
-                                    <x-ui::element.frame name="{{$frame->name}}"></x-ui::element.frame>
+                                    <x-ui::element.frame_ns :frame="$frame"></x-ui::element.frame_ns>
                                 </div>
                                 <div
                                     class="page-subtitle">{!! str_replace('ex>','code>',nl2br($frame->description)) !!}</div>
                             </div>
                             @if(session('isAdmin'))
+                                <button
+                                    class="ui right labeled icon button"
+                                    hx-get="/frame/clone/{{$frame->idFrame}}"
+                                >
+                                    <i class="clone icon"></i>
+                                    Clone
+                                </button>
+                            @endif
+                            @if(session('isAdmin'))
+                                <button
+                                    class="ui right labeled icon button"
+                                    hx-get="/frame/nextFrom/{{$frame->idFrame}}"
+                                >
+                                    <i class="right arrow icon"></i>
+                                    Next
+                                </button>
                                 <button
                                     x-data
                                     type=button"
@@ -37,6 +53,6 @@
                 </div>
             </div>
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
-</x-layout.index>
+</x-layout::index>

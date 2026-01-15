@@ -76,9 +76,6 @@
         @endif
     @endforeach
 
-    <div class="ui tab" data-tab="comment">
-        @include("Annotation.Comment.formComment")
-    </div>
     <script type="text/javascript">
         $(function () {
             $(".menu .item").tab();

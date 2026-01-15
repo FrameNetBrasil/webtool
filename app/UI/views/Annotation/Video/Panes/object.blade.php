@@ -35,7 +35,7 @@
                         id="btnClose"
                         class="ui tiny icon button"
                         title="Close Object"
-                        @click="window.location.assign('/annotation/{{$annotationType}}/{{$object->idDocument}}')"
+                        @click="window.location.assign('/annotation/{{$annotationType}}/{{$object->idDocument}}/videoFrame/{{$object->endFrame}}')"
                     >
                         <i class="close small icon"></i>
                     </button>
@@ -63,6 +63,13 @@
                 data-tab="modify-range"
                 :class="isPlaying && 'disabled'"
             >Modify range</a>
+            @if($annotationType == "deixis")
+            <a
+                class="item"
+                data-tab="modify-layer"
+                :class="isPlaying && 'disabled'"
+            >Modify layer/label</a>
+            @endif
             <a
                 class="item"
                 data-tab="comment"
@@ -91,6 +98,14 @@
             >
                 @include("Annotation.Video.Forms.formModifyRange")
             </div>
+            @if($annotationType == "deixis")
+            <div
+                class="ui tab h-full w-full"
+                data-tab="modify-layer"
+            >
+                @include("Annotation.Video.Forms.formModifyLayer")
+            </div>
+            @endif
             <div
                 class="ui tab h-full w-full"
                 data-tab="comment"

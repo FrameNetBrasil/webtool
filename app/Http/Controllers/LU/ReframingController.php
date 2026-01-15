@@ -31,7 +31,7 @@ class ReframingController extends Controller
         } else {
             $lu = LU::byId($idLU);
             $search->lu = $lu->name;
-            return view("LU.Reframing.main", [
+            return view("LU.Reframing.index", [
                 'search' => $search,
                 'idLU' => $idLU
             ]);

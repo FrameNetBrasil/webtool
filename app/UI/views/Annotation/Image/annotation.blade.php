@@ -11,9 +11,9 @@
     <script type="text/javascript" src="/annotation/image/script/objects"></script>
     <script type="text/javascript" src="/annotation/image/script/components"></script>
     <div class="app-layout annotation-static-bbox">
-        <x-layout::breadcrumb
+        <x-partial::breadcrumb
             :sections="$sections"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <div class="annotation-canvas">
             <div class="annotation-figure">
                 @include("Annotation.Image.Panes.figure")

@@ -1,0 +1,46 @@
+<x-form>
+    <x-slot:fields>
+        <x-hidden-field
+            id="idFrame"
+            :value="$idFrame"
+        ></x-hidden-field>
+        <x-hidden-field
+            id="coreType"
+            value="cty_core"
+        ></x-hidden-field>
+        <x-hidden-field
+            id="idColor"
+            value="1"
+        ></x-hidden-field>
+        <div class="four fields">
+            <div class="field">
+                <x-text-field
+                    id="nameEn"
+                    label="English Name"
+                    value=""
+                ></x-text-field>
+            </div>
+{{--            <div class="field">--}}
+{{--                <x-combobox.options--}}
+{{--                    id="coreType"--}}
+{{--                    label="Coreness"--}}
+{{--                    :options="['cty_domain' => 'Domain', 'cty_range' => 'Range']"--}}
+{{--                    value="cty_domain"--}}
+{{--                ></x-combobox.options>--}}
+{{--            </div>--}}
+{{--            <div class="field">--}}
+{{--                <x-combobox.color--}}
+{{--                    id="idColor"--}}
+{{--                    label="Color"--}}
+{{--                    value=""--}}
+{{--                ></x-combobox.color>--}}
+{{--            </div>--}}
+        </div>
+    </x-slot:fields>
+    <x-slot:buttons>
+        <x-button
+            label="Add Element"
+            hx-post="/fe"
+        ></x-button>
+    </x-slot:buttons>
+</x-form>

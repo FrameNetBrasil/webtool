@@ -1,12 +1,12 @@
 @use("Carbon\Carbon")
-<x-layout.index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+<x-layout::index>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/structure','Structure'],['/luCandidate','LU Candidate'],['','New']]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
-            <div class="ui container h-full d-flex flex-col">
+            <div class="ui container page d-flex flex-col">
                 <div class="page-content">
                     <form>
                         <div class="ui fluid card form-card">
@@ -116,5 +116,5 @@
             </div>
         </main>
     </div>
-</x-layout.index>
+</x-layout::index>
 

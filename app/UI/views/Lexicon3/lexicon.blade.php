@@ -1,11 +1,11 @@
-<x-layout.index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+<x-layout::index>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/structure','Structure'],['/lexicon3','Lexicon'],['', 'Lexicon #' . $lexicon->idLexicon]]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
-            <div class="ui container h-full d-flex flex-col">
+            <div class="ui container page d-flex flex-col">
                 <div class="page-header-object">
                     <div class="page-object">
                         <div class="page-object-name">
@@ -109,6 +109,6 @@
                 </div>
             </div>
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
-</x-layout.index>
+</x-layout::index>

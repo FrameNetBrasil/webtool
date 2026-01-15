@@ -5,12 +5,11 @@
             :value="$idEntity"
         ></x-hidden-field>
         <div class="field">
-            <x-combobox.semantic-type
+            <x-ui::tree.semantictype
                 id="idSemanticType"
-                label="Semantic Type"
-                :root="$root"
-                class="w-25rem"
-            ></x-combobox.semantic-type>
+                label="SemanticType"
+                :baseType="$root"
+            ></x-ui::tree.semantictype>
         </div>
     </x-slot:fields>
     <x-slot:buttons>

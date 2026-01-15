@@ -1,7 +1,7 @@
 <div {{$attributes->except('x-model')}}>
     <div class="form-field field" style="overflow:initial">
         <label for="{{$id}}">{{$label}}</label>
-        <div id="{{$id}}_dropdown" class="ui tiny selection dropdown" style="overflow:initial">
+        <div id="{{$id}}_dropdown" class="ui selection dropdown" style="overflow:initial">
             <input type="hidden" id="{{$id}}" name="{{$id}}" value="{{$value}}" {{$attributes->only('x-model')}}>
             <i class="dropdown icon"></i>
             <div class="default text"></div>

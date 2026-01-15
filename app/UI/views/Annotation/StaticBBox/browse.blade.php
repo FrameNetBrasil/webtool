@@ -1,6 +1,6 @@
 <x-layout.browser>
     <x-slot:head>
-        <x-layout::breadcrumb :sections="[['/','Home'],['','Static BBox Annotation']]"></x-layout::breadcrumb>
+        <x-partial::breadcrumb :sections="[['/','Home'],['','Static BBox Annotation']]"></x-partial::breadcrumb>
     </x-slot:head>
     <x-slot:main>
         <div class="ui card h-full w-full">

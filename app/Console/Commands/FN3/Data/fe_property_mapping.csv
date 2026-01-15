@@ -1,0 +1,483 @@
+idFrameElement,idEntity,frameName,feName,property_name,related_class,quantifier,cardinality,match_count
+14072,2747372,Action,Constitution,has_constituent,Event,only,,1
+14071,2747371,Action,Execution,executes_task,Task,min,1,1
+14073,2747373,Action,Parthood,has_part,Event,only,,1
+14074,2747374,Action,Participation,has_participant,Agent,some,,1
+14075,2747375,Action,Participation,has_participant,Agent,some,,1
+14076,2747376,Action,Temporal_interval,has_time_interval,TimeInterval,some,,1
+14080,2747380,Agent,Classification,is_classified_by,Role,only,,1
+14077,2747377,Agent,Constitution,has_constituent,Object,only,,1
+14078,2747378,Agent,Location,has_location,Entity,some,,1
+14079,2747379,Agent,Parthood,has_part,Object,only,,1
+14081,2747381,Agent,Participation,is_participant_in,Event,some,,1
+14082,2747382,Amount,Constitution,has_constituent,Region,only,,1
+14084,2747384,Amount,Overlap,overlaps,Region,only,,1
+14083,2747383,Amount,Parthood,has_part,Region,only,,1
+14085,2747385,Amount,Sequence,precedes,Region,only,,1
+14090,2747390,"Biological object",Classification,is_classified_by,Role,only,,1
+14086,2747386,"Biological object",Constitution,has_constituent,Object,only,,1
+14087,2747387,"Biological object",Location,has_location,Entity,some,,1
+14088,2747388,"Biological object",Parthood,has_part,Object,only,,1
+14089,2747389,"Biological object",Parthood,has_part,Object,only,,1
+14091,2747391,"Biological object",Participation,is_participant_in,Event,some,,1
+14096,2747396,"Chemical object",Classification,is_classified_by,Role,only,,1
+14092,2747392,"Chemical object",Constitution,has_constituent,Object,only,,1
+14093,2747393,"Chemical object",Location,has_location,Entity,some,,1
+14094,2747394,"Chemical object",Parthood,has_part,Object,only,,1
+14095,2747395,"Chemical object",Parthood,has_part,Object,only,,1
+14097,2747397,"Chemical object",Participation,is_participant_in,Event,some,,1
+14098,2747398,Classification,Setting,is_setting_for,Concept,some,,1
+14099,2747399,Classification,Setting,is_setting_for,Concept,some,,1
+14100,2747400,Classification,Setting,is_setting_for,Concept,some,,1
+14106,2747406,Collection,Classification,is_classified_by,Role,only,,1
+14101,2747401,Collection,Constitution,has_constituent,Object,only,,1
+14107,2747407,Collection,Expression,is_expressed_by,InformationObject,some,,1
+14102,2747402,Collection,Location,has_location,Entity,some,,1
+14103,2747403,Collection,Parthood,has_part,Object,only,,1
+14104,2747404,Collection,Parthood,has_part,Object,only,,1
+14105,2747405,Collection,Parthood,has_part,Object,only,,1
+14108,2747408,Collection,Participation,is_participant_in,Event,some,,1
+14115,2747415,Collective,Classification,is_classified_by,Role,only,,1
+14109,2747409,Collective,Constitution,has_constituent,Object,only,,1
+14116,2747416,Collective,Expression,is_expressed_by,InformationObject,some,,1
+14110,2747410,Collective,Location,has_location,Entity,some,,1
+14111,2747411,Collective,Membership,has_member,Agent,only,,1
+14114,2747414,Collective,Parthood,has_part,Object,only,,1
+14112,2747412,Collective,Parthood,has_part,Object,only,,1
+14113,2747413,Collective,Parthood,has_part,Object,only,,1
+14117,2747417,Collective,Participation,is_participant_in,Event,some,,1
+14124,2747424,"Collective agent",Classification,is_classified_by,Role,only,,1
+14120,2747420,"Collective agent",Constitution,has_constituent,Object,only,,1
+14125,2747425,"Collective agent",Expression,is_expressed_by,InformationObject,some,,1
+14126,2747426,"Collective agent",Introduction,is_introduced_by,Description,some,,1
+14121,2747421,"Collective agent",Location,has_location,Entity,some,,1
+14122,2747422,"Collective agent",Parthood,has_part,Object,only,,1
+14123,2747423,"Collective agent",Parthood,has_part,Object,only,,1
+14127,2747427,"Collective agent",Participation,is_participant_in,Event,some,,1
+14118,2747418,"Collective agent",Proxy_agency,acts_through,Agent,some,,1
+14119,2747419,"Collective agent",Proxy_agency,acts_through,Agent,some,,1
+14134,2747434,Community,Classification,is_classified_by,Role,only,,1
+14130,2747430,Community,Constitution,has_constituent,Object,only,,1
+14135,2747435,Community,Expression,is_expressed_by,InformationObject,some,,1
+14136,2747436,Community,Introduction,is_introduced_by,Description,some,,1
+14131,2747431,Community,Location,has_location,Entity,some,,1
+14132,2747432,Community,Parthood,has_part,Object,only,,1
+14133,2747433,Community,Parthood,has_part,Object,only,,1
+14137,2747437,Community,Participation,is_participant_in,Event,some,,1
+14128,2747428,Community,Proxy_agency,acts_through,Agent,some,,1
+14129,2747429,Community,Proxy_agency,acts_through,Agent,some,,1
+14143,2747443,Concept,Classification,is_classified_by,Role,only,,1
+14138,2747438,Concept,Constitution,has_constituent,Object,only,,1
+14144,2747444,Concept,Definition,is_defined_in,Description,some,,1
+14145,2747445,Concept,Expression,is_expressed_by,InformationObject,some,,1
+14139,2747439,Concept,Location,has_location,Entity,some,,1
+14140,2747440,Concept,Parthood,has_part,Object,only,,1
+14141,2747441,Concept,Parthood,has_part,Object,only,,1
+14142,2747442,Concept,Parthood,has_part,Object,only,,1
+14146,2747446,Concept,Participation,is_participant_in,Event,some,,1
+14152,2747452,Configuration,Classification,is_classified_by,Role,only,,1
+14147,2747447,Configuration,Constitution,has_constituent,Object,only,,1
+14153,2747453,Configuration,Expression,is_expressed_by,InformationObject,some,,1
+14148,2747448,Configuration,Location,has_location,Entity,some,,1
+14149,2747449,Configuration,Parthood,has_part,Object,only,,1
+14150,2747450,Configuration,Parthood,has_part,Object,only,,1
+14151,2747451,Configuration,Parthood,has_part,Object,only,,1
+14154,2747454,Configuration,Participation,is_participant_in,Event,some,,1
+14159,2747459,Contract,Classification,is_classified_by,Role,only,,1
+14155,2747455,Contract,Constitution,has_constituent,Object,only,,1
+14160,2747460,Contract,Expression,is_expressed_by,InformationObject,some,,1
+14156,2747456,Contract,Location,has_location,Entity,some,,1
+14157,2747457,Contract,Parthood,has_part,Object,only,,1
+14158,2747458,Contract,Parthood,has_part,Object,only,,1
+14161,2747461,Contract,Participation,is_participant_in,Event,some,,1
+14166,2747466,Description,Classification,is_classified_by,Role,only,,1
+14162,2747462,Description,Constitution,has_constituent,Object,only,,1
+14167,2747467,Description,Expression,is_expressed_by,InformationObject,some,,1
+14163,2747463,Description,Location,has_location,Entity,some,,1
+14164,2747464,Description,Parthood,has_part,Object,only,,1
+14165,2747465,Description,Parthood,has_part,Object,only,,1
+14168,2747468,Description,Participation,is_participant_in,Event,some,,1
+14173,2747473,Design,Classification,is_classified_by,Role,only,,1
+14169,2747469,Design,Constitution,has_constituent,Object,only,,1
+14174,2747474,Design,Expression,is_expressed_by,InformationObject,some,,1
+14170,2747470,Design,Location,has_location,Entity,some,,1
+14171,2747471,Design,Parthood,has_part,Object,only,,1
+14172,2747472,Design,Parthood,has_part,Object,only,,1
+14175,2747475,Design,Participation,is_participant_in,Event,some,,1
+14180,2747480,"Designed artifact",Classification,is_classified_by,Role,only,,1
+14176,2747476,"Designed artifact",Constitution,has_constituent,Object,only,,1
+14181,2747481,"Designed artifact",Description,is_described_by,Design,some,,1
+14182,2747482,"Designed artifact",Description,is_described_by,Design,some,,1
+14177,2747477,"Designed artifact",Location,has_location,Entity,some,,1
+14178,2747478,"Designed artifact",Parthood,has_part,Object,only,,1
+14179,2747479,"Designed artifact",Parthood,has_part,Object,only,,1
+14183,2747483,"Designed artifact",Participation,is_participant_in,Event,some,,1
+14188,2747488,DesignedSubstance,Classification,is_classified_by,Role,only,,1
+14184,2747484,DesignedSubstance,Constitution,has_constituent,Object,only,,1
+14189,2747489,DesignedSubstance,Description,is_described_by,Design,some,,1
+14190,2747490,DesignedSubstance,Description,is_described_by,Design,some,,1
+14185,2747485,DesignedSubstance,Location,has_location,Entity,some,,1
+14186,2747486,DesignedSubstance,Parthood,has_part,Object,only,,1
+14187,2747487,DesignedSubstance,Parthood,has_part,Object,only,,1
+14191,2747491,DesignedSubstance,Participation,is_participant_in,Event,some,,1
+14196,2747496,Diagnosis,Classification,is_classified_by,Role,only,,1
+14192,2747492,Diagnosis,Constitution,has_constituent,Object,only,,1
+14197,2747497,Diagnosis,Expression,is_expressed_by,InformationObject,some,,1
+14193,2747493,Diagnosis,Location,has_location,Entity,some,,1
+14194,2747494,Diagnosis,Parthood,has_part,Object,only,,1
+14195,2747495,Diagnosis,Parthood,has_part,Object,only,,1
+14198,2747498,Diagnosis,Participation,is_participant_in,Event,some,,1
+14199,2747499,Event,Constitution,has_constituent,Event,only,,1
+14200,2747500,Event,Parthood,has_part,Event,only,,1
+14201,2747501,Event,Participation,has_participant,Object,some,,1
+14202,2747502,Event,Temporal_interval,has_time_interval,TimeInterval,some,,1
+14203,2747503,"Event type",Classification,classifies,Event,only,,1
+14209,2747509,"Event type",Classification,classifies,Event,only,,1
+14204,2747504,"Event type",Constitution,has_constituent,Object,only,,1
+14210,2747510,"Event type",Definition,is_defined_in,Description,some,,1
+14211,2747511,"Event type",Expression,is_expressed_by,InformationObject,some,,1
+14205,2747505,"Event type",Location,has_location,Entity,some,,1
+14206,2747506,"Event type",Parthood,is_participant_in,Event,some,,1
+14207,2747507,"Event type",Parthood,is_participant_in,Event,some,,1
+14208,2747508,"Event type",Parthood,is_participant_in,Event,some,,1
+14212,2747512,"Event type",Participation,is_participant_in,Event,some,,1
+14217,2747517,"Functional substance",Classification,is_classified_by,Role,only,,1
+14213,2747513,"Functional substance",Constitution,has_constituent,Object,only,,1
+14214,2747514,"Functional substance",Location,has_location,Entity,some,,1
+14215,2747515,"Functional substance",Parthood,has_part,Object,only,,1
+14216,2747516,"Functional substance",Parthood,has_part,Object,only,,1
+14218,2747518,"Functional substance",Participation,is_participant_in,Event,some,,1
+14223,2747523,Goal,Classification,is_classified_by,Role,only,,1
+14219,2747519,Goal,Constitution,has_constituent,Object,only,,1
+14224,2747524,Goal,Expression,is_expressed_by,InformationObject,some,,1
+14220,2747520,Goal,Location,has_location,Entity,some,,1
+14221,2747521,Goal,Parthood,has_part,Object,only,,1
+14222,2747522,Goal,Parthood,has_part,Object,only,,1
+14225,2747525,Goal,Participation,is_participant_in,Event,some,,1
+14232,2747532,Group,Classification,is_classified_by,Role,only,,1
+14228,2747528,Group,Constitution,has_constituent,Object,only,,1
+14233,2747533,Group,Description,is_described_by,Plan,some,,1
+14234,2747534,Group,Expression,is_expressed_by,InformationObject,some,,1
+14235,2747535,Group,Introduction,is_introduced_by,Description,some,,1
+14229,2747529,Group,Location,has_location,Entity,some,,1
+14230,2747530,Group,Parthood,has_part,Object,only,,1
+14231,2747531,Group,Parthood,has_part,Object,only,,1
+14236,2747536,Group,Participation,is_participant_in,Event,some,,1
+14226,2747526,Group,Proxy_agency,acts_through,Agent,some,,1
+14227,2747527,Group,Proxy_agency,acts_through,Agent,some,,1
+14241,2747541,"Information object",Classification,is_classified_by,Role,only,,1
+14237,2747537,"Information object",Constitution,has_constituent,Object,only,,1
+14242,2747542,"Information object",Expression,is_expressed_by,InformationObject,some,,1
+14238,2747538,"Information object",Location,has_location,Entity,some,,1
+14239,2747539,"Information object",Parthood,has_part,Object,only,,1
+14240,2747540,"Information object",Parthood,has_part,Object,only,,1
+14243,2747543,"Information object",Participation,is_participant_in,Event,some,,1
+14249,2747549,"Local concept",Classification,is_classified_by,Role,only,,1
+14244,2747544,"Local concept",Constitution,has_constituent,Object,only,,1
+14250,2747550,"Local concept",Definition,is_defined_in,Description,some,,1
+14251,2747551,"Local concept",Expression,is_expressed_by,InformationObject,some,,1
+14245,2747545,"Local concept",Location,has_location,Entity,some,,1
+14246,2747546,"Local concept",Parthood,has_part,Object,only,,1
+14247,2747547,"Local concept",Parthood,has_part,Object,only,,1
+14248,2747548,"Local concept",Parthood,has_part,Object,only,,1
+14252,2747552,"Local concept",Participation,is_participant_in,Event,some,,1
+14257,2747557,Method,Classification,is_classified_by,Role,only,,1
+14253,2747553,Method,Constitution,has_constituent,Object,only,,1
+14258,2747558,Method,Expression,is_expressed_by,InformationObject,some,,1
+14254,2747554,Method,Location,has_location,Entity,some,,1
+14255,2747555,Method,Parthood,has_part,Object,only,,1
+14256,2747556,Method,Parthood,has_part,Object,only,,1
+14259,2747559,Method,Participation,is_participant_in,Event,some,,1
+14264,2747564,Narrative,Classification,is_classified_by,Role,only,,1
+14260,2747560,Narrative,Constitution,has_constituent,Object,only,,1
+14265,2747565,Narrative,Expression,is_expressed_by,InformationObject,some,,1
+14261,2747561,Narrative,Location,has_location,Entity,some,,1
+14262,2747562,Narrative,Parthood,has_part,Object,only,,1
+14263,2747563,Narrative,Parthood,has_part,Object,only,,1
+14266,2747566,Narrative,Participation,is_participant_in,Event,some,,1
+14271,2747571,"Natural person",Classification,is_classified_by,Role,only,,1
+14267,2747567,"Natural person",Constitution,has_constituent,Object,only,,1
+14268,2747568,"Natural person",Location,has_location,Entity,some,,1
+14269,2747569,"Natural person",Parthood,has_part,Object,only,,1
+14270,2747570,"Natural person",Parthood,has_part,Object,only,,1
+14272,2747572,"Natural person",Participation,is_participant_in,Event,some,,1
+14277,2747577,Norm,Classification,is_classified_by,Role,only,,1
+14273,2747573,Norm,Constitution,has_constituent,Object,only,,1
+14278,2747578,Norm,Expression,is_expressed_by,InformationObject,some,,1
+14274,2747574,Norm,Location,has_location,Entity,some,,1
+14275,2747575,Norm,Parthood,has_part,Object,only,,1
+14276,2747576,Norm,Parthood,has_part,Object,only,,1
+14279,2747579,Norm,Participation,is_participant_in,Event,some,,1
+14283,2747583,Object,Classification,is_classified_by,Role,only,,1
+14280,2747580,Object,Constitution,has_constituent,Object,only,,1
+14281,2747581,Object,Location,has_location,Entity,some,,1
+14282,2747582,Object,Parthood,has_part,Object,only,,1
+14284,2747584,Object,Participation,is_participant_in,Event,some,,1
+14285,2747585,ObjectAggregate,Parthood,has_part,Collection,some,,1
+14290,2747590,Organism,Classification,is_classified_by,Role,only,,1
+14286,2747586,Organism,Constitution,has_constituent,Object,only,,1
+14287,2747587,Organism,Location,has_location,Entity,some,,1
+14288,2747588,Organism,Parthood,has_part,Object,only,,1
+14289,2747589,Organism,Parthood,has_part,Object,only,,1
+14291,2747591,Organism,Participation,is_participant_in,Event,some,,1
+14297,2747597,Organization,Classification,is_classified_by,Role,only,,1
+14293,2747593,Organization,Constitution,has_constituent,Object,only,,1
+14298,2747598,Organization,Expression,is_expressed_by,InformationObject,some,,1
+14294,2747594,Organization,Location,has_location,Entity,some,,1
+14295,2747595,Organization,Parthood,has_part,Object,only,,1
+14296,2747596,Organization,Parthood,has_part,Object,only,,1
+14299,2747599,Organization,Participation,is_participant_in,Event,some,,1
+14292,2747592,Organization,Proxy_agency,acts_through,PhysicalAgent,some,,1
+14307,2747607,Parameter,Classification,classifies,Region,only,,1
+14300,2747600,Parameter,Classification,classifies,Region,only,,1
+14301,2747601,Parameter,Constitution,has_constituent,Object,only,,1
+14308,2747608,Parameter,Definition,is_defined_in,Description,some,,1
+14309,2747609,Parameter,Expression,is_expressed_by,InformationObject,some,,1
+14302,2747602,Parameter,Location,has_location,Entity,some,,1
+14306,2747606,Parameter,Parthood,has_part,Object,only,,1
+14303,2747603,Parameter,Parthood,has_part,Object,only,,1
+14304,2747604,Parameter,Parthood,has_part,Object,only,,1
+14305,2747605,Parameter,Parthood,has_part,Object,only,,1
+14310,2747610,Parameter,Participation,is_participant_in,Event,some,,1
+14311,2747611,parthood,Part_inclusion,includes_part,Entity,some,,1
+14313,2747613,parthood,Setting,is_setting_for,TimeInterval,some,,1
+14312,2747612,parthood,Whole_inclusion,includes_whole,Entity,some,,1
+14318,2747618,Pattern,Classification,is_classified_by,Role,only,,1
+14314,2747614,Pattern,Constitution,has_constituent,Object,only,,1
+14319,2747619,Pattern,Expression,is_expressed_by,InformationObject,some,,1
+14315,2747615,Pattern,Location,has_location,Entity,some,,1
+14316,2747616,Pattern,Parthood,has_part,Object,only,,1
+14317,2747617,Pattern,Parthood,has_part,Object,only,,1
+14320,2747620,Pattern,Participation,is_participant_in,Event,some,,1
+14324,2747624,Person,Classification,is_classified_by,Role,only,,1
+14321,2747621,Person,Constitution,has_constituent,Object,only,,1
+14322,2747622,Person,Location,has_location,Entity,some,,1
+14323,2747623,Person,Parthood,has_part,Object,only,,1
+14325,2747625,Person,Participation,is_participant_in,Event,some,,1
+14331,2747631,Personification,Classification,is_classified_by,Role,only,,1
+14327,2747627,Personification,Constitution,has_constituent,Object,only,,1
+14332,2747632,Personification,Expression,is_expressed_by,InformationObject,some,,1
+14328,2747628,Personification,Location,has_location,Entity,some,,1
+14329,2747629,Personification,Parthood,has_part,Object,only,,1
+14330,2747630,Personification,Parthood,has_part,Object,only,,1
+14333,2747633,Personification,Participation,is_participant_in,Event,some,,1
+14326,2747626,Personification,Proxy_agency,acts_through,PhysicalAgent,some,,1
+14338,2747638,"Physical agent",Classification,is_classified_by,Role,only,,1
+14334,2747634,"Physical agent",Constitution,has_constituent,Object,only,,1
+14335,2747635,"Physical agent",Location,has_location,Entity,some,,1
+14336,2747636,"Physical agent",Parthood,has_part,Object,only,,1
+14337,2747637,"Physical agent",Parthood,has_part,Object,only,,1
+14339,2747639,"Physical agent",Participation,is_participant_in,Event,some,,1
+14344,2747644,"Physical artifact",Classification,is_classified_by,Role,only,,1
+14340,2747640,"Physical artifact",Constitution,has_constituent,Object,only,,1
+14345,2747645,"Physical artifact",Description,is_described_by,Plan,some,,1
+14341,2747641,"Physical artifact",Location,has_location,Entity,some,,1
+14342,2747642,"Physical artifact",Parthood,has_part,Object,only,,1
+14343,2747643,"Physical artifact",Parthood,has_part,Object,only,,1
+14346,2747646,"Physical artifact",Participation,is_participant_in,Event,some,,1
+14347,2747647,"Physical attribute",Constitution,has_constituent,Region,only,,1
+14350,2747650,"Physical attribute",Overlap,overlaps,Region,only,,1
+14348,2747648,"Physical attribute",Parthood,has_part,Region,only,,1
+14349,2747649,"Physical attribute",Region,is_region_for,PhysicalObject,only,,1
+14351,2747651,"Physical attribute",Sequence,precedes,Region,only,,1
+14356,2747656,"Physical body",Classification,is_classified_by,Role,only,,1
+14352,2747652,"Physical body",Constitution,has_constituent,Object,only,,1
+14353,2747653,"Physical body",Location,has_location,Entity,some,,1
+14354,2747654,"Physical body",Parthood,has_part,Object,only,,1
+14355,2747655,"Physical body",Parthood,has_part,Object,only,,1
+14357,2747657,"Physical body",Participation,is_participant_in,Event,some,,1
+14362,2747662,"Physical object",Classification,is_classified_by,Role,only,,1
+14358,2747658,"Physical object",Constitution,has_constituent,Object,only,,1
+14359,2747659,"Physical object",Location,has_location,Entity,some,,1
+14360,2747660,"Physical object",Parthood,has_part,Object,only,,1
+14361,2747661,"Physical object",Parthood,has_part,Object,only,,1
+14363,2747663,"Physical object",Participation,is_participant_in,Event,some,,1
+14368,2747668,"Physical place",Classification,is_classified_by,Role,only,,1
+14364,2747664,"Physical place",Constitution,has_constituent,Object,only,,1
+14365,2747665,"Physical place",Location,has_location,Entity,some,,1
+14366,2747666,"Physical place",Parthood,has_part,Object,only,,1
+14367,2747667,"Physical place",Parthood,has_part,Object,only,,1
+14369,2747669,"Physical place",Participation,is_participant_in,Event,some,,1
+14374,2747674,Place,Classification,is_classified_by,Role,only,,1
+14370,2747670,Place,Constitution,has_constituent,Object,only,,1
+14375,2747675,Place,Expression,is_expressed_by,InformationObject,some,,1
+14371,2747671,Place,Location,has_location,Entity,some,,1
+14376,2747676,Place,Location,has_location,Entity,some,,1
+14372,2747672,Place,Parthood,has_part,Object,only,,1
+14373,2747673,Place,Parthood,has_part,Object,only,,1
+14377,2747677,Place,Participation,is_participant_in,Event,some,,1
+14383,2747683,Plan,Classification,is_classified_by,Role,only,,1
+14378,2747678,Plan,Composition,has_component,Goal,some,,1
+14379,2747679,Plan,Constitution,has_constituent,Object,only,,1
+14384,2747684,Plan,Expression,is_expressed_by,InformationObject,some,,1
+14380,2747680,Plan,Location,has_location,Entity,some,,1
+14381,2747681,Plan,Parthood,has_part,Object,only,,1
+14382,2747682,Plan,Parthood,has_part,Object,only,,1
+14385,2747685,Plan,Participation,is_participant_in,Event,some,,1
+14386,2747686,"Plan execution",Satisfaction,satisfies,Plan,some,,1
+14387,2747687,"Plan execution",Satisfaction,satisfies,Plan,some,,1
+14388,2747688,Process,Constitution,has_constituent,Event,only,,1
+14389,2747689,Process,Parthood,has_part,Event,only,,1
+14390,2747690,Process,Participation,has_participant,Object,some,,1
+14391,2747691,Process,Temporal_interval,has_time_interval,TimeInterval,some,,1
+14399,2747699,Project,Classification,is_classified_by,Role,only,,1
+14394,2747694,Project,Composition,has_component,Goal,some,,1
+14395,2747695,Project,Constitution,has_constituent,Object,only,,1
+14400,2747700,Project,Expression,is_expressed_by,InformationObject,some,,1
+14396,2747696,Project,Location,has_location,Entity,some,,1
+14397,2747697,Project,Parthood,has_part,Object,only,,1
+14398,2747698,Project,Parthood,has_part,Object,only,,1
+14401,2747701,Project,Participation,is_participant_in,Event,some,,1
+14392,2747692,Project,Role_definition,defines_role,Role,some,,1
+14393,2747693,Project,Task_definition,defines_task,Task,some,,1
+14402,2747702,Quality,Constitution,has_constituent,Quality,only,,1
+14403,2747703,Quality,Parthood,has_part,Quality,only,,1
+14405,2747705,Quality,Quale,is_quality_of,Entity,some,,1
+14404,2747704,Quality,Region,has_region,Region,some,,1
+14406,2747706,Region,Constitution,has_constituent,Region,only,,1
+14408,2747708,Region,Overlap,overlaps,Region,only,,1
+14407,2747707,Region,Parthood,has_part,Region,only,,1
+14409,2747709,Region,Sequence,precedes,Region,only,,1
+14414,2747714,Relation,Classification,is_classified_by,Role,only,,1
+14410,2747710,Relation,Constitution,has_constituent,Object,only,,1
+14415,2747715,Relation,Expression,is_expressed_by,InformationObject,some,,1
+14411,2747711,Relation,Location,has_location,Entity,some,,1
+14412,2747712,Relation,Parthood,has_part,Object,only,,1
+14413,2747713,Relation,Parthood,has_part,Object,only,,1
+14416,2747716,Relation,Participation,is_participant_in,Event,some,,1
+14423,2747723,Right,Classification,is_classified_by,Role,only,,1
+14419,2747719,Right,Constitution,has_constituent,Object,only,,1
+14424,2747724,Right,Expression,is_expressed_by,InformationObject,some,,1
+14420,2747720,Right,Location,has_location,Entity,some,,1
+14421,2747721,Right,Parthood,has_part,Object,only,,1
+14422,2747722,Right,Parthood,has_part,Object,only,,1
+14425,2747725,Right,Participation,is_participant_in,Event,some,,1
+14417,2747717,Right,Role_definition,defines_role,Person,min,2,1
+14418,2747718,Right,Task_definition,defines_task,Task,min,1,1
+14426,2747726,Role,Classification,classifies,Object,only,,1
+14433,2747733,Role,Classification,classifies,Object,only,,1
+14427,2747727,Role,Constitution,has_constituent,Object,only,,1
+14434,2747734,Role,Definition,is_defined_in,Description,some,,1
+14435,2747735,Role,Expression,is_expressed_by,InformationObject,some,,1
+14428,2747728,Role,Location,has_location,Entity,some,,1
+14429,2747729,Role,Parthood,has_part,Object,only,,1
+14430,2747730,Role,Parthood,has_part,Object,only,,1
+14431,2747731,Role,Parthood,has_part,Object,only,,1
+14432,2747732,Role,Parthood,has_part,Object,only,,1
+14436,2747736,Role,Participation,is_participant_in,Event,some,,1
+14437,2747737,Situation,Satisfaction,satisfies,Description,some,,1
+14443,2747743,"Social agent",Classification,is_classified_by,Role,only,,1
+14439,2747739,"Social agent",Constitution,has_constituent,Object,only,,1
+14444,2747744,"Social agent",Expression,is_expressed_by,InformationObject,some,,1
+14440,2747740,"Social agent",Location,has_location,Entity,some,,1
+14441,2747741,"Social agent",Parthood,has_part,Object,only,,1
+14442,2747742,"Social agent",Parthood,has_part,Object,only,,1
+14445,2747745,"Social agent",Participation,is_participant_in,Event,some,,1
+14438,2747738,"Social agent",Proxy_agency,acts_through,PhysicalAgent,some,,1
+14453,2747753,"Social attribute",Constitution,has_constituent,Region,,,0
+14456,2747756,"Social attribute",Overlap,overlaps,Region,,,0
+14454,2747754,"Social attribute",Parthood,has_part,Region,,,0
+14455,2747755,"Social attribute",Region,is_region_for,Social object,,,0
+14457,2747757,"Social attribute",Sequence,precedes,Region,,,0
+14450,2747750,"Social object",Classification,is_classified_by,Role,only,,1
+14446,2747746,"Social object",Constitution,has_constituent,Object,only,,1
+14451,2747751,"Social object",Expression,is_expressed_by,InformationObject,some,,1
+14447,2747747,"Social object",Location,has_location,Entity,some,,1
+14448,2747748,"Social object",Parthood,has_part,Object,only,,1
+14449,2747749,"Social object",Parthood,has_part,Object,only,,1
+14452,2747752,"Social object",Participation,is_participant_in,Event,some,,1
+14463,2747763,"Social person",Classification,is_classified_by,Role,only,,1
+14459,2747759,"Social person",Constitution,has_constituent,Object,only,,1
+14464,2747764,"Social person",Expression,is_expressed_by,InformationObject,some,,1
+14460,2747760,"Social person",Location,has_location,Entity,some,,1
+14461,2747761,"Social person",Parthood,has_part,Object,only,,1
+14462,2747762,"Social person",Parthood,has_part,Object,only,,1
+14465,2747765,"Social person",Participation,is_participant_in,Event,some,,1
+14458,2747758,"Social person",Proxy_agency,acts_through,PhysicalAgent,some,,1
+14470,2747770,"Social relation",Classification,is_classified_by,Role,only,,1
+14466,2747766,"Social relation",Constitution,has_constituent,Object,only,,1
+14471,2747771,"Social relation",Expression,is_expressed_by,InformationObject,some,,1
+14467,2747767,"Social relation",Location,has_location,Entity,some,,1
+14468,2747768,"Social relation",Parthood,has_part,Object,only,,1
+14469,2747769,"Social relation",Parthood,has_part,Object,only,,1
+14472,2747772,"Social relation",Participation,is_participant_in,Event,some,,1
+14473,2747773,"Space region",Constitution,has_constituent,Region,only,,1
+14475,2747775,"Space region",Overlap,overlaps,Region,only,,1
+14474,2747774,"Space region",Parthood,has_part,Region,only,,1
+14476,2747776,"Space region",Sequence,precedes,Region,only,,1
+14477,2747777,SpatioTemporalRegion,Constitution,has_constituent,Region,only,,1
+14478,2747778,SpatioTemporalRegion,Constitution,has_constituent,Region,only,,1
+14479,2747779,SpatioTemporalRegion,Constitution,has_constituent,Region,only,,1
+14481,2747781,SpatioTemporalRegion,Overlap,overlaps,Region,only,,1
+14480,2747780,SpatioTemporalRegion,Parthood,has_part,Region,only,,1
+14482,2747782,SpatioTemporalRegion,Sequence,precedes,Region,only,,1
+14487,2747787,Substance,Classification,is_classified_by,Role,only,,1
+14483,2747783,Substance,Constitution,has_constituent,Object,only,,1
+14484,2747784,Substance,Location,has_location,Entity,some,,1
+14485,2747785,Substance,Parthood,has_part,Object,only,,1
+14486,2747786,Substance,Parthood,has_part,Object,only,,1
+14488,2747788,Substance,Participation,is_participant_in,Event,some,,1
+14489,2747789,Task,Classification,classifies,Event,only,,1
+14496,2747796,Task,Classification,classifies,Event,only,,1
+14490,2747790,Task,Constitution,has_constituent,Object,only,,1
+14497,2747797,Task,Definition,is_defined_in,Description,some,,1
+14498,2747798,Task,Execution,is_executed_in,Action,only,,1
+14499,2747799,Task,Expression,is_expressed_by,InformationObject,some,,1
+14491,2747791,Task,Location,has_location,Entity,some,,1
+14492,2747792,Task,Parthood,is_participant_in,Event,some,,1
+14493,2747793,Task,Parthood,is_participant_in,Event,some,,1
+14494,2747794,Task,Parthood,is_participant_in,Event,some,,1
+14495,2747795,Task,Parthood,is_participant_in,Event,some,,1
+14500,2747800,Task,Participation,is_participant_in,Event,some,,1
+14502,2747802,Task,Task_attribution,is_task_of,Role,only,,1
+14501,2747801,Task,Task_definition,is_task_defined_in,Description,only,,1
+14508,2747808,Theory,Classification,is_classified_by,Role,only,,1
+14503,2747803,Theory,Composition,has_component,Relation,some,,1
+14504,2747804,Theory,Constitution,has_constituent,Object,only,,1
+14509,2747809,Theory,Expression,is_expressed_by,InformationObject,some,,1
+14505,2747805,Theory,Location,has_location,Entity,some,,1
+14506,2747806,Theory,Parthood,has_part,Object,only,,1
+14507,2747807,Theory,Parthood,has_part,Object,only,,1
+14510,2747810,Theory,Participation,is_participant_in,Event,some,,1
+14512,2747812,"Time interval",Constitution,has_constituent,Region,only,,1
+14514,2747814,"Time interval",Overlap,overlaps,Region,only,,1
+14513,2747813,"Time interval",Parthood,has_part,Region,only,,1
+14515,2747815,"Time interval",Sequence,precedes,Region,only,,1
+14511,2747811,"Time-indexed relation",Setting,is_setting_for,Time interval,,,0
+14516,2747816,Transition,Event_inclusion,includes_event,Event,some,,1
+14517,2747817,Transition,Object_inclusion,includes_object,Object,some,,1
+14520,2747820,Transition,Satisfaction,satisfies,Description,some,,1
+14518,2747818,Transition,Setting,is_setting_for,Process,some,,1
+14519,2747819,Transition,Setting,is_setting_for,Process,some,,1
+14526,2747826,"Type collection",Classification,is_classified_by,Role,only,,1
+14521,2747821,"Type collection",Constitution,has_constituent,Object,only,,1
+14527,2747827,"Type collection",Expression,is_expressed_by,InformationObject,some,,1
+14522,2747822,"Type collection",Location,has_location,Entity,some,,1
+14523,2747823,"Type collection",Parthood,has_part,Object,only,,1
+14524,2747824,"Type collection",Parthood,has_part,Object,only,,1
+14525,2747825,"Type collection",Parthood,has_part,Object,only,,1
+14528,2747828,"Type collection",Participation,is_participant_in,Event,some,,1
+14536,2747836,"Unit of measure",Classification,classifies,Region,only,,1
+14529,2747829,"Unit of measure",Classification,classifies,Region,only,,1
+14530,2747830,"Unit of measure",Constitution,has_constituent,Object,only,,1
+14537,2747837,"Unit of measure",Definition,is_defined_in,Description,some,,1
+14538,2747838,"Unit of measure",Expression,is_expressed_by,InformationObject,some,,1
+14531,2747831,"Unit of measure",Location,has_location,Entity,some,,1
+14540,2747840,"Unit of measure",Parametric_specification,parametrizes,Region,some,,1
+14532,2747832,"Unit of measure",Parthood,has_part,Object,only,,1
+14533,2747833,"Unit of measure",Parthood,has_part,Object,only,,1
+14534,2747834,"Unit of measure",Parthood,has_part,Object,only,,1
+14535,2747835,"Unit of measure",Parthood,has_part,Object,only,,1
+14539,2747839,"Unit of measure",Participation,is_participant_in,Event,some,,1
+14548,2747848,Workflow,Classification,is_classified_by,Role,only,,1
+14543,2747843,Workflow,Composition,has_component,Goal,some,,1
+14544,2747844,Workflow,Constitution,has_constituent,Object,only,,1
+14549,2747849,Workflow,Expression,is_expressed_by,InformationObject,some,,1
+14545,2747845,Workflow,Location,has_location,Entity,some,,1
+14546,2747846,Workflow,Parthood,has_part,Object,only,,1
+14547,2747847,Workflow,Parthood,has_part,Object,only,,1
+14550,2747850,Workflow,Participation,is_participant_in,Event,some,,1
+14541,2747841,Workflow,Role_definition,defines_role,Role,some,,1
+14542,2747842,Workflow,Task_definition,defines_task,Task,some,,1
+14551,2747851,"Workflow execution",Satisfaction,satisfies,Workflow,some,,1
+14552,2747852,"Workflow execution",Satisfaction,satisfies,Workflow,some,,1

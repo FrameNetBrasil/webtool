@@ -1,12 +1,12 @@
 @use("Carbon\Carbon")
-<x-layout.index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+<x-layout::index>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/structure','Structure'],['/luCandidate','LU Candidate'],['', 'LU #' . $luCandidate->idLU]]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
-            <div class="ui container h-full d-flex flex-col">
+            <div class="ui container page d-flex flex-col">
                 <div class="page-header-object">
                     <div class="page-object">
                         <div class="page-object-name">
@@ -16,6 +16,24 @@
                             <div class="ui label wt-tag-id">
                                 #{{$luCandidate->idLU}}
                             </div>
+                            @if($isManager)
+                                @if($idPrevious)
+                                    <a href="/luCandidate/{{$idPrevious}}">
+                                        <button class="ui left labeled icon button">
+                                            <i class="left arrow icon"></i>
+                                            Previous
+                                        </button>
+                                    </a>
+                                @endif
+                                @if($idNext)
+                                    <a href="/luCandidate/{{$idNext}}">
+                                        <button class="ui right labeled icon button">
+                                            <i class="right arrow icon"></i>
+                                            Next
+                                        </button>
+                                    </a>
+                                @endif
+                            @endif
                             @if($isManager)
                                 <button
                                     class="ui danger button"
@@ -165,6 +183,6 @@
                 </div>
             </div>
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
-</x-layout.index>
+</x-layout::index>

@@ -31,6 +31,7 @@ class BrowseService
 
         return $sentences[$idDocumentSentence]->rowNumber;
     }
+
     /**
      * Versão 4.2
      */
@@ -94,13 +95,15 @@ class BrowseService
             ->pluck('idDocument')[0];
     }
 
-    public static function decorateSentenceTarget($text, $spans): string
+    public static function decorateSentenceTarget($text, $spans, $idLU = null): string
     {
         $decorated = '';
         $ni = '';
         $i = 0;
         foreach ($spans as $span) {
-            // $style = 'background-color:#' . $label['rgbBg'] . ';color:#' . $label['rgbFg'] . ';';
+            if ($idLU && ($span->idLU != $idLU)) {
+                continue;
+            }
             if ($span->startChar >= 0) {
                 $decorated .= mb_substr($text, $i, $span->startChar - $i);
                 $decorated .= "<span class='color_target'>" . mb_substr($text, $span->startChar, $span->endChar - $span->startChar + 1) . '</span>';
@@ -111,6 +114,7 @@ class BrowseService
 
         return $decorated;
     }
+
     public static function getPrevious(int $idDocumentSentence): ?int
     {
         $idDocument = self::getIdDocument($idDocumentSentence);
@@ -295,6 +299,23 @@ class BrowseService
         return $data;
     }
 
+    public static function browseAnnotationSet(array $sentences): array
+    {
+        $data = [];
+        foreach ($sentences as $sentence) {
+            $data[] = [
+                'id' => $sentence->idAnnotationSet,
+                'formatedId' => '[#' . $sentence->idAnnotationSet . ']',
+                'extra' => (isset($sentence->startTime) ? '<span class="text-time"><i class="material icon">schedule</i>' . $sentence->startTime . '</span>' : ''),
+                'text' => $sentence->text,
+                'type' => 'sentence',
+                'leaf' => true,
+            ];
+        }
+
+        return $data;
+    }
+
     public static function browseSentence(int $idDocumentSentence): array
     {
         return self::browseSentences(self::getSentence($idDocumentSentence));
@@ -303,6 +324,11 @@ class BrowseService
     public static function browseSentencesByDocument(int $idDocument): array
     {
         return self::browseSentences(self::listSentences($idDocument));
+    }
+
+    public static function browseAnnotationSetByLU(int $idLU): array
+    {
+        return self::browseAnnotationSet(self::listSentencesByLU($idLU));
     }
 
     public static function getSentence(int $idDocumentSentence): array
@@ -370,7 +396,7 @@ class BrowseService
                 ->get()->keyBy('idDocumentSentence')->all();
         }
         if (!empty($sentences)) {
-            if ( session("corpusAnnotationType") != 'cxn') {
+            if (session("corpusAnnotationType") != 'cxn') {
                 $targets = collect(AnnotationSet::listTargetsForDocumentSentence(array_keys($sentences)))->groupBy('idDocumentSentence')->toArray();
 //            debug($targets);
                 foreach ($targets as $idDocumentSentence => $spans) {
@@ -381,4 +407,42 @@ class BrowseService
 
         return $sentences;
     }
+
+    public static function browseLUBySearch(object $search): array
+    {
+        $lus = Criteria::byFilterLanguage('view_lu', ['name', 'startswith', $search->lu], 'idLanguage')
+            ->limit(300)
+            ->orderBy('name')
+            ->all();
+        $data = [];
+        foreach ($lus as $lu) {
+            $data[] = [
+                'id' => $lu->idLU,
+                'text' => view('Frame.partials.lu', (array) $lu)->render(),
+                'type' => 'lu',
+                'leaf' => false,
+            ];
+        }
+        return $data;
+    }
+    public static function listSentencesByLU(int $idLU): array
+    {
+        $sentences = Criteria::table('view_sentence as s')
+            ->join("view_annotationset as a", "a.idSentence", "=", "s.idSentence")
+            ->join('view_document_sentence as ds', 's.idSentence', '=', 'ds.idSentence')
+            ->join('document as d', 'ds.idDocument', '=', 'd.idDocument')
+            ->where('a.idLU', $idLU)
+            ->select('s.idSentence', 's.text', 'ds.idDocumentSentence','a.idAnnotationSet')
+            ->orderBy('ds.idDocumentSentence')
+            ->limit(1000)
+            ->get()->keyBy('idAnnotationSet')->all();
+        if (!empty($sentences)) {
+            $targets = collect(AnnotationSet::listTargetsForAnnotationSet(array_keys($sentences)))->groupBy('idAnnotationSet')->toArray();
+            foreach ($targets as $idAnnotationSet => $spans) {
+                $sentences[$idAnnotationSet]->text = self::decorateSentenceTarget($sentences[$idAnnotationSet]->text, $spans, $idLU);
+            }
+        }
+        return $sentences;
+    }
+
 }

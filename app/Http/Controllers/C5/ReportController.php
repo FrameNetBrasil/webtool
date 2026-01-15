@@ -90,7 +90,7 @@ class ReportController extends Controller
     {
         $search = session('searchFrame') ?? SearchData::from();
         if ($idConcept == '') {
-            return view("C5.Report.main", [
+            return view("C5.Report.index", [
                 'search' => $search,
                 'idConcept' => null
             ]);
@@ -100,7 +100,7 @@ class ReportController extends Controller
             $data = ReportC5Service::report($idConcept, $lang);
             $data['search'] = $search;
             $data['idConcept'] = $idConcept;
-            return view("C5.Report.main", $data);
+            return view("C5.Report.index", $data);
         }
     }
 

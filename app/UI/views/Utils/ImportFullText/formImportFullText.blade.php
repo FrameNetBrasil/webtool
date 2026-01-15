@@ -1,9 +1,9 @@
 <x-layout.page>
     <x-slot:head>
-        <x-layout::breadcrumb :sections="[['/','Home'],['/manager','Manager'],['/utils/importFullText','Import FullText'],['',$document->name]]"></x-layout::breadcrumb>
+        <x-partial::breadcrumb :sections="[['/','Home'],['/utils/importFullText','Import FullText'],['',$document->name]]"></x-partial::breadcrumb>
     </x-slot:head>
     <x-slot:main>
-        <div class="ui container h-full">
+        <div class="ui container page">
             <x-form
                 id="formImportFullText"
                 title="{{$document->name}}"

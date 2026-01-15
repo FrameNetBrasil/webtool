@@ -4,24 +4,17 @@
             <input type="hidden" name="idSemanticType" value="{{$semanticType->idSemanticType}}">
 
             <div class="field">
-                <label for="name">Name</label>
-                <div class="ui small input">
-                    <input type="text" id="name" name="name" value="{{$semanticType->name}}">
-                </div>
+                <x-search::semantictype
+                    id="idSemanticTypeParent"
+                    label="SemanticType Parent"
+                    placeholder="Select a SemanticType"
+                    search-url="/semanticType/list/forSelect"
+                    value="{{ old('idSemanticTypeParent', $semanticType->parent->idSemanticType ?? '') }}"
+                    display-value="{{ old('frame', $semanticType->parent->name ?? '') }}"
+                    modal-title="Search SemanticType"
+                ></x-search::semantictype>
             </div>
 
-            <div class="field">
-                <label for="description">Description</label>
-                <textarea id="description" name="description">{{$semanticType->description}}</textarea>
-            </div>
-
-            <div class="field">
-                <x-combobox.domain
-                    label="Domain"
-                    id="idDomain"
-                    :value="$semanticType->idDomain"
-                ></x-combobox.domain>
-            </div>
         </div>
         <div class="extra content">
             <button

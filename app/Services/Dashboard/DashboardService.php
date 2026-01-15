@@ -173,9 +173,9 @@ class DashboardService
 
     public static function multi30kChart(): array
     {
-        $dbFnbr = DB::connection('webtool37');
+        $dbFnbr = DB::connection('webtool');
         $cmd = "SELECT year(tlDateTime) y, month(tlDateTime) m, count(*) n
-         FROM fnbr_db.timeline t
+         FROM timeline t
 where (tablename='objectsentencemm') or (tablename='staticannotationmm')
 group by year(tlDateTime),month(tlDateTime)
 order by 1,2;";
@@ -217,6 +217,56 @@ order by 1,2;";
                 ->update(["timeLastUpdate" => $now]);
         }
         return $mustCalculate;
+    }
+
+    public static function profile(): array
+    {
+        $ageGroups = DB::connection('webtool')->select("
+SELECT
+    CASE
+        WHEN age BETWEEN 18 AND 19 THEN '18-19'
+        WHEN age BETWEEN 20 AND 29 THEN '20-29'
+        WHEN age BETWEEN 30 AND 39 THEN '30-39'
+        WHEN age BETWEEN 40 AND 49 THEN '40-49'
+        WHEN age BETWEEN 50 AND 59 THEN '50-59'
+        END AS age_group,
+    COUNT(*) AS count
+FROM user_profile
+GROUP BY age_group
+HAVING age_group IS NOT NULL
+ORDER BY age_group;
+        ");
+
+        $schoolGroups = DB::connection('webtool')->select("
+SELECT
+    escolaridade,
+    COUNT(*) AS count
+FROM user_profile
+GROUP BY escolaridade
+ORDER BY escolaridade_ordem;
+        ");
+        $ethnicityGroups = DB::connection('webtool')->select("
+SELECT
+    etnia,
+    COUNT(*) AS count
+FROM user_profile
+GROUP BY etnia
+ORDER By 1
+        ");
+        $genderGroups = DB::connection('webtool')->select("
+SELECT
+    gender,
+    COUNT(*) AS count
+FROM user_profile
+GROUP BY gender
+ORDER By 1
+        ");
+        return [
+            'ageGroups' => $ageGroups,
+            'schoolGroups' => $schoolGroups,
+            'ethnicityGroups' => $ethnicityGroups,
+            'genderGroups' => $genderGroups,
+        ];
     }
 
 }

@@ -26,7 +26,7 @@ class SemanticTypeController extends Controller
         $frame = Frame::byId($id);
         return view("SemanticType.child", [
             'idEntity' => $frame->idEntity,
-            'root' => "@framal_type"
+            'root' => "framal_type"
         ]);
     }
 

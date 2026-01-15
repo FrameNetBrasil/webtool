@@ -66,7 +66,7 @@ class ReportController extends Controller
     {
         $search = session('searchCxn') ?? SearchData::from();
         if ($idConstruction == '') {
-            return view("Construction.Report.main", [
+            return view("Construction.Report.index", [
                 'search' => $search,
                 'idConstruction' => null
             ]);
@@ -77,7 +77,7 @@ class ReportController extends Controller
             if ($view != '') {
                 return view("Construction.Report.report", $data);
             } else {
-                return view("Construction.Report.main", $data);
+                return view("Construction.Report.index", $data);
             }
 
         }

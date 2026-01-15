@@ -141,17 +141,22 @@ export default function grapherComponent(config = {}) {
             for (const index in this.nodes) {
                 const node = this.nodes[index];
                 let rect;
-                const text = node.name;
+                let text = node.name;
                 let w;
 
-                if (node.type === 'frame') {
-                    // Frame node
-                    w = Math.max(text.length * 8, 100);
-                    rect = new joint.shapes.standard.Rectangle({
+                // Add energy to label if present (for frame nodes with energy)
+                if (node.energy) {
+                    text = `${node.name}\n(${node.energy})`;
+                }
+
+                if (node.type === 'word') {
+                    // Word node - use ellipse shape
+                    w = Math.max(text.length * 8, 80);
+                    rect = new joint.shapes.standard.Ellipse({
                         id: index,
                         z: 2,
                     });
-                    rect.resize(w, 30);
+                    rect.resize(w, 50);
                     rect.attr({
                         body: {
                             class: `color_${node.type}`,
@@ -159,6 +164,44 @@ export default function grapherComponent(config = {}) {
                         label: {
                             class: `color_${node.type}--text`,
                             text: text,
+                        }
+                    });
+                } else if (node.type === 'frame') {
+                    // Frame node
+                    w = Math.max(text.length * 8, 100);
+                    rect = new joint.shapes.standard.Rectangle({
+                        id: index,
+                        z: 2,
+                    });
+                    console.log(node);
+                    rect.resize(w, 40);  // Increased height to accommodate energy label
+                    rect.attr({
+                        body: {
+                            class: `color_${node.idColor}_stroke`,
+                        },
+                        label: {
+                            class: `color_${node.idColor}_fill`,
+                            text: text,
+                        },
+                    });
+                } else if (node.type === 'grammar') {
+                    // Grammar node - similar to word nodes but with color support
+                    w = Math.max(text.length * 8, 80);
+                    rect = new joint.shapes.standard.Ellipse({
+                        id: index,
+                        z: 2,
+                    });
+                    rect.resize(w, 50);
+                    rect.attr({
+                        body: {
+                            fill: node.idColor || '#9E9E9E',
+                            stroke: '#fff',
+                            strokeWidth: 2
+                        },
+                        label: {
+                            fill: '#fff',
+                            text: text,
+                            fontWeight: 'bold'
                         }
                     });
                 }
@@ -397,7 +440,11 @@ export default function grapherComponent(config = {}) {
                     distance: '50%',
                     offset: 0,
                     action: function (evt) {
-                        htmx.ajax('POST', `/grapher/framefe/graph/${data.id}`, { target: '#graph' });
+                        // Load FE relations into modal graph
+                        htmx.ajax('GET', `/grapher/frame/ferelations/${data.id}`, {
+                            target: '#feRelationsGraph',
+                            swap: 'innerHTML'
+                        });
                     }
                 });
             }

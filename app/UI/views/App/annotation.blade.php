@@ -2,22 +2,37 @@
     $annotation = [
         'annotationfe' => ['FE', '/annotation/fe', 'Corpus annotation for FE layer','ui::icon.frame'],
         'annotationfulltext' => ['Full text', '/annotation/fullText', 'Corpus annotation for all layers','ui::icon.frame'],
-        'annotationset' => ['Annotation Sets', '/annotation/as', 'Check annotation sets.','ui::icon.frame'],
+        'annotationset' => ['Annotation Sets by sentence', '/annotation/as', 'Check annotation sets by sentence.','ui::icon.frame'],
+        'annotationsetlu' => ['Annotation Sets by LU', '/annotation/lu', 'Check annotation sets by LU.','ui::icon.frame'],
+//        'annotationsession' => ['Sessions', '/annotation/session', 'Sessions Report.','ui::icon.frame'],
+//        'annotationcxn' => ['Construction', '/annotation/cxn', 'Corpus annotation for constructions','ui::icon.construction'],
+//        'annotationflex' => ['Flex-syntax', '/annotation/flex', 'Croft Flex-syntax annotation','ui::icon.frame'],
+//        'annotationdynamic' => ['Dynamic mode', '/annotation/dynamicMode', 'Video annotation.', 'ui::icon.video' ],
+//        'annotationdeixis' => ['Deixis', '/annotation/deixis', 'Video annotation for deixis.', 'ui::icon.video'],
+//        'annotationcanvas' => ['Canvas', '/annotation/canvas', 'Video annotation for canvas.', 'ui::icon.video'],
+//        'annotationstaticbbox' => ['Static bbox', '/annotation/staticBBox', 'Image annotation.','ui::icon.image'],
+//        'annotationstaticevent' => ['Static event', '/annotation/staticEvent', 'Image annotation for eventive frames.','ui::icon.image'],
+//        'udparser' => ['UD parser', '/ud/parser', 'UD parsing using Trankit.','ui::icon.image'],
     ];
     $annotationType = [
-        'corpus' => ['title' => "Corpus", "pages" => ['annotationfe','annotationfulltext','annotationset']],
+        'corpus' => ['title' => "Corpus", "pages" => ['annotationfe','annotationfulltext','annotationset','annotationsetlu']],
+//        'corpus' => ['title' => "Corpus", "pages" => ['annotationfe','annotationfulltext','annotationcxn','annotationset','annotationsetlu','annotationsession','annotationflex']],
+//        'video' => ['title' => "Video", "pages" => ['annotationdynamic','annotationdeixis','annotationcanvas']],
+        //'video' => ['title' => "Video", "pages" => ['annotationdeixis']],
+//        'image' => ['title' => "Image", "pages" => ['annotationstaticbbox','annotationstaticevent']],
+//        'parser' => ['title' => "Parser", "pages" => ['udparser']],
     ];
 
 @endphp
 
 <x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['','Annotation']]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
-            <div class="ui container">
+            <div class="ui container page">
                 <div class="page-header">
                     <div class="page-header-content">
                         <div class="page-title">
@@ -47,7 +62,7 @@
                                         >
                                             <div class="content">
                                                 <div class="header">
-                                                    <x-dynamic-component :component="$item[3]"/>
+                                                    <x-dynamic-component :component="$item[3]" />
                                                     {{$item[0]}}
                                                 </div>
                                                 <div class="description">
@@ -62,9 +77,9 @@
 
                         </div>
                     @endforeach
-
                 </div>
             </div>
         </main>
+        <x-partial::footer></x-partial::footer>
     </div>
 </x-layout::index>

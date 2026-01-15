@@ -16,7 +16,7 @@ class BrowseService
             $lemmas = Criteria::table('view_lemma as lm')
                 ->where('lm.idLanguage', AppService::getCurrentIdLanguage())
                 ->whereRaw("lm.name LIKE '{$search->lemma}%' collate 'utf8mb4_bin'")
-                ->select('lm.idLemma', 'lm.fullName as lemma')
+                ->select('lm.idLemma', 'lm.name as lemma')
                 ->limit(self::$limit)
                 ->all();
             foreach ($lemmas as $lemma) {

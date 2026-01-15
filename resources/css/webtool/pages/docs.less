@@ -1,0 +1,990 @@
+/*******************************
+    Documentation Pages
+*******************************/
+
+/* -------------------
+    Layout Variables
+-------------------- */
+
+@docs-sidebar-width: 280px;
+@docs-sidebar-width-tablet: 260px;
+@docs-toc-sidebar-width: 240px;
+@docs-content-max-width: 900px;
+@docs-nav-padding: @relativeSmall;
+@docs-content-padding: @relativeLarge;
+
+/* -------------------
+    Documentation Layout
+    Two-column: Sidebar + Content
+-------------------- */
+
+// Override removed - let main container constrain content for proper scrolling
+// .app-layout.minimal {
+//     main.app-main {
+//         overflow: visible !important;
+//         height: auto !important;
+//     }
+// }
+
+.docs-layout {
+    display: flex;
+    height: calc(100vh - @headerHeight - @breadcrumbHeight - @footerHeight);
+    background: @background;
+    position: relative;
+    overflow: hidden;
+}
+
+/* -------------------
+    Sidebar Navigation
+-------------------- */
+
+.docs-sidebar {
+    width: @docs-sidebar-width;
+    min-width: @docs-sidebar-width;
+    background: @gray50;
+    border-right: 1px solid @gray200;
+    overflow-y: auto;
+    position: sticky;
+    top: 0;
+    height: calc(100vh - @headerHeight - @breadcrumbHeight);
+    padding: @docs-nav-padding;
+
+    // Scrollbar styling
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: @gray300;
+        border-radius: 4px;
+
+        &:hover {
+            background: @gray400;
+        }
+    }
+}
+
+// Navigation tree structure
+.docs-nav {
+
+    .nav-section {
+        margin-bottom: @relativeSmall;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Top-level folders
+    .nav-folder {
+        margin-bottom: @relative8px;
+
+        > .folder-title {
+            display: flex;
+            align-items: center;
+            padding: @relative8px @relative8px;
+            font-weight: @semibold;
+            font-size: @fontSize;
+            color: @gray800;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            font-size: 12px;
+            margin-bottom: @relative8px;
+        }
+
+        > .folder-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    // Navigation links
+    .nav-item {
+        list-style: none;
+
+        a {
+            display: block;
+            padding: @relative8px @relativeSmall;
+            color: @gray700;
+            text-decoration: none;
+            border-radius: @relativeBorderRadius;
+            transition: all @transitionFast;
+            font-size: @fontSize;
+            line-height: @lineHeightBody;
+
+            &:hover {
+                background: @gray100;
+                color: @primaryColor;
+                padding-left: calc(@relativeSmall + 4px);
+            }
+
+            &.active {
+                background: @overlayPrimary10;
+                color: @primaryColor;
+                font-weight: @semibold;
+                border-left: 3px solid @primaryColor;
+                padding-left: calc(@relativeSmall - 3px);
+            }
+        }
+    }
+
+    // Nested items
+    .nav-nested {
+        margin-left: @relativeSmall;
+        margin-top: @relative8px;
+
+        .nav-item a {
+            font-size: 13px;
+            padding: 6px @relativeSmall;
+        }
+    }
+
+    // Parent pages with children
+    .nav-parent {
+        .nav-parent-link {
+            font-weight: @semibold;
+        }
+
+        .nav-children {
+            list-style: none;
+            padding: 0;
+            margin: @relative8px 0 @relative8px @relativeSmall;
+
+            .nav-child {
+                list-style: none;
+
+                a {
+                    font-size: 13px;
+                    padding: 6px @relativeSmall;
+                    padding-left: calc(@relativeSmall + 8px);
+                    position: relative;
+
+                    &::before {
+                        content: "─";
+                        position: absolute;
+                        left: 6px;
+                        color: @gray400;
+                    }
+
+                    &.active::before {
+                        color: @primaryColor;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* -------------------
+    Content Area
+-------------------- */
+
+.docs-content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    gap: @relativeMedium;
+    overflow: hidden;
+    min-width: 0; // Allows flex item to shrink properly
+    min-height: 0; // Allows flex item to shrink and enables scrolling
+}
+
+.docs-content {
+    flex: 1;
+    padding: @docs-content-padding;
+    max-width: @docs-content-max-width;
+    min-width: 0; // Allows flex item to shrink
+    min-height: 0; // Allows content to scroll within flex container
+    overflow-y: auto;
+    align-self: stretch; // Ensure it fills the full height of parent
+
+    // Scrollbar styling
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: @gray300;
+        border-radius: 4px;
+
+        &:hover {
+            background: @gray400;
+        }
+    }
+
+    // Typography for markdown content
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: @semibold;
+        line-height: @lineHeightHeading;
+        color: @gray900;
+        margin-top: @relativeMedium;
+        margin-bottom: @relativeSmall;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        // Anchor links for headings
+        .header-anchor {
+            color: @gray400;
+            text-decoration: none;
+            margin-left: @relative8px;
+            opacity: 0;
+            transition: opacity @transitionFast;
+            font-weight: @normal;
+        }
+
+        &:hover .header-anchor {
+            opacity: 1;
+        }
+    }
+
+    h1 {
+        font-size: 36px;
+        border-bottom: 1px solid @gray200;
+        padding-bottom: @relativeSmall;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-top: @relativeMedium;
+        padding-bottom: @relative8px;
+        border-bottom: 1px solid @gray100;
+    }
+
+    h3 {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    h5, h6 {
+        font-size: @fontSize;
+    }
+
+    p {
+        margin: @relativeSmall 0;
+        line-height: @lineHeightBody;
+        color: @textColor;
+    }
+
+    // Links
+    a {
+        color: @primaryColor;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color @transitionFast;
+
+        &:hover {
+            border-bottom-color: @primaryColor;
+        }
+
+        // External links
+        &[href^="http"]::after {
+            content: " ↗";
+            font-size: 0.85em;
+            opacity: 0.6;
+        }
+    }
+
+    // Lists
+    ul, ol {
+        margin: @relativeSmall 0;
+        padding-left: @relativeMedium;
+        line-height: @lineHeightBody;
+
+        li {
+            margin: @relative8px 0;
+        }
+
+        ul, ol {
+            margin: @relative8px 0;
+        }
+    }
+
+    // Code blocks
+    code {
+        font-family: @codeFont;
+        font-size: 13px;
+        background: @gray100;
+        padding: 2px 6px;
+        border-radius: @relativeBorderRadius;
+        color: @gray800;
+    }
+
+    pre {
+        background: @gray900;
+        color: @gray100;
+        padding: @relativeSmall;
+        border-radius: @relativeBorderRadius;
+        overflow-x: auto;
+        margin: @relativeSmall 0;
+        line-height: @lineHeightCode;
+
+        code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+            font-size: 13px;
+        }
+
+        // Scrollbar for code blocks
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: @gray800;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: @gray600;
+            border-radius: 4px;
+        }
+    }
+
+    // Tables
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: @relativeSmall 0;
+
+        th, td {
+            padding: @relative8px @relativeSmall;
+            border: 1px solid @gray200;
+            text-align: left;
+        }
+
+        th {
+            background: @gray50;
+            font-weight: @semibold;
+            color: @gray900;
+        }
+
+        tr:hover {
+            background: @gray50;
+        }
+    }
+
+    // Blockquotes
+    blockquote {
+        border-left: 4px solid @primaryColor;
+        padding-left: @relativeSmall;
+        margin: @relativeSmall 0;
+        color: @gray700;
+        font-style: italic;
+
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    // Horizontal rules
+    hr {
+        border: none;
+        border-top: 1px solid @gray200;
+        margin: @relativeMedium 0;
+    }
+
+    // Images
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: @relativeBorderRadius;
+        margin: @relativeSmall 0;
+    }
+
+    // Mermaid diagrams
+    .mermaid {
+        display: flex;
+        justify-content: center;
+        margin: @relativeMedium 0;
+        padding: @relativeSmall;
+        background: @white !important;
+        border: 1px solid @gray200;
+        border-radius: @relativeBorderRadius;
+
+        svg {
+            max-width: 100%;
+            height: auto;
+            background: transparent !important;
+        }
+
+        // Override Mermaid's default dark background
+        [id^="mermaid-"] {
+            background: transparent !important;
+        }
+
+        // Larger and bold text for all diagram labels
+        p, span, div, text, tspan, .nodeLabel {
+            font-size: 16px !important;
+            font-weight: 600 !important;
+        }
+
+        // Force white text color on highlighted Mermaid nodes
+        .highlighted {
+            p, span, div, text, tspan {
+                color: #ffffff !important;
+                fill: #ffffff !important;
+            }
+        }
+    }
+
+    // Pre blocks containing mermaid code that hasn't been rendered
+    pre.mermaid {
+        background: @gray50;
+        border: 1px solid @gray200;
+        color: @gray800;
+    }
+
+    // Mermaid diagram wrapper for expand button positioning
+    .mermaid-wrapper {
+        position: relative;
+        margin: @relativeMedium 0;
+
+        // Expand button
+        .diagram-expand-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 8px 10px;
+            opacity: 0;
+            transition: opacity @transitionFast, background @transitionFast;
+            z-index: 10;
+            background: @white;
+            border: 1px solid @gray300;
+            box-shadow: @shadowSM;
+
+            &:hover {
+                background: @gray50;
+                border-color: @primaryColor;
+
+                i {
+                    color: @primaryColor;
+                }
+            }
+
+            i {
+                color: @gray600;
+                font-size: 16px;
+                margin: 0;
+            }
+        }
+
+        // Show button on hover
+        &:hover .diagram-expand-btn {
+            opacity: 1;
+        }
+    }
+
+    // Graphviz diagrams
+    .graphviz-diagram-wrapper {
+        position: relative;
+        margin: @relativeMedium 0;
+
+        .graphviz-diagram {
+            display: flex;
+            justify-content: center;
+            padding: @relativeSmall;
+            background: @white;
+            border: 1px solid @gray200;
+            border-radius: @relativeBorderRadius;
+            overflow-x: auto;
+
+            svg {
+                max-width: 100%;
+                height: auto;
+            }
+
+            // Scrollbar for wide diagrams
+            &::-webkit-scrollbar {
+                height: 8px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: @gray100;
+                border-radius: 4px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: @gray400;
+                border-radius: 4px;
+
+                &:hover {
+                    background: @gray500;
+                }
+            }
+        }
+
+        // Expand button (shared styling with Mermaid)
+        .diagram-expand-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 8px 10px;
+            opacity: 0;
+            transition: opacity @transitionFast, background @transitionFast;
+            z-index: 10;
+            background: @white;
+            border: 1px solid @gray300;
+            box-shadow: @shadowSM;
+
+            &:hover {
+                background: @gray50;
+                border-color: @primaryColor;
+
+                i {
+                    color: @primaryColor;
+                }
+            }
+
+            i {
+                color: @gray600;
+                font-size: 16px;
+                margin: 0;
+            }
+        }
+
+        // Show button on hover
+        &:hover .diagram-expand-btn {
+            opacity: 1;
+        }
+    }
+
+    // Graphviz error display
+    .graphviz-error {
+        background: #fff5f5;
+        border: 1px solid #ff6b6b;
+        border-radius: @relativeBorderRadius;
+        padding: @relativeSmall;
+        margin: @relativeSmall 0;
+
+        p {
+            margin: 0 0 @relative8px 0;
+            color: #c92a2a;
+
+            strong {
+                font-weight: @semibold;
+            }
+        }
+
+        pre {
+            background: @gray900;
+            color: @gray100;
+            margin: 0;
+        }
+    }
+}
+
+/* -------------------
+    Modal for Enlarged Diagrams
+-------------------- */
+
+#diagramModal {
+    &.ui.modal {
+        width: 85% !important;
+        //max-width: 1400px;
+
+        > .header {
+            background: @gray50;
+            border-bottom: 1px solid @gray200;
+            font-weight: @semibold;
+            color: @gray900;
+        }
+
+        > .content.diagram-modal-content {
+            padding: @relativeLarge;
+            background: @white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+
+            svg {
+                max-width: 100%;
+                max-height: 65vh;
+                height: auto;
+                width: auto;
+            }
+        }
+
+        > .actions {
+            background: @gray50;
+            border-top: 1px solid @gray200;
+        }
+    }
+}
+
+/* -------------------
+    Page Navigation (Previous/Next)
+-------------------- */
+
+.docs-page-nav {
+    margin-top: @relativeMedium;
+    padding-top: @relativeMedium;
+    border-top: 1px solid @gray200;
+
+    .page-nav-container {
+        display: flex;
+        justify-content: space-between;
+        gap: @relativeSmall;
+    }
+
+    .page-nav-link {
+        flex: 1;
+        max-width: 48%;
+        padding: @relativeSmall;
+        border: 1px solid @gray200;
+        border-radius: @relativeBorderRadius;
+        background: @white;
+        text-decoration: none;
+        transition: all @transitionFast;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+            border-color: @primaryColor;
+            background: @overlayPrimary5;
+            box-shadow: @shadowSM;
+            transform: translateY(-2px);
+
+            .page-nav-label i {
+                color: @primaryColor;
+            }
+        }
+
+        .page-nav-label {
+            font-size: 12px;
+            color: @gray600;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            margin-bottom: @relative8px;
+            font-weight: @semibold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+
+            i {
+                color: @gray500;
+                transition: color @transitionFast;
+            }
+        }
+
+        .page-nav-title {
+            font-size: @fontSize;
+            color: @gray900;
+            font-weight: @semibold;
+            line-height: @lineHeightBody;
+        }
+    }
+
+    .page-nav-prev {
+        text-align: left;
+
+        .page-nav-label {
+            justify-content: flex-start;
+        }
+    }
+
+    .page-nav-next {
+        text-align: right;
+
+        .page-nav-label {
+            justify-content: flex-end;
+        }
+    }
+
+    .page-nav-spacer {
+        flex: 1;
+        max-width: 48%;
+    }
+}
+
+// Responsive adjustments for page navigation
+@media (max-width: @tabletBreakpoint) {
+    .docs-page-nav {
+        .page-nav-container {
+            flex-direction: column;
+        }
+
+        .page-nav-link,
+        .page-nav-spacer {
+            max-width: 100%;
+        }
+    }
+}
+
+/* -------------------
+    Right Sidebar - Table of Contents
+-------------------- */
+
+.docs-toc-sidebar {
+    width: @docs-toc-sidebar-width;
+    min-width: @docs-toc-sidebar-width;
+    padding: @docs-content-padding @relativeSmall;
+    position: sticky;
+    top: 0;
+    height: calc(100vh - @headerHeight - @breadcrumbHeight);
+    overflow-y: auto;
+    align-self: flex-start;
+
+    // Scrollbar styling
+    &::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: @gray300;
+        border-radius: 3px;
+
+        &:hover {
+            background: @gray400;
+        }
+    }
+}
+
+.docs-toc {
+    .toc-title {
+        font-weight: @semibold;
+        font-size: 12px;
+        margin-bottom: @relativeSmall;
+        color: @gray800;
+        text-transform: uppercase;
+        letter-spacing: 0.025em;
+        display: flex;
+        align-items: center;
+        gap: @relative8px;
+    }
+
+    .toc-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-left: 1px solid @gray200;
+
+        li {
+            margin: 0;
+
+            a {
+                display: block;
+                padding: @relative8px @relativeSmall;
+                color: @gray700;
+                font-size: 13px;
+                text-decoration: none;
+                border-bottom: none;
+                border-left: 2px solid transparent;
+                margin-left: -1px;
+                transition: all @transitionFast;
+
+                &:hover {
+                    color: @primaryColor;
+                    border-left-color: @primaryColor;
+                    background: @gray50;
+                }
+
+                &.active {
+                    color: @primaryColor;
+                    border-left-color: @primaryColor;
+                    font-weight: @semibold;
+                }
+            }
+        }
+
+        // Nested TOC items (h3)
+        li.toc-nested {
+            a {
+                padding-left: @relativeMedium;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+/* -------------------
+    Welcome/Index Page
+-------------------- */
+
+.docs-welcome {
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: @relativeSmall;
+    }
+
+    .docs-sections {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: @relativeSmall;
+        margin-top: @relativeMedium;
+    }
+
+    .docs-section-card {
+        background: @white;
+        border: 1px solid @gray200;
+        border-radius: @relativeBorderRadius;
+        padding: @relativeSmall;
+        transition: all @transitionFast;
+
+        &:hover {
+            border-color: @primaryColor;
+            box-shadow: @shadowMD;
+            transform: translateY(-2px);
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: @semibold;
+            color: @gray900;
+            margin-bottom: @relative8px;
+        }
+
+        .section-items {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                margin: @relative8px 0;
+
+                a {
+                    color: @primaryColor;
+                    text-decoration: none;
+                    font-size: 14px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* -------------------
+    Responsive Design
+-------------------- */
+
+// Large desktop - hide TOC sidebar on smaller screens
+@media (max-width: @widescreenMonitorBreakpoint) {
+    .docs-toc-sidebar {
+        display: none;
+    }
+
+    .docs-content {
+        max-width: 100%;
+    }
+}
+
+// Tablet
+@media (max-width: @computerBreakpoint) {
+    .docs-sidebar {
+        width: @docs-sidebar-width-tablet;
+        min-width: @docs-sidebar-width-tablet;
+    }
+
+    .docs-content {
+        padding: @relativeSmall;
+    }
+}
+
+// Mobile
+@media (max-width: @tabletBreakpoint) {
+    .docs-layout {
+        flex-direction: column;
+    }
+
+    .docs-sidebar {
+        width: 100%;
+        min-width: 100%;
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid @gray200;
+        max-height: 60vh;
+
+        // Make sidebar collapsible on mobile
+        &.collapsed {
+            max-height: 48px;
+            overflow: hidden;
+
+            .docs-nav {
+                display: none;
+            }
+        }
+    }
+
+    .docs-content {
+        padding: @relativeSmall @relative8px;
+
+        h1 {
+            font-size: 28px;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+    }
+
+    .docs-welcome .docs-sections {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -------------------
+    Mobile Toggle Button
+-------------------- */
+
+.docs-sidebar-toggle {
+    display: none;
+
+    @media (max-width: @tabletBreakpoint) {
+        display: block;
+        width: 100%;
+        padding: @relative8px @relativeSmall;
+        background: @gray50;
+        border: none;
+        border-bottom: 1px solid @gray200;
+        cursor: pointer;
+        font-weight: @semibold;
+        color: @gray900;
+        text-align: left;
+        transition: background @transitionFast;
+
+        &:hover {
+            background: @gray100;
+        }
+
+        &::after {
+            content: "▼";
+            float: right;
+            transition: transform @transitionFast;
+        }
+
+        &.collapsed::after {
+            transform: rotate(-90deg);
+        }
+    }
+}

@@ -1,0 +1,933 @@
+idLU,frameName,luName,origin,status,senseDescription,annotationset_count,annotation_count
+253,frm_accompaniment,com.adp,WEBTOOL,CREATED,"na companhia de.",92,0
+39513,frm_accompaniment,com.adv,WEBTOOL,CREATED,,13,0
+32177,frm_accompaniment,com.cconj,WEBTOOL,CREATED,with.,0,0
+26447,frm_accompaniment,sozinho.adj,WEBTOOL,CREATED,"estar sem companhia, na solidão.",42,0
+48873,frm_accompaniment,sozinho.adv,FNBK,PENDING,"FN: Sozinho, por si só",0,0
+40264,frm_accoutrements,sombreiro.noun,WEBTOOL,CREATED,"Chapéu com abas muito largas.",2,0
+40265,frm_accoutrements,sombreiro.noun,WEBTOOL,CREATED,"Chapéu com abas muito largas.",1,2
+40320,frm_accoutrements,sombreiro.noun,WEBTOOL,CREATED,"Chapéu com abas muito largas.",0,1
+40321,frm_accoutrements,sombreiro.noun,WEBTOOL,CREATED,"Chapéu com abas muito largas.",0,2
+49731,frm_achieving_first,pioneiro.adj,FNBK,PENDING,"FN: a atividade de ser pioneiro",0,0
+49730,frm_achieving_first,pioneiro.noun,FNBK,PENDING,"FN: aquele que vai primeiro para um território desconhecido ou que é o primeiro a desenvolver um processo ou produto em um novo campo de pensamento",0,0
+39952,frm_active_substance,agente.adj,WEBTOOL,CREATED,,4,0
+44257,frm_active_substance,agente.noun,FNBK,PENDING,"FN: uma substância capaz de produzir um efeito",0,0
+38031,frm_addiction,alcoolista.adj,WEBTOOL,CREATED,"pessoa que tem um hábito excessivo e crônico de consumo de álcool, frequentemente resultando em problemas físicos, sociais ou psicológicos.",0,0
+41402,frm_addiction,alcoolista.adj,WEBTOOL,CREATED,"pessoa que tem um hábito excessivo e crônico de consumo de álcool, frequentemente resultando em problemas físicos, sociais ou psicológicos.",2,0
+38846,frm_addiction,drogado.adj,WEBTOOL,CREATED,"fisicamente dependente de substância químicas. ",2,0
+38845,frm_addiction,drogado.noun,WEBTOOL,CREATED,"aquele que possui um vício em alguma substância química. ",0,0
+41401,frm_addiction,usuário.adj,WEBTOOL,CREATED,"adjetivo que caracteriza a pessoa que faz uso frequente de drogas.",30,0
+38802,frm_addiction,usuário.noun,WEBTOOL,CREATED,"diz-se daquele que faz uso frequente de intoxicantes.",12,0
+26240,frm_addiction,viciado.adj,WEBTOOL,CREATED,"Fisicamente dependente de uma substância em particular.",4,0
+26208,frm_addiction,viciado.noun,WEBTOOL,CREATED,"Uma pessoa que é viciada em alguma coisa.",0,0
+51531,frm_adjacency,vizinho.adj,FNBK,PENDING,"FN: em uma área adjacente.",0,0
+22243,frm_adjacency,vizinho.noun,WEBTOOL,CREATED,"que está localizado perto",5,0
+24849,frm_adjusting,adaptar.verb,WEBTOOL,CREATED,"ato de se enquadrar em uma nova situação.",6,0
+43445,frm_adjusting,adaptar.verb,LOME,PENDING,,2,0
+39886,frm_affirm_or_deny,positivo.adj,WEBTOOL,CREATED,,2,0
+38995,frm_affirm_or_deny,positivo.noun,WEBTOOL,CREATED,"exprime uma afirmação ou confirmação.",5,0
+22413,frm_aggregate,colônia.noun,WEBTOOL,CREATED,"grupo de migrantes que deixam sua terra de origem e vão povoar, cultivar e explorar uma terra estrangeira",2,0
+43119,frm_aggregate,colônia.noun,USER,CREATED,"conjunto de organismos da mesma espécie que vivem fisicamente juntos.",0,0
+18945,frm_aggregate,multiplicidade.noun,WEBTOOL,CREATED,multiplicity,0,0
+22655,frm_aggregate,multiplicidade.noun,WEBTOOL,CREATED,"natureza do que é múltiplo, diverso",0,0
+29126,frm_alternatives,ou.cconj,WEBTOOL,CREATED,"expressão que indica alternância, exclusão, dúvida, incerteza.",37,0
+33315,frm_alternatives,possível.adj,WEBTOOL,CREATED,"Que preenche as condições necessárias para ser, existir ou realizar-se.",8,0
+19019,frm_alternatives,possível.noun,WEBTOOL,CREATED,"possible, ",12,0
+29369,frm_alternativity,"em vez de.cconj",WEBTOOL,CREATED,"ao invés de, em lugar de.",4,0
+34975,frm_alternativity,ou.cconj,WEBTOOL,CREATED,"palavra que marca ideia de alternância.",12,0
+3623,frm_ambient_temperature,frio.adj,WEBTOOL,CREATED,,5,0
+22611,frm_ambient_temperature,frio.noun,WEBTOOL,CREATED,"baixa temperatura, geralmente abaixo de zero",4,0
+43942,frm_amounting_to,total.adj,FNBK,PENDING,"COD: compreendendo o número ou quantidade inteira.",0,0
+43941,frm_amounting_to,total.noun,FNBK,PENDING,"COD: número ou quantidade total",0,0
+51499,frm_animals,cavalo-marinho.noun,FNBK,PENDING,"Um pequeno peixe marinho com armadura óssea segmentada, postura ereta, cauda enrolada e preensível, focinho tubular e cabeça e pescoço sugerindo um cavalo. O macho tem uma bolsa de criação na qual os ovos se desenvolvem.",0,0
+52181,frm_animals,cavalo-marinho.noun,USER,PENDING,"Pequeno peixe ósseo que possui a cabeça alongada, parecida om a de um cavalo.",0,0
+46185,frm_apply_heat,grelhar.noun,FNBK,PENDING,"FN: o processo de cozimento por calor direto, como em uma grelha ou sobre um fogo quente",0,0
+46180,frm_apply_heat,grelhar.verb,FNBK,PENDING,"COD: cozinhe com um grelhador",0,0
+40386,frm_architectural_part,torneira.noun,WEBTOOL,CREATED,"Peça usada para controlar o fluxo de água ou gás de um encanamento ou um recipiente.",2,0
+40387,frm_architectural_part,torneira.noun,WEBTOOL,CREATED,"Peça usada para controlar o fluxo de água ou gás de um encanamento ou um recipiente.",2,2
+43187,frm_arriving,vê.verb,LOME,PENDING,,1,0
+43194,frm_arriving,vê.verb,LOME,PENDING,,1,0
+32217,frm_artifact,mesa.noun,WEBTOOL,CREATED,table.,3,0
+32218,frm_artifact,mesa.noun,WEBTOOL,CREATED,table.,1,0
+44820,frm_artistic_style,visual.adj,FNBK,PENDING,"Um estilo artístico que pode ser experimentado pelo sentido visual do experimentador.",0,0
+44818,frm_artistic_style,visual.noun,FNBK,PENDING,"FN: um estilo de um designer de moda",0,0
+24139,frm_assistance,cuidar.verb,WEBTOOL,CREATED,"ação de zelar por algo, preservar.",29,0
+49681,frm_assistance,cuidar.x,FNBK,PENDING,"O ato de tomar cuidado, estar vigilante por algo.",0,0
+40858,frm_assistance,servir.noun,WEBTOOL,CREATED,"trabalhar em favor de alguém ou algo (não necessariamente remunerado).",1,0
+46766,frm_assistance,servir.verb,FNBK,PENDING,"COD: desempenhar deveres ou serviços para.",0,0
+40984,"frm_assistive technology",libras.noun,WEBTOOL,CREATED,"Sigla da Língua Brasileira de Sinais, língua de modalidade gestual-visual onde é possível se comunicar através de gestos, expressões faciais e corporais.",0,0
+41011,"frm_assistive technology",libras.noun,WEBTOOL,CREATED,"*inserir texto*",0,0
+48556,frm_attaching,amarrar.noun,FNBK,PENDING,"FN: a atividade de fixar ou prender",0,0
+46061,frm_attaching,amarrar.verb,FNBK,PENDING,"COD: anexar ou prender com corda, fio, etc.",0,0
+50495,frm_attributed_information,"de acordo com.adp",FNBK,PENDING,"COD: conforme declarado por ou em.",0,0
+32252,frm_attributed_information,"de acordo com.sconj",WEBTOOL,CREATED,"according to.",6,0
+24200,frm_attributes,qualidade.noun,WEBTOOL,CREATED,"atributo ou propriedade pela qual uma entidade ou uma pessoa se caracteriza",16,0
+43535,frm_attributes,qualidade.noun,LOME,PENDING,,4,0
+45818,frm_awareness,consciente.adj,FNBK,PENDING,"FN: ter consciência ou conhecimento de algo",0,0
+40829,frm_awareness,consciente.noun,WEBTOOL,CREATED,"que está ciente, informado.",0,0
+40599,frm_bedding,fronha.noun,WEBTOOL,CREATED,"capa de tecido utilizada em travesseiros.",0,2
+40691,frm_bedding,fronha.noun,WEBTOOL,CREATED,"espécie de saco ou capa com que se envolve o travesseiro.",0,0
+43336,frm_being_at_risk,insegurança.noun,LOME,PENDING,,2,0
+43830,frm_being_at_risk,insegurança.noun,USER,CREATED,"ausência de segurança, de estabilidade ou de garantia.",1,0
+26456,frm_being_at_risk,segurança.noun,WEBTOOL,CREATED,"estar fora do risco, protegido.",18,0
+43355,frm_being_at_risk,segurança.noun,LOME,PENDING,,16,0
+51376,frm_being_incarcerated,"cumprir pena.verb",FNBK,PENDING,"FN: ser encarcerado por um crime.",0,0
+51378,frm_being_incarcerated,"cumprir pena.x",FNBK,PENDING,"FN: (slang) ser encarcerado.",0,0
+48686,frm_being_named,codinome.adj,FNBK,PENDING,"FN: com o código de nome",0,0
+48685,frm_being_named,codinome.noun,FNBK,PENDING,"FN: nome secreto geralmente dado por uma agência governamental oficial.",0,0
+50516,frm_being_necessary,essencial.adj,FNBK,PENDING,"COD: absolutamente necessário; extremamente importante",0,0
+26494,frm_being_necessary,essencial.noun,WEBTOOL,CREATED,"o que é necessário, precisa ser feito.",6,1
+39828,frm_being_obligated,dever.noun,WEBTOOL,CREATED,,0,0
+432,frm_being_obligated,dever.verb,WEBTOOL,CREATED,"ser obrigado a, ter que",104,0
+39741,frm_being_obligatory,dever.noun,WEBTOOL,CREATED,,11,0
+274,frm_being_obligatory,dever.verb,WEBTOOL,CREATED,"Ter a obrigação de realizar algo",10,0
+44551,frm_besieging,cerco.noun,FNBK,PENDING,"FN: o ato ou processo de cerco a.",0,0
+51000,frm_besieging,cerco.verb,FNBK,PENDING,"FN: cercar.",0,0
+48742,frm_body_description_part,albino.adj,FNBK,PENDING,"COD: tendo uma ausência congênita de pigmento na pele e no cabelo (que são brancos) e nos olhos (que são normalmente rosados)",0,0
+48741,frm_body_description_part,albino.noun,FNBK,PENDING,"COD: uma pessoa ou animal que possui uma ausência congênita de pigmento na pele e no cabelo (que são brancos) e nos olhos (que geralmente são rosados).",0,0
+33301,frm_body_description_part,loiro.adj,WEBTOOL,CREATED,"Que possui cabelo loiro.",1,2
+48736,frm_body_description_part,loiro.noun,FNBK,PENDING,"COD: uma pessoa de cabelo loiro",0,0
+39339,frm_body_description_part,moreno.adj,WEBTOOL,CREATED,"aquele cuja cor de cabelo varia entre o castanho-escuro e o preto.",3,0
+48737,frm_body_description_part,moreno.noun,FNBK,PENDING,"COD: uma pessoa de cabelo castanho escuro",0,0
+40451,frm_body_description_part,ruivo.adj,WEBTOOL,CREATED,"Que tem a cor vermelho-fogo, amarelo-avermelhado.",1,1
+48739,frm_body_description_part,ruivo.noun,FNBK,PENDING,"COD: uma pessoa, especialmente uma mulher, com cabelo ruivo.",0,0
+40535,frm_body_movement,piscar.noun,WEBTOOL,CREATED,"Ato de fechar abrir os olhos.",0,0
+40731,frm_body_movement,piscar.verb,WEBTOOL,CREATED,"ação de abrir e fechar os olhos.",1,0
+32315,frm_body_parts,cintura.noun,WEBTOOL,CREATED,waist.,2,0
+35454,frm_body_parts,cintura.noun,WEBTOOL,CREATED,"parte do corpo pertencente ao tronco e que liga os membros. ",1,0
+42610,frm_body_parts,pênis.noun,WEBTOOL,CREATED,"órgão sexual masculino.",8,0
+52052,frm_body_parts,pênis.noun,FNBK,PENDING,,0,0
+35397,frm_body_parts,tireoide.noun,WEBTOOL,CREATED,"glândula endócrina localizada na região do pescoço responsável pela produção dos hormônios T3 e T4.",5,1
+40391,frm_body_parts,tireoide.noun,WEBTOOL,CREATED,"glândula pequena, em forma de borboleta, localizada na parte anterior do pescoço, sob a pele e abaixo do pomo-de-adão",0,0
+39933,frm_breaking_off,quebrar.noun,WEBTOOL,CREATED,,2,0
+453,frm_breaking_off,quebrar.verb,WEBTOOL,CREATED,"soltar um pedaço, partir",29,0
+22525,frm_building_subparts,andar.noun,WEBTOOL,CREATED,"um pavimento ou piso em um prédio",16,0
+40365,frm_building_subparts,andar.noun,WEBTOOL,CREATED,"Cada um dos níveis de um prédio, edifício.",3,0
+24099,frm_building_subparts,térreo.adj,WEBTOOL,CREATED,"designação do primeiro andar de um prédio.",1,0
+48368,frm_building_subparts,térreo.noun,FNBK,PENDING,"o chão de um edifício no nível do solo.",0,0
+35771,frm_calendric_unit,amanhã.adv,WEBTOOL,CREATED,"dia seguinte ao presente.",8,0
+48710,frm_calendric_unit,amanhã.noun,FNBK,PENDING,"COD: o dia após hoje",0,0
+46164,frm_calendric_unit,amanhecer.noun,FNBK,PENDING,"COD: amanhecer",0,0
+35772,frm_calendric_unit,amanhecer.verb,WEBTOOL,CREATED,"raiar a manhã, ter início o dia ou começar o dia.",0,0
+3595,frm_calendric_unit,hoje.adv,WEBTOOL,CREATED,"no dia corrente",76,0
+18657,frm_calendric_unit,hoje.noun,WEBTOOL,CREATED,today.n,40,0
+28148,frm_calendric_unit,maio.noun,WEBTOOL,CREATED,"5º mês do ano.",10,0
+48716,frm_calendric_unit,maio.noun,FNBK,PENDING,"COD: o quinto mês do ano. Padrões como: Calendric_unit.Abril.n",0,0
+18684,frm_calendric_unit,ontem.adv,WEBTOOL,CREATED,Yesterday,30,0
+48709,frm_calendric_unit,ontem.noun,FNBK,PENDING,"COD: o dia anterior a hoje",0,0
+35768,frm_calendric_unit,quarta-feira.noun,WEBTOOL,CREATED,"quarto dia da semana a partir do domingo, o dia do meio da semana.",8,0
+43812,frm_calendric_unit,quarta-feira.noun,USER,CREATED,"quarto dia da semana.",0,0
+24472,frm_capability,capacitar.verb,WEBTOOL,CREATED,"processo de treinamento e aperfeiçoamento para a realização de um trabalho ou atividade.",3,0
+43086,frm_capability,capacitar.verb,USER,CREATED,"passar por um processo que torna uma pessoa apta ou capacitada.",1,0
+43315,frm_capability,"cerca de.adp",LOME,PENDING,,1,0
+43322,frm_capability,"cerca de.verb",LOME,PENDING,,1,0
+39438,frm_capability,poder.adj,WEBTOOL,CREATED,,13,0
+44102,frm_capability,poder.noun,FNBK,PENDING,"FN: a capacidade de realizar as ações necessárias em um evento.",0,0
+247,frm_capability,poder.verb,WEBTOOL,CREATED,"ter a capacidade de realizar uma ação.",154,0
+50338,frm_capability,potencial.adj,FNBK,PENDING,"FN: algo caracterizado como tendo a capacidade de se desenvolver em algo mais",0,0
+40839,frm_capability,potencial.noun,WEBTOOL,CREATED,"capacidade de realização, de produção, de execução; potencialidade.",3,0
+40072,frm_cardinal_numbers,cinco.noun,WEBTOOL,CREATED,,2,0
+18666,frm_cardinal_numbers,cinco.num,WEBTOOL,CREATED,"número cardinal que sucede o quatro e antecede o seis.",35,0
+43689,frm_cardinal_numbers,"com certeza.num",LOME,PENDING,,1,0
+43690,frm_cardinal_numbers,"com certeza.num",LOME,PENDING,,1,0
+43698,frm_cardinal_numbers,"com certeza.num",LOME,PENDING,,1,0
+43700,frm_cardinal_numbers,"com certeza.num",LOME,PENDING,,1,0
+43399,frm_cardinal_numbers,diálogos.num,LOME,PENDING,,1,0
+43411,frm_cardinal_numbers,diálogos.num,LOME,PENDING,,1,0
+43419,frm_cardinal_numbers,diálogos.num,LOME,PENDING,,1,0
+43422,frm_cardinal_numbers,diálogos.num,LOME,PENDING,,1,0
+34781,frm_cardinal_numbers,"dois mil.num",WEBTOOL,CREATED,"Número composto por dois milhares.",16,0
+43310,frm_cardinal_numbers,"dois mil.num",LOME,PENDING,,2,0
+39238,frm_cardinal_numbers,dois.noun,WEBTOOL,CREATED,,40,3
+3800,frm_cardinal_numbers,dois.num,WEBTOOL,CREATED,"número cardinal que sucede o um e antecede o três.",177,0
+43674,frm_cardinal_numbers,enfrentar.num,LOME,PENDING,,1,0
+43675,frm_cardinal_numbers,enfrentar.num,LOME,PENDING,,1,0
+43620,frm_cardinal_numbers,gasta.num,LOME,PENDING,,1,0
+43624,frm_cardinal_numbers,gasta.num,LOME,PENDING,,1,0
+43651,frm_cardinal_numbers,gastos.num,LOME,PENDING,,1,0
+43652,frm_cardinal_numbers,gastos.num,LOME,PENDING,,1,0
+43653,frm_cardinal_numbers,gastos.num,LOME,PENDING,,1,0
+43460,frm_cardinal_numbers,leias.num,LOME,PENDING,,1,0
+43463,frm_cardinal_numbers,leias.num,LOME,PENDING,,1,0
+43466,frm_cardinal_numbers,leias.num,LOME,PENDING,,1,0
+43490,frm_cardinal_numbers,leias.num,LOME,PENDING,,1,0
+39925,frm_cardinal_numbers,meio.adj,WEBTOOL,CREATED,,1,0
+29073,frm_cardinal_numbers,meio.noun,WEBTOOL,CREATED,"metade de um.",10,0
+48619,frm_cardinal_numbers,"quarenta e cinco.noun",FNBK,PENDING,"9x5, o número que precede 46, e após 44.",0,0
+34480,frm_cardinal_numbers,"quarenta e cinco.num",WEBTOOL,CREATED,"número cardinal que sucede o quarenta e quatro e antecede o quarenta e seis.",3,0
+48618,frm_cardinal_numbers,quatorze.noun,FNBK,PENDING,"COD: equivalente ao produto de sete e dois; um a mais que treze, ou seis a menos que vinte; 14.",0,0
+22906,frm_cardinal_numbers,quatorze.num,WEBTOOL,CREATED,"número cardinal que sucede o treze e antecede o quinze.",6,0
+39916,frm_cardinal_numbers,quatro.noun,WEBTOOL,CREATED,,6,0
+18590,frm_cardinal_numbers,quatro.num,WEBTOOL,CREATED,"número cardinal que sucede o três e antecede o cinco.",36,0
+43712,frm_cardinal_numbers,realmente.num,LOME,PENDING,,1,0
+43713,frm_cardinal_numbers,realmente.num,LOME,PENDING,,1,0
+42513,frm_cardinal_numbers,setecentos.noun,WEBTOOL,CREATED,"número cardinal que sucede o seiscentos e noventa e nove, e antecede o setecentos e um.",4,0
+43697,frm_cardinal_numbers,setecentos.num,LOME,PENDING,,2,0
+28910,frm_cardinal_numbers,"trinta e dois.num",WEBTOOL,CREATED,"número cardinal que sucede o trinta e um e antecede o trinta e três.",0,0
+43311,frm_cardinal_numbers,"trinta e dois.num",LOME,PENDING,,2,0
+22921,frm_cardinal_numbers,"vinte e cinco.num",WEBTOOL,CREATED,"número cardinal que sucede o vinte e quatro e antecede o vinte e seis.",10,0
+43296,frm_cardinal_numbers,"vinte e cinco.num",LOME,PENDING,,4,0
+28878,frm_cardinal_numbers,"vinte e três.num",WEBTOOL,CREATED,"número cardinal que sucede o vinte e dois e antecede o vinte e quatro.",6,0
+43211,frm_cardinal_numbers,"vinte e três.num",LOME,PENDING,,4,0
+46098,frm_cardinal_numbers,vinte.noun,FNBK,PENDING,"COD: um grupo ou conjunto de vinte",0,0
+22923,frm_cardinal_numbers,vinte.num,WEBTOOL,CREATED,"número cardinal que sucede o dezenove e antecede o vinte e um.",20,0
+43695,frm_catastrophe,calamidade.noun,LOME,PENDING,,2,0
+43783,frm_catastrophe,calamidade.noun,USER,CREATED,"desastre em grande escala.",1,0
+43647,frm_categorization,gastos.adp,LOME,PENDING,,1,0
+43655,frm_categorization,gastos.det,LOME,PENDING,,1,0
+18801,frm_causation,assim.cconj,WEBTOOL,CREATED,"so. thus.",4,0
+46949,frm_causation,"desde que.cconj",FNBK,PENDING,"COD: pelo motivo de; porque.",0,0
+34489,frm_causation,então.cconj,WEBTOOL,CREATED,portanto.,62,1
+43514,frm_causation,municipal.det,LOME,PENDING,,1,0
+43515,frm_causation,municipal.det,LOME,PENDING,,1,0
+46952,frm_causation,"para que.cconj",FNBK,PENDING,"FN: a fim de, causando",0,0
+46950,frm_causation,porque.cconj,FNBK,PENDING,"Porque; visto que",0,0
+18640,frm_causation,porque.sconj,WEBTOOL,CREATED,"já que, visto que.",43,0
+46958,frm_causation,portanto.adv,FNBK,PENDING,"por esse motivo; consequentemente.",0,0
+29127,frm_causation,portanto.cconj,WEBTOOL,CREATED,"expressão que introduz uma ideia de conclusão de um raciocínio ou exposição de motivos anterior. O mesmo que logo, por conseguinte, consequentemente, por isso, assim sendo, desse modo, pois.",3,0
+43502,frm_causation,portas.det,LOME,PENDING,,1,0
+43503,frm_causation,portas.det,LOME,PENDING,,1,0
+45415,frm_causation,responsável.adj,FNBK,PENDING,"FN: responsável por algo que aconteceu",0,0
+19052,frm_causation,responsável.noun,WEBTOOL,CREATED,"cuja existência ou aspecto interfere na existência ou aspecto de outra entidade.",4,0
+18860,frm_causation,resultado.noun,WEBTOOL,CREATED,result,6,0
+28482,frm_causation,resultado.noun,WEBTOOL,CREATED,"Produto, efeito ou consequência de uma ação.",2,0
+43629,frm_cause_change,reverter.verb,LOME,PENDING,,2,0
+43733,frm_cause_change,reverter.verb,USER,CREATED,"transformar ou retornar algo ao estado inicial.",1,0
+42510,frm_cause_to_be_clean,limpeza.adj,WEBTOOL,CREATED,"ato ou processo de limpar algo.",2,0
+42595,frm_cause_to_be_clean,limpeza.noun,WEBTOOL,CREATED,"ato de remover sujeira, impurezas ou desordem, deixando algo limpo, organizado e higienizado.",3,0
+48093,frm_certainty,cético.adj,FNBK,PENDING,"FN: reservando julgamento quanto à verdade de.",0,0
+48095,frm_certainty,cético.noun,FNBK,PENDING,"COD: uma pessoa inclinada a questionar ou duvidar de opiniões aceitas.",0,0
+43680,frm_certainty,"com certeza.adp",LOME,PENDING,,2,0
+33249,frm_certainty,"com certeza.adv",WEBTOOL,CREATED,Certamente,10,0
+32388,frm_change_operational_state,ligar.verb,WEBTOOL,CREATED,"turn on.",7,0
+32389,frm_change_operational_state,ligar.verb,WEBTOOL,CREATED,"turn on.",0,0
+32390,frm_change_operational_state,ligar.verb,WEBTOOL,CREATED,"turn on.",1,0
+39957,frm_closure,abrir.noun,WEBTOOL,CREATED,,2,0
+24854,frm_closure,abrir.verb,WEBTOOL,CREATED,"remover o fechamento de algo.",113,1
+32398,frm_clothing,camiseta.noun,WEBTOOL,CREATED,t-shirt.,3,4
+33653,frm_clothing,camiseta.noun,WEBTOOL,CREATED,,3,5
+39254,frm_clothing,tecido.adj,WEBTOOL,CREATED,,0,0
+27406,frm_clothing,tecido.noun,WEBTOOL,CREATED,"produto final da tecelagem de fios de algodão, seda, lã ou sintéticos, usado para confeccionar vestimenta, embalagem etc.",12,8
+49804,frm_collaboration,conluio.adj,FNBK,PENDING,"COD: conspirando ou conspirando juntos em segredo",0,0
+49808,frm_collaboration,conluio.noun,FNBK,PENDING,"COD: cooperação secreta ou ilegal com o objetivo de enganar ou enganar os outros",0,0
+43021,frm_color,anil.adj,WEBTOOL,CREATED,"de um tom de azul como o produzido por extração da substância das folhas da anileira.",1,0
+43023,frm_color,anil.noun,WEBTOOL,CREATED,"tom de azul produzido por extração da substância das folhas da anileira.",0,0
+38793,frm_color,laranja.adj,WEBTOOL,CREATED,"cor de laranja é uma cor terciária nos sistemas RGB e CMYK. ",24,0
+41867,frm_color,laranja.noun,WEBTOOL,CREATED,"cor quente que significa alegria, vitalidade, prosperidade e sucesso; resultado da mistura das cores primárias vermelho e amarelo.",9,0
+49850,frm_color,rosa.adj,FNBK,PENDING,"COD: de uma cor intermediária entre o vermelho e o branco, como de coral ou salmão.",0,0
+40131,frm_color,rosa.noun,WEBTOOL,CREATED,"cor vermelha mais clara, normalmente obtida pela mistura do vermelho com o branco, semelhante à cor de algumas rosas",19,5
+33352,frm_commerce_pay,pagar.verb,WEBTOOL,CREATED,"entregar ou restituir (uma quantia que se deve).",72,0
+43063,frm_commerce_pay,pagar.verb,USER,CREATED,"entregar a alguém uma quantia em dinheiro, ou equivalente, em troca de um bem ou serviço.",1,0
+35062,frm_commonality,como.cconj,WEBTOOL,CREATED,"semelhante a.",14,0
+42959,frm_completeness,complementar.adj,WEBTOOL,CREATED,"que forma um todo integrado quando associado a outro elemento.",1,0
+32074,frm_completeness,complementar.verb,WEBTOOL,CREATED,"Ato de acrescentar, completar o que falta.",1,0
+51170,frm_concessive,"apesar de.adp",FNBK,PENDING,"Apesar de",0,0
+32435,frm_concessive,"apesar de.sconj",WEBTOOL,CREATED,"despite, in spite of",0,0
+18707,frm_concessive,mas.cconj,WEBTOOL,CREATED,"porém, todavia, contudo.",126,0
+42135,frm_concessive,mas.cconj,WEBTOOL,CREATED,"porém, todavia, contudo.",14,0
+42450,frm_concessive,mesmo.adv,WEBTOOL,CREATED,"ainda que.",1,0
+34974,frm_concessive,mesmo.sconj,WEBTOOL,CREATED,"palavra usada para ligar sentenças que admite um fato contrário à ação principal, mas é incapaz de impedi-la.",5,0
+51173,frm_concessive,"no entanto.adv",FNBK,PENDING,"Apesar disso",0,0
+29110,frm_concessive,"no entanto.sconj",WEBTOOL,CREATED,"marca de adversão, oposição, restrição. O mesmo que todavia, contudo, mas, porém, no entanto.",3,0
+36450,frm_concessive,"pelo contrário.cconj",WEBTOOL,CREATED,"de outro modo, ao contrário, de maneira oposta.",1,0
+19432,frm_confronting_problem,enfrentar.verb,WEBTOOL,CREATED,vivenciar,9,0
+44682,frm_confronting_problem,enfrentar.verb,FNBK,PENDING,"FN: colocar-se na posição de entender e lidar com algo desagradável.",0,0
+51268,frm_contrary_circumstances,"apesar de.adp",FNBK,PENDING,"FN: apesar da oposição ou adversidade",0,0
+29326,frm_contrary_circumstances,"apesar de.adv",WEBTOOL,CREATED,"não obstante. Indica, no sintagma ou sentença em que entra, uma ideia oposta à expressa na outra parte da afirmação, contrária a uma expectativa provável.",22,0
+45319,frm_contrast,mas.cconj,FNBK,PENDING,"adicionar uma declaração com um conteúdo diferente do que foi dito antes",0,0
+52174,frm_contrast,"no entanto.cconj",FNBK,PENDING,"adicionar uma declaração com um conteúdo diferente do que foi dito antes",0,0
+52173,frm_contrast,porém.cconj,FNBK,PENDING,"adicionar uma declaração com um conteúdo diferente do que foi dito antes",0,0
+19539,frm_contrition,remorso.adj,WEBTOOL,CREATED,"estar cheio de remorso",0,0
+19538,frm_contrition,remorso.noun,WEBTOOL,CREATED,"sentimento de arrependimento e tristeza",0,0
+48924,frm_cooking_creation,assar.noun,FNBK,PENDING,"FN: o processo de cozimento de alimentos por calor seco, normalmente em um forno",0,0
+19556,frm_cooking_creation,assar.verb,WEBTOOL,CREATED,"ação de cozinhar alimentos",1,0
+46280,frm_cooking_creation,grelhar.noun,FNBK,PENDING,"FN: o processo de cozimento por calor direto, como em uma grelha ou sobre um fogo quente",0,0
+19552,frm_cooking_creation,grelhar.verb,WEBTOOL,CREATED,"ação utilizada para preparar alimentos sem óleo",0,0
+27345,frm_cotheme,seguir.verb,WEBTOOL,CREATED,"acompanhar o movimento de, ir junto ou atrás.",5,0
+47375,frm_cotheme,seguir.x,FNBK,PENDING,"FN: seguir de forma perturbadoramente determinada.",0,0
+983,frm_crime,crime.noun,WEBTOOL,CREATED,"ato ilícito que, geralmente, envolve o uso de violência contra a vítima.",5,0
+51665,frm_crime,crime.noun,FNBK,PENDING,"ato ilegal, geralmente violento, contra uma vítima",0,0
+47343,frm_cure,curativo.adj,FNBK,PENDING,"COD: capaz de curar doenças",0,0
+47344,frm_cure,curativo.noun,FNBK,PENDING,"COD: uma medicina ou agente curativo",0,0
+45104,frm_cure,paliativo.adj,FNBK,PENDING,"COD: aliviando dores ou problemas sem lidar com as causas subjacentes",0,0
+47347,frm_cure,paliativo.noun,FNBK,PENDING,"FN: tornando os efeitos de uma doença menos graves para o paciente (sem curar a própria doença)",0,0
+32131,frm_dead_or_alive,mortal.adj,WEBTOOL,CREATED,"suscetível à morte, letal.",0,0
+27548,frm_dead_or_alive,mortal.noun,WEBTOOL,CREATED,"ser passível de morte.",1,0
+49221,frm_dead_or_alive,morto-vivo.adj,FNBK,PENDING,"COD: tecnicamente morto mas ainda animado.",0,0
+49222,frm_dead_or_alive,morto-vivo.noun,FNBK,PENDING,"FN: uma criatura que é tecnicamente morta mas ainda animada",0,0
+49220,frm_dead_or_alive,morto.adj,FNBK,PENDING,"COD: não está mais vivo.",0,0
+49223,frm_dead_or_alive,morto.noun,FNBK,PENDING,"FN: esses seres humanos que estão mortos",0,0
+44615,frm_degree,bastante.adj,FNBK,PENDING,"Em um grau relativamente alto, ou intensidade.",0,0
+43007,frm_degree,bastante.adv,WEBTOOL,CREATED,"quantificador que expressa grau considerável de algo.",9,0
+24301,frm_degree,extremamente.adv,WEBTOOL,CREATED,"de modo extremo. ",3,0
+43345,frm_degree,extremamente.adv,LOME,PENDING,,2,0
+51124,frm_degree,quase.adp,FNBK,PENDING,"Não completamente.",0,0
+33234,frm_degree,quase.adv,WEBTOOL,CREATED,"muito proximamente a.",19,0
+24291,frm_degree,realmente.adv,WEBTOOL,CREATED,"efetivamente, na verdade, sem dúvida.",39,0
+43707,frm_degree,realmente.adv,LOME,PENDING,,2,0
+44617,frm_degree,super.adj,FNBK,PENDING,"Superior, maior em dimensão ou grau.",0,0
+33974,frm_degree,super.adv,WEBTOOL,CREATED,"extremamente; de forma superior.",20,0
+39079,frm_descritor_de_gênero,feminino.adj,WEBTOOL,CREATED,"que se refere ao gênero comumente associado a mulheres, seja por identidade, expressão ou papel social.",2,0
+39078,frm_descritor_de_gênero,feminino.noun,WEBTOOL,CREATED,"diz-se do gênero gramatical contrário ao masculino e caracterizado, geralmente, pela possibilidade de junção ao artigo ""a"".",7,0
+21164,frm_desirability,chato.adj,WEBTOOL,CREATED,"qualidade de não ser legal ou agradável",3,0
+21165,frm_desirability,chato.noun,WEBTOOL,CREATED,"pessoa que não é legal",0,0
+46629,frm_desirability,incrível.adj,FNBK,PENDING,"FN: ser de qualidade excepcional",0,0
+19340,frm_desirability,incrível.noun,WEBTOOL,CREATED,,8,0
+39228,frm_desirable_event,dever.noun,WEBTOOL,CREATED,,36,0
+3639,frm_desirable_event,dever.verb,WEBTOOL,CREATED,"seria bom que, ter que, poderia fazer.",17,0
+22443,frm_desiring,querer.noun,WEBTOOL,CREATED,"um desejo por algo",3,0
+348,frm_desiring,querer.verb,WEBTOOL,CREATED,"ter vontade de fazer algo ou expressar essa intenção.",195,4
+43264,frm_difficulty,"de frente.adj",LOME,PENDING,,1,0
+43268,frm_difficulty,"de frente.det",LOME,PENDING,,1,0
+43269,frm_difficulty,"de frente.det",LOME,PENDING,,1,0
+282,frm_difficulty,difícil.adj,WEBTOOL,CREATED,"aquilo que não é fácil.",38,0
+49587,frm_difficulty,difícil.noun,FNBK,PENDING,"FN difícil",0,0
+43250,frm_difficulty,parceria.det,LOME,PENDING,,1,0
+43251,frm_difficulty,parceria.det,LOME,PENDING,,1,0
+43609,frm_difficulty,transtorno.noun,LOME,PENDING,,2,0
+43723,frm_difficulty,transtorno.noun,USER,CREATED,"perturbação, dificuldade, incômodo.",0,0
+28412,frm_direction,alto.adj,WEBTOOL,CREATED,Elevado.,2,1
+22464,frm_direction,alto.adv,WEBTOOL,CREATED,"em direção a um lugar de alta altitude",9,6
+22455,frm_direction,leste.adv,WEBTOOL,CREATED,"ponto do horizonte que o sol nasce",0,0
+22456,frm_direction,leste.noun,WEBTOOL,CREATED,"ponto do horizonte que o sol nasce",0,0
+22459,frm_direction,norte.adv,WEBTOOL,CREATED,"a direção que a bússola normalmente aponta",2,0
+22460,frm_direction,norte.noun,WEBTOOL,CREATED,"a direção que a bússola normalmente aponta",1,0
+22466,frm_direction,oeste.adv,WEBTOOL,CREATED,"direção no ponto do horizonte onde o sol se põe",0,0
+22467,frm_direction,oeste.noun,WEBTOOL,CREATED,"direção do horizonte onde o sol se põe",0,0
+32527,frm_direction,"para cima.adv",WEBTOOL,CREATED,up.,10,0
+32528,frm_direction,"para cima.adv",WEBTOOL,CREATED,up.,5,0
+22463,frm_direction,sul.adv,WEBTOOL,CREATED,"o lado em que o ponto do horizonte marca 90 graus",0,0
+19328,frm_direction,sul.noun,WEBTOOL,CREATED,"Região oposta ao norte.",1,0
+22468,frm_directional_locative_relation,acima.adp,WEBTOOL,CREATED,"tem localização em um lugar alto",0,0
+39837,frm_directional_locative_relation,acima.adv,WEBTOOL,CREATED,,1,0
+22470,frm_directional_locative_relation,leste.adv,WEBTOOL,CREATED,"ponto no horizonte onde o sol nasce",0,0
+22471,frm_directional_locative_relation,leste.noun,WEBTOOL,CREATED,"lugar no horizonte onde o sol nasce",0,0
+22473,frm_directional_locative_relation,nordeste.adv,WEBTOOL,CREATED,"ponto que se localiza à 90 graus do norte e 90 graus do leste",0,0
+22474,frm_directional_locative_relation,nordeste.noun,WEBTOOL,CREATED,"ponto que se localiza á 90 graus do norte e 90 graus do leste",0,0
+22475,frm_directional_locative_relation,noroeste.adv,WEBTOOL,CREATED,"ponto que se localiza à 90 graus do norte e 90 graus do oeste",0,0
+22476,frm_directional_locative_relation,noroeste.noun,WEBTOOL,CREATED,"ponto de localização à 90 graus do norte e 90 graus do oeste",0,0
+22472,frm_directional_locative_relation,norte.adv,WEBTOOL,CREATED,"ponto o qual a bússola normalmente aponta",1,0
+18999,frm_directional_locative_relation,norte.noun,WEBTOOL,CREATED,north,1,0
+22482,frm_directional_locative_relation,oeste.adv,WEBTOOL,CREATED,"ponto do horizonte onde o sol se põe",0,0
+22483,frm_directional_locative_relation,oeste.noun,WEBTOOL,CREATED,"ponto no horizonte onde o sol se põe",0,0
+22478,frm_directional_locative_relation,sudeste.adv,WEBTOOL,CREATED,"região entre o sul e o leste",0,0
+22479,frm_directional_locative_relation,sudeste.noun,WEBTOOL,CREATED,"região entre o sul e o leste",0,0
+22480,frm_directional_locative_relation,sudoeste.adv,WEBTOOL,CREATED,"região entre o sul e o oeste",0,0
+22481,frm_directional_locative_relation,sudoeste.noun,WEBTOOL,CREATED,"região entre o sul e o oeste",0,0
+22477,frm_directional_locative_relation,sul.adv,WEBTOOL,CREATED,"a direção apontada pela bússola oposta ao norte",0,0
+3908,frm_directional_locative_relation,sul.noun,WEBTOOL,CREATED,south,2,0
+1295,frm_direct_infractions,carrinho.noun,WEBTOOL,CREATED,"no futebol, é a infração em que um jogador, com a finalidade de retirar a bola do adversário, atira-se ao chão e desliza com as pernas para frente.",0,0
+51770,frm_direct_infractions,carrinho.verb,FNBK,PENDING,"O jogador desliza com as duas pernas na frente do adversário para tirar-lhe a bola, atirando-o no chão.",0,0
+24523,frm_discussion,debate.noun,WEBTOOL,CREATED,"consiste na apresentação formal de argumentos de um ponto de vista sobre algum assunto na qual duas ou mais pessoas argumentam entre si e defendem o seu posicionamento sobre determinado o assunto. admite-se perguntas da plateia ",2,0
+46694,frm_discussion,debate.verb,FNBK,PENDING,"COD: discutir ou argumentar sobre.",0,0
+38075,frm_documents,"ficha de atendimento.noun",WEBTOOL,CREATED,"documento que contém informações sobre um paciente atendido, incluindo queixas, sintomas e tratamentos.",6,0
+38144,frm_documents,"ficha de atendimento.noun",WEBTOOL,CREATED,"documento utilizado para registrar informações sobre o atendimento médico ou social prestado a um paciente ou indivíduo.",10,0
+38076,frm_documents,"ficha de notificação.noun",WEBTOOL,CREATED,"documento usado para registrar eventos de notificação obrigatória, como doenças transmissíveis, para fins de vigilância em saúde pública.",4,0
+38143,frm_documents,"ficha de notificação.noun",WEBTOOL,CREATED,"formulário usado para notificar autoridades de saúde sobre casos de doenças ou condições específicas, permitindo a monitorização epidemiológica.",0,0
+38073,frm_documents,prontuário.noun,WEBTOOL,CREATED,"registro documentado e confidencial que contém informações detalhadas sobre o histórico médico, diagnósticos, tratamentos, exames, prescrições e outros aspectos relevantes do cuidado de um paciente ao longo do tempo.",0,0
+38146,frm_documents,prontuário.noun,WEBTOOL,CREATED,"registro documentado e confidencial das informações médicas de um paciente, incluindo histórico, diagnósticos, tratamentos e exames.",18,0
+38066,frm_documents,relatório.noun,WEBTOOL,CREATED,"registro detalhado de informações relevantes sobre um paciente, tratamento ou procedimento.",4,0
+38837,frm_documents,relatório.noun,WEBTOOL,CREATED,"documentação que apresenta as um resumo e as informações e dados coletados.",4,0
+39408,frm_duration_relation,durante.adj,WEBTOOL,CREATED,,0,0
+19161,frm_duration_relation,durante.adp,WEBTOOL,CREATED,"expressão da duração de algo em um tempo determinado.",22,0
+43430,frm_earnings_and_losses,"ao todo.det",LOME,PENDING,,1,0
+43431,frm_earnings_and_losses,"ao todo.det",LOME,PENDING,,1,0
+43467,frm_earnings_and_losses,leias.det,LOME,PENDING,,1,0
+43468,frm_earnings_and_losses,leias.det,LOME,PENDING,,1,0
+23377,frm_eclipse,eclipse.noun,WEBTOOL,CREATED,"um acontecimento meteorológico o qual consiste na passagem de um objeto por outro atrapalhando a visão do observador",0,0
+23378,frm_eclipse,eclipse.verb,WEBTOOL,CREATED,"ação de bloquear por completo um corpo pela passagem de outro",0,0
+40491,frm_emotion_directed,encabulado.adj,WEBTOOL,CREATED,"Característica da pessoa que está constrangida; envergonhado.",2,0
+40624,frm_emotion_directed,encabulado.adj,WEBTOOL,CREATED,"Característica da pessoa que está constrangida; envergonhado.",0,2
+39693,frm_emptying,limpeza.adj,WEBTOOL,CREATED,,0,0
+26125,frm_emptying,limpeza.noun,WEBTOOL,CREATED,"ato ou processo de limpar algo.",7,0
+18901,frm_entity,nada.noun,WEBTOOL,CREATED,nothing,14,0
+33245,frm_entity,nada.noun,WEBTOOL,CREATED,,4,0
+43642,frm_estimating,estimar.verb,LOME,PENDING,,2,0
+43767,frm_estimating,estimar.verb,USER,CREATED,"avaliar ou calcular de modo aproximado o valor, a quantidade, a dimensão ou a importância de algo, com base em dados parciais, experiência ou inferência.",1,0
+43438,frm_event_instance,"de novo.adp",LOME,PENDING,,2,0
+32596,frm_event_instance,"de novo.adv",WEBTOOL,CREATED,"novamente, outra vez.",6,0
+39243,frm_event_instance,vez.adj,WEBTOOL,CREATED,,23,0
+18833,frm_event_instance,vez.noun,WEBTOOL,CREATED,"designação da ocorrência de um evento ou de cada ocorrência de eventos sucessivos idênticos ou análogos.",44,0
+39415,frm_existence,haver.aux,WEBTOOL,CREATED,,5,0
+3773,frm_existence,haver.verb,WEBTOOL,CREATED,"indica a existência de uma entidade em um lugar.",104,0
+39276,frm_expectation,dever.noun,WEBTOOL,CREATED,,3,0
+19527,frm_expectation,dever.verb,WEBTOOL,CREATED,,9,0
+47760,frm_expensiveness,"baixo custo.adj",FNBK,PENDING,"FN: carregado a um preço relativamente baixo.",0,0
+23285,frm_expensiveness,"baixo custo.noun",WEBTOOL,CREATED,"que custa um preço relativamente baixo",0,0
+352,frm_experiencer_focused_emotion,lastimar.verb,WEBTOOL,CREATED,"Lamentar-se, queixar-se. (DMO)",1,0
+23269,frm_experiencer_focused_emotion,lastimar.verb,WEBTOOL,CREATED,"sentir piedade, compaixão",0,0
+23028,frm_expertise,adepto.adj,WEBTOOL,CREATED,"muito habilidoso ou proficiente",0,0
+23029,frm_expertise,adepto.noun,WEBTOOL,CREATED,"uma pessoa que é adepta de algo",2,0
+23030,frm_expertise,amador.adj,WEBTOOL,CREATED,"pouco habilidoso, inapto",0,0
+23031,frm_expertise,amador.noun,WEBTOOL,CREATED,"uma pessoa considerada inapta em determinada atividade",0,0
+23026,frm_expertise,ás.adj,WEBTOOL,CREATED,"excelente, altamente habilidoso ou talentoso",0,0
+23027,frm_expertise,ás.noun,WEBTOOL,CREATED,"uma pessoa que é excelente em uma atividade particular",0,0
+48069,frm_expertise,conhecedor.adj,FNBK,PENDING,"FN: ter conhecimento sobre um tópico específico.",0,0
+23037,frm_expertise,conhecedor.noun,WEBTOOL,CREATED,"uma pessoa que tem conhecimento sobre determinadas áreas, por exemplo arte, culinária ou bebidas",0,0
+23038,frm_expertise,craque.adj,WEBTOOL,CREATED,"muito bom ou habilidoso",0,0
+48067,frm_expertise,craque.noun,FNBK,PENDING,"FN: uma pessoa que é extremamente esperta em algo",0,0
+23067,frm_expertise,leigo.adj,WEBTOOL,CREATED,"entidade inexperiente",5,0
+48073,frm_expertise,leigo.noun,FNBK,PENDING,"FN: uma pessoa que não é especialista em um determinado campo do conhecimento",0,0
+23069,frm_expertise,mestre.adj,WEBTOOL,CREATED,"aquele que tem ou possui grande experiência",0,0
+23072,frm_expertise,mestre.noun,WEBTOOL,CREATED,"praticante habilidoso de determinada área",2,0
+39770,frm_extreme_value,máximo.adj,WEBTOOL,CREATED,,6,0
+50854,frm_extreme_value,máximo.noun,FNBK,PENDING,"COD: o maior montante, extensão ou intensidade possível ou registrado.",0,0
+27568,frm_extreme_value,mínimo.adj,WEBTOOL,CREATED,"muito pequeno, menor de todos.",6,0
+50855,frm_extreme_value,mínimo.noun,FNBK,PENDING,"FN: o menor valor possível",0,0
+19177,frm_fame,famoso.adj,WEBTOOL,CREATED,"aquele que tem fama.",25,1
+19306,frm_fame,famoso.noun,WEBTOOL,CREATED,"Uma #Entidade é conhecida por algum motivo",1,0
+3738,frm_feeling,sentir.verb,WEBTOOL,CREATED,"perceber algo por um dos sentidos, ter como sensação.",21,0
+22943,frm_feeling,sentir.verb,WEBTOOL,CREATED,"experienciar uma emoção",51,0
+18769,frm_fields,arte.noun,WEBTOOL,CREATED,arts.,20,0
+34775,frm_fields,arte.noun,WEBTOOL,CREATED,"Campo que abrange diversas áreas da arte.",2,2
+27567,frm_fields,científico.adj,WEBTOOL,CREATED,"atinente à ciência.",1,0
+43114,frm_fields,científico.adj,USER,CREATED,"relativo a ou próprio da ciência.",0,0
+50193,frm_finish_competition,vencedor.adj,FNBK,PENDING,"COD: tendo conquistado uma vitória; triunfante",0,0
+26434,frm_finish_competition,vencedor.noun,WEBTOOL,CREATED,"pessoa que vence uma competição.",1,0
+24295,frm_first_rank,principalmente.adv,WEBTOOL,CREATED,"especialmente, sobretudo.",16,0
+43237,frm_first_rank,principalmente.adv,LOME,PENDING,,4,0
+40547,frm_food,"carne de porco.noun",WEBTOOL,CREATED,"carne oriunda dos cordeiros",0,1
+40548,frm_food,"carne de porco.noun",WEBTOOL,CREATED,"alimento  obtido  a partir do porco doméstico",0,1
+39610,frm_food,e.cconj,WEBTOOL,CREATED,,0,0
+27887,frm_food,limão.adj,WEBTOOL,CREATED,"fruta cítrica verde utilizada para temperos e bebidas.",2,0
+34392,frm_food,limão.noun,WEBTOOL,CREATED,"fruta cítrica verde utilizada para bebidas e temperos.",2,4
+39272,frm_food,líquido.adj,WEBTOOL,CREATED,,14,0
+39308,frm_food,líquido.noun,WEBTOOL,CREATED,"alguma bebida líquida.",11,0
+24059,frm_food,nachos.noun,WEBTOOL,CREATED,"pedaços pequenos de tortilhas de milho crocantes com formato triangular geralmente servido com queijo.",0,2
+40416,frm_food,nachos.noun,WEBTOOL,CREATED,"Refeição ou tipo de comida mexicana composta pela junção de feijão, molho de tomates e queijo.",0,5
+40507,frm_food,presunto.noun,WEBTOOL,CREATED,"produto de charcutaria feito a partir da perna do porco.",1,2
+40630,frm_food,presunto.noun,WEBTOOL,CREATED,"produto de charcutaria feito a partir da perna do porco.",0,0
+19146,frm_frequency,cotidiano.adj,WEBTOOL,CREATED,"que acontece diariamente",1,0
+19148,frm_frequency,cotidiano.noun,WEBTOOL,CREATED,"que acontece diariamente.",2,0
+39409,frm_frequency,diária.adj,WEBTOOL,CREATED,,14,0
+36105,frm_frequency,diária.noun,WEBTOOL,CREATED,"equivalente ao trabalho por um dia. ",0,0
+22871,frm_frequency,diário.adj,WEBTOOL,CREATED,"algo que é feito ou ocorre todos os dias",9,0
+19032,frm_frequency,diário.adv,WEBTOOL,CREATED,daily,0,0
+22894,frm_frequency,esporádico.adj,WEBTOOL,CREATED,"algo que ocorre em intervalos irregulares",1,0
+36094,frm_frequency,esporádico.noun,WEBTOOL,CREATED,"pouco frequente. Relativo a algo que ocorre poucas vezes.",2,0
+19149,frm_frequency,quotidiano.adj,WEBTOOL,CREATED,"que acontece diariamente",0,0
+19147,frm_frequency,quotidiano.noun,WEBTOOL,CREATED,"o que acontece diariamente",1,0
+39426,frm_frequency,regular.adj,WEBTOOL,CREATED,,2,0
+19016,frm_frequency,regular.adv,WEBTOOL,CREATED,regular,4,0
+39459,frm_frequency,vez.adj,WEBTOOL,CREATED,,4,0
+34550,frm_frequency,vez.noun,WEBTOOL,CREATED,"designação de cada ocorrência de um evento ou das ocorrências de eventos idênticos ou semelhantes sucessivos.",15,0
+44897,frm_friendly_or_hostile,aliado.adj,FNBK,PENDING,"FN: Pertencente ao mesmo lado de um indivíduo ou partido pressuposto.",0,0
+51380,frm_friendly_or_hostile,aliado.noun,FNBK,PENDING,"FN: uma pessoa simpática ou alinhada com o lado de outra (especialmente em conflitos militares).",0,0
+51389,frm_fugitive,fugitivo.adj,FNBK,PENDING,"FN: Evasão de captura ou prisão.",0,0
+44915,frm_fugitive,fugitivo.noun,FNBK,PENDING,"FN: uma pessoa que está foragida da lei.",0,0
+46218,frm_fullness,vazio.adj,FNBK,PENDING,"COD: não contendo nada; não preenchido ou ocupado.",0,0
+48802,frm_fullness,vazio.noun,FNBK,PENDING,"FN: o estado de conter nada",0,0
+40267,frm_gesture,acenar.verb,WEBTOOL,CREATED,"Fazer acenos, movimentos com a cabeça, olhos ou mãos; chamar a atenção.",0,0
+40268,frm_gesture,acenar.verb,WEBTOOL,CREATED,"Fazer acenos, movimentos com a cabeça, olhos ou mãos; chamar a atenção.",1,1
+40693,frm_giving_affection,abracar.verb,WEBTOOL,CREATED,"Envolver outra pessoa usando os braços.",3,0
+42578,frm_giving_affection,abraçar.verb,WEBTOOL,CREATED,"envolver outra pessoa usando os braços.",2,0
+39296,frm_gizmo,dispositivo.adj,WEBTOOL,CREATED,,1,0
+39311,frm_gizmo,dispositivo.noun,WEBTOOL,CREATED,"mecanismo ou aparato adaptado para um determinado fim.",6,0
+26402,frm_gradable_attributes,super.adj,WEBTOOL,CREATED,"em excesso, em exagero.",7,0
+33966,frm_gradable_attributes,super.adv,WEBTOOL,CREATED,"muito, superior.",1,0
+51533,frm_gradable_proximity,longe.adj,FNBK,PENDING,"FN: não dentro de uma distância certa (de).",0,0
+26383,frm_gradable_proximity,longe.adv,WEBTOOL,CREATED,"algo que está localizado em uma região distante de um determinado alvo.",28,0
+19192,frm_gradable_proximity,próximo.adj,WEBTOOL,CREATED,"a uma pequena distância",15,0
+19191,frm_gradable_proximity,próximo.adv,WEBTOOL,CREATED,"em lugar por perto",6,0
+40343,frm_greeting,"boa noite.intj",WEBTOOL,CREATED,"cumprimento que um enunciador dirige a um compreendedor ao encontrá-lo pela primeira vez no período entre as 18:00 e meia-noite.",0,0
+43757,frm_greeting,"boa noite.intj",USER,CREATED,"cumprimento utilizado no período da noite.",0,0
+40726,frm_hair_configuration,trança.noun,WEBTOOL,CREATED,"mechas de cabelo entrelaçadas.",8,0
+47954,frm_hair_configuration,trança.noun,FNBK,PENDING,"COD: uma longa trança de cabelo de mulher",0,0
+50370,frm_halt,parar.adv,FNBK,PENDING,"FN: ficar estacionário",0,0
+40122,frm_halt,parar.verb,WEBTOOL,CREATED,"cessar movimento.",23,0
+39402,frm_having_or_lacking_access,acesso.adj,WEBTOOL,CREATED,,0,0
+24177,frm_having_or_lacking_access,acesso.noun,WEBTOOL,CREATED,"caminho ou possibilidade de alcançar algo",20,0
+46526,frm_hiring,contratar.verb,FNBK,PENDING,"COD: empregar para salários.",0,0
+49263,frm_hiring,contratar.x,FNBK,PENDING,"Contratar alguém como funcionário",0,0
+19097,frm_increment,"além de.cconj",WEBTOOL,CREATED,"em adição a, ademais.",26,0
+50346,frm_increment,mais.adj,FNBK,PENDING,"FN: um valor adicional",0,0
+27492,frm_increment,mais.adv,WEBTOOL,CREATED,"indicativo de quantidade superior a um número prévio.",23,0
+18868,frm_increment,outro.adj,WEBTOOL,CREATED,"algo ou alguém, cuja referência indefinida se encontra fora do âmbito do falante e do ouvinte, e que se contrapõe, implícita ou explicitamente, a algo ou alguém definido, conhecido.",233,1
+44105,frm_increment,outro.noun,FNBK,PENDING,"FN: uma pessoa ou coisa que é diferente de uma já mencionada ou conhecida",0,0
+44395,frm_indigenous_origin,nativo.adj,FNBK,PENDING,"FN: tendo crescido ou originado em um determinado local",0,0
+18979,frm_indigenous_origin,nativo.noun,WEBTOOL,CREATED,native,4,0
+39868,frm_individual_history,histórico.adj,WEBTOOL,CREATED,,1,0
+38902,frm_individual_history,histórico.noun,WEBTOOL,CREATED,"documentação detalhada de eventos passados, informações pessoais ou médicas de um indivíduo.",7,0
+51823,frm_individual_moves,chutar.noun,FNBK,PENDING,"Um chute é um golpe físico usando o pé, perna ou joelho.",0,0
+1971,frm_individual_moves,chutar.verb,WEBTOOL,CREATED,"colocar um equipamento esportivo, geralmente uma bola, em movimento utilizando os pés ou as mãos.",3,0
+39744,frm_ingestion,alimentar.adj,WEBTOOL,CREATED,,5,0
+24637,frm_ingestion,alimentar.verb,WEBTOOL,CREATED,"ato de abastecer o corpo com alimentos.",20,0
+39540,frm_ingredients,componente.adj,WEBTOOL,CREATED,,0,0
+50608,frm_ingredients,componente.noun,FNBK,PENDING,"COD: uma parte ou elemento de um todo maior, especialmente uma parte de uma máquina ou veículo.",0,0
+40985,frm_inhibit_movement,trancar.verb,WEBTOOL,CREATED,"fechar com tranca.",1,0
+48806,frm_inhibit_movement,trancar.verb,FNBK,PENDING,"FN: encerra alguém ou alguma coisa ao trancar uma porta",0,0
+40063,frm_intentionally_act,feito.adj,WEBTOOL,CREATED,,4,0
+32168,frm_intentionally_act,feito.noun,WEBTOOL,CREATED,"uma ação ou atividade realizada anteriormente.",11,0
+43456,frm_intentionally_create,leias.det,LOME,PENDING,,1,0
+43465,frm_intentionally_create,leias.det,LOME,PENDING,,1,0
+41789,frm_intentionally_create,produtor.adj,WEBTOOL,CREATED,"Aquele que produz.",0,0
+41007,frm_intentionally_create,produtor.noun,WEBTOOL,CREATED,"aquele que produz.",1,0
+50531,frm_interior_profile_relation,dentro.adp,FNBK,PENDING,"No limite de (a região perfisada)",0,0
+20139,frm_interior_profile_relation,dentro.adv,WEBTOOL,CREATED,"entro (dos limites de uma região especificada)",21,0
+44210,frm_interior_profile_relation,fora.adp,FNBK,PENDING,"FN: não está dentro (de).",0,0
+20140,frm_interior_profile_relation,fora.adv,WEBTOOL,CREATED,"não dentro",11,2
+43512,frm_interrupt_process,municipal.det,LOME,PENDING,,1,0
+43520,frm_interrupt_process,municipal.det,LOME,PENDING,,1,0
+26430,frm_judgment_communication,crítico.adj,WEBTOOL,CREATED,"pessoa que critica , contesta algo, discute sobre algo.",3,0
+48643,frm_judgment_communication,crítico.noun,FNBK,PENDING,"COD: uma pessoa que expressa uma opinião desfavorável sobre algo.",0,0
+48650,frm_judgment_communication,denegrir.noun,FNBK,PENDING,"FN: expressão de desaprovação extrema, talvez inadequada",0,0
+48649,frm_judgment_communication,denegrir.verb,FNBK,PENDING,"COD: criticar injustamente; menosprezar.",0,0
+18908,frm_judgment_direct_address,obrigado.adj,WEBTOOL,CREATED,Thanks,12,1
+18793,frm_judgment_direct_address,obrigado.noun,WEBTOOL,CREATED,thanks.,12,1
+26486,frm_kinship,avó.noun,WEBTOOL,CREATED,"relação que se estabelece entre uma pessoa e o filho de seu filho.",54,0
+38921,frm_kinship,avô.noun,WEBTOOL,CREATED,"relação que se estabelece entre uma pessoa e o filho de seu filho.
+",0,0
+39745,frm_kinship,filho.adj,WEBTOOL,CREATED,,5,10
+3803,frm_kinship,filho.noun,WEBTOOL,CREATED,"son. child.",169,2
+40665,frm_labeling,rotulagem.noun,WEBTOOL,CREATED,"Ato de rotular.",0,0
+40666,frm_labeling,rotulagem.noun,WEBTOOL,CREATED,"Ato de rotular.",1,0
+34567,frm_lateralidade,canhoto.adj,WEBTOOL,CREATED,"que tem maior habilidade com, ou usa mais, os membros do lado esquerdo do corpo.",0,0
+34568,frm_lateralidade,canhoto.noun,WEBTOOL,CREATED,"pessoa que tem maior habilidade com, ou usa mais, os membros do lado esquerdo do corpo.",0,0
+50378,frm_left_to_do,restante.adj,FNBK,PENDING,"FN: restante para processamento",0,0
+219,frm_left_to_do,restante.noun,WEBTOOL,CREATED,"uma parte, um número ou uma quantidade que é deixada de processar.",0,0
+38567,frm_level_of_force_exertion,força.adj,WEBTOOL,CREATED,"que tem grande vigor ou potência física.",5,0
+19007,frm_level_of_force_exertion,força.noun,WEBTOOL,CREATED,"qualidade do que é forte; robustez, vigor físico.",21,0
+33583,frm_level_of_light,luz.noun,WEBTOOL,CREATED,"O agente natural que estimula a visão e torna as coisas visíveis.",9,10
+43070,frm_level_of_light,luz.noun,USER,CREATED,"certo tipo de radiação eletromagnética captada pelos olhos humanos, na ausência da qual a visão se torna impossível; fonte desse tipo de radiação eletromagnética.",0,0
+40998,frm_línguas,libras.noun,WEBTOOL,CREATED,"*inserir definição*",0,0
+41012,frm_línguas,libras.noun,WEBTOOL,CREATED,"*inserir texto de definição*",1,0
+40563,frm_literary_musical_and_cinematic_genre,aventura.noun,WEBTOOL,CREATED,"gênero literário e/ou cinematográfico caracterizado por um enredo em que a personagem principal vivencia uma jornada de percalços e desafios.",1,0
+40564,frm_literary_musical_and_cinematic_genre,aventura.noun,WEBTOOL,CREATED,"gênero literário e/ou cinematográfico caracterizado por um enredo em que a personagem principal vivencia uma jornada de percalços e desafios.",2,0
+38470,frm_locale,ambiente.adj,WEBTOOL,CREATED,"relativo ao que está ao redor, que envolve pessoas ou objetos. ",4,0
+24231,frm_locale,ambiente.noun,WEBTOOL,CREATED,"nome associado ao local. Geralmente relacionado à biologia e relações de convivência entre seres.",21,0
+24338,frm_locale,central.adj,WEBTOOL,CREATED,"característica relativa ao centro de um local.",4,0
+43788,frm_locale,central.noun,USER,CREATED,"lugar utilizado para alguma finalidade.",1,0
+46010,frm_locale,local.adj,FNBK,PENDING,,0,0
+1960,frm_locale,local.noun,WEBTOOL,CREATED,"área delimitada.",49,26
+3761,frm_locale,região.noun,WEBTOOL,CREATED,"qualquer partição territorial inserida em uma partição maior.",83,6
+43121,frm_locale,região.noun,USER,CREATED,"extensão territorial.",0,0
+32712,frm_locale,terra.noun,WEBTOOL,CREATED,Earth,10,0
+40422,frm_locale,terra.noun,WEBTOOL,CREATED,"porção de terra geralmente usada para plantio.",8,1
+28441,frm_location_in_time,hora.noun,WEBTOOL,CREATED,"um período de tempo, normalmente formado por um conjunto de sessenta minutos.",36,0
+43818,frm_location_in_time,hora.noun,USER,CREATED,"momento, instante.",1,0
+46079,frm_locative_relation,abaixo.adp,FNBK,PENDING,"COD: em direção ou em um lugar ou posição mais baixa.",0,0
+39971,frm_locative_relation,abaixo.adv,WEBTOOL,CREATED,,5,0
+48571,frm_locative_relation,"acima do solo.adj",FNBK,PENDING,"FN: acima da superfície do solo.",0,0
+20142,frm_locative_relation,"acima do solo.adv",WEBTOOL,CREATED,"acima da superfície do solo",0,0
+48583,frm_locative_relation,"ao longo de.adp",FNBK,PENDING,"FN: em todas as partes de, sobre o todo o intervalo de, às vezes implicando ""uniforme",0,0
+20144,frm_locative_relation,"ao longo de.adv",WEBTOOL,CREATED,"se estendendo mais ou menos em uma linha horizontal em",3,0
+20163,frm_locative_relation,continental.adj,WEBTOOL,CREATED,"estar localizado a certa distância da beira ou da costa de certa área geográfica",0,0
+20164,frm_locative_relation,continental.noun,WEBTOOL,CREATED,"a parte geográfica principal de um país excluindo ilhas",0,0
+46080,frm_locative_relation,fora.adp,FNBK,PENDING,"COD: longe da base ou residência habitual de alguém.",0,0
+20176,frm_locative_relation,fora.adv,WEBTOOL,CREATED,"localizado longe de sua base ou residência normal",19,1
+48589,frm_locative_relation,"no ar.adp",FNBK,PENDING,"ser suspenso no ar.",0,0
+29482,frm_locative_relation,"no ar.adv",WEBTOOL,CREATED,"estar suspenso no ar.",0,0
+46078,frm_locative_relation,"para cima.adp",FNBK,PENDING,"COD: de um ponto mais baixo para um ponto mais alto de.",0,0
+20193,frm_locative_relation,"para cima.adv",WEBTOOL,CREATED,"vindo de uma posição abaixo para uma posição mais elevada",0,0
+48570,frm_locative_relation,perto.adp,FNBK,PENDING,"COD: também perto de",0,0
+20167,frm_locative_relation,perto.adv,WEBTOOL,CREATED,"também perto de",21,0
+40445,frm_make_noise,burburinho.noun,WEBTOOL,CREATED,"Ruído de muitas pessoas falando ao mesmo tempo.",14,0
+40529,frm_make_noise,burburinho.noun,WEBTOOL,CREATED,"refere-se ao ruído indistinto e não decifrável de muitas pessoas falando ao mesmo tempo.",5,0
+24462,frm_manner_of_life,deficiente.adj,WEBTOOL,CREATED,"qualidade de algo que está faltando ou referente a algum comprometimento físico ou mental de uma pessoa.",0,1
+24461,frm_manner_of_life,deficiente.noun,WEBTOOL,CREATED,"uma pessoa que possui algum tipo de comprometimento físico ou mental.",0,0
+44399,frm_margin_of_resolution,"por pouco.adj",FNBK,PENDING,"COD: quase conseguiu",0,0
+50823,frm_margin_of_resolution,"por pouco.adv",FNBK,PENDING,"FN: com uma pequena margem.",0,0
+20325,frm_means,como.adv,WEBTOOL,CREATED,"usado para indicar uma pergunta em que um questionador quer mais informações sobre os meios que uma ação foi realizada em alguns meios.",10,0
+18747,frm_means,como.sconj,WEBTOOL,CREATED,as.,1,0
+1542,frm_means_of_transportation,"barco de passeio.noun",WEBTOOL,CREATED,"embarcação aquática, utilizada no transporte de passageiros.",0,3
+42734,frm_means_of_transportation,"barco de passeio.noun",WEBTOOL,CREATED,"embarcação aquática, utilizada no transporte de passageiros.",0,1
+1263,frm_means_of_transportation,metrô.noun,WEBTOOL,CREATED,"meio de transporte urbano, geralmente subterrâneo,  que circula sobre trilhos e é destinado ao transporte rápido de passageiros.",4,4
+45128,frm_means_of_transportation,metrô.noun,FNBK,PENDING,"Um trem subterrâneo; um trem subterrâneo, especialmente para o transporte de massa em áreas urbanas; o sistema ferroviário da London Underground, originalmente se referia às linhas de nível inferior que corriam em túneis tubulares em oposição às linhas de nível superior que corriam em túneis de seção retangular. (Geralmente o tube.)",0,0
+19133,frm_measure_of_distance_and_length,metrô.noun,WEBTOOL,CREATED,"unidade de medida de comprimento do Sistema Internacional de unidades (SI), definida como a distância percorrida pela luz, no vácuo, durante um intervalo de tempo, e que corresponde a uma fração de 1/299.792.458 do segundo.",10,0
+48125,frm_measure_of_distance_and_length,metro.noun,FNBK,PENDING,"COD: a unidade básica de comprimento no sistema métrico, igual a 100 centímetros (aproximadamente 39,37 polegadas).",0,0
+29575,frm_measure_volume,gota.noun,WEBTOOL,CREATED,"pequena unidade de medida em formato de pera. Normalmente, um líquido escorre de um recipiente com um gotejador, formando uma gota. ",7,1
+39358,frm_measure_volume,gota.noun,WEBTOOL,CREATED,,1,0
+28185,frm_medical_conditions,câncer.noun,WEBTOOL,CREATED,"conjunto de doenças em que ocorre o crescimento desorganizado das células.",6,0
+28378,frm_medical_conditions,câncer.noun,WEBTOOL,CREATED,"tipo de patologia que é caracterizada pelo desenvolvimento de células mutantes que não funcionam de acordo com fisiologia natural do orgão atingido.",116,1
+38502,frm_medical_conditions,cardiopata.adj,WEBTOOL,CREATED,"pessoa que sofre de cardiopatia. ",2,0
+36686,frm_medical_conditions,cardiopata.noun,WEBTOOL,CREATED,"adjetivo que caracteriza a pessoa que sofre de cardiopatia.",0,0
+38511,frm_medical_conditions,coxo.adj,WEBTOOL,CREATED,"refere à pessoa que possui uma perna ou pé mais curto que o outro.",0,0
+35200,frm_medical_conditions,coxo.noun,WEBTOOL,CREATED,"compressão do nervo femoral lateral da coxa.",0,0
+38564,frm_medical_conditions,fistular.adj,WEBTOOL,CREATED,"adjetivo que se diz daquilo que tem fístula.",0,0
+38565,frm_medical_conditions,fistular.verb,WEBTOOL,CREATED,"abrir (fístula) em ou transformar(-se) em fístula.",0,0
+41412,frm_medical_conditions,mudo.adj,WEBTOOL,CREATED,"adjetivo que caracteriza a pessoa que sofre de mudez.",0,0
+38584,frm_medical_conditions,mudo.noun,WEBTOOL,CREATED,"a pessoa que sofre de mudez.",0,0
+38522,frm_medical_conditions,resfriado.adj,WEBTOOL,CREATED,"adjetivo que caracteriza aquele que está com a infecção. ",0,0
+46189,frm_medical_conditions,resfriado.noun,FNBK,PENDING,"COD: uma infecção comum na qual a membrana mucosa do nariz e da garganta ficam inflamadas, causando corrimento nasal e espirros",0,0
+38070,frm_medical_intervention,orientação.noun,WEBTOOL,CREATED,"informações e conselhos fornecidos a pacientes sobre seu diagnóstico, tratamento, prevenção e cuidados gerais de saúde.",62,0
+42171,frm_medical_intervention,orientação.noun,WEBTOOL,CREATED,"informações e conselhos fornecidos a pacientes sobre seu diagnóstico, tratamento, prevenção e cuidados gerais de saúde.",0,0
+41734,frm_medical_professionals,psiquiatra.adj,WEBTOOL,CREATED,"médico especializado em diagnóstico e tratamento de transtornos de natureza mental.
+",4,0
+35691,frm_medical_professionals,psiquiatra.noun,WEBTOOL,CREATED,"médico especializado em diagnóstico e tratamento de transtornos de natureza mental.
+",16,0
+46325,frm_mental_property,idiota.adj,FNBK,PENDING,"COD: estúpido; tolo.",0,0
+47130,frm_mental_property,idiota.noun,FNBK,PENDING,"Uma pessoa estúpida.",0,0
+24331,frm_money,cartão.noun,WEBTOOL,CREATED,"uma forma de pagamento eletrônico que consiste na utilização de um objeto feito de plástico que contém um chip e/ou uma tarja magnética geralmente preta, além de informações bancárias do usuário. Ele é utilizado em uma máquina específica. Este objeto pode ser qualificado como sendo de débito, crédito, de poupança ou conta corrente.",1,0
+40484,frm_money,cartão.noun,WEBTOOL,CREATED,,0,0
+36390,frm_motion_directional,caído.adj,WEBTOOL,CREATED,"relativo ao que sofreu o ato de cair, tombar. ",0,0
+36392,frm_motion_directional,caído.noun,WEBTOOL,CREATED,"pessoa ou objeto que sofreu a ação de cair, tombar. ",2,0
+32021,frm_natural_phenomena,amanhecer.noun,WEBTOOL,CREATED,"parte do dia referente ao raiar do dia, ao clarear do dia ou surgimento do sol.",1,0
+32022,frm_natural_phenomena,amanhecer.verb,WEBTOOL,CREATED,"raiar, surgir o dia. Acordar, despertar.",2,0
+43301,frm_needing,"atrás de.aux",LOME,PENDING,,1,0
+43305,frm_needing,"atrás de.aux",LOME,PENDING,,1,0
+43319,frm_needing,"cerca de.aux",LOME,PENDING,,1,0
+43321,frm_needing,"cerca de.aux",LOME,PENDING,,1,0
+43219,frm_needing,"vinte e três.aux",LOME,PENDING,,1,0
+43223,frm_needing,"vinte e três.aux",LOME,PENDING,,1,0
+43229,frm_needing,"vinte e três.aux",LOME,PENDING,,1,0
+20844,frm_non-gradable_proximity,"atrás de.adp",WEBTOOL,CREATED,"No lado oposto de.",17,1
+43297,frm_non-gradable_proximity,"atrás de.adv",LOME,PENDING,,2,0
+45043,frm_non-gradable_proximity,oposto.adj,FNBK,PENDING,"FN: localizado de frente para, em frente a ou no outro extremo de algo",0,0
+51525,frm_non-gradable_proximity,oposto.adp,FNBK,PENDING,"COD: em uma posição oposta a.",0,0
+28923,frm_obviousness,claro.adj,WEBTOOL,CREATED,óbvio.,17,0
+27441,frm_obviousness,claro.adv,WEBTOOL,CREATED,"claramente, obviamente",9,0
+40266,frm_openness,fresta.noun,WEBTOOL,CREATED,"Abertura na porta ou na janela, por onde passa luz.",1,2
+40411,frm_openness,fresta.noun,WEBTOOL,CREATED,"Abertura na porta ou na janela, por onde passa luz.",0,1
+22934,frm_ordinal_numbers,décimo.adj,WEBTOOL,CREATED,"constitui o número dez em uma sequência",1,0
+28892,frm_ordinal_numbers,décimo.num,WEBTOOL,CREATED,"número ordinal que indica a posição entre o nono e o décimo primeiro.",1,0
+22931,frm_ordinal_numbers,nono.adj,WEBTOOL,CREATED,"constitui o número nove em uma sequência",0,0
+28891,frm_ordinal_numbers,nono.num,WEBTOOL,CREATED,"número ordinal que indica a posição entre o oitavo e o décimo.",0,0
+22928,frm_ordinal_numbers,oitavo.adj,WEBTOOL,CREATED,"constitui o número oito em uma seqüência",0,0
+28890,frm_ordinal_numbers,oitavo.num,WEBTOOL,CREATED,"número ordinal que indica a posição entre o sétimo e o nono.",0,0
+18597,frm_ordinal_numbers,primeiro.adj,WEBTOOL,CREATED,first,56,0
+36899,frm_ordinal_numbers,primeiro.noun,WEBTOOL,CREATED,"referente ao item ou indivíduo que antecede todos em uma relação de ordem, classificado como núcleo nominal metaforicamente",16,0
+3864,frm_ordinal_numbers,primeiro.num,WEBTOOL,CREATED,"número ordinal que indica a posição inicial em uma série.",32,0
+18715,frm_ordinal_numbers,quarto.adj,WEBTOOL,CREATED,fourth.,2,0
+28887,frm_ordinal_numbers,quarto.num,WEBTOOL,CREATED,"número ordinal que indica a posição entre o terceiro e o quinto.",3,0
+50493,frm_ordinal_numbers,quinto.adj,FNBK,PENDING,"COD: quinto em uma sequência constituinte",0,0
+26135,frm_ordinal_numbers,quinto.num,WEBTOOL,CREATED,fifth,4,0
+43132,frm_ordinal_numbers,quinto.num,USER,CREATED,"constitui o número cinco em uma sequência.",0,0
+18600,frm_ordinal_numbers,segundo.adj,WEBTOOL,CREATED,second,8,0
+28885,frm_ordinal_numbers,segundo.num,WEBTOOL,CREATED,"número ordinal que indica a posição entre o primeiro e o terceiro.",21,0
+43130,frm_ordinal_numbers,segundo.num,USER,CREATED,"constitui o numero dois em uma sequência.",0,0
+26462,frm_ordinal_numbers,sexto.adj,WEBTOOL,CREATED,"colocação de posição, em sexto lugar.",2,0
+28888,frm_ordinal_numbers,sexto.num,WEBTOOL,CREATED,"número ordinal que indica a posição entre o quinto e o sétimo.",1,0
+18601,frm_ordinal_numbers,terceiro.adj,WEBTOOL,CREATED,third,8,0
+28886,frm_ordinal_numbers,terceiro.num,WEBTOOL,CREATED,"número ordinal que indica a posição entre o segundo e o quarto.",4,0
+50456,frm_origin,árabe.adj,FNBK,PENDING,"Uma entidade que vem de um país com cultura árabe.",0,0
+24164,frm_origin,árabe.noun,WEBTOOL,CREATED,"natural da Arábia.",6,0
+40968,frm_origin,gaúcho.adj,WEBTOOL,CREATED,"que possui sua origem no Rio Grande do Sul.",4,0
+43730,frm_origin,gaúcho.adj,USER,CREATED,"originário do Rio Grande do Sul.",0,0
+19299,frm_origin,nacional.adj,WEBTOOL,CREATED,"Originário de um país ou nação.",14,0
+19193,frm_origin,nacional.noun,WEBTOOL,CREATED,"que pertence à nação",5,0
+44702,frm_out_of_existence,acabado.adj,FNBK,PENDING,"FN: não mais existente; esgotado",0,0
+44700,frm_out_of_existence,acabado.noun,FNBK,PENDING,"FN: (efetivamente) fora de existência; não mais relevante",0,0
+29552,frm_participation,participante.adj,WEBTOOL,CREATED,"qualidade de quem participa de um evento.",1,0
+44171,frm_participation,participante.noun,FNBK,PENDING,"FN: alguém que participa de um evento",0,0
+31259,frm_part_inner_outer,exterior.adj,WEBTOOL,CREATED,"que se encontra do lado de fora.",0,0
+46545,frm_part_inner_outer,exterior.noun,FNBK,PENDING,"COD: a superfície externa ou estrutura de algo.",0,0
+31258,frm_part_inner_outer,interior.adj,WEBTOOL,CREATED,"que se encontra do lado de dentro.",0,1
+46546,frm_part_inner_outer,interior.noun,FNBK,PENDING,"COD: parte interna de algo",0,0
+35764,frm_part_orientational,cima.adv,WEBTOOL,CREATED,"significa que algo está em uma parte mais alta em relação a outra parte ou um todo.",4,0
+35765,frm_part_orientational,cima.noun,WEBTOOL,CREATED,"significa a parte superior ou mais elevada de algo.",3,1
+48105,frm_part_orientational,direita.adj,FNBK,PENDING,"do lado de, em relação ao, ou relacionado à lateral do corpo humano ou de um objeto que se encontra para o leste quando a pessoa ou objeto está enfrentando o norte.",0,0
+23140,frm_part_orientational,direita.noun,WEBTOOL,CREATED,"a parte direita, lado ou direção.",49,0
+29094,frm_part_orientational,direito.adj,WEBTOOL,CREATED,"referente à direção ou em relação ao lado de um corpo humano ou de uma coisa que está a leste quando a pessoa ou coisa está virada para o norte.",131,0
+45852,frm_part_orientational,direito.noun,FNBK,PENDING,"COD: a parte, lado ou direção da direita.",0,0
+48104,frm_part_orientational,esquerda.adj,FNBK,PENDING,"COD: o, em direção a, ou relacionado ao lado de um corpo humano ou de uma coisa que está para o oeste quando a pessoa ou coisa está enfrentando o norte.",0,0
+23132,frm_part_orientational,esquerda.noun,WEBTOOL,CREATED,"a parte esquerda, lado ou direção.",59,0
+23128,frm_part_orientational,frente.adj,WEBTOOL,CREATED,"a parte de um objeto que normalmente é visto ou usado primeiro",6,0
+23129,frm_part_orientational,frente.noun,WEBTOOL,CREATED,"o lado ou parte de um objeto que se apresenta para ver ou que normalmente é visto ou usado primeiro",36,0
+23119,frm_part_orientational,inferior.adj,WEBTOOL,CREATED,"na posição mais baixa",8,0
+23120,frm_part_orientational,inferior.noun,WEBTOOL,CREATED,"o ponto mais baixo, a posição ou parte de algo",0,0
+23122,frm_part_orientational,leste.adj,WEBTOOL,CREATED,"deitado em direção a, perto ou de frente para o leste",1,0
+23123,frm_part_orientational,leste.noun,WEBTOOL,CREATED,"a parte oriental de um país, região ou cidade",0,0
+23134,frm_part_orientational,norte.adj,WEBTOOL,CREATED,"deitado em direção a, perto ou de frente para o norte",0,0
+23135,frm_part_orientational,norte.noun,WEBTOOL,CREATED,"a parte norte de um país, região ou cidade",2,0
+23148,frm_part_orientational,oeste.adj,WEBTOOL,CREATED,"deitado em direção a, perto ou de frente para o oeste",3,0
+23149,frm_part_orientational,oeste.noun,WEBTOOL,CREATED,"o lado oeste de um país, região ou cidade",1,0
+23142,frm_part_orientational,sul.adj,WEBTOOL,CREATED,"deitado em direção a, perto ou de frente para o sul",0,0
+23143,frm_part_orientational,sul.noun,WEBTOOL,CREATED,"a parte sul de um país, região ou cidade",5,0
+39742,frm_part_whole,componente.adj,WEBTOOL,CREATED,,2,0
+48087,frm_part_whole,componente.noun,FNBK,PENDING,"uma parte ou elemento de um todo maior, especialmente uma parte de uma máquina ou veículo.",0,0
+39833,frm_part_whole,ponta.adj,WEBTOOL,CREATED,,0,0
+25435,frm_part_whole,ponta.noun,WEBTOOL,CREATED,"parte extrema de um objeto.",10,0
+43491,frm_part_whole,"por cento.adp",LOME,PENDING,,8,0
+35026,frm_part_whole,"por cento.noun",WEBTOOL,CREATED,"em cada cem.",32,0
+45841,frm_part_whole,todo.adj,FNBK,PENDING,"A entidade completa.",0,0
+34803,frm_part_whole,todo.noun,WEBTOOL,CREATED,"Representa a totalidade do objeto perfilado.",26,0
+34762,frm_patterns,xadrez.adj,WEBTOOL,CREATED,"que possui #Padronagem formada por linhas paralelas cruzadas a noventa graus, formando quadrados.",1,0
+34763,frm_patterns,xadrez.noun,WEBTOOL,CREATED,"#Padronagem formada por linhas paralelas cruzadas a noventa graus, formando quadrados.",1,0
+32847,frm_people,alguém.noun,WEBTOOL,CREATED,someone,14,0
+25967,frm_people,alguém.pron,WEBTOOL,CREATED,"palavra utilizada para designar uma pessoa ou um ser humano.",5,0
+32848,frm_people,ninguém.noun,WEBTOOL,CREATED,"no one",15,0
+25982,frm_people,ninguém.pron,WEBTOOL,CREATED,"nenhuma pessoa.",32,0
+32849,frm_people,quem.cconj,WEBTOOL,CREATED,who,1,0
+25989,frm_people,quem.pron,WEBTOOL,CREATED,"que pessoa.",53,0
+32851,frm_people,todos.noun,WEBTOOL,CREATED,everybody,14,1
+49184,frm_people,todos.pron,FNBK,PENDING,"O número total de pessoas mencionadas na frase.",0,0
+49183,frm_people,um.noun,FNBK,PENDING,um,0,0
+25987,frm_people,um.pron,WEBTOOL,CREATED,"qualquer pessoa ainda não mencionada ou identificada no discurso.",17,0
+18790,frm_people_by_age,adulto.adj,WEBTOOL,CREATED,adulthood,21,2
+50303,frm_people_by_age,adulto.noun,FNBK,PENDING,"COD: uma pessoa que está totalmente crescida e desenvolvida ou uma pessoa que atingiu a maioridade.",0,0
+29698,frm_people_by_age,jovem.adj,WEBTOOL,CREATED,"aquele que se encontra na juventude; adolescente.",6,3
+23309,frm_people_by_age,jovem.noun,WEBTOOL,CREATED,"aquele que se encontra na juventude; adolescente.",44,20
+24102,frm_people_by_age,velho.adj,WEBTOOL,CREATED,"caracteriza o que existe há muito tempo.",9,4
+27707,frm_people_by_age,velho.noun,WEBTOOL,CREATED,"pessoa idosa.",5,1
+37875,frm_people_by_morality,delinquente.adj,WEBTOOL,CREATED,"aquele que praticou um delito.",0,0
+50449,frm_people_by_morality,delinquente.noun,FNBK,PENDING,"FN: uma (geralmente jovem) pessoa que demonstra ou é caracterizada por uma tendência a cometer crimes",0,0
+3764,frm_people_by_origin,brasileiro.adj,WEBTOOL,CREATED,"gentílico de quem nasce no Brasil.",7,1
+3606,frm_people_by_origin,brasileiro.noun,WEBTOOL,CREATED,"pessoa nascida no Brasil.",14,4
+44090,frm_people_by_origin,escocês.adj,FNBK,PENDING,"Pessoas que são nativas da Escócia.",0,0
+29589,frm_people_by_origin,escocês.noun,WEBTOOL,CREATED,"diz-se do nativo da Escócia",12,7
+40366,frm_people_by_vocation,agricultor.adj,WEBTOOL,CREATED,"profissional reponsável pelo manejo da lavoura, pelo cultivo da terra.",5,1
+50393,frm_people_by_vocation,agricultor.noun,FNBK,PENDING,"Uma pessoa que opera uma fazenda.",0,0
+23579,frm_people_by_vocation,profissional.adj,WEBTOOL,CREATED,"de ou relativo a uma profissão.",6,0
+20206,frm_people_by_vocation,profissional.noun,WEBTOOL,CREATED,"pessoa que exerce um trabalho ou uma profissão.",24,0
+32055,frm_people_by_vocation,recreador.adj,WEBTOOL,CREATED,,0,0
+32056,frm_people_by_vocation,recreador.noun,WEBTOOL,CREATED,"Aquele que trabalha com recreação.",0,0
+47532,frm_perception_active,"olhar fixo.noun",FNBK,PENDING,"COD: um olhar fixo em alguém ou algo com os olhos bem abertos",0,0
+47533,frm_perception_active,"olhar fixo.verb",FNBK,PENDING,"COD: olhar fixamente para alguém ou algo com os olhos bem abertos",0,0
+23408,frm_perception_active,olhar.noun,WEBTOOL,CREATED,"o ato de dirigir o olhar em uma direção especificada",10,10
+23402,frm_perception_active,olhar.verb,WEBTOOL,CREATED,"o ato ou efeito de olhar de perto ou com interesse",212,7
+36116,frm_perception_experience,percepção.noun,WEBTOOL,CREATED,"ato de tomar consciência de algo, aprender por meio das sensações e da mente. ",0,0
+23430,frm_perception_experience,percepção.verb,WEBTOOL,CREATED,"o processo de tomar consciência de algo através dos sentidos",1,0
+40113,frm_performers,músico.adj,WEBTOOL,CREATED,,0,2
+44137,frm_performers,músico.noun,FNBK,PENDING,"FN: uma pessoa que toca música em um concerto",0,0
+43213,frm_performers_and_roles,"vinte e três.aux",LOME,PENDING,,1,0
+43227,frm_performers_and_roles,"vinte e três.aux",LOME,PENDING,,1,0
+23450,frm_personal_relationship,divorciado.adj,WEBTOOL,CREATED,"tendo legalmente dissolvido o casamento.",0,0
+23451,frm_personal_relationship,divorciado.noun,WEBTOOL,CREATED,"uma pessoa divorciada.",0,0
+23475,frm_personal_relationship,esposo.adj,WEBTOOL,CREATED,"relativo ao cônjuge.",0,1
+23476,frm_personal_relationship,esposo.noun,WEBTOOL,CREATED,cônjuge.,44,0
+18708,frm_personal_relationship,namorado.noun,WEBTOOL,CREATED,"companheiro masculino regular de uma pessoa em um relacionamento romântico ou sexual.",39,0
+28437,frm_personal_relationship,namorado.noun,WEBTOOL,CREATED,"pessoa que mantém relação amorosa com outra.",2,0
+23452,frm_personal_relationship,noivo.adj,WEBTOOL,CREATED,"estado de alguém que concordou formalmente em casar.",0,0
+23456,frm_personal_relationship,noivo.noun,WEBTOOL,CREATED,"um homem comprometido para se casar como considerado pelo futuro cônjuge.",1,0
+23479,frm_personal_relationship,viúvo.adj,WEBTOOL,CREATED,"uma pessoa que perdeu um cônjuge pela morte e sem voltar a casar.",1,0
+23480,frm_personal_relationship,viúvo.noun,WEBTOOL,CREATED,"um homem que perdeu sua esposa pela morte e ainda não se casou.",0,0
+24281,frm_pessoas_por_condição_médica,paciente.noun,WEBTOOL,CREATED,"pessoa doente e dependente de um auxílio médico.",341,0
+36853,frm_pessoas_por_condição_médica,paciente.noun,WEBTOOL,CREATED,"indivíduo doente ou sob cuidados médicos.",602,0
+52182,frm_pessoas_por_gênero,homem.noun,USER,PENDING,"pessoa do sexo masculino.",0,0
+52183,frm_pessoas_por_gênero,homem.noun,USER,PENDING,"pessoa do sexo masculino.",0,0
+40641,frm_physical_artworks,"instalação artística interativa.noun",WEBTOOL,CREATED,"obra de arte que convida o público a participar ativamente, transformando-o de mero observador em co-criador da experiência artística.",0,0
+40642,frm_physical_artworks,"instalação artística interativa.noun",WEBTOOL,CREATED,"obra de arte que convida o público a participar ativamente, transformando-o de mero observador em co-criador da experiência artística.",0,0
+40379,frm_physical_artworks,vídeo.noun,WEBTOOL,CREATED,"produção audiovisual.",4,1
+40380,frm_physical_artworks,vídeo.noun,WEBTOOL,CREATED,"produção audiovisual.",4,1
+40471,frm_plants,arbusto.noun,WEBTOOL,CREATED,"Planta de porte médio, caracterizada por apresentar caules lenhosos ramificados próximos ao solo",0,0
+40472,frm_plants,arbusto.noun,WEBTOOL,CREATED,"Planta de porte médio, caracterizada por apresentar caules lenhosos ramificados próximos ao solo",0,14
+40610,frm_plants,baobá.noun,WEBTOOL,CREATED,"árvore de grande porte, de tronco largo e volumoso que pode atingir até 10 metros de diâmetro e copa relativamente pequena e esparsa, nativa de regiões áridas da África, Madagascar e Austrália.",0,3
+40611,frm_plants,baobá.noun,WEBTOOL,CREATED,"árvore de grande porte, de tronco largo e volumoso que pode atingir até 10 metros de diâmetro e copa relativamente pequena e esparsa, nativa de regiões áridas da África, Madagascar e Austrália.",0,5
+43262,frm_plants,"de frente.det",LOME,PENDING,,1,0
+43265,frm_plants,"de frente.noun",LOME,PENDING,,1,0
+38329,frm_political_actions,greve.noun,WEBTOOL,CREATED,"cessação de atividades feita por um grupo como forma de protesto e de ter suas demandas atendidas.",2,0
+51266,frm_political_actions,greve.verb,FNBK,PENDING,"FN: deixar um emprego para protestar e exigir mudanças do empregador.",0,0
+44771,frm_popularity,quente.adj,FNBK,PENDING,"FN: considerado desejável ou popular, de acordo com fatores estéticos, não-estéticos, temporais ou categóricos.",0,0
+23667,frm_popularity,quente.noun,WEBTOOL,CREATED,"considerado desejável ou popular, de acordo com fatores estéticos, não estéticos, temporais ou categóricos",0,0
+23672,frm_possession,falta.noun,WEBTOOL,CREATED,"ausência ou deficiência de algo",6,0
+45748,frm_possession,falta.verb,FNBK,PENDING,"COD: sem ou com deficiência de",0,0
+23671,frm_possession,obter.noun,WEBTOOL,CREATED,"possuir um objeto ou proclamar confiabilidade",2,0
+45750,frm_possession,obter.verb,FNBK,PENDING,"Ter, ser capaz de uma entidade.",0,0
+47942,frm_possession,possuir.pron,FNBK,PENDING,"Possuída por uma entidade.",0,0
+3681,frm_possession,possuir.verb,WEBTOOL,CREATED,"ter ou se apropriar de algo.",23,0
+45749,frm_possession,querer.noun,FNBK,PENDING,"COD: o desejo por algo.",0,0
+23681,frm_possession,querer.verb,WEBTOOL,CREATED,"o ato ou efeito de ter vontade de possuir ou fazer (algo); desejo por",11,0
+39278,frm_possession,ter.aux,WEBTOOL,CREATED,,10,0
+208,frm_possession,ter.verb,WEBTOOL,CREATED,"possuir, exercer a posse sobre",508,2
+39250,frm_possibility,dever.noun,WEBTOOL,CREATED,,0,0
+28483,frm_possibility,dever.verb,WEBTOOL,CREATED,Provavelmente.,8,0
+39354,frm_possibility,poder.adj,WEBTOOL,CREATED,,22,0
+337,frm_possibility,poder.verb,WEBTOOL,CREATED,"ter a possibilidade de.",223,0
+40358,frm_posture,"de pé.adv",WEBTOOL,CREATED,"em posição vertical, apoiado sobre os pés.",7,0
+41139,frm_posture,"de pé.x",WEBTOOL,CREATED,standing.,0,0
+46402,frm_prevarication,enganar.verb,FNBK,PENDING,"COD: causar uma impressão errada sobre alguém ou algo.",0,0
+49094,frm_prevarication,enganar.x,FNBK,PENDING,"FN: enganar",0,0
+46172,frm_process_end,final.adj,FNBK,PENDING,"COD: chegando ao final de uma série.",0,0
+46173,frm_process_end,final.noun,FNBK,PENDING,"COD: a última parte de uma peça musical, um espetáculo ou um evento público.",0,0
+24536,frm_project,projeto.noun,WEBTOOL,CREATED,"algo idealizado por alguém.",59,0
+43541,frm_project,projeto.noun,LOME,PENDING,,6,0
+38550,frm_proliferating_in_number,multiplicar.verb,WEBTOOL,CREATED,"aumentar em número ou quantidade.",1,0
+43748,frm_proliferating_in_number,multiplicar.verb,USER,CREATED,"aumentar em quantidade, gerar cópias ou reproduções de forma sucessiva.",1,0
+51070,frm_proportional_quantity,aproximadamente.adp,FNBK,PENDING,"FN: uma estimativa aproximada de",0,0
+29089,frm_proportional_quantity,aproximadamente.adv,WEBTOOL,CREATED,"em valores, grandezas ou dimensões aproximadas, cerca de, mais ou menos.",21,0
+19164,frm_proportional_quantity,"cerca de.adp",WEBTOOL,CREATED,aproximadamente,22,0
+43314,frm_proportional_quantity,"cerca de.adv",LOME,PENDING,,2,0
+51075,frm_proportional_quantity,"cerca de.det",FNBK,PENDING,"COD: (usado com um número) aproximadamente.",0,0
+18716,frm_proportional_quantity,muito.adv,WEBTOOL,CREATED,"many, much, a lot, quite.",25,0
+51081,frm_proportional_quantity,muito.det,FNBK,PENDING,"FN: uma quantidade de (algum número de indivíduos/massa)",0,0
+51079,frm_proportional_quantity,"no máximo.adv",FNBK,PENDING,"FN: em estimativa de um valor no seu máximo.",0,0
+51077,frm_proportional_quantity,"no máximo.noun",FNBK,PENDING,"FN: no máximo",0,0
+39275,frm_proportional_quantity,pouco.adj,WEBTOOL,CREATED,,17,0
+18810,frm_proportional_quantity,pouco.adv,WEBTOOL,CREATED,"a little. a bit. a few.",53,0
+51082,frm_proportional_quantity,pouco.det,FNBK,PENDING,"FN: não muito de (massa/indivíduos)",0,0
+51068,frm_proportional_quantity,quase.adp,FNBK,PENDING,"COD: quase que.",0,0
+18831,frm_proportional_quantity,quase.adv,WEBTOOL,CREATED,almost.,19,0
+43413,frm_protecting,diálogos.noun,LOME,PENDING,,1,0
+43407,frm_protecting,diálogos.verb,LOME,PENDING,,1,0
+37988,frm_public_services,"serviço público.noun",WEBTOOL,CREATED,"um serviço acessível ao público, fornecido pelo governo.",3,0
+43583,frm_public_services,"serviço público.noun",LOME,PENDING,,2,0
+39781,frm_purpose,objetivo.adj,WEBTOOL,CREATED,,0,0
+221,frm_purpose,objetivo.noun,WEBTOOL,CREATED,"um objetivo ou resultado desejado.",5,0
+32960,frm_quantified_mass,muito.adj,WEBTOOL,CREATED,"many, much",21,0
+48383,frm_quantified_mass,muito.noun,FNBK,PENDING,"FN: uma grande quantidade",0,0
+48389,frm_quantified_mass,nenhum.adj,FNBK,PENDING,"COD: não há.",0,0
+32959,frm_quantified_mass,nenhum.pron,WEBTOOL,CREATED,no,19,0
+39599,frm_quantified_mass,pesar.noun,WEBTOOL,CREATED,,3,0
+41383,frm_quantified_mass,pesar.verb,WEBTOOL,CREATED,,0,0
+39373,frm_quantified_mass,pouco.adj,WEBTOOL,CREATED,,10,0
+48371,frm_quantified_mass,pouco.noun,FNBK,PENDING,"COD: uma pequena quantidade de algo",0,0
+45985,frm_quantified_mass,qualquer.adj,FNBK,PENDING,"COD: um ou alguns de uma coisa ou número de coisas, não importa quantos ou quantos sejam.",0,0
+42452,frm_quantified_mass,qualquer.pron,WEBTOOL,CREATED,"qualquer quantidade.",7,0
+48385,frm_quantified_mass,vários.adj,FNBK,PENDING,"FN: consistindo de mais de dois, mas não muitos",0,0
+48384,frm_quantified_mass,vários.noun,FNBK,PENDING,"COD: mais de dois, mas não muitos.",0,0
+18907,frm_reason,"por isso.cconj",WEBTOOL,CREATED,"because of that.",12,0
+39264,frm_reference_text,ver.noun,WEBTOOL,CREATED,,2,0
+38468,frm_reference_text,ver.verb,WEBTOOL,CREATED,"conferir para maiores informações. ",3,0
+18763,frm_relation,e.cconj,WEBTOOL,CREATED,"palavra que marca uma conexão ou adição.",0,0
+32993,frm_relative_time,atrasado.adj,WEBTOOL,CREATED,"late. delayed.",3,0
+45579,frm_relative_time,atrasado.adv,FNBK,PENDING,"COD: posterior ao planejado ou esperado.",0,0
+18892,frm_relative_time,enquanto.adv,WEBTOOL,CREATED,"durante o tempo em que, no tempo em que, sempre que, quando.",7,1
+47749,frm_relative_time,enquanto.cconj,FNBK,PENDING,"COD: ao mesmo tempo que.",0,0
+43575,frm_relative_time,passado.adj,LOME,PENDING,,2,0
+28016,frm_relative_time,passado.noun,WEBTOOL,CREATED,"Momento anterior ao atual.",19,1
+39487,frm_relative_time,seguido.adj,WEBTOOL,CREATED,,0,0
+29235,frm_relative_time,seguido.adv,WEBTOOL,CREATED,"sem intervalo, imediato, contínuo, que está ou vem logo depois, ininterruptamente.",4,0
+47754,frm_relative_time,tarde.adj,FNBK,PENDING,"FN: ocorrendo em um momento perto do fim de um dia.",0,0
+28610,frm_relative_time,tarde.adv,WEBTOOL,CREATED,"Horário avançado. ",9,2
+47474,frm_removing,purga.noun,FNBK,PENDING,"COD: um ato de purgar pessoas de uma organização ou lugar.",0,0
+47475,frm_removing,purga.verb,FNBK,PENDING,"COD: remover por um processo de limpeza.",0,0
+36411,frm_removing,removedor.adj,WEBTOOL,CREATED,"usado para a remoção ou eliminação de alguma substância. ",0,0
+47481,frm_removing,removedor.noun,FNBK,PENDING,,0,0
+44179,frm_reveal_secret,revelar.verb,FNBK,PENDING,"COD: Divulgar (informação previamente desconhecida ou secreta)",0,0
+50492,frm_reveal_secret,revelar.x,FNBK,PENDING,"FN: revelar inadvertidamente",0,0
+48614,frm_rewards_and_punishments,disciplinar.adj,FNBK,PENDING,"FN: empregado para punir ou repreender formalmente por uma ofensa.",0,0
+46095,frm_rewards_and_punishments,disciplinar.verb,FNBK,PENDING,"COD: punir ou repreender formalmente por uma ofensa.",0,0
+43511,frm_roadways,municipal.noun,LOME,PENDING,,1,0
+43519,frm_roadways,municipal.noun,LOME,PENDING,,1,0
+47520,frm_self_motion,"a caminho.adj",FNBK,PENDING,"FN: atualmente viajando para",0,0
+47522,frm_self_motion,"a caminho.adv",FNBK,PENDING,"FN: atualmente viajando para.",0,0
+47515,frm_self_motion,rastejar.noun,FNBK,PENDING,"COD: uma ação de rastejar.",0,0
+47487,frm_self_motion,rastejar.verb,FNBK,PENDING,"COD: avance de mãos e joelhos ou arrastando o corpo perto do chão",0,0
+35115,frm_sequence,primeiro.adj,WEBTOOL,CREATED,"que se situa como o número um na sequência.",12,0
+42771,frm_sequence,primeiro.adv,WEBTOOL,CREATED,"que se dá antes, precedendo outro termo.",0,0
+37985,frm_serving_in_capacity,servir.noun,WEBTOOL,CREATED,"encarregar-se de uma função ou cargo.",0,0
+44827,frm_serving_in_capacity,servir.verb,FNBK,PENDING,"FN: exercer funções e deveres (por um tempo finito) associados a uma função ou cargo.",0,0
+37966,frm_sex,transar.verb,WEBTOOL,CREATED,"ter relação sexual.",0,0
+51553,frm_sex,transar.x,FNBK,PENDING,"FN: (eufemismo) fazer sexo",0,0
+42593,frm_shapes,plano.adj,WEBTOOL,CREATED,"qualidade de uma superfície ou área sem elevações, declives ou irregularidades, caracterizada por sua uniformidade e falta de variação na altura.",2,0
+40800,frm_shapes,plano.noun,WEBTOOL,CREATED,"área delimitadora da posição de imagens em contexto cênico.",3,0
+40326,frm_shapes,seta.noun,WEBTOOL,CREATED,"sinal em forma de flecha que indica direção ou rumo.",0,1
+40327,frm_shapes,seta.noun,WEBTOOL,CREATED,"sinal em forma de flecha que indica direção ou rumo.",0,0
+49965,frm_similarity,como.adp,FNBK,PENDING,"na forma de",0,0
+43880,frm_similarity,como.adv,FNBK,PENDING,"Ser como, ou semelhante.",0,0
+33035,frm_similarity,como.sconj,WEBTOOL,CREATED,like,0,0
+51211,frm_size,miniatura.adj,FNBK,PENDING,"FN: de um tamanho menor do que o ""normal""; muitas vezes, comparado a um objeto ""com tamanho regular",0,0
+22606,frm_size,miniatura.noun,WEBTOOL,CREATED,"de um tamanho pequeno, geralmente comparado ao tamanho ""normal"" do objeto em questão",0,0
+37897,frm_sociability,extrovertido.adj,WEBTOOL,CREATED,"pessoa que gosta de sociabilizar-se e costuma se destacar quando está em companhia de outras pessoas.",0,0
+47670,frm_sociability,extrovertido.noun,FNBK,PENDING,"COD: uma pessoa extrovertida e socialmente confiante.",0,0
+37904,frm_sociability,solitário.adj,WEBTOOL,CREATED,"pessoa que tem pouco convívio social, intencionalmente ou não.",6,0
+47672,frm_sociability,solitário.noun,FNBK,PENDING,"COD: uma pessoa que prefere não se associar com os outros.",0,0
+20954,frm_social_interaction_evaluation,maturidade.adj,WEBTOOL,CREATED,"qualidade de se comportar de uma maneira típica de indivíduos mentalmente e emocionalmente desenvolvidos",0,0
+46677,frm_social_interaction_evaluation,maturidade.noun,FNBK,PENDING,"FN: qualidade de se comportar de maneira típica de indivíduos considerados mental ou emocionalmente bem desenvolvidos",0,0
+40689,frm_social_interaction_evaluation,polido.adj,WEBTOOL,CREATED,educado.,0,0
+40690,frm_social_interaction_evaluation,polido.adj,WEBTOOL,CREATED,educado.,0,0
+39939,frm_sole_instance,cada.adj,WEBTOOL,CREATED,,4,0
+29100,frm_sole_instance,cada.pron,WEBTOOL,CREATED,"designa individual ou distributivamente os elementos, ou grupos de elementos, que formam um conjunto, série ou totalidade de coisas, animais, pessoas.",37,0
+51528,frm_spatial_contact,"em cima.adp",FNBK,PENDING,"FN: suportado e em contato com a superfície superior.",0,0
+21290,frm_spatial_contact,"em cima.adv",WEBTOOL,CREATED,"em contato com a parte de cima e suportado por ela",9,0
+24527,frm_speak_on_topic,debater.verb,WEBTOOL,CREATED,"ato de discutir ideias com uma ou mais pessoas.",5,0
+43377,frm_speak_on_topic,debater.verb,LOME,PENDING,,4,0
+50596,frm_stage_of_progress,"baixa tecnologia.adj",FNBK,PENDING,"COD: envolvido em ou empregando baixa tecnologia.",0,0
+21300,frm_stage_of_progress,"baixa tecnologia.noun",WEBTOOL,CREATED,"que envolve ou emprega baixa tecnologia",0,0
+50595,frm_stage_of_progress,"próxima geração.adj",FNBK,PENDING,"FN: Pertencente à próxima etapa de avanço",0,0
+21303,frm_stage_of_progress,"próxima geração.noun",WEBTOOL,CREATED,"pertencente ao próximo estágio",1,0
+18808,frm_statement,contar.verb,WEBTOOL,CREATED,tell.,11,0
+20247,frm_statement,contar.verb,WEBTOOL,CREATED,"fazer uma conta sobre algo, utilizando algarismos matemáticos",1,0
+39343,frm_statement,recomendação.noun,WEBTOOL,CREATED,,3,0
+40629,frm_statement,recomendação.noun,WEBTOOL,CREATED,"aquilo que se usa para advertir, aconselhar, recomendar, sugerir.",0,0
+43215,frm_state_of_entity,"vinte e três.noun",LOME,PENDING,,1,0
+43228,frm_state_of_entity,"vinte e três.noun",LOME,PENDING,,1,0
+18645,frm_stimulus_focus,irritante.adj,WEBTOOL,CREATED,annoying,0,0
+22323,frm_stimulus_focus,irritante.adj,WEBTOOL,CREATED,"algo que causa raiva ou irritação",0,0
+50130,frm_stinginess,avarento.adj,FNBK,PENDING,"COD: significa; ingrato.",0,0
+50133,frm_stinginess,avarento.noun,FNBK,PENDING,"COD: uma pessoa que acumula riqueza e gasta muito pouco.",0,0
+29207,frm_substance,metal.noun,WEBTOOL,CREATED,"material e elemento químico eletropositivo, bom condutor de calor e eletricidade.",0,0
+43154,frm_substance,metal.noun,USER,CREATED,"material caracterizado por possuir uma alta condutividade elétrica e térmica.",1,0
+27471,frm_substance_by_phase,líquido.adj,WEBTOOL,CREATED,"relativo ao estado da matéria intermediário entre o sólido e o gasoso",6,0
+42605,frm_substance_by_phase,líquido.noun,WEBTOOL,CREATED,"uma entidade referida de forma genérica por sua apresentação no estado da matéria entre o sólido e o gasoso, tal qual a água.",3,2
+27474,frm_substance_by_phase,sólido.adj,WEBTOOL,CREATED,maciço,2,0
+49644,frm_substance_by_phase,sólido.noun,FNBK,PENDING,"FN: uma substância caracterizada por rigidez estrutural e resistência à mudança.",0,0
+39970,frm_sufficiency,bastante.adj,WEBTOOL,CREATED,,2,0
+18742,frm_sufficiency,bastante.adv,WEBTOOL,CREATED,enought.adv,10,1
+22569,frm_sufficiency,demais.adv,WEBTOOL,CREATED,"em um  grau maior que o desejável, permitido ou possível",20,0
+38545,frm_sufficiency,demais.pron,WEBTOOL,CREATED,"os outros; os que sobram ou os que são selecionados, escolhidos.
+",2,0
+22565,frm_sufficiency,servir.noun,WEBTOOL,CREATED,"facilitar adequadamente em uma situação",0,0
+46599,frm_sufficiency,servir.verb,FNBK,PENDING,"FN: Para facilitar adequadamente uma situação saliente.",0,0
+22556,frm_sufficiency,suficiente.adj,WEBTOOL,CREATED,"o tanto quanto é necessário ou desejável",12,0
+49327,frm_sufficiency,suficiente.noun,FNBK,PENDING,"FN: a quantidade necessária de um item",0,0
+50570,frm_taking_sides,"a favor.adp",FNBK,PENDING,"COD: em apoio ou a favor de.",0,0
+50568,frm_taking_sides,"a favor.adv",FNBK,PENDING,"A favor de.",0,0
+19113,frm_taking_sides,"a favor.noun",WEBTOOL,CREATED,"apoiar causa ou entidade que a representa",2,0
+50571,frm_taking_sides,apoiador.adj,FNBK,PENDING,"FN: alinhado a favor de.",0,0
+44245,frm_taking_sides,apoiador.noun,FNBK,PENDING,"FN: um que tomou uma posição em apoio a uma questão.",0,0
+31111,frm_taking_sides,contra.adp,WEBTOOL,CREATED,"em oposição direta a; em combate a.",14,0
+19110,frm_taking_sides,contra.noun,WEBTOOL,CREATED,"apresentar oposição frente a determinada ordem de coisas",3,0
+41923,frm_telling,informar.verb,WEBTOOL,CREATED,,1,0
+50152,frm_telling,informar.x,FNBK,PENDING,"FN: dizer (a alguém) pela língua ou por algum outro meio.",0,0
+33109,frm_temporal_collocation,"a medida que.sconj",WEBTOOL,CREATED,as.,2,0
+42432,frm_temporal_collocation,"à medida que.sconj",WEBTOOL,CREATED,"juntamente com, ao mesmo tempo em que.",1,0
+39369,frm_temporal_collocation,durante.adj,WEBTOOL,CREATED,,6,1
+22631,frm_temporal_collocation,durante.adp,WEBTOOL,CREATED,"que acontece no mesmo tempo que um outro evento, ou dentro de um período de tempo.",35,0
+22628,frm_temporal_collocation,enquanto.adv,WEBTOOL,CREATED,"expressão que marca duas coisas acontecendo simultaneamente.",34,0
+51037,frm_temporal_collocation,enquanto.cconj,FNBK,PENDING,"COD: ao mesmo tempo que",0,0
+38553,frm_temporal_collocation,enquanto.noun,WEBTOOL,CREATED,"introduz ideia de tempo, proporção ou conformidade.",3,0
+22632,frm_temporal_collocation,futuro.adj,WEBTOOL,CREATED,"que aconteceno futuro",3,0
+18913,frm_temporal_collocation,futuro.noun,WEBTOOL,CREATED,future.,5,0
+29380,frm_temporal_collocation,quando.adv,WEBTOOL,CREATED,"expressa circunstância de tempo; em que ocasião.",90,4
+18755,frm_temporal_collocation,quando.sconj,WEBTOOL,CREATED,when.,62,0
+27736,frm_temporal_collocation,"tão logo.cconj",WEBTOOL,CREATED,"assim que.",1,0
+3760,frm_temporal_subregion,início.noun,WEBTOOL,CREATED,"parte inicial de um período de tempo.",7,0
+22644,frm_temporal_subregion,início.noun,WEBTOOL,CREATED,"o começo de algo",3,0
+42648,frm_text,gráfico.adj,WEBTOOL,CREATED,"que se refere a elementos visuais usados para representar informações, dados ou ideias.",0,0
+42641,frm_text,gráfico.noun,WEBTOOL,CREATED,"representação visual de dados, informações ou relações entre elementos.",0,0
+47820,frm_theft,ladrão.adj,FNBK,PENDING,"FN: habilidoso em cometer roubos.",0,0
+22705,frm_theft,ladrão.noun,WEBTOOL,CREATED,"pessoa que pega algo que não pertence a ela",1,0
+47826,frm_theft,ladrão.verb,FNBK,PENDING,"FN: roubar nos bolsos das pessoas",0,0
+39249,frm_timespan,horário.adj,WEBTOOL,CREATED,,7,1
+24206,frm_timespan,horário.noun,WEBTOOL,CREATED,"relativo a, mensurável por horas.",7,2
+51168,frm_timespan,imediatamente.cconj,FNBK,PENDING,"Em um curto espaço de tempo.",0,0
+26184,frm_time_period_of_action,"dia a dia.adv",WEBTOOL,CREATED,"passagem de tempo.",1,0
+26220,frm_time_period_of_action,"dia a dia.noun",WEBTOOL,CREATED,"rotina, durante os dias.",5,0
+49611,frm_time_vector,ante.adp,FNBK,PENDING,"COD: antes; anterior.",0,0
+39412,frm_time_vector,ante.adv,WEBTOOL,CREATED,,0,0
+49602,frm_time_vector,antes.adp,FNBK,PENDING,"COD: durante o período de tempo anterior.",0,0
+19116,frm_time_vector,antes.adv,WEBTOOL,CREATED,"anteriormente a.",65,1
+40103,frm_time_vector,após.adp,WEBTOOL,CREATED,"depois de.",5,0
+29130,frm_time_vector,após.adv,WEBTOOL,CREATED,"depois de, a seguir a, em seguida.",130,0
+18897,frm_time_vector,atrás.adv,WEBTOOL,CREATED,ago,13,0
+49603,frm_time_vector,atrás.x,FNBK,PENDING,"COD: antes do presente (usado com uma medida de tempo).",0,0
+33781,frm_time_vector,"daqui a pouco.adv",WEBTOOL,CREATED,"expressão que designa um futuro próximo, o qual se manifestará em poucos instantes.",2,0
+43375,frm_time_vector,"daqui a pouco.adv",LOME,PENDING,,2,0
+46721,frm_time_vector,de.adp,FNBK,PENDING,"COD: indicando o ponto no espaço ou tempo em que uma jornada, processo ou ação inicia-se.",0,0
+39727,frm_time_vector,de.adv,WEBTOOL,CREATED,,3,0
+49601,frm_time_vector,depois.adp,FNBK,PENDING,"CÓD: no tempo seguinte",0,0
+18841,frm_time_vector,depois.adv,WEBTOOL,CREATED,"ocorrido posteriormente a.",34,1
+49613,frm_time_vector,"desde que.adp",FNBK,PENDING,"FN: de (o tempo especificado) até agora, ou até o tempo considerado em uma narrativa.",0,0
+49604,frm_time_vector,"desde que.adv",FNBK,PENDING,"COD: do tempo mencionado até o presente ou do tempo em questão.",0,0
+24227,frm_tourist_attraction,atrativo.adj,WEBTOOL,CREATED,"qualidade utilizada para caracterizar algum item da atração turística que atrai o turista.",1,0
+24567,frm_tourist_attraction,atrativo.noun,WEBTOOL,CREATED,"alguma característica de um local, uma atração ou uma pessoa que atrai outras pessoas.",1,0
+24534,frm_trendiness,moda.adj,WEBTOOL,CREATED,"diz de algo que está em evidência, é tendência em um determinado período. ",0,0
+34614,frm_trendiness,moda.noun,WEBTOOL,CREATED,"Uma tendência de popularidade em uma sociedade e em um tempo específicos.",6,0
+43439,frm_type,"de novo.cconj",LOME,PENDING,,1,0
+43472,frm_type,leias.cconj,LOME,PENDING,,1,0
+39401,frm_type,tipo.adj,WEBTOOL,CREATED,,0,0
+27564,frm_type,tipo.noun,WEBTOOL,CREATED,"categoria, classe.",47,0
+18705,frm_undergo_change,transição.noun,WEBTOOL,CREATED,"o processo de mudança de um estado ou condição para outro.",3,0
+26110,frm_undergo_change,transição.noun,WEBTOOL,CREATED,"o processo de mudança de um estado ou condição para outro.",0,0
+26066,frm_undergo_transformation,transmutar.noun,WEBTOOL,CREATED,transformar-se.,0,0
+45294,frm_undergo_transformation,transmutar.verb,FNBK,PENDING,"FN: mudança de uma maneira surpreendente.",0,0
+39704,frm_using,e.cconj,WEBTOOL,CREATED,,0,0
+40684,frm_using,mexer.verb,WEBTOOL,CREATED,"Mexer no celular.",0,0
+40685,frm_using,mexer.verb,WEBTOOL,CREATED,"Mexer no celular.",1,0
+22847,frm_vehicle,bonde.noun,WEBTOOL,CREATED,"um veículo de passageiros movido por cabos em trilhos de ferro",1,1
+49922,frm_vehicle,bonde.noun,FNBK,PENDING,"COD: um veículo de passageiros alimentado por eletricidade transmitida por cabos suspensos e rodando sobre trilhos instalados em uma estrada pública.",0,0
+40295,frm_vehicle_subpart,carroceria.noun,WEBTOOL,CREATED,"parte de veículos que dá sustentação às demais partes.",1,0
+40296,frm_vehicle_subpart,carroceria.noun,WEBTOOL,CREATED,"parte de veículos que dá sustentação às demais partes.",1,1
+43256,frm_verification,certificar.verb,LOME,PENDING,,2,0
+43739,frm_verification,certificar.verb,USER,CREATED,"afirmar oficialmente ou confirmar a veracidade, autenticidade ou conformidade de algo, geralmente mediante verificação, prova documental ou autoridade reconhecida.",1,0
+49897,frm_weapon,explosivo.adj,FNBK,PENDING,"FN: Tendência à explosão.",0,0
+49898,frm_weapon,explosivo.noun,FNBK,PENDING,"FN: substância, especialmente uma substância química preparada, que explode ou causa explosão.",0,0
+18591,frm_wearing,com.adp,WEBTOOL,CREATED,"with on",2,0
+48239,frm_wearing,com.x,FNBK,PENDING,"FN: usando",0,0
+29025,frm_winning_moves,"marcar gol.noun",WEBTOOL,CREATED,"fazer com que a bola passe pela estrutura chamada gol, marcando pontos.",0,0
+45194,frm_winning_moves,"marcar gol.verb",FNBK,PENDING,"Fazer a bola passar pela estrutura chamada de gol, marcando pontos.",0,0
+2298,frm_winning_moves,suplê.noun,WEBTOOL,CREATED,"em lutas, é a queda em que o lutador projeta o adversário para trás e por cima de seus ombros, derrubando-os com as costas no solo.",0,0
+31885,frm_winning_moves,suplê.noun,WEBTOOL,CREATED,"em lutas, é a queda em que o lutador projeta o adversário para trás e por cima de seus ombros, derrubando-os com as costas no solo.",0,0
+49747,frm_word_relations,homófono.adj,FNBK,PENDING,"COD: (de uma palavra ou palavras) com a mesma pronúncia de outra mas com significado, origem ou ortografia diferentes",0,0
+49743,frm_word_relations,homófono.noun,FNBK,PENDING,"COD: cada uma de duas ou mais palavras com a mesma pronúncia mas significados, origens ou ortografias diferentes (por exemplo, novo e soube).",0,0

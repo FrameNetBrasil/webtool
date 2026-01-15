@@ -1,5 +1,5 @@
 <div class="dashboard-subtitle">{{__('dashboard.ptt')}}</div>
-<div class="flex gap-2">
+<div class="d-flex gap-2">
     <div class="dashboard-card  dashboard-card2">
         <div class="header">{{__('dashboard.pttSentences')}}</div>
         <div class="body">
@@ -14,7 +14,7 @@
     </div>
 </div>
 <div class="dashboard-subtitle">{{__('dashboard.pto')}}</div>
-<div class="flex gap-2">
+<div class="d-flex gap-2">
     <div class="dashboard-card  dashboard-card2">
         <div class="header">{{__('dashboard.ptoSentences')}}</div>
         <div class="body">
@@ -29,7 +29,7 @@
     </div>
 </div>
 <div class="dashboard-subtitle">{{__('dashboard.eno')}}</div>
-<div class="flex gap-2">
+<div class="d-flex gap-2">
     <div class="dashboard-card  dashboard-card2">
         <div class="header">{{__('dashboard.enoSentences')}}</div>
         <div class="body">

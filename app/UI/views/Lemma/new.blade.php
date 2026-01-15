@@ -1,11 +1,11 @@
-<x-layout.index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+<x-layout::index>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/structure','Structure'],['/lemma','Lemmas'],['','New Lemma']]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
-            <div class="ui container h-full">
+            <div class="ui container page">
                 <div class="page-header">
                     <div class="page-header-content">
                         <div class="page-title">
@@ -37,13 +37,13 @@
                                                 value=""
                                             ></x-ui::text-field>
                                         </div>
-                                        <div class="field">
-                                            <x-combobox::ud-pos
-                                                id="idUDPOS"
-                                                label="POS"
-                                                value=""
-                                            ></x-combobox::ud-pos>
-                                        </div>
+{{--                                        <div class="field">--}}
+{{--                                            <x-combobox::ud-pos--}}
+{{--                                                id="idUDPOS"--}}
+{{--                                                label="POS"--}}
+{{--                                                value=""--}}
+{{--                                            ></x-combobox::ud-pos>--}}
+{{--                                        </div>--}}
                                         <div class="field">
                                             <x-combobox::language
                                                 id="idLanguage"
@@ -65,7 +65,7 @@
             </div>
 
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
-</x-layout.index>
+</x-layout::index>
 

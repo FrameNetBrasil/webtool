@@ -1,4 +1,4 @@
-<div class="ui container page-report">
+<div class="ui container page">
     <div class="page-header">
         <div class="page-header-content">
             <div class="page-header-main">
@@ -30,7 +30,7 @@
         </div>
 
         {{-- Stats Section --}}
-        <div class="stats-section mb-8">
+        <div class="frame-metadata-section mb-8">
             @include('Frame.Report.partials.stats-card')
         </div>
 

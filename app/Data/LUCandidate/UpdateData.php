@@ -30,7 +30,7 @@ class UpdateData extends Data
             $this->discussion = '';
         }
         $lemma = Lexicon::lemmaById($this->idLemma);
-        $this->name = $lemma->shortName;
+//        $this->name = $lemma->shortName;
     }
 
 }

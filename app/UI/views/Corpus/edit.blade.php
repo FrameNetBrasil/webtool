@@ -1,9 +1,9 @@
-<x-layout.index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
-            :sections="[['/','Home'],['/manager','Manager'],['/corpus','Corpus/Document'],['', 'Corpus #' . $corpus->idCorpus]]"
-        ></x-layout::breadcrumb>
+<x-layout::index>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
+            :sections="[['/','Home'],['/corpus','Corpus'],['', 'Corpus #' . $corpus->idCorpus]]"
+        ></x-partial::breadcrumb>
         <main class="app-main">
             <div class="ui container page-edit">
                 <div class="page-header-object">
@@ -18,7 +18,7 @@
                             <button
                                 class="ui danger button"
                                 x-data
-                                @click.prevent="messenger.confirmDelete(`Removing Corpus '{{$corpus?->name}}'.`, '/corpus/{{$corpus->idCorpus}}')"
+                                @click.prevent="messenger.confirmDelete(`Removing Corpus '{{$corpus->name}}'.`, '/corpus/{{$corpus->idCorpus}}')"
                             >Delete</button>
                         </div>
                     </div>
@@ -41,6 +41,6 @@
                 </div>
             </div>
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
-</x-layout.index>
+</x-layout::index>

@@ -14,6 +14,7 @@ use App\Enum\Status;
 use App\Http\Controllers\Controller;
 use App\Repositories\AnnotationSet;
 use App\Services\Annotation\CorpusService;
+use App\Services\Annotation\FlexService;
 use Collective\Annotations\Routing\Attributes\Attributes\Delete;
 use Collective\Annotations\Routing\Attributes\Attributes\Get;
 use Collective\Annotations\Routing\Attributes\Attributes\Middleware;
@@ -79,8 +80,10 @@ class CorpusController extends Controller
                 $data = CorpusService::annotateObject($object);
                 if ($object->corpusAnnotationType == 'fe') {
                     return view("Annotation.Corpus.Panes.FE.asAnnotation", $data);
-                } else {
+                } else if ($object->corpusAnnotationType == 'fullText') {
                     return view("Annotation.Corpus.Panes.FullText.asAnnotation", $data);
+                } else if ($object->corpusAnnotationType == 'flex') {
+                    return view("Annotation.Corpus.Panes.Flex.asAnnotation", $data);
                 }
             } else {
                 return $this->renderNotify("error", "No selection.");
@@ -93,12 +96,18 @@ class CorpusController extends Controller
     public function deleteObject(DeleteObjectData $object)
     {
         try {
+            debug($object);
             CorpusService::deleteObject($object);
-            $data = CorpusService::getAnnotationSetData($object->idAnnotationSet, $object->token);
             if ($object->corpusAnnotationType == 'fe') {
+                $data = CorpusService::getAnnotationSetData($object->idAnnotationSet, $object->token);
                 return view("Annotation.Corpus.Panes.FE.asAnnotation", $data);
-            } else {
+            } else if ($object->corpusAnnotationType == 'fullText') {
+                $data = CorpusService::getAnnotationSetData($object->idAnnotationSet, $object->token);
                 return view("Annotation.Corpus.Panes.FullText.asAnnotation", $data);
+            } else if ($object->corpusAnnotationType == 'flex') {
+                $annotationSet = Criteria::byId("view_annotationset", "idAnnotationSet", $object->idAnnotationSet);
+                $data = FlexService::getAnnotationData($annotationSet->idDocumentSentence);
+                return view("Annotation.Corpus.Panes.Flex.asAnnotation", $data);
             }
         } catch (\Exception $e) {
             return $this->renderNotify("error", $e->getMessage());

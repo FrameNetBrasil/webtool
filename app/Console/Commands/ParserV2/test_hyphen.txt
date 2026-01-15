@@ -1,0 +1,8 @@
+# Test sentences with hyphens
+# The UD parser should now recognize hyphens as punctuation (converted to commas)
+
+# Example with standalone hyphen
+O carro - vermelho e grande - atropelou pessoas.
+
+# Example with MWE and hyphen
+O problema - pelo menos - foi resolvido.

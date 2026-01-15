@@ -1,0 +1,57 @@
+{
+  "grammar": "Portuguese",
+  "idGrammarGraph": 1,
+  "description": "Portuguese date constructions with semantic interpretation",
+  "version": "1.0",
+  "constructions": [
+    {
+      "name": "pt_date_full",
+      "pattern": "{NUM} de (janeiro | fevereiro | março | abril | maio | junho | julho | agosto | setembro | outubro | novembro | dezembro) [de {NUM}]",
+      "description": "Full dates: 15 de janeiro de 2025, 25 de dezembro",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_date",
+        "format": "day_month_year"
+      },
+      "priority": 30,
+      "enabled": true
+    },
+    {
+      "name": "pt_date_ordinal_first",
+      "pattern": "primeiro de (janeiro | fevereiro | março | abril | maio | junho | julho | agosto | setembro | outubro | novembro | dezembro) [de {NUM}]",
+      "description": "First day of month: primeiro de maio de 2025",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_date",
+        "format": "ordinal_day_month_year",
+        "day_value": 1
+      },
+      "priority": 35,
+      "enabled": true
+    },
+    {
+      "name": "pt_date_short_month_year",
+      "pattern": "(janeiro | fevereiro | março | abril | maio | junho | julho | agosto | setembro | outubro | novembro | dezembro) de {NUM}",
+      "description": "Month and year: janeiro de 2025",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_date",
+        "format": "month_year"
+      },
+      "priority": 20,
+      "enabled": true
+    },
+    {
+      "name": "pt_date_numeric",
+      "pattern": "{NUM} / {NUM} / {NUM}",
+      "description": "Numeric dates: 15/01/2025, 25/12/2024",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_date",
+        "format": "dd_mm_yyyy"
+      },
+      "priority": 25,
+      "enabled": true
+    }
+  ]
+}

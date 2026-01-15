@@ -1,9 +1,9 @@
 <x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
-            :sections="[['/','Home'],['/manager','Manager'],['','Corpus/Document']]"
-        ></x-layout::breadcrumb>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
+            :sections="[['/','Home'],['','Corpus/Document']]"
+        ></x-partial::breadcrumb>
         <main class="app-main">
             <x-ui::browse-tree
                 title="Corpus/Document"
@@ -53,26 +53,26 @@
                 <x-slot:tree>
                     <div
                         x-data
-                        class="w-full h-full"
+                        class="w-full"
                         @tree-item-selected.document="(event) => {
-                                                let type =  event.detail.type;
-                                                let idNode = type + '_' + event.detail.id;
-                                                console.log(event.detail);
-                                                if (type === 'corpus') {
-                                                    window.location.assign(`/corpus/${event.detail.id}/edit`);
-                                                }
-                                                if (type === 'document') {
-                                                    window.location.assign(`/document/${event.detail.id}/edit`);
-                                                }
-                                            }"
+                                                    let type =  event.detail.type;
+                                                    let idNode = type + '_' + event.detail.id;
+                                                    console.log(event.detail);
+                                                    if (type === 'corpus') {
+                                                        window.location.assign(`/corpus/${event.detail.id}/edit`);
+                                                    }
+                                                    if (type === 'document') {
+                                                        window.location.assign(`/document/${event.detail.id}/edit`);
+                                                    }
+                                                }"
                     >
-                        <div id="treeArea" class="h-full">
-                            @include("Corpus.tree", ['title' => '', 'data' => $data])
+                        <div id="treeArea">
+                            @include("Corpus.tree")
                         </div>
                     </div>
                 </x-slot:tree>
             </x-ui::browse-tree>
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
 </x-layout::index>

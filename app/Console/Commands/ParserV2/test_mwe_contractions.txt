@@ -1,0 +1,14 @@
+# Test sentences with MWEs and contractions
+
+# Test with "pelo menos" (MWE with contraction)
+# "pelo" = "por" + "o" (contracted)
+# "pelo menos" = at least (MWE)
+Ele tem pelo menos dez anos
+
+# Test with "no" (contraction)
+# "no" = "em" + "o"
+O livro está no armário
+
+# Test with "do" (contraction)
+# "do" = "de" + "o"
+A cor do carro é vermelha

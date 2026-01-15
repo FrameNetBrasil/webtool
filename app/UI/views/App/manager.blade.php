@@ -6,19 +6,19 @@
         'task' => ['Task/User', '/task', '','MANAGER','ui::icon.frame'],
         'user' => ['Group/User', '/user','', 'ADMIN','ui::icon.frame'],
         'document' => ['Corpus/Document','/corpus','', 'ADMIN','ui::icon.domain'],
-        'video' => ['Video/Document', '/video','', 'ADMIN','ui::icon.frame'],
-        'image' => ['Image/Document', '/image','', 'ADMIN','ui::icon.frame'],
-        'semantictype' => ['Domain/SemanticType','/domain','', 'ADMIN','ui::icon.frame'],
+//        'video' => ['Video/Document', '/video','', 'ADMIN','ui::icon.frame'],
+//        'image' => ['Image/Document', '/image','', 'ADMIN','ui::icon.frame'],
+        'semantictype' => ['SemanticType','/semanticType','', 'ADMIN','ui::icon.frame'],
         'layer' => ['Layer/GenericLabel', '/layers','', 'ADMIN','ui::icon.frame'],
         'relations' => ['Relations', '/relations','', 'ADMIN','ui::icon.frame'],
         'importfulltext' => ['Import FullText', '/utils/importFullText', '','MANAGER','ui::icon.frame'],
-        'aisuggestions' => ['LU AI Suggestions', '/lu/aiSuggestion','', 'ADMIN','ui::icon.lu'],
+//        'aisuggestions' => ['LU AI Suggestions', '/lu/aiSuggestion','', 'ADMIN','ui::icon.lu'],
     ];
 
     $groups = [
-//        'manager' => ['title' => "Project/User", "pages" => ['project','task','user']],
-//        'document' => ['title' => "Document", "pages" => ['document','video','image']],
-        'table' => ['title' => "Tables", "pages" => ['user','document','semantictype','layer','relations']],
+        'manager' => ['title' => "Project/User", "pages" => ['project','task','user']],
+        'document' => ['title' => "Document", "pages" => ['document']],
+        'table' => ['title' => "Tables", "pages" => ['semantictype','layer','relations']],
         'utils' => ['title' => "Utils", "pages" => ['importfulltext']],
 //        'data' => ['title' => "Data", "pages" => ['aisuggestions']],
     ];
@@ -27,13 +27,13 @@
 @endphp
 
 <x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['','Manager']]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <main class="app-main">
-            <div class="ui container">
+            <div class="ui container page">
                 <div class="page-header">
                     <div class="page-header-content">
                         <div class="page-title">
@@ -41,7 +41,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="page-content grid-page">
+                <div class="page-content">
                     @foreach($groups as $group)
                         <div class="ui fluid card">
                             <div class="content  bg-gray-200">
@@ -64,7 +64,7 @@
                                             >
                                                 <div class="content">
                                                     <div class="header">
-                                                        <x-dynamic-component :component="$item[4]"/>
+                                                        <x-dynamic-component :component="$item[4]" />
                                                         {{$item[0]}}
                                                     </div>
                                                     <div class="description">

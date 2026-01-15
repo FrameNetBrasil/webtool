@@ -17,7 +17,7 @@ class AISuggestionController extends Controller
     #[Get(path: '/lu/aiSuggestion')]
     public function aiSuggestion()
     {
-        return view("LU.AISuggestion.main",[
+        return view("LU.AISuggestion.index",[
             'data' => []
         ]);
     }
@@ -33,7 +33,7 @@ class AISuggestionController extends Controller
                 $results = AISuggestionService::handle($data);
 
             }
-            return view("LU.AISuggestion.main", [
+            return view("LU.AISuggestion.index", [
                 'frame' => $frame,
                 'data' => $results
             ])->fragment("search");

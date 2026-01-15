@@ -1,0 +1,70 @@
+{
+  "grammar": "Portuguese",
+  "idGrammarGraph": 1,
+  "description": "Portuguese cardinal number constructions with semantic calculation",
+  "version": "1.0",
+  "constructions": [
+    {
+      "name": "pt_number_simple_compound",
+      "pattern": "{NUM} e {NUM}",
+      "description": "Simple two-part numbers: vinte e cinco (25), trinta e dois (32)",
+      "semanticType": "Additive",
+      "semantics": {
+        "type": "portuguese_number",
+        "operation": "add"
+      },
+      "priority": 10,
+      "enabled": true
+    },
+    {
+      "name": "pt_number_with_thousands",
+      "pattern": "[{NUM}] mil [e] [{NUM}]",
+      "description": "Numbers with thousands: mil (1000), dois mil (2000), dois mil e quinhentos (2500)",
+      "semanticType": "Multiplier",
+      "semantics": {
+        "type": "portuguese_number",
+        "operation": "multiply_add",
+        "multiplier": 1000
+      },
+      "priority": 20,
+      "enabled": true
+    },
+    {
+      "name": "pt_number_complete",
+      "pattern": "[{NUM}] mil [,] [{NUM}] [e] [{NUM}] [e] [{NUM}]",
+      "description": "Complete numbers: dois mil, quatrocentos e vinte e dois (2,422)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_number",
+        "operation": "composite"
+      },
+      "priority": 30,
+      "enabled": true
+    },
+    {
+      "name": "pt_number_hundreds",
+      "pattern": "{NUM} e [{NUM}] [e] [{NUM}]",
+      "description": "Numbers with hundreds: quatrocentos (400), quatrocentos e vinte e dois (422)",
+      "semanticType": "Additive",
+      "semantics": {
+        "type": "portuguese_number",
+        "operation": "add"
+      },
+      "priority": 15,
+      "enabled": true
+    },
+    {
+      "name": "pt_number_millions",
+      "pattern": "[{NUM}] (milhão | milhões) [,] [{NUM}] mil [e] [{NUM}]",
+      "description": "Numbers with millions: um milhão (1,000,000), dois milhões e trezentos mil (2,300,000)",
+      "semanticType": "Multiplier",
+      "semantics": {
+        "type": "portuguese_number",
+        "operation": "multiply_add",
+        "multiplier": 1000000
+      },
+      "priority": 40,
+      "enabled": true
+    }
+  ]
+}

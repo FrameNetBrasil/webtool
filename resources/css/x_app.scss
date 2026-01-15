@@ -1,25 +1,25 @@
 @CHARSET "UTF-8";
 
-@import "webtool/_colors.less";
-@import "webtool/_variables.less";
-@import "webtool/_placeholders.less";
+@import "webtool41/_colors.less";
+@import "webtool41/_variables.less";
+@import "webtool41/_placeholders.less";
 
-@import "webtool/easyui/_textbox.less";
-@import "webtool/easyui/_combo.less";
-@import "webtool/easyui/_datagrid.less";
-@import "webtool/easyui/_tree.less";
+@import "webtool41/easyui/_textbox.less";
+@import "webtool41/easyui/_combo.less";
+@import "webtool41/easyui/_datagrid.less";
+@import "webtool41/easyui/_tree.less";
 
-@import "webtool/colors/_idcolor.less";
-@import "webtool/colors/_elements.less";
-@import "webtool/colors/_relations.less";
-@import "webtool/colors/_annotation.less";
+@import "webtool41/colors/_idcolor.less";
+@import "webtool41/colors/_elements.less";
+@import "webtool41/colors/_relations.less";
+@import "webtool41/colors/_annotation.less";
 
 //@import "webtool/layouts/_reset";
-@import "webtool/layouts/_index.less";
-@import "webtool/layouts/_object";
-@import "webtool/pages/_grapher.less";
+@import "webtool41/layouts/_index.less";
+@import "webtool41/layouts/_object";
+@import "webtool41/pages/_grapher.less";
 
-@import "webtool/icons/_icons.less";
+@import "webtool41/icons/_icons.less";
 
 //@import "webtool/components/_form";
 //@import "webtool/components/_datagrid";
@@ -29,16 +29,16 @@
 //@import "webtool/components/_tag";
 //@import "webtool/components/_card";
 
-@import "webtool/pages/_auth0.less";
-@import "webtool/pages/_frame.less";
-@import "webtool/pages/_lu";
-@import "webtool/pages/_corpus";
-@import "webtool/pages/_video";
-@import "webtool/pages/_annotation_event.less";
-@import "webtool/pages/_annotation_fe.less";
-@import "webtool/pages/_annotation_dynamic.less";
-@import "webtool/pages/_annotation_fulltext.less";
-@import "webtool/pages/_lexicon";
+@import "webtool41/pages/_auth0.less";
+@import "webtool41/pages/_frame.less";
+@import "webtool41/pages/_lu";
+@import "webtool41/pages/_corpus";
+@import "webtool41/pages/_video";
+@import "webtool41/pages/_annotation_event.less";
+@import "webtool41/pages/_annotation_fe.less";
+@import "webtool41/pages/_annotation_dynamic.less";
+@import "webtool41/pages/_annotation_fulltext.less";
+@import "webtool41/pages/_lexicon";
 
 /*
 

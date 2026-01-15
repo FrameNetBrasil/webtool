@@ -1,7 +1,7 @@
 <x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb :sections="[['/','Home'],['/grapher','Grapher'],['','Frame']]"></x-layout::breadcrumb>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb :sections="[['/','Home'],['/grapher','Grapher'],['','Frame']]"></x-partial::breadcrumb>
         <main class="app-main">
             <div class="page-content" id="grapherApp">
                 <div class="page-header">
@@ -13,44 +13,60 @@
                 </div>
                 <div class="grapher-controls">
                     <form>
-                        <div class="flex flex-row gap-2">
-                            <x-combobox.frame
-                                id="idFrame"
-                                label=""
-                                placeholder="Frame (min: 3 chars)"
-                                :hasDescription="false"
-                                style="width:250px"
-                            ></x-combobox.frame>
-                            <x-checkbox.relation
-                                id="frameRelation"
-                                label="Relations to show"
-                                :relations="$relations"
-                            ></x-checkbox.relation>
-                            <div>
-                                <x-button
-                                    id="btnSubmit"
-                                    label="Submit"
-                                    hx-target="#graph"
-                                    hx-post="/grapher/frame/graph"
-                                ></x-button>
+                        <div class="ui fields">
+                            <div class="field w-15em">
+                                <x-search::frame
+                                    name="idFrame"
+                                    placeholder="Select a frame"
+                                    value=""
+                                    display-value=""
+                                    modal-title="Search Frame"
+                                />
                             </div>
-                            <div>
-                                <x-button
-                                    id="btnClear"
-                                    label="Clear"
-                                    color="secondary"
+                            {{--                            <x-combobox.frame--}}
+                            {{--                                id="idFrame"--}}
+                            {{--                                label=""--}}
+                            {{--                                placeholder="Frame (min: 3 chars)"--}}
+                            {{--                                :hasDescription="false"--}}
+                            {{--                                style="width:250px"--}}
+                            {{--                            ></x-combobox.frame>--}}
+                            <div class="field">
+                                <x-checkbox.relation
+                                    id="frameRelation"
+                                    label="Relations to show"
+                                    :relations="$relations"
+                                ></x-checkbox.relation>
+                            </div>
+                            <div class="field">
+                                <button
+                                    class="ui primary button"
+                                    hx-post="/grapher/frame/graph"
+                                    hx-target="#graph"
+                                    hx-swap="innerHTML"
+                                >
+                                    <i class="project diagram icon"></i>
+                                    Show Graph Visualization
+                                </button>
+                            </div>
+                            <div class="field">
+                                <button
+                                    class="ui button"
                                     hx-target="#graph"
                                     hx-post="/grapher/frame/graph/0"
-                                ></x-button>
+                                >
+                                    <i class="times icon"></i>
+                                    Clear
+                                </button>
                             </div>
-                            <div>
-                                <x-button
-                                    id="btnToogle"
-                                    type="button"
-                                    label="Grapher options"
-                                    color="secondary"
+                            <div class="field">
+                                <button
+                                    class="ui button"
                                     onclick="$('#grapherOptionsModal').modal('show');"
-                                ></x-button>
+                                    type="button"
+                                >
+                                    <i class="list icon"></i>
+                                    Grapher options
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -61,15 +77,16 @@
                 @include('Grapher.controls')
                 @include('Grapher.report')
                 @include('Grapher.contextMenu')
+                @include('Grapher.Frame.feRelationsModal')
             </div>
         </main>
-        <x-layout::footer></x-layout::footer>
+        <x-partial::footer></x-partial::footer>
     </div>
 </x-layout::index>
 
 <script>
     // Execute scripts after HTMX swaps content into #graph
-    document.body.addEventListener('htmx:afterSwap', function(evt) {
+    document.body.addEventListener('htmx:afterSwap', function (evt) {
         if (evt.detail.target && evt.detail.target.id === 'graph') {
             // Find and execute any script tags in the swapped content
             const scripts = evt.detail.target.querySelectorAll('script');
@@ -84,10 +101,29 @@
                 script.parentNode.replaceChild(newScript, script);
             });
         }
+
+        // Handle modal graph swaps
+        if (evt.detail.target && evt.detail.target.id === 'feRelationsGraph') {
+            const scripts = evt.detail.target.querySelectorAll('script');
+            scripts.forEach(script => {
+                const newScript = document.createElement('script');
+                if (script.src) {
+                    newScript.src = script.src;
+                } else {
+                    newScript.textContent = script.textContent;
+                }
+                script.parentNode.replaceChild(newScript, script);
+            });
+
+            // Show modal after content loads and scripts execute
+            setTimeout(() => {
+                $('#grapherFERelationsModal').modal('show');
+            }, 100);
+        }
     });
 
     // Wire context menu actions to grapher component
-    document.addEventListener('grapher-context-action', function(evt) {
+    document.addEventListener('grapher-context-action', function (evt) {
         const grapherApp = document.getElementById('grapherApp');
         if (grapherApp && Alpine && Alpine.$data) {
             const grapher = Alpine.$data(grapherApp);

@@ -1,9 +1,9 @@
-<x-layout.index>
+<x-layout::index>
     <div class="app-layout annotation">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
             :sections="[['/','Home'],['/annotation','Annotation'],['/annotation/as','AnnotationSets'],['','#' . $idDocumentSentence]]"
-        ></x-layout::breadcrumb>
+        ></x-partial::breadcrumb>
         <div class="annotation-corpus">
             <script type="text/javascript" src="/annotation/corpus/script/components"></script>
             <div class="annotation-canvas">
@@ -83,4 +83,4 @@
             </div>
         </div>
     </div>
-</x-layout.index>
+</x-layout::index>

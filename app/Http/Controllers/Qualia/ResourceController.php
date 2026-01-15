@@ -20,7 +20,7 @@ use Collective\Annotations\Routing\Attributes\Attributes\Post;
 class ResourceController extends Controller
 {
 
-    #[Get(path: '/semanticType')]
+    #[Get(path: '/qualia')]
     public function resource(int|string $idConcept = '', string $lang = '')
     {
         $search = session('searchSemanticType') ?? SearchData::from();
@@ -32,7 +32,7 @@ class ResourceController extends Controller
         ]);
     }
 
-    #[Get(path: '/semanticType/grid')]
+    #[Get(path: '/qualia/grid')]
     public function grid()
     {
         $search = session('searchSemanticType') ?? SearchData::from();
@@ -45,8 +45,8 @@ class ResourceController extends Controller
     }
 
     /*
-    #[Get(path: '/semanticType/grid/{fragment?}')]
-    #[Post(path: '/semanticType/grid/{fragment?}')]
+    #[Get(path: '/qualia/grid/{fragment?}')]
+    #[Post(path: '/qualia/grid/{fragment?}')]
     public function grid(SearchData $search, ?string $fragment = null)
     {
         $data = $this->listForTree($search);
@@ -124,7 +124,7 @@ class ResourceController extends Controller
     }
 
     */
-    #[Get(path: '/semanticType/{id}/subTypes')]
+    #[Get(path: '/qualia/{id}/subTypes')]
     public function semanticTypes(string $id)
     {
         $semanticType = SemanticType::byId($id);
@@ -139,7 +139,7 @@ class ResourceController extends Controller
      * Master
      */
 
-    #[Get(path: '/semanticType/{id}/edit')]
+    #[Get(path: '/qualia/{id}/edit')]
     public function get(string $id)
     {
         return view("SemanticType.edit", [
@@ -147,24 +147,24 @@ class ResourceController extends Controller
         ]);
     }
 
-    #[Delete(path: '/semanticType/{idSemanticType}')]
+    #[Delete(path: '/qualia/{idSemanticType}')]
     public function masterDelete(int $idSemanticType)
     {
         try {
             Criteria::deleteById("semantictype", "idSemanticType", $idSemanticType);
-            return $this->clientRedirect("/semanticType");
+            return $this->clientRedirect("/qualia");
         } catch (\Exception $e) {
             return $this->renderNotify("error", $e->getMessage());
         }
     }
 
-    #[Get(path: '/semanticType/new')]
+    #[Get(path: '/qualia/new')]
     public function formNew()
     {
         return view("SemanticType.formNew");
     }
 
-    #[Post(path: '/semanticType/new')]
+    #[Post(path: '/qualia/new')]
     public function new(CreateData $data)
     {
         try {
@@ -183,7 +183,7 @@ class ResourceController extends Controller
     /***
      * Child
      */
-    #[Get(path: '/semanticType/{idEntity}/childAdd/{root}')]
+    #[Get(path: '/qualia/{idEntity}/childAdd/{root}')]
     public function childFormAdd(string $idEntity, string $root)
     {
         return view("SemanticType.childAdd", [
@@ -192,7 +192,7 @@ class ResourceController extends Controller
         ]);
     }
 
-    #[Get(path: '/semanticType/{idEntity}/childGrid')]
+    #[Get(path: '/qualia/{idEntity}/childGrid')]
     public function childGrid(string $idEntity)
     {
         $relations = SemanticType::listRelations($idEntity);
@@ -202,7 +202,7 @@ class ResourceController extends Controller
         ]);
     }
 
-    #[Post(path: '/semanticType/{idEntity}/add')]
+    #[Post(path: '/qualia/{idEntity}/add')]
     public function childAdd(CreateData $data)
     {
         try {
@@ -222,7 +222,7 @@ class ResourceController extends Controller
         }
     }
 
-    #[Delete(path: '/semanticType/relation/{idEntityRelation}')]
+    #[Delete(path: '/qualia/relation/{idEntityRelation}')]
     public function childDelete(int $idEntityRelation)
     {
         try {
@@ -234,7 +234,7 @@ class ResourceController extends Controller
         }
     }
 
-    #[Get(path: '/semanticType/{idEntity}/childSubTypeAdd/{root}')]
+    #[Get(path: '/qualia/{idEntity}/childSubTypeAdd/{root}')]
     public function childFormAddSubType(string $idEntity, string $root)
     {
         return view("SemanticType.childSubTypeAdd", [
@@ -243,7 +243,7 @@ class ResourceController extends Controller
         ]);
     }
 
-    #[Post(path: '/semanticType/{idEntity}/addSubType')]
+    #[Post(path: '/qualia/{idEntity}/addSubType')]
     public function childAddSubType(CreateData $data)
     {
         try {
@@ -264,7 +264,7 @@ class ResourceController extends Controller
     }
 
 
-    #[Get(path: '/semanticType/{idEntity}/childSubTypeGrid')]
+    #[Get(path: '/qualia/{idEntity}/childSubTypeGrid')]
     public function childGridSubType(string $idEntity)
     {
         $relations = SemanticType::listChildren($idEntity);

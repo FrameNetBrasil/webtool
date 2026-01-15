@@ -1,5 +1,5 @@
 <div class="dashboard-subtitle">{{__('dashboard.videoAnnotation')}}</div>
-<div class="flex gap-2">
+<div class="d-flex gap-2">
     <div class="dashboard-card  dashboard-card2">
         <div class="header">{{__('dashboard.annotatedBBox')}}</div>
         <div class="body">
@@ -26,7 +26,7 @@
     </div>
 </div>
 <div class="dashboard-subtitle">{{__('dashboard.averages')}}</div>
-<div class="flex gap-2">
+<div class="d-flex gap-2">
     <div class="dashboard-card  dashboard-card7">
         <div class="header">{{__('dashboard.avgBBox')}}</div>
         <div class="body">

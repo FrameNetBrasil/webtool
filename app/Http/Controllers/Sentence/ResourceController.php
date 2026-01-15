@@ -6,7 +6,10 @@ use App\Data\Sentence\SearchData;
 use App\Data\Sentence\UpdateData;
 use App\Database\Criteria;
 use App\Http\Controllers\Controller;
+use App\Repositories\AnnotationSet;
+use App\Services\Annotation\CorpusService;
 use App\Services\AppService;
+use App\Services\Sentence\BrowseService;
 use Collective\Annotations\Routing\Attributes\Attributes\Delete;
 use Collective\Annotations\Routing\Attributes\Attributes\Get;
 use Collective\Annotations\Routing\Attributes\Attributes\Middleware;
@@ -16,27 +19,44 @@ use Collective\Annotations\Routing\Attributes\Attributes\Put;
 #[Middleware("master")]
 class ResourceController extends Controller
 {
-
     #[Get(path: '/sentence')]
-    public function browse()
+    public function index(SearchData $search)
     {
-        $search = session('searchLexicon') ?? SearchData::from();
-        return view("Sentence.resource", [
-            'search' => $search
+        $data = BrowseService::browseSentenceBySearch($search);
+        return view('Sentence.browse', [
+            'data' => $data,
         ]);
     }
 
-    #[Get(path: '/sentence/grid/{fragment?}')]
-    #[Post(path: '/sentence/grid/{fragment?}')]
-    public function grid(SearchData $search, ?string $fragment = null)
+    #[Post(path: '/sentence/search')]
+    public function search(SearchData $search)
     {
-        $view = view("Sentence.grid", [
-            'search' => $search,
-            'sentences' => [],
-        ]);
-        return (is_null($fragment) ? $view : $view->fragment('search'));
+        $data = BrowseService::browseSentenceBySearch($search);
+        return view('Sentence.browse', [
+            'data' => $data,
+        ])->fragment('search');
     }
 
+//    #[Get(path: '/sentence')]
+//    public function browse()
+//    {
+//        $search = session('searchLexicon') ?? SearchData::from();
+//        return view("Sentence.resource", [
+//            'search' => $search
+//        ]);
+//    }
+//
+//    #[Get(path: '/sentence/grid/{fragment?}')]
+//    #[Post(path: '/sentence/grid/{fragment?}')]
+//    public function grid(SearchData $search, ?string $fragment = null)
+//    {
+//        $view = view("Sentence.grid", [
+//            'search' => $search,
+//            'sentences' => [],
+//        ]);
+//        return (is_null($fragment) ? $view : $view->fragment('search'));
+//    }
+//
     #[Get(path: '/sentence/new')]
     public function formSentenceNew()
     {
@@ -52,17 +72,25 @@ class ResourceController extends Controller
         ]);
     }
 
-    #[Get(path: '/sentence/{id}/editForm')]
-    public function editForm(string $id)
+    #[Get(path: '/sentence/{id}/formEdit')]
+    public function formEdit(string $id)
     {
         $sentence = Criteria::byId("view_sentence","idSentence",$id);
         $as = Criteria::table("annotationset")
             ->where("idSentence", $id)
             ->all();
-        return view("Sentence.editForm",[
+        return view("Sentence.formEdit",[
             'sentence' => $sentence,
             'hasAS' => !empty($as)
         ]);
+    }
+
+    #[Get(path: '/sentence/{id}/annotations')]
+    public function annotations(string $id)
+    {
+        $data = CorpusService::getResourceDataByIdSentence($id, null, 'as');
+        $data['annotationSets'] = AnnotationSet::getTargetsByIdSentence($id);
+        return view("Sentence.annotations",$data);
     }
 
     #[Put(path: '/sentence')]

@@ -53,7 +53,6 @@ class Gl extends Component
                     'idColor' => $gl->idColor
                 ];
             }
-
         }
     }
 

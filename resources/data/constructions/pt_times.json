@@ -1,0 +1,150 @@
+{
+  "grammar": "Portuguese",
+  "idGrammarGraph": 1,
+  "description": "Portuguese time constructions with semantic interpretation",
+  "version": "1.0",
+  "constructions": [
+    {
+      "name": "pt_time_simple_hours",
+      "pattern": "{NUM} (hora | horas)",
+      "description": "Simple hours: três horas (3:00), uma hora (1:00)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "hours_only"
+      },
+      "priority": 20,
+      "enabled": true
+    },
+    {
+      "name": "pt_time_hours_minutes",
+      "pattern": "{NUM} (hora | horas) [e] {NUM} (minuto | minutos)",
+      "description": "Hours and minutes: três horas e quinze minutos (3:15)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "hours_minutes"
+      },
+      "priority": 30,
+      "enabled": true
+    },
+    {
+      "name": "pt_time_half_hour",
+      "pattern": "{NUM} e (meia | trinta)",
+      "description": "Half hour: três e meia (3:30), dez e trinta (10:30)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "half_hour",
+        "minutes_value": 30
+      },
+      "priority": 35,
+      "enabled": true
+    },
+    {
+      "name": "pt_time_quarter_hour",
+      "pattern": "{NUM} e (um quarto | quinze)",
+      "description": "Quarter hour: três e quinze (3:15), três e um quarto (3:15)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "quarter_hour",
+        "minutes_value": 15
+      },
+      "priority": 35,
+      "enabled": true
+    },
+    {
+      "name": "pt_time_three_quarters",
+      "pattern": "{NUM} e (quarenta e cinco | três quartos)",
+      "description": "Three quarters: três e quarenta e cinco (3:45)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "three_quarters",
+        "minutes_value": 45
+      },
+      "priority": 35,
+      "enabled": true
+    },
+    {
+      "name": "pt_time_with_period_morning",
+      "pattern": "{NUM} (hora | horas) [e] [{NUM}] [(minuto | minutos)] (da manhã | de manhã)",
+      "description": "Morning time: dez horas da manhã (10 AM), sete e meia da manhã (7:30 AM)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "hours_minutes_period",
+        "period": "morning"
+      },
+      "priority": 40,
+      "enabled": true
+    },
+    {
+      "name": "pt_time_with_period_afternoon",
+      "pattern": "{NUM} (hora | horas) [e] [{NUM}] [(minuto | minutos)] (da tarde | de tarde)",
+      "description": "Afternoon time: três horas da tarde (3 PM), duas e quinze da tarde (2:15 PM)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "hours_minutes_period",
+        "period": "afternoon"
+      },
+      "priority": 40,
+      "enabled": true
+    },
+    {
+      "name": "pt_time_with_period_night",
+      "pattern": "{NUM} (hora | horas) [e] [{NUM}] [(minuto | minutos)] (da noite | de noite)",
+      "description": "Night time: oito horas da noite (8 PM), nove e meia da noite (9:30 PM)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "hours_minutes_period",
+        "period": "night"
+      },
+      "priority": 40,
+      "enabled": true
+    },
+    {
+      "name": "pt_time_numeric",
+      "pattern": "{NUM} : {NUM}",
+      "description": "Numeric time: 15:30, 03:15, 22:45",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "numeric_hh_mm"
+      },
+      "priority": 25,
+      "enabled": true
+    },
+    {
+      "name": "pt_time_noon",
+      "pattern": "(meio-dia | meio dia | 12 horas)",
+      "description": "Noon: meio-dia (12:00)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "fixed_time",
+        "hours_value": 12,
+        "minutes_value": 0
+      },
+      "priority": 45,
+      "enabled": true
+    },
+    {
+      "name": "pt_time_midnight",
+      "pattern": "(meia-noite | meia noite)",
+      "description": "Midnight: meia-noite (00:00)",
+      "semanticType": "Head",
+      "semantics": {
+        "type": "portuguese_time",
+        "format": "fixed_time",
+        "hours_value": 0,
+        "minutes_value": 0
+      },
+      "priority": 45,
+      "enabled": true
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-<div class="w-8rem">
+<div class="w-15em">
     <div class="form-field field" style="overflow:initial">
         <label for="{{$id}}">{{$label}}</label>
         <div id="{{$id}}_dropdown" class="ui tiny selection dropdown" style="overflow:initial">

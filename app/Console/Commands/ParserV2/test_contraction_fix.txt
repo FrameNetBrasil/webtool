@@ -1,0 +1,8 @@
+# Test contraction "no" = "em" + "o"
+João viu Maria no parque.
+
+# Test contraction "do" = "de" + "o"
+A cor do carro é vermelha.
+
+# Test contraction "na" = "em" + "a"
+O livro está na mesa.

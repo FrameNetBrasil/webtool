@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Layers;
+namespace App\Http\Controllers\_Layers;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\Entry;

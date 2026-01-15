@@ -1,0 +1,2669 @@
+idLU,idLemma,idFrame,frameName,lu,as
+28482,6613,1,Causalidade,resultado,2
+18860,6613,1,Causalidade,resultado,6
+19052,6679,1,Causalidade,responsável,4
+45415,6679,1,Causalidade,responsável,-
+43514,65355,1,Causalidade,municipal,1
+43515,65355,1,Causalidade,municipal,1
+46950,141852,1,Causalidade,porque,-
+18640,141852,1,Causalidade,porque,43
+46958,147237,1,Causalidade,portanto,-
+29127,147237,1,Causalidade,portanto,3
+43502,196825,1,Causalidade,portas,1
+43503,196825,1,Causalidade,portas,1
+26848,116877,3,Movimento,ir,-
+288,116877,3,Movimento,ir,231
+29341,120816,3,Movimento,serpentear,-
+20442,120816,3,Movimento,serpentear,-
+29445,29081,11,Movimento_corporal,open,-
+4101,29081,11,Movimento_corporal,open,1
+45792,59106,11,Movimento_corporal,abrir,-
+26610,59106,11,Movimento_corporal,abrir,-
+40535,66158,11,Movimento_corporal,piscar,-
+40731,66158,11,Movimento_corporal,piscar,1
+26611,117239,11,Movimento_corporal,agachar,-
+40434,117239,11,Movimento_corporal,agachar,6
+26612,121123,11,Movimento_corporal,agitar,-
+45637,121123,11,Movimento_corporal,agitar,-
+37543,14188,13,Postura,assis,-
+32931,14188,13,Postura,assis,-
+40358,146467,13,Postura,de pé,7
+41139,146467,13,Postura,de pé,-
+26568,61499,14,Conhecimento,consciente,-
+45818,61499,14,Conhecimento,consciente,-
+40829,61499,14,Conhecimento,consciente,-
+26573,65995,14,Conhecimento,pensar,-
+18581,65995,14,Conhecimento,pensar,16
+4220,173,15,Tornar-se_consciente,chance,-
+4223,173,15,Tornar-se_consciente,chance,-
+26585,117283,15,Tornar-se_consciente,encontrar,-
+22721,117283,15,Tornar-se_consciente,encontrar,11
+22725,117303,15,Tornar-se_consciente,observar,8
+26589,117303,15,Tornar-se_consciente,observar,-
+22724,120784,15,Tornar-se_consciente,notar,6
+26588,120784,15,Tornar-se_consciente,notar,-
+22718,120895,15,Tornar-se_consciente,detectar,10
+26584,120895,15,Tornar-se_consciente,detectar,-
+43647,196914,16,Categorização,gastos,1
+43655,196914,16,Categorização,gastos,1
+27079,65995,17,Cogitação,pensar,-
+24553,65995,17,Cogitação,pensar,122
+45962,117354,17,Cogitação,considerar,-
+27075,117354,17,Cogitação,considerar,-
+27086,116970,18,Chegar_a_acreditar,aprender,-
+46118,116970,18,Chegar_a_acreditar,aprender,-
+46126,121021,19,Diferenciar,diferenciar,-
+27202,121021,19,Diferenciar,diferenciar,-
+29351,121047,20,Evidências,indicar,4
+29353,121047,20,Evidências,indicar,-
+39276,62145,21,Expectativa,dever,3
+19527,62145,21,Expectativa,dever,9
+27278,117301,21,Expectativa,esperar,-
+19506,117301,21,Expectativa,esperar,22
+27099,120745,22,Propor_ideia,inventar,-
+46146,120745,22,Propor_ideia,inventar,-
+47130,63847,24,Propriedade_mental,idiota,-
+46325,63847,24,Propriedade_mental,idiota,-
+34291,77847,24,Propriedade_mental,cerebral,1
+46574,77847,24,Propriedade_mental,cerebral,-
+26983,7585,25,Escrutínio,analista,-
+20603,7585,25,Escrutínio,analista,-
+19467,15894,25,Escrutínio,buscar,1
+26986,15894,25,Escrutínio,buscar,-
+26995,117256,25,Escrutínio,explorar,-
+19443,117256,25,Escrutínio,explorar,6
+26993,120829,25,Escrutínio,examinar,-
+20605,120829,25,Escrutínio,examinar,1
+27123,121129,27,Comprometimento,jurar,-
+27714,121129,27,Comprometimento,jurar,12
+27125,121162,27,Comprometimento,prometer,-
+24885,121162,27,Comprometimento,prometer,11
+27210,121071,28,Discussão,discutir,-
+46695,121071,28,Discussão,discutir,-
+40267,122081,30,Gesto,acenar,-
+40268,122081,30,Gesto,acenar,1
+46709,121117,32,Maneira_de_comunicação,gritar,-
+27137,121117,32,Maneira_de_comunicação,gritar,-
+209,59011,35,Pedir,pedir,169
+26958,59011,35,Pedir,pedir,-
+46940,117248,35,Pedir,exigir,-
+26953,117248,35,Pedir,exigir,-
+26963,121011,35,Pedir,solicitar,10
+27332,121011,35,Pedir,solicitar,54
+46941,121090,35,Pedir,ordenar,-
+26957,121090,35,Pedir,ordenar,-
+349,116928,36,Comunicação_resposta,responder,24
+27154,116928,36,Comunicação_resposta,responder,-
+26037,121195,36,Comunicação_resposta,replicar,2
+27153,121195,36,Comunicação_resposta,replicar,-
+39343,10648,37,Declaração,recomendação,3
+40629,10648,37,Declaração,recomendação,-
+18808,58994,37,Declaração,contar,11
+20247,58994,37,Declaração,contar,1
+37392,68338,40,Emoção_direcionada,triste,-
+23853,68338,40,Emoção_direcionada,triste,15
+40491,80597,40,Emoção_direcionada,encabulado,2
+40624,80597,40,Emoção_direcionada,encabulado,-
+315,116901,41,Estimular_emoção,irritar,15
+26736,116901,41,Estimular_emoção,irritar,-
+26727,116951,41,Estimular_emoção,divertir,-
+47304,116951,41,Estimular_emoção,divertir,-
+26729,117265,41,Estimular_emoção,encantar,-
+3638,117265,41,Estimular_emoção,encantar,10
+47293,121221,41,Estimular_emoção,tranquilizar,-
+26741,121221,41,Estimular_emoção,tranquilizar,-
+26738,121227,41,Estimular_emoção,preocupar,-
+44956,121227,41,Estimular_emoção,preocupar,-
+352,116931,42,Emoção_com_foco_no_experienciador,lastimar,1
+23269,116931,42,Emoção_com_foco_no_experienciador,lastimar,-
+47343,61850,44,Curar,curativo,-
+47344,61850,44,Curar,curativo,-
+47347,65786,44,Curar,paliativo,-
+45104,65786,44,Curar,paliativo,-
+5400,1134,48,Chegar,approach,-
+5399,1134,48,Chegar,approach,-
+43187,36238,48,Chegar,vê,1
+43194,36238,48,Chegar,vê,1
+18579,116927,48,Chegar,entrar,118
+26533,116927,48,Chegar,entrar,-
+47375,117164,50,Cotema,seguir,-
+27345,117164,50,Cotema,seguir,5
+297,116885,51,Partir,partir,118
+38680,116885,51,Partir,partir,1
+32497,134383,51,Partir,sortir,1
+37339,134383,51,Partir,sortir,-
+26125,10643,52,Esvaziar,limpeza,7
+39693,10643,52,Esvaziar,limpeza,-
+45355,117275,53,Preencher,revestir,-
+26754,117275,53,Preencher,revestir,-
+45357,120695,53,Preencher,inundar,-
+26751,120695,53,Preencher,inundar,-
+26744,120866,53,Preencher,adornar,-
+45336,120866,53,Preencher,adornar,-
+26903,117253,56,Colocar,situar,-
+45378,117253,56,Colocar,situar,-
+18594,120609,56,Colocar,colocar,93
+26898,120609,56,Colocar,colocar,-
+47474,31268,57,Remover,purga,-
+47475,31268,57,Remover,purga,-
+47481,113829,57,Remover,removedor,-
+36411,113829,57,Remover,removedor,-
+24853,120753,57,Remover,retirar,38
+26946,120753,57,Remover,retirar,-
+45440,1065,58,Auto_movimento,sprint,-
+5890,1065,58,Auto_movimento,sprint,-
+5891,1065,58,Auto_movimento,sprint,-
+47487,133224,58,Auto_movimento,rastejar,-
+47515,133224,58,Auto_movimento,rastejar,-
+47520,198035,58,Auto_movimento,a caminho,-
+47522,198035,58,Auto_movimento,a caminho,-
+26861,117218,59,Operar_veículo,remar,-
+45465,117218,59,Operar_veículo,remar,-
+26859,121046,59,Operar_veículo,patinar,-
+45466,121046,59,Operar_veículo,patinar,-
+23402,8954,60,Percepção_ativa,olhar,212
+23408,8954,60,Percepção_ativa,olhar,10
+26876,117303,60,Percepção_ativa,observar,-
+3706,117303,60,Percepção_ativa,observar,68
+26882,120963,60,Percepção_ativa,palpar,-
+23411,120963,60,Percepção_ativa,palpar,2
+23415,120966,60,Percepção_ativa,saborear,-
+26883,120966,60,Percepção_ativa,saborear,-
+47533,198044,60,Percepção_ativa,olhar fixo,-
+47532,198044,60,Percepção_ativa,olhar fixo,-
+40529,15574,63,Fazer_barulho,burburinho,5
+40445,15574,63,Fazer_barulho,burburinho,14
+26891,8746,64,Experiência_de_percepção,ver,2
+357,8746,64,Experiência_de_percepção,ver,132
+23430,29963,64,Experiência_de_percepção,percepção,1
+36116,29963,64,Experiência_de_percepção,percepção,-
+26890,67412,64,Experiência_de_percepção,sentir,-
+23426,67412,64,Experiência_de_percepção,sentir,33
+27009,6690,65,Sensação,vista,-
+27481,6690,65,Sensação,vista,1
+27005,6731,65,Sensação,sabor,-
+19155,6731,65,Sensação,sabor,4
+47670,62904,68,Sociabilidade,extrovertido,-
+37897,62904,68,Sociabilidade,extrovertido,-
+47672,67606,68,Sociabilidade,solitário,-
+37904,67606,68,Sociabilidade,solitário,6
+39459,6610,74,Frequência,vez,4
+34550,6610,74,Frequência,vez,15
+19149,6727,74,Frequência,quotidiano,-
+19147,6727,74,Frequência,quotidiano,1
+19148,6728,74,Frequência,cotidiano,2
+19146,6728,74,Frequência,cotidiano,1
+22871,19725,74,Frequência,diário,9
+19032,19725,74,Frequência,diário,-
+39409,62249,74,Frequência,diária,14
+36105,62249,74,Frequência,diária,-
+22894,69668,74,Frequência,esporádico,1
+36094,69668,74,Frequência,esporádico,2
+37423,141406,74,Frequência,jamais,-
+32648,141406,74,Frequência,jamais,2
+28610,6700,75,Tempo_relativo,tarde,9
+47754,6700,75,Tempo_relativo,tarde,-
+28016,10997,75,Tempo_relativo,passado,19
+43575,10997,75,Tempo_relativo,passado,2
+32993,59991,75,Tempo_relativo,atrasado,3
+45579,59991,75,Tempo_relativo,atrasado,-
+47749,69838,75,Tempo_relativo,enquanto,-
+18892,69838,75,Tempo_relativo,enquanto,7
+29235,89608,75,Tempo_relativo,seguido,4
+39487,89608,75,Tempo_relativo,seguido,-
+29236,89608,75,Tempo_relativo,seguido,-
+23285,8894,77,Careza,baixo custo,-
+47760,8894,77,Careza,baixo custo,-
+19295,73261,77,Careza,gratuito,6
+27297,73261,77,Careza,gratuito,-
+23278,73791,77,Careza,barato,3
+27289,73791,77,Careza,barato,-
+27290,73794,77,Careza,caro,-
+23283,73794,77,Careza,caro,6
+19404,120678,80,Tentar_persuadir,recomendar,10
+26565,120678,80,Tentar_persuadir,recomendar,-
+47826,8714,87,Furto,ladrão,-
+22705,8714,87,Furto,ladrão,1
+47820,8714,87,Furto,ladrão,-
+18708,6567,93,Relações_pessoais,namorado,39
+28437,6567,93,Relações_pessoais,namorado,2
+18729,6576,93,Relações_pessoais,esposa,-
+26060,6576,93,Relações_pessoais,esposa,-
+26038,8963,93,Relações_pessoais,camarada,-
+23440,8963,93,Relações_pessoais,camarada,-
+26051,8968,93,Relações_pessoais,divorciado,-
+23451,8968,93,Relações_pessoais,divorciado,-
+26052,8968,93,Relações_pessoais,divorciado,-
+23450,8968,93,Relações_pessoais,divorciado,-
+23456,8970,93,Relações_pessoais,noivo,1
+23452,8970,93,Relações_pessoais,noivo,-
+26057,8976,93,Relações_pessoais,enamorada,-
+23462,8976,93,Relações_pessoais,enamorada,-
+26031,8977,93,Relações_pessoais,amante,-
+23463,8977,93,Relações_pessoais,amante,2
+23467,8979,93,Relações_pessoais,colega,40
+26047,8979,93,Relações_pessoais,colega,-
+23476,8984,93,Relações_pessoais,esposo,44
+26059,8984,93,Relações_pessoais,esposo,-
+23475,8984,93,Relações_pessoais,esposo,-
+23480,8987,93,Relações_pessoais,viúvo,-
+23479,8987,93,Relações_pessoais,viúvo,1
+26039,60974,93,Relações_pessoais,casado,-
+23466,60974,93,Relações_pessoais,casado,10
+26070,69296,93,Relações_pessoais,íntimo,-
+23442,69296,93,Relações_pessoais,íntimo,-
+26046,120973,93,Relações_pessoais,cortejar,-
+23447,120973,93,Relações_pessoais,cortejar,-
+18945,6635,94,Agregado,multiplicidade,-
+22655,6635,94,Agregado,multiplicidade,-
+22409,8577,94,Agregado,classe,7
+38637,8577,94,Agregado,classe,2
+22413,8581,94,Agregado,colônia,2
+43119,8581,94,Agregado,colônia,-
+39745,2067,95,Parentesco,filho,5
+3803,2067,95,Parentesco,filho,169
+7248,59551,95,Parentesco,ancestral,-
+47861,59551,95,Parentesco,ancestral,-
+47860,63050,95,Parentesco,filial,-
+7247,63050,95,Parentesco,filial,-
+7246,65865,95,Parentesco,parental,-
+36406,65865,95,Parentesco,parental,-
+39296,62216,97,Aparato,dispositivo,1
+39311,62216,97,Aparato,dispositivo,6
+18830,672,101,Cenário_da_educação,professor,6
+7388,672,101,Cenário_da_educação,professor,20
+37376,8577,101,Cenário_da_educação,classe,-
+32563,8577,101,Cenário_da_educação,classe,-
+414,116970,101,Cenário_da_educação,aprender,1
+27217,116970,101,Cenário_da_educação,aprender,-
+7495,173,103,Chance,chance,-
+42422,173,103,Chance,chance,-
+43695,16122,104,Catástrofe,calamidade,2
+43783,16122,104,Catástrofe,calamidade,1
+23672,298,107,Posse,falta,6
+45748,298,107,Posse,falta,-
+45749,8598,107,Posse,querer,-
+23681,8598,107,Posse,querer,11
+23671,9117,107,Posse,obter,2
+45750,9117,107,Posse,obter,-
+29307,58994,107,Posse,contar,-
+3665,58994,107,Posse,contar,10
+39278,116847,107,Posse,ter,10
+208,116847,107,Posse,ter,508
+47942,117140,107,Posse,possuir,-
+3681,117140,107,Posse,possuir,23
+27564,34747,117,Tipo,tipo,47
+39401,34747,117,Tipo,tipo,-
+27406,37058,123,Vestuário,tecido,12
+39254,37058,123,Vestuário,tecido,-
+29171,37373,123,Vestuário,uwagi,-
+31441,37373,123,Vestuário,uwagi,-
+31440,37374,123,Vestuário,zubon,-
+29172,37374,123,Vestuário,zubon,-
+48067,223,125,Especialidade,craque,-
+23038,223,125,Especialidade,craque,-
+23026,8810,125,Especialidade,ás,-
+23027,8810,125,Especialidade,ás,-
+23028,8811,125,Especialidade,adepto,-
+23029,8811,125,Especialidade,adepto,2
+23031,8812,125,Especialidade,amador,-
+23030,8812,125,Especialidade,amador,-
+23037,8814,125,Especialidade,conhecedor,-
+48069,8814,125,Especialidade,conhecedor,-
+23072,8826,125,Especialidade,mestre,2
+23069,8826,125,Especialidade,mestre,-
+48073,64466,125,Especialidade,leigo,-
+23067,64466,125,Especialidade,leigo,5
+26769,116844,127,Dar,dar,-
+278,116844,127,Dar,dar,262
+25435,748,128,Parte_todo,ponta,10
+39833,748,128,Parte_todo,ponta,-
+45841,36713,128,Parte_todo,todo,-
+34803,36713,128,Parte_todo,todo,26
+48087,61416,128,Parte_todo,componente,-
+39742,61416,128,Parte_todo,componente,2
+35026,69418,128,Parte_todo,por cento,32
+43491,69418,128,Parte_todo,por cento,8
+48093,79154,129,Certeza,cético,-
+48095,79154,129,Certeza,cético,-
+33249,142534,129,Certeza,com certeza,10
+43680,142534,129,Certeza,com certeza,2
+8213,1086,131,Parte_orientacional,front,-
+8257,1086,131,Parte_orientacional,front,-
+23143,2137,131,Parte_orientacional,sul,5
+23142,2137,131,Parte_orientacional,sul,-
+23135,6661,131,Parte_orientacional,norte,2
+23134,6661,131,Parte_orientacional,norte,-
+23123,8603,131,Parte_orientacional,leste,-
+23122,8603,131,Parte_orientacional,leste,1
+23119,8843,131,Parte_orientacional,inferior,8
+23120,8843,131,Parte_orientacional,inferior,-
+23129,8846,131,Parte_orientacional,frente,36
+23128,8846,131,Parte_orientacional,frente,6
+48104,8847,131,Parte_orientacional,esquerda,-
+23132,8847,131,Parte_orientacional,esquerda,59
+48105,8851,131,Parte_orientacional,direita,-
+23140,8851,131,Parte_orientacional,direita,49
+29094,8946,131,Parte_orientacional,direito,131
+45852,8946,131,Parte_orientacional,direito,-
+35764,17325,131,Parte_orientacional,cima,4
+35765,17325,131,Parte_orientacional,cima,3
+39358,10205,141,Medida_volume,gota,1
+29575,10205,141,Medida_volume,gota,7
+40320,33634,144,Acessórios_de_vestuário,sombreiro,-
+40264,33634,144,Acessórios_de_vestuário,sombreiro,2
+40321,33634,144,Acessórios_de_vestuário,sombreiro,-
+40265,33634,144,Acessórios_de_vestuário,sombreiro,1
+38766,65560,146,Trajar,nu,1
+48219,65560,146,Trajar,nu,-
+8524,68177,146,Trajar,topless,-
+48230,68177,146,Trajar,topless,-
+48239,146325,146,Trajar,com,-
+18591,146325,146,Trajar,com,2
+27104,9334,155,Comércio_comprar,compra,-
+24387,9334,155,Comércio_comprar,compra,3
+202,116842,155,Comércio_comprar,comprar,161
+27106,116842,155,Comércio_comprar,comprar,-
+21265,24,157,Prédios,teatro,-
+1879,24,157,Prédios,teatro,3
+8656,80,157,Prédios,arena,-
+25697,80,157,Prédios,arena,-
+23693,80,157,Prédios,arena,-
+30788,116,157,Prédios,bar,2
+45935,116,157,Prédios,bar,-
+1886,165,157,Prédios,casa,249
+25886,165,157,Prédios,casa,2
+23706,172,157,Prédios,chalé,-
+25897,172,157,Prédios,chalé,-
+19701,318,157,Prédios,fortaleza,-
+19271,318,157,Prédios,fortaleza,-
+45932,363,157,Prédios,hotel,-
+30676,363,157,Prédios,hotel,1
+30677,649,157,Prédios,motel,-
+45933,649,157,Prédios,motel,-
+8713,810,157,Prédios,disco,-
+40626,810,157,Prédios,disco,-
+1873,885,157,Prédios,zoológico,-
+21268,885,157,Prédios,zoológico,-
+21173,886,157,Prédios,biblioteca,-
+1874,886,157,Prédios,biblioteca,7
+1876,888,157,Prédios,zoo,-
+21267,888,157,Prédios,zoo,-
+3371,888,157,Prédios,zoo,-
+1877,889,157,Prédios,centro cultural,-
+21176,889,157,Prédios,centro cultural,-
+25884,891,157,Prédios,casa de cultura,-
+1880,891,157,Prédios,casa de cultura,5
+25933,893,157,Prédios,pinacoteca,-
+1882,893,157,Prédios,pinacoteca,-
+25891,894,157,Prédios,catedral,-
+1883,894,157,Prédios,catedral,2
+25767,905,157,Prédios,basílica,-
+1895,905,157,Prédios,basílica,3
+19647,6916,157,Prédios,centro médico,-
+21189,6916,157,Prédios,centro médico,-
+19706,6970,157,Prédios,guarda municipal,-
+21228,6970,157,Prédios,guarda municipal,-
+19709,6973,157,Prédios,hospital municipal,-
+21231,6973,157,Prédios,hospital municipal,-
+19710,6974,157,Prédios,hospital infantil,-
+21232,6974,157,Prédios,hospital infantil,-
+19711,6975,157,Prédios,hospital militar,-
+21233,6975,157,Prédios,hospital militar,-
+19713,6977,157,Prédios,hospital psiquiátrico,-
+21235,6977,157,Prédios,hospital psiquiátrico,-
+21275,7072,157,Prédios,templo,-
+19814,7072,157,Prédios,templo,23
+21260,7074,157,Prédios,sauna gay,-
+19816,7074,157,Prédios,sauna gay,-
+20381,7417,157,Prédios,departamento,2
+25905,7417,157,Prédios,departamento,-
+25871,9160,157,Prédios,duplex,-
+23736,9160,157,Prédios,duplex,-
+23743,9166,157,Prédios,anexo,-
+25695,9166,157,Prédios,anexo,-
+23748,9169,157,Prédios,cobertura,1
+25901,9169,157,Prédios,cobertura,-
+25690,9173,157,Prédios,abrigo,-
+23756,9173,157,Prédios,abrigo,21
+23761,9176,157,Prédios,sinagoga,1
+24593,9176,157,Prédios,sinagoga,-
+25900,9533,157,Prédios,circo,-
+24455,9533,157,Prédios,circo,1
+25895,9574,157,Prédios,centro de eventos,-
+24510,9574,157,Prédios,centro de eventos,-
+24511,9575,157,Prédios,centro tecnológico,-
+25896,9575,157,Prédios,centro tecnológico,-
+26767,120669,161,Adquirir,adquirir,-
+45939,120669,161,Adquirir,adquirir,-
+33352,117122,162,Comércio_pagar,pagar,72
+43063,117122,162,Comércio_pagar,pagar,1
+27113,117122,162,Comércio_pagar,pagar,2
+27252,117288,168,Evento,acontecer,-
+3671,117288,168,Evento,acontecer,110
+23998,61,169,Subpartes_de_prédios,ala,-
+22550,61,169,Subpartes_de_prédios,ala,-
+22133,116,169,Subpartes_de_prédios,bar,-
+19450,116,169,Subpartes_de_prédios,bar,1
+20667,116,169,Subpartes_de_prédios,bar,-
+19451,521,169,Subpartes_de_prédios,restaurante,-
+20673,521,169,Subpartes_de_prédios,restaurante,-
+24009,787,169,Subpartes_de_prédios,corredor,-
+22518,787,169,Subpartes_de_prédios,corredor,19
+19076,873,169,Subpartes_de_prédios,piscina,3
+19204,873,169,Subpartes_de_prédios,piscina,-
+45970,901,169,Subpartes_de_prédios,café,-
+22145,901,169,Subpartes_de_prédios,café,-
+45971,902,169,Subpartes_de_prédios,cafeteria,-
+22147,902,169,Subpartes_de_prédios,cafeteria,-
+19447,970,169,Subpartes_de_prédios,academia,2
+20665,970,169,Subpartes_de_prédios,academia,-
+20678,6818,169,Subpartes_de_prédios,apartamento,-
+22504,6818,169,Subpartes_de_prédios,apartamento,5
+19449,6853,169,Subpartes_de_prédios,spa,-
+22156,6853,169,Subpartes_de_prédios,spa,-
+20675,6853,169,Subpartes_de_prédios,spa,-
+22510,8622,169,Subpartes_de_prédios,cantina,-
+24006,8622,169,Subpartes_de_prédios,cantina,-
+22523,8634,169,Subpartes_de_prédios,elevador,-
+24013,8634,169,Subpartes_de_prédios,elevador,-
+24024,8635,169,Subpartes_de_prédios,sala de estar,-
+22524,8635,169,Subpartes_de_prédios,sala de estar,2
+40365,8636,169,Subpartes_de_prédios,andar,3
+22525,8636,169,Subpartes_de_prédios,andar,16
+22528,8639,169,Subpartes_de_prédios,vestíbulo,-
+24022,8639,169,Subpartes_de_prédios,vestíbulo,-
+24016,8648,169,Subpartes_de_prédios,ludoteca,-
+22537,8648,169,Subpartes_de_prédios,ludoteca,-
+24011,8651,169,Subpartes_de_prédios,depósito,-
+22540,8651,169,Subpartes_de_prédios,depósito,1
+22547,8657,169,Subpartes_de_prédios,torre,1
+24004,8657,169,Subpartes_de_prédios,torre,-
+32333,17077,169,Subpartes_de_prédios,chambre,-
+37264,17077,169,Subpartes_de_prédios,chambre,-
+31989,38376,169,Subpartes_de_prédios,toilette,1
+38163,38376,169,Subpartes_de_prédios,toilette,1
+24099,73932,169,Subpartes_de_prédios,térreo,1
+48368,73932,169,Subpartes_de_prédios,térreo,-
+45980,654,170,Massa_quantificada,avalanche,-
+8877,654,170,Massa_quantificada,avalanche,-
+32960,65334,170,Massa_quantificada,muito,21
+48383,65334,170,Massa_quantificada,muito,-
+39599,66069,170,Massa_quantificada,pesar,3
+41383,66069,170,Massa_quantificada,pesar,-
+48371,66314,170,Massa_quantificada,pouco,-
+39373,66314,170,Massa_quantificada,pouco,10
+32959,86374,170,Massa_quantificada,nenhum,19
+48389,86374,170,Massa_quantificada,nenhum,-
+42452,88355,170,Massa_quantificada,qualquer,7
+45985,88355,170,Massa_quantificada,qualquer,-
+48385,139245,170,Massa_quantificada,vários,-
+48384,139245,170,Massa_quantificada,vários,-
+20831,25,171,Locais_naturais,monte,-
+1669,25,171,Locais_naturais,monte,2
+25729,154,171,Locais_naturais,campo,-
+25727,154,171,Locais_naturais,campo,5
+20825,514,171,Locais_naturais,reserva,-
+19354,514,171,Locais_naturais,reserva,-
+1666,715,171,Locais_naturais,morro,5
+19094,715,171,Locais_naturais,morro,-
+1667,716,171,Locais_naturais,lago,5
+20836,716,171,Locais_naturais,lago,-
+1673,720,171,Locais_naturais,vale,2
+30683,720,171,Locais_naturais,vale,-
+1674,721,171,Locais_naturais,canal,2
+20814,721,171,Locais_naturais,canal,-
+20842,726,171,Locais_naturais,gruta,-
+1679,726,171,Locais_naturais,gruta,5
+1682,729,171,Locais_naturais,península,-
+20828,729,171,Locais_naturais,península,-
+1688,734,171,Locais_naturais,arrecife,-
+20820,734,171,Locais_naturais,arrecife,-
+1690,736,171,Locais_naturais,bosque,5
+25713,736,171,Locais_naturais,bosque,-
+19031,874,171,Locais_naturais,mar,45
+20832,874,171,Locais_naturais,mar,-
+25412,6545,171,Locais_naturais,mundo,11
+25720,6545,171,Locais_naturais,mundo,-
+19009,6666,171,Locais_naturais,caudal,1
+25714,6666,171,Locais_naturais,caudal,-
+19201,6689,171,Locais_naturais,parque,-
+19065,6689,171,Locais_naturais,parque,10
+25724,6828,171,Locais_naturais,pantanal,-
+19339,6828,171,Locais_naturais,pantanal,1
+19344,6831,171,Locais_naturais,chapada,1
+20838,6831,171,Locais_naturais,chapada,-
+21020,7048,171,Locais_naturais,parque ecológico,-
+19787,7048,171,Locais_naturais,parque ecológico,-
+19791,7051,171,Locais_naturais,parque nacional,-
+21022,7051,171,Locais_naturais,parque nacional,-
+20826,7066,171,Locais_naturais,reserva natural,-
+19806,7066,171,Locais_naturais,reserva natural,-
+46000,7346,171,Locais_naturais,continental,-
+20818,7346,171,Locais_naturais,continental,-
+9023,7346,171,Locais_naturais,continental,-
+46004,26133,171,Locais_naturais,lava,-
+33772,26133,171,Locais_naturais,lava,1
+25747,36766,171,Locais_naturais,hidrotermal,-
+25748,36766,171,Locais_naturais,hidrotermal,-
+25725,73992,171,Locais_naturais,paradisíaco,-
+25726,73992,171,Locais_naturais,paradisíaco,-
+24325,73992,171,Locais_naturais,paradisíaco,-
+25455,76,172,Local,área,-
+19079,76,172,Local,área,40
+25463,956,172,Local,lugar,-
+1959,956,172,Local,lugar,159
+46010,957,172,Local,local,-
+1960,957,172,Local,local,49
+25462,957,172,Local,local,-
+39493,957,172,Local,local,-
+32712,2039,172,Local,terra,10
+40422,2039,172,Local,terra,8
+3761,2052,172,Local,região,83
+43121,2052,172,Local,região,-
+25464,6559,172,Local,periferia,-
+18671,6559,172,Local,periferia,3
+18757,6585,172,Local,planeta,13
+25466,6585,172,Local,planeta,-
+19346,6688,172,Local,centro,16
+25459,6688,172,Local,centro,-
+27907,7384,172,Local,terreno,-
+26819,7384,172,Local,terreno,-
+25454,9458,172,Local,ambiente,-
+24231,9458,172,Local,ambiente,21
+38470,9458,172,Local,ambiente,4
+24722,9695,172,Local,zona,13
+25456,9695,172,Local,zona,-
+27911,10730,172,Local,núcleo,-
+26287,10730,172,Local,núcleo,1
+27402,11536,172,Local,mancha,2
+27913,11536,172,Local,mancha,-
+25764,73926,172,Local,urbano,9
+25765,73926,172,Local,urbano,-
+1612,696,173,Área_biológica,mato,1
+19262,696,173,Área_biológica,mato,-
+9160,957,175,Locais_políticos,local,-
+46025,957,175,Locais_políticos,local,-
+18987,2114,175,Locais_políticos,capital,12
+21853,2114,175,Locais_políticos,capital,1
+20771,2114,175,Locais_políticos,capital,-
+34173,2114,175,Locais_políticos,capital,1
+20781,6545,175,Locais_políticos,mundo,-
+18604,6545,175,Locais_políticos,mundo,89
+20789,6583,175,Locais_políticos,país,-
+18753,6583,175,Locais_políticos,país,147
+20773,6657,175,Locais_políticos,estado,2
+18992,6657,175,Locais_políticos,estado,47
+19169,6735,175,Locais_políticos,distrito,5
+20772,6735,175,Locais_políticos,distrito,-
+20785,6741,175,Locais_políticos,nacional,-
+46027,6741,175,Locais_políticos,nacional,-
+25742,9563,175,Locais_políticos,favela,-
+25743,9563,175,Locais_políticos,favela,-
+25741,9563,175,Locais_políticos,favela,2
+26155,10658,175,Locais_políticos,principado,-
+26156,10658,175,Locais_políticos,principado,-
+46024,64117,175,Locais_políticos,internacional,-
+20776,64117,175,Locais_políticos,internacional,1
+20782,65355,175,Locais_políticos,municipal,-
+9162,65355,175,Locais_políticos,municipal,-
+19025,65355,175,Locais_políticos,municipal,5
+48503,66484,175,Locais_políticos,provincial,-
+9180,66484,175,Locais_políticos,provincial,-
+46032,154,176,Locais_por_uso,campo,-
+25756,154,176,Locais_por_uso,campo,-
+46049,721,176,Locais_por_uso,canal,-
+9232,721,176,Locais_por_uso,canal,-
+46051,888,176,Locais_por_uso,zoo,-
+9239,888,176,Locais_por_uso,zoo,-
+21883,2132,176,Locais_por_uso,interior,-
+3898,2132,176,Locais_por_uso,interior,2
+19208,6688,176,Locais_por_uso,centro,-
+46035,6688,176,Locais_por_uso,centro,-
+21041,7035,176,Locais_por_uso,monumento,-
+19772,7035,176,Locais_por_uso,monumento,32
+21045,7075,176,Locais_por_uso,sindicato,-
+19817,7075,176,Locais_por_uso,sindicato,-
+37461,8577,176,Locais_por_uso,classe,-
+32717,8577,176,Locais_por_uso,classe,-
+25738,9333,176,Locais_por_uso,chafariz,-
+24340,9333,176,Locais_por_uso,chafariz,2
+24902,9786,176,Locais_por_uso,meca,2
+25760,9786,176,Locais_por_uso,meca,-
+9190,67192,176,Locais_por_uso,rural,-
+33375,67192,176,Locais_por_uso,rural,5
+26545,59960,177,Anexar,atar,-
+48560,59960,177,Anexar,atar,-
+40063,38440,178,Agir_intencionalmente,feito,4
+32168,38440,178,Agir_intencionalmente,feito,11
+20163,7346,179,Relação_locativa,continental,-
+20164,7346,179,Relação_locativa,continental,-
+31352,33516,179,Relação_locativa,sobre,33
+26838,33516,179,Relação_locativa,sobre,-
+20176,63148,179,Relação_locativa,fora,19
+46080,63148,179,Relação_locativa,fora,-
+20167,66061,179,Relação_locativa,perto,21
+48570,66061,179,Relação_locativa,perto,-
+9344,68520,179,Relação_locativa,underground,-
+9341,68520,179,Relação_locativa,underground,-
+48571,139823,179,Relação_locativa,acima do solo,-
+20142,139823,179,Relação_locativa,acima do solo,-
+20144,139825,179,Relação_locativa,ao longo de,3
+48583,139825,179,Relação_locativa,ao longo de,-
+46078,139830,179,Relação_locativa,para cima,-
+20193,139830,179,Relação_locativa,para cima,-
+46079,139903,179,Relação_locativa,abaixo,-
+39971,139903,179,Relação_locativa,abaixo,5
+48589,142510,179,Relação_locativa,no ar,-
+29482,142510,179,Relação_locativa,no ar,-
+19203,6701,183,Vias,avenida,-
+19083,6701,183,Vias,avenida,8
+43519,65355,183,Vias,municipal,1
+43511,65355,183,Vias,municipal,1
+27107,117023,188,Comércio_receber,cobrar,-
+27323,117023,188,Comércio_receber,cobrar,-
+38802,10669,191,Vício,usuário,12
+41401,10669,191,Vício,usuário,30
+26208,10695,191,Vício,viciado,-
+26240,10695,191,Vício,viciado,4
+38846,20106,191,Vício,drogado,2
+38845,20106,191,Vício,drogado,-
+41402,70269,191,Vício,alcoolista,2
+38031,70269,191,Vício,alcoolista,-
+22463,2137,193,Direção ,sul,-
+19328,2137,193,Direção ,sul,1
+22460,6661,193,Direção ,norte,1
+19269,6661,193,Direção ,norte,-
+22459,6661,193,Direção ,norte,2
+22455,8603,193,Direção ,leste,-
+22456,8603,193,Direção ,leste,-
+32527,139830,193,Direção ,para cima,10
+32528,139830,193,Direção ,para cima,5
+46095,106266,194,Recompensas_e_punições,disciplinar,-
+48614,106266,194,Recompensas_e_punições,disciplinar,-
+29073,763,196,Números_cardinais,meio,10
+39925,763,196,Números_cardinais,meio,1
+40072,17339,196,Números_cardinais,cinco,2
+29311,17339,196,Números_cardinais,cinco,-
+18666,17339,196,Números_cardinais,cinco,35
+22906,31397,196,Números_cardinais,quatorze,6
+48618,31397,196,Números_cardinais,quatorze,-
+39916,31399,196,Números_cardinais,quatro,6
+18590,31399,196,Números_cardinais,quatro,36
+18805,31499,196,Números_cardinais,quinze,11
+37284,31499,196,Números_cardinais,quinze,-
+46098,36053,196,Números_cardinais,vinte,-
+22923,36053,196,Números_cardinais,vinte,20
+22925,36465,196,Números_cardinais,zero,3
+9487,36465,196,Números_cardinais,zero,-
+39238,36843,196,Números_cardinais,dois,40
+3800,36843,196,Números_cardinais,dois,177
+9499,62307,196,Números_cardinais,dual,-
+22900,62307,196,Números_cardinais,dual,-
+43697,67464,196,Números_cardinais,setecentos,2
+42513,67464,196,Números_cardinais,setecentos,4
+43296,116656,196,Números_cardinais,vinte e cinco,4
+22921,116656,196,Números_cardinais,vinte e cinco,10
+43211,116693,196,Números_cardinais,vinte e três,4
+28878,116693,196,Números_cardinais,vinte e três,6
+43311,116707,196,Números_cardinais,trinta e dois,2
+28910,116707,196,Números_cardinais,trinta e dois,-
+34480,116808,196,Números_cardinais,quarenta e cinco,3
+48619,116808,196,Números_cardinais,quarenta e cinco,-
+34781,116817,196,Números_cardinais,dois mil,16
+43310,116817,196,Números_cardinais,dois mil,2
+43712,139880,196,Números_cardinais,realmente,1
+43713,139880,196,Números_cardinais,realmente,1
+43689,142534,196,Números_cardinais,com certeza,1
+43698,142534,196,Números_cardinais,com certeza,1
+43690,142534,196,Números_cardinais,com certeza,1
+43700,142534,196,Números_cardinais,com certeza,1
+43419,196730,196,Números_cardinais,diálogos,1
+43399,196730,196,Números_cardinais,diálogos,1
+43422,196730,196,Números_cardinais,diálogos,1
+43411,196730,196,Números_cardinais,diálogos,1
+43460,196785,196,Números_cardinais,leias,1
+43490,196785,196,Números_cardinais,leias,1
+43463,196785,196,Números_cardinais,leias,1
+43466,196785,196,Números_cardinais,leias,1
+43620,196904,196,Números_cardinais,gasta,1
+43624,196904,196,Números_cardinais,gasta,1
+43653,196914,196,Números_cardinais,gastos,1
+43651,196914,196,Números_cardinais,gastos,1
+43652,196914,196,Números_cardinais,gastos,1
+48643,61819,197,Comunicação_de_julgamento,crítico,-
+26430,61819,197,Comunicação_de_julgamento,crítico,3
+43002,121104,197,Comunicação_de_julgamento,acusar,1
+26798,121104,197,Comunicação_de_julgamento,acusar,-
+26488,121231,197,Comunicação_de_julgamento,criticar,1
+26801,121231,197,Comunicação_de_julgamento,criticar,-
+48650,125694,197,Comunicação_de_julgamento,denegrir,-
+48649,125694,197,Comunicação_de_julgamento,denegrir,-
+48686,17620,205,Ser_nomeado,codinome,-
+48685,17620,205,Ser_nomeado,codinome,-
+3595,6556,206,Unidade_calêndrica,hoje,76
+18657,6556,206,Unidade_calêndrica,hoje,40
+35768,31386,206,Unidade_calêndrica,quarta-feira,8
+43812,31386,206,Unidade_calêndrica,quarta-feira,-
+35772,38323,206,Unidade_calêndrica,amanhecer,-
+46164,38323,206,Unidade_calêndrica,amanhecer,-
+48710,59463,206,Unidade_calêndrica,amanhã,-
+35771,59463,206,Unidade_calêndrica,amanhã,8
+48709,65673,206,Unidade_calêndrica,ontem,-
+18684,65673,206,Unidade_calêndrica,ontem,30
+46172,310,208,Processo_fim,final,-
+46173,310,208,Processo_fim,final,-
+9801,310,208,Processo_fim,final,-
+33301,64592,211,Descrição_parte_do_corpo,loiro,1
+48736,64592,211,Descrição_parte_do_corpo,loiro,-
+39339,65285,211,Descrição_parte_do_corpo,moreno,3
+48737,65285,211,Descrição_parte_do_corpo,moreno,-
+40451,67188,211,Descrição_parte_do_corpo,ruivo,1
+48739,67188,211,Descrição_parte_do_corpo,ruivo,-
+46180,120748,212,Aplicar_calor,grelhar,-
+46185,120748,212,Aplicar_calor,grelhar,-
+28378,18792,215,Condições_em_saúde,câncer,116
+28185,18792,215,Condições_em_saúde,câncer,6
+32764,36896,215,Condições_em_saúde,tdah,-
+37475,36896,215,Condições_em_saúde,tdah,-
+36686,60923,215,Condições_em_saúde,cardiopata,-
+38502,60923,215,Condições_em_saúde,cardiopata,2
+38511,61750,215,Condições_em_saúde,coxo,-
+35200,61750,215,Condições_em_saúde,coxo,-
+41412,65330,215,Condições_em_saúde,mudo,-
+38584,65330,215,Condições_em_saúde,mudo,-
+46189,67020,215,Condições_em_saúde,resfriado,-
+38522,67020,215,Condições_em_saúde,resfriado,-
+38564,109131,215,Condições_em_saúde,fistular,-
+38565,109131,215,Condições_em_saúde,fistular,-
+26635,117255,216,Transportar,transportar,-
+3615,117255,216,Transportar,transportar,10
+27822,1216,217,Competição,disputa,-
+27804,1216,217,Competição,disputa,-
+27807,1226,217,Competição,combate,-
+27827,1226,217,Competição,combate,-
+27828,78319,217,Competição,competitivo,-
+27809,78319,217,Competição,competitivo,1
+693,117060,217,Competição,disputar,-
+502,117060,217,Competição,disputar,204
+27820,117241,217,Competição,competir,-
+3854,117241,217,Competição,competir,1
+48794,22279,218,Meios_de_comunicação,fax,-
+10006,22279,218,Meios_de_comunicação,fax,-
+48793,34509,218,Meios_de_comunicação,telex,-
+10002,34509,218,Meios_de_comunicação,telex,-
+10018,22279,219,Enviar,fax,-
+48797,22279,219,Enviar,fax,-
+48802,68682,220,Estar_cheio_ou_vazio,vazio,-
+46218,68682,220,Estar_cheio_ou_vazio,vazio,-
+18901,6622,226,Entidade,nada,14
+33245,6622,226,Entidade,nada,4
+39957,59106,229,Fechamento,abrir,2
+24854,59106,229,Fechamento,abrir,113
+48873,67650,233,Acompanhamento,sozinho,-
+26447,67650,233,Acompanhamento,sozinho,42
+32177,146325,233,Acompanhamento,com,-
+253,146325,233,Acompanhamento,com,92
+39513,146325,233,Acompanhamento,com,13
+24637,100911,238,Ingestão,alimentar,20
+39744,100911,238,Ingestão,alimentar,5
+24752,117247,238,Ingestão,tomar,113
+26796,117247,238,Ingestão,tomar,-
+23908,120737,238,Ingestão,consumir,-
+23911,120737,238,Ingestão,consumir,31
+46280,120748,243,Criação_culinária,grelhar,-
+19552,120748,243,Criação_culinária,grelhar,-
+48924,120749,243,Criação_culinária,assar,-
+19556,120749,243,Criação_culinária,assar,1
+26692,121123,251,Causar_mudar_de_lugar,agitar,-
+46308,121123,251,Causar_mudar_de_lugar,agitar,-
+40547,641,252,Alimentos_e_bebidas,carne de porco,-
+40548,641,252,Alimentos_e_bebidas,carne de porco,-
+2147,1036,252,Alimentos_e_bebidas,sopa agnolini,-
+25212,1036,252,Alimentos_e_bebidas,sopa agnolini,-
+30713,1235,252,Alimentos_e_bebidas,chocolate,-
+46353,1235,252,Alimentos_e_bebidas,chocolate,-
+24803,1239,252,Alimentos_e_bebidas,alimento,-
+2425,1239,252,Alimentos_e_bebidas,alimento,70
+30696,1259,252,Alimentos_e_bebidas,banana,-
+40143,1259,252,Alimentos_e_bebidas,banana,3
+21396,1275,252,Alimentos_e_bebidas,caipirinha,1
+2474,1275,252,Alimentos_e_bebidas,caipirinha,2
+2477,1278,252,Alimentos_e_bebidas,cajuína,-
+24932,1278,252,Alimentos_e_bebidas,cajuína,-
+24667,1278,252,Alimentos_e_bebidas,cajuína,-
+2478,1279,252,Alimentos_e_bebidas,bebida,6
+24818,1279,252,Alimentos_e_bebidas,bebida,-
+2483,1282,252,Alimentos_e_bebidas,chimarrão,1
+21433,1282,252,Alimentos_e_bebidas,chimarrão,-
+2484,1283,252,Alimentos_e_bebidas,espresso,-
+25032,1283,252,Alimentos_e_bebidas,espresso,-
+21513,1312,252,Alimentos_e_bebidas,mousse,-
+25111,1312,252,Alimentos_e_bebidas,mousse,-
+2537,1312,252,Alimentos_e_bebidas,mousse,-
+2542,1317,252,Alimentos_e_bebidas,comida caiçara,-
+24996,1317,252,Alimentos_e_bebidas,comida caiçara,-
+24830,1318,252,Alimentos_e_bebidas,brigadeiro,-
+2543,1318,252,Alimentos_e_bebidas,brigadeiro,-
+21384,1318,252,Alimentos_e_bebidas,brigadeiro,-
+24997,1319,252,Alimentos_e_bebidas,compota,-
+2544,1319,252,Alimentos_e_bebidas,compota,-
+2548,1323,252,Alimentos_e_bebidas,goiabada,-
+25062,1323,252,Alimentos_e_bebidas,goiabada,-
+25134,1330,252,Alimentos_e_bebidas,pé-de-moleque,-
+2555,1330,252,Alimentos_e_bebidas,pé-de-moleque,-
+46346,1331,252,Alimentos_e_bebidas,erva-mate,-
+24687,1331,252,Alimentos_e_bebidas,erva-mate,-
+2562,1337,252,Alimentos_e_bebidas,pastel,-
+21523,1337,252,Alimentos_e_bebidas,pastel,-
+24828,1337,252,Alimentos_e_bebidas,pastel,-
+23888,1339,252,Alimentos_e_bebidas,acarajé,-
+2565,1339,252,Alimentos_e_bebidas,acarajé,-
+25108,1341,252,Alimentos_e_bebidas,moqueca,-
+2569,1341,252,Alimentos_e_bebidas,moqueca,1
+2572,1344,252,Alimentos_e_bebidas,pizza,-
+25160,1344,252,Alimentos_e_bebidas,pizza,-
+21541,1344,252,Alimentos_e_bebidas,pizza,-
+2582,1353,252,Alimentos_e_bebidas,pirão,-
+25155,1353,252,Alimentos_e_bebidas,pirão,-
+24738,1353,252,Alimentos_e_bebidas,pirão,-
+25217,1355,252,Alimentos_e_bebidas,sushi,-
+24745,1355,252,Alimentos_e_bebidas,sushi,-
+2584,1355,252,Alimentos_e_bebidas,sushi,-
+2585,1356,252,Alimentos_e_bebidas,risoto,-
+21549,1356,252,Alimentos_e_bebidas,risoto,-
+3495,1960,252,Alimentos_e_bebidas,licor,-
+25090,1960,252,Alimentos_e_bebidas,licor,-
+3497,1962,252,Alimentos_e_bebidas,carioca,-
+24948,1962,252,Alimentos_e_bebidas,carioca,-
+24949,1962,252,Alimentos_e_bebidas,carioca,-
+3508,1973,252,Alimentos_e_bebidas,caldo,1
+24936,1973,252,Alimentos_e_bebidas,caldo,-
+25233,1975,252,Alimentos_e_bebidas,vatapá,-
+3510,1975,252,Alimentos_e_bebidas,vatapá,-
+24750,1975,252,Alimentos_e_bebidas,vatapá,-
+21424,1976,252,Alimentos_e_bebidas,caruru,-
+24955,1976,252,Alimentos_e_bebidas,caruru,-
+3511,1976,252,Alimentos_e_bebidas,caruru,-
+21542,1978,252,Alimentos_e_bebidas,polenta,-
+3513,1978,252,Alimentos_e_bebidas,polenta,-
+25162,1978,252,Alimentos_e_bebidas,polenta,-
+24934,1980,252,Alimentos_e_bebidas,caldeirada,-
+3516,1980,252,Alimentos_e_bebidas,caldeirada,-
+25213,1981,252,Alimentos_e_bebidas,sopa,-
+3517,1981,252,Alimentos_e_bebidas,sopa,2
+24746,1983,252,Alimentos_e_bebidas,tapa,-
+23919,1983,252,Alimentos_e_bebidas,tapa,-
+3519,1983,252,Alimentos_e_bebidas,tapa,-
+3520,1984,252,Alimentos_e_bebidas,churrasco,-
+24981,1984,252,Alimentos_e_bebidas,churrasco,-
+24685,1992,252,Alimentos_e_bebidas,einsbein,-
+3528,1992,252,Alimentos_e_bebidas,einsbein,-
+24735,1998,252,Alimentos_e_bebidas,paella,-
+3541,1998,252,Alimentos_e_bebidas,paella,-
+25130,1998,252,Alimentos_e_bebidas,paella,-
+3542,1999,252,Alimentos_e_bebidas,paella de mariscos,-
+25129,1999,252,Alimentos_e_bebidas,paella de mariscos,-
+24664,2000,252,Alimentos_e_bebidas,barreado,-
+3544,2000,252,Alimentos_e_bebidas,barreado,-
+24834,2000,252,Alimentos_e_bebidas,barreado,-
+24699,2002,252,Alimentos_e_bebidas,maniçoba,-
+25099,2002,252,Alimentos_e_bebidas,maniçoba,-
+3546,2002,252,Alimentos_e_bebidas,maniçoba,-
+24544,2015,252,Alimentos_e_bebidas,amor perfeito,-
+3566,2015,252,Alimentos_e_bebidas,amor perfeito,-
+24545,2015,252,Alimentos_e_bebidas,amor perfeito,-
+49021,2019,252,Alimentos_e_bebidas,buchada de bode,-
+24665,2019,252,Alimentos_e_bebidas,buchada de bode,-
+24831,2019,252,Alimentos_e_bebidas,buchada de bode,-
+25052,2032,252,Alimentos_e_bebidas,feijoada,-
+24690,2032,252,Alimentos_e_bebidas,feijoada,-
+3584,2032,252,Alimentos_e_bebidas,feijoada,-
+3797,2064,252,Alimentos_e_bebidas,vaca atolada,-
+25231,2064,252,Alimentos_e_bebidas,vaca atolada,-
+24749,2064,252,Alimentos_e_bebidas,vaca atolada,-
+3798,2065,252,Alimentos_e_bebidas,leitão à pururuca,-
+24696,2065,252,Alimentos_e_bebidas,leitão à pururuca,-
+24940,2081,252,Alimentos_e_bebidas,canjica,-
+21409,2081,252,Alimentos_e_bebidas,canjica,-
+3817,2081,252,Alimentos_e_bebidas,canjica,-
+3821,2085,252,Alimentos_e_bebidas,cocada,-
+24989,2085,252,Alimentos_e_bebidas,cocada,-
+21444,2085,252,Alimentos_e_bebidas,cocada,-
+25006,2086,252,Alimentos_e_bebidas,curau,-
+3822,2086,252,Alimentos_e_bebidas,curau,-
+24681,2086,252,Alimentos_e_bebidas,curau,-
+24689,2087,252,Alimentos_e_bebidas,feijão-tropeiro,-
+3823,2087,252,Alimentos_e_bebidas,feijão-tropeiro,-
+3826,2090,252,Alimentos_e_bebidas,dobradinha,-
+25015,2090,252,Alimentos_e_bebidas,dobradinha,-
+24684,2090,252,Alimentos_e_bebidas,dobradinha,-
+24743,2091,252,Alimentos_e_bebidas,sarapatel,-
+25200,2091,252,Alimentos_e_bebidas,sarapatel,-
+3827,2091,252,Alimentos_e_bebidas,sarapatel,-
+3830,2094,252,Alimentos_e_bebidas,rosca,-
+25185,2094,252,Alimentos_e_bebidas,rosca,-
+24933,2095,252,Alimentos_e_bebidas,cajuzinho,-
+24668,2095,252,Alimentos_e_bebidas,cajuzinho,-
+3831,2095,252,Alimentos_e_bebidas,cajuzinho,-
+24742,2100,252,Alimentos_e_bebidas,quirera,-
+46347,2100,252,Alimentos_e_bebidas,quirera,-
+25166,2105,252,Alimentos_e_bebidas,quentão,-
+24741,2105,252,Alimentos_e_bebidas,quentão,-
+3841,2105,252,Alimentos_e_bebidas,quentão,-
+3842,2106,252,Alimentos_e_bebidas,moqueca capixaba,-
+25107,2106,252,Alimentos_e_bebidas,moqueca capixaba,-
+25156,2107,252,Alimentos_e_bebidas,pirarucu de casaca,-
+24739,2107,252,Alimentos_e_bebidas,pirarucu de casaca,-
+3843,2107,252,Alimentos_e_bebidas,pirarucu de casaca,-
+24824,9317,252,Alimentos_e_bebidas,bobó,-
+24825,9317,252,Alimentos_e_bebidas,bobó,-
+24039,9317,252,Alimentos_e_bebidas,bobó,-
+24327,9330,252,Alimentos_e_bebidas,carpaccio,-
+24953,9330,252,Alimentos_e_bebidas,carpaccio,-
+24954,9330,252,Alimentos_e_bebidas,carpaccio,-
+24987,9339,252,Alimentos_e_bebidas,churro,-
+24372,9339,252,Alimentos_e_bebidas,churro,-
+24986,9339,252,Alimentos_e_bebidas,churro,-
+24054,9354,252,Alimentos_e_bebidas,milkshake,-
+25105,9354,252,Alimentos_e_bebidas,milkshake,-
+25104,9354,252,Alimentos_e_bebidas,milkshake,-
+25118,9357,252,Alimentos_e_bebidas,nachos,-
+40416,9357,252,Alimentos_e_bebidas,nachos,-
+24059,9357,252,Alimentos_e_bebidas,nachos,-
+25117,9357,252,Alimentos_e_bebidas,nachos,-
+25042,9365,252,Alimentos_e_bebidas,farofa,-
+25043,9365,252,Alimentos_e_bebidas,farofa,-
+24071,9365,252,Alimentos_e_bebidas,farofa,4
+25026,9393,252,Alimentos_e_bebidas,empada,-
+24091,9393,252,Alimentos_e_bebidas,empada,-
+25027,9393,252,Alimentos_e_bebidas,empada,-
+25003,9416,252,Alimentos_e_bebidas,croquete,-
+25002,9416,252,Alimentos_e_bebidas,croquete,-
+24138,9416,252,Alimentos_e_bebidas,croquete,-
+25194,9451,252,Alimentos_e_bebidas,salpicão,-
+24220,9451,252,Alimentos_e_bebidas,salpicão,-
+25190,9451,252,Alimentos_e_bebidas,salpicão,-
+24223,9454,252,Alimentos_e_bebidas,sashimi,-
+25208,9454,252,Alimentos_e_bebidas,sashimi,-
+25202,9454,252,Alimentos_e_bebidas,sashimi,-
+25188,9485,252,Alimentos_e_bebidas,salgado,-
+24276,9485,252,Alimentos_e_bebidas,salgado,-
+25187,9485,252,Alimentos_e_bebidas,salgado,-
+25091,9518,252,Alimentos_e_bebidas,limonada,-
+24423,9518,252,Alimentos_e_bebidas,limonada,-
+25230,9783,252,Alimentos_e_bebidas,whisky,-
+25205,9783,252,Alimentos_e_bebidas,whisky,-
+24897,9783,252,Alimentos_e_bebidas,whisky,3
+40507,30899,252,Alimentos_e_bebidas,presunto,1
+40630,30899,252,Alimentos_e_bebidas,presunto,-
+34271,36832,252,Alimentos_e_bebidas,gin,1
+34739,36832,252,Alimentos_e_bebidas,gin,1
+33588,58974,252,Alimentos_e_bebidas,hot dog,1
+33764,58974,252,Alimentos_e_bebidas,hot dog,1
+27887,64544,252,Alimentos_e_bebidas,limão,2
+34392,64544,252,Alimentos_e_bebidas,limão,2
+39272,64651,252,Alimentos_e_bebidas,líquido,14
+39308,64651,252,Alimentos_e_bebidas,líquido,11
+41007,2138,255,Criar_intencionalmente,produtor,1
+41789,2138,255,Criar_intencionalmente,produtor,-
+37443,134383,255,Criar_intencionalmente,sortir,-
+32691,134383,255,Criar_intencionalmente,sortir,-
+43456,196785,255,Criar_intencionalmente,leias,1
+43465,196785,255,Criar_intencionalmente,leias,1
+46402,128523,262,Prevaricação,enganar,-
+49094,128523,262,Prevaricação,enganar,-
+33918,15679,272,Texto,braille,7
+39381,15679,272,Texto,braille,1
+38763,15679,272,Texto,braille,1
+37599,36881,272,Texto,livre,-
+33132,36881,272,Texto,livre,-
+42641,63536,272,Texto,gráfico,-
+42648,63536,272,Texto,gráfico,-
+1772,805,278,Pessoas,ser humano,5
+25979,805,278,Pessoas,ser humano,-
+25967,806,278,Pessoas,alguém,5
+32847,806,278,Pessoas,alguém,14
+1972,961,278,Pessoas,gente,208
+25977,961,278,Pessoas,gente,1
+32129,1077,278,Pessoas,mortal,-
+32132,1077,278,Pessoas,mortal,-
+31141,6569,278,Pessoas,vida,7
+31142,6569,278,Pessoas,vida,-
+23499,8979,278,Pessoas,colega,15
+25972,8979,278,Pessoas,colega,-
+25978,9000,278,Pessoas,humano,-
+23504,9000,278,Pessoas,humano,6
+25974,9001,278,Pessoas,dama,-
+23505,9001,278,Pessoas,dama,2
+23506,9002,278,Pessoas,ser vivo,3
+25980,9002,278,Pessoas,ser vivo,-
+49183,9004,278,Pessoas,um,-
+25987,9004,278,Pessoas,um,17
+25982,36902,278,Pessoas,ninguém,32
+32848,36902,278,Pessoas,ninguém,15
+49184,38479,278,Pessoas,todos,-
+32851,38479,278,Pessoas,todos,14
+34203,63356,278,Pessoas,gay,2
+46470,63356,278,Pessoas,gay,-
+32849,139261,278,Pessoas,quem,1
+25989,139261,278,Pessoas,quem,53
+32130,1077,284,Morto_ou_vivo,mortal,-
+32131,1077,284,Morto_ou_vivo,mortal,-
+27548,1077,284,Morto_ou_vivo,mortal,1
+49221,28247,284,Morto_ou_vivo,morto-vivo,-
+49222,28247,284,Morto_ou_vivo,morto-vivo,-
+49220,65294,284,Morto_ou_vivo,morto,-
+49223,65294,284,Morto_ou_vivo,morto,-
+46501,8063,285,Impacto,impacto,-
+26787,8063,285,Impacto,impacto,-
+46526,117037,294,Contratar,contratar,-
+49263,117037,294,Contratar,contratar,-
+31258,2132,299,Parte_interior_exterior,interior,-
+11386,2132,299,Parte_interior_exterior,interior,-
+46546,2132,299,Parte_interior_exterior,interior,-
+11387,2132,299,Parte_interior_exterior,interior,-
+46560,1064,300,Formas,v,-
+11412,1064,300,Formas,v,-
+40326,33285,300,Formas,seta,-
+40327,33285,300,Formas,seta,-
+26684,121027,306,Causar_mudança_de_temperatura,refrigerar,-
+24211,121027,306,Causar_mudança_de_temperatura,refrigerar,-
+22565,8665,314,Suficiência,servir,-
+46599,8665,314,Suficiência,servir,-
+22556,36977,314,Suficiência,suficiente,12
+49327,36977,314,Suficiência,suficiente,-
+39970,76632,314,Suficiência,bastante,2
+18742,76632,314,Suficiência,bastante,10
+22569,139220,314,Suficiência,demais,20
+38545,139220,314,Suficiência,demais,2
+11573,590,315,Viajar,tour,-
+22863,590,315,Viajar,tour,-
+11572,590,315,Viajar,tour,-
+23951,590,315,Viajar,tour,-
+706,117189,315,Viajar,viajar,23
+559,117189,315,Viajar,viajar,41
+46629,6829,326,Desejabilidade,incrível,-
+19340,6829,326,Desejabilidade,incrível,8
+21165,7976,326,Desejabilidade,chato,-
+21164,7976,326,Desejabilidade,chato,3
+11745,8843,326,Desejabilidade,inferior,-
+21163,8843,326,Desejabilidade,inferior,-
+21184,66284,326,Desejabilidade,popular,4
+11764,66284,326,Desejabilidade,popular,-
+33047,33291,327,Instância_única,seul,-
+37585,33291,327,Instância_única,seul,-
+29100,77199,327,Instância_única,cada,37
+39939,77199,327,Instância_única,cada,4
+11863,1175,334,Movimento_direcional,drop,-
+31004,1175,334,Movimento_direcional,drop,-
+36390,61045,334,Movimento_direcional,caído,-
+36392,61045,334,Movimento_direcional,caído,2
+22323,64198,336,Foco_de_estímulo,irritante,-
+18645,64198,336,Foco_de_estímulo,irritante,-
+22249,73515,336,Foco_de_estímulo,alarmante,-
+27030,73515,336,Foco_de_estímulo,alarmante,-
+1897,111,337,Negócios,banco,5
+21062,111,337,Negócios,banco,-
+25683,916,337,Negócios,supermercado,-
+1911,916,337,Negócios,supermercado,3
+18877,6618,337,Negócios,empresa,8
+25671,6618,337,Negócios,empresa,1
+21966,6853,337,Negócios,spa,-
+24857,6853,337,Negócios,spa,-
+21072,6933,337,Negócios,consultoria de recursos humanos,-
+19668,6933,337,Negócios,consultoria de recursos humanos,1
+21089,6965,337,Negócios,fornecedor de artigos hospitalares,-
+19700,6965,337,Negócios,fornecedor de artigos hospitalares,-
+19702,6966,337,Negócios,frutaria,-
+21090,6966,337,Negócios,frutaria,-
+21251,7060,337,Negócios,produtora de cine e vídeo,-
+19800,7060,337,Negócios,produtora de cine e vídeo,-
+25675,7756,337,Negócios,fábrica,-
+20848,7756,337,Negócios,fábrica,-
+20854,7761,337,Negócios,firma,-
+25676,7761,337,Negócios,firma,-
+25734,9433,337,Negócios,bazar,-
+25732,9433,337,Negócios,bazar,-
+25686,9505,337,Negócios,wi-fi,-
+24437,9505,337,Negócios,wi-fi,-
+25685,9505,337,Negócios,wi-fi,-
+24724,9696,337,Negócios,vinícola,1
+25684,9696,337,Negócios,vinícola,-
+348,8598,338,Desejar,querer,195
+22443,8598,338,Desejar,querer,3
+27200,8598,338,Desejar,querer,1
+27194,116859,338,Desejar,aspirar,-
+235,116859,338,Desejar,aspirar,-
+238,116861,338,Desejar,ansiar,-
+27192,116861,338,Desejar,ansiar,-
+20954,8059,342,Avaliação_de_interação_social,maturidade,-
+46677,8059,342,Avaliação_de_interação_social,maturidade,-
+12218,61231,342,Avaliação_de_interação_social,civil,-
+20929,61231,342,Avaliação_de_interação_social,civil,-
+40689,87680,342,Avaliação_de_interação_social,polido,-
+40690,87680,342,Avaliação_de_interação_social,polido,-
+12260,173,344,Arriscar,chance,-
+12266,173,344,Arriscar,chance,-
+46685,173,344,Arriscar,chance,-
+43250,9609,345,Dificuldade,parceria,1
+43251,9609,345,Dificuldade,parceria,1
+43609,35070,345,Dificuldade,transtorno,2
+43723,35070,345,Dificuldade,transtorno,-
+282,69885,345,Dificuldade,difícil,38
+49587,69885,345,Dificuldade,difícil,-
+43264,146388,345,Dificuldade,de frente,1
+43268,146388,345,Dificuldade,de frente,1
+43269,146388,345,Dificuldade,de frente,1
+49601,139799,349,Vetor_tempo,depois,-
+18841,139799,349,Vetor_tempo,depois,34
+18897,139807,349,Vetor_tempo,atrás,13
+49603,139807,349,Vetor_tempo,atrás,-
+19116,139814,349,Vetor_tempo,antes,65
+49602,139814,349,Vetor_tempo,antes,-
+29130,140088,349,Vetor_tempo,após,130
+40103,140088,349,Vetor_tempo,após,5
+43375,146417,349,Vetor_tempo,daqui a pouco,2
+33781,146417,349,Vetor_tempo,daqui a pouco,2
+49613,147142,349,Vetor_tempo,desde que,-
+49604,147142,349,Vetor_tempo,desde que,-
+19538,6858,352,Contrição,remorso,-
+19539,6858,352,Contrição,remorso,-
+49644,33614,355,Substância_por_fase,sólido,-
+27474,33614,355,Substância_por_fase,sólido,2
+42605,64651,355,Substância_por_fase,líquido,3
+27471,64651,355,Substância_por_fase,líquido,6
+46766,8665,360,Assistência,servir,-
+40858,8665,360,Assistência,servir,1
+24139,121019,360,Assistência,cuidar,29
+49681,121019,360,Assistência,cuidar,-
+432,62145,361,Ser_obrigado,dever,104
+39828,62145,361,Ser_obrigado,dever,-
+3738,67412,365,Sentir,sentir,21
+22943,67412,365,Sentir,sentir,51
+37421,88000,371,Primeiro_na_classificação,primordial,-
+32645,88000,371,Primeiro_na_classificação,primordial,-
+24295,139881,371,Primeiro_na_classificação,principalmente,16
+43237,139881,371,Primeiro_na_classificação,principalmente,4
+49730,66133,372,Inovar,pioneiro,-
+49731,66133,372,Inovar,pioneiro,-
+26523,120745,372,Inovar,inventar,-
+46810,120745,372,Inovar,inventar,-
+49743,83171,373,Relações_entre_palavras,homófono,-
+49747,83171,373,Relações_entre_palavras,homófono,-
+37522,25609,374,Artes_performáticas,jazz,-
+32904,25609,374,Artes_performáticas,jazz,-
+32900,25609,374,Artes_performáticas,jazz,-
+34566,37015,374,Artes_performáticas,hip-hop,1
+34778,37015,374,Artes_performáticas,hip-hop,-
+32905,38676,374,Artes_performáticas,ballet,-
+32901,38676,374,Artes_performáticas,ballet,-
+37523,38676,374,Artes_performáticas,ballet,-
+12833,64080,376,Importância,instrumental,-
+49759,64080,376,Importância,instrumental,-
+46824,71078,376,Importância,vital,-
+12834,71078,376,Importância,vital,-
+12855,64004,377,Fabricação,industrial,3
+49762,64004,377,Fabricação,industrial,-
+43227,116693,382,Intérpretes_e_papéis,vinte e três,1
+43213,116693,382,Intérpretes_e_papéis,vinte e três,1
+49804,18006,387,Colaboração,conluio,-
+49808,18006,387,Colaboração,conluio,-
+32218,852,390,Artefato,mesa,1
+32217,852,390,Artefato,mesa,3
+32224,15871,390,Artefato,bureau,-
+37210,15871,390,Artefato,bureau,-
+40131,11650,392,Cor,rosa,19
+49850,11650,392,Cor,rosa,-
+43021,59613,392,Cor,anil,1
+43023,59613,392,Cor,anil,-
+41867,64419,392,Cor,laranja,9
+38793,64419,392,Cor,laranja,24
+1180,90,393,Atacar,ataque,-
+46884,90,393,Atacar,ataque,-
+1179,116997,393,Atacar,atacar,-
+46885,116997,393,Atacar,atacar,-
+49897,62885,395,Arma,explosivo,-
+49898,62885,395,Arma,explosivo,-
+13213,65562,395,Arma,nuclear,-
+49901,65562,395,Arma,nuclear,-
+49922,634,398,Veículo,bonde,-
+22847,634,398,Veículo,bonde,1
+49946,65562,401,Portar_armas,nuclear,-
+13340,65562,401,Portar_armas,nuclear,-
+43880,36960,403,Similaridade,como,-
+49965,36960,403,Similaridade,como,-
+33035,36960,403,Similaridade,como,-
+20881,73184,403,Similaridade,diferente,21
+27014,73184,403,Similaridade,diferente,-
+27016,73388,403,Similaridade,distinto,-
+20888,73388,403,Similaridade,distinto,1
+221,6,417,Finalidade,objetivo,5
+39781,6,417,Finalidade,objetivo,-
+49998,2114,421,Gravidade_do_crime,capital,-
+13554,2114,421,Gravidade_do_crime,capital,-
+23357,583,431,Documentos,título,-
+25341,583,431,Documentos,título,-
+25356,6643,431,Documentos,tratado,-
+18964,6643,431,Documentos,tratado,2
+38837,7380,431,Documentos,relatório,4
+38066,7380,431,Documentos,relatório,4
+25322,8930,431,Documentos,carta,-
+23337,8930,431,Documentos,carta,2
+25316,8932,431,Documentos,contrato,-
+23339,8932,431,Documentos,contrato,-
+25344,8933,431,Documentos,escritura,-
+23341,8933,431,Documentos,escritura,-
+25354,8943,431,Documentos,testamento,-
+23355,8943,431,Documentos,testamento,-
+25348,9400,431,Documentos,nota,-
+24119,9400,431,Documentos,nota,2
+38073,31026,431,Documentos,prontuário,-
+38146,31026,431,Documentos,prontuário,18
+38075,70321,431,Documentos,ficha de atendimento,6
+38144,70321,431,Documentos,ficha de atendimento,10
+38143,70322,431,Documentos,ficha de notificação,-
+38076,70322,431,Documentos,ficha de notificação,4
+13870,1056,440,Mover-se_no_lugar,swing,-
+13863,1056,440,Mover-se_no_lugar,swing,-
+24680,117240,440,Mover-se_no_lugar,girar,10
+26851,117240,440,Mover-se_no_lugar,girar,-
+3648,117272,442,Causar_mudança,transformar,22
+26659,117272,442,Causar_mudança,transformar,-
+27626,121143,442,Causar_mudança,alterar,5
+26651,121143,442,Causar_mudança,alterar,2
+43629,133917,442,Causar_mudança,reverter,2
+43733,133917,442,Causar_mudança,reverter,1
+18908,6599,448,Comunicação_direta_de_julgamento,obrigado,12
+18793,6599,448,Comunicação_direta_de_julgamento,obrigado,12
+50130,60101,451,Mesquinhez,avarento,-
+50133,60101,451,Mesquinhez,avarento,-
+41923,121048,456,Dizer,informar,1
+50152,121048,456,Dizer,informar,-
+26434,6639,465,Terminar_competição,vencedor,1
+50193,6639,465,Terminar_competição,vencedor,-
+391,116957,479,Conversar,conversar,87
+27073,116957,479,Conversar,conversar,-
+24200,9441,485,Atributos,qualidade,16
+43535,9441,485,Atributos,qualidade,4
+20303,988,486,Atributos_mensuráveis,pesado,5
+29209,988,486,Atributos_mensuráveis,pesado,-
+44078,90325,486,Atributos_mensuráveis,superficial,-
+34376,90325,486,Atributos_mensuráveis,superficial,1
+40387,34895,490,Peça_arquitetônica,torneira,2
+40386,34895,490,Peça_arquitetônica,torneira,2
+23309,8912,492,Pessoas_por_idade,jovem,44
+29698,8912,492,Pessoas_por_idade,jovem,6
+24102,37099,492,Pessoas_por_idade,velho,9
+27707,37099,492,Pessoas_por_idade,velho,5
+50303,59250,492,Pessoas_por_idade,adulto,-
+18790,59250,492,Pessoas_por_idade,adulto,21
+33773,957,493,Pessoas_por_origem,local,4
+33259,957,493,Pessoas_por_origem,local,11
+26018,1962,493,Pessoas_por_origem,carioca,-
+25998,1962,493,Pessoas_por_origem,carioca,-
+24324,1962,493,Pessoas_por_origem,carioca,2
+3764,2042,493,Pessoas_por_origem,brasileiro,7
+3606,2042,493,Pessoas_por_origem,brasileiro,14
+25994,6676,493,Pessoas_por_origem,boliviano,-
+19044,6676,493,Pessoas_por_origem,boliviano,1
+25991,6707,493,Pessoas_por_origem,alagoano,-
+26017,6707,493,Pessoas_por_origem,alagoano,-
+19099,6707,493,Pessoas_por_origem,alagoano,1
+23510,9006,493,Pessoas_por_origem,americano,3
+25993,9006,493,Pessoas_por_origem,americano,-
+25997,9008,493,Pessoas_por_origem,californiano,-
+23512,9008,493,Pessoas_por_origem,californiano,1
+23514,9010,493,Pessoas_por_origem,inglesa,-
+26008,9010,493,Pessoas_por_origem,inglesa,-
+26003,9012,493,Pessoas_por_origem,francesa,-
+23516,9012,493,Pessoas_por_origem,francesa,2
+23521,9017,493,Pessoas_por_origem,italiano,-
+26011,9017,493,Pessoas_por_origem,italiano,-
+26012,9018,493,Pessoas_por_origem,mexicano,-
+23522,9018,493,Pessoas_por_origem,mexicano,-
+26014,9020,493,Pessoas_por_origem,otomano,-
+23524,9020,493,Pessoas_por_origem,otomano,-
+26015,9021,493,Pessoas_por_origem,persa,-
+23525,9021,493,Pessoas_por_origem,persa,-
+26016,9022,493,Pessoas_por_origem,turco,-
+23526,9022,493,Pessoas_por_origem,turco,-
+29589,37758,493,Pessoas_por_origem,escocês,12
+44090,37758,493,Pessoas_por_origem,escocês,-
+50320,59831,493,Pessoas_por_origem,argentino,-
+19266,59831,493,Pessoas_por_origem,argentino,-
+44095,62534,495,Compreender,entender,-
+26777,62534,495,Compreender,entender,2
+44100,36994,497,Idiossincrasia,particular,-
+14604,36994,497,Idiossincrasia,particular,-
+247,8064,498,Capacidade_ação,poder,154
+44102,8064,498,Capacidade_ação,poder,-
+39438,8064,498,Capacidade_ação,poder,13
+50338,36681,498,Capacidade_ação,potencial,-
+40839,36681,498,Capacidade_ação,potencial,3
+26641,63950,498,Capacidade_ação,incapaz,-
+27490,63950,498,Capacidade_ação,incapaz,2
+26640,71100,498,Capacidade_ação,capaz,-
+3660,71100,498,Capacidade_ação,capaz,9
+24472,121056,498,Capacidade_ação,capacitar,3
+43086,121056,498,Capacidade_ação,capacitar,1
+43322,146588,498,Capacidade_ação,cerca de,1
+43315,146588,498,Capacidade_ação,cerca de,1
+44105,36784,500,Incremento,outro,-
+18868,36784,500,Incremento,outro,233
+50346,36965,500,Incremento,mais,-
+27492,36965,500,Incremento,mais,23
+19258,64549,504,Estética,lindo,-
+19292,64549,504,Estética,lindo,28
+50362,14845,505,Fazedores_de_barulho,banjo,-
+33461,14845,505,Fazedores_de_barulho,banjo,-
+50367,35258,505,Fazedores_de_barulho,trombone,-
+33540,35258,505,Fazedores_de_barulho,trombone,-
+40122,116969,509,Parada,parar,23
+50370,116969,509,Parada,parar,-
+26782,116969,509,Parada,parar,-
+219,5,516,Deixado_por_fazer,restante,-
+50378,5,516,Deixado_por_fazer,restante,-
+3623,8667,518,Temperatura_ambiente,frio,5
+22611,8667,518,Temperatura_ambiente,frio,4
+20733,414,524,Pessoas_por_vocação,médico,-
+1906,414,524,Pessoas_por_vocação,médico,32
+23575,483,524,Pessoas_por_vocação,polícia,12
+20708,483,524,Pessoas_por_vocação,polícia,-
+20730,572,524,Pessoas_por_vocação,técnico,-
+23599,572,524,Pessoas_por_vocação,técnico,3
+1584,672,524,Pessoas_por_vocação,professor,34
+30790,672,524,Pessoas_por_vocação,professor,1
+25602,770,524,Pessoas_por_vocação,fisioterapeuta,-
+24798,770,524,Pessoas_por_vocação,fisioterapeuta,-
+1774,807,524,Pessoas_por_vocação,recepcionista,-
+20737,807,524,Pessoas_por_vocação,recepcionista,-
+1907,912,524,Pessoas_por_vocação,dentista,2
+20410,912,524,Pessoas_por_vocação,dentista,-
+20393,6874,524,Pessoas_por_vocação,artista,-
+23533,6874,524,Pessoas_por_vocação,artista,17
+19631,6903,524,Pessoas_por_vocação,fotógrafo,4
+20423,6903,524,Pessoas_por_vocação,fotógrafo,-
+23579,7359,524,Pessoas_por_vocação,profissional,6
+20206,7359,524,Pessoas_por_vocação,profissional,24
+23543,9036,524,Pessoas_por_vocação,consultor,-
+25579,9036,524,Pessoas_por_vocação,consultor,-
+23561,9051,524,Pessoas_por_vocação,magistrado,-
+25610,9051,524,Pessoas_por_vocação,magistrado,-
+25582,9053,524,Pessoas_por_vocação,criado,-
+23563,9053,524,Pessoas_por_vocação,criado,-
+23568,9058,524,Pessoas_por_vocação,oficial,-
+25626,9058,524,Pessoas_por_vocação,oficial,-
+27950,9062,524,Pessoas_por_vocação,piloto,-
+23572,9062,524,Pessoas_por_vocação,piloto,1
+24447,9525,524,Pessoas_por_vocação,maquinista,-
+25615,9525,524,Pessoas_por_vocação,maquinista,-
+24450,9528,524,Pessoas_por_vocação,malabarista,-
+25611,9528,524,Pessoas_por_vocação,malabarista,-
+25566,9539,524,Pessoas_por_vocação,ambientalista,-
+24458,9539,524,Pessoas_por_vocação,ambientalista,-
+25571,9541,524,Pessoas_por_vocação,beato,-
+24491,9541,524,Pessoas_por_vocação,beato,-
+24496,9543,524,Pessoas_por_vocação,pastor,1
+25641,9543,524,Pessoas_por_vocação,pastor,-
+25848,9543,524,Pessoas_por_vocação,pastor,-
+24498,9544,524,Pessoas_por_vocação,presbítero,-
+25640,9544,524,Pessoas_por_vocação,presbítero,-
+25639,9545,524,Pessoas_por_vocação,profeta,-
+24500,9545,524,Pessoas_por_vocação,profeta,-
+25589,9548,524,Pessoas_por_vocação,diácono,-
+24503,9548,524,Pessoas_por_vocação,diácono,-
+24508,9553,524,Pessoas_por_vocação,medium,-
+25837,9553,524,Pessoas_por_vocação,medium,-
+25636,9571,524,Pessoas_por_vocação,sacerdote,-
+24490,9571,524,Pessoas_por_vocação,sacerdote,-
+24866,9773,524,Pessoas_por_vocação,contador,1
+25580,9773,524,Pessoas_por_vocação,contador,-
+25596,9775,524,Pessoas_por_vocação,esteticista,-
+24868,9775,524,Pessoas_por_vocação,esteticista,-
+24873,9780,524,Pessoas_por_vocação,delegado,4
+25585,9780,524,Pessoas_por_vocação,delegado,-
+25608,9782,524,Pessoas_por_vocação,historiador,-
+24875,9782,524,Pessoas_por_vocação,historiador,1
+27945,10616,524,Pessoas_por_vocação,taxista,-
+26069,10616,524,Pessoas_por_vocação,taxista,12
+27934,10689,524,Pessoas_por_vocação,astrólogo,-
+26199,10689,524,Pessoas_por_vocação,astrólogo,3
+26307,10739,524,Pessoas_por_vocação,cartógrafo,-
+27937,10739,524,Pessoas_por_vocação,cartógrafo,-
+27933,10742,524,Pessoas_por_vocação,socorrista,-
+26314,10742,524,Pessoas_por_vocação,socorrista,3
+27944,10782,524,Pessoas_por_vocação,soldado,-
+26399,10782,524,Pessoas_por_vocação,soldado,6
+26464,10812,524,Pessoas_por_vocação,ministro,11
+27940,10812,524,Pessoas_por_vocação,ministro,-
+27943,10833,524,Pessoas_por_vocação,poeta,-
+26505,10833,524,Pessoas_por_vocação,poeta,4
+27996,14251,524,Pessoas_por_vocação,astronauta,1
+28013,14251,524,Pessoas_por_vocação,astronauta,-
+27557,14490,524,Pessoas_por_vocação,autor,10
+27977,14490,524,Pessoas_por_vocação,autor,-
+50417,31052,524,Pessoas_por_vocação,prospector,-
+31158,31052,524,Pessoas_por_vocação,prospector,-
+27540,37085,524,Pessoas_por_vocação,pirata,2
+27942,37085,524,Pessoas_por_vocação,pirata,-
+27939,37090,524,Pessoas_por_vocação,explorador,-
+27630,37090,524,Pessoas_por_vocação,explorador,1
+32056,38412,524,Pessoas_por_vocação,recreador,-
+32055,38412,524,Pessoas_por_vocação,recreador,-
+40366,59314,524,Pessoas_por_vocação,agricultor,5
+50393,59314,524,Pessoas_por_vocação,agricultor,-
+27036,8063,527,Influência_subjetiva,impacto,-
+44141,8063,527,Influência_subjetiva,impacto,-
+19472,120715,527,Influência_subjetiva,influenciar,2
+27037,120715,527,Influência_subjetiva,influenciar,-
+27040,120716,527,Influência_subjetiva,inspirar,-
+19474,120716,527,Influência_subjetiva,inspirar,6
+37875,79343,534,Pessoas_por_moralidade,delinquente,-
+50449,79343,534,Pessoas_por_moralidade,delinquente,-
+19152,957,535,Origem,local,29
+34123,957,535,Origem,local,5
+19193,6741,535,Origem,nacional,5
+19299,6741,535,Origem,nacional,14
+24164,9390,535,Origem,árabe,6
+50456,9390,535,Origem,árabe,-
+43730,23315,535,Origem,gaúcho,-
+40968,23315,535,Origem,gaúcho,4
+40684,131879,544,Usar,mexer,-
+40685,131879,544,Usar,mexer,1
+44179,117321,548,Revelar_segredo,revelar,-
+50492,117321,548,Revelar_segredo,revelar,-
+26974,117321,548,Revelar_segredo,revelar,-
+15125,310,549,Números_ordinais,final,-
+44185,310,549,Números_ordinais,final,-
+22928,754,549,Números_ordinais,oitavo,-
+28890,754,549,Números_ordinais,oitavo,-
+18715,1220,549,Números_ordinais,quarto,2
+28887,1220,549,Números_ordinais,quarto,3
+18600,7402,549,Números_ordinais,segundo,8
+28885,7402,549,Números_ordinais,segundo,21
+43130,7402,549,Números_ordinais,segundo,-
+50493,8815,549,Números_ordinais,quinto,-
+26135,8815,549,Números_ordinais,quinto,4
+43132,8815,549,Números_ordinais,quinto,-
+18601,8828,549,Números_ordinais,terceiro,8
+28886,8828,549,Números_ordinais,terceiro,4
+28892,62324,549,Números_ordinais,décimo,1
+22934,62324,549,Números_ordinais,décimo,1
+22931,65526,549,Números_ordinais,nono,-
+28891,65526,549,Números_ordinais,nono,-
+18597,66401,549,Números_ordinais,primeiro,56
+36899,66401,549,Números_ordinais,primeiro,16
+3864,66401,549,Números_ordinais,primeiro,32
+28888,67477,549,Números_ordinais,sexto,1
+26462,67477,549,Números_ordinais,sexto,2
+32252,147176,550,Informação_atribuída,de acordo com,6
+50495,147176,550,Informação_atribuída,de acordo com,-
+37880,120834,553,Pesquisar,investigar,-
+26967,120834,553,Pesquisar,investigar,-
+29219,120771,554,Inclusão,envolver,-
+29088,120771,554,Inclusão,envolver,10
+26494,10827,558,Ser_necessário,essencial,6
+50516,10827,558,Ser_necessário,essencial,-
+24536,9608,559,Projeto,projeto,59
+43541,9608,559,Projeto,projeto,6
+39741,62145,564,Ser_obrigatório,dever,11
+274,62145,564,Ser_obrigatório,dever,10
+26110,6566,567,Sofrer_mudança,transição,-
+18705,6566,567,Sofrer_mudança,transição,3
+44210,63148,572,Relação_de_perfilamento_interior,fora,-
+20140,63148,572,Relação_de_perfilamento_interior,fora,11
+20139,139821,572,Relação_de_perfilamento_interior,dentro,21
+50531,139821,572,Relação_de_perfilamento_interior,dentro,-
+43739,124794,592,Verificação ,certificar,2
+43256,124794,592,Verificação ,certificar,2
+40666,32644,594,Rotular,rotulagem,1
+40665,32644,594,Rotular,rotulagem,-
+15386,1092,609,Tomar_partido,side,-
+15387,1092,609,Tomar_partido,side,-
+19110,6713,609,Tomar_partido,contra,3
+31111,6713,609,Tomar_partido,contra,14
+27046,6713,609,Tomar_partido,contra,-
+50568,6715,609,Tomar_partido,a favor,-
+50570,6715,609,Tomar_partido,a favor,-
+19113,6715,609,Tomar_partido,a favor,2
+44245,59763,609,Tomar_partido,apoiador,-
+50571,59763,609,Tomar_partido,apoiador,-
+22786,117208,610,Atravessar,saltar,16
+27056,117208,610,Atravessar,saltar,-
+27053,117352,610,Atravessar,cruzar,-
+22782,117352,610,Atravessar,cruzar,5
+21300,8058,615,Estágio_de_progresso,baixa tecnologia,-
+50596,8058,615,Estágio_de_progresso,baixa tecnologia,-
+21303,8060,615,Estágio_de_progresso,próxima geração,1
+50595,8060,615,Estágio_de_progresso,próxima geração,-
+34775,6590,618,Campos,arte,2
+18769,6590,618,Campos,arte,20
+50600,64004,618,Campos,industrial,-
+15510,64004,618,Campos,industrial,-
+34210,86176,618,Campos,multicultural,1
+44272,86176,618,Campos,multicultural,-
+24920,901,621,Ingredientes,café,-
+2481,901,621,Ingredientes,café,-
+24747,1035,621,Ingredientes,tortelli,-
+2146,1035,621,Ingredientes,tortelli,-
+25223,1035,621,Ingredientes,tortelli,-
+21436,1235,621,Ingredientes,chocolate,-
+24970,1235,621,Ingredientes,chocolate,-
+2418,1235,621,Ingredientes,chocolate,2
+2443,1249,621,Ingredientes,charque,-
+24950,1249,621,Ingredientes,charque,-
+24990,1254,621,Ingredientes,coco,-
+2451,1254,621,Ingredientes,coco,3
+2458,1259,621,Ingredientes,banana,1
+21366,1259,621,Ingredientes,banana,-
+25057,1260,621,Ingredientes,fruto,-
+2459,1260,621,Ingredientes,fruto,1
+24771,1261,621,Ingredientes,açaí,-
+23887,1261,621,Ingredientes,açaí,-
+2460,1261,621,Ingredientes,açaí,-
+24737,1262,621,Ingredientes,pequi,-
+2461,1262,621,Ingredientes,pequi,-
+25137,1262,621,Ingredientes,pequi,-
+25084,1264,621,Ingredientes,legume,-
+2463,1264,621,Ingredientes,legume,2
+24683,1267,621,Ingredientes,dendê,-
+2466,1267,621,Ingredientes,dendê,-
+2473,1274,621,Ingredientes,cachaça,1
+21387,1274,621,Ingredientes,cachaça,1
+2536,1311,621,Ingredientes,murici,-
+24719,1311,621,Ingredientes,murici,-
+25224,1315,621,Ingredientes,tucumã,-
+2540,1315,621,Ingredientes,tucumã,-
+24748,1315,621,Ingredientes,tucumã,-
+2561,1336,621,Ingredientes,mandioca,-
+24789,1336,621,Ingredientes,mandioca,-
+3500,1965,621,Ingredientes,guaraná,-
+25066,1965,621,Ingredientes,guaraná,-
+24693,1965,621,Ingredientes,guaraná,-
+3503,1968,621,Ingredientes,marisco,1
+25058,1968,621,Ingredientes,marisco,-
+24807,1970,621,Ingredientes,arroz,-
+3505,1970,621,Ingredientes,arroz,4
+3506,1971,621,Ingredientes,paçoca,-
+25125,1971,621,Ingredientes,paçoca,-
+21515,1971,621,Ingredientes,paçoca,-
+21577,1977,621,Ingredientes,tapioca,-
+24790,1977,621,Ingredientes,tapioca,-
+3512,1977,621,Ingredientes,tapioca,1
+24951,1979,621,Ingredientes,carne,-
+3514,1979,621,Ingredientes,carne,19
+3523,1987,621,Ingredientes,canela,1
+24939,1987,621,Ingredientes,canela,-
+23899,1994,621,Ingredientes,wurst,-
+25235,1994,621,Ingredientes,wurst,-
+3530,1994,621,Ingredientes,wurst,-
+3561,2010,621,Ingredientes,buriti,-
+24666,2010,621,Ingredientes,buriti,-
+3581,2029,621,Ingredientes,chocolate granulado,-
+24966,2029,621,Ingredientes,chocolate granulado,-
+25056,2031,621,Ingredientes,fruta,-
+3583,2031,621,Ingredientes,fruta,2
+3796,2063,621,Ingredientes,ora-pro-nóbis,-
+25121,2063,621,Ingredientes,ora-pro-nóbis,-
+25123,2063,621,Ingredientes,ora-pro-nóbis,-
+24788,2069,621,Ingredientes,aipim,-
+3805,2069,621,Ingredientes,aipim,-
+3812,2076,621,Ingredientes,tomate,3
+25221,2076,621,Ingredientes,tomate,-
+25004,2079,621,Ingredientes,crustáceo,-
+3815,2079,621,Ingredientes,crustáceo,-
+25131,2080,621,Ingredientes,paio,-
+24736,2080,621,Ingredientes,paio,-
+3816,2080,621,Ingredientes,paio,-
+24669,2099,621,Ingredientes,canjiquinha,-
+24941,2099,621,Ingredientes,canjiquinha,-
+44284,2099,621,Ingredientes,canjiquinha,-
+3844,2108,621,Ingredientes,pirarucu,-
+25157,2108,621,Ingredientes,pirarucu,-
+25098,6838,621,Ingredientes,mangaba,-
+21507,6838,621,Ingredientes,mangaba,-
+19365,6838,621,Ingredientes,mangaba,1
+24812,6840,621,Ingredientes,bacuri,-
+19367,6840,621,Ingredientes,bacuri,1
+23894,6840,621,Ingredientes,bacuri,-
+24038,9316,621,Ingredientes,bife,1
+24820,9316,621,Ingredientes,bife,-
+24959,9332,621,Ingredientes,catupiry,-
+24960,9332,621,Ingredientes,catupiry,-
+24337,9332,621,Ingredientes,catupiry,-
+24371,9341,621,Ingredientes,chuchu,-
+24976,9341,621,Ingredientes,chuchu,-
+24962,9345,621,Ingredientes,cheddar,-
+24341,9345,621,Ingredientes,cheddar,-
+24965,9345,621,Ingredientes,cheddar,-
+24051,9350,621,Ingredientes,gorgonzola,-
+25065,9350,621,Ingredientes,gorgonzola,-
+25064,9350,621,Ingredientes,gorgonzola,-
+25120,9366,621,Ingredientes,nutella,-
+24072,9366,621,Ingredientes,nutella,-
+25119,9366,621,Ingredientes,nutella,-
+25124,9412,621,Ingredientes,pernil,-
+25139,9412,621,Ingredientes,pernil,-
+24134,9412,621,Ingredientes,pernil,-
+25145,9419,621,Ingredientes,picanha,-
+24144,9419,621,Ingredientes,picanha,1
+24171,9430,621,Ingredientes,bacon,4
+24802,9430,621,Ingredientes,bacon,-
+24397,9506,621,Ingredientes,wasabi,-
+25234,9506,621,Ingredientes,wasabi,-
+25203,9506,621,Ingredientes,wasabi,-
+24822,9524,621,Ingredientes,steak,-
+24436,9524,621,Ingredientes,steak,-
+39540,61416,621,Ingredientes,componente,-
+50608,61416,621,Ingredientes,componente,-
+27441,36964,625,Obviedade,claro,9
+28923,36964,625,Obviedade,claro,17
+43229,116693,629,Precisar,vinte e três,1
+43219,116693,629,Precisar,vinte e três,1
+43223,116693,629,Precisar,vinte e três,1
+43319,146588,629,Precisar,cerca de,1
+43321,146588,629,Precisar,cerca de,1
+43305,146595,629,Precisar,atrás de,1
+43301,146595,629,Precisar,atrás de,1
+24849,121146,630,Ajustar,adaptar,6
+43445,121146,630,Ajustar,adaptar,2
+26581,6643,634,Estar_de_acordo_sobre_a_ação,tratado,-
+44302,6643,634,Estar_de_acordo_sobre_a_ação,tratado,-
+3639,62145,636,Evento_desejável,dever,17
+39228,62145,636,Evento_desejável,dever,36
+27041,116853,638,Sucesso_ou_falha,conseguir,-
+24632,116853,638,Sucesso_ou_falha,conseguir,29
+29041,117134,638,Sucesso_ou_falha,perder,-
+29040,117134,638,Sucesso_ou_falha,perder,2
+3760,2051,654,Sub-região_temporal,início,7
+22644,2051,654,Sub-região_temporal,início,3
+26785,120826,660,Ter_como_requisito,precisar,-
+50752,120826,660,Ter_como_requisito,precisar,-
+43642,129792,671,Estimar,estimar,2
+43767,129792,671,Estimar,estimar,1
+203,116843,674,Retirar_da_participação,withdraw,2
+30842,116843,674,Retirar_da_participação,withdraw,-
+26933,120820,679,Redirecionar,desviar,-
+24662,120820,679,Redirecionar,desviar,1
+42959,61409,683,Completude,complementar,1
+32074,61409,683,Completude,complementar,1
+18979,6650,690,Origem_indígena,nativo,4
+44395,6650,690,Origem_indígena,nativo,-
+26456,9455,691,Estar_em_risco,segurança,18
+43355,9455,691,Estar_em_risco,segurança,16
+43830,25072,691,Estar_em_risco,insegurança,1
+43336,25072,691,Estar_em_risco,insegurança,2
+44399,197850,693,Margem_de_resolução,por pouco,-
+50823,197850,693,Margem_de_resolução,por pouco,-
+33959,120625,698,Importar,importar,2
+26789,120625,698,Importar,importar,-
+27568,65392,715,Valor_extremo,mínimo,8
+50855,65392,715,Valor_extremo,mínimo,-
+43748,132046,718,Proliferar_em_número,multiplicar,1
+38550,132046,718,Proliferar_em_número,multiplicar,1
+43228,116693,719,Estado_da_entidade,vinte e três,1
+43215,116693,719,Estado_da_entidade,vinte e três,1
+3872,67108,721,Abundância,rico,12
+26097,67108,721,Abundância,rico,-
+3758,71101,721,Abundância,abundante,3
+26096,71101,721,Abundância,abundante,-
+245,116864,721,Abundância,abundar,-
+26095,116864,721,Abundância,abundar,-
+37988,7098,724,Serviços_públicos,serviço público,3
+43583,7098,724,Serviços_públicos,serviço público,2
+29356,6580,729,Sistema,sistema,-
+18738,6580,729,Sistema,sistema,20
+43407,196730,743,Proteger,diálogos,1
+43413,196730,743,Proteger,diálogos,1
+19457,120706,753,Mudar_direção,virar,11
+26709,120706,753,Mudar_direção,virar,-
+40379,36241,756,Obras_de_arte_físicas,vídeo,4
+40380,36241,756,Obras_de_arte_físicas,vídeo,4
+40641,70740,756,Obras_de_arte_físicas,instalação artística interativa,-
+40642,70740,756,Obras_de_arte_físicas,instalação artística interativa,-
+19087,6704,757,Criar_representação,foto,7
+19212,6704,757,Criar_representação,foto,-
+32390,117318,774,Mudar_estado_operacional,ligar,1
+32388,117318,774,Mudar_estado_operacional,ligar,7
+32389,117318,774,Mudar_estado_operacional,ligar,-
+16499,1086,789,Fachada,front,-
+16500,1086,789,Fachada,front,-
+24331,163,791,Dinheiro,cartão,1
+40484,163,791,Dinheiro,cartão,-
+16518,2114,791,Dinheiro,capital,-
+44520,2114,791,Dinheiro,capital,-
+18747,36960,800,Meio,como,1
+20325,36960,800,Meio,como,10
+16648,173,810,Coincidência,chance,-
+16645,173,810,Coincidência,chance,1
+44547,173,810,Coincidência,chance,-
+16646,173,810,Coincidência,chance,-
+44551,17001,813,Sitiar,cerco,-
+51000,17001,813,Sitiar,cerco,-
+26596,117320,815,Estar_em_uma_categoria,equivaler,-
+44555,117320,815,Estar_em_uma_categoria,equivaler,-
+44556,120717,815,Estar_em_uma_categoria,constituir,-
+26595,120717,815,Estar_em_uma_categoria,constituir,-
+453,31402,822,Quebrar,quebrar,29
+39933,31402,822,Quebrar,quebrar,2
+24177,9431,826,Ter_ou_carecer_de_acesso,acesso,20
+39402,9431,826,Ter_ou_carecer_de_acesso,acesso,-
+40266,22925,828,Abertura,fresta,1
+40411,22925,828,Abertura,fresta,-
+44569,117134,829,Ganhos_e_perdas,perder,-
+27215,117134,829,Ganhos_e_perdas,perder,1
+43430,146382,829,Ganhos_e_perdas,ao todo,1
+43431,146382,829,Ganhos_e_perdas,ao todo,1
+43467,196785,829,Ganhos_e_perdas,leias,1
+43468,196785,829,Ganhos_e_perdas,leias,1
+3867,2114,833,Locais_políticos_relacionais,capital,11
+30866,2114,833,Locais_políticos_relacionais,capital,-
+24534,27981,834,Tendência,moda,-
+34614,27981,834,Tendência,moda,6
+24642,73277,834,Tendência,artesanal,-
+24781,73277,834,Tendência,artesanal,-
+16777,1169,838,Diversidade,medley,-
+44579,1169,838,Diversidade,medley,-
+43512,65355,839,Interromper_processo,municipal,1
+43520,65355,839,Interromper_processo,municipal,1
+18913,6627,840,Colocação_temporal,futuro,5
+22632,6627,840,Colocação_temporal,futuro,3
+22631,62317,840,Colocação_temporal,durante,35
+39369,62317,840,Colocação_temporal,durante,6
+38553,69838,840,Colocação_temporal,enquanto,3
+22628,69838,840,Colocação_temporal,enquanto,34
+51037,69838,840,Colocação_temporal,enquanto,-
+29380,139310,840,Colocação_temporal,quando,90
+18755,139310,840,Colocação_temporal,quando,62
+39868,63790,848,História_Individual,histórico,1
+38902,63790,848,História_Individual,histórico,7
+44592,1,849,Fazer_turismo,turista,-
+25401,1,849,Fazer_turismo,turista,-
+25384,590,849,Fazer_turismo,tour,-
+16889,590,849,Fazer_turismo,tour,1
+25399,590,849,Fazer_turismo,tour,-
+16890,590,849,Fazer_turismo,tour,-
+25385,610,849,Fazer_turismo,turismo,1
+25400,610,849,Fazer_turismo,turismo,-
+25389,621,849,Fazer_turismo,visita,2
+25404,621,849,Fazer_turismo,visita,-
+19134,6690,849,Fazer_turismo,vista,1
+25407,6690,849,Fazer_turismo,vista,-
+25403,8746,849,Fazer_turismo,ver,-
+25388,8746,849,Fazer_turismo,ver,4
+25406,116845,849,Fazer_turismo,visitar,-
+204,116845,849,Fazer_turismo,visitar,20
+25393,116992,849,Fazer_turismo,apreciar,-
+25377,116992,849,Fazer_turismo,apreciar,3
+25376,120785,849,Fazer_turismo,acampar,-
+25392,120785,849,Fazer_turismo,acampar,-
+18716,65334,860,Quantidade_proporcional,muito,25
+51081,65334,860,Quantidade_proporcional,muito,-
+39275,66314,860,Quantidade_proporcional,pouco,17
+51082,66314,860,Quantidade_proporcional,pouco,-
+18810,66314,860,Quantidade_proporcional,pouco,53
+18831,139797,860,Quantidade_proporcional,quase,19
+51068,139797,860,Quantidade_proporcional,quase,-
+51070,140085,860,Quantidade_proporcional,aproximadamente,-
+29089,140085,860,Quantidade_proporcional,aproximadamente,21
+19164,146588,860,Quantidade_proporcional,cerca de,22
+43314,146588,860,Quantidade_proporcional,cerca de,2
+51075,146588,860,Quantidade_proporcional,cerca de,-
+51077,199253,860,Quantidade_proporcional,no máximo,-
+51079,199253,860,Quantidade_proporcional,no máximo,-
+39264,8746,861,Texto_de_referência,ver,2
+38468,8746,861,Texto_de_referência,ver,3
+51096,65562,863,Processo_nuclear,nuclear,-
+16978,65562,863,Processo_nuclear,nuclear,-
+23687,173,867,Possibilidades,chance,2
+17006,173,867,Possibilidades,chance,-
+19019,6668,867,Possibilidades,possível,12
+33315,6668,867,Possibilidades,possível,8
+26242,310,881,Versão_sequência,final,4
+17017,310,881,Versão_sequência,final,-
+19285,11453,884,Grau,grande,-
+19008,11453,884,Grau,grande,42
+17041,36994,884,Grau,particular,-
+44611,36994,884,Grau,particular,-
+44615,76632,884,Grau,bastante,-
+43007,76632,884,Grau,bastante,9
+33234,139797,884,Grau,quase,19
+51124,139797,884,Grau,quase,-
+43707,139880,884,Grau,realmente,2
+24291,139880,884,Grau,realmente,39
+24301,139883,884,Grau,extremamente,3
+43345,139883,884,Grau,extremamente,2
+17063,16793,890,Caça_sucesso_ou_fracasso,catch,1
+31001,16793,890,Caça_sucesso_ou_fracasso,catch,-
+244,14,908,Abandonar,abandono,2
+25275,14,908,Abandonar,abandono,-
+25274,73950,908,Abandonar,abandonado,-
+24172,73950,908,Abandonar,abandonado,1
+25273,116851,908,Abandonar,abandonar,-
+214,116851,908,Abandonar,abandonar,15
+26935,120797,924,Conceitos_relacionais,relacionar,-
+51149,120797,924,Conceitos_relacionais,relacionar,-
+44700,59116,937,Fora_da_existência,acabado,-
+44702,59116,937,Fora_da_existência,acabado,-
+337,8064,941,Possibilidade,poder,223
+26904,8064,941,Possibilidade,poder,-
+39354,8064,941,Possibilidade,poder,22
+39250,62145,941,Possibilidade,dever,-
+28483,62145,941,Possibilidade,dever,8
+19161,62317,942,Relação_de_duração,durante,22
+39408,62317,942,Relação_de_duração,durante,-
+33033,34164,948,Sequência,série,-
+33032,34164,948,Sequência,série,1
+35115,66401,948,Sequência,primeiro,12
+42771,66401,948,Sequência,primeiro,-
+18833,6610,952,Instância_de_evento,vez,44
+39243,6610,952,Instância_de_evento,vez,23
+43438,142581,952,Instância_de_evento,de novo,2
+32596,142581,952,Instância_de_evento,de novo,6
+28441,6806,953,Localização_no_tempo,hora,36
+43818,6806,953,Localização_no_tempo,hora,1
+24206,9445,954,Período_de_tempo,horário,7
+39249,9445,954,Período_de_tempo,horário,7
+42450,65018,955,Concessão,mesmo,1
+34974,65018,955,Concessão,mesmo,5
+32435,142502,955,Concessão,apesar de,-
+51170,142502,955,Concessão,apesar de,-
+51173,147120,955,Concessão,no entanto,-
+29110,147120,955,Concessão,no entanto,3
+42135,147217,955,Concessão,mas,14
+18707,147217,955,Concessão,mas,126
+22606,8666,1000,Tamanho,miniatura,-
+51211,8666,1000,Tamanho,miniatura,-
+39602,8843,1000,Tamanho,inferior,-
+44758,8843,1000,Tamanho,inferior,-
+22600,64317,1000,Tamanho,jumbo,-
+17477,64317,1000,Tamanho,jumbo,-
+26184,10681,1004,Tempo_período_de_ação,dia a dia,1
+26220,10681,1004,Tempo_período_de_ação,dia a dia,5
+22926,173,1011,Oportunidade,chance,3
+17515,173,1011,Oportunidade,chance,1
+17518,173,1012,Probabilidade,chance,-
+44768,173,1012,Probabilidade,chance,-
+44771,9113,1015,Popularidade,quente,-
+23667,9113,1015,Popularidade,quente,-
+19370,66284,1015,Popularidade,popular,17
+17530,66284,1015,Popularidade,popular,1
+40295,16656,1021,Subparte_de_veículos,carroceria,1
+40296,16656,1021,Subparte_de_veículos,carroceria,1
+38329,23778,1032,Ações_políticas,greve,2
+51266,23778,1032,Ações_políticas,greve,-
+44820,9645,1033,Estilo_artístico,visual,-
+34050,9645,1033,Estilo_artístico,visual,1
+44818,9645,1033,Estilo_artístico,visual,-
+51268,142502,1034,Circunstâncias_contrárias,apesar de,-
+29326,142502,1034,Circunstâncias_contrárias,apesar de,22
+44827,8665,1039,Servir_em_capacidade,servir,-
+37985,8665,1039,Servir_em_capacidade,servir,-
+18950,11453,1043,Notabilidade,grande,35
+19286,11453,1043,Notabilidade,grande,-
+25487,6569,1046,Modo_de_viver,vida,-
+18711,6569,1046,Modo_de_viver,vida,52
+25484,9480,1046,Modo_de_viver,naturismo,-
+24268,9480,1046,Modo_de_viver,naturismo,-
+24461,9536,1046,Modo_de_viver,deficiente,-
+24462,9536,1046,Modo_de_viver,deficiente,-
+24366,73927,1046,Modo_de_viver,vegano,-
+25485,73927,1046,Modo_de_viver,vegano,-
+17936,68851,1105,Desejabilidade_social,vulgar,-
+36184,68851,1105,Desejabilidade_social,vulgar,-
+44890,36994,1110,Especificação_individual,particular,-
+17948,36994,1110,Especificação_individual,particular,-
+51378,199348,1115,Estar_encarcerado,cumprir pena,-
+51376,199348,1115,Estar_encarcerado,cumprir pena,-
+44897,59406,1117,Amigável_ou_hostil,aliado,-
+51380,59406,1117,Amigável_ou_hostil,aliado,-
+44915,6870,1125,Fugitivo,fugitivo,-
+51389,6870,1125,Fugitivo,fugitivo,-
+43070,7393,1140,Nível_de_luz,luz,-
+33583,7393,1140,Nível_de_luz,luz,9
+38070,29141,1155,Intervenção_em_saúde,orientação,62
+42171,29141,1155,Intervenção_em_saúde,orientação,-
+19375,6844,1184,Animais,fauna,3
+29612,6844,1184,Animais,fauna,-
+29667,6844,1184,Animais,fauna,-
+22740,8719,1184,Animais,gato,6
+29618,8719,1184,Animais,gato,-
+29656,8720,1184,Animais,vaca,-
+22741,8720,1184,Animais,vaca,5
+22750,8726,1184,Animais,elefante,4
+29611,8726,1184,Animais,elefante,-
+29654,8731,1184,Animais,tigre,-
+22755,8731,1184,Animais,tigre,1
+29683,8732,1184,Animais,zebra,-
+22756,8732,1184,Animais,zebra,-
+24328,9500,1184,Animais,pet,-
+29692,9500,1184,Animais,pet,-
+26138,10651,1184,Animais,lobo,7
+29626,10651,1184,Animais,lobo,-
+26385,10776,1184,Animais,mosquito,11
+29629,10776,1184,Animais,mosquito,-
+29696,10776,1184,Animais,mosquito,2
+27325,11006,1184,Animais,raposa,3
+29651,11006,1184,Animais,raposa,-
+33402,12879,1184,Animais,alpaca,-
+51468,12879,1184,Animais,alpaca,-
+33424,25524,1184,Animais,jaguar,-
+51484,25524,1184,Animais,jaguar,-
+33435,29462,1184,Animais,panda,-
+51493,29462,1184,Animais,panda,-
+51499,199379,1184,Animais,cavalo-marinho,-
+52181,199379,1184,Animais,cavalo-marinho,-
+34288,11667,1187,Plantas,sativa,2
+34696,11667,1187,Plantas,sativa,2
+40471,13801,1187,Plantas,arbusto,-
+40472,13801,1187,Plantas,arbusto,-
+40611,70716,1187,Plantas,baobá,-
+40610,70716,1187,Plantas,baobá,-
+43262,146388,1187,Plantas,de frente,1
+43265,146388,1187,Plantas,de frente,1
+18639,139774,1189,Negação,nunca,37
+29358,139774,1189,Negação,nunca,-
+51525,37403,1190,Proximidade_não_graduável,oposto,-
+45043,37403,1190,Proximidade_não_graduável,oposto,-
+20844,146595,1190,Proximidade_não_graduável,atrás de,17
+43297,146595,1190,Proximidade_não_graduável,atrás de,2
+21290,139544,1191,Contato_espacial,em cima,9
+51528,139544,1191,Contato_espacial,em cima,-
+22243,671,1192,Adjacência,vizinho,5
+51531,671,1192,Adjacência,vizinho,-
+51533,64599,1193,Proximidade_graduável,longe,-
+26383,64599,1193,Proximidade_graduável,longe,28
+19191,66495,1193,Proximidade_graduável,próximo,6
+19192,66495,1193,Proximidade_graduável,próximo,15
+22477,2137,1200,Relação_locativa_direcional,sul,-
+3908,2137,1200,Relação_locativa_direcional,sul,2
+22472,6661,1200,Relação_locativa_direcional,norte,1
+18999,6661,1200,Relação_locativa_direcional,norte,1
+22471,8603,1200,Relação_locativa_direcional,leste,-
+22470,8603,1200,Relação_locativa_direcional,leste,-
+22474,8605,1200,Relação_locativa_direcional,nordeste,-
+22473,8605,1200,Relação_locativa_direcional,nordeste,-
+22475,8606,1200,Relação_locativa_direcional,noroeste,-
+22476,8606,1200,Relação_locativa_direcional,noroeste,-
+22479,8607,1200,Relação_locativa_direcional,sudeste,-
+22478,8607,1200,Relação_locativa_direcional,sudeste,-
+22480,8608,1200,Relação_locativa_direcional,sudoeste,-
+22481,8608,1200,Relação_locativa_direcional,sudoeste,-
+39837,139829,1200,Relação_locativa_direcional,acima,1
+22468,139829,1200,Relação_locativa_direcional,acima,-
+51553,134767,1201,Sexo,transar,-
+37966,134767,1201,Sexo,transar,-
+20803,116842,1210,Serviço_turístico_comprar,comprar,-
+20639,116842,1210,Serviço_turístico_comprar,comprar,2
+20802,117037,1210,Serviço_turístico_comprar,contratar,-
+557,117037,1210,Serviço_turístico_comprar,contratar,31
+20809,117258,1211,Serviço_turístico_vender,proporcionar,-
+3743,117258,1211,Serviço_turístico_vender,proporcionar,1
+20805,117122,1213,Serviço_turístico_pagar,pagar,-
+969,117122,1213,Serviço_turístico_pagar,pagar,30
+793,117023,1215,Serviço_turístico_receber,cobrar,25
+20801,117023,1215,Serviço_turístico_receber,cobrar,-
+1011,62,1220,Acomodação,albergue,53
+496,62,1220,Acomodação,albergue,15
+19661,165,1220,Acomodação,casa,32
+19222,165,1220,Acomodação,casa,3
+499,172,1220,Acomodação,chalé,100
+25247,172,1220,Acomodação,chalé,-
+498,361,1220,Acomodação,hostel,126
+520,361,1220,Acomodação,hostel,32
+519,363,1220,Acomodação,hotel,30
+495,363,1220,Acomodação,hotel,116
+1012,363,1220,Acomodação,hotel,379
+1013,517,1220,Acomodação,resort,19
+500,517,1220,Acomodação,resort,97
+521,517,1220,Acomodação,resort,31
+1553,648,1220,Acomodação,granja,-
+25249,648,1220,Acomodação,granja,-
+20474,649,1220,Acomodação,motel,-
+20651,649,1220,Acomodação,motel,-
+19855,649,1220,Acomodação,motel,-
+1554,649,1220,Acomodação,motel,2
+25239,650,1220,Acomodação,camping,-
+1555,650,1220,Acomodação,camping,-
+20647,650,1220,Acomodação,camping,-
+20646,6818,1220,Acomodação,apartamento,-
+19660,6818,1220,Acomodação,apartamento,5
+23829,8547,1220,Acomodação,chácara,-
+22231,8547,1220,Acomodação,chácara,-
+23831,8549,1220,Acomodação,rancho,-
+22233,8549,1220,Acomodação,rancho,-
+28941,36,1221,Torneio_de_eliminação,grupo,-
+28952,36,1221,Torneio_de_eliminação,grupo,-
+31365,310,1221,Torneio_de_eliminação,final,-
+31462,310,1221,Torneio_de_eliminação,final,-
+3470,536,1221,Torneio_de_eliminação,semi,-
+2115,536,1221,Torneio_de_eliminação,semi,-
+3469,538,1221,Torneio_de_eliminação,semifinal,-
+28992,538,1221,Torneio_de_eliminação,semifinal,-
+51574,538,1221,Torneio_de_eliminação,semifinal,-
+875,117060,1221,Torneio_de_eliminação,disputar,-
+489,117060,1221,Torneio_de_eliminação,disputar,-
+876,117068,1221,Torneio_de_eliminação,eliminar,-
+490,117068,1221,Torneio_de_eliminação,eliminar,-
+26022,493,1222,Potencial_turístico,potencial turístico,-
+518,493,1222,Potencial_turístico,potencial turístico,3
+26021,116959,1222,Potencial_turístico,concentrar,-
+3675,116959,1222,Potencial_turístico,concentrar,6
+26026,117205,1222,Potencial_turístico,existir,-
+1901,117205,1222,Potencial_turístico,existir,40
+3754,117283,1222,Potencial_turístico,encontrar,6
+26027,117283,1222,Potencial_turístico,encontrar,-
+19136,6721,1223,Atrair_turistas,destino,6
+19265,6721,1223,Atrair_turistas,destino,-
+24227,9618,1223,Atrair_turistas,atrativo,1
+24567,9618,1223,Atrair_turistas,atrativo,1
+3674,117154,1223,Atrair_turistas,reservar,9
+23944,117154,1223,Atrair_turistas,reservar,-
+549,36973,1225,Cenário_do_turismo_estada,estar,71
+588,36973,1225,Cenário_do_turismo_estada,estar,-
+25496,457,1226,Cenário_do_turismo_partida,partida,-
+541,457,1226,Cenário_do_turismo_partida,partida,30
+23090,116885,1226,Cenário_do_turismo_partida,partir,-
+25494,116885,1226,Cenário_do_turismo_partida,partir,-
+539,610,1228,Cenário_do_turismo,turismo,169
+584,610,1228,Cenário_do_turismo,turismo,2
+629,598,1231,Transporte,transporte,8
+1867,598,1231,Transporte,transporte,30
+20751,637,1231,Transporte,transporte público,-
+1541,637,1231,Transporte,transporte público,2
+19029,60143,1231,Transporte,aéreo,2
+20743,60143,1231,Transporte,aéreo,-
+28989,36,1236,Fase_preliminar,grupo,-
+31429,36,1236,Fase_preliminar,grupo,-
+2515,310,1238,Final,final,23
+704,310,1238,Final,final,-
+868,310,1238,Final,final,-
+871,583,1238,Final,título,-
+504,583,1238,Final,título,-
+872,117033,1238,Final,conquistar,-
+505,117033,1238,Final,conquistar,27
+503,117134,1238,Final,perder,28
+870,117134,1238,Final,perder,-
+24355,121044,1238,Final,entregar,-
+27919,121044,1238,Final,entregar,-
+3905,2134,1240,Turismo_de_atração,ecoturismo,2
+20756,2134,1240,Turismo_de_atração,ecoturismo,-
+19100,6708,1240,Turismo_de_atração,agroturismo,1
+20754,6708,1240,Turismo_de_atração,agroturismo,-
+758,280,1246,Torcida,espectador,-
+997,280,1246,Torcida,espectador,-
+22717,8716,1246,Torcida,telespectador,-
+27834,8716,1246,Torcida,telespectador,-
+20478,116,1253,Serviços_em_alimentação,bar,-
+1005,116,1253,Serviços_em_alimentação,bar,97
+23832,116,1253,Serviços_em_alimentação,bar,-
+781,116,1253,Serviços_em_alimentação,bar,111
+1002,521,1253,Serviços_em_alimentação,restaurante,87
+779,521,1253,Serviços_em_alimentação,restaurante,120
+19261,901,1253,Serviços_em_alimentação,café,-
+31888,901,1253,Serviços_em_alimentação,café,-
+20483,901,1253,Serviços_em_alimentação,café,-
+1891,901,1253,Serviços_em_alimentação,café,31
+2937,901,1253,Serviços_em_alimentação,café,-
+2936,902,1253,Serviços_em_alimentação,cafeteria,-
+1892,902,1253,Serviços_em_alimentação,cafeteria,2
+20998,916,1253,Serviços_em_alimentação,supermercado,-
+19813,916,1253,Serviços_em_alimentação,supermercado,1
+23882,2023,1253,Serviços_em_alimentação,temakeria,-
+3574,2023,1253,Serviços_em_alimentação,temakeria,-
+3576,2025,1253,Serviços_em_alimentação,mercado,10
+20975,2025,1253,Serviços_em_alimentação,mercado,-
+24546,2026,1253,Serviços_em_alimentação,pastelaria,-
+3577,2026,1253,Serviços_em_alimentação,pastelaria,-
+23877,2026,1253,Serviços_em_alimentação,pastelaria,-
+20979,7083,1253,Serviços_em_alimentação,restaurante mineiro,-
+19826,7083,1253,Serviços_em_alimentação,restaurante mineiro,-
+20982,7086,1253,Serviços_em_alimentação,restaurante de sushi,-
+51627,7086,1253,Serviços_em_alimentação,restaurante de sushi,-
+19834,7091,1253,Serviços_em_alimentação,restaurante italiano,-
+20987,7091,1253,Serviços_em_alimentação,restaurante italiano,-
+20989,7093,1253,Serviços_em_alimentação,restaurante mexicano,-
+19836,7093,1253,Serviços_em_alimentação,restaurante mexicano,-
+25268,7095,1253,Serviços_em_alimentação,restaurante self-service,-
+19838,7095,1253,Serviços_em_alimentação,restaurante self-service,-
+19839,7096,1253,Serviços_em_alimentação,restaurante vegano,-
+20992,7096,1253,Serviços_em_alimentação,restaurante vegano,-
+20993,7097,1253,Serviços_em_alimentação,restaurante árabe,-
+19840,7097,1253,Serviços_em_alimentação,restaurante árabe,-
+23835,8707,1253,Serviços_em_alimentação,food truck,-
+22691,8707,1253,Serviços_em_alimentação,food truck,-
+25260,9229,1253,Serviços_em_alimentação,açaiteria,-
+23885,9229,1253,Serviços_em_alimentação,açaiteria,-
+24576,1301,1255,Serviço_turístico,city tour,-
+20794,1301,1255,Serviço_turístico,city tour,-
+2524,1301,1255,Serviço_turístico,city tour,-
+20800,1302,1255,Serviço_turístico,traslado,-
+2525,1302,1255,Serviço_turístico,traslado,-
+25287,6832,1259,Atividades_do_turista,tirolesa,-
+19350,6832,1259,Atividades_do_turista,tirolesa,1
+21000,6988,1259,Atividades_do_turista,artesanato,-
+19724,6988,1259,Atividades_do_turista,artesanato,-
+21001,7055,1259,Atividades_do_turista,pintura,-
+19795,7055,1259,Atividades_do_turista,pintura,-
+24541,9611,1259,Atividades_do_turista,frevo,-
+25283,9611,1259,Atividades_do_turista,frevo,-
+25291,9611,1259,Atividades_do_turista,frevo,-
+25290,9615,1259,Atividades_do_turista,capoeira,-
+24555,9615,1259,Atividades_do_turista,capoeira,-
+25282,9615,1259,Atividades_do_turista,capoeira,-
+25284,121046,1259,Atividades_do_turista,patinar,-
+24357,121046,1259,Atividades_do_turista,patinar,-
+976,414,1260,Comissão_técnica,médico,1
+1017,414,1260,Comissão_técnica,médico,-
+975,495,1260,Comissão_técnica,preparador físico,-
+1018,495,1260,Comissão_técnica,preparador físico,-
+1733,770,1260,Comissão_técnica,fisioterapeuta,-
+27775,770,1260,Comissão_técnica,fisioterapeuta,-
+1734,771,1260,Comissão_técnica,nutricionista,-
+27776,771,1260,Comissão_técnica,nutricionista,-
+27749,6903,1260,Comissão_técnica,fotógrafo,-
+27790,6903,1260,Comissão_técnica,fotógrafo,-
+968,514,1263,Serviço_turístico_reservar,reserva,13
+20806,514,1263,Serviço_turístico_reservar,reserva,-
+967,117154,1263,Serviço_turístico_reservar,reservar,60
+20807,117154,1263,Serviço_turístico_reservar,reservar,-
+988,483,1264,Polícia,polícia,28
+1022,483,1264,Polícia,polícia,-
+636,251,1268,Chegada_ao_destino,desembarque,-
+554,251,1268,Chegada_ao_destino,desembarque,22
+553,117050,1268,Chegada_ao_destino,desembarcar,39
+635,117050,1268,Chegada_ao_destino,desembarcar,5
+25958,117227,1275,Obter_documento,renovar,-
+2502,117227,1275,Obter_documento,renovar,11
+1559,654,1276,Desastre_natural,avalanche,-
+20539,654,1276,Desastre_natural,avalanche,-
+1563,658,1276,Desastre_natural,maremoto,-
+25311,658,1276,Desastre_natural,maremoto,-
+1564,659,1276,Desastre_natural,terremoto,-
+25313,659,1276,Desastre_natural,terremoto,-
+675,268,1278,Partida_do_turista_localidade,embarque,3
+545,268,1278,Partida_do_turista_localidade,embarque,18
+546,117071,1278,Partida_do_turista_localidade,embarcar,22
+676,117071,1278,Partida_do_turista_localidade,embarcar,-
+1078,70,1279,Arbitragem,árbitro,30
+1172,70,1279,Arbitragem,árbitro,-
+1232,93,1281,Atletas,atleta,-
+1724,93,1281,Atletas,atleta,-
+27525,766,1281,Atletas,competidor,-
+1727,766,1281,Atletas,competidor,-
+27513,37069,1281,Atletas,oponente,-
+27528,37069,1281,Atletas,oponente,-
+28771,61,1282,Atletas_por_posição,ala,-
+1098,61,1282,Atletas_por_posição,ala,-
+28685,90,1282,Atletas_por_posição,ataque,-
+28793,90,1282,Atletas_por_posição,ataque,-
+1099,391,1282,Atletas_por_posição,lateral,-
+1236,391,1282,Atletas_por_posição,lateral,-
+28804,514,1282,Atletas_por_posição,reserva,-
+1102,514,1282,Atletas_por_posição,reserva,-
+1101,582,1282,Atletas_por_posição,titular,-
+28802,582,1282,Atletas_por_posição,titular,-
+28758,703,1282,Atletas_por_posição,proa,-
+1657,703,1282,Atletas_por_posição,proa,-
+28748,1125,1282,Atletas_por_posição,pivot,-
+28814,1125,1282,Atletas_por_posição,pivot,-
+2361,1209,1282,Atletas_por_posição,servidor,-
+28781,1209,1282,Atletas_por_posição,servidor,-
+28779,6688,1282,Atletas_por_posição,centro,-
+28423,6688,1282,Atletas_por_posição,centro,-
+28786,26720,1282,Atletas_por_posição,líbero,-
+28356,26720,1282,Atletas_por_posição,líbero,-
+28359,37387,1282,Atletas_por_posição,talonador,-
+28775,37387,1282,Atletas_por_posição,talonador,-
+28424,37401,1282,Atletas_por_posição,hooker,-
+28836,37401,1282,Atletas_por_posição,hooker,-
+28776,37401,1282,Atletas_por_posição,hooker,-
+28666,37506,1282,Atletas_por_posição,número cinco,-
+28764,37506,1282,Atletas_por_posição,número cinco,-
+28667,37507,1282,Atletas_por_posição,número seis,-
+28765,37507,1282,Atletas_por_posição,número seis,-
+28782,37511,1282,Atletas_por_posição,receptor,-
+28676,37511,1282,Atletas_por_posição,receptor,-
+28681,37516,1282,Atletas_por_posição,defensor interno,-
+28790,37516,1282,Atletas_por_posição,defensor interno,-
+28791,37517,1282,Atletas_por_posição,defensor externo,-
+28682,37517,1282,Atletas_por_posição,defensor externo,-
+27802,8899,1289,Jogadas,lance,-
+27801,8899,1289,Jogadas,lance,-
+1540,636,1292,Meios_de_transporte,bicicleta,11
+25652,636,1292,Meios_de_transporte,bicicleta,-
+42734,638,1292,Meios_de_transporte,barco de passeio,-
+1542,638,1292,Meios_de_transporte,barco de passeio,-
+38543,640,1292,Meios_de_transporte,motocicleta,-
+25654,640,1292,Meios_de_transporte,motocicleta,-
+1548,644,1292,Meios_de_transporte,trailer,-
+25709,644,1292,Meios_de_transporte,trailer,-
+1644,116877,1293,Deslocar-se,ir,1
+51723,116877,1293,Deslocar-se,ir,-
+27869,8746,1306,Reações_da_torcida,ver,-
+27838,8746,1306,Reações_da_torcida,ver,1
+27836,62107,1306,Reações_da_torcida,despertar,-
+1398,62107,1306,Reações_da_torcida,despertar,-
+27860,117303,1306,Reações_da_torcida,observar,-
+27837,117303,1306,Reações_da_torcida,observar,-
+27870,121031,1306,Reações_da_torcida,animar,-
+45133,121031,1306,Reações_da_torcida,animar,-
+27840,121117,1306,Reações_da_torcida,gritar,-
+27861,121117,1306,Reações_da_torcida,gritar,-
+27866,123291,1306,Reações_da_torcida,aplaudir,-
+27841,123291,1306,Reações_da_torcida,aplaudir,-
+27867,132291,1306,Reações_da_torcida,ovacionar,-
+27845,132291,1306,Reações_da_torcida,ovacionar,-
+1255,298,1316,Cometer_infração,falta,-
+1482,298,1316,Cometer_infração,falta,-
+1315,310,1324,Divisão_temporal_do_esporte,final,-
+1516,310,1324,Divisão_temporal_do_esporte,final,-
+20553,310,1324,Divisão_temporal_do_esporte,final,-
+2380,1219,1324,Divisão_temporal_do_esporte,set,-
+31368,1219,1324,Divisão_temporal_do_esporte,set,-
+21678,1221,1324,Divisão_temporal_do_esporte,round,-
+2383,1221,1324,Divisão_temporal_do_esporte,round,-
+31424,1229,1324,Divisão_temporal_do_esporte,golden score,-
+31425,1229,1324,Divisão_temporal_do_esporte,golden score,-
+1301,67,1327,Equipamentos_esportivos,apito,1
+20557,67,1327,Equipamentos_esportivos,apito,-
+29206,133,1327,Equipamentos_esportivos,bola,-
+1299,133,1327,Equipamentos_esportivos,bola,13
+1775,808,1327,Equipamentos_esportivos,peso,2
+29199,808,1327,Equipamentos_esportivos,peso,-
+19217,813,1327,Equipamentos_esportivos,barra,-
+1780,813,1327,Equipamentos_esportivos,barra,-
+1812,837,1327,Equipamentos_esportivos,bike,5
+3102,837,1327,Equipamentos_esportivos,bike,-
+28198,841,1327,Equipamentos_esportivos,sabre,-
+1816,841,1327,Equipamentos_esportivos,sabre,-
+1818,843,1327,Equipamentos_esportivos,arco,-
+29331,843,1327,Equipamentos_esportivos,arco,-
+29332,8950,1327,Equipamentos_esportivos,aro,-
+51752,8950,1327,Equipamentos_esportivos,aro,-
+29512,73914,1328,Evento_esportivo,olímpico,-
+29502,73914,1328,Evento_esportivo,olímpico,-
+51770,161,1329,Infrações_diretas,carrinho,-
+1295,161,1329,Infrações_diretas,carrinho,-
+2356,1187,1329,Infrações_diretas,splashing,-
+31078,1187,1329,Infrações_diretas,splashing,-
+51769,1188,1329,Infrações_diretas,tackle,-
+3179,1188,1329,Infrações_diretas,tackle,-
+19202,1,1338,Pessoas_por_atividade_de_lazer,turista,-
+2120,1,1338,Pessoas_por_atividade_de_lazer,turista,63
+2121,622,1338,Pessoas_por_atividade_de_lazer,visitante,13
+25534,622,1338,Pessoas_por_atividade_de_lazer,visitante,-
+25540,9475,1338,Pessoas_por_atividade_de_lazer,naturista,-
+24263,9475,1338,Pessoas_por_atividade_de_lazer,naturista,-
+25539,9494,1338,Pessoas_por_atividade_de_lazer,geek,-
+24438,9494,1338,Pessoas_por_atividade_de_lazer,geek,-
+25548,9494,1338,Pessoas_por_atividade_de_lazer,geek,-
+28478,37439,1338,Pessoas_por_atividade_de_lazer,gamer,1
+31148,37439,1338,Pessoas_por_atividade_de_lazer,gamer,-
+28535,760,1341,Atletas_por_esporte,levantador,-
+28353,760,1341,Atletas_por_esporte,levantador,-
+28522,775,1341,Atletas_por_esporte,boxeador,-
+1738,775,1341,Atletas_por_esporte,boxeador,-
+1739,776,1341,Atletas_por_esporte,nadador,-
+28551,776,1341,Atletas_por_esporte,nadador,-
+1740,777,1341,Atletas_por_esporte,esgrimista,-
+28532,777,1341,Atletas_por_esporte,esgrimista,-
+1741,778,1341,Atletas_por_esporte,tenista,-
+28558,778,1341,Atletas_por_esporte,tenista,-
+1742,779,1341,Atletas_por_esporte,saltador,-
+28554,779,1341,Atletas_por_esporte,saltador,-
+28528,784,1341,Atletas_por_esporte,ciclista,-
+1747,784,1341,Atletas_por_esporte,ciclista,-
+1749,786,1341,Atletas_por_esporte,velocista,-
+28529,786,1341,Atletas_por_esporte,velocista,-
+1750,787,1341,Atletas_por_esporte,corredor,-
+28527,787,1341,Atletas_por_esporte,corredor,-
+28523,864,1341,Atletas_por_esporte,pugilista,-
+1841,864,1341,Atletas_por_esporte,pugilista,-
+28256,1068,1341,Atletas_por_esporte,trampoliner,-
+2198,1068,1341,Atletas_por_esporte,trampoliner,-
+28534,1362,1341,Atletas_por_esporte,golfista,-
+2595,1362,1341,Atletas_por_esporte,golfista,-
+28422,13031,1341,Atletas_por_esporte,amazona,-
+28519,13031,1341,Atletas_por_esporte,amazona,-
+28548,27137,1341,Atletas_por_esporte,maratonista,-
+28347,27137,1341,Atletas_por_esporte,maratonista,-
+28343,34096,1341,Atletas_por_esporte,surfista,1
+28557,34096,1341,Atletas_por_esporte,surfista,-
+28348,37380,1341,Atletas_por_esporte,heptatleta,-
+28537,37380,1341,Atletas_por_esporte,heptatleta,-
+28530,37381,1341,Atletas_por_esporte,decatleta,-
+28349,37381,1341,Atletas_por_esporte,decatleta,-
+28560,37383,1341,Atletas_por_esporte,triatleta,-
+28351,37383,1341,Atletas_por_esporte,triatleta,-
+28552,37384,1341,Atletas_por_esporte,pentatleta,-
+28352,37384,1341,Atletas_por_esporte,pentatleta,-
+28531,37406,1341,Atletas_por_esporte,escalador,-
+28435,37406,1341,Atletas_por_esporte,escalador,-
+19894,80,1342,Instalações_esportivas,arena,-
+1843,80,1342,Instalações_esportivas,arena,4
+1858,875,1342,Instalações_esportivas,sambódromo,-
+21015,875,1342,Instalações_esportivas,sambódromo,-
+21012,6883,1342,Instalações_esportivas,pista de ciclismo,-
+19609,6883,1342,Instalações_esportivas,pista de ciclismo,-
+2096,1018,1343,Sanções,man-up,-
+31065,1018,1343,Sanções,man-up,-
+28101,835,1349,Esportes,remo,-
+1947,835,1349,Esportes,remo,-
+28111,862,1349,Esportes,vela,-
+1956,862,1349,Esportes,vela,-
+28078,920,1349,Esportes,atletismo,-
+1915,920,1349,Esportes,atletismo,-
+1916,921,1349,Esportes,badminton,-
+3158,921,1349,Esportes,badminton,-
+28092,930,1349,Esportes,esgrima,-
+1927,930,1349,Esportes,esgrima,2
+1950,948,1349,Esportes,taekwondo,-
+28105,948,1349,Esportes,taekwondo,-
+3173,948,1349,Esportes,taekwondo,-
+2055,993,1349,Esportes,ciclismo,-
+28085,993,1349,Esportes,ciclismo,-
+28066,14962,1349,Esportes,baseball,-
+28080,14962,1349,Esportes,baseball,-
+28123,14962,1349,Esportes,baseball,-
+28091,21138,1349,Esportes,escalada,-
+28069,21138,1349,Esportes,escalada,1
+28042,36165,1349,Esportes,voleibol,-
+28112,36165,1349,Esportes,voleibol,-
+28103,37039,1349,Esportes,skate,-
+28130,37039,1349,Esportes,skate,-
+28055,37039,1349,Esportes,skate,-
+28124,37232,1349,Esportes,softball,-
+28070,37232,1349,Esportes,softball,-
+29087,37655,1349,Esportes,futsal,-
+31103,37655,1349,Esportes,futsal,-
+2125,1024,1356,Jogadas_individuais,backhand clear,-
+31597,1024,1356,Jogadas_individuais,backhand clear,-
+2126,1025,1356,Jogadas_individuais,drop shot,-
+3243,1025,1356,Jogadas_individuais,drop shot,-
+3895,1027,1356,Jogadas_individuais,smash,-
+28250,1027,1356,Jogadas_individuais,smash,-
+2128,1027,1356,Jogadas_individuais,smash,-
+2130,1029,1356,Jogadas_individuais,drive,-
+31617,1029,1356,Jogadas_individuais,drive,-
+31638,1056,1356,Jogadas_individuais,swing,-
+2274,1056,1356,Jogadas_individuais,swing,-
+2188,1064,1356,Jogadas_individuais,v,-
+31644,1064,1356,Jogadas_individuais,v,-
+2190,1066,1356,Jogadas_individuais,push and pump,-
+31635,1066,1356,Jogadas_individuais,push and pump,-
+2268,1134,1356,Jogadas_individuais,approach,-
+31589,1134,1356,Jogadas_individuais,approach,-
+31620,1137,1356,Jogadas_individuais,eagle,-
+2271,1137,1356,Jogadas_individuais,eagle,-
+2272,1138,1356,Jogadas_individuais,fresh air,-
+31623,1138,1356,Jogadas_individuais,fresh air,-
+31596,1140,1356,Jogadas_individuais,back swing,-
+2275,1140,1356,Jogadas_individuais,back swing,-
+28257,1143,1356,Jogadas_individuais,flick,-
+2279,1143,1356,Jogadas_individuais,flick,-
+31636,1144,1356,Jogadas_individuais,push-hit,-
+2280,1144,1356,Jogadas_individuais,push-hit,-
+2283,1147,1356,Jogadas_individuais,piaffe,-
+31637,1147,1356,Jogadas_individuais,piaffe,-
+21751,1169,1356,Jogadas_individuais,medley,-
+2312,1169,1356,Jogadas_individuais,medley,-
+31619,1175,1356,Jogadas_individuais,drop,-
+2319,1175,1356,Jogadas_individuais,drop,-
+2323,1179,1356,Jogadas_individuais,drop goal,-
+31618,1179,1356,Jogadas_individuais,drop goal,-
+2325,1181,1356,Jogadas_individuais,penalty goal,-
+31633,1181,1356,Jogadas_individuais,penalty goal,-
+31626,1182,1356,Jogadas_individuais,lineout,-
+2326,1182,1356,Jogadas_individuais,lineout,-
+31609,1194,1356,Jogadas_individuais,chop,-
+2339,1194,1356,Jogadas_individuais,chop,-
+31643,1195,1356,Jogadas_individuais,topspin,-
+2340,1195,1356,Jogadas_individuais,topspin,-
+2341,1196,1356,Jogadas_individuais,forehand,-
+3892,1196,1356,Jogadas_individuais,forehand,-
+2342,1197,1356,Jogadas_individuais,backhand,-
+3886,1197,1356,Jogadas_individuais,backhand,-
+3881,2121,1356,Jogadas_individuais,bounce,-
+3883,2121,1356,Jogadas_individuais,bounce,-
+23770,9183,1356,Jogadas_individuais,amorti,-
+31588,9183,1356,Jogadas_individuais,amorti,-
+51823,117021,1356,Jogadas_individuais,chutar,-
+1971,117021,1356,Jogadas_individuais,chutar,3
+2127,1026,1357,Jogadas_interativas,clear,-
+31672,1026,1357,Jogadas_interativas,clear,-
+32122,1028,1357,Jogadas_interativas,lob,-
+31216,1028,1357,Jogadas_interativas,lob,-
+32156,1028,1357,Jogadas_interativas,lob,-
+3269,1054,1357,Jogadas_interativas,jab,-
+2177,1054,1357,Jogadas_interativas,jab,-
+2178,1055,1357,Jogadas_interativas,knockdown,-
+31677,1055,1357,Jogadas_interativas,knockdown,-
+2179,1056,1357,Jogadas_interativas,swing,-
+31679,1056,1357,Jogadas_interativas,swing,-
+2180,1057,1357,Jogadas_interativas,uppercut,-
+3274,1057,1357,Jogadas_interativas,uppercut,-
+31652,1062,1357,Jogadas_interativas,block pass,-
+2185,1062,1357,Jogadas_interativas,block pass,-
+31688,1175,1357,Jogadas_interativas,drop,-
+31689,1175,1357,Jogadas_interativas,drop,-
+31701,1188,1357,Jogadas_interativas,tackle,-
+2332,1188,1357,Jogadas_interativas,tackle,-
+31678,1189,1357,Jogadas_interativas,ruck,-
+2333,1189,1357,Jogadas_interativas,ruck,-
+2334,1190,1357,Jogadas_interativas,maul,-
+31680,1190,1357,Jogadas_interativas,maul,-
+2343,1198,1357,Jogadas_interativas,block,-
+3259,1198,1357,Jogadas_interativas,block,-
+28247,1198,1357,Jogadas_interativas,block,-
+29017,38463,1357,Jogadas_interativas,marcar,-
+1988,38463,1357,Jogadas_interativas,marcar,-
+2039,841,1358,Modalidades_esportivas,sabre,-
+21964,841,1358,Modalidades_esportivas,sabre,-
+31925,1169,1358,Modalidades_esportivas,medley,-
+31913,1169,1358,Modalidades_esportivas,medley,-
+29267,1056,1359,Jogadas_pontuadas,swing,-
+29268,1056,1359,Jogadas_pontuadas,swing,-
+31578,1072,1359,Jogadas_pontuadas,flic-flac,-
+2204,1072,1359,Jogadas_pontuadas,flic-flac,-
+2211,1079,1359,Jogadas_pontuadas,conner spin,-
+31548,1079,1359,Jogadas_pontuadas,conner spin,-
+31549,1080,1359,Jogadas_pontuadas,diamidov,-
+2212,1080,1359,Jogadas_pontuadas,diamidov,-
+2214,1082,1359,Jogadas_pontuadas,janz,-
+31527,1082,1359,Jogadas_pontuadas,janz,-
+31525,1083,1359,Jogadas_pontuadas,korbut,-
+2215,1083,1359,Jogadas_pontuadas,korbut,-
+2216,1084,1359,Jogadas_pontuadas,stützkehre,-
+31500,1084,1359,Jogadas_pontuadas,stützkehre,-
+2217,1085,1359,Jogadas_pontuadas,tkachev,-
+31497,1085,1359,Jogadas_pontuadas,tkachev,-
+31574,1086,1359,Jogadas_pontuadas,front,-
+2219,1086,1359,Jogadas_pontuadas,front,-
+31576,1087,1359,Jogadas_pontuadas,front full,-
+2220,1087,1359,Jogadas_pontuadas,front full,-
+2221,1088,1359,Jogadas_pontuadas,full,-
+31573,1088,1359,Jogadas_pontuadas,full,-
+31540,1090,1359,Jogadas_pontuadas,barani,-
+2223,1090,1359,Jogadas_pontuadas,barani,-
+2224,1091,1359,Jogadas_pontuadas,cody,-
+31544,1091,1359,Jogadas_pontuadas,cody,-
+31501,1092,1359,Jogadas_pontuadas,side,-
+2225,1092,1359,Jogadas_pontuadas,side,-
+31508,1093,1359,Jogadas_pontuadas,round-off,-
+2226,1093,1359,Jogadas_pontuadas,round-off,-
+2227,1094,1359,Jogadas_pontuadas,handspring,-
+31563,1094,1359,Jogadas_pontuadas,handspring,-
+2228,1095,1359,Jogadas_pontuadas,wipe-out,-
+31488,1095,1359,Jogadas_pontuadas,wipe-out,-
+31483,1096,1359,Jogadas_pontuadas,adolph,-
+2229,1096,1359,Jogadas_pontuadas,adolph,-
+31531,1098,1359,Jogadas_pontuadas,back half twist,-
+2231,1098,1359,Jogadas_pontuadas,back half twist,-
+31538,1099,1359,Jogadas_pontuadas,ball out,-
+2232,1099,1359,Jogadas_pontuadas,ball out,-
+2233,1100,1359,Jogadas_pontuadas,barani out,-
+31539,1100,1359,Jogadas_pontuadas,barani out,-
+2235,1101,1359,Jogadas_pontuadas,double back,-
+31550,1101,1359,Jogadas_pontuadas,double back,-
+2236,1102,1359,Jogadas_pontuadas,double full,-
+31551,1102,1359,Jogadas_pontuadas,double full,-
+2237,1103,1359,Jogadas_pontuadas,double mini tramp,-
+31552,1103,1359,Jogadas_pontuadas,double mini tramp,-
+2238,1104,1359,Jogadas_pontuadas,fliffis,-
+31577,1104,1359,Jogadas_pontuadas,fliffis,-
+31566,1107,1359,Jogadas_pontuadas,half in half out,-
+2241,1107,1359,Jogadas_pontuadas,half in half out,-
+2242,1108,1359,Jogadas_pontuadas,in,-
+31529,1108,1359,Jogadas_pontuadas,in,-
+31522,1109,1359,Jogadas_pontuadas,midle,-
+2243,1109,1359,Jogadas_pontuadas,midle,-
+31521,1110,1359,Jogadas_pontuadas,miller,-
+2244,1110,1359,Jogadas_pontuadas,miller,-
+2245,1111,1359,Jogadas_pontuadas,out,-
+31518,1111,1359,Jogadas_pontuadas,out,-
+31505,1113,1359,Jogadas_pontuadas,rudy,-
+2247,1113,1359,Jogadas_pontuadas,rudy,-
+2248,1114,1359,Jogadas_pontuadas,rudolph,-
+31507,1114,1359,Jogadas_pontuadas,rudolph,-
+31506,1115,1359,Jogadas_pontuadas,rudy out,-
+2249,1115,1359,Jogadas_pontuadas,rudy out,-
+2250,1116,1359,Jogadas_pontuadas,randolph,-
+31511,1116,1359,Jogadas_pontuadas,randolph,-
+2251,1117,1359,Jogadas_pontuadas,randy,-
+31510,1117,1359,Jogadas_pontuadas,randy,-
+2252,1118,1359,Jogadas_pontuadas,triffis,-
+31495,1118,1359,Jogadas_pontuadas,triffis,-
+2253,1119,1359,Jogadas_pontuadas,triple back,-
+31494,1119,1359,Jogadas_pontuadas,triple back,-
+31489,1120,1359,Jogadas_pontuadas,voluntary,-
+2254,1120,1359,Jogadas_pontuadas,voluntary,-
+31515,1125,1359,Jogadas_pontuadas,pivot,-
+2259,1125,1359,Jogadas_pontuadas,pivot,-
+2263,1129,1359,Jogadas_pontuadas,set point,-
+31502,1129,1359,Jogadas_pontuadas,set point,-
+2264,1130,1359,Jogadas_pontuadas,match point,-
+31523,1130,1359,Jogadas_pontuadas,match point,-
+31484,1131,1359,Jogadas_pontuadas,albatross,-
+2265,1131,1359,Jogadas_pontuadas,albatross,-
+29225,1132,1359,Jogadas_pontuadas,birdie,-
+2266,1132,1359,Jogadas_pontuadas,birdie,-
+31562,1133,1359,Jogadas_pontuadas,hole in one,-
+2267,1133,1359,Jogadas_pontuadas,hole in one,-
+2292,1151,1359,Jogadas_pontuadas,ippon,-
+31528,1151,1359,Jogadas_pontuadas,ippon,-
+31486,1152,1359,Jogadas_pontuadas,wazari,-
+2293,1152,1359,Jogadas_pontuadas,wazari,-
+2294,1153,1359,Jogadas_pontuadas,yuko,-
+31485,1153,1359,Jogadas_pontuadas,yuko,-
+2295,1154,1359,Jogadas_pontuadas,koka,-
+31526,1154,1359,Jogadas_pontuadas,koka,-
+31567,1155,1359,Jogadas_pontuadas,gut wrench,-
+2296,1155,1359,Jogadas_pontuadas,gut wrench,-
+31885,1157,1359,Jogadas_pontuadas,suplê,-
+2298,1157,1359,Jogadas_pontuadas,suplê,-
+31565,1158,1359,Jogadas_pontuadas,half nelson,-
+2299,1158,1359,Jogadas_pontuadas,half nelson,-
+21804,1159,1359,Jogadas_pontuadas,vertical,-
+2300,1159,1359,Jogadas_pontuadas,vertical,-
+2313,1170,1359,Jogadas_pontuadas,takedown,-
+31498,1170,1359,Jogadas_pontuadas,takedown,-
+2315,1172,1359,Jogadas_pontuadas,break-point,-
+31541,1172,1359,Jogadas_pontuadas,break-point,-
+2316,1173,1359,Jogadas_pontuadas,game point,-
+3893,1173,1359,Jogadas_pontuadas,game point,-
+2399,1229,1359,Jogadas_pontuadas,golden score,-
+31569,1229,1359,Jogadas_pontuadas,golden score,-
+31546,1294,1359,Jogadas_pontuadas,compulsory,-
+2503,1294,1359,Jogadas_pontuadas,compulsory,-
+29244,1997,1359,Jogadas_pontuadas,giro,-
+29281,1997,1359,Jogadas_pontuadas,giro,-
+29264,16793,1359,Jogadas_pontuadas,catch,-
+29266,16793,1359,Jogadas_pontuadas,catch,-
+29254,30356,1359,Jogadas_pontuadas,pirueta,-
+29296,30356,1359,Jogadas_pontuadas,pirueta,-
+28254,37306,1359,Jogadas_pontuadas,pike,-
+28177,37306,1359,Jogadas_pontuadas,pike,-
+29025,37651,1359,Jogadas_pontuadas,marcar gol,-
+45194,37651,1359,Jogadas_pontuadas,marcar gol,-
+1220,38463,1359,Jogadas_pontuadas,marcar,-
+1479,38463,1359,Jogadas_pontuadas,marcar,-
+29230,116969,1359,Jogadas_pontuadas,parar,-
+29223,116969,1359,Jogadas_pontuadas,parar,-
+45188,117199,1359,Jogadas_pontuadas,soltar,-
+29277,117199,1359,Jogadas_pontuadas,soltar,-
+45190,117233,1359,Jogadas_pontuadas,agarrar,-
+29286,117233,1359,Jogadas_pontuadas,agarrar,-
+29282,117240,1359,Jogadas_pontuadas,girar,-
+29245,117240,1359,Jogadas_pontuadas,girar,-
+29279,133870,1359,Jogadas_pontuadas,retomar,-
+29243,133870,1359,Jogadas_pontuadas,retomar,-
+1193,76,1364,Subpartes_de_instalações_esportivas,área,-
+1114,76,1364,Subpartes_de_instalações_esportivas,área,-
+1121,186,1364,Subpartes_de_instalações_esportivas,círculo central,-
+1201,186,1364,Subpartes_de_instalações_esportivas,círculo central,-
+2431,873,1364,Subpartes_de_instalações_esportivas,piscina,-
+2845,873,1364,Subpartes_de_instalações_esportivas,piscina,-
+2846,878,1364,Subpartes_de_instalações_esportivas,plataforma,-
+2433,878,1364,Subpartes_de_instalações_esportivas,plataforma,-
+2852,879,1364,Subpartes_de_instalações_esportivas,tablado,-
+2437,879,1364,Subpartes_de_instalações_esportivas,tablado,-
+2594,1361,1364,Subpartes_de_instalações_esportivas,striking circle,-
+31820,1361,1364,Subpartes_de_instalações_esportivas,striking circle,-
+2416,117223,1365,Sediar_evento,organizar,1
+24579,117223,1365,Sediar_evento,organizar,-
+24566,8746,1366,Assistir_a_evento,ver,6
+23903,8746,1366,Assistir_a_evento,ver,-
+2422,116877,1366,Assistir_a_evento,ir,9
+23901,116877,1366,Assistir_a_evento,ir,-
+39886,66299,1367,Afirmar_ou_negar,positivo,2
+38995,66299,1367,Afirmar_ou_negar,positivo,5
+32315,17365,1375,Partes_do_corpo,cintura,2
+35454,17365,1375,Partes_do_corpo,cintura,1
+40391,68134,1375,Partes_do_corpo,tireoide,-
+35397,68134,1375,Partes_do_corpo,tireoide,5
+19007,6665,1391,Nível_de_exerção_de_força,força,21
+38567,6665,1391,Nível_de_exerção_de_força,força,5
+30742,36656,1395,Impedir_ou_permitir,check,-
+13535,36656,1395,Impedir_ou_permitir,check,-
+34685,20452,1398,Proibir_ou_licenciar,embargo,3
+34167,20452,1398,Proibir_ou_licenciar,embargo,1
+45294,10614,1404,Sofrer_transformação,transmutar,-
+26066,10614,1404,Sofrer_transformação,transmutar,-
+24723,852,1414,Móveis,mesa,53
+25563,852,1414,Móveis,mesa,-
+25562,6578,1414,Móveis,cama,-
+24318,6578,1414,Móveis,cama,30
+25517,901,1423,Serviço_em_alimentação,café,-
+24764,901,1423,Serviço_em_alimentação,café,-
+25514,2016,1423,Serviço_em_alimentação,aperitivo,-
+24778,2016,1423,Serviço_em_alimentação,aperitivo,-
+24759,8665,1423,Serviço_em_alimentação,servir,11
+25516,8665,1423,Serviço_em_alimentação,servir,-
+25952,178,1424,Partida_do_turista_alojamento,check-out,-
+25948,178,1424,Partida_do_turista_alojamento,check-out,-
+32022,38323,1439,Fenômenos_naturais,amanhecer,2
+32021,38323,1439,Fenômenos_naturais,amanhecer,1
+52182,801,1451,Pessoas_por_gênero_e_ou_orientação_sexual,homem,-
+52183,801,1451,Pessoas_por_gênero_e_ou_orientação_sexual,homem,-
+39078,63007,1452,Descritor_de_gênero_e_ou_orientação_sexual,feminino,7
+39079,63007,1452,Descritor_de_gênero_e_ou_orientação_sexual,feminino,2
+34567,60841,1453,Lateralidade,canhoto,-
+34568,60841,1453,Lateralidade,canhoto,-
+40998,70773,1455,Línguas,libras,-
+41012,70773,1455,Línguas,libras,1
+34763,68898,1459,Padronagens,xadrez,1
+34762,68898,1459,Padronagens,xadrez,1
+36853,9487,1469,Pessoas_por_condição_em_saúde,paciente,602
+24281,9487,1469,Pessoas_por_condição_em_saúde,paciente,341
+42595,10643,1539,Causar_ficar_limpo,limpeza,3
+42510,10643,1539,Causar_ficar_limpo,limpeza,2
+40343,147082,1557,Cumprimento,boa noite,-
+43757,147082,1557,Cumprimento,boa noite,-
+41011,70773,1566,Tecnologia_Assistiva,libras,-
+40984,70773,1566,Tecnologia_Assistiva,libras,-
+40563,14549,1583,Gênero_literário_musical_cinematográfico,aventura,1
+40564,14549,1583,Gênero_literário_musical_cinematográfico,aventura,2
+40599,63226,1584,Cama_mesa_e_banho,fronha,-
+40691,63226,1584,Cama_mesa_e_banho,fronha,-

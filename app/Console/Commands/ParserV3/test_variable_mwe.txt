@@ -1,0 +1,13 @@
+# Test sentences for Variable MWE Detection
+
+# Test 1: [NOUN] de [NOUN] - Should match "copo de água"
+Comprei um copo de água.
+
+# Test 2: [DET] [ADJ] [NOUN] - Should match "o grande livro"
+Li o grande livro.
+
+# Test 3: por [*] de - Should match "por causa de"
+Faltei por causa de doença.
+
+# Test 4: Combined - Simple MWE "a não ser que" + Variable "[VERB] que [VERB]"
+Ele vai estudar, a não ser que chova.

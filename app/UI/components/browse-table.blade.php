@@ -1,4 +1,4 @@
-<div class="ui container page-browse">
+<div class="ui container page">
     <div class="page-header">
         <div class="page-header-content">
             <div class="page-title">

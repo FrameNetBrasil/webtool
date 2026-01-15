@@ -16,4 +16,4 @@
 
 @include('Dashboard.subcorporaMulti30kLome')
 
-{{--@include('Dashboard.subcorporaMulti30kChart')--}}
+@include('Dashboard.subcorporaMulti30kChart')

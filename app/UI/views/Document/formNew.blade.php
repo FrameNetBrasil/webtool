@@ -1,11 +1,11 @@
 <x-layout::index>
-    <div class="app-layout minimal">
-        <x-layout::header></x-layout::header>
-        <x-layout::breadcrumb
-            :sections="[['/','Home'],['/manager','Manager'],['/corpus','Corpus/Document'],['','New Document']]"
-        ></x-layout::breadcrumb>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
+            :sections="[['/','Home'],['','New Document']]"
+        ></x-partial::breadcrumb>
         <main class="app-main">
-            <div class="ui container">
+            <div class="ui container page">
                 <div class="page-content">
                     <form class="ui form">
                         <div class="ui card form-card w-full p-1">

@@ -111,13 +111,14 @@ return [
             //            'exportCxnJson' => ['Export Cxn', '/utils/exportCxn', 'exportcxnjson', 'ADMIN', 1, []],
         ]],
     ],
-    'languages' => ['pt', 'en'],
+    'languages' => ['pt','en','sr'],
     'user' => ['userPanel', '/admin/user/main', '', [
         'language' => ['Language', '/language', '', [
             '2' => ['English', '/changeLanguage/en', '', []],
             '1' => ['Portuguese', '/changeLanguage/pt', '', []],
             //            '3' => ['Spanish', '/changeLanguage/es', '', []],
-            '8' => ['Japanese', '/changeLanguage/jp', '', []],
+//            '8' => ['Japanese', '/changeLanguage/jp', '', []],
+            '10' => ['Serbian', '/changeLanguage/sr', '', []],
         ]],
         'profile' => ['Profile', '/profile', '', [
             'myprofile' => ['My Profile', '/profile', '', []],

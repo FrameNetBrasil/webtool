@@ -99,14 +99,19 @@ function boxComponent(idDocument, scale, bboxes) {
             this.object = e.detail.object;
             this.annotationType = this.object.annotationType;
             this.currentFrame = this.object.startFrame;
-            let idBoundingBox = this.object.bbox.idBoundingBox;
-            if (!this.scaledBBoxes[idBoundingBox]) {
-                this.realBBoxes[idBoundingBox] = this.object.bbox;
-                this.scaledBBoxes[idBoundingBox] = this.scaleBBox(this.object.bbox);
-            }
+            console.log(this.object.bbox);
             this.clearBBox();
-            let scaledBBox = this.scaledBBoxes[this.object.bbox.idBoundingBox];
-            this.displayBBox(scaledBBox);
+            let bbox;
+            for(var idBoundingBox in this.object.bbox) {
+                bbox = this.object.bbox[idBoundingBox];
+                console.log(bbox);
+                if (!this.scaledBBoxes[idBoundingBox]) {
+                    this.realBBoxes[idBoundingBox] = bbox;
+                    this.scaledBBoxes[idBoundingBox] = this.scaleBBox(bbox);
+                }
+                let scaledBBox = this.scaledBBoxes[bbox.idBoundingBox];
+                this.displayBBox(scaledBBox);
+            }
         },
 
         async onBBoxCreated(e) {

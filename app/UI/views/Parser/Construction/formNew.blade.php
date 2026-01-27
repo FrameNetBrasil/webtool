@@ -79,7 +79,7 @@
             <x-submit
                 label="Create Construction"
                 color="primary"
-                hx-post="/parser/v4/construction"
+                hx-post="/parser/construction"
             ></x-submit>
         </div>
     </div>

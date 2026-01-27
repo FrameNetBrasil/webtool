@@ -1,0 +1,37 @@
+digraph SummaryGraph {
+  rankdir=TB;
+  node [style=filled, fontname="Arial", fontsize=10];
+  edge [fontname="Arial", fontsize=9];
+
+  label="Parse Tree (Top-Down)";
+  labelloc="t";
+  fontsize=14;
+
+  n0 [label="CLAUSE\nT=2\nL5=1.00", shape=ellipse, fillcolor="#87CEEB"];
+  n1 [label="PRED\nT=2\nL5=1.00", shape=ellipse, fillcolor="#87CEEB"];
+  n2 [label="VERB\nT=2\nL5=1.00", shape=ellipse, fillcolor="#87CEEB"];
+  n3 [label="comeu\nT=2\nL5=1.00", shape=box, fillcolor="#90EE90"];
+  n4 [label="SUBJECT\nT=2\nL5=1.00", shape=box, fillcolor="#FFB6C1"];
+  n5 [label="ARG\nT=2\nL5=1.00", shape=ellipse, fillcolor="#87CEEB"];
+  n6 [label="NOUN\nT=1\nL5=1.00", shape=ellipse, fillcolor="#87CEEB"];
+  n7 [label="gato\nT=1\nL5=1.00", shape=box, fillcolor="#90EE90"];
+  n8 [label="MOD\nT=1\nL5=1.00", shape=ellipse, fillcolor="#87CEEB"];
+  n9 [label="gato\nT=1\nL5=0.80", shape=box, fillcolor="#90EE90"];
+  n10 [label="PRED\nT=2\nL5=1.00", shape=ellipse, fillcolor="#87CEEB"];
+  n11 [label="VERB\nT=2\nL5=1.00", shape=ellipse, fillcolor="#87CEEB"];
+  n12 [label="comeu\nT=2\nL5=1.00", shape=box, fillcolor="#90EE90"];
+
+  n2 -> n3 [label=""];
+  n1 -> n2 [label=""];
+  n0 -> n1 [label=""];
+  n6 -> n7 [label=""];
+  n5 -> n6 [label=""];
+  n8 -> n9 [label=""];
+  n5 -> n8 [label=""];
+  n4 -> n5 [label="left"];
+  n11 -> n12 [label=""];
+  n10 -> n11 [label=""];
+  n4 -> n10 [label="right"];
+  n0 -> n4 [label=""];
+
+}

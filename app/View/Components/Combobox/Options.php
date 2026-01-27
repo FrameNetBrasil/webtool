@@ -17,8 +17,17 @@ class Options extends Component
         public array $options,
         public string $label = '',
         public string $placeholder = '',
+        public string $valueField = '',
+        public string $displayField = '',
     )
     {
+        if ($this->valueField != '') {
+            $options = [];
+            foreach ($this->options as $option) {
+                $options[$option->{$this->valueField}] = $option->{$this->displayField};
+            }
+            $this->options = $options;
+        }
     }
 
     /**

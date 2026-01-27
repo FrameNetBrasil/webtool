@@ -11,6 +11,7 @@ class DaisyOutputData extends Data
         public array $graph,
         public array $sentenceUD,
         public array $windows,
+        public array $clusters,
         public array $weights,
     ) {}
 }

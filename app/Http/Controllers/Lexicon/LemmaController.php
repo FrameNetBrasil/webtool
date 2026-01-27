@@ -42,7 +42,7 @@ class LemmaController extends Controller
 
         return view('Lemma.tree', [
             'data' => $data,
-            'title' => 'Lemmas',
+            'title' => '',
         ]);
     }
 
@@ -57,7 +57,7 @@ class LemmaController extends Controller
             'searching' => $name,
             'idLanguage from session' => $idLanguage,
             'session currentLanguage' => session('currentLanguage'),
-            'session idLanguage' => session('idLanguage')
+            'session idLanguage' => session('idLanguage'),
         ]);
 
         return ['results' => Criteria::byFilterLanguage('view_lemma', ['name', 'startswith', trim($name)], 'idLanguage', $idLanguage)
@@ -87,7 +87,7 @@ class LemmaController extends Controller
             $newLemma = json_encode([
                 'name' => $data->name,
                 'idLanguage' => $data->idLanguage,
-//                'idUDPOS' => $data->idUDPOS,
+                //                'idUDPOS' => $data->idUDPOS,
                 'idUser' => AppService::getCurrentIdUser(),
             ]);
             $idLemma = Criteria::function('lemma_create(?)', [$newLemma]);
@@ -117,38 +117,44 @@ class LemmaController extends Controller
     }
 
     #[Get(path: '/lemma/{idLemma}/formEdit')]
-    public function formEdit(int $idLemma) {
+    public function formEdit(int $idLemma)
+    {
         $lemma = Lemma::byId($idLemma);
+
         return view('Lemma.formEdit', [
             'lemma' => $lemma,
         ]);
     }
 
-
     #[Get(path: '/lemma/{idLemma}/expressions')]
     public function expressions(int $idLemma)
     {
         $lemma = Lemma::byId($idLemma);
+
         return view('Lemma.expressions', [
             'lemma' => $lemma,
         ]);
     }
 
     #[Get(path: '/lemma/{idLemma}/expressionsForm')]
-    public function formExpressions(int $idLemma) {
+    public function formExpressions(int $idLemma)
+    {
         $lemma = Lemma::byId($idLemma);
+
         return view('Lemma.expressionsForm', [
             'lemma' => $lemma,
         ]);
     }
 
     #[Get(path: '/lemma/{idLemma}/expressionsGrid')]
-    public function gridExpressions(int $idLemma) {
+    public function gridExpressions(int $idLemma)
+    {
         $lemma = Lemma::byId($idLemma);
         $expressions = Criteria::table('view_lexicon_expression as e')
             ->where('e.idLemma', $idLemma)
             ->orderBy('e.position')
             ->all();
+
         return view('Lemma.expressionsGrid', [
             'lemma' => $lemma,
             'expressions' => $expressions,
@@ -159,44 +165,48 @@ class LemmaController extends Controller
     public function pos(int $idLemma)
     {
         $lemma = Lemma::byId($idLemma);
+
         return view('Lemma.pos', [
             'lemma' => $lemma,
         ]);
     }
 
     #[Get(path: '/lemma/{idLemma}/posForm')]
-    public function formPos(int $idLemma) {
+    public function formPos(int $idLemma)
+    {
         $lemma = Lemma::byId($idLemma);
+
         return view('Lemma.posForm', [
             'lemma' => $lemma,
         ]);
     }
 
     #[Get(path: '/lemma/{idLemma}/posGrid')]
-    public function gridPos(int $idLemma) {
+    public function gridPos(int $idLemma)
+    {
         $lemma = Lemma::byId($idLemma);
         $pos = Criteria::table('view_lemma_pos as p')
             ->where('p.idLemma', $idLemma)
             ->all();
+
         return view('Lemma.posGrid', [
             'lemma' => $lemma,
             'pos' => $pos,
         ]);
     }
 
-
     #[Get(path: '/lemma/{idLemma}')]
     public function edit(int $idLemma)
     {
         $lemma = Lemma::byId($idLemma);
-//        $expressions = Criteria::table('view_lexicon_expression as e')
-//            ->where('e.idLemma', $idLemma)
-//            ->orderBy('e.position')
-//            ->all();
+        //        $expressions = Criteria::table('view_lexicon_expression as e')
+        //            ->where('e.idLemma', $idLemma)
+        //            ->orderBy('e.position')
+        //            ->all();
 
         return view('Lemma.edit', [
             'lemma' => $lemma,
-//            'expressions' => $expressions,
+            //            'expressions' => $expressions,
             'pattern' => null, // Temporarily disabled
         ]);
     }
@@ -301,11 +311,11 @@ class LemmaController extends Controller
         try {
             if ($data->idUDPOS) {
                 $pos = Criteria::table('lemma_pos')
-                    ->where("idLemma", $data->idLemma)
-                    ->where("idUDPOS", $data->idUDPOS)
+                    ->where('idLemma', $data->idLemma)
+                    ->where('idUDPOS', $data->idUDPOS)
                     ->first();
                 if (is_null($pos)) {
-                    Criteria::create("lemma_pos",[
+                    Criteria::create('lemma_pos', [
                         'idLemma' => $data->idLemma,
                         'idUDPOS' => $data->idUDPOS,
                     ]);
@@ -326,8 +336,8 @@ class LemmaController extends Controller
     {
         try {
             Criteria::table('lemma_pos')
-                ->where("idLemma", $idLemma)
-                ->where("idUDPOS", $idUDPOS)
+                ->where('idLemma', $idLemma)
+                ->where('idUDPOS', $idUDPOS)
                 ->delete();
 
             $this->trigger('reload-gridPOS');

@@ -1,0 +1,239 @@
+[
+  {
+    "name": "HEAD_NOUN",
+    "constructionType": "phrasal",
+    "priority": 80,
+    "pattern": "{NOUN}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Noun as phrasal head"
+  },
+  {
+    "name": "HEAD_PROPN",
+    "constructionType": "phrasal",
+    "priority": 80,
+    "pattern": "{PROPN}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Proper noun as phrasal head"
+  },
+  {
+    "name": "HEAD_PRON",
+    "constructionType": "phrasal",
+    "priority": 80,
+    "pattern": "{PRON}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Pronoun as phrasal head"
+  },
+  {
+    "name": "HEAD_VERB_FIN",
+    "constructionType": "phrasal",
+    "priority": 85,
+    "pattern": "{VERB}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [
+      {
+        "type": "feature_equals",
+        "element": 0,
+        "feature": "VerbForm",
+        "value": "Fin"
+      }
+    ],
+    "description": "Finite verb as phrasal head"
+  },
+  {
+    "name": "HEAD_VERB_INF",
+    "constructionType": "phrasal",
+    "priority": 82,
+    "pattern": "{VERB}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [
+      {
+        "type": "feature_equals",
+        "element": 0,
+        "feature": "VerbForm",
+        "value": "Inf"
+      }
+    ],
+    "description": "Infinitive verb as phrasal head"
+  },
+  {
+    "name": "HEAD_VERB_GER",
+    "constructionType": "phrasal",
+    "priority": 82,
+    "pattern": "{VERB}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [
+      {
+        "type": "feature_equals",
+        "element": 0,
+        "feature": "VerbForm",
+        "value": "Ger"
+      }
+    ],
+    "description": "Gerund verb as phrasal head"
+  },
+  {
+    "name": "HEAD_VERB_PART",
+    "constructionType": "phrasal",
+    "priority": 82,
+    "pattern": "{VERB}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [
+      {
+        "type": "feature_equals",
+        "element": 0,
+        "feature": "VerbForm",
+        "value": "Part"
+      }
+    ],
+    "description": "Participle verb as phrasal head"
+  },
+  {
+    "name": "MOD_DET",
+    "constructionType": "phrasal",
+    "priority": 60,
+    "pattern": "{DET}",
+    "phrasalCE": "Mod",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Determiner as modifier"
+  },
+  {
+    "name": "MOD_ADJ",
+    "constructionType": "phrasal",
+    "priority": 60,
+    "pattern": "{ADJ}",
+    "phrasalCE": "Mod",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Adjective as modifier"
+  },
+  {
+    "name": "MOD_NUM",
+    "constructionType": "phrasal",
+    "priority": 62,
+    "pattern": "{NUM}",
+    "phrasalCE": "Mod",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Numeral as modifier"
+  },
+  {
+    "name": "ADP",
+    "constructionType": "phrasal",
+    "priority": 55,
+    "pattern": "{ADP}",
+    "phrasalCE": "Adp",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Adposition (preposition)"
+  },
+  {
+    "name": "LNK_SCONJ",
+    "constructionType": "phrasal",
+    "priority": 55,
+    "pattern": "{SCONJ}",
+    "phrasalCE": "Lnk",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Subordinating conjunction as linker"
+  },
+  {
+    "name": "CONJ_CCONJ",
+    "constructionType": "phrasal",
+    "priority": 55,
+    "pattern": "{CCONJ}",
+    "phrasalCE": "Conj",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Coordinating conjunction"
+  },
+  {
+    "name": "CLF_PART",
+    "constructionType": "phrasal",
+    "priority": 58,
+    "pattern": "{PART}",
+    "phrasalCE": "Clf",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Particle as classifier"
+  },
+  {
+    "name": "IDX_ADV",
+    "constructionType": "phrasal",
+    "priority": 58,
+    "pattern": "{ADV}",
+    "phrasalCE": "Idx",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Adverb as index/modifier"
+  },
+  {
+    "name": "HEAD_AUX",
+    "constructionType": "phrasal",
+    "priority": 75,
+    "pattern": "{AUX}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Auxiliary verb as phrasal head"
+  },
+  {
+    "name": "HEAD_SYM",
+    "constructionType": "phrasal",
+    "priority": 70,
+    "pattern": "{SYM}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Symbol as phrasal head"
+  },
+  {
+    "name": "HEAD_INTJ",
+    "constructionType": "phrasal",
+    "priority": 70,
+    "pattern": "{INTJ}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Interjection as phrasal head"
+  },
+  {
+    "name": "HEAD_X",
+    "constructionType": "phrasal",
+    "priority": 50,
+    "pattern": "{X}",
+    "phrasalCE": "Head",
+    "clausalCE": null,
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Unknown/other as phrasal head (fallback)"
+  }
+]

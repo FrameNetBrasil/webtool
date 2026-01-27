@@ -21,7 +21,7 @@
         </div>
     @endif
     <button type="button" class="ui button primary"
-            hx-post="/parser/v4/construction/{{ $construction->idConstruction }}/compile">
+            hx-post="/parser/construction/{{ $construction->idConstruction }}/compile">
         Recompile Pattern
     </button>
 </form>

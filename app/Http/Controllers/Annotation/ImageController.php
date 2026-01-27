@@ -33,12 +33,10 @@ class ImageController extends Controller
     #[Get(path: '/annotation/image/object')]
     public function getObject(ObjectSearchData $data)
     {
-        debug($data);
         if ($data->idObject == 0) {
             return view('Annotation.Image.Forms.formNewObject');
         }
         $object = ImageService::getObject($data->idObject);
-        debug($object);
         $object->annotationType = $data->annotationType;
         if (is_null($object)) {
             return $this->renderNotify('error', 'Object not found.');
@@ -58,10 +56,11 @@ class ImageController extends Controller
     public function objectSearch(ObjectSearchData $data)
     {
         $objects = ImageService::objectSearch($data);
+
         return view('Annotation.Image.Panes.search', [
             'objects' => $objects,
             'idDocument' => $data->idDocument,
-            'annotationType' => $data->annotationType
+            'annotationType' => $data->annotationType,
         ])->fragment('search');
     }
 
@@ -71,6 +70,7 @@ class ImageController extends Controller
         debug($data);
         try {
             $object = ImageService::createNewObjectAtLayer($data);
+
             return $this->redirect("/annotation/{$data->annotationType}/{$object->idDocument}/{$object->idDynamicObject}");
         } catch (\Exception $e) {
             return $this->renderNotify('error', $e->getMessage());
@@ -95,13 +95,15 @@ class ImageController extends Controller
         debug($data);
         try {
             $idStaticObject = ImageService::updateObjectAnnotation($data);
+
             return $this->redirect("/annotation/{$data->annotationType}/{$data->idDocument}/{$data->idObject}");
-//            $this->trigger('updateObjectAnnotationEvent');
-            //return Criteria::byId("dynamicobject", "idDynamicObject", $idDynamicObject);
-//            return $this->renderNotify("success", "Object updated.");
+            //            $this->trigger('updateObjectAnnotationEvent');
+            // return Criteria::byId("dynamicobject", "idDynamicObject", $idDynamicObject);
+            //            return $this->renderNotify("success", "Object updated.");
         } catch (\Exception $e) {
             debug($e->getMessage());
-            return $this->renderNotify("error", $e->getMessage());
+
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -136,9 +138,10 @@ class ImageController extends Controller
         debug($data);
         try {
             $object = ImageService::createObjectBBox($data);
-            $object->annotationType = "staticBBox";
+            $object->annotationType = 'staticBBox';
+
             return $object;
-            //return $this->redirect("/annotation/staticBBox/{$data->idDocument}/{$staticObject->idStaticObject}");
+            // return $this->redirect("/annotation/staticBBox/{$data->idDocument}/{$staticObject->idStaticObject}");
         } catch (\Exception $e) {
             return $this->renderNotify('error', $e->getMessage());
         }
@@ -148,18 +151,16 @@ class ImageController extends Controller
     public function updateBBox(UpdateBBoxData $data)
     {
         try {
-            debug("updateBBox",$data);
+            debug('updateBBox', $data);
             $idBoundingBox = ImageService::updateBBox($data);
             $boundingBox = Criteria::byId('boundingbox', 'idBoundingBox', $idBoundingBox);
             if (! $boundingBox) {
                 return $this->renderNotify('error', 'Updated bounding box not found.');
             }
+
             return $boundingBox;
         } catch (\Exception $e) {
             return $this->renderNotify('error', $e->getMessage());
         }
     }
-
-
-
 }

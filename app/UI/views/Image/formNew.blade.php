@@ -2,7 +2,7 @@
     <div class="app-layout">
         <x-partial::header></x-partial::header>
         <x-partial::breadcrumb
-            :sections="[['/','Home'],['','New Image']]"
+            :sections="[['/','Home'],['/manager','Manager'],['','New Image']]"
         ></x-partial::breadcrumb>
         <main class="app-main">
             <div class="ui container page">
@@ -18,18 +18,26 @@
                                 </div>
                             </div>
                             <div class="content">
+{{--                                <div class="field">--}}
+{{--                                    <label for="name">Name</label>--}}
+{{--                                    <div class="ui small input">--}}
+{{--                                        <input type="text" id="name" name="name" value="">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+
                                 <div class="field">
-                                    <label for="name">Name</label>
-                                    <div class="ui small input">
-                                        <input type="text" id="name" name="name" value="">
-                                    </div>
+                                    <x-combobox.document
+                                        id="idDocument"
+                                        label="Document"
+                                        :value="0"
+                                    ></x-combobox.document>
                                 </div>
 
                                 <div class="field">
                                     <x-combobox.language
                                         id="idLanguage"
                                         label="Language"
-                                        value=""
+                                        :value="\App\Services\AppService::getCurrentIdLanguage()"
                                     >
                                     </x-combobox.language>
                                 </div>

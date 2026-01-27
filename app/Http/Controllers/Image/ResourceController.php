@@ -9,6 +9,7 @@ use App\Data\Image\UpdateData;
 use App\Database\Criteria;
 use App\Http\Controllers\Controller;
 use App\Repositories\Image;
+use App\Services\Image\BrowseService;
 use Collective\Annotations\Routing\Attributes\Attributes\Delete;
 use Collective\Annotations\Routing\Attributes\Attributes\Get;
 use Collective\Annotations\Routing\Attributes\Attributes\Middleware;
@@ -18,20 +19,45 @@ use Collective\Annotations\Routing\Attributes\Attributes\Post;
 class ResourceController extends Controller
 {
     #[Get(path: '/image')]
-    public function resource()
+    public function browse(SearchData $search)
     {
-        return view("Image.resource");
+        $data = BrowseService::browseCorpusBySearch($search, [], 'CorpusAnnotation');
+        return view('Image.browse', [
+            'data' => $data,
+        ]);
     }
 
-    #[Get(path: '/image/grid/{fragment?}')]
-    #[Post(path: '/image/grid/{fragment?}')]
-    public function grid(SearchData $search, ?string $fragment = null)
+    #[Post(path: '/image/browse/searchImage')]
+    public function search(SearchData $search)
     {
-        $view = view("Image.grid", [
-            'search' => $search
+        if (! is_null($search->idCorpus)) {
+            $data = BrowseService::browseDocumentsByCorpus($search->idCorpus, [], 'CorpusAnnotation');
+        } elseif (! is_null($search->idDocument)) {
+            $data = BrowseService::browseImagesByDocument($search->idDocument);
+        } elseif ($search->idDocumentSentence != '') {
+            $data = BrowseService::browseImage($search->idDocumentSentence);
+            //            $title = "Sentence";
+        } elseif ($search->document != '') {
+            $data = BrowseService::browseDocumentBySearch($search, [], 'CorpusAnnotation');
+            //            $title = "Documents";
+        } else {
+            $data = BrowseService::browseCorpusBySearch($search, [], 'CorpusAnnotation');
+            //            $title = "Corpora";
+        }
+        return view('Image.tree', [
+            'data' => $data,
         ]);
-        return (is_null($fragment) ? $view : $view->fragment('search'));
     }
+
+//    #[Get(path: '/image/grid/{fragment?}')]
+//    #[Post(path: '/image/grid/{fragment?}')]
+//    public function grid(SearchData $search, ?string $fragment = null)
+//    {
+//        $view = view("Image.grid", [
+//            'search' => $search
+//        ]);
+//        return (is_null($fragment) ? $view : $view->fragment('search'));
+//    }
 
     #[Get(path: '/image/data')]
     public function data(SearchData $search)
@@ -82,11 +108,15 @@ class ResourceController extends Controller
         ]);
     }
 
-    #[Get(path: '/image/{id}/editForm')]
-    public function editForm(string $id)
+    #[Get(path: '/image/{id}/formEdit')]
+    public function formEdit(string $id)
     {
-        return view("Image.editForm",[
-            'image' => Image::byId($id)
+        $documentImage = Criteria::table("document_image")
+            ->where("idImage", $id)
+            ->first();
+        return view("Image.formEdit",[
+            'image' => Image::byId($id),
+            'idDocument' =>$documentImage->idDocument,
         ]);
     }
 
@@ -94,11 +124,16 @@ class ResourceController extends Controller
     public function update(UpdateData $data)
     {
         try {
+            debug($data);
             Criteria::table("image")
                 ->where("idImage",$data->idImage)
                 ->update([
                     "name" => $data->name,
                     "currentURL" => $data->currentURL,
+                    'width' => $data->width,
+                    'height' => $data->height,
+                    'depth' => $data->depth,
+                    'idLanguage' => $data->idLanguage,
                 ]);
             $this->trigger("reload-gridImage");
             return $this->renderNotify("success", "Image updated.");

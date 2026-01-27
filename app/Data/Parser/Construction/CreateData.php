@@ -37,7 +37,7 @@ class CreateData extends Data
         #[Max(100)]
         public ?string $sententialCE = null,
 
-        public ?string $constraints = null,
+        public ?string $constraints = '',
 
         #[Max(100)]
         public ?string $aggregateAs = null,
@@ -52,9 +52,9 @@ class CreateData extends Data
         #[Min(0), Max(10)]
         public int $lookaheadMaxDistance = 3,
 
-        public ?string $invalidationPatterns = null,
+        public ?string $invalidationPatterns = '',
 
-        public ?string $confirmationPatterns = null,
+        public ?string $confirmationPatterns = '',
 
         #[Max(2000)]
         public ?string $description = null,

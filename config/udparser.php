@@ -28,6 +28,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | API Endpoints
+    |--------------------------------------------------------------------------
+    |
+    | The available endpoints for the Trankit service:
+    | - tkparser: Full parsing from plain text (tokenization + parsing)
+    | - tkbytoken: Parse pre-tokenized input (skips tokenization phase)
+    |
+    */
+    'endpoints' => [
+        'parser' => 'tkparser',      // Full text parsing with tokenization
+        'by_token' => 'tkbytoken',   // Pre-tokenized parsing
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Default Language
     |--------------------------------------------------------------------------
     |

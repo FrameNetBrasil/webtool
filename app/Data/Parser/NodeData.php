@@ -13,6 +13,5 @@ class NodeData extends Data
         public int $activation = 1,
         public bool $isFocus = false,
         public int $positionInSentence = 0,
-        public ?int $idMWE = null,
     ) {}
 }

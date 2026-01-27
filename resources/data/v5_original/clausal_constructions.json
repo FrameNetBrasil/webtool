@@ -1,0 +1,234 @@
+[
+  {
+    "name": "PRED_SIMPLE",
+    "constructionType": "clausal",
+    "priority": 45,
+    "pattern": "{VERB}",
+    "phrasalCE": null,
+    "clausalCE": "Pred",
+    "sententialCE": null,
+    "constraints": [
+      {
+        "type": "feature_equals",
+        "element": 0,
+        "feature": "VerbForm",
+        "value": "Fin"
+      }
+    ],
+    "description": "Simple predicate (finite verb)"
+  },
+  {
+    "name": "PRED_AUX_VERB",
+    "constructionType": "clausal",
+    "priority": 48,
+    "pattern": "{AUX} {VERB}",
+    "phrasalCE": null,
+    "clausalCE": "Pred",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Complex predicate with auxiliary"
+  },
+  {
+    "name": "ARG_PRON",
+    "constructionType": "clausal",
+    "priority": 38,
+    "pattern": "{PRON}",
+    "phrasalCE": null,
+    "clausalCE": "Arg",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Pronominal argument"
+  },
+  {
+    "name": "ARG_PROPN",
+    "constructionType": "clausal",
+    "priority": 37,
+    "pattern": "{PROPN}",
+    "phrasalCE": null,
+    "clausalCE": "Arg",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Proper noun argument"
+  },
+  {
+    "name": "ARG_NP_SIMPLE",
+    "constructionType": "clausal",
+    "priority": 35,
+    "pattern": "{NOUN}",
+    "phrasalCE": null,
+    "clausalCE": "Arg",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Simple NP argument (bare noun)"
+  },
+  {
+    "name": "ARG_NP_DET_NOUN",
+    "constructionType": "clausal",
+    "priority": 36,
+    "pattern": "{DET} {NOUN}",
+    "phrasalCE": null,
+    "clausalCE": "Arg",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "NP argument with determiner"
+  },
+  {
+    "name": "CPP_AUX",
+    "constructionType": "clausal",
+    "priority": 30,
+    "pattern": "{AUX}",
+    "phrasalCE": null,
+    "clausalCE": "CPP",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Auxiliary as clause peripheral"
+  },
+  {
+    "name": "CPP_ADV",
+    "constructionType": "clausal",
+    "priority": 28,
+    "pattern": "{ADV}",
+    "phrasalCE": null,
+    "clausalCE": "CPP",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Adverb as clause peripheral"
+  },
+  {
+    "name": "CPP_PART",
+    "constructionType": "clausal",
+    "priority": 28,
+    "pattern": "{PART}",
+    "phrasalCE": null,
+    "clausalCE": "CPP",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Particle as clause peripheral"
+  },
+  {
+    "name": "FPM_PP_SIMPLE",
+    "constructionType": "clausal",
+    "priority": 25,
+    "pattern": "{ADP} {NOUN}",
+    "phrasalCE": null,
+    "clausalCE": "FPM",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Simple prepositional phrase"
+  },
+  {
+    "name": "FPM_PP_DET",
+    "constructionType": "clausal",
+    "priority": 26,
+    "pattern": "{ADP} {DET} {NOUN}",
+    "phrasalCE": null,
+    "clausalCE": "FPM",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Prepositional phrase with determiner"
+  },
+  {
+    "name": "GEN_POSS_PRON",
+    "constructionType": "clausal",
+    "priority": 32,
+    "pattern": "{PRON}",
+    "phrasalCE": null,
+    "clausalCE": "Gen",
+    "sententialCE": null,
+    "constraints": [
+      {
+        "type": "feature_equals",
+        "element": 0,
+        "feature": "Poss",
+        "value": "Yes"
+      }
+    ],
+    "description": "Possessive pronoun as genitive"
+  },
+  {
+    "name": "GEN_POSS_DET",
+    "constructionType": "clausal",
+    "priority": 32,
+    "pattern": "{DET}",
+    "phrasalCE": null,
+    "clausalCE": "Gen",
+    "sententialCE": null,
+    "constraints": [
+      {
+        "type": "feature_in",
+        "element": 0,
+        "feature": "PronType",
+        "values": ["Prs", "Dem"]
+      },
+      {
+        "type": "feature_equals",
+        "element": 0,
+        "feature": "Poss",
+        "value": "Yes"
+      }
+    ],
+    "description": "Possessive determiner as genitive"
+  },
+  {
+    "name": "CONJ_CCONJ_CLAUSAL",
+    "constructionType": "clausal",
+    "priority": 24,
+    "pattern": "{CCONJ}",
+    "phrasalCE": null,
+    "clausalCE": "Conj",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Coordinating conjunction at clausal level"
+  },
+  {
+    "name": "CONJ_SCONJ_CLAUSAL",
+    "constructionType": "clausal",
+    "priority": 24,
+    "pattern": "{SCONJ}",
+    "phrasalCE": null,
+    "clausalCE": "Conj",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Subordinating conjunction at clausal level"
+  },
+  {
+    "name": "CPP_NEG",
+    "constructionType": "clausal",
+    "priority": 29,
+    "pattern": "{ADV}",
+    "phrasalCE": null,
+    "clausalCE": "CPP",
+    "sententialCE": null,
+    "constraints": [
+      {
+        "type": "feature_equals",
+        "element": 0,
+        "feature": "Polarity",
+        "value": "Neg"
+      }
+    ],
+    "description": "Negative adverb as clause peripheral"
+  },
+  {
+    "name": "FPM_ADV",
+    "constructionType": "clausal",
+    "priority": 24,
+    "pattern": "{ADV}",
+    "phrasalCE": null,
+    "clausalCE": "FPM",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Adverb as frame-peripheral modifier"
+  },
+  {
+    "name": "ARG_NUM",
+    "constructionType": "clausal",
+    "priority": 33,
+    "pattern": "{NUM}",
+    "phrasalCE": null,
+    "clausalCE": "Arg",
+    "sententialCE": null,
+    "constraints": [],
+    "description": "Numeral as argument"
+  }
+]

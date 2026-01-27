@@ -1,6 +1,6 @@
 <x-layout.resource>
     <x-slot:head>
-        <x-partial::breadcrumb :sections="[['/','Home'],['','Relations']]"></x-partial::breadcrumb>
+        <x-partial::breadcrumb :sections="[['/','Home'],['/manager','Manager'],['','Relations']]"></x-partial::breadcrumb>
     </x-slot:head>
     <x-slot:title>
         Relations

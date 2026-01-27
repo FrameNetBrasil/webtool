@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Parser;
 use App\Data\Parser\Grammar\CreateData;
 use App\Data\Parser\Grammar\SearchData;
 use App\Data\Parser\Grammar\UpdateData;
-use App\Database\Criteria;
 use App\Http\Controllers\Controller;
 use App\Repositories\Parser\GrammarGraph;
 use Collective\Annotations\Routing\Attributes\Attributes\Delete;
@@ -20,6 +19,7 @@ class GrammarGraphController extends Controller
     public function index(SearchData $search)
     {
         $grammars = GrammarGraph::listToGrid($search);
+
         return view('Parser.Grammar.index', [
             'grammars' => $grammars,
         ]);
@@ -29,6 +29,7 @@ class GrammarGraphController extends Controller
     public function search(SearchData $search)
     {
         $grammars = GrammarGraph::listToGrid($search);
+
         return view('Parser.Grammar.index', [
             'grammars' => $grammars,
         ])->fragment('search');
@@ -87,9 +88,9 @@ class GrammarGraphController extends Controller
 
             $this->trigger('reload-gridGrammar');
 
-            return viewNotify('success', "Grammar graph '{$data->name}' created successfully.");
+            return $this->renderNotify('success', "Grammar graph '{$data->name}' created successfully.");
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -108,9 +109,9 @@ class GrammarGraphController extends Controller
 
             $this->trigger('reload-gridGrammar');
 
-            return viewNotify('success', 'Grammar graph updated successfully.');
+            return $this->renderNotify('success', 'Grammar graph updated successfully.');
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -129,9 +130,9 @@ class GrammarGraphController extends Controller
             $this->trigger('reload-gridGrammar');
             $this->clientRedirect('/parser/grammar');
 
-            return viewNotify('success', "Grammar graph '{$grammarName}' deleted successfully.");
+            return $this->renderNotify('success', "Grammar graph '{$grammarName}' deleted successfully.");
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 }

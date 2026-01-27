@@ -88,13 +88,15 @@ class OpticalFlow {
                 }
 //console.log(before);
                 if (before.length > 0) {
-                    let diff = nudged.estimate('T', before, after);
+                    // Use TSR (Translation + Scaling + Rotation) to track position AND size changes
+                    let diff = nudged.estimate('TSR', before, after);
                     let translation = diff.getTranslation();
+                    let scale = diff.getScale();
 
                     let minX = Math.max(Math.round(bbox.x + translation[0]), 0);
                     let minY = Math.max(Math.round(bbox.y + translation[1]), 0);
-                    let maxX = Math.min(Math.round(bbox.x + bbox.width + translation[0]), imageData.width - 2 * bboxBorderWidth);
-                    let maxY = Math.min(Math.round(bbox.y + bbox.height + translation[1]), imageData.height - 2 * bboxBorderWidth);
+                    let maxX = Math.min(Math.round(bbox.x + bbox.width * scale + translation[0]), imageData.width - 2 * bboxBorderWidth);
+                    let maxY = Math.min(Math.round(bbox.y + bbox.height * scale + translation[1]), imageData.height - 2 * bboxBorderWidth);
                     let newWidth = maxX - minX;
                     let newHeight = maxY - minY;
 

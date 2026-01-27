@@ -38,10 +38,10 @@ return [
     // Export filters and defaults
     'filters' => [
         // Only export active items by default
-        'active_only' => true,
+        'active_only' => false,
 
         // Default corpus filter (null = all corpora)
-        'default_corpus' => null,
+        'default_corpus' => [136, 21, 99, 31, 4, 5, 6, 7, 8, 11, 48, 73, 66, 77, 87, 151, 78, 78, 79, 57, 63, 56, 64, 92, 44, 153, 157, 158, 201, 46, 65, 62, 61, 22, 82, 67, 55, 43],
 
         // Frame export filters
         'frames' => [
@@ -81,9 +81,9 @@ return [
                 'rel_subframe',
                 'rel_using',
                 'rel_metaphorical_projection',
-//                'rel_coreset',
-//                'rel_excludes',
-//                'rel_requires',
+                //                'rel_coreset',
+                //                'rel_excludes',
+                //                'rel_requires',
             ],
         ],
     ],
@@ -177,11 +177,15 @@ return [
 
     // Performance settings
     'performance' => [
-        'memory_limit' => '512M',
+        'memory_limit' => '2G', // Increased for large exports
         'max_execution_time' => 0, // 0 = no limit
         'chunk_size' => 1000, // For large result sets
         'enable_gc' => true, // Enable garbage collection
     ],
+
+    // Sentence processing chunk size (for memory optimization in fulltext exports)
+    // Smaller values use less memory but may be slower
+    'sentence_chunk_size' => 10,
 
     // Logging configuration
     'logging' => [

@@ -10,6 +10,13 @@
     </div>
 
     <script src="/scripts/jointjs/dist/joint.js"></script>
+    <script src="/scripts/dagre/dist/dagre.min.js"></script>
+    <script>
+        // Expose graphlib globally for joint.layout.DirectedGraph
+        if (typeof dagre !== 'undefined' && dagre.graphlib) {
+            window.graphlib = dagre.graphlib;
+        }
+    </script>
     <script src="/scripts/jointjs/dist/joint.layout.DirectedGraph.js"></script>
     <link rel="stylesheet" href="/scripts/jointjs/dist/joint.css">
 

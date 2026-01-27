@@ -5,79 +5,79 @@ namespace App\Http\Controllers\Image;
 use App\Data\Image\DocumentData;
 use App\Database\Criteria;
 use App\Http\Controllers\Controller;
-use App\Repositories\Document;
-use App\Repositories\Image;
 use App\Services\AppService;
 use Collective\Annotations\Routing\Attributes\Attributes\Delete;
 use Collective\Annotations\Routing\Attributes\Attributes\Get;
 use Collective\Annotations\Routing\Attributes\Attributes\Middleware;
 use Collective\Annotations\Routing\Attributes\Attributes\Post;
 
-#[Middleware("master")]
+#[Middleware('auth')]
 class DocumentController extends Controller
 {
-    #[Get(path: '/image/{id}/document')]
-    public function document(int $id)
+    #[Get(path: '/image/{id}/documents')]
+    public function documents(int $id)
     {
-        return view("Image.document", [
-            'image' => Image::byId($id)
-        ]);
-    }
-
-    #[Get(path: '/image/{id}/document/formNew')]
-    public function documentFormNew(int $id)
-    {
-        return view("Image.documentNew", [
-            'idImage' => $id
-        ]);
-    }
-
-    #[Get(path: '/image/{id}/document/grid')]
-    public function documentGrid(int $id)
-    {
-        $documents = Criteria::table("view_document_image as di")
-            ->join("view_document as d", "di.idDocument", "=", "d.idDocument")
-            ->where("di.idImage", $id)
-            ->where("d.idLanguage", AppService::getCurrentIdLanguage())
-            ->all();
-        return view("Image.documentGrid", [
+        return view('Image.documents', [
             'idImage' => $id,
-            'documents' => $documents
         ]);
     }
 
-    #[Post(path: '/image/{id}/document/new')]
-    public function documentNew(DocumentData $data)
+    #[Get(path: '/image/{id}/documents/formNew')]
+    public function documentsFormNew(int $id)
     {
-
-        $image = Image::byId($data->idImage);
-        $document = Document::byId($data->idDocument);
-        $json = json_encode([
-            'idAnnotationObject1' => $document->idAnnotationObject,
-            'idAnnotationObject2' => $image->idAnnotationObject,
-            'relationType' => 'rel_document_image'
+        return view('Image.documentsNew', [
+            'idImage' => $id,
         ]);
-        Criteria::function("objectrelation_create(?)",[$json]);
-        $this->trigger('reload-gridImageDocument');
-        return $this->renderNotify("success", "Image associated with Document.");
     }
 
-    #[Delete(path: '/image/{id}/document/{idDocument}')]
-    public function delete(int $id, int $idDocument)
+    #[Get(path: '/image/{id}/documents/grid')]
+    public function documentsGrid(int $id)
+    {
+        $documents = Criteria::table('view_document_image as di')
+            ->join("view_document as d", "di.idDocument", "=", "d.idDocument")
+            ->select('d.idDocument', 'd.name', 'd.corpusName')
+            ->where('di.idImage', $id)
+            ->where('d.idLanguage', AppService::getCurrentIdLanguage())
+            ->orderBy('d.name')
+            ->all();
+
+        return view('Image.documentsGrid', [
+            'idImage' => $id,
+            'documents' => $documents,
+        ]);
+    }
+
+    #[Post(path: '/image/documents/new')]
+    public function documentsNew(DocumentData $data)
     {
         try {
-            $image = Image::byId($id);
-            $document = Document::byId($idDocument);
-            Criteria::table("annotationobjectrelation")
-                ->where("idAnnotationObject1", $document->idAnnotationObject)
-                ->where("idAnnotationObject2", $image->idAnnotationObject)
-                ->delete();
-            $this->trigger('reload-gridImageDocument');
-            return $this->renderNotify("success", "Image removed from Document.");
+            if ($data->idDocument > 0) {
+                Criteria::create('document_image',[
+                    'idDocument' => $data->idDocument,
+                    'idImage' => $data->idImage,
+                ]);
+            }
+            $this->trigger('reload-gridDocuments');
+            return $this->renderNotify('success', 'Document added to corpus.');
         } catch (\Exception $e) {
-            return $this->renderNotify("error", $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
+    #[Delete(path: '/image/{idCorpus}/documents/{idDocument}')]
+    public function documentsDelete(int $idImage, int $idDocument)
+    {
+        try {
+            Criteria::table('document_image')
+            ->where('idImage', $idImage)
+            ->where('idDocument', $idDocument)
+            ->delete();
 
+            $this->trigger('reload-gridDocuments');
+
+            return $this->renderNotify('success', 'Document removed from image.');
+        } catch (\Exception $e) {
+            return $this->renderNotify('error', $e->getMessage());
+        }
+    }
 }

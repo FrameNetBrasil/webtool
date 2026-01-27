@@ -25,7 +25,6 @@ class BrowseService
             })
             ->orderBy('name')->all();
         foreach ($frames as $frame) {
-            debug($frame);
             $result[$frame->idFrame] = [
                 'id' => $frame->idFrame,
                 'type' => 'frame',

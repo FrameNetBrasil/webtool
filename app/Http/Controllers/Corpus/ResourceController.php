@@ -8,7 +8,6 @@ use App\Data\Corpus\SearchData;
 use App\Database\Criteria;
 use App\Http\Controllers\Controller;
 use App\Repositories\Corpus;
-use App\Services\Annotation\BrowseService;
 use App\Services\Corpus\BrowseService as CorpusBrowseService;
 use Collective\Annotations\Routing\Attributes\Attributes\Delete;
 use Collective\Annotations\Routing\Attributes\Attributes\Get;

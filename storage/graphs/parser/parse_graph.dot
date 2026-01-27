@@ -1,0 +1,210 @@
+digraph ParseGraph {
+  rankdir=TB;
+  node [style=filled, fontname="Arial", fontsize=10];
+  edge [fontname="Arial", fontsize=9];
+
+  label="Parse Graph: o homem comprou um carro";
+  labelloc="t";
+  fontsize=14;
+
+  subgraph cluster_t0 {
+    label="T=0";
+    style=dashed;
+    color=gray;
+
+    word_t0 [label="o\n(DET)", shape=box, fillcolor="#90EE90"];
+    c9523_t0 [label="DET\n9523\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9525_t0 [label="MOD\n9525\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9544_t0 [label="DET\n9544\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+  }
+
+  subgraph cluster_t1 {
+    label="T=1";
+    style=dashed;
+    color=gray;
+
+    word_t1 [label="homem\n(NOUN)", shape=box, fillcolor="#90EE90"];
+    c9520_t1 [label="NOUN\n9520\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9523_t1 [label="DET\n9523\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9525_t1 [label="MOD\n9525\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9530_t1 [label="ARG\n9530\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9540_t1 [label="NOUN\n9540\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9544_t1 [label="DET\n9544\n(L5=0.8)", shape=ellipse, fillcolor="#32CD32"];
+  }
+
+  subgraph cluster_t2 {
+    label="T=2";
+    style=dashed;
+    color=gray;
+
+    word_t2 [label="comprou\n(VERB)", shape=box, fillcolor="#90EE90"];
+    c9520_t2 [label="NOUN\n9520\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9521_t2 [label="VERB\n9521\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9523_t2 [label="DET\n9523\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9525_t2 [label="MOD\n9525\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9530_t2 [label="ARG\n9530\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9540_t2 [label="NOUN\n9540\n(L5=0.8)", shape=ellipse, fillcolor="#32CD32"];
+    c9542_t2 [label="VERB\n9542\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9544_t2 [label="DET\n9544\n(L5=0.64)", shape=ellipse, fillcolor="#FFD700"];
+  }
+
+  subgraph cluster_t3 {
+    label="T=3";
+    style=dashed;
+    color=gray;
+
+    word_t3 [label="um\n(DET)", shape=box, fillcolor="#90EE90"];
+    c9520_t3 [label="NOUN\n9520\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9521_t3 [label="VERB\n9521\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9523_t3 [label="DET\n9523\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9525_t3 [label="MOD\n9525\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9530_t3 [label="ARG\n9530\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9533_t3 [label="PRED\n9533\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9535_t3 [label="SUBJECT\n9535\n(L5=1)", shape=box, fillcolor="#32CD32"];
+    c9540_t3 [label="NOUN\n9540\n(L5=0.64)", shape=ellipse, fillcolor="#FFD700"];
+    c9542_t3 [label="VERB\n9542\n(L5=0.8)", shape=ellipse, fillcolor="#32CD32"];
+    c9544_t3 [label="DET\n9544\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+  }
+
+  subgraph cluster_t4 {
+    label="T=4";
+    style=dashed;
+    color=gray;
+
+    word_t4 [label="carro\n(NOUN)", shape=box, fillcolor="#90EE90"];
+    c9520_t4 [label="NOUN\n9520\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9521_t4 [label="VERB\n9521\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9523_t4 [label="DET\n9523\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9525_t4 [label="MOD\n9525\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9530_t4 [label="ARG\n9530\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9533_t4 [label="PRED\n9533\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9535_t4 [label="SUBJECT\n9535\n(L5=1)", shape=box, fillcolor="#32CD32"];
+    c9536_t4 [label="OBJECT\n9536\n(L5=1)", shape=box, fillcolor="#32CD32"];
+    c9537_t4 [label="CLAUSE\n9537\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9540_t4 [label="NOUN\n9540\n(L5=1)", shape=ellipse, fillcolor="#32CD32"];
+    c9542_t4 [label="VERB\n9542\n(L5=0.64)", shape=ellipse, fillcolor="#FFD700"];
+    c9544_t4 [label="DET\n9544\n(L5=0.8)", shape=ellipse, fillcolor="#32CD32"];
+  }
+
+  // Activation links (word -> construction)
+  word_t0 -> c9523_t0 [color="#228B22", label="activates"];
+  word_t0 -> c9525_t0 [color="#228B22", label="activates"];
+  word_t0 -> c9544_t0 [color="#228B22", label="activates"];
+  word_t1 -> c9520_t1 [color="#228B22", label="activates"];
+  word_t1 -> c9523_t1 [color="#228B22", label="activates"];
+  word_t1 -> c9525_t1 [color="#228B22", label="activates"];
+  word_t1 -> c9530_t1 [color="#228B22", label="activates"];
+  word_t1 -> c9540_t1 [color="#228B22", label="activates"];
+  word_t1 -> c9544_t1 [color="#228B22", label="activates"];
+  word_t2 -> c9520_t2 [color="#228B22", label="activates"];
+  word_t2 -> c9521_t2 [color="#228B22", label="activates"];
+  word_t2 -> c9523_t2 [color="#228B22", label="activates"];
+  word_t2 -> c9525_t2 [color="#228B22", label="activates"];
+  word_t2 -> c9530_t2 [color="#228B22", label="activates"];
+  word_t2 -> c9540_t2 [color="#228B22", label="activates"];
+  word_t2 -> c9542_t2 [color="#228B22", label="activates"];
+  word_t2 -> c9544_t2 [color="#228B22", label="activates"];
+  word_t3 -> c9520_t3 [color="#228B22", label="activates"];
+  word_t3 -> c9521_t3 [color="#228B22", label="activates"];
+  word_t3 -> c9523_t3 [color="#228B22", label="activates"];
+  word_t3 -> c9525_t3 [color="#228B22", label="activates"];
+  word_t3 -> c9530_t3 [color="#228B22", label="activates"];
+  word_t3 -> c9533_t3 [color="#228B22", label="activates"];
+  word_t3 -> c9535_t3 [color="#228B22", label="activates"];
+  word_t3 -> c9540_t3 [color="#228B22", label="activates"];
+  word_t3 -> c9542_t3 [color="#228B22", label="activates"];
+  word_t3 -> c9544_t3 [color="#228B22", label="activates"];
+  word_t4 -> c9520_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9521_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9523_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9525_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9530_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9533_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9535_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9536_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9537_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9540_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9542_t4 [color="#228B22", label="activates"];
+  word_t4 -> c9544_t4 [color="#228B22", label="activates"];
+
+  // Construction hierarchy (feedforward)
+  c9523_t0 -> c9525_t0 [color="#4169E1", style=dashed, label="feeds"];
+  c9523_t0 -> c9525_t1 [color="#4169E1", style=dashed, label="feeds"];
+  c9544_t0 -> c9525_t0 [color="#4169E1", style=dashed, label="feeds"];
+  c9544_t0 -> c9525_t1 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t1 -> c9525_t1 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t1 -> c9530_t1 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t1 -> c9525_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t1 -> c9530_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9523_t1 -> c9525_t1 [color="#4169E1", style=dashed, label="feeds"];
+  c9523_t1 -> c9525_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t1 -> c9525_t1 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t1 -> c9530_t1 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t1 -> c9525_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t1 -> c9530_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9544_t1 -> c9525_t1 [color="#4169E1", style=dashed, label="feeds"];
+  c9544_t1 -> c9525_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t2 -> c9525_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t2 -> c9530_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t2 -> c9525_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t2 -> c9530_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9521_t2 -> c9533_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9523_t2 -> c9525_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9523_t2 -> c9525_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9530_t2 -> c9535_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t2 -> c9525_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t2 -> c9530_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t2 -> c9525_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t2 -> c9530_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9542_t2 -> c9533_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9544_t2 -> c9525_t2 [color="#4169E1", style=dashed, label="feeds"];
+  c9544_t2 -> c9525_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t3 -> c9525_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t3 -> c9530_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t3 -> c9525_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t3 -> c9530_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9521_t3 -> c9533_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9521_t3 -> c9533_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9523_t3 -> c9525_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9523_t3 -> c9525_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9530_t3 -> c9535_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9530_t3 -> c9535_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9530_t3 -> c9536_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9533_t3 -> c9535_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9533_t3 -> c9535_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9533_t3 -> c9536_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9533_t3 -> c9537_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9535_t3 -> c9537_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t3 -> c9525_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t3 -> c9530_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t3 -> c9525_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t3 -> c9530_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9542_t3 -> c9533_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9542_t3 -> c9533_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9544_t3 -> c9525_t3 [color="#4169E1", style=dashed, label="feeds"];
+  c9544_t3 -> c9525_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t4 -> c9525_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9520_t4 -> c9530_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9521_t4 -> c9533_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9523_t4 -> c9525_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9530_t4 -> c9535_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9530_t4 -> c9536_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9533_t4 -> c9535_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9533_t4 -> c9536_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9533_t4 -> c9537_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9535_t4 -> c9537_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9536_t4 -> c9537_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t4 -> c9525_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9540_t4 -> c9530_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9542_t4 -> c9533_t4 [color="#4169E1", style=dashed, label="feeds"];
+  c9544_t4 -> c9525_t4 [color="#4169E1", style=dashed, label="feeds"];
+
+  // Bindings (filler -> slot)
+  c9530_t1 -> c9535_t3 [color="#FF6347", style=bold, label="left"];
+  c9533_t3 -> c9535_t3 [color="#9370DB", style=bold, label="right"];
+  c9533_t3 -> c9536_t4 [color="#FF6347", style=bold, label="left"];
+  c9530_t1 -> c9536_t4 [color="#9370DB", style=bold, label="right"];
+  c9530_t1 -> c9535_t4 [color="#FF6347", style=bold, label="left"];
+  c9533_t3 -> c9535_t4 [color="#9370DB", style=bold, label="right"];
+
+}

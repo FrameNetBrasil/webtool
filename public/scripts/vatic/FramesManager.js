@@ -15,10 +15,22 @@ class FramesManager {
 
     setConfig(config) {
         this.config = config;
-        this.video = document.getElementById(config.idVideoDOMElement);
+        // Support both old (idVideoDOMElement) and new (video) config patterns
+        if (config.video) {
+            this.video = config.video;
+        } else if (config.idVideoDOMElement) {
+            this.video = document.getElementById(config.idVideoDOMElement);
+        }
+
         this.dimensionsInitialized = true;
-        this.canvas.width = annotation.video.originalDimensions.width;
-        this.canvas.height = annotation.video.originalDimensions.height;
+        // Use video dimensions if available, otherwise use canvas dimensions from config
+        if (this.video) {
+            this.canvas.width = this.video.videoWidth || config.canvas?.width || 640;
+            this.canvas.height = this.video.videoHeight || config.canvas?.height || 480;
+        } else if (config.canvas) {
+            this.canvas.width = config.canvas.width;
+            this.canvas.height = config.canvas.height;
+        }
         this.canvas.style.position = "absolute";
         this.canvas.style.top = "0px";
         this.canvas.style.left = "0px";
@@ -49,11 +61,8 @@ class FramesManager {
         let frameImage = this.frames[frameNumber];
         if (typeof frameImage === "undefined") {
             let frameImage = await this.getFrameFromVideo();
-            console.error("get frame from video");
             this.addFrame(frameNumber, frameImage);
             return frameImage;
-        } else {
-            console.error("frameImage undefined");
         }
         return frameImage;
     }

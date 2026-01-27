@@ -1,0 +1,134 @@
+[
+    {
+        "name": "N",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({NOUN} | {PROPN})",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal head"
+    },
+    {
+        "name": "V",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{VERB}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal head"
+    },
+    {
+        "name": "MOD",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({DET} | {NUM} | {ADJ})",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Left mod"
+    },
+    {
+        "name": "DEM",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{PRON}",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal Demonstrative pronoun"
+    },
+    {
+        "name": "ADP",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{ADP}",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal ADP"
+    },
+    {
+        "name": "CPP",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{AUX}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal "
+    },
+    {
+        "name": "PRX",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "(que | onde)",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Proxy lemmas"
+    },
+    {
+        "name": "roupa_de_banho",
+        "constructionType": "mwe",
+        "priority": 80,
+        "pattern": "roupa de banho",
+        "phrasalCE": "N",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "MWE"
+    },
+    {
+        "name": "roupa_de_cama",
+        "constructionType": "mwe",
+        "priority": 80,
+        "pattern": "roupa de cama",
+        "phrasalCE": "N",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "MWE"
+    },
+    {
+        "name": "jogo_de_banho",
+        "constructionType": "mwe",
+        "priority": 80,
+        "pattern": "jogo de banho",
+        "phrasalCE": "N",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "MWE"
+    },
+    {
+        "name": "jogo_de_cama",
+        "constructionType": "mwe",
+        "priority": 80,
+        "pattern": "jogo de cama",
+        "phrasalCE": "N",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "MWE"
+    },
+    {
+        "name": "ferro_de_passar_roupa",
+        "constructionType": "mwe",
+        "priority": 80,
+        "pattern": "ferro de passar roupa",
+        "phrasalCE": "N",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "MWE"
+    }
+]

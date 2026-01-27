@@ -2,7 +2,7 @@
     <div class="app-layout">
         <x-partial::header></x-partial::header>
         <x-partial::breadcrumb
-            :sections="[['/','Home'],['','Corpus/Document']]"
+            :sections="[['/','Home'],['/manager','Manager'],['','Corpus/Document']]"
         ></x-partial::breadcrumb>
         <main class="app-main">
             <x-ui::browse-tree

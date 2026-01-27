@@ -78,7 +78,7 @@ class AuthUserService
                     }
                     session(['mail_token' => $token]);
                     session(['twofactor_iduser' => $user->idUser]);
-                    Mail::to($user->email)->send(new WebToolMail($token));
+                    //Mail::to($user->email)->send(new WebToolMail($token));
                     return 'checked';
                 } else {
                     return 'failed';

@@ -585,7 +585,10 @@ class TrankitService
     {
         try {
             $ud = [];
-            $result = $this->processTrankit($sentence, $idLanguage);
+            $sentence = $this->handlePunct($sentence);
+            $tokens = explode(' ', $sentence);
+            //$result = $this->processTrankit($sentence, $idLanguage);
+            $result = $this->processTrankitTokens($tokens, $idLanguage);
             // Process tokens without expanding contractions
             // This preserves the original text like "pelo" instead of splitting to "por" + "o"
             $array = [];

@@ -1,0 +1,12 @@
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/image/{{$idImage}}/documents/formNew"
+></div>
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/image/{{$idImage}}/documents/grid"
+></div>

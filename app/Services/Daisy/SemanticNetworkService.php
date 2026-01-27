@@ -146,7 +146,14 @@ class SemanticNetworkService
         // Step 4: Qualia relations (searchType >= 4)
         if ($this->searchType >= 4) {
             debug('  Step 4: Querying qualia relations...');
-            $qualiaRelations = $this->queryQualiaRelations($frame->idLU, $windows);
+            // $qualiaRelations = $this->queryQualiaRelations($frame->idLU, $windows);
+            $qualiaRelations = [
+                [
+                    'idLU' => $frame->idLU,
+                    'frameEntry' => $frame->frameEntry,
+                    'weight' => 0.9,
+                ],
+            ];
             debug('  Found {count} qualia relations', ['count' => count($qualiaRelations)]);
             $pool = array_merge($pool, $this->processQualiaRelations($qualiaRelations, $frame->frameEntry, $idWindow));
         } else {
@@ -168,19 +175,26 @@ class SemanticNetworkService
 
         return Cache::remember($cacheKey, $ttl, function () use ($idFrame) {
             try {
-                $relations = Criteria::table('frame')
-                    ->selectRaw('frame.idFrame, rt.entry as relationType, frame.Entry as frameEntry')
-                    ->join('entity as entity1', 'frame.idEntity', '=', 'entity1.idEntity')
-                    ->join('entityrelation as er', 'entity1.idEntity', '=', 'er.idEntity1')
-                    ->join('relationtype as rt', 'er.idRelationType', '=', 'rt.idRelationType')
-                    ->join('entity as entity2', 'er.idEntity2', '=', 'entity2.idEntity')
-                    ->join('frame as relatedFrame', 'entity2.idEntity', '=', 'relatedFrame.idEntity')
-                    ->where('relatedFrame.idFrame', '=', $idFrame)
-                    ->whereIn('rt.entry', ['rel_inheritance', 'rel_perspective_on', 'rel_subframe', 'rel_using'])
-                    ->orderBy('rt.entry')
-                    ->orderBy('relatedFrame.idFrame')
-                    ->get()
-                    ->toArray();
+                //                $relations = Criteria::table('frame')
+                //                    ->selectRaw('frame.idFrame, rt.entry as relationType, frame.Entry as frameEntry')
+                //                    ->join('entity as entity1', 'frame.idEntity', '=', 'entity1.idEntity')
+                //                    ->join('entityrelation as er', 'entity1.idEntity', '=', 'er.idEntity1')
+                //                    ->join('relationtype as rt', 'er.idRelationType', '=', 'rt.idRelationType')
+                //                    ->join('entity as entity2', 'er.idEntity2', '=', 'entity2.idEntity')
+                //                    ->join('frame as relatedFrame', 'entity2.idEntity', '=', 'relatedFrame.idEntity')
+                //                    ->where('relatedFrame.idFrame', '=', $idFrame)
+                //                    ->whereIn('rt.entry', ['rel_inheritance', 'rel_perspective_on', 'rel_subframe', 'rel_using'])
+                //                    ->orderBy('rt.entry')
+                //                    ->orderBy('relatedFrame.idFrame')
+                //                    ->get()
+                //                    ->toArray();
+                $relations = Criteria::table('daisy_link as l')
+                    ->selectRaw('relatedFrame.idFrame, l.value as weight, relatedFrame.entry as frameEntry')
+                    ->join('daisy_node as source', 'l.idDaisyNodeSource', '=', 'source.idDaisyNode')
+                    ->join('daisy_node as target', 'l.idDaisyNodeTarget', '=', 'target.idDaisyNode')
+                    ->join('frame as relatedFrame', 'relatedFrame.idFrame', '=', 'target.idFrame')
+                    ->where('source.idFrame', '=', $idFrame)
+                    ->all();
 
                 return array_map(fn ($rel) => (array) $rel, $relations);
             } catch (\Exception $e) {
@@ -199,12 +213,12 @@ class SemanticNetworkService
         $pool = [];
 
         foreach ($relations as $relation) {
-            $relationType = $relation['relationType'];
+            //            $relationType = $relation['relationType'];
             $frameEntry = $relation['frameEntry'];
 
             // Get weight for this relation type
-            $weight = $this->relationWeights[$relationType] ?? 0.0;
-
+            //            $weight = $this->relationWeights[$relationType] ?? 0.0;
+            $weight = $relation['weight'];
             if ($weight <= 0) {
                 continue; // Skip unused relations
             }
@@ -247,14 +261,24 @@ class SemanticNetworkService
     private function queryFEConstraints(int $idFrame): array
     {
         try {
-            $constraints = Criteria::table('view_frameelement as fe')
-                ->selectRaw('fr.idFrame, fe.coreType as typeEntry')
-                ->join('view_relation as r', 'fe.idEntity', '=', 'r.idEntity2')
-                ->join('frame as fr', 'r.idEntity3', '=', 'fr.idEntity')
-                ->where('r.relationType', '=', 'rel_constraint_frame')
+            //            $constraints = Criteria::table('view_frameelement as fe')
+            //                ->selectRaw('fr.idFrame, fe.coreType as typeEntry')
+            //                ->join('view_relation as r', 'fe.idEntity', '=', 'r.idEntity2')
+            //                ->join('frame as fr', 'r.idEntity3', '=', 'fr.idEntity')
+            //                ->where('r.relationType', '=', 'rel_constraint_frame')
+            //                ->where('fe.idFrame', '=', $idFrame)
+            //                ->get()
+            //                ->toArray();
+
+            $constraints = Criteria::table('frame as frameBase')
+                ->join('frameelement as fe', 'fe.idFrame', '=', 'frameBase.idFrame')
+                ->join('daisy_node as source', 'fe.idFrameElement', '=', 'source.idFrameElement')
+                ->join('daisy_link as l', 'l.idDaisyNodeSource', '=', 'source.idDaisyNode')
+                ->join('daisy_node as target', 'l.idDaisyNodeTarget', '=', 'target.idDaisyNode')
+                ->join('frame as relatedFrame', 'relatedFrame.idFrame', '=', 'target.idFrame')
+                ->selectRaw('relatedFrame.idFrame, relatedFrame.entry as frameEntry,fe.coreType as typeEntry, l.weight')
                 ->where('fe.idFrame', '=', $idFrame)
-                ->get()
-                ->toArray();
+                ->all();
 
             return array_map(fn ($c) => (array) $c, $constraints);
         } catch (\Exception $e) {
@@ -275,7 +299,8 @@ class SemanticNetworkService
             $feType = $constraint['typeEntry'];
 
             // Get weight for this FE type
-            $weight = $this->feWeights[$feType] ?? 0.0;
+            // $weight = $this->feWeights[$feType] ?? 0.0;
+            $weight = $constraint['weight'];
 
             if ($weight <= 0) {
                 continue; // Skip non-core FEs
@@ -283,20 +308,20 @@ class SemanticNetworkService
 
             // Query the constrained frame
             try {
-                $frame = Criteria::table('frame')
-                    ->where('idFrame', '=', $constraint['idFrame'])
-                    ->first();
+                //                $frame = Criteria::table('frame')
+                //                    ->where('idFrame', '=', $constraint['idFrame'])
+                //                    ->first();
+                //
+                //                if ($frame) {
+                $poolObj = new PoolObjectData(
+                    frameName: $constraint['frameEntry'],
+                    factor: $weight,
+                    baseFrame: $baseFrame,
+                    level: 3
+                );
 
-                if ($frame) {
-                    $poolObj = new PoolObjectData(
-                        frameName: $frame->Entry,
-                        factor: $weight,
-                        baseFrame: $baseFrame,
-                        level: 3
-                    );
-
-                    $pool[$frame->Entry] = $poolObj;
-                }
+                $pool[$constraint['frameEntry']] = $poolObj;
+                //                }
             } catch (\Exception $e) {
                 continue;
             }
@@ -316,32 +341,41 @@ class SemanticNetworkService
         return Cache::remember($cacheKey, $ttl, function () use ($idLU) {
             try {
                 // Bidirectional qualia search
-                $qualiaLUs = Criteria::table('view_relation as r')
-                    ->selectRaw('lu2.idLU')
-                    ->join('view_lu as lu1', 'r.idEntity1', '=', 'lu1.idEntity')
-                    ->join('view_lu as lu2', 'r.idEntity2', '=', 'lu2.idEntity')
-                    ->leftJoin('qualia as q', 'r.idEntity3', '=', 'q.idEntity')
-                    ->leftJoin('view_relation as rq', 'q.idEntity', '=', 'rq.idEntity1')
-                    ->where('lu1.idLU', '=', $idLU)
-                    ->where('r.relationGroup', '=', 'rgp_qualia')
-                    ->where('rq.relationType', '=', 'rel_qualia_frame')
-                    ->where('lu1.idLanguage', '=', $this->idLanguage)
-                    ->where('lu2.idLanguage', '=', $this->idLanguage)
-                    ->union(
-                        Criteria::table('view_relation as r')
-                            ->selectRaw('lu1.idLU')
-                            ->join('view_lu as lu1', 'r.idEntity1', '=', 'lu1.idEntity')
-                            ->join('view_lu as lu2', 'r.idEntity2', '=', 'lu2.idEntity')
-                            ->leftJoin('qualia as q', 'r.idEntity3', '=', 'q.idEntity')
-                            ->leftJoin('view_relation as rq', 'q.idEntity', '=', 'rq.idEntity1')
-                            ->where('lu2.idLU', '=', $idLU)
-                            ->where('r.relationGroup', '=', 'rgp_qualia')
-                            ->where('rq.relationType', '=', 'rel_qualia_frame')
-                            ->where('lu1.idLanguage', '=', $this->idLanguage)
-                            ->where('lu2.idLanguage', '=', $this->idLanguage)
-                    )
-                    ->get()
-                    ->toArray();
+                //                $qualiaLUs = Criteria::table('view_relation as r')
+                //                    ->selectRaw('lu2.idLU')
+                //                    ->join('view_lu as lu1', 'r.idEntity1', '=', 'lu1.idEntity')
+                //                    ->join('view_lu as lu2', 'r.idEntity2', '=', 'lu2.idEntity')
+                //                    ->leftJoin('qualia as q', 'r.idEntity3', '=', 'q.idEntity')
+                //                    ->leftJoin('view_relation as rq', 'q.idEntity', '=', 'rq.idEntity1')
+                //                    ->where('lu1.idLU', '=', $idLU)
+                //                    ->where('r.relationGroup', '=', 'rgp_qualia')
+                //                    ->where('rq.relationType', '=', 'rel_qualia_frame')
+                //                    ->where('lu1.idLanguage', '=', $this->idLanguage)
+                //                    ->where('lu2.idLanguage', '=', $this->idLanguage)
+                //                    ->union(
+                //                        Criteria::table('view_relation as r')
+                //                            ->selectRaw('lu1.idLU')
+                //                            ->join('view_lu as lu1', 'r.idEntity1', '=', 'lu1.idEntity')
+                //                            ->join('view_lu as lu2', 'r.idEntity2', '=', 'lu2.idEntity')
+                //                            ->leftJoin('qualia as q', 'r.idEntity3', '=', 'q.idEntity')
+                //                            ->leftJoin('view_relation as rq', 'q.idEntity', '=', 'rq.idEntity1')
+                //                            ->where('lu2.idLU', '=', $idLU)
+                //                            ->where('r.relationGroup', '=', 'rgp_qualia')
+                //                            ->where('rq.relationType', '=', 'rel_qualia_frame')
+                //                            ->where('lu1.idLanguage', '=', $this->idLanguage)
+                //                            ->where('lu2.idLanguage', '=', $this->idLanguage)
+                //                    )
+                //                    ->get()
+                //                    ->toArray();
+
+                $qualiaLUs = Criteria::table('daisy_link as l')
+                    ->selectRaw('relatedLU.idLU, l.value as weight, relatedFrame.entry as frameEntry')
+                    ->join('daisy_node as source', 'l.idDaisyNodeSource', '=', 'source.idDaisyNode')
+                    ->join('daisy_node as target', 'l.idDaisyNodeTarget', '=', 'target.idDaisyNode')
+                    ->join('lu as relatedLU', 'relatedLU.idLU', '=', 'target.idLU')
+                    ->join('frame as relatedFrame', 'relatedLU.idFrame', '=', 'relatedFrame.idFrame')
+                    ->where('source.idLU', '=', $idLU)
+                    ->all();
 
                 return array_map(fn ($lu) => (array) $lu, $qualiaLUs);
             } catch (\Exception $e) {
@@ -383,25 +417,26 @@ class SemanticNetworkService
                     if (! isset($searched[$relatedIdLU])) {
                         $nextSearch[] = $relatedIdLU;
 
-                        // Get frame for this LU
+                        // Get the frame for this LU
                         try {
-                            $lu = Criteria::table('view_lu')
-                                ->where('idLU', '=', $relatedIdLU)
-                                ->first();
+                            //                            $lu = Criteria::table('view_lu')
+                            //                                ->where('idLU', '=', $relatedIdLU)
+                            //                                ->first();
+                            //
+                            //                            if ($lu) {
+                            // $energyKey = $depth === 1 ? 'qualia_depth_1' : 'qualia_depth_2';
+                            // $qualiaEnergy = $this->energyBonus[$energyKey];
+                            $qualiaEnergy = $relatedLU['weigth'] / $depth;
 
-                            if ($lu) {
-                                $energyKey = $depth === 1 ? 'qualia_depth_1' : 'qualia_depth_2';
-                                $qualiaEnergy = $this->energyBonus[$energyKey];
+                            $poolObj = new PoolObjectData(
+                                frameName: $relatedLU['frameEntry'],
+                                factor: $qualiaEnergy,
+                                baseFrame: $baseFrame,
+                                level: 4
+                            );
 
-                                $poolObj = new PoolObjectData(
-                                    frameName: $lu->Entry,
-                                    factor: $qualiaEnergy,
-                                    baseFrame: $baseFrame,
-                                    level: 4
-                                );
-
-                                $pool[$lu->Entry] = $poolObj;
-                            }
+                            $pool[$relatedLU['frameEntry']] = $poolObj;
+                            //                            }
                         } catch (\Exception $e) {
                             continue;
                         }

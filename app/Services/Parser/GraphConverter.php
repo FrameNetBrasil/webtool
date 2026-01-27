@@ -2,13 +2,11 @@
 
 namespace App\Services\Parser;
 
-use App\Repositories\Parser\MWE;
-
 /**
  * Graph Format Converter
  *
- * Converts Construction compiled graphs and MWE component structures
- * to unified JointJS format for interactive visualization.
+ * Converts Construction compiled graphs to unified JointJS format
+ * for interactive visualization.
  */
 class GraphConverter
 {
@@ -54,80 +52,6 @@ class GraphConverter
                 'weight' => 1.0,
             ];
         }
-
-        return [
-            'nodes' => $jointNodes,
-            'links' => $jointLinks,
-        ];
-    }
-
-    /**
-     * Convert MWE components to JointJS graph
-     *
-     * Creates a linear graph: START → Component1 → Component2 → ... → END
-     *
-     * @param  object  $mwe  MWE object with components
-     * @return array JointJS-compatible graph structure
-     */
-    public function mweToJointJS(object $mwe): array
-    {
-        $components = MWE::getParsedComponents($mwe);
-        $jointNodes = [];
-        $jointLinks = [];
-
-        // Create START node
-        $jointNodes['start'] = [
-            'type' => 'pattern',
-            'name' => 'START',
-            'nodeType' => 'START',
-            'idColor' => '#4CAF50',
-            'shape' => 'circle',
-            'details' => 'Pattern start',
-        ];
-
-        // Create component nodes
-        $prevId = 'start';
-        foreach ($components as $idx => $component) {
-            $nodeId = "comp_$idx";
-
-            $jointNodes[$nodeId] = [
-                'type' => 'pattern',
-                'name' => $this->formatMWEComponent($component),
-                'nodeType' => 'COMPONENT',
-                'idColor' => $this->getMWEComponentColor($component),
-                'shape' => 'box',
-                'details' => $this->getMWEComponentDetails($component),
-            ];
-
-            // Link from previous node
-            $jointLinks[$prevId][$nodeId] = [
-                'type' => 'pattern',
-                'relationEntry' => 'seq',
-                'color' => '#333',
-                'style' => 'solid',
-                'weight' => 1.0,
-            ];
-
-            $prevId = $nodeId;
-        }
-
-        // Create END node
-        $jointNodes['end'] = [
-            'type' => 'pattern',
-            'name' => 'END',
-            'nodeType' => 'END',
-            'idColor' => '#F44336',
-            'shape' => 'circle',
-            'details' => 'Pattern end',
-        ];
-
-        $jointLinks[$prevId]['end'] = [
-            'type' => 'pattern',
-            'relationEntry' => 'complete',
-            'color' => '#333',
-            'style' => 'solid',
-            'weight' => 1.0,
-        ];
 
         return [
             'nodes' => $jointNodes,
@@ -202,77 +126,6 @@ class GraphConverter
             'INTERMEDIATE' => 'Intermediate node (pass-through)',
             'REP_CHECK' => 'Repetition check point',
             default => $node['type'],
-        };
-    }
-
-    /**
-     * Format MWE component for display
-     */
-    private function formatMWEComponent(array $component): string
-    {
-        // Simple format: just a string
-        if (is_string($component)) {
-            return $component;
-        }
-
-        // Extended format: {type, value}
-        $type = $component['type'] ?? 'W';
-        $value = $component['value'] ?? '';
-
-        return match ($type) {
-            'W' => $value,                    // Word
-            'L' => "lemma:$value",            // Lemma
-            'P' => "{{$value}}",              // POS tag
-            'C' => "CE:$value",               // CE label
-            '*' => '{*}',                     // Wildcard
-            default => "$type:$value",
-        };
-    }
-
-    /**
-     * Get MWE component color based on type
-     */
-    private function getMWEComponentColor(array $component): string
-    {
-        // Simple format
-        if (is_string($component)) {
-            return '#2196F3'; // Blue for fixed words
-        }
-
-        // Extended format
-        $type = $component['type'] ?? 'W';
-
-        return match ($type) {
-            'W' => '#2196F3',  // Blue for fixed words
-            'L' => '#3F51B5',  // Indigo for lemmas
-            'P' => '#FF9800',  // Orange for POS tags
-            'C' => '#9C27B0',  // Purple for CE labels
-            '*' => '#607D8B',  // Grey for wildcard
-            default => '#999',
-        };
-    }
-
-    /**
-     * Get MWE component details for tooltip
-     */
-    private function getMWEComponentDetails(array $component): string
-    {
-        // Simple format
-        if (is_string($component)) {
-            return "Match exact word: '$component'";
-        }
-
-        // Extended format
-        $type = $component['type'] ?? 'W';
-        $value = $component['value'] ?? '';
-
-        return match ($type) {
-            'W' => "Match exact word: '$value'",
-            'L' => "Match lemma: '$value'",
-            'P' => "Match POS tag: $value",
-            'C' => "Match CE label: $value",
-            '*' => 'Match any token',
-            default => "$type: $value",
         };
     }
 

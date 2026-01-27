@@ -13,13 +13,21 @@ use Exception;
  * - Literals: word (fixed word match)
  * - POS Slots: {POS} (match UDPOS tag)
  * - Constrained Slots: {POS:constraint} (match POS with feature)
+ * - CE Slots: {CE:label} (match constructional element role)
+ * - Combined POS+CE: {POS@CE}, {POS:constraint@CE} (match both POS and CE)
+ * - Construction Refs: {CXN:name}, {CXN#id}, {CXN:name@CE} (reference other constructions)
  * - Wildcards: {*} (match any token)
  * - Optional: [element] (0 or 1 times)
+ * - Mandatory: <element> (required, can be ghost in V5)
  * - Alternatives: (A | B | C) (one of)
  * - Repetition: A+ (1 or more), A* (0 or more)
  * - Grouping: (A B C) (sequence)
  *
- * Example: [{NUM}] mil [, ] [{NUM}] [e {NUM}]
+ * Examples:
+ * - Basic POS: [{NUM}] mil [, ] [{NUM}] [e {NUM}]
+ * - CE-based: [{CE:Mod}]* <{CE:Head}>
+ * - Combined: {ADP@Adp} [{DET|NUM|ADJ}@Mod]* {NOUN@Head}
+ * - Construction ref: {CXN:NP} {VERB@Pred}
  */
 class PatternCompiler
 {
@@ -29,11 +37,12 @@ class PatternCompiler
      * Compile a BNF pattern string into a graph structure
      *
      * @param  string  $pattern  BNF pattern string
-     * @return array Graph with 'nodes' and 'edges' arrays
+     * @param  string|null  $constructionType  Optional construction type (e.g., 'sequencer', 'phrasal', 'mwe')
+     * @return array Graph with 'nodes', 'edges', and 'mandatoryElements' arrays
      *
      * @throws Exception If pattern is invalid
      */
-    public function compile(string $pattern): array
+    public function compile(string $pattern, ?string $constructionType = null): array
     {
         $this->nodeCounter = 0;
 
@@ -44,6 +53,7 @@ class PatternCompiler
         $graph = [
             'nodes' => [],
             'edges' => [],
+            'mandatoryElements' => [],
         ];
 
         $startNode = $this->newNodeId();
@@ -53,12 +63,15 @@ class PatternCompiler
         $graph['nodes'][$endNode] = ['type' => 'END'];
 
         // Build from tokens
-        $lastNode = $this->buildSequence($tokens, 0, $startNode, $endNode, $graph);
+        $lastNode = $this->buildSequence($tokens, 0, $startNode, $endNode, $graph, $constructionType);
 
         // Ensure connection to end
         if ($lastNode !== $endNode) {
             $graph['edges'][] = ['from' => $lastNode, 'to' => $endNode];
         }
+
+        // Extract mandatory elements
+        $graph['mandatoryElements'] = $this->extractMandatoryElements($graph);
 
         return $graph;
     }
@@ -92,6 +105,18 @@ class PatternCompiler
                     'content' => trim($content),
                 ];
                 $i += strlen($content) + 2; // +2 for brackets
+
+                continue;
+            }
+
+            // Mandatory <...> (V5 ghost nodes)
+            if ($char === '<') {
+                $content = $this->extractBracketed($pattern, $i, '<', '>');
+                $tokens[] = [
+                    'type' => 'MANDATORY',
+                    'content' => trim($content),
+                ];
+                $i += strlen($content) + 2; // +2 for angle brackets
 
                 continue;
             }
@@ -188,7 +213,9 @@ class PatternCompiler
         foreach ($graph['nodes'] as $nodeId => $node) {
             $label = $this->formatNodeLabel($node);
             $shape = $this->getNodeShape($node);
-            $dot .= "  $nodeId [label=\"$label\", shape=$shape];\n";
+            // Escape quotes in label for DOT format
+            $escapedLabel = str_replace('"', '\\"', $label);
+            $dot .= "  $nodeId [label=\"$escapedLabel\", shape=$shape];\n";
         }
 
         $dot .= "\n";
@@ -219,8 +246,10 @@ class PatternCompiler
 
     /**
      * Build sequence of tokens into graph
+     *
+     * @param  string|null  $constructionType  Optional construction type for special handling
      */
-    private function buildSequence(array $tokens, int $startIdx, string $fromNode, string $toNode, array &$graph): string
+    private function buildSequence(array $tokens, int $startIdx, string $fromNode, string $toNode, array &$graph, ?string $constructionType = null): string
     {
         if ($startIdx >= count($tokens)) {
             $graph['edges'][] = ['from' => $fromNode, 'to' => $toNode];
@@ -228,22 +257,58 @@ class PatternCompiler
             return $toNode;
         }
 
+        // Special handling for sequencer constructions with 3 elements
+        // Insert INTERMEDIATE nodes between elements regardless of complexity
+        if ($constructionType === 'sequencer' && $startIdx === 0 && count($tokens) === 3) {
+            return $this->buildSequencerConstruction($tokens, $fromNode, $toNode, $graph);
+        }
+
         $currentNode = $fromNode;
+        $lastToNode = null;
 
         for ($i = $startIdx; $i < count($tokens); $i++) {
             $token = $tokens[$i];
             $isLast = ($i === count($tokens) - 1);
-            $nextNode = $isLast ? $toNode : null;  // Let buildToken create intermediates
+            $nextNode = $isLast ? $toNode : null;  // Pass toNode for last token
 
             $currentNode = $this->buildToken($token, $currentNode, $nextNode, $graph);
+            $lastToNode = $nextNode; // Track if we passed toNode to buildToken
         }
 
-        // Connect last node to end if needed
-        if ($currentNode !== $toNode) {
+        // Connect last node to end ONLY if toNode was NOT passed to buildToken
+        // (If toNode was passed, buildToken already connected to it)
+        if ($currentNode !== $toNode && $lastToNode === null) {
             $graph['edges'][] = ['from' => $currentNode, 'to' => $toNode];
         }
 
         return $currentNode;
+    }
+
+    /**
+     * Build sequencer construction with INTERMEDIATE nodes between elements
+     *
+     * Sequencer constructions always have 3 elements (left, head, right).
+     * This method creates INTERMEDIATE nodes between each element position.
+     */
+    private function buildSequencerConstruction(array $tokens, string $fromNode, string $toNode, array &$graph): string
+    {
+        // Create INTERMEDIATE nodes between elements
+        $intermediate1 = $this->newNodeId();
+        $intermediate2 = $this->newNodeId();
+
+        $graph['nodes'][$intermediate1] = ['type' => 'INTERMEDIATE'];
+        $graph['nodes'][$intermediate2] = ['type' => 'INTERMEDIATE'];
+
+        // Build first element (left) -> INTERMEDIATE1
+        $this->buildToken($tokens[0], $fromNode, $intermediate1, $graph);
+
+        // Build second element (head) -> INTERMEDIATE2
+        $this->buildToken($tokens[1], $intermediate1, $intermediate2, $graph);
+
+        // Build third element (right) -> toNode
+        $this->buildToken($tokens[2], $intermediate2, $toNode, $graph);
+
+        return $toNode;
     }
 
     /**
@@ -258,11 +323,23 @@ class PatternCompiler
             case 'SLOT':
                 return $this->buildSlot($token, $fromNode, $toNode, $graph);
 
+            case 'CE_SLOT':
+                return $this->buildCESlot($token, $fromNode, $toNode, $graph);
+
+            case 'COMBINED_SLOT':
+                return $this->buildCombinedSlot($token, $fromNode, $toNode, $graph);
+
+            case 'CONSTRUCTION_REF':
+                return $this->buildConstructionRef($token, $fromNode, $toNode, $graph);
+
             case 'WILDCARD':
                 return $this->buildWildcard($fromNode, $toNode, $graph);
 
             case 'OPTIONAL':
                 return $this->buildOptional($token, $fromNode, $toNode, $graph);
+
+            case 'MANDATORY':
+                return $this->buildMandatory($token, $fromNode, $toNode, $graph);
 
             case 'ALTERNATIVE':
                 return $this->buildAlternative($token, $fromNode, $toNode, $graph);
@@ -319,6 +396,76 @@ class PatternCompiler
     }
 
     /**
+     * Build CE slot node
+     */
+    private function buildCESlot(array $token, string $fromNode, ?string $toNode, array &$graph): string
+    {
+        $nodeId = $this->newNodeId();
+        $graph['nodes'][$nodeId] = [
+            'type' => 'CE_SLOT',
+            'ce_label' => $token['ce_label'],
+            'ce_tier' => $token['ce_tier'],
+        ];
+
+        $graph['edges'][] = ['from' => $fromNode, 'to' => $nodeId];
+
+        // If toNode specified, connect to it
+        if ($toNode !== null) {
+            $graph['edges'][] = ['from' => $nodeId, 'to' => $toNode];
+        }
+
+        return $nodeId;
+    }
+
+    /**
+     * Build combined POS+CE slot node
+     */
+    private function buildCombinedSlot(array $token, string $fromNode, ?string $toNode, array &$graph): string
+    {
+        $nodeId = $this->newNodeId();
+        $graph['nodes'][$nodeId] = [
+            'type' => 'COMBINED_SLOT',
+            'pos' => $token['pos'],
+            'constraint' => $token['constraint'] ?? null,
+            'ce_label' => $token['ce_label'],
+            'ce_tier' => $token['ce_tier'],
+        ];
+
+        $graph['edges'][] = ['from' => $fromNode, 'to' => $nodeId];
+
+        // If toNode specified, connect to it
+        if ($toNode !== null) {
+            $graph['edges'][] = ['from' => $nodeId, 'to' => $toNode];
+        }
+
+        return $nodeId;
+    }
+
+    /**
+     * Build construction reference node
+     */
+    private function buildConstructionRef(array $token, string $fromNode, ?string $toNode, array &$graph): string
+    {
+        $nodeId = $this->newNodeId();
+        $graph['nodes'][$nodeId] = [
+            'type' => 'CONSTRUCTION_REF',
+            'construction_name' => $token['construction_name'] ?? null,
+            'construction_id' => $token['construction_id'] ?? null,
+            'ce_label' => $token['ce_label'] ?? null,
+            'ce_tier' => $token['ce_tier'] ?? null,
+        ];
+
+        $graph['edges'][] = ['from' => $fromNode, 'to' => $nodeId];
+
+        // If toNode specified, connect to it
+        if ($toNode !== null) {
+            $graph['edges'][] = ['from' => $nodeId, 'to' => $toNode];
+        }
+
+        return $nodeId;
+    }
+
+    /**
      * Build wildcard node
      */
     private function buildWildcard(string $fromNode, ?string $toNode, array &$graph): string
@@ -351,8 +498,8 @@ class PatternCompiler
         // Parse content
         $contentTokens = $this->tokenize($token['content']);
 
-        // Build the optional path
-        $this->buildSequence($contentTokens, 0, $fromNode, $toNode, $graph);
+        // Build the optional path (no construction type for nested sequences)
+        $this->buildSequence($contentTokens, 0, $fromNode, $toNode, $graph, null);
 
         // Add bypass edge (optional means can skip)
         $graph['edges'][] = [
@@ -362,6 +509,73 @@ class PatternCompiler
         ];
 
         return $toNode;
+    }
+
+    /**
+     * Build mandatory element <...>
+     * Required element that can be fulfilled by ghost node in V5
+     */
+    private function buildMandatory(array $token, string $fromNode, ?string $toNode, array &$graph): string
+    {
+        // Create intermediate node if toNode not specified
+        if ($toNode === null) {
+            $toNode = $this->newNodeId();
+            $graph['nodes'][$toNode] = ['type' => 'INTERMEDIATE'];
+        }
+
+        // Parse content
+        $contentTokens = $this->tokenize($token['content']);
+
+        // Build the mandatory path (no construction type for nested sequences)
+        $this->buildSequence($contentTokens, 0, $fromNode, $toNode, $graph, null);
+
+        // Mark nodes in this path as mandatory
+        $this->markNodesAsMandatory($graph, $fromNode, $toNode);
+
+        return $toNode;
+    }
+
+    /**
+     * Mark nodes between fromNode and toNode as mandatory (can create ghosts)
+     */
+    private function markNodesAsMandatory(array &$graph, string $fromNode, string $toNode): void
+    {
+        // Find all nodes in the path from fromNode to toNode
+        $visited = [];
+        $this->markPathNodes($graph, $fromNode, $toNode, $visited);
+    }
+
+    /**
+     * Recursively mark nodes in path as mandatory
+     */
+    private function markPathNodes(array &$graph, string $currentNode, string $targetNode, array &$visited): bool
+    {
+        if ($currentNode === $targetNode) {
+            return true;
+        }
+
+        if (in_array($currentNode, $visited)) {
+            return false;
+        }
+
+        $visited[] = $currentNode;
+
+        // Find edges from current node
+        foreach ($graph['edges'] as $edge) {
+            if ($edge['from'] === $currentNode) {
+                if ($this->markPathNodes($graph, $edge['to'], $targetNode, $visited)) {
+                    // Mark the target node as mandatory
+                    if (isset($graph['nodes'][$edge['to']])) {
+                        $graph['nodes'][$edge['to']]['mandatory'] = true;
+                        $graph['nodes'][$edge['to']]['canBeGhost'] = true;
+                    }
+
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     /**
@@ -378,7 +592,8 @@ class PatternCompiler
 
         foreach ($token['alternatives'] as $alternative) {
             $altTokens = $this->tokenize($alternative);
-            $this->buildSequence($altTokens, 0, $fromNode, $toNode, $graph);
+            // No construction type for nested sequences (alternatives)
+            $this->buildSequence($altTokens, 0, $fromNode, $toNode, $graph, null);
         }
 
         return $toNode;
@@ -466,7 +681,7 @@ class PatternCompiler
             $char = $pattern[$i];
 
             // Stop at special characters or whitespace
-            if (in_array($char, [' ', '[', ']', '{', '}', '(', ')', '+', '*', '|'])) {
+            if (in_array($char, [' ', '[', ']', '<', '>', '{', '}', '(', ')', '+', '*', '|'])) {
                 break;
             }
 
@@ -478,6 +693,13 @@ class PatternCompiler
 
     /**
      * Parse slot {...}
+     *
+     * Supports:
+     * - Wildcards: {*}
+     * - POS slots: {NOUN}, {VERB:inf}
+     * - CE slots: {CE:Head}, {CE:Pred}
+     * - Combined POS+CE: {NOUN@Head}, {VERB:inf@Pred}
+     * - Construction references: {CXN:name}, {CXN#id}, {CXN:name@CE}
      */
     private function parseSlot(string $content): array
     {
@@ -488,8 +710,23 @@ class PatternCompiler
             return ['type' => 'WILDCARD'];
         }
 
+        // Construction reference: {CXN:name} or {CXN#id}
+        if (str_starts_with($content, 'CXN:') || str_starts_with($content, 'CXN#')) {
+            return $this->parseConstructionRef($content);
+        }
+
+        // CE slot: {CE:label} or combined {CE:label@...}
+        if (str_starts_with($content, 'CE:')) {
+            return $this->parseCESlot($content);
+        }
+
+        // Check for @ separator (combined POS+CE)
+        if (str_contains($content, '@')) {
+            return $this->parseCombinedSlot($content);
+        }
+
         // Constrained slot: {POS:constraint}
-        if (strpos($content, ':') !== false) {
+        if (str_contains($content, ':')) {
             [$pos, $constraint] = explode(':', $content, 2);
 
             return [
@@ -505,6 +742,133 @@ class PatternCompiler
             'pos' => $content,
             'constraint' => null,
         ];
+    }
+
+    /**
+     * Parse CE slot: {CE:label}
+     */
+    private function parseCESlot(string $content): array
+    {
+        // Remove 'CE:' prefix
+        $label = substr($content, 3);
+
+        // Detect tier
+        $tier = $this->detectCETier($label);
+
+        return [
+            'type' => 'CE_SLOT',
+            'ce_label' => $label,
+            'ce_tier' => $tier,
+        ];
+    }
+
+    /**
+     * Parse combined POS+CE slot: {POS@CE} or {POS:constraint@CE}
+     */
+    private function parseCombinedSlot(string $content): array
+    {
+        [$posPartConst, $ceLabel] = explode('@', $content, 2);
+        $posPartConst = trim($posPartConst);
+        $ceLabel = trim($ceLabel);
+
+        $pos = null;
+        $constraint = null;
+
+        // Check if POS part has constraint
+        if (str_contains($posPartConst, ':')) {
+            [$pos, $constraint] = explode(':', $posPartConst, 2);
+            $pos = trim($pos);
+            $constraint = trim($constraint);
+        } else {
+            $pos = $posPartConst;
+        }
+
+        // Detect CE tier
+        $tier = $this->detectCETier($ceLabel);
+
+        return [
+            'type' => 'COMBINED_SLOT',
+            'pos' => $pos,
+            'constraint' => $constraint,
+            'ce_label' => $ceLabel,
+            'ce_tier' => $tier,
+        ];
+    }
+
+    /**
+     * Parse construction reference: {CXN:name} or {CXN#id}
+     * Also supports: {CXN:name@CE} or {CXN#id@CE}
+     */
+    private function parseConstructionRef(string $content): array
+    {
+        $ceLabel = null;
+        $ceTier = null;
+
+        // Check for combined construction+CE syntax
+        if (str_contains($content, '@')) {
+            [$constructionPart, $ceLabel] = explode('@', $content, 2);
+            $ceLabel = trim($ceLabel);
+            $ceTier = $this->detectCETier($ceLabel);
+            $content = $constructionPart;
+        }
+
+        // Parse construction reference
+        if (str_starts_with($content, 'CXN:')) {
+            // By name
+            $name = substr($content, 4); // Remove 'CXN:' prefix
+
+            return [
+                'type' => 'CONSTRUCTION_REF',
+                'construction_name' => $name,
+                'construction_id' => null,
+                'ce_label' => $ceLabel,
+                'ce_tier' => $ceTier,
+            ];
+        } elseif (str_starts_with($content, 'CXN#')) {
+            // By ID
+            $id = substr($content, 4); // Remove 'CXN#' prefix
+
+            return [
+                'type' => 'CONSTRUCTION_REF',
+                'construction_name' => null,
+                'construction_id' => (int) $id,
+                'ce_label' => $ceLabel,
+                'ce_tier' => $ceTier,
+            ];
+        }
+
+        throw new Exception("Invalid construction reference: $content");
+    }
+
+    /**
+     * Detect CE tier from label
+     *
+     * Returns 'phrasal', 'clausal', or 'sentential'
+     */
+    private function detectCETier(string $ceLabel): string
+    {
+        // Phrasal CEs (word-level)
+        $phrasalCEs = ['Head', 'Mod', 'Adm', 'Adp', 'Lnk', 'Clf', 'Idx', 'Conj', 'Punct'];
+
+        // Clausal CEs (phrase-level)
+        $clausalCEs = ['Pred', 'Arg', 'CPP', 'Gen', 'FPM', 'Conj'];
+
+        // Sentential CEs (clause-level)
+        $sententialCEs = ['Main', 'Adv', 'Rel', 'Comp', 'Dtch', 'Int'];
+
+        if (in_array($ceLabel, $phrasalCEs)) {
+            return 'phrasal';
+        }
+
+        if (in_array($ceLabel, $clausalCEs)) {
+            return 'clausal';
+        }
+
+        if (in_array($ceLabel, $sententialCEs)) {
+            return 'sentential';
+        }
+
+        throw new Exception("Unknown CE label: $ceLabel");
     }
 
     /**
@@ -536,6 +900,7 @@ class PatternCompiler
     {
         $brackets = [
             '[' => ']',
+            '<' => '>',
             '{' => '}',
             '(' => ')',
         ];
@@ -578,21 +943,94 @@ class PatternCompiler
     }
 
     /**
+     * Extract mandatory elements from compiled graph
+     *
+     * @return array List of mandatory element descriptors
+     */
+    private function extractMandatoryElements(array $graph): array
+    {
+        $mandatoryElements = [];
+
+        foreach ($graph['nodes'] as $nodeId => $node) {
+            if (isset($node['mandatory']) && $node['mandatory']) {
+                $mandatoryElements[] = [
+                    'nodeId' => $nodeId,
+                    'type' => $node['type'],
+                    'canBeGhost' => $node['canBeGhost'] ?? false,
+                    'label' => $this->getMandatoryElementLabel($node),
+                ];
+            }
+        }
+
+        return $mandatoryElements;
+    }
+
+    /**
+     * Get label for mandatory element
+     */
+    private function getMandatoryElementLabel(array $node): string
+    {
+        return match ($node['type']) {
+            'LITERAL' => $node['value'],
+            'SLOT' => isset($node['constraint'])
+                ? "{$node['pos']}:{$node['constraint']}"
+                : $node['pos'],
+            'CE_SLOT' => "CE:{$node['ce_label']}",
+            'COMBINED_SLOT' => isset($node['constraint'])
+                ? "{$node['pos']}:{$node['constraint']}@{$node['ce_label']}"
+                : "{$node['pos']}@{$node['ce_label']}",
+            'CONSTRUCTION_REF' => $node['construction_name']
+                ? "CXN:{$node['construction_name']}"
+                : "CXN#{$node['construction_id']}",
+            'WILDCARD' => '*',
+            default => $node['type'],
+        };
+    }
+
+    /**
      * Format node label for DOT output
      */
     private function formatNodeLabel(array $node): string
     {
-        return match ($node['type']) {
+        $label = match ($node['type']) {
             'START' => 'START',
             'END' => 'END',
             'LITERAL' => $node['value'],
             'SLOT' => isset($node['constraint'])
                 ? "{{$node['pos']}:{$node['constraint']}}"
                 : "{{$node['pos']}}",
+            'CE_SLOT' => "{{CE:{$node['ce_label']}}}",
+            'COMBINED_SLOT' => isset($node['constraint'])
+                ? "{{$node['pos']}:{$node['constraint']}@{$node['ce_label']}}"
+                : "{{$node['pos']}@{$node['ce_label']}}",
+            'CONSTRUCTION_REF' => $this->formatConstructionRefLabel($node),
             'WILDCARD' => '{*}',
             'REP_CHECK' => 'CHECK',
             default => $node['type'],
         };
+
+        // Add asterisk for mandatory nodes
+        if (isset($node['mandatory']) && $node['mandatory']) {
+            $label .= '*';
+        }
+
+        return $label;
+    }
+
+    /**
+     * Format construction reference label
+     */
+    private function formatConstructionRefLabel(array $node): string
+    {
+        $base = $node['construction_name']
+            ? "CXN:{$node['construction_name']}"
+            : "CXN#{$node['construction_id']}";
+
+        if (isset($node['ce_label']) && $node['ce_label'] !== null) {
+            $base .= "@{$node['ce_label']}";
+        }
+
+        return "{{$base}}";
     }
 
     /**
@@ -600,6 +1038,11 @@ class PatternCompiler
      */
     private function getNodeShape(array $node): string
     {
+        // Mandatory nodes use double box
+        if (isset($node['mandatory']) && $node['mandatory']) {
+            return 'doublebox';
+        }
+
         return match ($node['type']) {
             'START', 'END' => 'circle',
             'REP_CHECK' => 'diamond',

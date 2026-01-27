@@ -11,7 +11,7 @@
                         class="ui container page"
                         x-init="$('.item').tab()"
                     >
-                        <div class="ui tab h-full" data-tab="browse">
+                        <div class="ui tab h-full browse" data-tab="browse">
                             <div class="ui container page">
                                 <div class="page-header">
                                     <div class="page-header-content">
@@ -56,7 +56,7 @@
                                             @fragment("search")
                                                 <div class="h-full overflow-auto flex-1">
                                                     @if(count($frames) > 0)
-                                                        <table class="ui selectable striped compact table">
+                                                        <table class="ui selectable striped compact table frame">
                                                             <tbody>
                                                             @foreach($frames as $frame)
                                                                 <tr

@@ -85,6 +85,45 @@
 </x-layout::index>
 
 <script>
+    // Function to clean up stray Fomantic-UI dimmers
+    function cleanupStrayDimmers() {
+        // Remove any dimmers that are direct children of body (not controlled by Alpine.js)
+        const strayDimmers = document.querySelectorAll('body > .ui.dimmer.modals.page');
+        strayDimmers.forEach(dimmer => {
+            // Only remove dimmers that don't have Alpine.js x-show attribute
+            if (!dimmer.hasAttribute('x-show')) {
+                console.log('Removing stray dimmer from body');
+                dimmer.remove();
+            }
+        });
+    }
+
+    // Run cleanup immediately (in case dimmers already exist)
+    cleanupStrayDimmers();
+
+    // Clean up on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', cleanupStrayDimmers);
+
+    // Clean up after Alpine initializes
+    document.addEventListener('alpine:initialized', cleanupStrayDimmers);
+
+    // Watch for new dimmers being added and clean them up
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+                if (node.nodeType === 1 &&
+                    node.classList &&
+                    node.classList.contains('dimmer') &&
+                    node.classList.contains('modals') &&
+                    !node.hasAttribute('x-show')) {
+                    console.log('Detected and removing stray dimmer');
+                    node.remove();
+                }
+            });
+        });
+    });
+    observer.observe(document.body, { childList: true });
+
     // Execute scripts after HTMX swaps content into #graph
     document.body.addEventListener('htmx:afterSwap', function (evt) {
         if (evt.detail.target && evt.detail.target.id === 'graph') {

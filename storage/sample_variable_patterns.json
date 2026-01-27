@@ -1,0 +1,54 @@
+{
+  "patterns": [
+    {
+      "phrase": "[NOUN] de [NOUN]",
+      "components": [
+        {"type": "P", "value": "NOUN"},
+        {"type": "W", "value": "de"},
+        {"type": "P", "value": "NOUN"}
+      ],
+      "semanticType": "Head",
+      "description": "Noun + de + Noun pattern (e.g., copo de água, bolo de chocolate)"
+    },
+    {
+      "phrase": "[DET] [ADJ] [NOUN]",
+      "components": [
+        {"type": "P", "value": "DET"},
+        {"type": "P", "value": "ADJ"},
+        {"type": "P", "value": "NOUN"}
+      ],
+      "semanticType": "Head",
+      "description": "Fully variable pattern: Determiner + Adjective + Noun"
+    },
+    {
+      "phrase": "[Head] de [Head]",
+      "components": [
+        {"type": "C", "value": "Head"},
+        {"type": "W", "value": "de"},
+        {"type": "C", "value": "Head"}
+      ],
+      "semanticType": "Head",
+      "description": "CE-based pattern: Head + de + Head"
+    },
+    {
+      "phrase": "[VERB] que [VERB]",
+      "components": [
+        {"type": "P", "value": "VERB"},
+        {"type": "W", "value": "que"},
+        {"type": "P", "value": "VERB"}
+      ],
+      "semanticType": "Head",
+      "description": "Verb pattern: Verb + que + Verb (e.g., dizer que fazer)"
+    },
+    {
+      "phrase": "por [*] de",
+      "components": [
+        {"type": "W", "value": "por"},
+        {"type": "*", "value": ""},
+        {"type": "W", "value": "de"}
+      ],
+      "semanticType": "Adp",
+      "description": "Function word pattern with wildcard (e.g., por causa de, por falta de)"
+    }
+  ]
+}

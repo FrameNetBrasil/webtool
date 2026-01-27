@@ -9,6 +9,13 @@ use App\Models\Parser\PhrasalCENode;
  *
  * Traverses compiled BNF graphs to match against token sequences.
  * Uses backtracking to handle non-deterministic paths (optionals, alternatives).
+ *
+ * Supported node types:
+ * - LITERAL: Match specific words
+ * - SLOT: Match POS tags with optional constraints
+ * - CE_SLOT: Match constructional element (CE) labels
+ * - COMBINED_SLOT: Match both POS and CE labels
+ * - WILDCARD: Match any token
  */
 class BNFMatcher
 {
@@ -135,6 +142,8 @@ class BNFMatcher
             'REP_CHECK' => 0, // Control node, consumes nothing
             'LITERAL' => $this->matchLiteral($node, $token, $result),
             'SLOT' => $this->matchSlot($node, $token, $result),
+            'CE_SLOT' => $this->matchCESlot($node, $token, $result),
+            'COMBINED_SLOT' => $this->matchCombinedSlot($node, $token, $result),
             'WILDCARD' => $this->matchWildcard($token, $result),
             default => false,
         };
@@ -183,6 +192,79 @@ class BNFMatcher
     }
 
     /**
+     * Match CE slot
+     */
+    private function matchCESlot(array $node, PhrasalCENode $token, array &$result): int|false
+    {
+        $expectedCE = $node['ce_label'] ?? '';
+        $tier = $node['ce_tier'] ?? '';
+
+        if (empty($expectedCE) || empty($tier)) {
+            return false;
+        }
+
+        // Check CE annotation at the specified tier
+        $actualCE = match ($tier) {
+            'phrasal' => $token->phrasalCE ?? null,
+            'clausal' => $token->clausalCE ?? null,
+            'sentential' => $token->sententialCE ?? null,
+            default => null,
+        };
+
+        if ($actualCE === $expectedCE) {
+            $result['matchedTokens'][] = $token->word;
+
+            return 1; // Consumed 1 token
+        }
+
+        return false;
+    }
+
+    /**
+     * Match combined POS+CE slot
+     */
+    private function matchCombinedSlot(array $node, PhrasalCENode $token, array &$result): int|false
+    {
+        $expectedPos = $node['pos'] ?? '';
+        $expectedCE = $node['ce_label'] ?? '';
+        $tier = $node['ce_tier'] ?? '';
+        $constraint = $node['constraint'] ?? null;
+
+        if (empty($expectedPos) || empty($expectedCE) || empty($tier)) {
+            return false;
+        }
+
+        // Check POS match
+        if ($token->pos !== $expectedPos) {
+            return false;
+        }
+
+        // Check constraint if present
+        if ($constraint !== null && ! $this->checkConstraint($constraint, $token)) {
+            return false;
+        }
+
+        // Check CE match
+        $actualCE = match ($tier) {
+            'phrasal' => $token->phrasalCE ?? null,
+            'clausal' => $token->clausalCE ?? null,
+            'sentential' => $token->sententialCE ?? null,
+            default => null,
+        };
+
+        if ($actualCE !== $expectedCE) {
+            return false;
+        }
+
+        // Both POS and CE matched
+        $slotKey = $expectedPos.($constraint ? ':'.$constraint : '').'@'.$expectedCE;
+        $result['slots'][$slotKey] = $token->word;
+        $result['matchedTokens'][] = $token->word;
+
+        return 1; // Consumed 1 token
+    }
+
+    /**
      * Match wildcard (any token)
      */
     private function matchWildcard(PhrasalCENode $token, array &$result): int
@@ -194,21 +276,44 @@ class BNFMatcher
 
     /**
      * Check feature constraint on token
+     *
+     * Supports both simple constraints (e.g., "inf") and complex constraints (e.g., "Gender=Masc,Number=Plur")
      */
     private function checkConstraint(string $constraint, PhrasalCENode $token): bool
     {
         $features = $token->features['lexical'] ?? [];
 
-        // Common constraints
-        return match ($constraint) {
+        // Simple constraint shortcuts
+        $simpleConstraints = [
             'inf' => ($features['VerbForm'] ?? null) === 'Inf',
             'fin' => ($features['VerbForm'] ?? null) === 'Fin',
             'part' => ($features['VerbForm'] ?? null) === 'Part',
             'ger' => ($features['VerbForm'] ?? null) === 'Ger',
             'sing' => ($features['Number'] ?? null) === 'Sing',
             'plur' => ($features['Number'] ?? null) === 'Plur',
-            default => false,
-        };
+        ];
+
+        if (isset($simpleConstraints[$constraint])) {
+            return $simpleConstraints[$constraint];
+        }
+
+        // Complex constraint: Feature=Value or Feature1=Value1,Feature2=Value2
+        if (str_contains($constraint, '=')) {
+            $constraints = explode(',', $constraint);
+            foreach ($constraints as $c) {
+                [$featureName, $featureValue] = explode('=', trim($c), 2);
+                $featureName = trim($featureName);
+                $featureValue = trim($featureValue);
+
+                if (($features[$featureName] ?? null) !== $featureValue) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        return false;
     }
 
     /**

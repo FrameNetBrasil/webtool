@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Daisy;
 use App\Data\Daisy\DaisyInputData;
 use App\Http\Controllers\Controller;
 use App\Services\Daisy\DaisyService;
+use App\Services\Daisy\GridService;
+use App\Services\Trankit\TrankitService;
 use Collective\Annotations\Routing\Attributes\Attributes\Get;
 use Collective\Annotations\Routing\Attributes\Attributes\Middleware;
 use Collective\Annotations\Routing\Attributes\Attributes\Post;
@@ -12,10 +14,7 @@ use Collective\Annotations\Routing\Attributes\Attributes\Post;
 #[Middleware(name: 'web')]
 class DaisyController extends Controller
 {
-    public function __construct(
-        private DaisyService $daisyService
-    ) {}
-
+    private DaisyService $daisyService;
     /**
      * Show Daisy semantic parser interface
      */
@@ -42,6 +41,11 @@ class DaisyController extends Controller
     public function parse(DaisyInputData $data)
     {
         try {
+            $trankit = new TrankitService;
+            $trankit->init(config('daisy.trankitUrl'));
+            //$gridService = new GridService();
+            $this->daisyService = new DaisyService($trankit);
+
             // Run Daisy disambiguation pipeline
             $result = $this->daisyService->disambiguate($data);
 
@@ -76,6 +80,11 @@ class DaisyController extends Controller
     public function graph(DaisyInputData $data)
     {
         try {
+            $trankit = new TrankitService;
+            $trankit->init('http://localhost:8405');
+            $gridService = new GridService();
+            $this->daisyService = new DaisyService($trankit, $gridService);
+
             // Run Daisy disambiguation pipeline
             $result = $this->daisyService->disambiguate($data);
 

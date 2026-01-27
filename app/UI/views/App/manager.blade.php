@@ -6,21 +6,21 @@
         'task' => ['Task/User', '/task', '','MANAGER','ui::icon.frame'],
         'user' => ['Group/User', '/user','', 'ADMIN','ui::icon.frame'],
         'document' => ['Corpus/Document','/corpus','', 'ADMIN','ui::icon.domain'],
-//        'video' => ['Video/Document', '/video','', 'ADMIN','ui::icon.frame'],
-//        'image' => ['Image/Document', '/image','', 'ADMIN','ui::icon.frame'],
+        'video' => ['Video/Document', '/video','', 'ADMIN','ui::icon.frame'],
+        'image' => ['Image/Document', '/image','', 'ADMIN','ui::icon.frame'],
         'semantictype' => ['SemanticType','/semanticType','', 'ADMIN','ui::icon.frame'],
         'layer' => ['Layer/GenericLabel', '/layers','', 'ADMIN','ui::icon.frame'],
         'relations' => ['Relations', '/relations','', 'ADMIN','ui::icon.frame'],
         'importfulltext' => ['Import FullText', '/utils/importFullText', '','MANAGER','ui::icon.frame'],
-//        'aisuggestions' => ['LU AI Suggestions', '/lu/aiSuggestion','', 'ADMIN','ui::icon.lu'],
+        'aisuggestions' => ['LU AI Suggestions', '/lu/aiSuggestion','', 'ADMIN','ui::icon.lu'],
     ];
 
     $groups = [
         'manager' => ['title' => "Project/User", "pages" => ['project','task','user']],
-        'document' => ['title' => "Document", "pages" => ['document']],
+        'document' => ['title' => "Document", "pages" => ['document','video','image']],
         'table' => ['title' => "Tables", "pages" => ['semantictype','layer','relations']],
         'utils' => ['title' => "Utils", "pages" => ['importfulltext']],
-//        'data' => ['title' => "Data", "pages" => ['aisuggestions']],
+        'data' => ['title' => "Data", "pages" => ['aisuggestions']],
     ];
 
 
@@ -54,6 +54,10 @@
                                     @foreach($group['pages'] as $group)
                                         @php
                                             $item = $options[$group];
+                                            $mode = $item[4] ?? 'prod';
+                                            if ((config('webtool.mode') == 'prod') && ($mode == 'dev')) {
+                                                continue;
+                                            }
                                         @endphp
                                         @if (AppService::checkAccess($item[3]))
                                             <a

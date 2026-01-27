@@ -28,57 +28,67 @@
         ></x-partial::breadcrumb>
         <main class="app-main">
             <div class="ui container page">
-                <div class="page-content">
-                    @if(count($tasksForManager) > 0)
-                        <div class="segment">
-                            <h2 class="ui header">Managed project/tasks</h2>
-                            <table class="ui striped compact table">
-                                <thead>
-                                <tr>
-                                    <th>Project</th>
-                                    <th>Task</th>
-                                    <th>Task group</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($tasksForManager as $task)
-                                    <tr>
-                                        <td>{{$task->projectName}}</td>
-                                        <td>{{$task->taskName}}</td>
-                                        <td>{{$task->taskGroupName}}</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                @if(count($tasksForManager) > 0)
+                    <div class="page-header">
+                        <div class="page-header-content">
+                            <div class="page-title">
+                                Managed tasks
+                            </div>
                         </div>
-                    @endif
+                    </div>
+                    <div class="page-content">
+                        <table class="ui striped compact table">
+                            <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Task</th>
+                                <th>Task group</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($tasksForManager as $task)
+                                <tr>
+                                    <td>{{$task->projectName}}</td>
+                                    <td>{{$task->taskName}}</td>
+                                    <td>{{$task->taskGroupName}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @endif
 
-                    @if(!$isManager)
-                        <div class="segment">
-                            <h2 class="ui header">My tasks</h2>
-                            <table class="ui striped compact table">
-                                <thead>
-                                <tr>
-                                    <th>Project</th>
-                                    <th>Task</th>
-                                    <th>Task group</th>
-                                    <th>Manager(s)</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($tasks as $task)
-                                    <tr>
-                                        <td>{{$task->projectName}}</td>
-                                        <td>{{$task->taskName}}</td>
-                                        <td>{{$task->taskGroupName}}</td>
-                                        <td>{{$task->manager}}</td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
+                @if(!$isManager)
+                    <div class="page-header">
+                        <div class="page-header-content">
+                            <div class="page-title">
+                                My tasks
+                            </div>
                         </div>
-                    @endif
-                </div>
+                    </div>
+                    <div class="page-content">
+                        <table class="ui striped compact table">
+                            <thead>
+                            <tr>
+                                <th>Project</th>
+                                <th>Task</th>
+                                <th>Task group</th>
+                                <th>Manager(s)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($tasks as $task)
+                                <tr>
+                                    <td>{{$task->projectName}}</td>
+                                    <td>{{$task->taskName}}</td>
+                                    <td>{{$task->taskGroupName}}</td>
+                                    <td>{{$task->manager}}</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                @endif
             </div>
         </main>
         <x-partial::footer></x-partial::footer>

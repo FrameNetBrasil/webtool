@@ -116,7 +116,7 @@ class PatternTypeDetector
         if (is_string($firstElement)) {
             // Verify all elements are strings
             foreach ($components as $component) {
-                if (!is_string($component)) {
+                if (! is_string($component)) {
                     throw new Exception('Invalid MWE format: all components must be strings for Simple MWE');
                 }
             }

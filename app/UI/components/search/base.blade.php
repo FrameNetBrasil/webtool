@@ -68,26 +68,32 @@
 
     {{-- Modal Background --}}
     <div x-show="isModalOpen"
+         x-cloak
          x-transition:enter="transition ease-out duration-300"
          x-transition:enter-start="opacity-0"
          x-transition:enter-end="opacity-100"
          x-transition:leave="transition ease-in duration-200"
          x-transition:leave-start="opacity-100"
          x-transition:leave-end="opacity-0"
-         class="ui dimmer modals page active"
+         class="ui dimmer modals page"
+         :class="{ 'active': isModalOpen }"
          @click="closeModal()"
+         :style="{ 'pointer-events': isModalOpen ? 'auto' : 'none' }"
          style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 1001; background-color: rgba(0, 0, 0, 0.85);">
     </div>
 
     {{-- Modal Window --}}
     <div x-show="isModalOpen"
+         x-cloak
          x-transition:enter="transition ease-out duration-300"
          x-transition:enter-start="opacity-0 scale-95"
          x-transition:enter-end="opacity-100 scale-100"
          x-transition:leave="transition ease-in duration-200"
          x-transition:leave-start="opacity-100 scale-100"
          x-transition:leave-end="opacity-0 scale-95"
-         class="ui modal active"
+         class="ui modal"
+         :class="{ 'active': isModalOpen }"
+         :style="{ 'pointer-events': isModalOpen ? 'auto' : 'none' }"
          style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1002; height: 50vh; width: 600px; max-width: 90vw; display: flex; flex-direction: column; background: white; border-radius: 0.28571429rem; box-shadow: 0 0 0 1px rgba(34,36,38,.15), 0 1px 3px 0 rgba(34,36,38,.15);"
          @click.stop>
         <div class="header" style="flex-shrink: 0; padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(34,36,38,.15);">

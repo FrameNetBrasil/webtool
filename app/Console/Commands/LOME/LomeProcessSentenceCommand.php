@@ -18,7 +18,7 @@ class LomeProcessSentenceCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'app:lome-process-sentence-command';
+    protected $signature = 'lome:process-sentences';
 
     /**
      * The console command description.
@@ -59,29 +59,29 @@ class LomeProcessSentenceCommand extends Command
             $trankit = new TrankitService;
             $trankit->init('http://localhost:8405');
             // corpus dtake
+            $sentences = DB::connection('webtool')
+                ->select('
+                            select s.idSentence, s.text,s.idOriginMM,ds.idDocumentSentence,s.idLanguage
+             from sentence s
+             join document_sentence ds on (s.idSentence = ds.idSentence)
+             join document d on (ds.idDocument = d.idDocument)
+             where d.idCorpus between 204 and 217
+                            and  s.idOriginMM in (10,11,12,13,14,15,16)
+                            ');
+            // corpus reporter_brasil lome
             //            $sentences = DB::connection('webtool')
-            //                ->select("
+            //                ->select('
             //                select s.idSentence, s.text,s.idOriginMM,ds.idDocumentSentence
             // from sentence s
             // join document_sentence ds on (s.idSentence = ds.idSentence)
             // join document d on (ds.idDocument = d.idDocument)
-            // where d.idCorpus between 204 and 217
-            //                and  s.idOriginMM in (15,16)
-            //                ");
-            // corpus reporter_brasil lome
-            $sentences = DB::connection('webtool')
-                ->select('
-                select s.idSentence, s.text,s.idOriginMM,ds.idDocumentSentence
-from sentence s
-join document_sentence ds on (s.idSentence = ds.idSentence)
-join document d on (ds.idDocument = d.idDocument)
-where d.idCorpus in (227,228)
-                ');
-            AppService::setCurrentLanguage(1);
+            // where d.idCorpus in (227,228)
+            //                ');
             debug('count sentence = '.count($sentences));
             mb_internal_encoding('UTF-8'); // this IS A MUST!! PHP has trouble with multibyte when no internal encoding is set!
             $s = 0;
             foreach ($sentences as $sentence) {
+                AppService::setCurrentLanguage($sentence->idLanguage);
                 $s++;
                 try {
                     $text = trim($sentence->text);
@@ -93,7 +93,7 @@ where d.idCorpus in (227,228)
                     // print_r($tokens);
                     Criteria::deleteById('lome_resultfe', 'idSentence', $sentence->idSentence);
                     // $result = $lome->process($text);
-                    $ud = $trankit->parseSentenceRawTokens($text, 1);
+                    $ud = $trankit->parseSentenceRawTokens($text, $sentence->idLanguage);
                     // print_r($ud);
                     $result = $lome->parse($text);
                     if (is_array($result)) {
@@ -167,8 +167,9 @@ where d.idCorpus in (227,228)
                     }
                     // if ($s > 5) die;
                 } catch (\Exception $e) {
-                    print_r("\n".$sentence->idSentence.':'.$e->getMessage());
-                    exit;
+                    print_r("\n Error: ".$sentence->idSentence.':'.$e->getMessage());
+
+                    continue;
                 }
                 //                break;
             }

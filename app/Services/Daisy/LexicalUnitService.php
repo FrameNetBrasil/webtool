@@ -47,8 +47,7 @@ class LexicalUnitService
 
                 // Query LUs for this word/lemma
                 $lus = $this->queryLexicalUnits($component);
-                debug("***************************");
-debug($lus);
+
                 // Create frame candidates
                 $frameCandidates = $this->createFrameCandidates($lus, $component, $gridFunction);
 
@@ -71,12 +70,12 @@ debug($lus);
             return $this->queryLUByWord($component->word);
         }
 
-        $cacheKey = "daisy:lu:{$this->idLanguage}:".md5(json_encode($component->lemmas));
-        $ttl = config('daisy.cacheTTL.lemmaToLU');
+        //        $cacheKey = "daisy:lu:{$this->idLanguage}:".md5(json_encode($component->lemmas));
+        //        $ttl = config('daisy.cacheTTL.lemmaToLU');
 
-        return Cache::remember($cacheKey, $ttl, function () use ($component) {
-            return $this->queryLUByLemmas($component->lemmas);
-        });
+        //        return Cache::remember($cacheKey, $ttl, function () use ($component) {
+        return $this->queryLUByLemmas($component->lemmas);
+        //        });
     }
 
     /**
@@ -102,14 +101,24 @@ debug($lus);
             $idLemmas = $lemmaRecords->pluck('idLemma')->toArray();
 
             // Query lexical units
+            //            $lus = Criteria::table('view_lu as lu')
+            //                ->selectRaw('DISTINCT lu.idFrame, lu.frameName as frameEntry, lu.name as lu,
+            //                            lu.idLU, lu.idEntity as idEntityLU,
+            //                            lu.frameIdEntity as idEntityFrame,
+            //                            pos.POS as POSLemma, lu.idLemma,
+            //                            (SELECT COUNT(*) FROM view_domain d WHERE d.idDomain = ? AND d.idEntity = lu.frameIdEntity) as mknob',
+            //                    [config('daisy.domains.mknob')])
+            //                ->join('pos', 'lu.idPOS', '=', 'pos.idPOS')
+            //                ->where('lu.idLanguage', '=', $this->idLanguage)
+            //                ->whereIn('lu.idLemma', $idLemmas)
+            //                ->get()
+            //                ->toArray();
+
             $lus = Criteria::table('view_lu as lu')
                 ->selectRaw('DISTINCT lu.idFrame, lu.frameName as frameEntry, lu.name as lu,
                             lu.idLU, lu.idEntity as idEntityLU,
                             lu.frameIdEntity as idEntityFrame,
-                            pos.POS as POSLemma, lu.idLemma,
-                            (SELECT COUNT(*) FROM view_domain d WHERE d.idDomain = ? AND d.idEntity = lu.frameIdEntity) as mknob',
-                    [config('daisy.domains.mknob')])
-                ->join('pos', 'lu.idPOS', '=', 'pos.idPOS')
+                            lu.idLemma')
                 ->where('lu.idLanguage', '=', $this->idLanguage)
                 ->whereIn('lu.idLemma', $idLemmas)
                 ->get()
@@ -134,14 +143,13 @@ debug($lus);
                 ->selectRaw('DISTINCT lu.idFrame, lu.frameName as frameEntry, lu.name as lu,
                             lu.idLU, lu.idEntity as idEntityLU,
                             lu.frameIdEntity as idEntityFrame,
-                            pos.POS as POSLemma, lu.idLemma,
-                            (SELECT COUNT(*) FROM view_domain d WHERE d.idDomain = ? AND d.idEntity = lu.frameIdEntity) as mknob',
-                    [config('daisy.domains.mknob')])
+                            pos.POS as POSLemma, lu.idLemma')
                 ->join('pos', 'lu.idPOS', '=', 'pos.idPOS')
                 ->where('lu.idLanguage', '=', $this->idLanguage)
                 ->where('lu.name', 'LIKE', strtolower($word).'%')
                 ->get()
                 ->toArray();
+
             return array_map(fn ($lu) => (array) $lu, $lus);
         } catch (\Exception $e) {
             logger()->error('Daisy LU word query error: '.$e->getMessage());

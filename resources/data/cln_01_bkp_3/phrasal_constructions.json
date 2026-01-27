@@ -1,0 +1,211 @@
+[
+    {
+        "name": "HEAD",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({NOUN} | {PROPN})",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal head"
+    },
+    {
+        "name": "MOD-",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({DET} | {NUM})",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal mod"
+    },
+    {
+        "name": "-MOD",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({ADJ} | {CXN:REL})",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal mod"
+    },
+    {
+        "name": "ARG",
+        "constructionType": "clausal",
+        "priority": 80,
+        "pattern": "({CXN:MOD-} | {CXN:HEAD})",
+        "phrasalCE": "Arg",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Clausal Arg"
+    },
+    {
+        "name": "ARG-",
+        "constructionType": "clausal",
+        "priority": 80,
+        "pattern": "{CXN:ARG}",
+        "phrasalCE": "Arg",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Clausal Arg"
+    },
+    {
+        "name": "-ARG",
+        "constructionType": "clausal",
+        "priority": 80,
+        "pattern": "{CXN:ARG}",
+        "phrasalCE": "Arg",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Clausal Arg"
+    },
+    {
+        "name": "CPP",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{AUX}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal cpp"
+    },
+    {
+        "name": "CPP_PRED",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:CPP} {CXN:PRED}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal cpp_pred"
+    },
+    {
+        "name": "PRED",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({VERB} | {CXN:CPP_PRED})",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal pred"
+    },
+    {
+        "name": "ARG_PRED",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:ARG-} {CXN:PRED}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal arg_pred"
+    },
+    {
+        "name": "PRED_ARG",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:PRED} {CXN:-ARG} ",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal pred_arg"
+    },
+    {
+        "name": "PRX",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "(que | onde)",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal proxy"
+    },
+    {
+        "name": "REL",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:PRX} {CXN:SEN}",
+        "phrasalCE": null,
+        "clausalCE": null,
+        "sententialCE": "Rel",
+        "constraints": [],
+        "description": "Relative"
+    },
+    {
+        "name": "roupa_de_banho",
+        "constructionType": "mwe",
+        "priority": 80,
+        "pattern": "roupa de banho",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "MWE"
+    },
+    {
+        "name": "SEN",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({CXN:PRED} | {CXN:PRED_ARG} | {CXN:ARG_PRED})",
+        "phrasalCE": null,
+        "clausalCE": null,
+        "sententialCE": "Main",
+        "constraints": [],
+        "description": "Sentence"
+    },
+    {
+        "name": "roupa_de_cama",
+        "constructionType": "mwe",
+        "priority": 80,
+        "pattern": "roupa de cama",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "MWE"
+    },
+    {
+        "name": "jogo_de_banho",
+        "constructionType": "mwe",
+        "priority": 80,
+        "pattern": "jogo de banho",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "MWE"
+    },
+    {
+        "name": "jogo_de_cama",
+        "constructionType": "mwe",
+        "priority": 80,
+        "pattern": "jogo de cama",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "MWE"
+    },
+    {
+        "name": "ferro_de_passar_roupa",
+        "constructionType": "mwe",
+        "priority": 80,
+        "pattern": "ferro de passar roupa",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "MWE"
+    }
+]

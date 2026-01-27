@@ -6,7 +6,7 @@
             :sections="[['/','Home'],['/structure','Structure'],['/frame','Frame'],['',$frame?->name]]"
         ></x-partial::breadcrumb>
         <main class="app-main">
-            <div class="ui container page-edit">
+            <div class="ui container page">
                 <div class="page-header">
                     <div class="page-header-content">
                         <div class="page-header-main">

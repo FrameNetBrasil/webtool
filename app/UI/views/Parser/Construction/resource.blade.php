@@ -11,7 +11,7 @@
         <x-button
             label="New Construction"
             color="secondary"
-            hx-get="/parser/v4/construction/new"
+            hx-get="/parser/construction/new"
             hx-target="#editArea"
             hx-swap="innerHTML"
         ></x-button>
@@ -19,7 +19,7 @@
             label="Import"
             color="primary"
             icon="upload"
-            hx-get="/parser/v4/construction/import-form"
+            hx-get="/parser/construction/import-form"
             hx-target="#editArea"
             hx-swap="innerHTML"
         ></x-button>
@@ -27,7 +27,7 @@
             label="Export"
             color="primary"
             icon="download"
-            hx-get="/parser/v4/construction/export-form"
+            hx-get="/parser/construction/export-form"
             hx-target="#editArea"
             hx-swap="innerHTML"
         ></x-button>
@@ -40,7 +40,7 @@
                     id="idGrammarGraph"
                     name="idGrammarGraph"
                     class="ui dropdown"
-                    hx-post="/parser/v4/construction/grid/search"
+                    hx-post="/parser/construction/grid/search"
                     hx-trigger="change"
                     hx-target="#gridConstruction"
                     hx-swap="innerHTML"
@@ -56,7 +56,7 @@
                 <x-search-field
                     id="name"
                     placeholder="Search by name"
-                    hx-post="/parser/v4/construction/grid/search"
+                    hx-post="/parser/construction/grid/search"
                     hx-trigger="input changed delay:500ms, search"
                     hx-target="#gridConstruction"
                     hx-swap="innerHTML"
@@ -68,7 +68,7 @@
                     id="constructionType"
                     name="constructionType"
                     class="ui dropdown"
-                    hx-post="/parser/v4/construction/grid/search"
+                    hx-post="/parser/construction/grid/search"
                     hx-trigger="change"
                     hx-target="#gridConstruction"
                     hx-swap="innerHTML"
@@ -86,7 +86,7 @@
                     id="enabled"
                     name="enabled"
                     class="ui dropdown"
-                    hx-post="/parser/v4/construction/grid/search"
+                    hx-post="/parser/construction/grid/search"
                     hx-trigger="change"
                     hx-target="#gridConstruction"
                     hx-swap="innerHTML"
@@ -106,7 +106,7 @@
             hx-trigger="load"
             hx-target="this"
             hx-swap="outerHTML"
-            hx-get="/parser/v4/construction/grid"
+            hx-get="/parser/construction/grid"
         ></div>
     </x-slot:grid>
 

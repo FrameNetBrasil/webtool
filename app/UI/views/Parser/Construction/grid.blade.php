@@ -3,7 +3,7 @@
     hx-trigger="reload-gridConstruction from:body"
     hx-target="this"
     hx-swap="outerHTML"
-    hx-get="/parser/v4/construction/grid"
+    hx-get="/parser/construction/grid"
 >
     <div class="relative h-full overflow-auto">
         <table class="ui striped small compact table absolute top-0 left-0 bottom-0 right-0">
@@ -21,7 +21,7 @@
             @fragment('search')
                 @forelse($constructions as $construction)
                     <tr
-                        hx-get="/parser/v4/construction/{{ $construction->idConstruction }}/edit"
+                        hx-get="/parser/construction/{{ $construction->idConstruction }}/edit"
                         hx-target="#editArea"
                         hx-swap="innerHTML"
                         class="cursor-pointer"
@@ -46,7 +46,7 @@
                         <td>
                             <button
                                 class="ui mini button {{ $construction->enabled ? 'green' : 'grey' }}"
-                                hx-post="/parser/v4/construction/{{ $construction->idConstruction }}/toggle"
+                                hx-post="/parser/construction/{{ $construction->idConstruction }}/toggle"
                                 hx-swap="none"
                                 onclick="event.stopPropagation()"
                             >

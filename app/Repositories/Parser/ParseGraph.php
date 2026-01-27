@@ -66,7 +66,7 @@ class ParseGraph
     {
         $parseGraph = self::byId($id);
         $parseGraph->nodes = ParseNode::listByParseGraph($id);
-        $parseGraph->edges = ParseEdge::listByParseGraph($id);
+        $parseGraph->edges = ParseEdge::listWithNodes($id);
 
         return $parseGraph;
     }

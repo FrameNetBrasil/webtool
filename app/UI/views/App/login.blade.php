@@ -2,15 +2,15 @@
     $challenge = uniqid(rand());
     session(['challenge', $challenge]);
 @endphp
-<x-layout.page>
-    <x-slot:head>
-        <x-partial::breadcrumb :sections="[['','Home']]"></x-partial::breadcrumb>
-    </x-slot:head>
-    <x-slot:main>
-
-        <section id="work" class="w-full h-full">
-            <div class="wt-container-center h-full">
-                <div id="formLoginDiv">
+<x-layout::index>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
+            :sections="[['','Home']]"
+        ></x-partial::breadcrumb>
+        <main class="app-main">
+            <div class="ui container page">
+                <div class="page-center">
                     @fragment('form')
                         <x-form
                             id="formLogin"
@@ -44,17 +44,20 @@
                                 ></x-submit>
                             </x-slot:buttons>
                         </x-form>
-                        <script>
-                            $(function() {
-                                $("#formLogin").on("htmx:beforeRequest", event => {
-                                    let p = event.detail.requestConfig.parameters.password;
-                                    event.detail.requestConfig.parameters.password = md5(p);
-                                });
-                            });
-                        </script>
-                    @endfragment
+                        <div id="formLoginDiv">
+                        </div>
                 </div>
+                <script>
+                    $(function() {
+                        $("#formLogin").on("htmx:beforeRequest", event => {
+                            let p = event.detail.requestConfig.parameters.password;
+                            event.detail.requestConfig.parameters.password = md5(p);
+                        });
+                    });
+                </script>
+                @endfragment
             </div>
-        </section>
-    </x-slot:main>
-</x-layout.page>
+        </main>
+        <x-partial::footer></x-partial::footer>
+    </div>
+</x-layout::index>

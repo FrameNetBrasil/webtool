@@ -1,0 +1,200 @@
+[
+    {
+        "name": "NOUN",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({NOUN} | {PROPN})",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal head"
+    },
+    {
+        "name": "VERB",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{VERB}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal head"
+    },
+    {
+        "name": "NUM",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{NUM}",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Left mod"
+    },
+    {
+        "name": "DET",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{DET}",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "DET"
+    },
+    {
+        "name": "ADJ",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{ADJ}",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Left mod"
+    },
+    {
+        "name": "DET",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({DET} | {NUM})",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Left mod"
+    },
+    {
+        "name": "DEM",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{PRON}",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal Demonstrative pronoun"
+    },
+    {
+        "name": "ADP",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{ADP}",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal ADP"
+    },
+    {
+        "name": "CPP",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{AUX}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal "
+    },
+    {
+        "name": "PRX",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "(que | onde)",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Proxy lemmas"
+    },
+    {
+        "name": "REF",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "([{CXN:DET}] [{CXN:ADJ}] [{CXN:NOUN}] [{CXN:ADJ}] | {CXN:PRON})",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Proxy lemmas"
+    },
+    {
+        "name": "REL",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:PRX_PRED}",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Sec"
+    },
+    {
+        "name": "CPP_VERB",
+        "constructionType": "sequencer",
+        "priority": 80,
+        "pattern": "{CXN:CPP} {CXN:VERB}",
+        "phrasalCE": "ARG",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "cpp_verb"
+    },
+    {
+        "name": "PRED",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({CXN:VERB} | {CXN:CPP_VERB})",
+        "phrasalCE": "ARG",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "pred"
+    },
+    {
+        "name": "PRX_PRED",
+        "constructionType": "sequencer",
+        "priority": 80,
+        "pattern": "{CXN:PRX} {CXN:CLAUSE}",
+        "phrasalCE": "SEC",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "sec"
+    },
+    {
+        "name": "SUBJECT",
+        "constructionType": "sequencer",
+        "priority": 80,
+        "pattern": "{CXN:REF} {CXN:PRED}",
+        "phrasalCE": "NULL",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "sec"
+    },
+    {
+        "name": "OBJECT",
+        "constructionType": "sequencer",
+        "priority": 80,
+        "pattern": "{CXN:PRED} {CXN:REF}",
+        "phrasalCE": "NULL",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "sec"
+    },
+    {
+        "name": "CLAUSE",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "[{CXN:SUBJECT}] {CXN:PRED} [{CXN:OBJECT}])",
+        "phrasalCE": "CLAUSE",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "pred"
+    }
+]

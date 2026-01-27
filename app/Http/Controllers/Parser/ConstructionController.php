@@ -8,10 +8,11 @@ use App\Data\Parser\Construction\SearchData;
 use App\Data\Parser\Construction\TestPatternData;
 use App\Data\Parser\Construction\UpdateData;
 use App\Http\Controllers\Controller;
+use App\Jobs\RebuildTypeGraphJob;
 use App\Repositories\Parser\ConstructionV4;
 use App\Repositories\Parser\GrammarGraph;
-use App\Services\Parser\V4\ConstructionGraphService;
-use App\Services\Parser\V4\ConstructionServiceV4;
+use App\Services\Parser\ConstructionGraphService;
+use App\Services\Parser\ConstructionServiceV4;
 use Collective\Annotations\Routing\Attributes\Attributes\Delete;
 use Collective\Annotations\Routing\Attributes\Attributes\Get;
 use Collective\Annotations\Routing\Attributes\Attributes\Middleware;
@@ -25,8 +26,10 @@ class ConstructionController extends Controller
     {
         $grammars = GrammarGraph::list();
         $constructions = ConstructionV4::listToGrid($search);
+
         return view('Parser.Construction.index', [
-            'constructions' => [],
+            //            'constructions' => [],
+            'constructions' => $constructions,
             'grammars' => $grammars,
         ]);
     }
@@ -34,8 +37,10 @@ class ConstructionController extends Controller
     #[Post(path: '/parser/construction/search')]
     public function search(SearchData $search)
     {
+        debug($search);
         $grammars = GrammarGraph::list();
         $constructions = ConstructionV4::listToGrid($search);
+
         return view('Parser.Construction.index', [
             'constructions' => $constructions,
             'grammars' => $grammars,
@@ -59,7 +64,7 @@ class ConstructionController extends Controller
     /**
      * Show edit construction page with tabs
      */
-    #[Get(path: '/parser/construction/{id}/edit')]
+    #[Get(path: '/parser/construction/{id}')]
     public function edit(int $id)
     {
         $construction = ConstructionV4::byId($id);
@@ -80,17 +85,20 @@ class ConstructionController extends Controller
         try {
             // Check for name uniqueness
             if (ConstructionV4::existsByName($data->idGrammarGraph, $data->name)) {
-                return viewNotify('error', "Construction '{$data->name}' already exists in this grammar.");
+                return $this->renderNotify('error', "Construction '{$data->name}' already exists in this grammar.");
             }
 
             $service = new ConstructionServiceV4;
-            $idConstruction = $service->compileAndStoreV4($data);
+            $idConstruction = $service->compileAndStore($data);
+
+            // Rebuild Type Graph asynchronously
+            RebuildTypeGraphJob::dispatch($data->idGrammarGraph);
 
             $this->trigger('reload-gridConstruction');
 
-            return viewNotify('success', "Construction '{$data->name}' created successfully.");
+            return $this->renderNotify('success', "Construction '{$data->name}' created successfully.");
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -103,17 +111,20 @@ class ConstructionController extends Controller
         try {
             // Check for name uniqueness (excluding current construction)
             if (ConstructionV4::existsByName($data->idGrammarGraph, $data->name, $id)) {
-                return viewNotify('error', "Construction '{$data->name}' already exists in this grammar.");
+                return $this->renderNotify('error', "Construction '{$data->name}' already exists in this grammar.");
             }
 
             $service = new ConstructionServiceV4;
-            $service->updateV4($id, $data);
+            $service->update($id, $data);
+
+            // Rebuild Type Graph asynchronously
+            RebuildTypeGraphJob::dispatch($data->idGrammarGraph);
 
             $this->trigger('reload-gridConstruction');
 
-            return viewNotify('success', 'Construction updated successfully.');
+            return $this->renderNotify('success', 'Construction updated successfully.');
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -126,15 +137,19 @@ class ConstructionController extends Controller
         try {
             $construction = ConstructionV4::byId($id);
             $constructionName = $construction->name;
+            $idGrammarGraph = $construction->idGrammarGraph;
 
             ConstructionV4::delete($id);
+
+            // Rebuild Type Graph asynchronously
+            RebuildTypeGraphJob::dispatch($idGrammarGraph);
 
             $this->trigger('reload-gridConstruction');
             $this->clientRedirect('/parser/construction');
 
-            return viewNotify('success', "Construction '{$constructionName}' deleted successfully.");
+            return $this->renderNotify('success', "Construction '{$constructionName}' deleted successfully.");
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -253,14 +268,14 @@ class ConstructionController extends Controller
     }
 
     /**
-     * Hierarchy graph: construction relationships
+     * Type Graph: V5 unified construction ontology subgraph
      */
     #[Get(path: '/parser/construction/{id}/graph/hierarchy')]
     public function graphHierarchy(int $id)
     {
         $construction = ConstructionV4::byId($id);
         $graphService = new ConstructionGraphService;
-        $graphData = $graphService->generateHierarchyGraph($construction->idGrammarGraph);
+        $graphData = $graphService->generateTypeGraph($construction, maxDepth: 2);
 
         return view('Parser.Construction.graphs/hierarchy', [
             'construction' => $construction,
@@ -301,9 +316,9 @@ class ConstructionController extends Controller
 
             $this->trigger('reload-gridConstruction');
 
-            return viewNotify('success', "Construction {$status} successfully.");
+            return $this->renderNotify('success', "Construction {$status} successfully.");
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -321,7 +336,7 @@ class ConstructionController extends Controller
                 'result' => $result,
             ]);
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -336,13 +351,13 @@ class ConstructionController extends Controller
             $json = $service->exportToJson($idGrammarGraph);
 
             $grammar = GrammarGraph::byId($idGrammarGraph);
-            $filename = 'constructions_' . $grammar->name . '_' . date('Y-m-d') . '.json';
+            $filename = 'constructions_'.$grammar->name.'_'.date('Y-m-d').'.json';
 
             return response()->json($json)
                 ->header('Content-Type', 'application/json')
-                ->header('Content-Disposition', 'attachment; filename="' . $filename . '"');
+                ->header('Content-Disposition', 'attachment; filename="'.$filename.'"');
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -362,7 +377,7 @@ class ConstructionController extends Controller
                 'result' => $result,
             ]);
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 
@@ -379,8 +394,8 @@ class ConstructionController extends Controller
             // Validate pattern
             $validation = $service->validatePattern($construction->pattern);
 
-            if (!$validation['valid']) {
-                return viewNotify('error', 'Pattern validation failed: ' . $validation['error']);
+            if (! $validation['valid']) {
+                return $this->renderNotify('error', 'Pattern validation failed: '.$validation['error']);
             }
 
             // Recompile and update
@@ -388,9 +403,9 @@ class ConstructionController extends Controller
                 'compiledPattern' => json_encode($validation['compiled']),
             ]);
 
-            return viewNotify('success', 'Pattern recompiled successfully.');
+            return $this->renderNotify('success', 'Pattern recompiled successfully.');
         } catch (\Exception $e) {
-            return viewNotify('error', $e->getMessage());
+            return $this->renderNotify('error', $e->getMessage());
         }
     }
 }

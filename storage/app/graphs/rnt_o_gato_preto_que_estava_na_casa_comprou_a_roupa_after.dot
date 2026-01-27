@@ -1,0 +1,89 @@
+digraph CLNv3 {
+  // Graph styling
+  rankdir=LR;
+  node [style=filled, fontname="Arial", fontsize=10];
+  edge [fontname="Arial", fontsize=8];
+
+  label="Graph: After Dynamics: "o gato preto que estava na casa comprou a roupa"\nstage: after_dynamics\ntimesteps: 200\nl1_nodes: 10\nl2_nodes: 25";
+  labelloc=top;
+  fontsize=12;
+
+  // Nodes
+  // L1 nodes
+  "L1_P0_literal_o" [label="L1: literal\nSpan: [0, 0]\nAct: 0.950\nValue: 'o'", fillcolor="#90EE90", shape=box];
+  "L1_P1_literal_gato" [label="L1: literal\nSpan: [1, 1]\nAct: 0.950\nValue: 'gato'", fillcolor="#90EE90", shape=box];
+  "L1_P2_literal_preto" [label="L1: literal\nSpan: [2, 2]\nAct: 0.950\nValue: 'preto'", fillcolor="#90EE90", shape=box];
+  "L1_P3_literal_que" [label="L1: literal\nSpan: [3, 3]\nAct: 0.950\nValue: 'que'", fillcolor="#90EE90", shape=box];
+  "L1_P4_literal_estava" [label="L1: literal\nSpan: [4, 4]\nAct: 0.950\nValue: 'estava'", fillcolor="#90EE90", shape=box];
+  "L1_P5_literal_na" [label="L1: literal\nSpan: [5, 5]\nAct: 0.950\nValue: 'na'", fillcolor="#90EE90", shape=box];
+  "L1_P6_literal_casa" [label="L1: literal\nSpan: [6, 6]\nAct: 0.950\nValue: 'casa'", fillcolor="#90EE90", shape=box];
+  "L1_P7_literal_comprou" [label="L1: literal\nSpan: [7, 7]\nAct: 0.950\nValue: 'comprou'", fillcolor="#90EE90", shape=box];
+  "L1_P8_literal_a" [label="L1: literal\nSpan: [8, 8]\nAct: 0.950\nValue: 'a'", fillcolor="#90EE90", shape=box];
+  "L1_P9_literal_roupa" [label="L1: literal\nSpan: [9, 9]\nAct: 0.950\nValue: 'roupa'", fillcolor="#90EE90", shape=box];
+
+  // L2 nodes
+  "L2_MOD-_0:0" [label="L2: MOD-\nSpan: [0, 0]\nAct: 0.907\nPat: 4639", fillcolor="#87CEEB", shape=ellipse];
+  "L2_ARG_INTERMEDIATE_n2_0:0" [label="L2: ARG_INTERMEDIATE_n2\nSpan: [0, 0]\nAct: 0.863\nPat: 4643", fillcolor="#87CEEB", shape=ellipse];
+  "L2_ARG_0:0" [label="L2: ARG\nSpan: [0, 3]\nAct: 0.975\nPat: 4643\nInputs: 6/2\n✓ READY", fillcolor="#00CED1", shape=hexagon];
+  "L2_HEAD_1:1" [label="L2: HEAD\nSpan: [1, 1]\nAct: 0.907\nPat: 4638", fillcolor="#87CEEB", shape=ellipse];
+  "L2_PRED_0:0" [label="L2: PRED\nSpan: [0, 1]\nAct: 0.649\nPat: 4647\nInputs: 2/1\nWAITING", fillcolor="#00CED1", shape=hexagon];
+  "L2_PRED_1:1" [label="L2: PRED\nSpan: [1, 1]\nAct: 0.440\nPat: 4647\nInputs: 1/1\nWAITING", fillcolor="#00CED1", shape=hexagon];
+  "L2_MOD-_2:2" [label="L2: MOD-\nSpan: [2, 2]\nAct: 0.889\nPat: 4639", fillcolor="#87CEEB", shape=ellipse];
+  "L2_-MOD_2:2" [label="L2: -MOD\nSpan: [2, 2]\nAct: 0.885\nPat: 4640", fillcolor="#87CEEB", shape=ellipse];
+  "L2_ARG_INTERMEDIATE_n2_2:2" [label="L2: ARG_INTERMEDIATE_n2\nSpan: [2, 2]\nAct: 0.845\nPat: 4643", fillcolor="#87CEEB", shape=ellipse];
+  "L2_DEM_3:3" [label="L2: DEM\nSpan: [3, 3]\nAct: 0.889\nPat: 4641", fillcolor="#87CEEB", shape=ellipse];
+  "L2_REL_3:3" [label="L2: REL\nSpan: [3, 3]\nAct: 0.885\nPat: 4642", fillcolor="#87CEEB", shape=ellipse];
+  "L2_ARG_INTERMEDIATE_n2_3:3" [label="L2: ARG_INTERMEDIATE_n2\nSpan: [3, 3]\nAct: 0.845\nPat: 4643", fillcolor="#87CEEB", shape=ellipse];
+  "L2_CPP_4:4" [label="L2: CPP\nSpan: [4, 4]\nAct: 0.907\nPat: 4644", fillcolor="#87CEEB", shape=ellipse];
+  "L2_partial_and_1510_4:4" [label="L2: partial_and_1510\nSpan: [4, 4]\nAct: 0.302\nPat: 4646\nPred: OR 'VERB'", fillcolor="#87CEEB", shape=rectangle];
+  "L2_HEAD_6:6" [label="L2: HEAD\nSpan: [6, 6]\nAct: 0.907\nPat: 4638", fillcolor="#87CEEB", shape=ellipse];
+  "L2_ARG_6:6" [label="L2: ARG\nSpan: [6, 6]\nAct: 0.440\nPat: 4643\nInputs: 1/2\nWAITING", fillcolor="#00CED1", shape=hexagon];
+  "L2_PRED_6:6" [label="L2: PRED\nSpan: [4, 9]\nAct: 0.975\nPat: 4647\nInputs: 6/1\n✓ READY", fillcolor="#00CED1", shape=hexagon];
+  "L2_VERB_7:7" [label="L2: VERB\nSpan: [7, 7]\nAct: 0.907\nPat: 4645", fillcolor="#87CEEB", shape=ellipse];
+  "L2_PRED_H_4:7" [label="L2: PRED_H\nSpan: [4, 7]\nAct: 0.829\nPat: 4646", fillcolor="#87CEEB", shape=rectangle];
+  "L2_PRED_INTERMEDIATE_n4_7:7" [label="L2: PRED_INTERMEDIATE_n4\nSpan: [7, 7]\nAct: 0.863\nPat: 4647", fillcolor="#87CEEB", shape=ellipse];
+  "L2_PRED_INTERMEDIATE_n4_4:7" [label="L2: PRED_INTERMEDIATE_n4\nSpan: [4, 7]\nAct: 0.777\nPat: 4647", fillcolor="#87CEEB", shape=ellipse];
+  "L2_MOD-_8:8" [label="L2: MOD-\nSpan: [8, 8]\nAct: 0.907\nPat: 4639", fillcolor="#87CEEB", shape=ellipse];
+  "L2_ARG_INTERMEDIATE_n2_8:8" [label="L2: ARG_INTERMEDIATE_n2\nSpan: [8, 8]\nAct: 0.863\nPat: 4643", fillcolor="#87CEEB", shape=ellipse];
+  "L2_ARG_8:8" [label="L2: ARG\nSpan: [8, 9]\nAct: 0.975\nPat: 4643\nInputs: 2/2\n✓ READY", fillcolor="#00CED1", shape=hexagon];
+  "L2_HEAD_9:9" [label="L2: HEAD\nSpan: [9, 9]\nAct: 0.907\nPat: 4638", fillcolor="#87CEEB", shape=ellipse];
+
+  // Edges
+  "L1_P0_literal_o" -> "L2_MOD-_0:0" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_MOD-_0:0" -> "L2_ARG_INTERMEDIATE_n2_0:0" [color="#228B22", label="feedforward\nw: 0.95", arrowhead=normal];
+  "L2_ARG_INTERMEDIATE_n2_0:0" -> "L2_ARG_0:0" [color="#228B22", label="feedforward\nw: 0.50", arrowhead=normal];
+  "L2_ARG_0:0" -> "L2_PRED_0:0" [color="#228B22", label="feedforward\nw: 0.50", arrowhead=normal];
+  "L1_P1_literal_gato" -> "L2_HEAD_1:1" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_HEAD_1:1" -> "L2_PRED_1:1" [color="#228B22", label="feedforward\nw: 0.50", arrowhead=normal];
+  "L1_P2_literal_preto" -> "L2_MOD-_2:2" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L1_P2_literal_preto" -> "L2_-MOD_2:2" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_MOD-_2:2" -> "L2_ARG_INTERMEDIATE_n2_2:2" [color="#228B22", label="feedforward\nw: 0.95", arrowhead=normal];
+  "L2_MOD-_2:2" -> "L2_-MOD_2:2" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_-MOD_2:2" -> "L2_MOD-_2:2" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_-MOD_2:2" -> "L2_ARG_INTERMEDIATE_n2_2:2" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_ARG_INTERMEDIATE_n2_2:2" -> "L2_-MOD_2:2" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L1_P3_literal_que" -> "L2_DEM_3:3" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L1_P3_literal_que" -> "L2_REL_3:3" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_DEM_3:3" -> "L2_ARG_INTERMEDIATE_n2_3:3" [color="#228B22", label="feedforward\nw: 0.95", arrowhead=normal];
+  "L2_DEM_3:3" -> "L2_REL_3:3" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_REL_3:3" -> "L2_DEM_3:3" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_REL_3:3" -> "L2_ARG_INTERMEDIATE_n2_3:3" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_ARG_INTERMEDIATE_n2_3:3" -> "L2_REL_3:3" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L1_P4_literal_estava" -> "L2_CPP_4:4" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_CPP_4:4" -> "L2_partial_and_1510_4:4" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_CPP_4:4" -> "L2_PRED_H_4:7" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L1_P6_literal_casa" -> "L2_HEAD_6:6" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_HEAD_6:6" -> "L2_ARG_6:6" [color="#228B22", label="feedforward\nw: 0.50", arrowhead=normal];
+  "L2_HEAD_6:6" -> "L2_PRED_6:6" [color="#228B22", label="feedforward\nw: 0.50", arrowhead=normal];
+  "L1_P7_literal_comprou" -> "L2_VERB_7:7" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_VERB_7:7" -> "L2_PRED_H_4:7" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_VERB_7:7" -> "L2_PRED_INTERMEDIATE_n4_7:7" [color="#228B22", label="feedforward\nw: 0.95", arrowhead=normal];
+  "L2_PRED_H_4:7" -> "L2_PRED_INTERMEDIATE_n4_4:7" [color="#228B22", label="feedforward\nw: 0.95", arrowhead=normal];
+  "L1_P8_literal_a" -> "L2_MOD-_8:8" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_MOD-_8:8" -> "L2_ARG_INTERMEDIATE_n2_8:8" [color="#228B22", label="feedforward\nw: 0.95", arrowhead=normal];
+  "L2_ARG_INTERMEDIATE_n2_8:8" -> "L2_ARG_8:8" [color="#228B22", label="feedforward\nw: 0.50", arrowhead=normal];
+  "L1_P9_literal_roupa" -> "L2_HEAD_9:9" [color="#228B22", label="feedforward", arrowhead=normal];
+
+  // Prediction edges
+  "L2_partial_and_1510_4:4" -> "L2_VERB_7:7" [color="#9370DB", label="predicts VERB", arrowhead=odot, style=dashed, penwidth=2];
+}

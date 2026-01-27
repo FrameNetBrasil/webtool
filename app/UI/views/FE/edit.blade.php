@@ -1,46 +1,38 @@
-<x-layout.edit>
-    <x-slot:head>
-        <x-partial::breadcrumb :sections="[['/','Home'],['/structure','Structure'],['/frame','Frame'],['/frame/' . $frameElement->frame->idFrame,$frameElement->frame->name],['',$frameElement->frame->name.'.'.$frameElement?->name]]"></x-partial::breadcrumb>
-    </x-slot:head>
-    <x-slot:main>
-        <x-layout.object>
-            <x-slot:name>
-                <x-element.fe
-                    name="{{$frameElement->frame->name}}.{{$frameElement?->name}}"
-                    type="{{$frameElement->coreType}}"
-                    idColor="{{$frameElement->idColor}}"
-                ></x-element.fe>
-            </x-slot:name>
-            <x-slot:detail>
-                <div class="ui label wt-tag-id">
-                    #{{$frameElement->idFrameElement}}
+<x-layout::index>
+    <div class="app-layout">
+        <x-partial::header></x-partial::header>
+        <x-partial::breadcrumb
+            :sections="[['/','Home'],['/structure','Structure'],['/frame','Frame'],['/frame/' . $frameElement->frame->idFrame,$frameElement->frame->name],['',$frameElement->frame->name.'.'.$frameElement?->name]]"
+        ></x-partial::breadcrumb>
+        <main class="app-main">
+            <div class="ui container page">
+                <div class="page-header">
+                    <div class="page-header-content">
+                        <div class="page-header-main">
+                            <div class="page-title-section">
+                                <div class="page-title">
+                                    <x-element.fe
+                                        name="{{$frameElement->frame->name}}.{{$frameElement?->name}}"
+                                        type="{{$frameElement->coreType}}"
+                                        idColor="{{$frameElement->idColor}}"
+                                    ></x-element.fe>
+                                </div>
+                                <div
+                                    class="page-subtitle">{!! str_replace('ex>','code>',nl2br($frameElement->description)) !!}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="ui label wt-tag-en">
-                    {{$frameElement->nameEn}} [en]
+                <div class="page-content">
+                    <div class="frame-metadata-section">
+{{--                        @include('Frame.Report.partials.frame-metadata')--}}
+                    </div>
+
+                    @include("FE.menu")
                 </div>
-                <div>
-                    <x-combobox.fe-frame
-                        id="idFrameElement"
-                        :idFrame="$frameElement->frame->idFrame"
-                        :defaultText="'Change FE'"
-                    ></x-combobox.fe-frame>
-                    <script>
-                        $(function() {
-                            $('#idFrameElement_dropdown').dropdown({
-                                onChange: (value) => {
-                                    window.location.href= `/fe/${value}/edit`;
-                                }
-                            });
-                        });
-                    </script>
-                </div>
-            </x-slot:detail>
-            <x-slot:description>
-                #{{$frameElement->description}}
-            </x-slot:description>
-            <x-slot:main>
-                @include("FE.menu")
-            </x-slot:main>
-        </x-layout.object>
-    </x-slot:main>
-</x-layout.edit>
+            </div>
+        </main>
+        <x-partial::footer></x-partial::footer>
+    </div>
+</x-layout::index>

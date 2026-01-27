@@ -78,15 +78,16 @@ class LoginController extends Controller
     {
         debug($data);
         $user = new AuthUserService();
-        $status = $user->md5Check($data);
+        $status = $user->md5Login($data);
 
         if ($status == 'new') {
             throw new UserNewException('User registered. Wait for Administrator approval.');
         } elseif ($status == 'pending') {
             throw new UserPendingException('User already registered, but waiting for Administrator approval.');
         } elseif ($status == 'checked') {
-
             return $this->redirect("/twofactor");
+        } elseif ($status == 'logged') {
+            return $this->redirect("/");
         } else {
             throw new LoginException('Login failed; contact administrator.');
         }

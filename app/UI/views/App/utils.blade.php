@@ -15,6 +15,12 @@
                 <div class="ui container page">
                     <div class="card-grid dense">
                         @foreach($options as $category => $option)
+                            @php
+                                $mode = $option[4] ?? 'prod';
+                                if ((config('webtool.mode') == 'prod') && ($mode == 'dev')) {
+                                    continue;
+                                }
+                            @endphp
                             <a
                                 class="ui card option-card"
                                 data-category="{{$category}}"

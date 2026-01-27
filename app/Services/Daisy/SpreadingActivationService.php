@@ -14,10 +14,14 @@ namespace App\Services\Daisy;
 class SpreadingActivationService
 {
     private array $energyBonus;
+    private array $vectors;
+
+    private NetworkService $networkService;
 
     public function __construct()
     {
         $this->energyBonus = config('daisy.energyBonus');
+        $this->networkService = new NetworkService;
     }
 
     /**
@@ -130,4 +134,27 @@ class SpreadingActivationService
 
         return $bonus;
     }
+
+    public function vectorForFrame(int $idFrame): array
+    {
+        if (isset($this->vectors[$idFrame])) {
+            return $this->vectors[$idFrame];
+        } else {
+            $this->vectors[$idFrame] = $this->networkService->vectorForFrame($idFrame);
+        }
+
+        return $this->vectors[$idFrame];
+    }
+
+    public function vectorForLU(int $idLU): array
+    {
+        if (isset($this->vectors[$idLU])) {
+            return $this->vectors[$idLU];
+        } else {
+            $this->vectors[$idLU] = $this->networkService->vectorForLU($idLU);
+        }
+
+        return $this->vectors[$idLU];
+    }
+
 }

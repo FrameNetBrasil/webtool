@@ -30,6 +30,12 @@
                 <div class="page-content">
                     <div class="card-grid dense">
                         @foreach($reports as $category => $report)
+                            @php
+                                $mode = $report[4] ?? 'prod';
+                                if ((config('webtool.mode') == 'prod') && ($mode == 'dev')) {
+                                    continue;
+                                }
+                            @endphp
                             <a
                                 class="ui card option-card"
                                 data-category="{{$category}}"

@@ -43,7 +43,7 @@
                 <div class="header">Construction Status</div>
                 <p>This grammar has <strong>{{ $grammar->constructionCount }}</strong> constructions defined.</p>
                 @if($grammar->constructionCount > 0)
-                    <a href="/parser/v4/construction?grammar={{ $grammar->idGrammarGraph }}" class="ui button tiny blue">
+                    <a href="/parser/construction?grammar={{ $grammar->idGrammarGraph }}" class="ui button tiny blue">
                         View Constructions
                     </a>
                 @endif
@@ -53,7 +53,7 @@
             <x-submit
                 label="Save"
                 color="primary"
-                hx-post="/parser/v4/grammar/{{ $grammar->idGrammarGraph }}"
+                hx-post="/parser/grammar/{{ $grammar->idGrammarGraph }}"
             ></x-submit>
         </div>
     </div>

@@ -2,6 +2,8 @@
 
 namespace App\Data\Image;
 
+use App\Database\Criteria;
+use App\Repositories\Document;
 use App\Services\AppService;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Utils;
@@ -12,11 +14,12 @@ class CreateData extends Data
 {
     public function __construct(
         public ?string       $name = '',
+        public ?int          $idDocument = 0,
         public ?string       $currentURL = '',
         public ?string       $originalFile = '',
-        public ?int       $width = 0,
-        public ?int       $height = 0,
-        public ?int       $depth = 0,
+        public ?int          $width = 0,
+        public ?int          $height = 0,
+        public ?int          $depth = 0,
         public ?UploadedFile $file = null,
         public ?int          $idLanguage = null,
         public ?int          $idUser = null
@@ -31,6 +34,13 @@ class CreateData extends Data
         if (is_null($this->idLanguage)) {
             $this->idLanguage = AppService::getCurrentIdLanguage();
         }
+        if (!is_null($this->idDocument)) {
+            $document = Criteria::table("view_document")
+                ->where("idDocument", $this->idDocument)
+                ->where("idLanguage", $this->idLanguage)
+                ->first();
+            $this->name = $document->name . '_' . $this->name;
+        }
 
         $client = new Client([
             'timeout' => 300.0,
@@ -39,14 +49,14 @@ class CreateData extends Data
         $response = $client->request('POST', $url, [
             'multipart' => [
                 [
-                    'name'     => 'file',
+                    'name' => 'file',
                     'contents' => Utils::tryFopen($file->getPathname(), 'r'),
                     'filename' => $this->originalFile,
                 ]
             ]
         ]);
 //        $this->currentURL = trim(str_replace($url . '/', '',(string)$response->getBody()));
-        $this->currentURL = trim(str_replace(str_replace('https','http',$url) . '/', '',(string)$response->getBody()));
+        $this->currentURL = trim(str_replace(str_replace('https', 'http', $url) . '/', '', (string)$response->getBody()));
 
         $dimensions = $file->dimensions();
         $this->width = $dimensions[0] ?? 0;

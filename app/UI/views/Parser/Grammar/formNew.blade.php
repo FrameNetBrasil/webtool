@@ -47,5 +47,5 @@
 </div>
 <div class="actions">
     <button class="ui cancel button">Cancel</button>
-    <button class="ui primary button" type="submit" hx-post="/parser/v4/grammar">Create Grammar Graph</button>
+    <button class="ui primary button" type="submit" hx-post="/parser/grammar">Create Grammar Graph</button>
 </div>

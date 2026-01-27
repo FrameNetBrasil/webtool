@@ -1,0 +1,134 @@
+[
+    {
+        "name": "HEAD",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({NOUN} | {PROPN})",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal head"
+    },
+    {
+        "name": "MOD",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({DET} | {NUM})",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal mod"
+    },
+    {
+        "name": "MOD_HEAD",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:MOD} | {CXN:HEAD}",
+        "phrasalCE": "Mod",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal mod_head"
+    },
+    {
+        "name": "ARG",
+        "constructionType": "clausal",
+        "priority": 80,
+        "pattern": "({CXN:MOD} | {CXN:HEAD}  | {CXN:MOD_HEAD} | {CXN:ARG_REL})",
+        "phrasalCE": "Arg",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Clausal Arg"
+    },
+    {
+        "name": "CPP",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{AUX}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal cpp"
+    },
+    {
+        "name": "CPP_PRED",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:CPP} {CXN:PRED}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal cpp_pred"
+    },
+    {
+        "name": "PRED",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "({VERB})",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal pred"
+    },
+    {
+        "name": "ARG_PRED",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:ARG} {CXN:PRED}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal arg_pred"
+    },
+    {
+        "name": "PRED_ARG",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:PRED} {CXN:ARG} ",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal pred_arg"
+    },
+    {
+        "name": "PRX",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "(que | onde)",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal proxy"
+    },
+    {
+        "name": "REL",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:PRX} {CXN:PRED}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal relative"
+    },
+    {
+        "name": "ARG_REL",
+        "constructionType": "phrasal",
+        "priority": 80,
+        "pattern": "{CXN:ARG} {CXN:REL}",
+        "phrasalCE": "Head",
+        "clausalCE": null,
+        "sententialCE": null,
+        "constraints": [],
+        "description": "Phrasal arg_relative"
+    }
+]

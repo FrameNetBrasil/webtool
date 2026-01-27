@@ -24,7 +24,7 @@ class ConstructionV4
             ->where('idGrammarGraph', '=', $idGrammarGraph)
             ->orderBy('priority');
 
-        if (!empty($constructionType)) {
+        if (! empty($constructionType)) {
             $query->where('constructionType', '=', $constructionType);
         }
 
@@ -53,20 +53,20 @@ class ConstructionV4
             )
             ->orderBy('priority');
 
-        if (!empty($search->idGrammarGraph)) {
+        if (! empty($search->idGrammarGraph)) {
             $query->where('idGrammarGraph', '=', $search->idGrammarGraph);
         }
 
-        if (!empty($search->name)) {
+        if (! empty($search->name)) {
             $query->where('name', 'startswith', $search->name);
         }
 
-        if (!empty($search->constructionType)) {
+        if ($search->constructionType != 'all') {
             $query->where('constructionType', '=', $search->constructionType);
         }
 
-        if (isset($search->enabled)) {
-            $query->where('enabled', '=', $search->enabled);
+        if ($search->enabled != 2) {
+            $query->where('enabled', '=', (bool) $search->enabled);
         }
 
         return $query->all();
@@ -301,13 +301,13 @@ class ConstructionV4
         ];
 
         foreach ($constructions as $construction) {
-            if (!empty($construction->phrasalCE) && !in_array($construction->phrasalCE, $labels->phrasal)) {
+            if (! empty($construction->phrasalCE) && ! in_array($construction->phrasalCE, $labels->phrasal)) {
                 $labels->phrasal[] = $construction->phrasalCE;
             }
-            if (!empty($construction->clausalCE) && !in_array($construction->clausalCE, $labels->clausal)) {
+            if (! empty($construction->clausalCE) && ! in_array($construction->clausalCE, $labels->clausal)) {
                 $labels->clausal[] = $construction->clausalCE;
             }
-            if (!empty($construction->sententialCE) && !in_array($construction->sententialCE, $labels->sentential)) {
+            if (! empty($construction->sententialCE) && ! in_array($construction->sententialCE, $labels->sentential)) {
                 $labels->sentential[] = $construction->sententialCE;
             }
         }

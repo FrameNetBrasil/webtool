@@ -12,6 +12,7 @@ class BrowseService
     public static function browseLemmaBySearch(object $search, bool $leaf = false): array
     {
         $result = [];
+        debug($search);
         if ($search->lemma != '') {
             $lemmas = Criteria::table('view_lemma as lm')
                 ->where('lm.idLanguage', AppService::getCurrentIdLanguage())
@@ -23,8 +24,22 @@ class BrowseService
                 $result[$lemma->idLemma] = [
                     'id' => $lemma->idLemma,
                     'type' => 'lemma',
-                    'text' => view('Lemma.partials.tree-item', (array) $lemma)->render(),
+                    'text' => view('Lemma.partials.tree-lemma', (array) $lemma)->render(),
                     'leaf' => $leaf,
+                ];
+            }
+        } elseif ($search->idLemma != 0) {
+            $forms = Criteria::table('view_lexicon as lx')
+                ->where('lx.idLanguage', AppService::getCurrentIdLanguage())
+                ->where('lx.idLemma', $search->idLemma)
+                ->select('lx.idExpression', 'lx.form')
+                ->all();
+            foreach ($forms as $form) {
+                $result[$form->idExpression] = [
+                    'id' => $form->idExpression,
+                    'type' => 'form',
+                    'text' => view('Lemma.partials.tree-form', (array) $form)->render(),
+                    'leaf' => true,
                 ];
             }
         }

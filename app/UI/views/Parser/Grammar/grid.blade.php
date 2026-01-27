@@ -3,7 +3,7 @@
     hx-trigger="reload-gridGrammar from:body"
     hx-target="this"
     hx-swap="outerHTML"
-    hx-get="/parser/v4/grammar/grid"
+    hx-get="/parser/grammar/grid"
 >
     <div class="relative h-full overflow-auto">
         <table class="ui striped small compact table absolute top-0 left-0 bottom-0 right-0">
@@ -19,7 +19,7 @@
             @fragment('search')
                 @forelse($grammars as $grammar)
                     <tr
-                        hx-get="/parser/v4/grammar/{{ $grammar->idGrammarGraph }}/edit"
+                        hx-get="/parser/grammar/{{ $grammar->idGrammarGraph }}/edit"
                         hx-target="#editArea"
                         hx-swap="innerHTML"
                         class="cursor-pointer"

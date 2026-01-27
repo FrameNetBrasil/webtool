@@ -5,24 +5,24 @@
         'lemma' => ['Lemmas', '/lemma', '','ui::icon.domain'],
         'form' => ['Forms', '/form', '','ui::icon.domain'],
         'lucandidate' => ['LU Candidate', '/luCandidate', '','ui::icon.frame'],
-//        'constructicon' => ['Constructicon', '/constructicon', '','ui::icon.construction'],
+        'constructicon' => ['Constructicon', '/constructicon', '','ui::icon.construction'],
         'reframing' => ['Reframing', '/reframing', '','ui::icon.lu'],
-//        'sentence' => ['Sentence', '/sentence', '','ui::icon.sentence'],
-//        'class' => ['Class', '/class', '','ui::icon.frame'],
-//        'cluster' => ['Cluster', '/cluster', '','ui::icon.cluster'],
-//        'microframe' => ['MicroFrame', '/microframe', '','ui::icon.microframe'],
-//        'grammar' => ['Grammar', '/parser/grammar', '','ui::icon.microframe'],
-//        'construction' => ['Construction', '/parser/construction', '','ui::icon.microframe'],
+        'sentence' => ['Sentence', '/sentence', '','ui::icon.sentence'],
+        'class' => ['Class', '/class', '','ui::icon.frame'],
+        'cluster' => ['Cluster', '/cluster', '','ui::icon.cluster'],
+        'microframe' => ['MicroFrame', '/microframe', '','ui::icon.microframe'],
+        'grammar' => ['Grammar', '/parser/grammar', '','ui::icon.microframe','dev'],
+        'construction' => ['Construction', '/parser/construction', '','ui::icon.microframe','dev'],
     ];
 
     $groups = [
         'frame' => ['title' => "Frame", "pages" => ['frame','reframing']],
 //        'lexicon' => ['title' => "Lexicon", "pages" => ['lemma','form','lucandidate']],
         'lexicon' => ['title' => "Lexicon", "pages" => ['lucandidate','lemma']],
-//        'text' => ['title'=> "Text", "pages" => ['sentence']],
+        'text' => ['title'=> "Text", "pages" => ['sentence']],
 //        'construction' => ['title' => "Construction", "pages" => ['constructicon']],
-//        'ontology' => ['title' => "Ontology", "pages" => ['class','microframe','cluster']],
-//        'parser' => ['title' => "Parser", "pages" => ['grammar','construction']],
+        'ontology' => ['title' => "Ontology", "pages" => ['class','microframe','cluster']],
+        'parser' => ['title' => "Parser", "pages" => ['grammar','construction'], "mode" => "dev"],
     ];
 @endphp
 
@@ -43,6 +43,12 @@
                 </div>
                 <div class="page-content">
                     @foreach($groups as $group)
+                        @php
+                            $mode = $group["mode"] ?? 'prod';
+                            if ((config('webtool.mode') == 'prod') && ($mode == 'dev')) {
+                                continue;
+                            }
+                        @endphp
                         <div class="ui fluid card">
                             <div class="content  bg-gray-200">
                                 <div class="header">
@@ -54,6 +60,10 @@
                                     @foreach($group['pages'] as $group)
                                         @php
                                             $item = $options[$group];
+                                            $mode = $item[4] ?? 'prod';
+                                            if ((config('webtool.mode') == 'prod') && ($mode == 'dev')) {
+                                                continue;
+                                            }
                                         @endphp
                                         <a
                                             class="ui card option-card"

@@ -1,0 +1,287 @@
+digraph "unified" {
+    rankdir=LR;
+    compound=true;
+    node [fontname="Helvetica", fontsize=10];
+    edge [fontname="Helvetica", fontsize=9];
+
+    "GLOBAL:START" [label="GLOBAL\nSTART", shape="circle", style="filled", fillcolor="lightgreen"];
+
+    subgraph cluster_0 {
+        label="NOUN";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:NOUN" [label="PATTERN\nNOUN", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "NOUN:n2" [label="NOUN:n2\nNOUN", shape="box", style="filled", fillcolor="lightblue"];
+        "NOUN:n3" [label="NOUN:n3\nPROPN", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_1 {
+        label="VERB";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:VERB" [label="PATTERN\nVERB", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "VERB:n2" [label="VERB:n2\nVERB", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_2 {
+        label="NUM";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:NUM" [label="PATTERN\nNUM", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "NUM:n2" [label="NUM:n2\nNUM", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_3 {
+        label="DET";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:DET" [label="PATTERN\nDET", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "DET:n2" [label="DET:n2\nDET", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_4 {
+        label="ADJ";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:ADJ" [label="PATTERN\nADJ", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "ADJ:n2" [label="ADJ:n2\nADJ", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_5 {
+        label="DEM";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:DEM" [label="PATTERN\nDEM", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "DEM:n2" [label="DEM:n2\nPRON", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_6 {
+        label="ADP";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:ADP" [label="PATTERN\nADP", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "ADP:n2" [label="ADP:n2\nADP", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_7 {
+        label="CPP";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:CPP" [label="PATTERN\nCPP", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "CPP:n2" [label="CPP:n2\nAUX", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_8 {
+        label="PRX";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:PRX" [label="PATTERN\nPRX", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "PRX:n2" [label="PRX:n2", shape="ellipse"];
+        "PRX:n3" [label="PRX:n3", shape="ellipse"];
+    }
+
+    subgraph cluster_9 {
+        label="REF";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:REF" [label="PATTERN\nREF", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "REF:n2" [label="REF:n2", shape="diamond", style="filled", fillcolor="lightyellow"];
+        "REF:n3" [label="REF:n3\nDET", shape="box", style="filled", fillcolor="lightblue"];
+        "REF:n4" [label="REF:n4", shape="diamond", style="filled", fillcolor="lightyellow"];
+        "REF:n5" [label="REF:n5\nADJ", shape="box", style="filled", fillcolor="lightblue"];
+        "REF:n6" [label="REF:n6", shape="diamond", style="filled", fillcolor="lightyellow"];
+        "REF:n7" [label="REF:n7\nNOUN", shape="box", style="filled", fillcolor="lightblue"];
+        "REF:n8" [label="REF:n8\nADJ", shape="box", style="filled", fillcolor="lightblue"];
+        "REF:n9" [label="REF:n9\nPRON", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_10 {
+        label="REL";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:REL" [label="PATTERN\nREL", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "REL:n2" [label="REL:n2\nPRX_PRED", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_11 {
+        label="CPP_VERB";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:CPP_VERB" [label="PATTERN\nCPP_VERB", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "CPP_VERB:n2" [label="CPP_VERB:n2\nCPP", shape="box", style="filled", fillcolor="lightblue"];
+        "CPP_VERB:n3" [label="CPP_VERB:n3\nVERB", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_12 {
+        label="PRED";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:PRED" [label="PATTERN\nPRED", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "PRED:n2" [label="PRED:n2\nVERB", shape="box", style="filled", fillcolor="lightblue"];
+        "PRED:n3" [label="PRED:n3\nCPP_VERB", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_13 {
+        label="PRX_PRED";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:PRX_PRED" [label="PATTERN\nPRX_PRED", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "PRX_PRED:n2" [label="PRX_PRED:n2\nPRX", shape="box", style="filled", fillcolor="lightblue"];
+        "PRX_PRED:n3" [label="PRX_PRED:n3\nCLAUSE", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_14 {
+        label="SUBJECT";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:SUBJECT" [label="PATTERN\nSUBJECT", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "SUBJECT:n2" [label="SUBJECT:n2\nREF", shape="box", style="filled", fillcolor="lightblue"];
+        "SUBJECT:n3" [label="SUBJECT:n3\nPRED", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_15 {
+        label="OBJECT";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:OBJECT" [label="PATTERN\nOBJECT", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "OBJECT:n2" [label="OBJECT:n2\nPRED", shape="box", style="filled", fillcolor="lightblue"];
+        "OBJECT:n3" [label="OBJECT:n3\nREF", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    subgraph cluster_16 {
+        label="CLAUSE";
+        style=filled;
+        fillcolor=white;
+        color=gray;
+
+        "PATTERN:CLAUSE" [label="PATTERN\nCLAUSE", shape="doubleoctagon", style="filled", fillcolor="lightsalmon"];
+        "CLAUSE:n2" [label="CLAUSE:n2", shape="diamond", style="filled", fillcolor="lightyellow"];
+        "CLAUSE:n3" [label="CLAUSE:n3\nSUBJECT", shape="box", style="filled", fillcolor="lightblue"];
+        "CLAUSE:n4" [label="CLAUSE:n4\nPRED", shape="box", style="filled", fillcolor="lightblue"];
+        "CLAUSE:n5" [label="CLAUSE:n5\nOBJECT", shape="box", style="filled", fillcolor="lightblue"];
+    }
+
+    "NOUN:n2" -> "PATTERN:NOUN";
+    "NOUN:n3" -> "PATTERN:NOUN";
+    "GLOBAL:START" -> "NOUN:n2";
+    "GLOBAL:START" -> "NOUN:n3";
+    "VERB:n2" -> "PATTERN:VERB";
+    "VERB:n2" -> "PATTERN:VERB";
+    "GLOBAL:START" -> "VERB:n2";
+    "NUM:n2" -> "PATTERN:NUM";
+    "NUM:n2" -> "PATTERN:NUM";
+    "GLOBAL:START" -> "NUM:n2";
+    "DET:n2" -> "PATTERN:DET";
+    "DET:n2" -> "PATTERN:DET";
+    "GLOBAL:START" -> "DET:n2";
+    "ADJ:n2" -> "PATTERN:ADJ";
+    "ADJ:n2" -> "PATTERN:ADJ";
+    "GLOBAL:START" -> "ADJ:n2";
+    "DEM:n2" -> "PATTERN:DEM";
+    "DEM:n2" -> "PATTERN:DEM";
+    "GLOBAL:START" -> "DEM:n2";
+    "ADP:n2" -> "PATTERN:ADP";
+    "ADP:n2" -> "PATTERN:ADP";
+    "GLOBAL:START" -> "ADP:n2";
+    "CPP:n2" -> "PATTERN:CPP";
+    "CPP:n2" -> "PATTERN:CPP";
+    "GLOBAL:START" -> "CPP:n2";
+    "PRX:n2" -> "PATTERN:PRX";
+    "PRX:n3" -> "PATTERN:PRX";
+    "GLOBAL:START" -> "PRX:n2";
+    "GLOBAL:START" -> "PRX:n3";
+    "REF:n3" -> "REF:n2";
+    "REF:n2" -> "REF:n5";
+    "REF:n5" -> "REF:n4";
+    "REF:n2" -> "REF:n4" [style="dashed", color="gray", label="bypass"];
+    "REF:n4" -> "REF:n7";
+    "REF:n7" -> "REF:n6";
+    "REF:n4" -> "REF:n6" [style="dashed", color="gray", label="bypass"];
+    "REF:n6" -> "REF:n8";
+    "REF:n8" -> "PATTERN:REF";
+    "REF:n6" -> "PATTERN:REF" [style="dashed", color="gray", label="bypass"];
+    "REF:n9" -> "PATTERN:REF";
+    "GLOBAL:START" -> "REF:n3";
+    "GLOBAL:START" -> "REF:n9";
+    "GLOBAL:START" -> "REF:n2" [style="dashed", color="gray", label="bypass"];
+    "REL:n2" -> "PATTERN:REL";
+    "REL:n2" -> "PATTERN:REL";
+    "GLOBAL:START" -> "REL:n2";
+    "CPP_VERB:n2" -> "CPP_VERB:n3";
+    "CPP_VERB:n3" -> "PATTERN:CPP_VERB";
+    "CPP_VERB:n3" -> "PATTERN:CPP_VERB";
+    "GLOBAL:START" -> "CPP_VERB:n2";
+    "PRED:n2" -> "PATTERN:PRED";
+    "PRED:n3" -> "PATTERN:PRED";
+    "GLOBAL:START" -> "PRED:n2";
+    "GLOBAL:START" -> "PRED:n3";
+    "PRX_PRED:n2" -> "PRX_PRED:n3";
+    "PRX_PRED:n3" -> "PATTERN:PRX_PRED";
+    "PRX_PRED:n3" -> "PATTERN:PRX_PRED";
+    "GLOBAL:START" -> "PRX_PRED:n2";
+    "SUBJECT:n2" -> "SUBJECT:n3";
+    "SUBJECT:n3" -> "PATTERN:SUBJECT";
+    "SUBJECT:n3" -> "PATTERN:SUBJECT";
+    "GLOBAL:START" -> "SUBJECT:n2";
+    "OBJECT:n2" -> "OBJECT:n3";
+    "OBJECT:n3" -> "PATTERN:OBJECT";
+    "OBJECT:n3" -> "PATTERN:OBJECT";
+    "GLOBAL:START" -> "OBJECT:n2";
+    "CLAUSE:n3" -> "CLAUSE:n2";
+    "CLAUSE:n2" -> "CLAUSE:n4";
+    "CLAUSE:n4" -> "CLAUSE:n5";
+    "CLAUSE:n5" -> "PATTERN:CLAUSE";
+    "CLAUSE:n4" -> "PATTERN:CLAUSE" [style="dashed", color="gray", label="bypass"];
+    "GLOBAL:START" -> "CLAUSE:n3";
+    "GLOBAL:START" -> "CLAUSE:n2" [style="dashed", color="gray", label="bypass"];
+    "PATTERN:NOUN" -> "REF:n7" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:VERB" -> "CPP_VERB:n3" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:VERB" -> "PRED:n2" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:DET" -> "REF:n3" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:ADJ" -> "REF:n5" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:ADJ" -> "REF:n8" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:CPP" -> "CPP_VERB:n2" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:PRX" -> "PRX_PRED:n2" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:REF" -> "SUBJECT:n2" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:REF" -> "OBJECT:n3" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:CPP_VERB" -> "PRED:n3" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:PRED" -> "SUBJECT:n3" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:PRED" -> "OBJECT:n2" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:PRED" -> "CLAUSE:n4" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:PRX_PRED" -> "REL:n2" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:SUBJECT" -> "CLAUSE:n3" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:OBJECT" -> "CLAUSE:n5" [style="bold", color="darkgreen", penwidth="2.0"];
+    "PATTERN:CLAUSE" -> "PRX_PRED:n3" [style="bold", color="darkgreen", penwidth="2.0"];
+}

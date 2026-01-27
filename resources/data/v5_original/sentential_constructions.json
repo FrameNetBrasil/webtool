@@ -1,0 +1,246 @@
+[
+  {
+    "name": "MAIN_CLAUSE_SIMPLE",
+    "constructionType": "sentential",
+    "priority": 18,
+    "pattern": "{VERB}",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Main",
+    "constraints": [
+      {
+        "type": "feature_equals",
+        "element": 0,
+        "feature": "VerbForm",
+        "value": "Fin"
+      }
+    ],
+    "description": "Simple main clause (finite verb)"
+  },
+  {
+    "name": "ADV_TEMPORAL_QUANDO",
+    "constructionType": "sentential",
+    "priority": 12,
+    "pattern": "\"quando\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Temporal adverbial clause introducer (quando/when)",
+    "examples": [
+      {"sentence": "Quando eu cheguei, ela estava lá"}
+    ]
+  },
+  {
+    "name": "ADV_TEMPORAL_ENQUANTO",
+    "constructionType": "sentential",
+    "priority": 12,
+    "pattern": "\"enquanto\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Temporal adverbial clause introducer (enquanto/while)"
+  },
+  {
+    "name": "ADV_TEMPORAL_DEPOIS_QUE",
+    "constructionType": "sentential",
+    "priority": 13,
+    "pattern": "\"depois\" \"que\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Temporal adverbial clause introducer (depois que/after)"
+  },
+  {
+    "name": "ADV_TEMPORAL_ANTES_DE",
+    "constructionType": "sentential",
+    "priority": 13,
+    "pattern": "\"antes\" \"de\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Temporal adverbial clause introducer (antes de/before)"
+  },
+  {
+    "name": "ADV_CAUSAL_PORQUE",
+    "constructionType": "sentential",
+    "priority": 12,
+    "pattern": "\"porque\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Causal adverbial clause introducer (porque/because)"
+  },
+  {
+    "name": "ADV_CAUSAL_JA_QUE",
+    "constructionType": "sentential",
+    "priority": 13,
+    "pattern": "\"já\" \"que\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Causal adverbial clause introducer (já que/since)"
+  },
+  {
+    "name": "ADV_CAUSAL_COMO",
+    "constructionType": "sentential",
+    "priority": 12,
+    "pattern": "\"como\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Causal adverbial clause introducer (como/as)"
+  },
+  {
+    "name": "ADV_CONDITIONAL_SE",
+    "constructionType": "sentential",
+    "priority": 12,
+    "pattern": "\"se\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Conditional adverbial clause introducer (se/if)"
+  },
+  {
+    "name": "ADV_CONCESSIVO_EMBORA",
+    "constructionType": "sentential",
+    "priority": 12,
+    "pattern": "\"embora\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Concessive adverbial clause introducer (embora/although)"
+  },
+  {
+    "name": "ADV_CONCESSIVO_APESAR_DE",
+    "constructionType": "sentential",
+    "priority": 13,
+    "pattern": "\"apesar\" \"de\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Concessive adverbial clause introducer (apesar de/despite)"
+  },
+  {
+    "name": "REL_CLAUSE_QUE",
+    "constructionType": "sentential",
+    "priority": 10,
+    "pattern": "\"que\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Rel",
+    "constraints": [],
+    "description": "Relative clause introducer (que/that)",
+    "examples": [
+      {"sentence": "O menino que eu vi chegou"}
+    ]
+  },
+  {
+    "name": "REL_CLAUSE_QUEM",
+    "constructionType": "sentential",
+    "priority": 10,
+    "pattern": "\"quem\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Rel",
+    "constraints": [],
+    "description": "Relative clause introducer (quem/who)"
+  },
+  {
+    "name": "REL_CLAUSE_QUAL",
+    "constructionType": "sentential",
+    "priority": 10,
+    "pattern": "\"qual\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Rel",
+    "constraints": [],
+    "description": "Relative clause introducer (qual/which)"
+  },
+  {
+    "name": "REL_CLAUSE_CUJO",
+    "constructionType": "sentential",
+    "priority": 10,
+    "pattern": "\"cujo\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Rel",
+    "constraints": [],
+    "description": "Relative clause introducer (cujo/whose)"
+  },
+  {
+    "name": "REL_CLAUSE_ONDE",
+    "constructionType": "sentential",
+    "priority": 10,
+    "pattern": "\"onde\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Rel",
+    "constraints": [],
+    "description": "Relative clause introducer (onde/where)"
+  },
+  {
+    "name": "COMP_CLAUSE_QUE",
+    "constructionType": "sentential",
+    "priority": 8,
+    "pattern": "\"que\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Comp",
+    "constraints": [],
+    "description": "Complement clause introducer (que/that)"
+  },
+  {
+    "name": "COMP_CLAUSE_SE",
+    "constructionType": "sentential",
+    "priority": 8,
+    "pattern": "\"se\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Comp",
+    "constraints": [],
+    "description": "Complement clause introducer (se/if/whether)"
+  },
+  {
+    "name": "ADV_PURPOSE_PARA_QUE",
+    "constructionType": "sentential",
+    "priority": 13,
+    "pattern": "\"para\" \"que\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Purpose adverbial clause introducer (para que/so that)"
+  },
+  {
+    "name": "ADV_PURPOSE_A_FIM_DE",
+    "constructionType": "sentential",
+    "priority": 14,
+    "pattern": "\"a\" \"fim\" \"de\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Purpose adverbial clause introducer (a fim de/in order to)"
+  },
+  {
+    "name": "ADV_COMPARATIVE_COMO",
+    "constructionType": "sentential",
+    "priority": 11,
+    "pattern": "\"como\"",
+    "phrasalCE": null,
+    "clausalCE": null,
+    "sententialCE": "Adv",
+    "constraints": [],
+    "description": "Comparative adverbial clause introducer (como/as)"
+  }
+]

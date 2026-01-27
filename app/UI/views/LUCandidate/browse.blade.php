@@ -21,7 +21,7 @@
             }"
             x-init="$nextTick(() => { $('.menu .item').tab(); })"
         >
-            <div class="ui container page-browse">
+            <div class="ui container page">
                 <div class="page-header">
                     <div class="page-header-content">
                         <div class="page-title">
@@ -54,8 +54,6 @@
                     </div>
                 </div>
                 <div class="page-content">
-
-
                     <div class="h-full">
                         {{-- Tab Content: WEBTOOL--}}
                         <div class="ui tab {{ $defaultTab === 'webtool' ? 'active' : '' }} h-full" data-tab="webtool">

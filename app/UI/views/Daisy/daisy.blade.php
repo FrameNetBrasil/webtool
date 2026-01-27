@@ -17,7 +17,7 @@
 
                 <div class="daisy-controls">
                     <form class="ui form">
-                        <div class="five fields">
+                        <div class="three fields">
                             <!-- Sentence Input -->
                             <div class="field">
                                 <label for="sentence">
@@ -51,54 +51,54 @@
                             </div>
 
                             <!-- Search Type -->
-                            <div class="field">
-                                <label for="searchType">
-                                    Search Type
-                                </label>
-                                <select
-                                    id="searchType"
-                                    name="searchType"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md"
-                                >
-                                    @foreach($searchTypes as $value => $label)
-                                        <option
-                                            value="{{ $value }}" {{ $defaultSearchType == $value ? 'selected' : '' }}>
-                                            {{ $value }}: {{ $label }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
+{{--                            <div class="field">--}}
+{{--                                <label for="searchType">--}}
+{{--                                    Search Type--}}
+{{--                                </label>--}}
+{{--                                <select--}}
+{{--                                    id="searchType"--}}
+{{--                                    name="searchType"--}}
+{{--                                    class="w-full px-3 py-2 border border-gray-300 rounded-md"--}}
+{{--                                >--}}
+{{--                                    @foreach($searchTypes as $value => $label)--}}
+{{--                                        <option--}}
+{{--                                            value="{{ $value }}" {{ $defaultSearchType == $value ? 'selected' : '' }}>--}}
+{{--                                            {{ $value }}: {{ $label }}--}}
+{{--                                        </option>--}}
+{{--                                    @endforeach--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
 
                             <!-- Level -->
-                            <div class="field">
-                                <label for="level">
-                                    Relation Depth
-                                </label>
-                                <select
-                                    id="level"
-                                    name="level"
-                                    class="w-full px-3 py-2 border border-gray-300 rounded-md"
-                                >
-                                    @for($i = 1; $i <= 5; $i++)
-                                        <option value="{{ $i }}" {{ $defaultLevel == $i ? 'selected' : '' }}>
-                                            Level {{ $i }}
-                                        </option>
-                                    @endfor
-                                </select>
-                            </div>
+{{--                            <div class="field">--}}
+{{--                                <label for="level">--}}
+{{--                                    Relation Depth--}}
+{{--                                </label>--}}
+{{--                                <select--}}
+{{--                                    id="level"--}}
+{{--                                    name="level"--}}
+{{--                                    class="w-full px-3 py-2 border border-gray-300 rounded-md"--}}
+{{--                                >--}}
+{{--                                    @for($i = 1; $i <= 5; $i++)--}}
+{{--                                        <option value="{{ $i }}" {{ $defaultLevel == $i ? 'selected' : '' }}>--}}
+{{--                                            Level {{ $i }}--}}
+{{--                                        </option>--}}
+{{--                                    @endfor--}}
+{{--                                </select>--}}
+{{--                            </div>--}}
 
                             <!-- GregNet Mode -->
-                            <div class="field">
-                                <label></label>
-                                <input
-                                    type="checkbox"
-                                    id="gregnetMode"
-                                    name="gregnetMode"
-                                    value="1"
-                                    class="mr-2"
-                                >
-                                <span class="text-sm">GregNet Mode</span>
-                            </div>
+{{--                            <div class="field">--}}
+{{--                                <label></label>--}}
+{{--                                <input--}}
+{{--                                    type="checkbox"--}}
+{{--                                    id="gregnetMode"--}}
+{{--                                    name="gregnetMode"--}}
+{{--                                    value="1"--}}
+{{--                                    class="mr-2"--}}
+{{--                                >--}}
+{{--                                <span class="text-sm">GregNet Mode</span>--}}
+{{--                            </div>--}}
                         </div>
                         <!-- Action Buttons -->
                         <div class="flex flex-row gap-2">
@@ -108,13 +108,13 @@
                                 hx-target="#results"
                                 hx-post="/daisy/parse"
                             ></x-button>
-                            <x-button
-                                id="btnGraph"
-                                label="Parse & Show Graph"
-                                color="secondary"
-                                hx-target="#graph"
-                                hx-post="/daisy/graph"
-                            ></x-button>
+{{--                            <x-button--}}
+{{--                                id="btnGraph"--}}
+{{--                                label="Parse & Show Graph"--}}
+{{--                                color="secondary"--}}
+{{--                                hx-target="#graph"--}}
+{{--                                hx-post="/daisy/graph"--}}
+{{--                            ></x-button>--}}
                             <x-button
                                 id="btnClear"
                                 label="Clear"

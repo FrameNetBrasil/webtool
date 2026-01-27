@@ -1,0 +1,59 @@
+digraph CLNv3 {
+  // Graph styling
+  rankdir=LR;
+  node [style=filled, fontname="Arial", fontsize=10];
+  edge [fontname="Arial", fontsize=8];
+
+  label="Graph: After Dynamics: "o gato preto"\nstage: after_dynamics\ntimesteps: 60\nl1_nodes: 3\nl2_nodes: 7";
+  labelloc=top;
+  fontsize=12;
+
+  // Nodes
+  // L1 nodes
+  "L1_P0_literal_o" [label="L1: literal\nSpan: [0, 0]\nAct: 0.950\nValue: 'o'", fillcolor="#90EE90", shape=box];
+  "L1_P1_literal_gato" [label="L1: literal\nSpan: [1, 1]\nAct: 0.950\nValue: 'gato'", fillcolor="#90EE90", shape=box];
+  "L1_P2_literal_preto" [label="L1: literal\nSpan: [2, 2]\nAct: 0.950\nValue: 'preto'", fillcolor="#90EE90", shape=box];
+
+  // L2 nodes
+  "L2_MOD-_0:0" [label="L2: MOD-\nSpan: [0, 0]\nAct: 0.898\nPat: 4366", fillcolor="#87CEEB", shape=ellipse];
+  "L2_partial_and_1392_0:0" [label="L2: partial_and_1392\nSpan: [0, 0]\nAct: 0.298\nPat: 4368\nPred: OR 'HEAD'", fillcolor="#87CEEB", shape=rectangle];
+  "L2_HEAD_1:1" [label="L2: HEAD\nSpan: [1, 1]\nAct: 0.898\nPat: 4365", fillcolor="#87CEEB", shape=ellipse];
+  "L2_partial_and_1393_1:1" [label="L2: partial_and_1393\nSpan: [1, 1]\nAct: 0.298\nPat: 4369\nPred: OR '-MOD'", fillcolor="#87CEEB", shape=rectangle];
+  "L2_MOD_HEAD_0:1" [label="L2: MOD_HEAD\nSpan: [0, 1]\nAct: 0.807\nPat: 4368", fillcolor="#87CEEB", shape=rectangle];
+  "L2_-MOD_2:2" [label="L2: -MOD\nSpan: [2, 2]\nAct: 0.899\nPat: 4367", fillcolor="#87CEEB", shape=ellipse];
+  "L2_HEAD_MOD_1:2" [label="L2: HEAD_MOD\nSpan: [1, 2]\nAct: 0.808\nPat: 4369", fillcolor="#87CEEB", shape=rectangle];
+
+  // Edges
+  "L1_P0_literal_o" -> "L2_MOD-_0:0" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_MOD-_0:0" -> "L2_partial_and_1392_0:0" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_MOD-_0:0" -> "L2_MOD_HEAD_0:1" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_MOD-_0:0" -> "L2_partial_and_1392_0:0" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_MOD-_0:0" -> "L2_MOD_HEAD_0:1" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_partial_and_1392_0:0" -> "L2_MOD-_0:0" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_partial_and_1392_0:0" -> "L2_MOD_HEAD_0:1" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L1_P1_literal_gato" -> "L2_HEAD_1:1" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_HEAD_1:1" -> "L2_partial_and_1393_1:1" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_HEAD_1:1" -> "L2_MOD_HEAD_0:1" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_HEAD_1:1" -> "L2_HEAD_MOD_1:2" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_HEAD_1:1" -> "L2_partial_and_1393_1:1" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_HEAD_1:1" -> "L2_MOD_HEAD_0:1" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_HEAD_1:1" -> "L2_HEAD_MOD_1:2" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_partial_and_1393_1:1" -> "L2_HEAD_1:1" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_partial_and_1393_1:1" -> "L2_MOD_HEAD_0:1" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_partial_and_1393_1:1" -> "L2_HEAD_MOD_1:2" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_MOD_HEAD_0:1" -> "L2_MOD-_0:0" [color="#FF6347", label="lateral-inhib\nw: 1.75", arrowhead=tee, penwidth=2];
+  "L2_MOD_HEAD_0:1" -> "L2_partial_and_1392_0:0" [color="#FF6347", label="lateral-inhib\nw: 1.75", arrowhead=tee, penwidth=2];
+  "L2_MOD_HEAD_0:1" -> "L2_HEAD_1:1" [color="#FF6347", label="lateral-inhib\nw: 1.75", arrowhead=tee, penwidth=2];
+  "L2_MOD_HEAD_0:1" -> "L2_partial_and_1393_1:1" [color="#FF6347", label="lateral-inhib\nw: 1.75", arrowhead=tee, penwidth=2];
+  "L2_MOD_HEAD_0:1" -> "L2_HEAD_MOD_1:2" [color="#FF6347", label="lateral-inhib\nw: 1.75", arrowhead=tee, penwidth=2];
+  "L1_P2_literal_preto" -> "L2_-MOD_2:2" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_-MOD_2:2" -> "L2_HEAD_MOD_1:2" [color="#228B22", label="feedforward", arrowhead=normal];
+  "L2_-MOD_2:2" -> "L2_HEAD_MOD_1:2" [color="#FF6347", label="lateral-inhib\nw: 2.50", arrowhead=tee, penwidth=2];
+  "L2_HEAD_MOD_1:2" -> "L2_HEAD_1:1" [color="#FF6347", label="lateral-inhib\nw: 1.75", arrowhead=tee, penwidth=2];
+  "L2_HEAD_MOD_1:2" -> "L2_partial_and_1393_1:1" [color="#FF6347", label="lateral-inhib\nw: 1.75", arrowhead=tee, penwidth=2];
+  "L2_HEAD_MOD_1:2" -> "L2_MOD_HEAD_0:1" [color="#FF6347", label="lateral-inhib\nw: 1.75", arrowhead=tee, penwidth=2];
+  "L2_HEAD_MOD_1:2" -> "L2_-MOD_2:2" [color="#FF6347", label="lateral-inhib\nw: 1.75", arrowhead=tee, penwidth=2];
+
+  // Prediction edges
+  // No predictions
+}

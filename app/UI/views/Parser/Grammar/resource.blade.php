@@ -11,7 +11,7 @@
         <x-button
             label="New Grammar Graph"
             color="secondary"
-            hx-get="/parser/v4/grammar/new"
+            hx-get="/parser/grammar/new"
             hx-target="#editArea"
             hx-swap="innerHTML"
         ></x-button>
@@ -23,7 +23,7 @@
                 <x-search-field
                     id="name"
                     placeholder="Search by name"
-                    hx-post="/parser/v4/grammar/grid/search"
+                    hx-post="/parser/grammar/grid/search"
                     hx-trigger="input changed delay:500ms, search"
                     hx-target="#gridGrammar"
                     hx-swap="innerHTML"
@@ -33,7 +33,7 @@
                 <x-search-field
                     id="language"
                     placeholder="Language (pt, en, etc.)"
-                    hx-post="/parser/v4/grammar/grid/search"
+                    hx-post="/parser/grammar/grid/search"
                     hx-trigger="input changed delay:500ms, search"
                     hx-target="#gridGrammar"
                     hx-swap="innerHTML"
@@ -48,7 +48,7 @@
             hx-trigger="load"
             hx-target="this"
             hx-swap="outerHTML"
-            hx-get="/parser/v4/grammar/grid"
+            hx-get="/parser/grammar/grid"
         ></div>
     </x-slot:grid>
 

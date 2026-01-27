@@ -21,26 +21,28 @@ class DaisyService
 {
     private TrankitService $trankitService;
 
-    private GridService $gridService;
-
-    private LexicalUnitService $lexicalUnitService;
-
-    private SemanticNetworkService $semanticNetworkService;
-
+    //    private GridService $gridService;
+    //
+    //    private LexicalUnitService $lexicalUnitService;
+    //
+    //    private SemanticNetworkService $semanticNetworkService;
+    //
     private SpreadingActivationService $spreadingActivationService;
 
-    private WinnerSelectionService $winnerSelectionService;
+    private TokenizerService $tokenizerService;
+    //
+    //    private WinnerSelectionService $winnerSelectionService;
 
     public function __construct(
         TrankitService $trankitService,
-        GridService $gridService
+        //        GridService    $gridService
     ) {
         $this->trankitService = $trankitService;
-        $this->gridService = $gridService;
+        //        $this->gridService = $gridService;
 
         // Initialize Trankit with URL
-        $trankitUrl = config('daisy.trankitUrl', 'http://localhost:8405');
-        $this->trankitService->init($trankitUrl);
+        //        $trankitUrl = config('daisy.trankitUrl', 'http://localhost:8405');
+        //        $this->trankitService->init($trankitUrl);
     }
 
     /**
@@ -52,92 +54,108 @@ class DaisyService
     public function disambiguate(DaisyInputData $input): DaisyOutputData
     {
         // Initialize services with language-specific parameters
-        $this->lexicalUnitService = new LexicalUnitService($input->idLanguage);
-        $this->semanticNetworkService = new SemanticNetworkService(
-            $input->idLanguage,
-            $input->searchType,
-            $input->level
-        );
+        //        $this->lexicalUnitService = new LexicalUnitService($input->idLanguage);
+        //        $this->semanticNetworkService = new SemanticNetworkService(
+        //            $input->idLanguage,
+        //            $input->searchType,
+        //            $input->level
+        //        );
+        $this->tokenizerService = new TokenizerService(idLanguage: $input->idLanguage);
         $this->spreadingActivationService = new SpreadingActivationService;
-        $this->winnerSelectionService = new WinnerSelectionService($input->gregnetMode);
+        //        $this->winnerSelectionService = new WinnerSelectionService($input->gregnetMode);
 
         // Step 1: Parse sentence with Trankit (UD parsing)
         $udParsed = $this->parseWithTrankit($input->sentence, $input->idLanguage);
 
-        // Step 2: Create GRID windows
-        $gridResult = $this->gridService->processToWindows($udParsed);
-        // debug($gridResult);
-        $windows = $gridResult['windows'];
-        $lemmas = $gridResult['lemmas'];
-        //        debug("===========");
-        //        debug($windows);
-        //        debug("===========");
+        $clusters = ClusterService::createClusters($udParsed, $input->idLanguage);
+        ClusterService::matchLexicalUnits($clusters);
+        ClusterService::createVectors($clusters, $this->spreadingActivationService);
+        ClusterService::processClusters($udParsed, $clusters);
+        $result = ClusterService::resultFromClusters($clusters);
+        //        debug($clusters);
 
-        // Step 3: Match lexical units
-        $windows = $this->lexicalUnitService->matchLexicalUnits($windows, $lemmas);
-
-        // Step 4: Build semantic networks
-        $windows = $this->semanticNetworkService->buildSemanticNetworks($windows);
-
-        // Step 5: Apply spreading activation
-        $windows = $this->spreadingActivationService->processSpreadingActivation($windows);
-
-        // Step 6: Select winners
-        debug('=== DaisyService: Before generateWinners ===');
-        debug('Windows count:', count($windows));
-        debug('Windows type:', gettype($windows));
-
-        // Debug: Check structure of first window
-        if (! empty($windows)) {
-            $firstWindowKey = array_key_first($windows);
-            $firstWindow = $windows[$firstWindowKey];
-            debug("First window key: {$firstWindowKey}, type:", gettype($firstWindow));
-
-            if (is_array($firstWindow) && ! empty($firstWindow)) {
-                $firstWordKey = array_key_first($firstWindow);
-                $firstWordFrames = $firstWindow[$firstWordKey];
-                debug("  First word: '{$firstWordKey}', type:", gettype($firstWordFrames), 'count:', is_countable($firstWordFrames) ? count($firstWordFrames) : 'N/A');
-
-                if (is_array($firstWordFrames) && ! empty($firstWordFrames)) {
-                    $firstFrameKey = array_key_first($firstWordFrames);
-                    $firstFrame = $firstWordFrames[$firstFrameKey];
-                    debug("    First frame: '{$firstFrameKey}', type:", gettype($firstFrame));
-                    if (is_object($firstFrame)) {
-                        debug('    Frame class:', get_class($firstFrame));
-                        debug('    Frame has energy?', isset($firstFrame->energy), 'value =', $firstFrame->energy ?? 'N/A');
-                        debug('    Frame has iword?', isset($firstFrame->iword));
-                        debug('    Frame pool size:', is_array($firstFrame->pool) ? count($firstFrame->pool) : 'N/A');
-                        if (! empty($firstFrame->pool)) {
-                            debug('    Pool keys:', array_keys($firstFrame->pool));
-                        } else {
-                            debug('    WARNING: Pool is EMPTY - no semantic network built!');
-                        }
-                    }
-                }
-            }
-        }
-
-        $winnerResult = $this->winnerSelectionService->generateWinners($windows);
-
-        debug('=== DaisyService: After generateWinners ===');
-        debug('Winner result keys:', array_keys($winnerResult));
-        debug('Winners count:', count($winnerResult['winners'] ?? []));
-        debug('Weights count:', count($winnerResult['weights'] ?? []));
-        $winners = $winnerResult['winners'];
-        $weights = $winnerResult['weights'];
-
-        // Format results
-        $result = $this->winnerSelectionService->formatWinners($winners, $windows);
-
-        // Generate graph visualization data
-        $graph = $this->generateGraphData($windows, $winners, $udParsed);
-
+        //        // Step 2: Create GRID windows
+        //        $gridResult = $this->gridService->processToWindows($udParsed);
+        //        // debug($gridResult);
+        //        $windows = $gridResult['windows'];
+        //        $lemmas = $gridResult['lemmas'];
+        //        //        debug("===========");
+        //        //        debug($windows);
+        //        //        debug("===========");
+        //
+        //        // Step 3: Match lexical units
+        //        $windows = $this->lexicalUnitService->matchLexicalUnits($windows, $lemmas);
+        //
+        //        // Step 4: Build semantic networks
+        //        $windows = $this->semanticNetworkService->buildSemanticNetworks($windows);
+        //
+        //        // Step 5: Apply spreading activation
+        //        $windows = $this->spreadingActivationService->processSpreadingActivation($windows);
+        //
+        //        // Step 6: Select winners
+        //        debug('=== DaisyService: Before generateWinners ===');
+        //        debug('Windows count:', count($windows));
+        //        debug('Windows type:', gettype($windows));
+        //
+        //        // Debug: Check structure of first window
+        //        if (! empty($windows)) {
+        //            $firstWindowKey = array_key_first($windows);
+        //            $firstWindow = $windows[$firstWindowKey];
+        //            debug("First window key: {$firstWindowKey}, type:", gettype($firstWindow));
+        //
+        //            if (is_array($firstWindow) && ! empty($firstWindow)) {
+        //                $firstWordKey = array_key_first($firstWindow);
+        //                $firstWordFrames = $firstWindow[$firstWordKey];
+        //                debug("  First word: '{$firstWordKey}', type:", gettype($firstWordFrames), 'count:', is_countable($firstWordFrames) ? count($firstWordFrames) : 'N/A');
+        //
+        //                if (is_array($firstWordFrames) && ! empty($firstWordFrames)) {
+        //                    $firstFrameKey = array_key_first($firstWordFrames);
+        //                    $firstFrame = $firstWordFrames[$firstFrameKey];
+        //                    debug("    First frame: '{$firstFrameKey}', type:", gettype($firstFrame));
+        //                    if (is_object($firstFrame)) {
+        //                        debug('    Frame class:', get_class($firstFrame));
+        //                        debug('    Frame has energy?', isset($firstFrame->energy), 'value =', $firstFrame->energy ?? 'N/A');
+        //                        debug('    Frame has iword?', isset($firstFrame->iword));
+        //                        debug('    Frame pool size:', is_array($firstFrame->pool) ? count($firstFrame->pool) : 'N/A');
+        //                        if (! empty($firstFrame->pool)) {
+        //                            debug('    Pool keys:', array_keys($firstFrame->pool));
+        //                        } else {
+        //                            debug('    WARNING: Pool is EMPTY - no semantic network built!');
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //        }
+        //
+        //        $winnerResult = $this->winnerSelectionService->generateWinners($windows);
+        //
+        //        debug('=== DaisyService: After generateWinners ===');
+        //        debug('Winner result keys:', array_keys($winnerResult));
+        //        debug('Winners count:', count($winnerResult['winners'] ?? []));
+        //        debug('Weights count:', count($winnerResult['weights'] ?? []));
+        //        $winners = $winnerResult['winners'];
+        //        $weights = $winnerResult['weights'];
+        //
+        //        // Format results
+        //        $result = $this->winnerSelectionService->formatWinners($winners, $windows);
+        //
+        //        // Generate graph visualization data
+        //        $graph = $this->generateGraphData($windows, $winners, $udParsed);
+        //
+        //        return new DaisyOutputData(
+        //            result: $result,
+        //            graph: $graph,
+        //            sentenceUD: $udParsed,
+        //            windows: $windows,
+        //            weights: $weights
+        //        );
         return new DaisyOutputData(
             result: $result,
-            graph: $graph,
+            graph: [],
             sentenceUD: $udParsed,
-            windows: $windows,
-            weights: $weights
+            windows: [],
+            clusters: $clusters,
+            weights: []
         );
     }
 
@@ -146,10 +164,23 @@ class DaisyService
      */
     private function parseWithTrankit(string $sentence, int $idLanguage): array
     {
-        // Use TrankitService to get UD parse
-        $result = $this->trankitService->getUDTrankit($sentence, $idLanguage);
+        $tokensData = $this->tokenizerService->tokenize($sentence, $idLanguage);
+        $tokens = [];
+        foreach ($tokensData as $tokenData) {
+            $tokens[] = $tokenData->form;
+        }
 
-        return $result->udpipe ?? [];
+        //        $ud = $trankit->processTrankitTokens($tokens, 1);
+        // Use TrankitService to get UD parse
+        // $result = $this->trankitService->getUDTrankit($sentence, $idLanguage);
+        $ud = $this->trankitService->getUDTrankitTokens($tokens, $idLanguage);
+        $result = $ud->udpipe ?? [];
+        foreach ($tokensData as $i => $tokenData) {
+            $result[$i + 1]['idLemmas'] = $tokenData->idLemmas;
+            $result[$i + 1]['isMwe'] = $tokenData->isMwe;
+        }
+
+        return $result ?? [];
     }
 
     /**
@@ -252,5 +283,24 @@ class DaisyService
             'nodes' => $nodes,
             'links' => $links,
         ];
+    }
+
+    public function printClusters(array $clusters, int $idLanguage = 1)
+    {
+        foreach ($clusters as $cluster) {
+            print_r("Cluster {$cluster->id}\n");
+            print_r("        {$cluster->word}\n");
+            foreach ($cluster->components as $component) {
+                print_r("        component {$component->id}\n");
+                print_r("                  {$component->word}\n");
+                // if ($component->id == 12) print_r($component);
+                print_r("                  {$component->idLU}\n");
+                if ($component->idLU) {
+                    $lu = DBService::getLUFrame($component->idLU);
+                    print_r("                  {$lu->name}\n");
+                    print_r("                  {$lu->frameName}\n");
+                }
+            }
+        }
     }
 }

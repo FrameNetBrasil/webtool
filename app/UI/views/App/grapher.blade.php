@@ -3,7 +3,7 @@
         'frame' => ['Frame', '/grapher/frame', '','ui::icon.frame'],
         'domain' => ['Domain', '/grapher/domain', '','ui::icon.domain'],
         'scenario' => ['Scenario', '/grapher/scenario', '','ui::icon.frame'],
-//        'daisy' => ['Daisy', '/daisy', '','ui::icon.frame'],
+        'daisy' => ['Daisy', '/daisy', '','ui::icon.frame'],
     ];
 @endphp
 
@@ -25,6 +25,12 @@
                 <div class="page-content">
                     <div class="card-grid dense">
                         @foreach($options as $category => $option)
+                            @php
+                                $mode = $option[4] ?? 'prod';
+                                if ((config('webtool.mode') == 'prod') && ($mode == 'dev')) {
+                                    continue;
+                                }
+                            @endphp
                             <a
                                 class="ui card option-card"
                                 data-category="{{$category}}"

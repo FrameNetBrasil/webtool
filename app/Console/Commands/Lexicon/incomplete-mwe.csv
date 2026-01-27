@@ -1,0 +1,513 @@
+idLexiconPattern,mweLemma,mweName,totalNodes,nodesWithLemma,missingPositions
+9546,199218,"(assim são) as coisas",4,1,"0, 1, 3"
+9755,199524,"aar o apito de início",5,4,0
+8745,147438,"abrir os olhos",3,1,"1, 2"
+6916,69407,"ação de graças",3,2,2
+7529,71019,"acne conglobata",2,1,1
+7504,70994,"acne varioliforme",2,1,1
+7307,70476,"acolia fecal",2,1,0
+7421,70675,"adequação postural",2,1,1
+7478,70968,"aderências peritoniais",2,0,"0, 1"
+9674,199428,"agência de passeios de helicóptero",5,4,2
+9250,198725,"agência de seguros saúde",4,3,2
+7117,70087,"água sanitária",2,1,1
+9411,198998,"alien [estrangeiro]",2,1,1
+7302,70471,"alteração dermatológica",2,1,1
+6960,69926,"alterações comportamentais",2,0,"0, 1"
+7101,70071,"alterações visuais",2,0,"0, 1"
+7103,70073,"alucinações noturnas",2,0,"0, 1"
+7523,71013,"alucinose orgânica",2,0,"0, 1"
+7528,71018,"alveolite maxilar",2,1,0
+7488,70978,"amebíase cutânea",2,1,1
+7474,70964,"amiotrofia nevrálgica",2,1,1
+8843,198028,"andar na ponta dos pés",5,4,4
+9765,199534,"anéis estáticos",2,0,"0, 1"
+7643,116495,"antecedentes pessoais",2,0,"0, 1"
+7534,71024,"anúria traumática",2,1,1
+8415,142533,"aos poucos",2,0,"0, 1"
+9439,199037,"apanhador de bolas",3,2,2
+8840,198011,"Aqui está a tradução do texto ""hatred"" do inglês para o português:
+
+""ódio",13,9,"1, 6, 11, 12"
+7030,70000,"arcada dentária",2,1,1
+7019,69989,"arcos costais",2,0,"0, 1"
+6785,38276,"área interna do gol",4,3,1
+6869,58961,"área portuária",2,1,1
+9913,199719,"área restrita",2,1,1
+7217,70332,"área vermelha",2,1,1
+7561,71094,"arena das dunas",3,2,1
+9353,198884,"arma atômica",2,1,1
+9359,198893,"arma automática",2,1,1
+9347,198877,"arma biológica",2,1,1
+7184,70299,"arma branca",2,1,1
+9356,198887,"arma nuclear estratégica",3,2,2
+7515,71005,"artelhos palmados",2,0,"0, 1"
+6287,10831,"artes plásticas",2,1,1
+6523,37661,"artes visuais",2,1,1
+8456,142574,"às cegas",2,1,1
+8457,142575,"às claras",2,1,1
+8458,142576,"às escondidas",2,1,1
+8459,142577,"às pressas",2,1,1
+9341,198867,"ataque a tiros de carro",5,4,2
+9833,199618,"ataque diversivo",2,1,1
+7149,70119,"atividades diárias",2,0,"0, 1"
+9618,199349,"atrás das grades",3,1,"1, 2"
+7126,70096,"avaliação ortopédica",2,1,1
+7448,70748,"babá eletrônica",2,1,1
+8753,147468,"bacia hidrográfica",2,1,1
+7348,70569,"bacilo de koch",3,2,2
+9055,198383,"bairro de negócios",3,2,2
+9243,198718,"bancos de centros financeiros",4,1,"0, 2, 3"
+9687,199442,"bar de coquetéis",3,2,2
+9683,199438,"bar de lanches",3,2,2
+9688,199443,"bar e grelhados",3,2,2
+9205,198650,"bar mitsvá",2,1,1
+9268,198743,"barra de lanche à base de frutas",7,6,6
+7641,116424,"barra pesada",2,1,1
+4686,966,"barras assimétricas",2,1,1
+9081,198415,"base de operações",3,2,2
+8841,198016,"bater as botas",3,2,2
+7134,70104,"batimentos por minuto",3,2,0
+7420,70673,"bengala eletrônica",2,1,1
+7115,70085,"boa noite, cinderela",3,2,1
+7095,70065,"bolinhas vermelhas",2,0,"0, 1"
+7059,70029,"bolsa coletora",2,1,1
+9354,198885,"bomba atômica",2,1,1
+7052,70022,"bota imobilizadora",2,1,1
+9386,198936,"briga generalizada",2,1,1
+7510,71000,"broncomalácia congênita",2,0,"0, 1"
+6958,69924,"bronquite asmática",2,1,1
+6914,69404,"cabeça aberta",2,1,1
+9037,198358,"cadeia de montanhas",3,2,2
+6277,10653,"cadeira de rodas",3,2,2
+9751,199519,"cadeira teleférica",2,1,1
+8270,138922,"cair aos pedaços",3,1,"1, 2"
+9079,198412,"cais de águas profundas",4,3,3
+7509,70999,"calcinose cutânea",2,0,"0, 1"
+7546,71048,"câmara dos deputados",3,2,2
+7549,71053,"câmera lenta",2,1,1
+9848,199638,"caminhada atlética",2,1,1
+9570,199264,"caminho"" ou ""jeito",3,1,"0, 2"
+9575,199274,"cansado (de)",2,1,1
+7527,71017,"cardiomiopatia alcoólica",2,1,0
+9168,198584,"carne bovina",2,1,1
+9803,199580,"carta preta",2,1,1
+4648,851,"cavalo com alças",3,2,2
+9766,199535,"cavalo com arças",3,2,2
+7318,70519,"cavidade torácica",2,1,1
+7280,70449,"celulite periorbitária",2,1,1
+7221,70336,"centro de assistência toxicológica",4,3,3
+7072,70042,"centro de atenção integrada à saúde mental",7,6,3
+7219,70334,"centro de informações estratégicas de vigilância em saúde]",8,5,"2, 3, 7"
+7225,70340,"centro integrado de operações de defesa social",7,6,3
+7070,70040,"centro para crianças e adolescentes",5,3,"2, 4"
+7500,70990,"ceratopatia bolhosa",2,0,"0, 1"
+7547,71049,"cesta básica",2,1,1
+8818,197918,"chuva gelada",2,1,1
+7155,70125,"cicatriz cirúrgica",2,1,1
+6601,37932,"ciclismo bmx manobras",3,2,2
+9087,198421,"cidade anfitriã",2,1,1
+9066,198399,"cidade metropolitana",2,1,1
+7054,70024,"cinta cirúrgica",2,1,1
+7010,69980,"coca colca",2,1,1
+9599,199323,"colete à prova de balas",5,4,4
+7279,70448,"colite ulcerativa",2,1,1
+9534,199190,"colocar em palavras",3,2,2
+8956,198254,"com as pernas nuas",4,2,"2, 3"
+9635,199371,"combater incêndios",2,1,1
+9654,199404,"complexo de sobrados",3,2,2
+9172,198591,"compota de frutas",3,2,2
+7501,70991,"concreções apendiculares",2,0,"0, 1"
+9151,198554,"construção (entidade)",2,1,1
+7453,70766,"conta bancária",2,1,1
+7251,70366,"conta própria",2,1,1
+9405,198984,"conversa espirituosa",2,1,1
+7470,70960,"coriomeningite linfocitária",2,0,"0, 1"
+8980,198291,"corpo de bombeiros",3,2,2
+6354,37328,"corrida com obstáculos",3,2,2
+9806,199583,"corrida de cavalos",3,2,2
+9840,199629,"corrida de obstáculos",3,2,2
+6846,38451,"corridas com obstáculos",3,2,2
+8812,197907,"cortar em cubos",3,2,2
+4542,220,"costa rica",2,1,1
+9174,198593,"cozinha caseira",2,1,1
+7130,70100,"criança internada",2,1,1
+6950,69916,"crise alérgica",2,1,1
+6961,69927,"crise convulsiva",2,1,1
+9104,198456,"crítica severa",2,1,1
+9478,199110,"cubos de açúcar",3,2,0
+9623,199355,"cuidados médicos",2,0,"0, 1"
+9394,198949,"dar bronca",2,1,1
+8826,197970,"dar de ombros",3,2,2
+8249,135609,"dar-se ao luxo",3,2,0
+8961,198259,"de braços nus",3,1,"1, 2"
+8419,142537,"de forma nenhuma",3,2,2
+9407,198988,"de frente aberta",3,2,2
+9309,198786,"de mentalidade elevada",3,2,2
+9134,198499,"de olhos azuis",3,1,"1, 2"
+9644,199391,"de outra forma",3,2,1
+9226,198691,"de primeira",2,1,1
+9382,198931,"declaração juramentada",2,1,1
+7397,70647,"deficiência auditiva",2,1,1
+7269,70438,"deficiência enzimática",2,1,1
+7400,70650,"deficiência motora",2,1,1
+7220,70335,"delegacias especializadas de atendimento à mulher",6,4,"0, 1"
+9720,199480,"departamentos de polícia",3,2,0
+7426,70682,"dia dos mortos",3,2,2
+7090,70060,"dificuldade respiratória",2,1,1
+7496,70986,"disfunção orgásmica",2,1,1
+7452,70755,"doença coronariana",2,1,1
+7312,70513,"doença hereditária",2,1,1
+6963,69929,"doença inflamatória pélvica",3,1,"1, 2"
+6984,69950,"doença pulmonar obstrutiva crônica",4,3,2
+6954,69920,"doenças respiratórias ocupacionais",3,0,"0, 1, 2"
+7040,70010,"doenças sexualmente transmissíveis",3,1,"0, 2"
+9438,199036,"dona de casa",3,2,0
+8887,198122,"dormir juntos",2,1,1
+8913,198184,"duas peças",2,1,1
+9653,199403,"edifício de apartamentos",3,2,2
+9237,198704,"em flocos",2,1,1
+9959,199783,"em outras palavras",3,2,2
+9416,199009,"em pedaços",2,1,1
+8739,147431,"em termos",2,1,1
+9361,198900,"em termos de",3,2,1
+9092,198429,"em todos os lugares",4,2,"2, 3"
+7098,70068,"embaçamento ocular",2,1,0
+9740,199507,"embarcação aquática",2,1,1
+8981,198292,"emissora de rádio",3,2,0
+9424,199020,"empregada doméstica",2,1,0
+8976,198287,"empresa de serviços públicos de água",6,4,"2, 3"
+7167,70140,"endoprótese expansível",2,1,0
+6939,69905,"endoscopia digestiva alta",3,2,1
+9595,199318,"enganar (alguém)",2,1,1
+9193,198627,"entrar em contato.",3,2,2
+9267,198742,"equipamentos e suprimentos hospitalares",4,3,0
+9398,198961,"erguer-se de joelhos",3,1,"0, 2"
+7309,70478,"erupção cutânea",2,1,1
+7063,70033,"escala de coma de glasglow",5,4,4
+7245,70360,"escuta qualificada",2,1,1
+8293,139110,"escuta vozes",2,1,1
+8295,139112,"escutar vozes",2,1,1
+7088,70058,"espasmos involuntários",2,0,"0, 1"
+9524,199174,"esperar o momento certo.",4,3,3
+7522,71012,"espinha bífida",2,1,1
+6120,9532,"estação ferroviária",2,1,1
+9068,198401,"estado [interno]",2,1,1
+9067,198400,"estado [soberano]",2,1,1
+7477,70967,"esteatocistoma múltiplo",2,1,0
+7492,70982,"estigma talassêmico",2,1,1
+9518,199164,"estimativa aproximada",2,1,1
+9097,198446,"estrada secundária",2,1,1
+9334,198846,"estrelar (em)",2,1,1
+7508,70998,"estrias atróficas",2,0,"0, 1"
+7495,70985,"estupor dissociativo",2,1,1
+7121,70091,"exames laboratoriais",2,0,"0, 1"
+7007,69976,"exercícios físicos",2,0,"0, 1"
+9313,198792,"fácil como tirar doces de uma criança",7,6,3
+9096,198445,"faixa de pedestres",3,2,2
+7441,70736,"faixa etária",2,1,1
+7358,70579,"fala arrastada",2,1,1
+9781,199554,"falsa partida",2,1,0
+7532,71022,"fasciíte necrosante",2,0,"0, 1"
+9666,199419,"fases de eliminação direta",4,2,"0, 3"
+9637,199373,"fazer preparativos",2,1,1
+9647,199394,"fazer whoopie",2,1,1
+7486,70976,"fenda palatina",2,1,1
+7494,70984,"fenilcetonúria clássica",2,0,"0, 1"
+9624,199356,"férias remuneradas",2,1,1
+7519,71009,"fibrose cística",2,1,1
+9604,199331,"ficar à espera.",3,2,2
+9414,199006,"ficar louco.",2,1,1
+7250,70365,"fim de relaciomamento",3,2,2
+7159,70129,"fins legais",2,1,1
+6535,37715,"fita adesiva",2,1,1
+7530,71020,"fluorose esquelética",2,0,"0, 1"
+6880,58985,"fones de ouvido",3,2,0
+7153,70123,"força motora",2,1,1
+8781,197849,"forças armadas",2,0,"0, 1"
+9515,199161,"forças militares",2,1,0
+7132,70102,"frequência cardíaca",2,1,1
+7440,70734,"frios embutidos",2,0,"0, 1"
+7491,70981,"gamopatia monoclonal",2,1,0
+7497,70987,"ganglionite geniculada",2,0,"0, 1"
+8865,198085,"garrafa térmica",2,1,1
+9355,198886,"gás nervino",2,1,1
+7282,70451,"gastroenterocolite aguda",2,0,"0, 1"
+8750,147449,"gente fina",2,1,1
+9135,198500,"genu valgo",2,0,"0, 1"
+9713,199472,"gerente de equipamentos",3,2,2
+9657,199407,"gestão hoteleira",2,1,1
+7192,70307,"gestroenterocolite aguda",2,0,"0, 1"
+7017,69987,"gonadotrofina coriônica humana",3,2,2
+8594,146756,"graças a",2,1,0
+7503,70993,"granuloma piogênico",2,0,"0, 1"
+9517,199163,"guarda costeira",2,1,1
+7375,70600,"guarda provisória",2,1,1
+8881,198111,"guerra biológica",2,1,1
+7195,70310,"hemorragia digestiva alta",3,2,1
+6940,69906,"herniografia inguinal",2,1,0
+6981,69947,"hipertensão arterial sistêmica",3,2,2
+7506,70996,"hipertrofia óssea",2,1,1
+7473,70963,"hipervitaminose a",2,1,0
+7471,70961,"hipervitaminose d",2,1,0
+7367,70590,"hipótese diagnóstica",2,1,1
+7462,70783,"história em quadrinhos",3,2,2
+7536,71026,"homem trans",2,1,1
+9395,198950,"identificar-se com",2,1,0
+7550,71054,"impressão 3d",2,1,1
+6941,69907,"incisão cirúrgica",2,1,1
+9314,198793,"inclinar-se (em direção a)",4,1,"0, 1, 3"
+7511,71001,"incontinentia pigmenti",2,0,"0, 1"
+9408,198994,"índio (americano)",2,1,1
+7194,70309,"infecção das vias aéreas superiores",5,2,"1, 2, 3"
+7543,71040,"infecção urinária",2,1,1
+7193,70308,"infecções do trato repodutivo",4,2,"0, 3"
+9528,199181,"informação privilegiada",2,1,1
+9362,198901,"infração de direitos autorais",4,2,"2, 3"
+7443,70740,"instalação artística interativa",3,2,2
+9018,198335,"instalação de fitness",3,2,2
+6947,69913,"insuficiência cardíaca congestiva",3,1,"1, 2"
+8245,135474,"interessar - se",3,2,1
+6999,69968,"internação involuntária",2,1,1
+6967,69933,"intoxicação exógena",2,1,1
+7371,70596,"intoxicação medicamentosa",2,1,1
+8847,198038,"jogo de pés",3,2,2
+4768,1256,"jogos olímpicos",2,1,1
+7209,70324,"lavagem gástrica",2,1,1
+7481,70971,"leo meconial",2,1,1
+6934,69900,"leucemia linfoide aguda",3,2,2
+9541,199208,"libra esterlina",2,1,1
+9910,199716,"limite do infield",3,2,2
+7458,70776,"língua brasileira de sinais",4,2,"1, 3"
+7502,70992,"língua geográfica",2,1,1
+7499,70989,"linguagem precipitada",2,1,1
+6697,38182,"linha da pequena área",4,3,2
+9920,199726,"linha de bola morta",4,3,3
+6784,38274,"linha de zona morta",4,3,3
+7480,70970,"líquen planopilar",2,1,1
+9306,198782,"lista de desejos",3,2,2
+9200,198643,"livro de feitiços",3,2,2
+4657,903,"locadora de veículos",3,2,2
+9286,198761,"loja de alimentos saudáveis",4,2,"2, 3"
+9302,198777,"loja de antiguidades",3,2,2
+9281,198756,"loja de departamentos",3,2,2
+9260,198735,"loja de doces",3,2,2
+9292,198767,"loja de perfumes",3,2,2
+9675,199429,"loja de reparo de bicicletas",5,4,4
+9253,198728,"loja de roupas de grife",5,4,4
+9285,198760,"Loja de roupas para homens",5,4,4
+9283,198758,"Loja de roupas para mulheres",5,4,4
+9691,199446,"loja de sanduíches",3,2,2
+9297,198772,"loja de sapatos",3,2,2
+9301,198776,"loja de suprimentos agrícolas",4,3,3
+9275,198750,"loja de videogames",3,2,2
+7422,70677,"lupa eletrônica",2,1,1
+9838,199627,"luta grega-romana",2,1,1
+6534,37705,"luva cirúrgica",2,1,1
+9926,199732,"Mantenha a língua",3,2,0
+9638,199374,"Mantis religiosa",2,1,1
+6550,37735,"mão aberta",2,1,1
+6324,37233,"maratona aquática",2,1,1
+4677,941,"maratonas aquáticas",2,1,1
+9447,199050,"marca registrada",2,1,1
+4769,1288,"marcha atlética",2,1,1
+7329,70541,"medida protetiva",2,1,1
+7334,70546,"medida socioeducativa",2,1,1
+7350,70571,"medula óssea",2,1,1
+9870,199670,"meia-volta mortal para trás",4,3,0
+8916,198191,"meias e collants",3,1,"0, 2"
+9749,199517,"meios de transporte",3,2,0
+7113,70083,"melhora expontânea",2,1,1
+9616,199347,"membro das forças armadas",4,1,"1, 2, 3"
+7016,69986,"membros superiores e inferiores",4,2,"0, 3"
+9140,198514,"meningite bacteriana",2,1,1
+7262,70431,"menstruação retrógrada",2,1,1
+8829,197982,"mente aberta",2,1,1
+8813,197909,"mente fechada",2,1,1
+7273,70442,"miastenia grave",2,1,0
+7135,70105,"milímetros de mercúrio",3,2,0
+7150,70120,"mínimos esforços",2,0,"0, 1"
+9346,198876,"mísseis balísticos",2,0,"0, 1"
+9344,198874,"mísseis Scud-B",2,1,0
+9352,198883,"mísseis Scud-C",2,0,"0, 1"
+7265,70434,"mobilidade reduzida",2,1,1
+7451,70751,"modelador de cachos",3,2,2
+6408,37445,"montanha russa",2,1,1
+9905,199711,"montinho do arremessador",3,2,0
+7260,70375,"morderura humana",2,0,"0, 1"
+4765,1228,"morte súbita",2,1,1
+9856,199647,"morte súbita em tempo extra",5,4,1
+7537,71027,"mulher trans",2,1,1
+7035,70005,"musculatura acessória",2,1,1
+7456,70774,"música típica",2,1,1
+7313,70514,"mutação genética",2,1,1
+9925,199731,"nação anfitriã",2,1,1
+8884,198116,"nas alturas",2,1,1
+9809,199586,"natação sincronizada",2,1,1
+7013,69983,"nega uso",2,1,0
+6970,69936,"neuropatia diabética",2,1,1
+7498,70988,"nevralgia pós-zoster",2,1,1
+9107,198465,"nome de solteira",3,2,2
+7624,73745,"novo (em)",2,1,1
+7222,70337,"núcleos de apoio à saúde da família",7,6,0
+8876,198103,"o que acontece",3,2,2
+7143,70113,"oferta hídrica",2,1,1
+9291,198766,"oficina de reparos automotivos",4,3,2
+9668,199421,"oito finalistas",2,1,1
+9211,198659,"olá, pessoal!",2,0,"0, 1"
+9498,199137,"ora pro nobis",3,2,2
+9073,198406,"Organização de Serviços Sociais",4,2,"2, 3"
+9445,199048,"originar-se de",2,1,0
+9051,198378,"orla marítima",2,1,1
+9556,199234,"os dias de hoje",4,2,"0, 1"
+7191,70306,"otite média aguda",3,2,2
+6522,37659,"ovelha negra",2,1,1
+7366,70589,"parada cardiorrespiratória",2,1,1
+6289,10841,"parada respiratória",2,1,1
+9879,199682,"parada reta",2,1,1
+6840,38445,"paralelas assimétricas",2,1,1
+9680,199435,"partidas de qualificação",3,2,0
+8744,147437,"partir o coração (de alguém)",5,3,"3, 4"
+9933,199743,"pata dianteira",2,1,1
+9932,199742,"patas dianteiras",2,0,"0, 1"
+7119,70089,"pedras de crack",3,2,0
+7305,70474,"pele amarelada",2,1,1
+7096,70066,"pensamentos suicidas",2,0,"0, 1"
+6356,37330,"pequena área",2,1,0
+7356,70577,"perda auditiva",2,1,1
+7264,70433,"perda energética",2,1,1
+7186,70301,"perfuração por arma branca",4,3,3
+9931,199741,"perna dianteira",2,1,1
+9136,198501,"pernas arqueadas",2,0,"0, 1"
+7151,70121,"perturbação espiritural",2,1,1
+9700,199456,"pesque e pague",3,1,"0, 2"
+7109,70079,"placas vermelhas",2,0,"0, 1"
+4700,1010,"plataforma de 10m",3,2,2
+9664,199417,"play-off de terceiro lugar",4,3,0
+6952,69918,"pneumonia torácica",2,1,1
+7362,70585,"polineuropatia amiloidótica familiar",3,1,"0, 1"
+7436,70719,"políticas fiscais",2,0,"0, 1"
+9857,199648,"pontuação máxima",2,1,1
+9539,199198,"por-se em marcha",3,2,0
+9543,199211,"porcas e parafusos",3,1,"0, 2"
+9369,198908,"portar armas",2,1,1
+9078,198411,"porto de águas profundas",4,3,3
+9859,199650,"posição mantida",2,1,1
+9535,199193,"preferir (a)",2,1,1
+7304,70473,"pressão sanguínea baixa",3,2,1
+6726,38212,"primeira base",2,1,0
+6432,37509,"primeira linha",2,1,0
+9778,199550,"primeira mão",2,1,0
+6889,69320,"primeira ministra",2,0,"0, 1"
+9294,198769,"provedor de serviços de internet",5,4,2
+7490,70980,"púrpura alérgica",2,1,1
+6965,69931,"púrpura trombocitopênica idiopática",3,1,"1, 2"
+9372,198912,"puxar (a)",2,1,1
+9607,199334,"quadro [branco/preto/de giz]",3,1,"1, 2"
+7675,116809,"quarente e dois",3,2,0
+8804,197892,"quarto (parte)",2,1,1
+9661,199413,"quartos de final",3,2,0
+8701,147249,"que dirá",2,1,1
+9487,199121,"queijo guinchante",2,1,1
+8447,142565,"quem sabe",2,1,1
+8892,198138,"quest"" em português é ""missão"".",5,3,"0, 4"
+6959,69925,"reação alérgica",2,1,1
+7293,70462,"reação em cadeia da polimerase",5,4,4
+9952,199772,"rebelar-se (contra)",2,1,1
+7247,70362,"rede de saúde privada",4,3,3
+6281,10736,"redes sociais",2,0,"0, 1"
+7513,71003,"reflexos anormais",2,0,"0, 1"
+7025,69995,"região íntima",2,1,1
+7145,70115,"ressonância magnética",2,1,1
+9696,199451,"Restaurante de comida rápida",4,3,3
+9269,198744,"restaurante de hambúrgueres",3,2,2
+9695,199450,"restaurante de pratos de carne",5,4,2
+9254,198729,"restaurante de sobremesas",3,2,2
+7175,70150,"retenção urinária",2,1,1
+7479,70969,"reticulóide actínica",2,0,"0, 1"
+7173,70148,"ringer lactato",2,1,1
+6919,69415,"rock 'n roll",3,2,1
+9665,199418,"rodadas de eliminação",3,2,0
+7394,70643,"roupa íntima",2,1,1
+9538,199196,"sair correndo",2,1,1
+6878,58978,"sais minerais",2,0,"0, 1"
+7296,70465,"sala vermelha",2,1,1
+9177,198600,"salada de folhas",3,2,2
+9847,199637,"salto de obstáculos",3,2,2
+9185,198617,"sanduíche de cachorro-quente",3,2,2
+8979,198290,"sede corporativa",2,1,1
+7180,70156,"sede excessiva",2,1,1
+8893,198140,"seguir as regras",3,2,2
+9658,199408,"seguir em frente.",3,2,2
+7137,70107,"segundo informações colhidas",3,1,"1, 2"
+7429,70701,"seios paranasais",2,0,"0, 1"
+9928,199737,"selar lábios",2,1,1
+8963,198261,"sem luvas",2,1,1
+8955,198253,"sem meias",2,1,1
+8954,198252,"sem sapatos",2,1,1
+9958,199782,"senhoras e senhores",3,1,"0, 2"
+9503,199145,"seria melhor",2,1,0
+9295,198770,"serviço de alinhamento de rodas",5,4,4
+7087,70057,"sinais flogísticos",2,0,"0, 1"
+7129,70099,"sinais vitais",2,0,"0, 1"
+7416,70669,"sinalização podotátil",2,1,1
+6985,69951,"síndrome da imunodeficiência adquirida",4,3,3
+7406,70659,"síndrome de angelman",3,2,2
+7407,70660,"síndrome de tourette",3,2,2
+6936,69902,"síndrome nefrótica",2,1,1
+7472,70962,"síndrome pós-traumática",2,1,1
+7105,70075,"sintomas gripais",2,0,"0, 1"
+7141,70111,"sistema de informação de agravos de notificação",7,6,4
+7029,69999,"sistema nernovo central",3,2,1
+7520,71010,"situs inversus",2,0,"0, 1"
+9851,199642,"soco nocauteador",2,1,1
+7287,70456,"soda cáustica",2,1,1
+9485,199119,"sólidos de cacau",3,2,0
+9202,198646,"sombra para os olhos",4,2,"2, 3"
+7212,70327,"sonda nasogástrica",2,1,1
+9214,198665,"soneca eterna",2,1,1
+7204,70319,"substância psicoativa",2,1,1
+7089,70059,"sudorese fria",2,1,1
+7554,71064,"suprema corte",2,1,0
+9744,199512,"taxis aéreos",2,0,"0, 1"
+8998,198310,"teatro de artes cênicas",4,3,3
+9861,199654,"técnica de mão aberta",4,3,3
+7419,70672,"tecnologia assistiva",2,1,1
+9701,199457,"Temaki Shop",2,1,0
+7147,70117,"tensão pré-menstrual",2,1,1
+7526,71016,"terrores noturnos",2,0,"0, 1"
+9340,198865,"tiro de armas pequenas",4,2,"2, 3"
+8697,147213,"todas as vezes que",4,3,0
+7377,70603,"tomografia axial computadorizada",3,2,2
+7048,70018,"tomografia computadorizada",2,1,1
+9670,199424,"torneio de morte súbita",4,3,3
+9472,199099,"torta amarela",2,1,1
+9335,198849,"trabalhar juntos",2,1,1
+8921,198196,"trajes de banho",3,2,0
+6966,69932,"traumatismo crânio-encefálico",2,1,1
+7259,70374,"traumatismo crânioencefálico",2,1,1
+9711,199470,"treinador de fitness",3,2,2
+9714,199473,"treinador de goleiros",3,2,2
+9884,199688,"três quartos de frente",4,3,1
+9871,199671,"três quartos para trás",4,3,1
+9333,198843,"trilha sonora",2,1,1
+6933,69899,"trombose venosa profunda",3,1,"1, 2"
+7291,70460,"tubo orotraqueal",2,1,1
+7068,70038,"unidade básica de saúde",4,3,1
+8768,147487,"unidade de cuidados paliativos",4,2,"2, 3"
+7215,70330,"unidade de terapia intensiva",4,3,3
+9074,198407,"universidade privada",2,1,1
+7518,71008,"uremia extra-renal",2,1,1
+7342,70555,"válvula aórtica",2,1,1
+9805,199582,"vantagem numérica",2,1,1
+8516,146415,"várias vezes",2,1,0
+8869,198091,"vaso de flores",3,2,2
+7211,70326,"ventilação mecânica invasiva",3,2,2
+9157,198560,"Véspera da Pessach",3,2,2
+9099,198449,"via paisagística",2,1,1
+7349,70570,"via respitarória",2,1,1
+8828,197979,"vir com (algo)",3,2,2
+6956,69922,"vírus da imunodeficiência humana",4,3,3
+7084,70054,"visão turva",2,1,1
+9052,198379,"zona úmida",2,1,1
+9053,198380,"zona úmida arborizada",3,1,"1, 2"

@@ -1,0 +1,12 @@
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/lemma/{{$lemma->idLemma}}/mweForm"
+></div>
+<div
+    hx-trigger="load"
+    hx-target="this"
+    hx-swap="outerHTML"
+    hx-get="/lemma/{{$lemma->idLemma}}/mweGrid"
+></div>

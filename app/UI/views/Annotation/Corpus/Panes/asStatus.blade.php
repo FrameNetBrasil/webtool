@@ -1,4 +1,4 @@
-@use(\App\Enum\AnnotationSetStatus)
+@use(\App\Enums\AnnotationSetStatus)
 
 <div id="annotationSetStatus">
     @if($annotationSetStatus->entry == AnnotationSetStatus::COMPLETE->value)

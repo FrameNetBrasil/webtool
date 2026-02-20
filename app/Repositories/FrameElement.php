@@ -8,8 +8,8 @@ use App\Database\Criteria;
 
 // use App\Services\AppService;
 // use Illuminate\Support\Facades\DB;
-// use Orkester\Persistence\Enum\Key;
-// use Orkester\Persistence\Enum\Type;
+// use Orkester\Persistence\Enums\Key;
+// use Orkester\Persistence\Enums\Type;
 // use Orkester\Persistence\Map\ClassMap;
 // use Orkester\Persistence\Repository;
 

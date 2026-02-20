@@ -1,5 +1,11 @@
 {
-  "enabledMcpjsonServers": [
-  ],
-  "enableAllProjectMcpServers": true
+  "permissions": {
+    "allow": [
+      "Bash(./vendor/bin/sail artisan make:command:*)",
+      "Bash(php artisan:*)",
+      "mcp__laravel-boost__database-schema"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": []
 }

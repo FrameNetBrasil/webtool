@@ -4,8 +4,8 @@
 //        'lexicon' => ['Lexicon', '/lexicon3', '','ui::icon.domain'],
         'lemma' => ['Lemmas', '/lemma', '','ui::icon.domain'],
         'form' => ['Forms', '/form', '','ui::icon.domain'],
-        'lucandidate' => ['LU Candidate', '/luCandidate', '','ui::icon.frame'],
-        'constructicon' => ['Constructicon', '/constructicon', '','ui::icon.construction'],
+        'lucandidate' => ['LU Candidate', '/luCandidate', '','ui::icon.frame','dev'],
+        'constructicon' => ['Constructicon', '/constructicon', '','ui::icon.construction','dev'],
         'reframing' => ['Reframing', '/reframing', '','ui::icon.lu'],
         'sentence' => ['Sentence', '/sentence', '','ui::icon.sentence'],
         'class' => ['Class', '/class', '','ui::icon.frame'],
@@ -21,8 +21,8 @@
         'lexicon' => ['title' => "Lexicon", "pages" => ['lucandidate','lemma']],
         'text' => ['title'=> "Text", "pages" => ['sentence']],
 //        'construction' => ['title' => "Construction", "pages" => ['constructicon']],
-        'ontology' => ['title' => "Ontology", "pages" => ['class','microframe','cluster']],
-        'parser' => ['title' => "Parser", "pages" => ['grammar','construction'], "mode" => "dev"],
+//        'ontology' => ['title' => "Ontology", "pages" => ['class','microframe','cluster']],
+//'parser' => ['title' => "Parser", "pages" => ['grammar','construction'], "mode" => "dev"],
     ];
 @endphp
 

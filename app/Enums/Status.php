@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Enum;
+namespace App\Enums;
 
 enum Status: string
 {
@@ -9,4 +9,6 @@ enum Status: string
     case DELETED = 'DELETED';
     case ACCEPTED = 'ACCEPTED';
     case UPDATED = 'UPDATED';
+    case ARCHIVED = 'ARCHIVED';
+
 }

@@ -3,7 +3,7 @@
         'frame' => ['Frame', '/grapher/frame', '','ui::icon.frame'],
         'domain' => ['Domain', '/grapher/domain', '','ui::icon.domain'],
         'scenario' => ['Scenario', '/grapher/scenario', '','ui::icon.frame'],
-        'daisy' => ['Daisy', '/daisy', '','ui::icon.frame'],
+        'daisy' => ['Daisy', '/daisy', '','ui::icon.frame','dev'],
     ];
 @endphp
 

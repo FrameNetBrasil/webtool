@@ -3,9 +3,9 @@
 return [
     'db' => env('DB_CONNECTION', 'fnbr'),
     'logSQL' => env('LOG_SQL'),
-    'lang' => 1,
-    'language' => 'pt',
-    'defaultIdLanguage' => 1,
+    'lang' => 10,
+    'language' => 'sr',
+    'defaultIdLanguage' => 10,
     'defaultPassword' => 'default',
     'pageTitle' => env('APP_TITLE'),
     'mainTitle' => 'FrameNet Brasil Webtool 4.3',

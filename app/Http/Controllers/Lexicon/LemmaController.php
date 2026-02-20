@@ -15,6 +15,7 @@ use App\Repositories\Lemma;
 use App\Services\AppService;
 use App\Services\Lemma\BrowseService;
 use App\Services\Lemma\LexiconPatternService;
+use App\Services\Lexicon\TokenizerService;
 use Collective\Annotations\Routing\Attributes\Attributes\Delete;
 use Collective\Annotations\Routing\Attributes\Attributes\Get;
 use Collective\Annotations\Routing\Attributes\Attributes\Middleware;
@@ -28,7 +29,6 @@ class LemmaController extends Controller
     public function browse(SearchLemmaData $search)
     {
         $data = BrowseService::browseLemmaBySearch($search);
-
         return view('Lemma.browse', [
             'title' => 'Lemmas',
             'data' => $data,
@@ -39,20 +39,17 @@ class LemmaController extends Controller
     public function search(SearchLemmaData $search)
     {
         $data = BrowseService::browseLemmaBySearch($search);
-
-        return view('Lemma.tree', [
+        return view('Lemma.browse', [
             'data' => $data,
             'title' => '',
-        ]);
+        ])->fragment('search');
     }
 
     #[Get(path: '/lemma/listForSearch')]
     public function listForSearch(QData $data)
     {
-        debug($data);
         $name = (strlen($data->lemmaName) > 0) ? $data->lemmaName : 'none';
         $idLanguage = AppService::getCurrentIdLanguage();
-
         debug([
             'searching' => $name,
             'idLanguage from session' => $idLanguage,
@@ -76,37 +73,19 @@ class LemmaController extends Controller
     public function create(CreateLemmaData $data)
     {
         try {
-            $exists = Criteria::table('view_lemma')
-                ->whereRaw("name = '{$data->name}' collate 'utf8mb4_bin'")
-//                ->where('idUDPOS', $data->idUDPOS)
-                ->where('idLanguage', $data->idLanguage)
-                ->first();
-            if (! is_null($exists)) {
-                throw new \Exception('Lemma already exists.');
-            }
+            $isMWE = str_contains($data->name, ' ');
             $newLemma = json_encode([
                 'name' => $data->name,
                 'idLanguage' => $data->idLanguage,
-                //                'idUDPOS' => $data->idUDPOS,
+                'isMWE' => $isMWE ? 1 : 0,
                 'idUser' => AppService::getCurrentIdUser(),
             ]);
             $idLemma = Criteria::function('lemma_create(?)', [$newLemma]);
-            $isMWE = str_contains($data->name, ' ');
             if ($isMWE) {
-                $expressions = explode(' ', $data->name);
-                foreach ($expressions as $i => $expression) {
-                    $exp = json_encode([
-                        'form' => trim($expression),
-                        'idLexiconGroup' => 1,
-                    ]);
-                    $idLexicon = Criteria::function('lexicon_create(?)', [$exp]);
-                    Criteria::create('lexicon_expression', [
-                        'idLemma' => $idLemma,
-                        'idExpression' => $idLexicon,
-                        'position' => $i + 1,
-                        'head' => ($i == 0),
-                        'breakBefore' => 0,
-                    ]);
+                if ((! str_contains($data->name, '(')) && (! str_contains($data->name, '#'))) {
+                    // for MWE, each component will be considered a lemma too
+                    $tokenizer = new TokenizerService;
+                    $tokenizer->populateLexiconMwe($idLemma, $data->name, $data->idLanguage);
                 }
             }
 
@@ -125,6 +104,46 @@ class LemmaController extends Controller
             'lemma' => $lemma,
         ]);
     }
+
+    #[Get(path: '/lemma/{idLemma}')]
+    public function edit(int $idLemma)
+    {
+        $lemma = Lemma::byId($idLemma);
+
+        return view('Lemma.edit', [
+            'lemma' => $lemma,
+            'pattern' => null,
+        ]);
+    }
+
+    #[Put(path: '/lemma/{idLemma}')]
+    public function update(int $idLemma, UpdateLemmaData $data)
+    {
+        $data->idLemma = $idLemma;
+        try {
+            Criteria::function('lemma_update(?)', [json_encode($data->toArray())]);
+
+            return $this->renderNotify('success', 'Lemma updated.');
+        } catch (\Exception $e) {
+            return $this->renderNotify('error', $e->getMessage());
+        }
+    }
+
+    #[Delete(path: '/lemma/{idLemma}')]
+    public function delete(int $idLemma)
+    {
+        try {
+            Criteria::function('lemma_delete(?,?)', [$idLemma, AppService::getCurrentIdUser()]);
+
+            return $this->clientRedirect('/lemma');
+        } catch (\Exception $e) {
+            return $this->renderNotify('error', 'Deletion failed. Check if there is some LU using this lemma.');
+        }
+    }
+
+    /*------
+      Expression
+      ------ */
 
     #[Get(path: '/lemma/{idLemma}/expressions')]
     public function expressions(int $idLemma)
@@ -152,7 +171,7 @@ class LemmaController extends Controller
         $lemma = Lemma::byId($idLemma);
         $expressions = Criteria::table('view_lexicon_expression as e')
             ->where('e.idLemma', $idLemma)
-            ->orderBy('e.position')
+            ->orderBy('e.form')
             ->all();
 
         return view('Lemma.expressionsGrid', [
@@ -160,6 +179,184 @@ class LemmaController extends Controller
             'expressions' => $expressions,
         ]);
     }
+
+    #[Get(path: '/lemma/expression/listForSelect')]
+    public function listExpressionForSelect(QData $data)
+    {
+        $name = (strlen($data->q) > 0) ? $data->q : 'none';
+
+        return ['results' => Criteria::byFilterLanguage('lexicon', ['form', 'startswith', trim($name)])
+            ->select('idLexicon', 'form as name')
+            ->limit(50)
+            ->orderby('name')->all()];
+    }
+
+    #[Post(path: '/lemma/{idLemma}/expression')]
+    public function createExpression(int $idLemma, CreateExpressionData $data)
+    {
+        $data->idLemma = $idLemma;
+        try {
+            if (trim($data->form) != '') {
+                $lexicon = Criteria::table('lexicon')
+                    ->whereRaw("form collate 'utf8mb4_bin' = '{$data->form}'")
+                    ->first();
+                if (is_null($lexicon)) {
+                    $newLexicon = json_encode([
+                        'form' => $data->form,
+                        'idLexiconGroup' => 1,
+                    ]);
+                    $idLexicon = Criteria::function('lexicon_create(?)', [$newLexicon]);
+                } else {
+                    $idLexicon = $lexicon->idLexicon;
+                }
+                Criteria::create('lexicon_expression', [
+                    'idLemma' => $idLemma,
+                    'idExpression' => $idLexicon,
+                    //                    'position' => $data->position,
+                    //                    'head' => $data->head,
+                    //                    'breakBefore' => $data->breakBefore,
+                ]);
+                $this->trigger('reload-gridExpressions');
+
+                return $this->renderNotify('success', 'Expression added.');
+            } else {
+                throw new \Exception('Expression not informed.');
+            }
+        } catch (\Exception $e) {
+            return $this->renderNotify('error', $e->getMessage());
+        }
+    }
+
+    #[Delete(path: '/lemma/expression/{idLexiconExpression}')]
+    public function deleteExpression(int $idLexiconExpression)
+    {
+        try {
+            Criteria::deleteById('lexicon_expression', 'idLexiconExpression', $idLexiconExpression);
+            $this->trigger('reload-gridExpressions');
+
+            return $this->renderNotify('success', 'Expression removed.');
+        } catch (\Exception $e) {
+            return $this->renderNotify('error', $e->getMessage());
+        }
+    }
+
+    /*------
+      MWE
+     ------ */
+
+    #[Get(path: '/lemma/{idLemma}/mwe')]
+    public function mwe(int $idLemma)
+    {
+        $lemma = Lemma::byId($idLemma);
+
+        return view('Lemma.mwe', [
+            'lemma' => $lemma,
+        ]);
+    }
+
+    #[Get(path: '/lemma/{idLemma}/mweForm')]
+    public function formMWE(int $idLemma)
+    {
+        $lemma = Lemma::byId($idLemma);
+
+        return view('Lemma.mweForm', [
+            'lemma' => $lemma,
+        ]);
+    }
+
+    #[Get(path: '/lemma/{idLemma}/mweGrid')]
+    public function gridMWE(int $idLemma)
+    {
+        $lemma = Lemma::byId($idLemma);
+        $mwe = Criteria::table('view_lexicon_mwe as e')
+            ->where('e.idLemma', $idLemma)
+            ->orderBy('e.position')
+            ->all();
+
+        return view('Lemma.mweGrid', [
+            'lemma' => $lemma,
+            'mwe' => $mwe,
+        ]);
+    }
+
+    #[Get(path: '/lemma/mwe/listForSelect')]
+    public function listMWEForSelect(QData $data)
+    {
+        $name = (strlen($data->q) > 0) ? $data->q : 'none';
+
+        return ['results' => Criteria::byFilterLanguage('lexicon', ['form', 'startswith', trim($name)])
+            ->select('idLexicon', 'form as name')
+            ->limit(50)
+            ->orderby('name')->all()];
+    }
+
+    #[Post(path: '/lemma/{idLemma}/mwe')]
+    public function createMWE(int $idLemma, CreateExpressionData $data)
+    {
+        $data->idLemma = $idLemma;
+        try {
+            if (trim($data->form) != '') {
+                $lexicon = Criteria::table('lexicon')
+                    ->whereRaw("form collate 'utf8mb4_bin' = '{$data->form}'")
+                    ->first();
+                if (is_null($lexicon)) {
+                    $newLexicon = json_encode([
+                        'form' => $data->form,
+                        'idLexiconGroup' => 1,
+                    ]);
+                    $idLexicon = Criteria::function('lexicon_create(?)', [$newLexicon]);
+                } else {
+                    $idLexicon = $lexicon->idLexicon;
+                }
+                // for MWE, each component will be considered a lemma too
+                $lemmaComponent = Criteria::table('lemma')
+                    ->whereRaw("name collate 'utf8mb4_bin' = '{$data->form}'")
+                    ->where('idLanguage', AppService::getCurrentIdLanguage())
+                    ->first();
+                if (is_null($lemmaComponent)) {
+                    $newLemma = json_encode([
+                        'name' => $data->form,
+                        'idLanguage' => AppService::getCurrentIdLanguage(),
+                        'idLexicon' => $idLexicon,
+                    ]);
+                    $idLemmaComponent = Criteria::function('lemma_create(?)', [$newLemma]);
+                } else {
+                    $idLemmaComponent = $lemmaComponent->idLemma;
+                }
+                Criteria::create('lexicon_mwe', [
+                    'idLemma' => $idLemma,
+                    'idLemmaComponent' => $idLemmaComponent,
+                    'position' => $data->position,
+                    'head' => $data->head,
+                    'breakBefore' => $data->breakBefore,
+                ]);
+                $this->trigger('reload-gridMWE');
+
+                return $this->renderNotify('success', 'Expression added.');
+            } else {
+                throw new \Exception('Expression not informed.');
+            }
+        } catch (\Exception $e) {
+            return $this->renderNotify('error', $e->getMessage());
+        }
+    }
+
+    #[Delete(path: '/lemma/mwe/{idLexiconMWE}')]
+    public function deleteMWE(int $idLexiconMWE)
+    {
+        try {
+            Criteria::deleteById('lexicon_mwe', 'idLexiconMWE', $idLexiconMWE);
+            $this->trigger('reload-gridMWE');
+
+            return $this->renderNotify('success', 'Expression removed.');
+        } catch (\Exception $e) {
+            return $this->renderNotify('error', $e->getMessage());
+        }
+    }
+
+    /*------
+      POS
+     ------ */
 
     #[Get(path: '/lemma/{idLemma}/pos')]
     public function pos(int $idLemma)
@@ -194,115 +391,6 @@ class LemmaController extends Controller
             'pos' => $pos,
         ]);
     }
-
-    #[Get(path: '/lemma/{idLemma}')]
-    public function edit(int $idLemma)
-    {
-        $lemma = Lemma::byId($idLemma);
-        //        $expressions = Criteria::table('view_lexicon_expression as e')
-        //            ->where('e.idLemma', $idLemma)
-        //            ->orderBy('e.position')
-        //            ->all();
-
-        return view('Lemma.edit', [
-            'lemma' => $lemma,
-            //            'expressions' => $expressions,
-            'pattern' => null, // Temporarily disabled
-        ]);
-    }
-
-    #[Put(path: '/lemma/{idLemma}')]
-    public function update(int $idLemma, UpdateLemmaData $data)
-    {
-        $data->idLemma = $idLemma;
-        try {
-            Criteria::function('lemma_update(?)', [json_encode($data->toArray())]);
-
-            return $this->renderNotify('success', 'Lemma updated.');
-        } catch (\Exception $e) {
-            return $this->renderNotify('error', $e->getMessage());
-        }
-    }
-
-    #[Delete(path: '/lemma/{idLemma}')]
-    public function delete(int $idLemma)
-    {
-        try {
-            Criteria::function('lemma_delete(?,?)', [$idLemma, AppService::getCurrentIdUser()]);
-
-            return $this->clientRedirect('/lemma');
-        } catch (\Exception $e) {
-            return $this->renderNotify('error', 'Deletion failed. Check if there is some LU using this lemma.');
-        }
-    }
-
-    /*------
-      Expression
-      ------ */
-
-    #[Get(path: '/lemma/expression/listForSelect')]
-    public function listExpressionForSelect(QData $data)
-    {
-        $name = (strlen($data->q) > 0) ? $data->q : 'none';
-
-        return ['results' => Criteria::byFilterLanguage('lexicon', ['form', 'startswith', trim($name)])
-            ->select('idLexicon', 'form as name')
-            ->limit(50)
-            ->orderby('name')->all()];
-    }
-
-    #[Post(path: '/lemma/{idLemma}/expression')]
-    public function createExpression(int $idLemma, CreateExpressionData $data)
-    {
-        $data->idLemma = $idLemma;
-        try {
-            if (trim($data->form) != '') {
-                $lexicon = Criteria::table('lexicon')
-                    ->whereRaw("form collate 'utf8mb4_bin' = '{$data->form}'")
-                    ->first();
-                if (is_null($lexicon)) {
-                    $newLexicon = json_encode([
-                        'form' => $data->form,
-                        'idLexiconGroup' => 1,
-                    ]);
-                    $idLexicon = Criteria::function('lexicon_create(?)', [$newLexicon]);
-                } else {
-                    $idLexicon = $lexicon->idLexicon;
-                }
-                Criteria::create('lexicon_expression', [
-                    'idLemma' => $idLemma,
-                    'idExpression' => $idLexicon,
-                    'position' => $data->position,
-                    'head' => $data->head,
-                    'breakBefore' => $data->breakBefore,
-                ]);
-                $this->trigger('reload-gridExpressions');
-
-                return $this->renderNotify('success', 'Expression added.');
-            } else {
-                throw new \Exception('Expression not informed.');
-            }
-        } catch (\Exception $e) {
-            return $this->renderNotify('error', $e->getMessage());
-        }
-    }
-
-    #[Delete(path: '/lemma/expression/{idLexiconExpression}')]
-    public function deleteExpression(int $idLexiconExpression)
-    {
-        try {
-            Criteria::deleteById('lexicon_expression', 'idLexiconExpression', $idLexiconExpression);
-            $this->trigger('reload-gridExpressions');
-
-            return $this->renderNotify('success', 'Expression removed.');
-        } catch (\Exception $e) {
-            return $this->renderNotify('error', $e->getMessage());
-        }
-    }
-
-    /*------
-      POS
-     ------ */
 
     #[Post(path: '/lemma/{idLemma}/pos')]
     public function createPos(int $idLemma, CreatePOSData $data)

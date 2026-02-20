@@ -12,9 +12,13 @@ RUN addgroup -g $WWWGROUP www \
 #COPY . /www
 #RUN chown -R sail:www /www
 
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
+
+# Copy and set up entrypoint
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 USER sail
 WORKDIR /www
 
-COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
-
-RUN if [[ -n "$PROD" ]] ; then composer install; fi
+ENTRYPOINT ["docker-entrypoint.sh"]

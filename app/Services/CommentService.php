@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\Data\Annotation\Comment\CommentData;
 use App\Database\Criteria;
-use App\Enum\AnnotationType;
+use App\Enums\AnnotationType;
 use App\Repositories\Document;
 use App\Repositories\Timeline;
 

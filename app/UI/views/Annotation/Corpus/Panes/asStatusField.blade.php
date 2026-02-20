@@ -1,4 +1,4 @@
-@use(\App\Enum\Status)
+@use(\App\Enums\Status)
 <div class="status">
     <a class="ui blue horizontal label">{{$annotationSet->status}}</a>
 </div>

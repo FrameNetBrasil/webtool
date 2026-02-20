@@ -6,7 +6,7 @@
                 <div class="three fields">
                     <div class="field">
                         <x-ui::text-field
-                            label="Name (unflected form)"
+                            :label="($lemma->isMWE ? 'MWE' : 'Name (unflected form)')"
                             id="name"
                             :value="$lemma->name"
                         ></x-ui::text-field>

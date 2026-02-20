@@ -3,8 +3,8 @@
 namespace App\Repositories;
 
 use App\Database\Criteria;
-use App\Enum\AnnotationSetStatus;
-use App\Enum\Status;
+use App\Enums\AnnotationSetStatus;
+use App\Enums\Status;
 use App\Services\AppService;
 use \Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;

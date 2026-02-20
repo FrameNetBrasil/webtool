@@ -11,28 +11,28 @@
                             value=""
                         ></x-ui::text-field>
                     </div>
-                    <div class="field">
-                        <x-ui::text-field
-                            label="Position"
-                            id="position"
-                            :value="1"
-                        ></x-ui::text-field>
-                    </div>
-                    <div class="field">
-                        <x-ui::checkbox
-                            id="headWord"
-                            name="head"
-                            label="Is Head?"
-                            :active="true"
-                        ></x-ui::checkbox>
-                    </div>
-                    <div class="field">
-                        <x-ui::checkbox
-                            id="breakBefore"
-                            label="Break before?"
-                            :active="false"
-                        ></x-ui::checkbox>
-                    </div>
+{{--                    <div class="field">--}}
+{{--                        <x-ui::text-field--}}
+{{--                            label="Position"--}}
+{{--                            id="position"--}}
+{{--                            :value="1"--}}
+{{--                        ></x-ui::text-field>--}}
+{{--                    </div>--}}
+{{--                    <div class="field">--}}
+{{--                        <x-ui::checkbox--}}
+{{--                            id="headWord"--}}
+{{--                            name="head"--}}
+{{--                            label="Is Head?"--}}
+{{--                            :active="true"--}}
+{{--                        ></x-ui::checkbox>--}}
+{{--                    </div>--}}
+{{--                    <div class="field">--}}
+{{--                        <x-ui::checkbox--}}
+{{--                            id="breakBefore"--}}
+{{--                            label="Break before?"--}}
+{{--                            :active="false"--}}
+{{--                        ></x-ui::checkbox>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>

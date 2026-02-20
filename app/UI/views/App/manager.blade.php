@@ -6,8 +6,8 @@
         'task' => ['Task/User', '/task', '','MANAGER','ui::icon.frame'],
         'user' => ['Group/User', '/user','', 'ADMIN','ui::icon.frame'],
         'document' => ['Corpus/Document','/corpus','', 'ADMIN','ui::icon.domain'],
-        'video' => ['Video/Document', '/video','', 'ADMIN','ui::icon.frame'],
-        'image' => ['Image/Document', '/image','', 'ADMIN','ui::icon.frame'],
+        'video' => ['Video/Document', '/video','', 'ADMIN','ui::icon.frame','dev'],
+        'image' => ['Image/Document', '/image','', 'ADMIN','ui::icon.frame','dev'],
         'semantictype' => ['SemanticType','/semanticType','', 'ADMIN','ui::icon.frame'],
         'layer' => ['Layer/GenericLabel', '/layers','', 'ADMIN','ui::icon.frame'],
         'relations' => ['Relations', '/relations','', 'ADMIN','ui::icon.frame'],
@@ -17,10 +17,10 @@
 
     $groups = [
         'manager' => ['title' => "Project/User", "pages" => ['project','task','user']],
-        'document' => ['title' => "Document", "pages" => ['document','video','image']],
+        'document' => ['title' => "Document", "pages" => ['document']],
         'table' => ['title' => "Tables", "pages" => ['semantictype','layer','relations']],
         'utils' => ['title' => "Utils", "pages" => ['importfulltext']],
-        'data' => ['title' => "Data", "pages" => ['aisuggestions']],
+//        'data' => ['title' => "Data", "pages" => ['aisuggestions']],
     ];
 
 

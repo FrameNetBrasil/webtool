@@ -23,19 +23,27 @@
                             </button>
                         </div>
                     </div>
-                    <dic class="page-subtitle">
-                        Lemma
-                    </dic>
+                    <div class="page-subtitle">
+                        {!! $lemma->isMWE ? 'Multiword expression (MWE)' : 'Single word' !!}
+                    </div>
                 </div>
                 <div class="page-content">
+                    @php
+                        $tabs = [
+                            'edit' => ['id' => 'edit', 'label' => 'Edit', 'url' => '/lemma/'.$lemma->idLemma.'/formEdit'],
+                            'pos' => ['id' => 'pos', 'label' => 'POS', 'url' => '/lemma/'.$lemma->idLemma.'/pos'],
+                        ];
+                        if ($lemma->isMWE) {
+                            $tabs['mwe'] = ['id' => 'mwe', 'label' => 'MWE', 'url' => '/lemma/'.$lemma->idLemma.'/mwe'];
+                        } else {
+                            $tabs['expressions'] = ['id' => 'expressions', 'label' => 'Expressions', 'url' => '/lemma/'.$lemma->idLemma.'/expressions'];
+                        }
+
+                    @endphp
                     <x-ui::tabs
                         id="lemmaTabs"
                         style="secondary pointing"
-                        :tabs="[
-                            'edit' => ['id' => 'edit', 'label' => 'Edit', 'url' => '/lemma/'.$lemma->idLemma.'/formEdit'],
-                            'expressions' => ['id' => 'expressions', 'label' => 'Expressions', 'url' => '/lemma/'.$lemma->idLemma.'/expressions'],
-                            'pos' => ['id' => 'pos', 'label' => 'POS', 'url' => '/lemma/'.$lemma->idLemma.'/pos'],
-                        ]"
+                        :tabs="$tabs"
                         defaultTab="edit"
                     />
                 </div>

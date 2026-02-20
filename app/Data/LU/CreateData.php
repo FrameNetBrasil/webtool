@@ -2,7 +2,7 @@
 
 namespace App\Data\LU;
 
-use App\Enum\Status;
+use App\Enums\Status;
 use App\Repositories\Lemma;
 use App\Services\AppService;
 use Spatie\LaravelData\Data;

@@ -10,7 +10,7 @@ use App\Data\Annotation\Image\ObjectAnnotationData;
 use App\Data\Annotation\Image\ObjectSearchData;
 use App\Data\Annotation\Image\UpdateBBoxData;
 use App\Database\Criteria;
-use App\Enum\AnnotationType;
+use App\Enums\AnnotationType;
 use App\Repositories\AnnotationSet;
 use App\Repositories\Corpus;
 use App\Repositories\Document;

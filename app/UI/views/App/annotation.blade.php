@@ -5,7 +5,7 @@
         'annotationset' => ['Annotation Sets by sentence', '/annotation/as', 'Check annotation sets by sentence.','ui::icon.frame'],
         'annotationsetlu' => ['Annotation Sets by LU', '/annotation/lu', 'Check annotation sets by LU.','ui::icon.frame'],
         'annotationsession' => ['Sessions', '/annotation/session', 'Sessions Report.','ui::icon.frame'],
-        'annotationcxn' => ['Construction', '/annotation/cxn', 'Corpus annotation for constructions','ui::icon.construction'],
+        'annotationcxn' => ['Construction', '/annotation/cxn', 'Corpus annotation for constructions','ui::icon.construction','dev'],
         'annotationflex' => ['Flex-syntax', '/annotation/flex', 'Croft Flex-syntax annotation','ui::icon.frame','dev'],
         'annotationdynamic' => ['Dynamic mode', '/annotation/dynamicMode', 'Video annotation.', 'ui::icon.video' ],
         'annotationdeixis' => ['Deixis', '/annotation/deixis', 'Video annotation for deixis.', 'ui::icon.video'],
@@ -16,10 +16,10 @@
     ];
     $annotationType = [
         'corpus' => ['title' => "Corpus", "pages" => ['annotationfe','annotationfulltext','annotationcxn','annotationset','annotationsetlu','annotationsession','annotationflex']],
-        'video' => ['title' => "Video", "pages" => ['annotationdynamic','annotationdeixis','annotationcanvas']],
-        //'video' => ['title' => "Video", "pages" => ['annotationdeixis']],
-        'image' => ['title' => "Image", "pages" => ['annotationstaticbbox','annotationstaticevent']],
-        'parser' => ['title' => "Parser", "pages" => ['udparser']],
+//        'video' => ['title' => "Video", "pages" => ['annotationdynamic','annotationdeixis','annotationcanvas']],
+//        //'video' => ['title' => "Video", "pages" => ['annotationdeixis']],
+//        'image' => ['title' => "Image", "pages" => ['annotationstaticbbox','annotationstaticevent']],
+//        'parser' => ['title' => "Parser", "pages" => ['udparser']],
     ];
 
 @endphp

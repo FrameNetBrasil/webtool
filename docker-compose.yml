@@ -23,6 +23,7 @@ services:
         user: 'sail'
         environment:
             - 'PHP_IDE_CONFIG=${PHP_IDE_CONFIG}'
+        command: php-fpm
     reverb:
         <<: *laravel
         command: 'php artisan reverb:start'

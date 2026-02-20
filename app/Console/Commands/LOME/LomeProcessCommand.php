@@ -8,7 +8,7 @@ use App\Data\Annotation\Corpus\SelectionData;
 use App\Data\Annotation\Session\SessionData;
 use App\Data\LoginData;
 use App\Database\Criteria;
-use App\Enum\Status;
+use App\Enums\Status;
 use App\Repositories\AnnotationSet;
 use App\Repositories\Lemma;
 use App\Services\Annotation\CorpusService;

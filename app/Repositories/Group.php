@@ -3,7 +3,7 @@
 namespace App\Repositories;
 
 //use Orkester\Persistence\Criteria\Criteria;
-//use Orkester\Persistence\Enum\Key;
+//use Orkester\Persistence\Enums\Key;
 //use Orkester\Persistence\Map\ClassMap;
 //use Orkester\Persistence\Repository;
 

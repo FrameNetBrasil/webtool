@@ -20,7 +20,7 @@ class LU
     public static function getIdUDPOS(int $idLemma): int
     {
         $lemma = Criteria::byId("lemma", "idLemma",$idLemma);
-        return $lemma->idUDPOS;
+        return $lemma->idUDPOS ?? 8;
     }
 
     public static function listForEvent(string $name = ''): array

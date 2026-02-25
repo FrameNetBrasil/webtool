@@ -160,17 +160,17 @@ class ImportSerbianLexiconCommand extends Command
         $lexiconForm = $row['lexicon'];
 
         try {
-            // Check if lexicon already exists (case-sensitive)
-            $existing = Criteria::table('lexicon')
-                ->whereRaw("form collate 'utf8mb4_bin' = ?", [$lexiconForm])
-                ->first();
-
-            if ($existing) {
-                $this->stats['lexicons_skipped']++;
-
-                return;
-            }
-
+//            // Check if lexicon already exists (case-sensitive)
+//            $existing = Criteria::table('lexicon')
+//                ->whereRaw("form collate 'utf8mb4_bin' = ?", [$lexiconForm])
+//                ->first();
+//
+//            if ($existing) {
+//                $this->stats['lexicons_skipped']++;
+//
+//                return;
+//            }
+//
             // Create lexicon data
             $lexiconData = [
                 'form' => $lexiconForm,

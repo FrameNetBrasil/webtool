@@ -79,6 +79,24 @@
     <script type="text/javascript">
         $(function () {
             $(".menu .item").tab();
+
+            function resizeAnnotationTabPanes() {
+                $(".annotationTab").each(function () {
+                    var $menu = $(this).children(".ui.pointing.secondary.menu.tabs").first();
+                    if (!$menu.length) {
+                        return;
+                    }
+                    var top = $menu[0].getBoundingClientRect().bottom;
+                    // 48px accounts for the trailing bottom padding of ancestor
+                    // containers (.twelve.wide.column + .annotation-workarea)
+                    // that sit below this pane but outside its own box.
+                    var maxHeight = Math.max($(window).height() - top - 48, 100);
+                    $(this).children(".ui.tab").css("max-height", maxHeight + "px");
+                });
+            }
+
+            resizeAnnotationTabPanes();
+            $(window).on("resize", resizeAnnotationTabPanes);
         });
     </script>
 </div>

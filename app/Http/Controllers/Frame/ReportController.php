@@ -62,14 +62,14 @@ class ReportController extends Controller
     {
         $search->lu = $search->frame;
         $frames = BrowseService::browseFrameBySearch($search);
-        $lus = BrowseService::browseLUBySearch($search, true, contains:false);
+        $lus = BrowseService::browseLUBySearch($search, true, contains: false);
 
         return view('Frame.Report.indexFrameLU', [
             'frame' => $search->frame,
             'lu' => $search->lu,
             'frames' => $frames,
             'lus' => $lus,
-        ])->fragment("post");
+        ])->fragment('post');
     }
 
     #[Get(path: '/report/frame/{idFrame}/{lang?}')]
@@ -80,6 +80,7 @@ class ReportController extends Controller
         if ($data['isHtmx']) {
             return view('Frame.Report.reportPartial', $data);
         }
+
         return view('Frame.Report.report', $data);
 
     }
@@ -88,6 +89,7 @@ class ReportController extends Controller
     public function listForSelect(QData $data)
     {
         $name = (strlen($data->frame) > 2) ? $data->frame : 'none';
+
         return ['results' => Criteria::byFilterLanguage('view_frame', ['name', 'startswith', $name])->orderby('name')->all()];
     }
 
@@ -115,7 +117,7 @@ class ReportController extends Controller
             ->where('i.idImage', $idImage)
             ->first();
         $fesList = Criteria::table('view_annotation_static as a')
-            ->join("view_annotation_static_fe as fe", "a.idStaticObject", "=", "fe.idStaticObject")
+            ->join('view_annotation_static_fe as fe', 'a.idStaticObject', '=', 'fe.idStaticObject')
             ->select('a.idStaticObject', 'fe.name as fe', 'fe.bgColor as color')
             ->where('a.idDocument', $idDocument)
             ->where('a.idImage', $idImage)
@@ -137,5 +139,4 @@ class ReportController extends Controller
             'bboxes' => $bboxes,
         ]);
     }
-
 }

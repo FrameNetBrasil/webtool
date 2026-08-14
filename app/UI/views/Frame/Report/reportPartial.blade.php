@@ -7,7 +7,9 @@
                         <x-ui::element.frame name="{{$frame->name}}"></x-ui::element.frame>
                     </div>
                     <div
-                        class="page-subtitle">{!! str_replace('ex>','code>',nl2br($frame->description)) !!}</div>
+                        class="page-subtitle">{!! mb_ereg_replace('ex>','code>',nl2br($frame->description)) !!}
+{{--                        class="page-subtitle">{{$frame->description}}--}}
+                    </div>
                 </div>
                 @if($isHtmx)
                     <div class="page-actions">
